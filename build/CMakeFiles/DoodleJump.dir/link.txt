@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/DoodleJump.dir/src/main.cpp.o  -o DoodleJump  /usr/lib/x86_64-linux-gnu/libsfml-system.so /usr/lib/x86_64-linux-gnu/libsfml-window.so /usr/lib/x86_64-linux-gnu/libsfml-graphics.so 
