@@ -6,7 +6,7 @@
 #add_executable(DoodleJump src/main.cpp)
 
 cmake_minimum_required(VERSION 3.16)
-set(PROJECT_NAME ProjectAP)
+set(PROJECT_NAME DoodleJump)
 set(CMAKE_CXX_STANDARD 20)
 
 project(${PROJECT_NAME})
