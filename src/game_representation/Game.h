@@ -18,8 +18,12 @@ public:
     Window* GetWindow();
 
 private:
-    void MoveMushroom();
+    void MoveDoodle();
     Window m_window;
+
+    sf::Texture m_doodleTexture;
+    sf::Sprite m_doodle;
+    sf::Vector2i m_increment;
 };
 
 
