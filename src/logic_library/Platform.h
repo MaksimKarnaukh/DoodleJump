@@ -7,7 +7,7 @@
 
 #include "EntityModel.h"
 
-class Platform: public EntityModel {
+class Platform: public logic::EntityModel {
 
 };
 

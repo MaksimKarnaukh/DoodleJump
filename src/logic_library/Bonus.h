@@ -7,9 +7,16 @@
 
 #include "EntityModel.h"
 
-class Bonus: public EntityModel {
+namespace logic {
 
-};
+    class Bonus: public logic::EntityModel {
+
+        Bonus();
+
+    };
+
+}
+
 
 
 #endif //DOODLEJUMP_BONUS_H

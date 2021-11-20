@@ -5,10 +5,22 @@
 #ifndef DOODLEJUMP_OBSERVER_H
 #define DOODLEJUMP_OBSERVER_H
 
+#include "Subject.h"
 
-class Observer {
+namespace logic {
 
-};
+    class Observer {
+
+        Observer();
+
+    public:
+
+        void update();
+
+    };
+
+}
+
 
 
 #endif //DOODLEJUMP_OBSERVER_H

@@ -7,7 +7,7 @@
 
 #include "EntityModel.h"
 
-class Player: public EntityModel {
+class Player: public logic::EntityModel {
 
 };
 

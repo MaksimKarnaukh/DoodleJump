@@ -8,7 +8,7 @@ Game::Game(): m_window("window", sf::Vector2u(640,960)){
     // Setting up class members.
     m_doodleTexture.loadFromFile("assets/DoodleJumper/doodle-right.png");
     m_doodle.setTexture(m_doodleTexture);
-    m_doodle.setScale(0.2,0.2);
+    m_doodle.setScale(0.25,0.25);
 
     m_increment = sf::Vector2f(100, 100); // original vector2i
 }
@@ -26,12 +26,12 @@ void Game::MoveDoodle(){
     sf::Vector2u l_windSize = m_window.GetWindowSize();
     sf::Vector2u l_textSize = m_doodleTexture.getSize();
     if((m_doodle.getPosition().x >
-        l_windSize.x - l_textSize.x*0.2&&m_increment.x> 0) ||
+        l_windSize.x - l_textSize.x*0.25&&m_increment.x> 0) ||
        (m_doodle.getPosition().x < 0 &&m_increment.x< 0)){
         m_increment.x = -m_increment.x;
     }
     if((m_doodle.getPosition().y >
-        l_windSize.y - l_textSize.y*0.2&&m_increment.y> 0) ||
+        l_windSize.y - l_textSize.y*0.25&&m_increment.y> 0) ||
        (m_doodle.getPosition().y < 0 &&m_increment.y< 0)){
         m_increment.y = -m_increment.y;
     }

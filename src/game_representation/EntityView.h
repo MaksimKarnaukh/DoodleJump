@@ -7,7 +7,7 @@
 
 #include "../logic_library/Observer.h"
 
-class EntityView: public Observer {
+class EntityView: public logic::Observer {
 
 };
 

@@ -7,7 +7,7 @@
 
 #include "Observer.h"
 
-class Score: public Observer {
+class Score: public logic::Observer {
 
 };
 

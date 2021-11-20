@@ -7,9 +7,15 @@
 
 #include "EntityModel.h"
 
-class BGTile: public EntityModel {
+namespace logic {
 
-};
+    class BGTile: public logic::EntityModel {
+
+        BGTile();
+    };
+
+}
+
 
 
 #endif //DOODLEJUMP_BGTILE_H

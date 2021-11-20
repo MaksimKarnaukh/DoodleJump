@@ -18,13 +18,13 @@ int main() {
         if (stopwatch->getDeltaTime() >= (1 / frameRate)) {
 
             stopwatch->Reset();
-            std::cout << stopwatch->getDeltaTime() << "  " << 1 / stopwatch->getDeltaTime() << std::endl;
+            std::cout /* << stopwatch->getDeltaTime() << "  " */ << 1 / stopwatch->getDeltaTime() << std::endl;
 
             // Game loop.
             game.HandleInput();
             game.Update();
             game.Render();
-            //sf::sleep(sf::seconds(0.05));
+            //sf::sleep(sf::seconds(0.2));
 
         }
     }

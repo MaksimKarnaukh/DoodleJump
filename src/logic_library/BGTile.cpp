@@ -3,3 +3,11 @@
 //
 
 #include "BGTile.h"
+
+namespace logic {
+
+    BGTile::BGTile() {
+
+    }
+}
+
