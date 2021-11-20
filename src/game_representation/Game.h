@@ -23,7 +23,7 @@ private:
 
     sf::Texture m_doodleTexture;
     sf::Sprite m_doodle;
-    sf::Vector2i m_increment;
+    sf::Vector2f m_increment;
 };
 
 

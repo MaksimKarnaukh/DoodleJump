@@ -7,6 +7,9 @@
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
+#include <iostream>
+
+using namespace std;
 
 class Window {
 public:
