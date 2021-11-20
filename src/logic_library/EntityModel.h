@@ -19,6 +19,8 @@ namespace logic {
 
         double e_speed; // velocity
 
+    public:
+
         void setWidth(double width) {
             e_width = width;
         }

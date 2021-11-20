@@ -8,11 +8,11 @@
 
 #include <vector>
 #include <string>
-#include "Observer.h"
-
-class Observer;
+//#include "Observer.h"
 
 namespace logic {
+
+    class Observer;
 
     class Subject {
 

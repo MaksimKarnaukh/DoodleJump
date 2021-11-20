@@ -7,13 +7,17 @@
 
 #include "Subject.h"
 
+class Subject;
+
 namespace logic {
 
     class Observer {
 
-        Observer();
+        Subject mSubject;
 
     public:
+
+        Observer(const Subject &subject);
 
         void update();
 

@@ -4,6 +4,8 @@
 
 #include "Subject.h"
 
+#include "Observer.h"
+
 namespace logic {
     logic::Subject::Subject() = default;
 
