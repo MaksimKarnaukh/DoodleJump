@@ -6,6 +6,7 @@
 #define DOODLEJUMP_GAME_H
 
 #include "Window.h"
+#include "../logic_library/Stopwatch.h"
 
 class Game {
 
@@ -24,6 +25,15 @@ private:
     sf::Texture m_doodleTexture;
     sf::Sprite m_doodle;
     sf::Vector2f m_increment;
+
+public:
+
+    float getElapsed();
+//    void restartClock();
+
+private:
+
+
 };
 
 

@@ -42,12 +42,12 @@ namespace logic {
         mTimeScale = t;
     }
 
-    float Stopwatch::getTimeScale() {
+    float Stopwatch::getTimeScale() const {
         return mTimeScale;
     }
 
     void Stopwatch::tick() {
-        mDeltaTime = std::chrono::system_clock::now() - mStartTime;
+        mDeltaTime = std::chrono::system_clock::now()-mStartTime;
     }
 }
 

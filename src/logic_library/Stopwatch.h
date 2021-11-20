@@ -22,13 +22,13 @@ namespace logic {
         static Stopwatch* Instance();
         static void release();
 
-        void Reset();
+        void Reset(); // resets timer
 
         float getDeltaTime();
 
         void setTimeScale(float t = 1.0f);
 
-        float getTimeScale();
+        float getTimeScale() const;
 
         void tick();
 

@@ -10,7 +10,7 @@ Game::Game(): m_window("window", sf::Vector2u(640,960)){
     m_doodle.setTexture(m_doodleTexture);
     m_doodle.setScale(0.2,0.2);
 
-    m_increment = sf::Vector2f(0.2, 0.2); // original vector2i
+    m_increment = sf::Vector2f(100, 100); // original vector2i
 }
 
 Game::~Game(){}
@@ -20,6 +20,9 @@ void Game::Update(){
     MoveDoodle();
 }
 void Game::MoveDoodle(){
+
+    float fElapsed = getElapsed();
+
     sf::Vector2u l_windSize = m_window.GetWindowSize();
     sf::Vector2u l_textSize = m_doodleTexture.getSize();
     if((m_doodle.getPosition().x >
@@ -33,8 +36,8 @@ void Game::MoveDoodle(){
         m_increment.y = -m_increment.y;
     }
     m_doodle.setPosition(
-            m_doodle.getPosition().x + m_increment.x,
-            m_doodle.getPosition().y + m_increment.y);
+            m_doodle.getPosition().x + m_increment.x*fElapsed,
+            m_doodle.getPosition().y + m_increment.y*fElapsed);
 }
 
 void Game::Render(){
@@ -55,3 +58,11 @@ void Game::HandleInput() {
 Window *Game::GetWindow() {
     return &m_window;
 }
+
+float Game::getElapsed() {
+    return logic::Stopwatch::Instance()->getDeltaTime();
+}
+
+//void Game::restartClock() {
+//    logic::Stopwatch::Instance()->Reset();
+//}
