@@ -6,9 +6,15 @@
 #define DOODLEJUMP_WORLD_H
 
 
-class World {
 
-};
+namespace logic {
+
+    class World {
+
+    };
+
+}
+
 
 
 #endif //DOODLEJUMP_WORLD_H

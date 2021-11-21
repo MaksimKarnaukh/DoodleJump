@@ -7,9 +7,14 @@
 
 #include "EntityModel.h"
 
-class Platform: public logic::EntityModel {
+namespace logic {
 
-};
+    class Platform: public logic::EntityModel {
+
+    };
+
+}
+
 
 
 #endif //DOODLEJUMP_PLATFORM_H

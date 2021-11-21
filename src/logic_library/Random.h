@@ -5,10 +5,14 @@
 #ifndef DOODLEJUMP_RANDOM_H
 #define DOODLEJUMP_RANDOM_H
 
+#include <random>
 
-class Random {
+namespace logic {
 
-};
+    class Random {
 
+    };
+
+}
 
 #endif //DOODLEJUMP_RANDOM_H

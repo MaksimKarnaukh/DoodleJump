@@ -7,9 +7,14 @@
 
 #include "Platform.h"
 
-class Platform_Vertical: public Platform {
+namespace logic {
 
-};
+    class Platform_Vertical: public Platform {
+
+    };
+
+}
+
 
 
 #endif //DOODLEJUMP_PLATFORM_VERTICAL_H

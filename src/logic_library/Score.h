@@ -7,9 +7,14 @@
 
 #include "Observer.h"
 
-class Score: public logic::Observer {
+namespace logic {
 
-};
+    class Score: public logic::Observer {
+
+    };
+
+}
+
 
 
 #endif //DOODLEJUMP_SCORE_H

@@ -7,9 +7,14 @@
 
 #include "Platform.h"
 
-class Platform_Temporary: public Platform {
+namespace logic {
 
-};
+    class Platform_Temporary: public Platform {
+
+    };
+
+}
+
 
 
 #endif //DOODLEJUMP_PLATFORM_TEMPORARY_H

@@ -3,3 +3,7 @@
 //
 
 #include "Platform_Horizontal.h"
+
+namespace logic {
+
+}

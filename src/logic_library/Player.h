@@ -7,9 +7,14 @@
 
 #include "EntityModel.h"
 
-class Player: public logic::EntityModel {
+namespace logic {
 
-};
+    class Player: public logic::EntityModel {
+
+    };
+
+}
+
 
 
 #endif //DOODLEJUMP_PLAYER_H

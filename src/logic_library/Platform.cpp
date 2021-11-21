@@ -3,3 +3,7 @@
 //
 
 #include "Platform.h"
+
+namespace logic {
+
+}

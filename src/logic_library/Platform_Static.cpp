@@ -3,3 +3,7 @@
 //
 
 #include "Platform_Static.h"
+
+namespace logic {
+
+}
