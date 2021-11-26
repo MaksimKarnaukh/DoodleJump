@@ -8,33 +8,37 @@
 #include "Window.h"
 #include "../logic_library/Stopwatch.h"
 
-class Game {
+namespace representation {
 
-public:
-    Game();
-    ~Game();
-    void HandleInput();
-    void Update();
-    void Render();
-    Window* GetWindow();
+    class Game {
 
-private:
-    void MoveDoodle();
-    Window m_window;
+    public:
+        Game();
+        ~Game();
+        void HandleInput();
+        void Update();
+        void Render();
+        Window* GetWindow();
 
-    sf::Texture m_doodleTexture;
-    sf::Sprite m_doodle;
-    sf::Vector2f m_increment;
+    private:
+        void MoveDoodle();
+        Window m_window;
 
-public:
+        sf::Texture m_doodleTexture;
+        sf::Sprite m_doodle;
+        sf::Vector2f m_increment;
 
-    float getElapsed();
+    public:
+
+        float getElapsed();
 //    void restartClock();
 
-private:
+    private:
 
 
-};
+    };
+}
+
 
 
 #endif //DOODLEJUMP_GAME_H

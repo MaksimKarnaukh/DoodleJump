@@ -57,10 +57,6 @@ namespace logic {
 
         EntityModel();
 
-        void moveLeft();
-
-        void moveRight();
-
         void update();
 
     };

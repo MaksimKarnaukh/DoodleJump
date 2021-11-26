@@ -11,6 +11,12 @@ namespace logic {
 
     class Player: public logic::EntityModel {
 
+    public:
+
+        void moveLeft();
+
+        void moveRight();
+
     };
 
 }

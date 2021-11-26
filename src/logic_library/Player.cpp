@@ -3,3 +3,11 @@
 //
 
 #include "Player.h"
+
+void logic::Player::moveLeft() {
+
+}
+
+void logic::Player::moveRight() {
+
+}

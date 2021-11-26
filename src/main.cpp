@@ -6,7 +6,7 @@
 int main() {
 
     // Program entry point.
-    Game game; // Creating our game object.
+    representation::Game game; // Creating our game object.
 
     logic::Stopwatch* stopwatch = logic::Stopwatch::Instance();
 
@@ -19,7 +19,7 @@ int main() {
         if (stopwatch->getDeltaTime() < (1 / frameRate)) {
             std::chrono::milliseconds ms = std::chrono::milliseconds((int)(((1/frameRate) - stopwatch->getDeltaTime())*1000));
             std::this_thread::sleep_for(ms);
-            std::cout << ms.count() << endl; ////
+            std::cout << ms.count() << std::endl; ////
         }
 
         stopwatch->tick(); // de verstreken milliseconden erbij.
@@ -33,6 +33,8 @@ int main() {
         game.Update();
         game.Render();
         //sf::sleep(sf::seconds(0.1));
+
+
 
     }
 

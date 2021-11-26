@@ -3,3 +3,7 @@
 //
 
 #include "AbstractFactory.h"
+
+namespace logic {
+
+}

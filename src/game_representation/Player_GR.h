@@ -5,10 +5,14 @@
 #ifndef DOODLEJUMP_PLAYER_GR_H
 #define DOODLEJUMP_PLAYER_GR_H
 
+namespace representation {
 
-class Player_GR {
+    class Player_GR {
 
-};
+    };
+
+}
+
 
 
 #endif //DOODLEJUMP_PLAYER_GR_H

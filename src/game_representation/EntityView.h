@@ -7,9 +7,14 @@
 
 #include "../logic_library/Observer.h"
 
-class EntityView: public logic::Observer {
+namespace representation {
 
-};
+    class EntityView: public logic::Observer {
+
+    };
+
+}
+
 
 
 #endif //DOODLEJUMP_ENTITYVIEW_H

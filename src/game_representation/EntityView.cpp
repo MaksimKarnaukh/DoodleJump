@@ -3,3 +3,7 @@
 //
 
 #include "EntityView.h"
+
+namespace representation {
+
+}

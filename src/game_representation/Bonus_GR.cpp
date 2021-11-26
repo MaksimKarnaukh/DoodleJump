@@ -3,3 +3,7 @@
 //
 
 #include "Bonus_GR.h"
+
+namespace representation {
+
+}

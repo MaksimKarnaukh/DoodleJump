@@ -7,9 +7,14 @@
 
 #include "../logic_library/AbstractFactory.h"
 
-class ConcreteFactory: public AbstractFactory {
+namespace representation {
 
-};
+    class ConcreteFactory: public logic::AbstractFactory {
+
+    };
+
+}
+
 
 
 #endif //DOODLEJUMP_CONCRETEFACTORY_H

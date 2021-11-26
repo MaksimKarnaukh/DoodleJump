@@ -3,3 +3,7 @@
 //
 
 #include "BGTile_GR.h"
+
+namespace representation {
+
+}

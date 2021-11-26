@@ -5,10 +5,15 @@
 #ifndef DOODLEJUMP_PLATFORM_GR_H
 #define DOODLEJUMP_PLATFORM_GR_H
 
+namespace representation {
 
-class Platform_GR {
+    class Platform_GR {
 
-};
+    };
+
+}
+
+
 
 
 #endif //DOODLEJUMP_PLATFORM_GR_H

@@ -5,10 +5,14 @@
 #ifndef DOODLEJUMP_ABSTRACTFACTORY_H
 #define DOODLEJUMP_ABSTRACTFACTORY_H
 
+namespace logic {
 
-class AbstractFactory {
+    class AbstractFactory {
 
-};
+    };
+
+}
+
 
 
 #endif //DOODLEJUMP_ABSTRACTFACTORY_H

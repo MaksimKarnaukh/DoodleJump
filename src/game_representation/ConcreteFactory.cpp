@@ -3,3 +3,7 @@
 //
 
 #include "ConcreteFactory.h"
+
+namespace representation {
+
+}

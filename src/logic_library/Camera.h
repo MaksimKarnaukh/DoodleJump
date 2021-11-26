@@ -5,10 +5,14 @@
 #ifndef DOODLEJUMP_CAMERA_H
 #define DOODLEJUMP_CAMERA_H
 
+namespace logic {
 
-class Camera {
+    class Camera {
 
-};
+    };
+
+}
+
 
 
 #endif //DOODLEJUMP_CAMERA_H
