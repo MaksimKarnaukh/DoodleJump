@@ -21,7 +21,7 @@ namespace representation {
     }
 
     Window::Window() {
-        Setup("Doodle Jump", sf::Vector2u(640,480));
+        Setup("Doodle Jump", sf::Vector2u(640,960));
     }
 
     Window::Window(const std::string& l_title, const sf::Vector2u& l_size) {
@@ -59,9 +59,6 @@ namespace representation {
                 ToggleFullscreen();
             }
         }
-//    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-//        ToggleFullscreen();
-//    };
     }
 
     void Window::ToggleFullscreen(){

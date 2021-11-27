@@ -13,11 +13,15 @@ namespace logic {
 
     class Observer {
 
-        Subject mSubject;
+    protected:
+
+        std::shared_ptr<logic::Subject> mSubject;
 
     public:
 
-        Observer(const Subject &subject);
+        Observer();
+
+        Observer(std::shared_ptr<logic::Subject> subject);
 
         void update();
 

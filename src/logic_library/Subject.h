@@ -8,6 +8,7 @@
 
 #include <vector>
 #include <string>
+#include <memory>
 //#include "Observer.h"
 
 namespace logic {
@@ -16,17 +17,23 @@ namespace logic {
 
     class Subject {
 
-        std::vector<Observer*> observers;
+        std::vector<std::shared_ptr<Observer>> observers;
 
     public:
 
         Subject();
 
-        void registerObserver(Observer* observer);
+        void registerObserver(const std::shared_ptr<Observer> observer);
 
-        void removeObserver(Observer* observer);
+        void removeObserver(const std::shared_ptr<Observer> observer);
 
         void notifyObservers();
+
+
+
+        virtual float getPositionX() const = 0;
+
+        virtual float getPositionY() const = 0;
     };
 }
 

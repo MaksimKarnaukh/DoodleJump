@@ -8,9 +8,15 @@
 
 namespace logic {
 
-    Observer::Observer(const logic::Subject &subject) {
+    Observer::Observer(std::shared_ptr<logic::Subject> subject) {
         mSubject = subject;
     }
+
+    void Observer::update() {
+
+    }
+
+    Observer::Observer() = default;
 
 }
 

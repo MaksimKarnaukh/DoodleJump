@@ -7,6 +7,7 @@
 
 #include "Window.h"
 #include "../logic_library/Stopwatch.h"
+#include "../logic_library/World.h"
 
 namespace representation {
 
@@ -21,20 +22,16 @@ namespace representation {
         Window* GetWindow();
 
     private:
-        void MoveDoodle();
-        Window m_window;
 
-        sf::Texture m_doodleTexture;
-        sf::Sprite m_doodle;
-        sf::Vector2f m_increment;
+        Window m_window;
+        //representation::Window* m_window = representation::Window::Instance();
+
+        logic::World world;
 
     public:
 
         float getElapsed();
 //    void restartClock();
-
-    private:
-
 
     };
 }

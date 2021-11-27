@@ -11,46 +11,65 @@ namespace logic {
 
     class EntityModel: public logic::Subject {
 
-        double e_width; // size
-        double e_height;
+    protected:
 
-        double x_pos; // position
-        double y_pos;
+        float e_width; // size
+        float e_height;
 
-        double e_speed; // velocity
+        float x_pos; // position
+        float y_pos;
 
-    public:
+        float e_speed; // velocity
+        float unit; // unit of distance
 
-        void setWidth(double width) {
+    public: // getters en setters
+
+        void setWidth(float width) {
             e_width = width;
         }
 
-        void setHeight(double height) {
+        void setHeight(float height) {
             e_height = height;
         }
 
-        void setPositionX(double posX) {
+        void setPositionX(float posX) {
             x_pos = posX;
         }
 
-        void setPositionY(double posY) {
+        void setPositionY(float posY) {
             y_pos = posY;
         }
 
-        double getWidth() const {
+        void setSpeed(float speed) {
+            e_speed = speed;
+        }
+
+        void setUnitOfDistance(float unitOfDistance) {
+            unit = unitOfDistance;
+        }
+
+        float getWidth() const {
             return e_width;
         }
 
-        double getHeight() const {
+        float getHeight() const {
             return e_height;
         }
 
-        double getPositionX() const {
+        float getPositionX() const override {
             return x_pos;
         }
 
-        double getPositionY() const {
+        float getPositionY() const override {
             return y_pos;
+        }
+
+        float getSpeed() const {
+            return e_speed;
+        }
+
+        float getUnit() const {
+            return unit;
         }
 
     public:
