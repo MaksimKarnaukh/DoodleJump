@@ -17,15 +17,17 @@ namespace logic {
 
     class Subject {
 
+    protected:
+
         std::vector<std::shared_ptr<Observer>> observers;
 
     public:
 
         Subject();
 
-        void registerObserver(const std::shared_ptr<Observer> observer);
+        void registerObserver(std::shared_ptr<Observer> observer);
 
-        void removeObserver(const std::shared_ptr<Observer> observer);
+        void removeObserver(std::shared_ptr<Observer> observer);
 
         void notifyObservers();
 
@@ -36,7 +38,5 @@ namespace logic {
         virtual float getPositionY() const = 0;
     };
 }
-
-
 
 #endif //DOODLEJUMP_SUBJECT_H

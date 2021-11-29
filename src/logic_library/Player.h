@@ -12,17 +12,26 @@ namespace logic {
 
     class Player: public logic::EntityModel {
 
+        float gravity = 20.0f;
+        float jumpVelocity = 10.0f;
+
         //int state; // state 1 = player flying up; state 0 = player falling down
 
     public:
 
         Player();
 
+        Player(float posX, float posY, float width, float height);
+
         void moveLeft();
 
         void moveRight();
 
         void jump();
+
+        void applyGravity();
+
+        void moveVertically();
 
     };
 

@@ -20,4 +20,11 @@ namespace representation {
         //sprite.setScale(0.25,0.25);
 
     }
+
+    void EntityView::update() {
+
+        sprite.setPosition(mSubject->getPositionX(), mSubject->getPositionY());
+        representation::Window::Instance()->Draw(sprite);
+
+    }
 }

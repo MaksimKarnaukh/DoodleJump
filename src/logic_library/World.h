@@ -7,25 +7,33 @@
 
 #include "Player.h"
 #include "Platform.h"
+#include "BGTile.h"
+#include "Bonus.h"
+#include "AbstractFactory.h"
+
 #include <memory>
 
 namespace logic {
 
     class World {
 
+    public:
+
         std::shared_ptr<logic::Player> doodle;
+        std::shared_ptr<logic::BGTile> bgTile;
+        std::vector<std::shared_ptr<logic::Platform>> platforms;
 
     public:
 
         World();
 
-        void moveDoodleLeft();
-
-        void moveDoodleRight();
-
-        void doodleJump();
-
         void receiveInput(std::string &key);
+
+        void isCollision();
+
+        void createEntities(const std::shared_ptr<logic::AbstractFactory>& Factory);
+
+        void update();
 
     };
 

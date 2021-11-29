@@ -8,6 +8,8 @@
 #include "Window.h"
 #include "../logic_library/Stopwatch.h"
 #include "../logic_library/World.h"
+#include "ConcreteFactory.h"
+#include <thread>
 
 namespace representation {
 
@@ -21,16 +23,19 @@ namespace representation {
         void Render();
         Window* GetWindow();
 
+        void runGameLoop();
+
     private:
 
-        Window m_window;
-        //representation::Window* m_window = representation::Window::Instance();
+        //Window m_window;
 
-        logic::World world;
+        std::shared_ptr<logic::World> world;
+
+        std::shared_ptr<logic::AbstractFactory> factory;
 
     public:
 
-        float getElapsed();
+//        float getElapsed();
 //    void restartClock();
 
     };

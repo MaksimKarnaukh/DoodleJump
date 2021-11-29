@@ -7,6 +7,7 @@
 
 #include "../logic_library/Observer.h"
 #include "SFML/Graphics.hpp"
+#include "Window.h"
 
 namespace representation {
 
@@ -28,6 +29,8 @@ namespace representation {
         sf::Sprite getSprite() {
             return sprite;
         }
+
+        void update() override;
 
     };
 

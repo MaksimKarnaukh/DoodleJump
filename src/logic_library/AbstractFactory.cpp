@@ -6,4 +6,11 @@
 
 namespace logic {
 
+    AbstractFactory::AbstractFactory() {
+
+    }
+
+
+
+
 }

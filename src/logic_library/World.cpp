@@ -10,26 +10,33 @@ namespace logic {
 
     }
 
-    void World::moveDoodleLeft() {
-        doodle->moveLeft();
-    }
-
-    void World::moveDoodleRight() {
-        doodle->moveRight();
-    }
-
-    void World::doodleJump() {
-        doodle->jump();
-    }
-
     void World::receiveInput(std::string &key) {
 
         if (key == "Left") {
-            moveDoodleLeft();
+            doodle->moveLeft();
         }
         else if (key == "Right") {
-            moveDoodleRight();
+            doodle->moveRight();
         }
+    }
+
+    void World::isCollision() {
+
+        // check for collision
+        if (doodle->getSpeed() <= 0) { // als we aan het vallen zijn
+
+        }
+        doodle->jump();
+    }
+
+    void World::createEntities(const std::shared_ptr<logic::AbstractFactory>& Factory) {
+
+        doodle = Factory->createPlayer(50, 50, 0.5, 0.5);
+
+    }
+
+    void World::update() {
+        doodle->moveVertically();
     }
 
 }

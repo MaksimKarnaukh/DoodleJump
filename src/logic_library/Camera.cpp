@@ -6,4 +6,5 @@
 
 namespace logic {
 
+    Camera::Camera() = default;
 }

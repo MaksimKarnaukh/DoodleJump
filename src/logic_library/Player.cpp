@@ -6,11 +6,14 @@
 
 namespace logic {
 
-    Player::Player() {
+    Player::Player() = default;
 
-        this->setPositionX(0.5);
-        this->setPositionY(0.5);
+    Player::Player(float posX, float posY, float width, float height) {
+        this->setPositionX(posX);
+        this->setPositionY(posY);
 
+        this->setWidth(width);
+        this->setHeight(height);
     }
 
     void Player::moveLeft() {
@@ -21,6 +24,7 @@ namespace logic {
             this->setPositionX(1 - e_width); // we zetten onze doodle aan de rechterkant
         }
 
+        notifyObservers();
     }
 
     void Player::moveRight() {
@@ -31,15 +35,27 @@ namespace logic {
             this->setPositionX(0); // we zetten onze doodle aan de linkerkant
         }
 
+        notifyObservers();
     }
 
     void Player::jump() {
 
-        e_speed = 10; // we zullen zeggen dat de zwaartekracht -20 units/s is. (In de doodle jump game online wordt een sprong gedurende ongeveer 0.5s naar boven uitgevoerd.)
+        this->setSpeed(jumpVelocity); // we zullen zeggen dat de zwaartekracht -20 units/s is. (In de doodle jump game online wordt een sprong gedurende ongeveer 0.5s naar boven uitgevoerd.)
+    }
+
+    void Player::applyGravity() {
+
+        this->setSpeed(this->getSpeed()-gravity); // na elke tick de zwaartekracht meerekenen (aftrekken)
+    }
+
+    void Player::moveVertically() {
 
         this->setPositionY(this->getPositionY()+e_speed*logic::Stopwatch::Instance()->getDeltaTime());
 
+        notifyObservers();
     }
+
+
 
 }
 

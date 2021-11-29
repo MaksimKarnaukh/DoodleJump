@@ -23,7 +23,11 @@ namespace logic {
 
         Observer(std::shared_ptr<logic::Subject> subject);
 
-        void update();
+        virtual void update();
+
+        void registerSubject(const std::shared_ptr<logic::Subject>& subject) {
+            mSubject = subject;
+        }
 
     };
 
