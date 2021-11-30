@@ -20,20 +20,12 @@ namespace logic {
 
         this->setPositionX(this->getPositionX()-unit*logic::Stopwatch::Instance()->getDeltaTime());
 
-        if((this->getPositionX() < 0)){ // links buiten window
-            this->setPositionX(1 - e_width); // we zetten onze doodle aan de rechterkant
-        }
-
         notifyObservers();
     }
 
     void Player::moveRight() {
 
         this->setPositionX(this->getPositionX()+unit*logic::Stopwatch::Instance()->getDeltaTime());
-
-        if((this->getPositionX() > 1 - e_width)){ // rechts buiten window
-            this->setPositionX(0); // we zetten onze doodle aan de linkerkant
-        }
 
         notifyObservers();
     }
@@ -45,7 +37,8 @@ namespace logic {
 
     void Player::applyGravity() {
 
-        this->setSpeed(this->getSpeed()-gravity); // na elke tick de zwaartekracht meerekenen (aftrekken)
+        // - wordt +, want (0,0) is rechts bovenaan, en naar beneden gaan betekent vergroten.
+        this->setSpeed(this->getSpeed()+gravity); // na elke tick de zwaartekracht meerekenen (aftrekken)
     }
 
     void Player::moveVertically() {
