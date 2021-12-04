@@ -20,7 +20,7 @@ namespace logic {
         float y_pos;
 
         float e_speed = 0; // velocity
-        float unit=200.0f; // unit of distance
+        float unit=1.0f; // unit of distance
 
 
     public: // getters en setters

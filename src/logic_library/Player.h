@@ -12,8 +12,8 @@ namespace logic {
 
     class Player: public logic::EntityModel {
 
-        const float gravity = 10.0f; // (In de doodle jump game online wordt een sprong gedurende ongeveer 0.5s naar boven uitgevoerd.)
-        float jumpVelocity = -50.0f; // 10
+        const float gravity = 0.1f; // (In de doodle jump game online wordt een sprong gedurende ongeveer 0.5s naar boven uitgevoerd.)
+        float jumpVelocity = -2.0f; // 10
 
     public:
 

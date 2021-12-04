@@ -11,5 +11,7 @@ namespace representation {
         mSubject = subject;
         setSpriteTexture("assets/Platforms/static_panel.png");
 
+        sprite.setScale(2, 2);
+
     }
 }

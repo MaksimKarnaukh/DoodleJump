@@ -29,6 +29,7 @@ namespace representation {
         representation::Window::Instance()->BeginDraw(); // Clear.
 
         world->doodle->notifyObservers();
+        world->platforms[0]->notifyObservers();
 
         std::cout << "x =" << world->doodle->getPositionX() <<  "   ";
         std::cout << "y =" << world->doodle->getPositionY() << std::endl;

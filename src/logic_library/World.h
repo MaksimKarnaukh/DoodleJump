@@ -5,6 +5,7 @@
 #ifndef DOODLEJUMP_WORLD_H
 #define DOODLEJUMP_WORLD_H
 
+#include "iostream"
 #include "Player.h"
 #include "Platform.h"
 #include "BGTile.h"

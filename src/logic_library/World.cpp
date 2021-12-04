@@ -33,21 +33,22 @@ namespace logic {
                 doodle->jump(); //
             }
 
-//            // checken of we een platform raken.
-//            for (int pl = 0; pl < platforms.size(); pl++) {
-//
-//                // checken of het midden van de doodle tussen de uiteinden van het platform zit
-//                if (doodle->getPositionX()+doodle->getWidth()/2 >= platforms[pl]->getPositionX() &&
-//                doodle->getPositionX()+doodle->getWidth()/2 <= platforms[pl]->getPositionX()+platforms[pl]->getWidth()) {
-//
-//                    // checken op de y-coordinaten
-//                    if (doodle->getPositionY()+doodle->getHeight() == platforms[pl]->getPositionY()) {
-//
-//                        doodle->jump();
-//                    }
-//                }
-//            }
+            // checken of we een platform raken.
+            for (int pl = 0; pl < platforms.size(); pl++) {
 
+                // checken of het midden van de doodle tussen de uiteinden van het platform zit
+                if (doodle->getPositionX()+doodle->getWidth()/2 >= platforms[pl]->getPositionX() &&
+                doodle->getPositionX()+doodle->getWidth()/2 <= platforms[pl]->getPositionX()+platforms[pl]->getWidth()) {
+
+                    // checken op de y-coordinaten
+                    if (doodle->getPositionY()+doodle->getHeight() >= platforms[pl]->getPositionY()-platforms[pl]->getHeight()/3 &&
+                            doodle->getPositionY()+doodle->getHeight() <= platforms[pl]->getPositionY()+platforms[pl]->getHeight()/3) {
+
+                        doodle->jump();
+                        std::cout << "jump" << std::endl;
+                    }
+                }
+            }
         }
     }
 
@@ -55,8 +56,8 @@ namespace logic {
 
         doodle = Factory->createPlayer(0.5, 0.5, 0.1, 0.1);
 
-//        std::shared_ptr<logic::Platform> p = Factory->createPlatform(0.5, 0.7, 0.1, 0.1);
-//        platforms.push_back(p);
+        std::shared_ptr<logic::Platform> p = Factory->createPlatform(0.5, 0.9, 0.1, 0.5);
+        platforms.push_back(p);
 
     }
 
