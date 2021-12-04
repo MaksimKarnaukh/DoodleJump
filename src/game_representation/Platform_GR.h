@@ -5,9 +5,15 @@
 #ifndef DOODLEJUMP_PLATFORM_GR_H
 #define DOODLEJUMP_PLATFORM_GR_H
 
+#include "EntityView.h"
+
 namespace representation {
 
-    class Platform_GR {
+    class Platform_GR: public EntityView {
+
+    public:
+
+        Platform_GR();
 
     };
 

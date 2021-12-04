@@ -7,12 +7,16 @@
 
 #include "../logic_library/AbstractFactory.h"
 #include "../game_representation/Player_GR.h"
+#include "../game_representation/Platform_Static_GR.h"
 
 namespace representation {
 
     class ConcreteFactory: public logic::AbstractFactory {
 
         std::shared_ptr<logic::Player> createPlayer(float posX, float posY, float width, float height) override;
+
+        std::shared_ptr<logic::Platform> createPlatform(float posX, float posY, float width, float height) override;
+
     };
 
 }

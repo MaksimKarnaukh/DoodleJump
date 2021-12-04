@@ -29,7 +29,7 @@ namespace logic {
 
         void receiveInput(std::string &key);
 
-        void isCollision();
+        void checkForCollision();
 
         void createEntities(const std::shared_ptr<logic::AbstractFactory>& Factory);
 

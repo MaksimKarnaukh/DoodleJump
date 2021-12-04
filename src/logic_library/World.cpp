@@ -6,47 +6,66 @@
 
 namespace logic {
 
-    World::World() {
-
-    }
+    World::World() = default;
 
     void World::receiveInput(std::string &key) {
 
         if (key == "Left") {
             doodle->moveLeft();
             if((doodle->getPositionX() < 0)){ // links buiten window
-                doodle->setPositionX(1*640 - doodle->getWidth()); // we zetten onze doodle aan de rechterkant
+                doodle->setPositionX(1 - doodle->getWidth()); // we zetten onze doodle aan de rechterkant
             }
         }
         else if (key == "Right") {
             doodle->moveRight();
-            if((doodle->getPositionX() > 1*640 - doodle->getWidth())){ // rechts buiten window
+            if((doodle->getPositionX() > 1 - doodle->getWidth())){ // rechts buiten window
                 doodle->setPositionX(0); // we zetten onze doodle aan de linkerkant
             }
         }
     }
 
-    void World::isCollision() {
+    void World::checkForCollision() {
 
         // check for collision
         if (doodle->getSpeed() >= 0) { // als we aan het vallen zijn
-            if((doodle->getPositionY() >= 850)){ // rechts buiten window
-                doodle->jump(); // we zetten onze doodle aan de linkerkant
+
+            if((doodle->getPositionY()+doodle->getHeight() >= 1)){ //
+                doodle->jump(); //
             }
+
+//            // checken of we een platform raken.
+//            for (int pl = 0; pl < platforms.size(); pl++) {
+//
+//                // checken of het midden van de doodle tussen de uiteinden van het platform zit
+//                if (doodle->getPositionX()+doodle->getWidth()/2 >= platforms[pl]->getPositionX() &&
+//                doodle->getPositionX()+doodle->getWidth()/2 <= platforms[pl]->getPositionX()+platforms[pl]->getWidth()) {
+//
+//                    // checken op de y-coordinaten
+//                    if (doodle->getPositionY()+doodle->getHeight() == platforms[pl]->getPositionY()) {
+//
+//                        doodle->jump();
+//                    }
+//                }
+//            }
+
         }
     }
 
     void World::createEntities(const std::shared_ptr<logic::AbstractFactory>& Factory) {
 
-        doodle = Factory->createPlayer(100, 100, 10, 10);
+        doodle = Factory->createPlayer(0.5, 0.5, 0.1, 0.1);
+
+//        std::shared_ptr<logic::Platform> p = Factory->createPlatform(0.5, 0.7, 0.1, 0.1);
+//        platforms.push_back(p);
 
     }
 
     void World::update() {
+
         doodle->applyGravity();
         doodle->moveVertically();
-        isCollision();
-    }
+        checkForCollision();
 
+    }
 }
 

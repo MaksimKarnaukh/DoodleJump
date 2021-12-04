@@ -12,6 +12,7 @@ namespace representation {
 
         representation::Window* m_window = representation::Window::Instance();
         m_window->Setup("Doodle Jump", sf::Vector2u(640,960));
+
         world = std::make_shared<logic::World>();
         factory = std::make_shared<representation::ConcreteFactory>();
         world->createEntities(factory);
@@ -29,7 +30,8 @@ namespace representation {
 
         world->doodle->notifyObservers();
 
-        std::cout << world->doodle->getPositionY() << std::endl;
+        std::cout << "x =" << world->doodle->getPositionX() <<  "   ";
+        std::cout << "y =" << world->doodle->getPositionY() << std::endl;
 
         //representation::Window::Instance()->Draw(world->doodle.);
 
@@ -73,7 +75,7 @@ namespace representation {
             if (stopwatch->getDeltaTime() < (1 / frameRate)) {
                 std::chrono::milliseconds ms = std::chrono::milliseconds((int)(((1/frameRate) - stopwatch->getDeltaTime())*1000));
                 std::this_thread::sleep_for(ms);
-                std::cout << ms.count() << std::endl; ////
+                // std::cout << ms.count() << std::endl; ////
             }
 
             stopwatch->tick(); // de verstreken milliseconden erbij.

@@ -11,6 +11,10 @@ namespace logic {
 
     class Platform: public logic::EntityModel {
 
+    public:
+
+        Platform();
+
     };
 
 }

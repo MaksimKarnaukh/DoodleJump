@@ -30,6 +30,10 @@ namespace representation {
             return sprite;
         }
 
+        sf::Texture getTexture() {
+            return texture;
+        }
+
         void update() override;
 
     };

@@ -32,12 +32,12 @@ namespace logic {
 
     void Player::jump() {
 
-        this->setSpeed(jumpVelocity); // we zullen zeggen dat de zwaartekracht -20 units/s is. (In de doodle jump game online wordt een sprong gedurende ongeveer 0.5s naar boven uitgevoerd.)
+        this->setSpeed(jumpVelocity);
     }
 
     void Player::applyGravity() {
 
-        // - wordt +, want (0,0) is rechts bovenaan, en naar beneden gaan betekent vergroten.
+        // - wordt +, want (0,0) is links bovenaan, en naar beneden gaan betekent vergroten.
         this->setSpeed(this->getSpeed()+gravity); // na elke tick de zwaartekracht meerekenen (aftrekken)
     }
 
@@ -47,8 +47,6 @@ namespace logic {
 
         notifyObservers();
     }
-
-
 
 }
 

@@ -7,6 +7,8 @@
 
 #include "Player.h"
 #include "Observer.h"
+#include "Platform.h"
+#include "Platform_Static.h"
 
 namespace logic {
 
@@ -17,6 +19,8 @@ namespace logic {
         AbstractFactory();
 
         virtual std::shared_ptr<logic::Player> createPlayer(float posX, float posY, float width, float height) = 0;
+
+        virtual std::shared_ptr<logic::Platform> createPlatform(float posX, float posY, float width, float height) = 0;
 
     };
 

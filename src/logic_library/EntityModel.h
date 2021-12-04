@@ -19,7 +19,7 @@ namespace logic {
         float x_pos; // position
         float y_pos;
 
-        float e_speed; // velocity
+        float e_speed = 0; // velocity
         float unit=200.0f; // unit of distance
 
 

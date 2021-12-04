@@ -6,4 +6,10 @@
 
 namespace representation {
 
+    Platform_Static_GR::Platform_Static_GR(const std::shared_ptr<logic::Subject>& subject) {
+
+        mSubject = subject;
+        setSpriteTexture("assets/Platforms/static_panel.png");
+
+    }
 }

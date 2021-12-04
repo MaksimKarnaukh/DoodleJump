@@ -6,4 +6,7 @@
 
 namespace logic {
 
+    Platform::Platform() {
+
+    }
 }
