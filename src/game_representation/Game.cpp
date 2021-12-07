@@ -36,7 +36,7 @@ namespace representation {
         std::cout << "x =" << world->doodle->getPositionX() <<  "   ";
         std::cout << "y =" << world->doodle->getPositionY() << "   ";
         std::cout << "w =" << world->doodle->getWidth() << "   ";
-        std::cout << "h =" << world->doodle->getHeight() << "   ";
+        std::cout << "h =" << world->doodle->getHeight() << "   " << std::endl;
 //        std::cout << "pl.x =" << world->platforms[0]->getPositionX() << "   ";
 //        std::cout << "pl.y =" << world->platforms[0]->getPositionY() << "   ";
 //        std::cout << "pl.w =" << world->platforms[0]->getWidth() << "   ";

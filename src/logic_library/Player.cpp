@@ -21,6 +21,7 @@ namespace logic {
         this->setPositionX(this->getPositionX()-unit*logic::Stopwatch::Instance()->getDeltaTime());
 
         notifyObservers();
+
     }
 
     void Player::moveRight() {
@@ -28,6 +29,7 @@ namespace logic {
         this->setPositionX(this->getPositionX()+unit*logic::Stopwatch::Instance()->getDeltaTime());
 
         notifyObservers();
+
     }
 
     void Player::jump() {
@@ -47,8 +49,8 @@ namespace logic {
 
         notifyObservers();
 
-        setPreviousPositionX(getPositionX());
-        setPreviousPositionY(getPositionY());
+        //setPreviousPositionX(getPositionX());
+        //setPreviousPositionY(getPositionY());
     }
 
 }

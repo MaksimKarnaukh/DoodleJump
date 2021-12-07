@@ -32,7 +32,9 @@ namespace logic {
         float y0 = doodle->getPreviousPositionY();
 
         float x1 = doodle->getPositionX();
-        float y1 = doodle->getPositionX();
+        float y1 = doodle->getPositionY();
+
+        std::vector<std::pair<float,float>> middleLine = getLineBetweenPoints(x0, y0, x1, y1);
 
         std::cout << " " << x0 << " " << y0 << " " << x1 << " " << y1 << std::endl;
 
@@ -44,23 +46,20 @@ namespace logic {
         for (int pl = 0; pl < platforms.size(); pl++) {
 
             // checken of het midden van de doodle tussen de uiteinden van het platform zit
-//                if (doodle->getPositionX()+doodle->getWidth()/2 >= platforms[pl]->getPositionX() &&
-//                doodle->getPositionX()+doodle->getWidth()/2 <= platforms[pl]->getPositionX()+platforms[pl]->getWidth()) {
-//
-//                    // checken op de y-coordinaten
-//                    if (doodle->getPositionY()+doodle->getHeight() >= platforms[pl]->getPositionY()-platforms[pl]->getHeight()/2 &&
-//                            doodle->getPositionY()+doodle->getHeight() <= platforms[pl]->getPositionY()+platforms[pl]->getHeight()/2) {
-//
-//                        doodle->jump();
-//                    }
-//                }
+            if (doodle->getPositionX()+doodle->getWidth()/2 >= platforms[pl]->getPositionX() &&
+            doodle->getPositionX()+doodle->getWidth()/2 <= platforms[pl]->getPositionX()+platforms[pl]->getWidth()) {
 
+                // checken op de y-coordinaten
+                if (doodle->getPositionY()+doodle->getHeight() >= platforms[pl]->getPositionY()-platforms[pl]->getHeight()/2 &&
+                        doodle->getPositionY()+doodle->getHeight() <= platforms[pl]->getPositionY()+platforms[pl]->getHeight()/2) {
 
+                    doodle->jump();
+                }
+            }
 
-            std::vector<std::pair<float,float>> middleLine = getLineBetweenPoints(x0, y0, x1, y1);
-
-            if (checkForUndetectedCollision(platforms[pl], middleLine)) {
+            if (checkForUndetectedCollision(platforms[pl], middleLine)) { // backup check
                 doodle->jump();
+                std::cout << "jump" << std::endl;
                 break;
             }
 
@@ -72,7 +71,7 @@ namespace logic {
 
         doodle = Factory->createPlayer(0.5, 0.5, 0.077, 0.128);
 
-        std::shared_ptr<logic::Platform> p = Factory->createPlatform(0.5, 0.9, 0.174, 0.05);
+        std::shared_ptr<logic::Platform> p = Factory->createPlatform(0.5, 0.8, 0.174, 0.05);
         platforms.push_back(p);
 
         std::shared_ptr<logic::Platform> p1 = Factory->createPlatform(0.2, 0.5, 0.174, 0.05);
@@ -91,8 +90,8 @@ namespace logic {
         if (doodle->getSpeed() >= 0) { // als we aan het vallen zijn
             checkForCollision();
         }
-        //doodle->setPreviousPositionX(doodle->getPositionX());
-        //doodle->setPreviousPositionY(doodle->getPositionY());
+        doodle->setPreviousPositionX(doodle->getPositionX());
+        doodle->setPreviousPositionY(doodle->getPositionY());
 
     }
 
@@ -141,7 +140,7 @@ namespace logic {
                 std::swap(y0, y1);
             }
 
-            float m = ((float) y1 - (float) y0) / ((float) x1 - (float) x0);
+            float m = ( y1 - y0) / ( x1 - x0);
             if (-1.0 <= m && m <= 1.0) {
                 for (float i = 0; i <= (x1 - x0); i+=precisionOfIterator) {
                     line.emplace_back(x0 + i,  (y0 + m * i));
