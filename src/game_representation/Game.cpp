@@ -29,17 +29,18 @@ namespace representation {
         representation::Window::Instance()->BeginDraw(); // Clear.
 
         world->doodle->notifyObservers();
-        world->platforms[0]->notifyObservers();
+        for (auto a = 0; a < world->platforms.size(); a++) {
+            world->platforms[a]->notifyObservers();
+        }
 
         std::cout << "x =" << world->doodle->getPositionX() <<  "   ";
         std::cout << "y =" << world->doodle->getPositionY() << "   ";
         std::cout << "w =" << world->doodle->getWidth() << "   ";
         std::cout << "h =" << world->doodle->getHeight() << "   ";
-        std::cout << "pl.x =" << world->platforms[0]->getPositionX() << "   ";
-        std::cout << "pl.y =" << world->platforms[0]->getPositionY() << "   ";
-        std::cout << "pl.w =" << world->platforms[0]->getWidth() << "   ";
-        std::cout << "pl.h =" << world->platforms[0]->getHeight() << std::endl;
-
+//        std::cout << "pl.x =" << world->platforms[0]->getPositionX() << "   ";
+//        std::cout << "pl.y =" << world->platforms[0]->getPositionY() << "   ";
+//        std::cout << "pl.w =" << world->platforms[0]->getWidth() << "   ";
+//        std::cout << "pl.h =" << world->platforms[0]->getHeight() << std::endl;
 
 
         //representation::Window::Instance()->Draw(world->doodle.);

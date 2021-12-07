@@ -22,6 +22,8 @@ namespace logic {
         float e_speed = 0; // velocity (for going up and down, not right and left)
         float unit=1.0f; // unit of distance
 
+        float x_posPrevious; // position of entity in previous frame
+        float y_posPrevious;
 
     public: // getters en setters
 
@@ -39,6 +41,14 @@ namespace logic {
 
         void setPositionY(float posY) {
             y_pos = posY;
+        }
+
+        void setPreviousPositionX(float posX) {
+            x_posPrevious = posX;
+        }
+
+        void setPreviousPositionY(float posY) {
+            y_posPrevious = posY;
         }
 
         void setSpeed(float speed) {
@@ -63,6 +73,14 @@ namespace logic {
 
         float getPositionY() const override {
             return y_pos;
+        }
+
+        float getPreviousPositionX() const {
+            return x_posPrevious;
+        }
+
+        float getPreviousPositionY() const {
+            return y_posPrevious;
         }
 
         float getSpeed() const {

@@ -5,6 +5,7 @@
 #ifndef DOODLEJUMP_WORLD_H
 #define DOODLEJUMP_WORLD_H
 
+#include "cmath"
 #include "iostream"
 #include "Player.h"
 #include "Platform.h"
@@ -32,9 +33,15 @@ namespace logic {
 
         void checkForCollision();
 
+        bool checkForUndetectedCollision(const std::shared_ptr<logic::Platform>& pl, std::vector<std::pair<float,float>> &middleLine);
+
         void createEntities(const std::shared_ptr<logic::AbstractFactory>& Factory);
 
         void update();
+
+        std::vector<std::pair<float,float>> getLineBetweenPoints(float x0, float y0, float x1, float y1);
+
+
 
     };
 

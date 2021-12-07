@@ -25,7 +25,7 @@ namespace representation {
 
         sprite.setPosition(mSubject->getPositionX()*(float)representation::Window::Instance()->GetWindowSize().x, mSubject->getPositionY()*(float)representation::Window::Instance()->GetWindowSize().y);
 
-        std::cout << sprite.getPosition().x << " " << sprite.getPosition().y << std::endl;
+        //std::cout << sprite.getPosition().x << " " << sprite.getPosition().y << std::endl;
         representation::Window::Instance()->Draw(sprite);
 
     }

@@ -46,6 +46,9 @@ namespace logic {
         this->setPositionY(this->getPositionY()+e_speed*logic::Stopwatch::Instance()->getDeltaTime());
 
         notifyObservers();
+
+        setPreviousPositionX(getPositionX());
+        setPreviousPositionY(getPositionY());
     }
 
 }
