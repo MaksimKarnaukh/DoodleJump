@@ -28,17 +28,14 @@ namespace logic {
 
         // check for collision
 
-        float x0 = doodle->getPreviousPositionX();
-        float y0 = doodle->getPreviousPositionY();
-
-        float x1 = doodle->getPositionX();
-        float y1 = doodle->getPositionY();
+        float x0 = doodle->getPreviousPositionX()+doodle->getWidth()/2;
+        float y0 = doodle->getPreviousPositionY()+doodle->getHeight();
+        float x1 = doodle->getPositionX()+doodle->getWidth()/2;
+        float y1 = doodle->getPositionY()+doodle->getHeight();
 
         std::vector<std::pair<float,float>> middleLine = getLineBetweenPoints(x0, y0, x1, y1);
 
-        std::cout << " " << x0 << " " << y0 << " " << x1 << " " << y1 << std::endl;
-
-        if((doodle->getPositionY()+doodle->getHeight() >= 1)){ //
+        if((doodle->getPositionY()+doodle->getHeight() >= 1)) {
             doodle->jump(); //
         }
 
@@ -46,25 +43,22 @@ namespace logic {
         for (int pl = 0; pl < platforms.size(); pl++) {
 
             // checken of het midden van de doodle tussen de uiteinden van het platform zit
-            if (doodle->getPositionX()+doodle->getWidth()/2 >= platforms[pl]->getPositionX() &&
-            doodle->getPositionX()+doodle->getWidth()/2 <= platforms[pl]->getPositionX()+platforms[pl]->getWidth()) {
-
-                // checken op de y-coordinaten
-                if (doodle->getPositionY()+doodle->getHeight() >= platforms[pl]->getPositionY()-platforms[pl]->getHeight()/2 &&
-                        doodle->getPositionY()+doodle->getHeight() <= platforms[pl]->getPositionY()+platforms[pl]->getHeight()/2) {
-
-                    doodle->jump();
-                }
-            }
+//            if (doodle->getPositionX()+doodle->getWidth()/2 >= platforms[pl]->getPositionX() &&
+//            doodle->getPositionX()+doodle->getWidth()/2 <= platforms[pl]->getPositionX()+platforms[pl]->getWidth()) {
+//
+//                // checken op de y-coordinaten
+//                if (doodle->getPositionY()+doodle->getHeight() >= platforms[pl]->getPositionY()-platforms[pl]->getHeight()/2 &&
+//                        doodle->getPositionY()+doodle->getHeight() <= platforms[pl]->getPositionY()+platforms[pl]->getHeight()/2) {
+//
+//                    doodle->jump();
+//                }
+//            }
 
             if (checkForUndetectedCollision(platforms[pl], middleLine)) { // backup check
                 doodle->jump();
-                std::cout << "jump" << std::endl;
                 break;
             }
-
         }
-
     }
 
     void World::createEntities(const std::shared_ptr<logic::AbstractFactory>& Factory) {
@@ -90,6 +84,7 @@ namespace logic {
         if (doodle->getSpeed() >= 0) { // als we aan het vallen zijn
             checkForCollision();
         }
+
         doodle->setPreviousPositionX(doodle->getPositionX());
         doodle->setPreviousPositionY(doodle->getPositionY());
 
@@ -99,8 +94,7 @@ namespace logic {
 
         for (int i = 0; i < middleLine.size(); i++) {
 
-            //std::cout << "middleLine:  " << middleLine[i].first << "  " << middleLine[i].second << " ]" << std::endl;
-
+            // checken op de x-coordinaten
             if (middleLine[i].first >= pl->getPositionX() &&
                     middleLine[i].first <= pl->getPositionX()+pl->getWidth()) {
 

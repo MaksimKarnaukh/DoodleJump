@@ -15,9 +15,10 @@ namespace logic {
 
         std::chrono::system_clock::time_point mStartTime;
         std::chrono::duration<float> mDeltaTime;
-        float mTimeScale;
 
     public:
+
+        Stopwatch(const Stopwatch &) = delete;
 
         static Stopwatch* Instance();
         static void release();
@@ -25,10 +26,6 @@ namespace logic {
         void Reset(); // resets timer
 
         float getDeltaTime();
-
-        void setTimeScale(float t = 1.0f);
-
-        float getTimeScale() const;
 
         void tick();
 

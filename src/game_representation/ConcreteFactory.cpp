@@ -12,8 +12,8 @@ namespace representation {
         std::shared_ptr<logic::Player> playerModel(new logic::Player(posX, posY, width, height));
         std::shared_ptr<representation::Player_GR> playerView(new representation::Player_GR(playerModel));
 
-        playerModel->setWidth((float)playerView->getTexture().getSize().x*((float)1/(float)4.78896)/(float)representation::Window::Instance()->GetWindowSize().x); // *0.25
-        playerModel->setHeight((float)playerView->getTexture().getSize().y*((float)1/(float)3.637695)/(float)representation::Window::Instance()->GetWindowSize().y);
+        playerModel->setWidth(0.077); // hardcoded for logic
+        playerModel->setHeight(0.128);
 
         playerModel->registerObserver(playerView);
 

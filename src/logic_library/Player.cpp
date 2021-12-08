@@ -8,7 +8,7 @@ namespace logic {
 
     Player::Player() = default;
 
-    Player::Player(float posX, float posY, float width, float height) {
+    Player::Player(float posX, float posY, float width=0.077f, float height=0.128f) {
         this->setPositionX(posX);
         this->setPositionY(posY);
 
