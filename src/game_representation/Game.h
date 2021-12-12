@@ -21,7 +21,7 @@ namespace representation {
         void HandleInput();
         void Update();
         void Render();
-        Window* GetWindow();
+        Window& GetWindow();
 
         void runGameLoop();
 

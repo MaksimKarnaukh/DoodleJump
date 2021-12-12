@@ -11,7 +11,7 @@ namespace representation {
         mSubject = subject;
         setSpriteTexture("assets/DoodleJumper/doodle-pow.png");
 
-        sprite.setScale(0.25, 0.25);
+        sprite.setScale(1*0.077*640/236, 1*0.18*960/447);
 
     }
 }

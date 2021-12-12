@@ -6,19 +6,21 @@
 
 namespace logic {
 
-    Stopwatch* Stopwatch::sInstance = nullptr;
+//    Stopwatch& Stopwatch::sInstance = nullptr;
 
-    Stopwatch* Stopwatch::Instance() {
-        if (sInstance == nullptr) {
-            sInstance = new Stopwatch();
-        }
-        return sInstance;
+    Stopwatch& Stopwatch::Instance() {
+//        if (sInstance == nullptr) {
+//            sInstance = new Stopwatch();
+//        }
+//        return sInstance;
+        static Stopwatch instance;
+        return instance;
     }
 
-    void Stopwatch::release() {
-        delete sInstance;
-        sInstance = nullptr;
-    }
+//    void Stopwatch::release() {
+//        delete sInstance;
+//        sInstance = nullptr;
+//    }
 
     Stopwatch::Stopwatch() {
         Reset();

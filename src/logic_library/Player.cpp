@@ -8,17 +8,17 @@ namespace logic {
 
     Player::Player() = default;
 
-    Player::Player(float posX, float posY, float width=0.077f, float height=0.128f) {
+    Player::Player(float posX, float posY) {
         this->setPositionX(posX);
         this->setPositionY(posY);
 
-        this->setWidth(width);
-        this->setHeight(height);
+//        this->setWidth(0.077f);
+//        this->setHeight(0.128f);
     }
 
     void Player::moveLeft() {
 
-        this->setPositionX(this->getPositionX()-unit*logic::Stopwatch::Instance()->getDeltaTime());
+        this->setPositionX(this->getPositionX()-unit*logic::Stopwatch::Instance().getDeltaTime());
 
         notifyObservers();
 
@@ -26,7 +26,7 @@ namespace logic {
 
     void Player::moveRight() {
 
-        this->setPositionX(this->getPositionX()+unit*logic::Stopwatch::Instance()->getDeltaTime());
+        this->setPositionX(this->getPositionX()+unit*logic::Stopwatch::Instance().getDeltaTime());
 
         notifyObservers();
 
@@ -39,13 +39,12 @@ namespace logic {
 
     void Player::applyGravity() {
 
-        // - wordt +, want (0,0) is links bovenaan, en naar beneden gaan betekent vergroten.
         this->setSpeed(this->getSpeed()+gravity); // na elke tick de zwaartekracht meerekenen (aftrekken)
     }
 
     void Player::moveVertically() {
 
-        this->setPositionY(this->getPositionY()+e_speed*logic::Stopwatch::Instance()->getDeltaTime());
+        this->setPositionY(this->getPositionY()+e_speed*logic::Stopwatch::Instance().getDeltaTime());
 
         notifyObservers();
 

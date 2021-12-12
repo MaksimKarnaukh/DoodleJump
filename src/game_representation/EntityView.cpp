@@ -23,10 +23,14 @@ namespace representation {
 
     void EntityView::update() {
 
-        sprite.setPosition(mSubject->getPositionX()*(float)representation::Window::Instance()->GetWindowSize().x, mSubject->getPositionY()*(float)representation::Window::Instance()->GetWindowSize().y);
+        std::pair<int, int> pixels = logic::Camera::Instance().projectCoordinates(mSubject->getPositionX()*(float)representation::Window::Instance().GetWindowSize().x,
+                                                                                  representation::Window::Instance().GetWindowSize().y-mSubject->getPositionY()*(float)representation::Window::Instance().GetWindowSize().y);
+
+
+        sprite.setPosition(pixels.first, pixels.second);
 
         //std::cout << sprite.getPosition().x << " " << sprite.getPosition().y << std::endl;
-        representation::Window::Instance()->Draw(sprite);
+        representation::Window::Instance().Draw(sprite);
 
     }
 }

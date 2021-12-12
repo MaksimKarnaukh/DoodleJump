@@ -10,23 +10,23 @@ namespace representation {
 
     Game::Game() { // : m_window("window", sf::Vector2u(640,960))
 
-        representation::Window* m_window = representation::Window::Instance();
-        m_window->Setup("Doodle Jump", sf::Vector2u(640,960));
+        representation::Window& m_window = representation::Window::Instance();
+        m_window.Setup("Doodle Jump", sf::Vector2u(640,960));
 
         world = std::make_shared<logic::World>();
         factory = std::make_shared<representation::ConcreteFactory>();
-        world->createEntities(factory);
+        world->createStartEntities(factory);
 
     }
 
     Game::~Game(){}
 
     void Game::Update(){
-        representation::Window::Instance()->Update(); // Update window events.
+        representation::Window::Instance().Update(); // Update window events.
     }
 
     void Game::Render(){
-        representation::Window::Instance()->BeginDraw(); // Clear.
+        representation::Window::Instance().BeginDraw(); // Clear.
 
         world->doodle->notifyObservers();
         for (auto a = 0; a < world->platforms.size(); a++) {
@@ -37,15 +37,15 @@ namespace representation {
         std::cout << "y =" << world->doodle->getPositionY() << "   ";
         std::cout << "w =" << world->doodle->getWidth() << "   ";
         std::cout << "h =" << world->doodle->getHeight() << "   " << std::endl;
-//        std::cout << "pl.x =" << world->platforms[0]->getPositionX() << "   ";
-//        std::cout << "pl.y =" << world->platforms[0]->getPositionY() << "   ";
-//        std::cout << "pl.w =" << world->platforms[0]->getWidth() << "   ";
-//        std::cout << "pl.h =" << world->platforms[0]->getHeight() << std::endl;
+        std::cout << "pl.x =" << world->platforms[0]->getPositionX() << "   ";
+        std::cout << "pl.y =" << world->platforms[0]->getPositionY() << "   ";
+        std::cout << "pl.w =" << world->platforms[0]->getWidth() << "   ";
+        std::cout << "pl.h =" << world->platforms[0]->getHeight() << std::endl;
 
 
         //representation::Window::Instance()->Draw(world->doodle.);
 
-        representation::Window::Instance()->EndDraw(); // Display.
+        representation::Window::Instance().EndDraw(); // Display.
     }
 
     void Game::HandleInput() {
@@ -68,31 +68,31 @@ namespace representation {
 
     }
 
-    Window *Game::GetWindow() {
+    Window &Game::GetWindow() {
         return representation::Window::Instance();
     }
 
     void Game::runGameLoop() {
 
-        logic::Stopwatch* stopwatch = logic::Stopwatch::Instance();
+        logic::Stopwatch& stopwatch = logic::Stopwatch::Instance();
 
         float frameRate = 60.0f;
 
-        while(!GetWindow()->IsDone()) {
+        while(!GetWindow().IsDone()) {
 
-            stopwatch->tick();
+            stopwatch.tick();
 
-            if (stopwatch->getDeltaTime() < (1 / frameRate)) {
-                std::chrono::milliseconds ms = std::chrono::milliseconds((int)(((1/frameRate) - stopwatch->getDeltaTime())*1000));
+            if (stopwatch.getDeltaTime() < (1 / frameRate)) {
+                std::chrono::milliseconds ms = std::chrono::milliseconds((int)(((1/frameRate) - stopwatch.getDeltaTime())*1000));
                 std::this_thread::sleep_for(ms);
                 // std::cout << ms.count() << std::endl; ////
             }
 
-            stopwatch->tick(); // de verstreken milliseconden erbij.
+            stopwatch.tick(); // de verstreken milliseconden erbij.
 
-            std::cout /* << stopwatch->getDeltaTime() << "  " */ << 1 / stopwatch->getDeltaTime() << std::endl; ////
+            std::cout /* << stopwatch->getDeltaTime() << "  " */ << 1 / stopwatch.getDeltaTime() << std::endl; ////
 
-            stopwatch->Reset(); // mStartTime = now (tijd verstreken is terug 0)
+            stopwatch.Reset(); // mStartTime = now (tijd verstreken is terug 0)
 
             // Game loop.
             HandleInput();

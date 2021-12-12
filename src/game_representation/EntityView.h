@@ -8,6 +8,7 @@
 #include "../logic_library/Observer.h"
 #include "SFML/Graphics.hpp"
 #include "Window.h"
+#include "../logic_library/Camera.h"
 
 namespace representation {
 

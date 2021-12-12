@@ -16,15 +16,21 @@ namespace representation {
         sf::RenderWindow m_window;
         sf::Vector2u m_windowSize;
         std::string m_windowTitle;
+
         bool m_isDone;
         bool m_isFullscreen;
 
-        static Window* sInstance; // zelfde structuur als bij stopwatch klasse (singleton)
+        static Window& sInstance; // zelfde structuur als bij stopwatch klasse (singleton)
 
     public:
 
-        static Window* Instance();
-        static void release();
+        static Window& Instance();
+
+        Window(const Window &) = delete;
+        Window(const Window &&) = delete;
+
+        Window& operator=(const Window &) = delete;
+        Window& operator=(const Window &&) = delete;
 
         Window();
         Window(const std::string& l_title,const sf::Vector2u& l_size);

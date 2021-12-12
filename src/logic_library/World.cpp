@@ -6,37 +6,40 @@
 
 namespace logic {
 
-    World::World() = default;
+    World::World() {
+
+        logic::Random& random = logic::Random::Instance();
+        logic::Camera& camera = logic::Camera::Instance();
+
+    }
 
     void World::receiveInput(std::string &key) {
 
         if (key == "Left") {
             doodle->moveLeft();
-            if((doodle->getPositionX()+doodle->getWidth()/2 < 0)){ // links buiten window
-                doodle->setPositionX(1 - doodle->getWidth()/2); // we zetten onze doodle aan de rechterkant
+            if((doodle->getPositionX()+doodle->getWidth()/2 < leftBound)){ // links buiten window
+                doodle->setPositionX(rightBound - doodle->getWidth()/2); // we zetten onze doodle aan de rechterkant
             }
         }
         else if (key == "Right") {
             doodle->moveRight();
-            if((doodle->getPositionX() > 1 - doodle->getWidth()/2)){ // rechts buiten window
-                doodle->setPositionX(0 - doodle->getWidth()/2); // we zetten onze doodle aan de linkerkant
+            if((doodle->getPositionX() > rightBound - doodle->getWidth()/2)){ // rechts buiten window
+                doodle->setPositionX(leftBound - doodle->getWidth()/2); // we zetten onze doodle aan de linkerkant
             }
         }
     }
 
     void World::checkForCollision() { // jump if collision from top detected
 
-        // check for collision
-
         float x0 = doodle->getPreviousPositionX()+doodle->getWidth()/2;
-        float y0 = doodle->getPreviousPositionY()+doodle->getHeight();
+        float y0 = doodle->getPreviousPositionY()-doodle->getHeight();
         float x1 = doodle->getPositionX()+doodle->getWidth()/2;
-        float y1 = doodle->getPositionY()+doodle->getHeight();
+        float y1 = doodle->getPositionY()-doodle->getHeight();
 
         std::vector<std::pair<float,float>> middleLine = getLineBetweenPoints(x0, y0, x1, y1);
 
-        if((doodle->getPositionY()+doodle->getHeight() >= 1)) {
-            doodle->jump(); //
+        if ((doodle->getPositionY()-doodle->getHeight() <= lowerBound)) {
+            doodle->jump();
         }
 
         // checken of we een platform raken.
@@ -61,18 +64,22 @@ namespace logic {
         }
     }
 
-    void World::createEntities(const std::shared_ptr<logic::AbstractFactory>& Factory) {
+    void World::createStartEntities(const std::shared_ptr<logic::AbstractFactory>& Factory) {
 
-        doodle = Factory->createPlayer(0.5, 0.5, 0.077, 0.128);
+        doodle = Factory->createPlayer(0.5, 0.5, 0.077, 0.18);
 
-        std::shared_ptr<logic::Platform> p = Factory->createPlatform(0.5, 0.8, 0.174, 0.05);
+        std::shared_ptr<logic::Platform> p = Factory->createPlatform(0.5, 0.8, 0.174004, 0.0411);
         platforms.push_back(p);
 
-        std::shared_ptr<logic::Platform> p1 = Factory->createPlatform(0.2, 0.5, 0.174, 0.05);
+        std::shared_ptr<logic::Platform> p1 = Factory->createPlatform(0.2, 0.5, 0.174004, 0.0411);
         platforms.push_back(p1);
 
-        std::shared_ptr<logic::Platform> p2 = Factory->createPlatform(0.6, 0.3, 0.174, 0.05);
+        std::shared_ptr<logic::Platform> p2 = Factory->createPlatform(0.6, 0.3, 0.174004, 0.0411);
         platforms.push_back(p2);
+
+    }
+
+    void World::createEntities(const std::shared_ptr<logic::AbstractFactory> &Factory) {
 
     }
 
@@ -81,7 +88,7 @@ namespace logic {
         doodle->applyGravity();
         doodle->moveVertically();
 
-        if (doodle->getSpeed() >= 0) { // als we aan het vallen zijn
+        if (doodle->getSpeed() <= 0) { // als we aan het vallen zijn
             checkForCollision();
         }
 
@@ -95,12 +102,12 @@ namespace logic {
         for (int i = 0; i < middleLine.size(); i++) {
 
             // checken op de x-coordinaten
-            if (middleLine[i].first >= pl->getPositionX() &&
-                    middleLine[i].first <= pl->getPositionX()+pl->getWidth()) {
+            if (middleLine[i].first+doodle->getWidth()/2 >= pl->getPositionX() &&
+                    middleLine[i].first-doodle->getWidth()/2 <= pl->getPositionX()+pl->getWidth()) {
 
                 // checken op de y-coordinaten
-                if (middleLine[i].second >= pl->getPositionY() &&
-                        middleLine[i].second <= pl->getPositionY()+pl->getHeight()) {
+                if (middleLine[i].second <= pl->getPositionY() &&
+                        middleLine[i].second >= pl->getPositionY()-pl->getHeight()) {
 
                     return true;
 
@@ -153,5 +160,7 @@ namespace logic {
         }
         return line;
     }
+
+
 }
 

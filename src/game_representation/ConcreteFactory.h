@@ -21,6 +21,8 @@ namespace representation {
 
         std::shared_ptr<logic::Platform> createPlatform(float posX, float posY, float width, float height) override;
 
+        std::shared_ptr<logic::Bonus> createBonus(float posX, float posY, float width, float height) override;
+
     };
 
 }

@@ -15,7 +15,7 @@ namespace logic {
 
         Platform_Static();
 
-        Platform_Static(float posX, float posY, float width, float height);
+        Platform_Static(float posX, float posY);
     };
 
 }

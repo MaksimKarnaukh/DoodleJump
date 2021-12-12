@@ -12,8 +12,9 @@
 #include "BGTile.h"
 #include "Bonus.h"
 #include "AbstractFactory.h"
-
+#include "Camera.h"
 #include <memory>
+#include "Random.h"
 
 namespace logic {
 
@@ -25,6 +26,10 @@ namespace logic {
         std::shared_ptr<logic::BGTile> bgTile;
         std::vector<std::shared_ptr<logic::Platform>> platforms;
 
+        float leftBound = 0.0f;
+        float rightBound = 1.0f;
+        float lowerBound = 0.0f;
+
     public:
 
         World();
@@ -34,6 +39,8 @@ namespace logic {
         void checkForCollision();
 
         bool checkForUndetectedCollision(const std::shared_ptr<logic::Platform>& pl, std::vector<std::pair<float,float>> &middleLine);
+
+        void createStartEntities(const std::shared_ptr<logic::AbstractFactory>& Factory);
 
         void createEntities(const std::shared_ptr<logic::AbstractFactory>& Factory);
 

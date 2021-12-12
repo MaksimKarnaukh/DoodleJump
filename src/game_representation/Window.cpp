@@ -6,18 +6,9 @@
 
 namespace representation {
 
-    Window* Window::sInstance = nullptr;
-
-    Window *Window::Instance() {
-        if (sInstance == nullptr) {
-            sInstance = new Window();
-        }
-        return sInstance;
-    }
-
-    void Window::release() {
-        delete sInstance;
-        sInstance = nullptr;
+    Window &Window::Instance() {
+        static Window instance;
+        return instance;
     }
 
     Window::Window() {
@@ -55,9 +46,9 @@ namespace representation {
             if (event.type == sf::Event::Closed) {
                 m_isDone = true;
             }
-            else if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::F5) {
-                ToggleFullscreen();
-            }
+//            else if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::F5) {
+//                ToggleFullscreen();
+//            }
         }
     }
 
