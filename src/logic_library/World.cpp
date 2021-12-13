@@ -77,6 +77,15 @@ namespace logic {
         std::shared_ptr<logic::Platform> p2 = Factory->createPlatform(0.6, 0.3, 0.174004, 0.0411);
         platforms.push_back(p2);
 
+        std::shared_ptr<logic::Platform> p3 = Factory->createPlatform(0.6, 1.2, 0.174004, 0.0411);
+        platforms.push_back(p3);
+
+        std::shared_ptr<logic::Platform> p4 = Factory->createPlatform(0.6, 1.7, 0.174004, 0.0411);
+        platforms.push_back(p4);
+
+        std::shared_ptr<logic::Platform> p5 = Factory->createPlatform(0.4, 1.3, 0.174004, 0.0411);
+        platforms.push_back(p5);
+
     }
 
     void World::createEntities(const std::shared_ptr<logic::AbstractFactory> &Factory) {
@@ -94,6 +103,10 @@ namespace logic {
 
         doodle->setPreviousPositionX(doodle->getPositionX());
         doodle->setPreviousPositionY(doodle->getPositionY());
+
+        if (doodle->getPositionY() >= 0.6 && doodle->getPositionY() >= logic::Camera::Instance().getShiftValue()+0.6) {
+            logic::Camera::Instance().setShiftValue(doodle->getPositionY()-0.6f);
+        }
 
     }
 

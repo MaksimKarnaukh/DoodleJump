@@ -17,6 +17,8 @@ namespace logic {
         int windowWidth = 640;
         int windowHeight = 960;
 
+        float shiftValue = 0.0f;
+
     public:
 
         void setWindowWidth(int width) {
@@ -27,12 +29,20 @@ namespace logic {
             windowHeight = height;
         }
 
+        void setShiftValue(float shift) {
+            shiftValue = shift;
+        }
+
         int getWindowWidth() const {
             return windowWidth;
         }
 
         int getWindowHeight() const {
             return windowHeight;
+        }
+
+        float getShiftValue() const {
+            return shiftValue;
         }
 
     public:

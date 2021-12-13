@@ -10,8 +10,8 @@ namespace logic {
 
     std::pair<int, int> Camera::projectCoordinates(float x, float y) const {
 
-        int pixelX = (int)std::round(x)*windowWidth;
-        int pixelY = (int)std::round(y)*windowHeight;
+        int pixelX = static_cast<int>(std::round(x*windowWidth));
+        int pixelY = windowHeight-static_cast<int>(std::round((y-shiftValue)*windowHeight));
 
         return std::make_pair(pixelX, pixelY);
     }
