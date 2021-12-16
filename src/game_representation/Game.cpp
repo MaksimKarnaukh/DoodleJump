@@ -13,9 +13,8 @@ namespace representation {
         representation::Window& m_window = representation::Window::Instance();
         m_window.Setup("Doodle Jump", sf::Vector2u(640,960));
 
-        world = std::make_shared<logic::World>();
         factory = std::make_shared<representation::ConcreteFactory>();
-        world->createStartEntities(factory);
+        world = std::make_shared<logic::World>(factory);
 
     }
 

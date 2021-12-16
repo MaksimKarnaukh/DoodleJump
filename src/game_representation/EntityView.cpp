@@ -8,8 +8,8 @@ namespace representation {
 
     EntityView::EntityView() = default;
 
-    EntityView::EntityView(std::shared_ptr<logic::Subject> subject) {
-        mSubject = subject;
+    EntityView::EntityView(std::shared_ptr<logic::EntityModel> entityModel) {
+        mEntityModel = entityModel;
     }
 
     void EntityView::setSpriteTexture(const std::string &filename) {
@@ -23,8 +23,7 @@ namespace representation {
 
     void EntityView::update() {
 
-        std::pair<int, int> pixels = logic::Camera::Instance().projectCoordinates(mSubject->getPositionX(),mSubject->getPositionY());
-
+        std::pair<int, int> pixels = logic::Camera::Instance().projectCoordinates(mEntityModel->getPositionX(),mEntityModel->getPositionY());
 
         sprite.setPosition(pixels.first, pixels.second);
 

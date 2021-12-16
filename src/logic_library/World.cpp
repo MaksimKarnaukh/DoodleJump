@@ -6,10 +6,14 @@
 
 namespace logic {
 
-    World::World() {
+    World::World() = default;
+
+    World::World(std::shared_ptr<logic::AbstractFactory> &factory) : Factory(factory) {
 
         logic::Random& random = logic::Random::Instance();
         logic::Camera& camera = logic::Camera::Instance();
+
+        createStartEntities();
 
     }
 
@@ -43,7 +47,7 @@ namespace logic {
         }
 
         // checken of we een platform raken.
-        for (int pl = 0; pl < platforms.size(); pl++) {
+        for (auto pl = 0; pl < platforms.size(); pl++) {
 
             // checken of het midden van de doodle tussen de uiteinden van het platform zit
 //            if (doodle->getPositionX()+doodle->getWidth()/2 >= platforms[pl]->getPositionX() &&
@@ -59,40 +63,98 @@ namespace logic {
 
             if (checkForUndetectedCollision(platforms[pl], middleLine)) { // backup check
                 doodle->jump();
+
+                if (platforms[pl]->isTouched()) {
+                    platforms.erase(platforms.begin()+pl);
+                }
+
                 break;
             }
         }
     }
 
-    void World::createStartEntities(const std::shared_ptr<logic::AbstractFactory>& Factory) {
+    void World::createStartEntities() {
 
         doodle = Factory->createPlayer(0.5, 0.5, 0.077, 0.18);
 
-        std::shared_ptr<logic::Platform> p = Factory->createPlatform(0.5, 0.8, 0.174004, 0.0411);
+        std::shared_ptr<logic::Platform> p = Factory->createVerticalPlatform(0.5, 0.8, 0.174004, 0.0411);
         platforms.push_back(p);
 
-        std::shared_ptr<logic::Platform> p1 = Factory->createPlatform(0.2, 0.5, 0.174004, 0.0411);
+        std::shared_ptr<logic::Platform> p1 = Factory->createVerticalPlatform(0.2, 0.5, 0.174004, 0.0411);
         platforms.push_back(p1);
 
-        std::shared_ptr<logic::Platform> p2 = Factory->createPlatform(0.6, 0.3, 0.174004, 0.0411);
+        std::shared_ptr<logic::Platform> p2 = Factory->createHorizontalPlatform(0.6, 0.3, 0.174004, 0.0411);
         platforms.push_back(p2);
 
-        std::shared_ptr<logic::Platform> p3 = Factory->createPlatform(0.6, 1.2, 0.174004, 0.0411);
-        platforms.push_back(p3);
-
-        std::shared_ptr<logic::Platform> p4 = Factory->createPlatform(0.6, 1.7, 0.174004, 0.0411);
-        platforms.push_back(p4);
-
-        std::shared_ptr<logic::Platform> p5 = Factory->createPlatform(0.4, 1.3, 0.174004, 0.0411);
-        platforms.push_back(p5);
+//        std::shared_ptr<logic::Platform> p3 = Factory->createVerticalPlatform(0.6, 1.2, 0.174004, 0.0411);
+//        platforms.push_back(p3);
+//
+//        std::shared_ptr<logic::Platform> p4 = Factory->createVerticalPlatform(0.6, 1.7, 0.174004, 0.0411);
+//        platforms.push_back(p4);
+//
+//        std::shared_ptr<logic::Platform> p5 = Factory->createTemporaryPlatform(0.4, 1.3, 0.174004, 0.0411);
+//        platforms.push_back(p5);
+//
+//        std::shared_ptr<logic::Platform> p6 = Factory->createTemporaryPlatform(0.4, 1.5, 0.174004, 0.0411);
+//        platforms.push_back(p6);
+//
+//        std::shared_ptr<logic::Platform> p7 = Factory->createTemporaryPlatform(0.4, 1.8, 0.174004, 0.0411);
+//        platforms.push_back(p7);
 
     }
 
-    void World::createEntities(const std::shared_ptr<logic::AbstractFactory> &Factory) {
+    void World::createEntities() {
+
+        // calculate chance of placing a platform or not.
+
+        float score = doodle->getPositionY();
+
+        float p = 0.70; // beginwaarde = 0.90 (90% kans op platform generation)
+        float factor = 1; // represents the depending factor on the score (y-coordinate of our player)
+        bool isCreate = logic::Random::Instance().bernoulliDistribution(p*factor);
+
+        // y position of our platform
+
+        float platformYPos = 1+logic::Camera::Instance().getShiftValue();
+
+        // decide which platform to place
+
+        int pl = logic::Random::Instance().uniformIntDistribution(0, 3);
+        pl = 0;
+
+        std::shared_ptr<logic::Platform> platform;
+        float platformXPos = 0; // going to be overwritten
+        switch (pl) {
+            case 0:
+                platform = Factory->createStaticPlatform(platformXPos, platformYPos, 0.174004, 0.0411);
+                break;
+            case 1:
+                platform = Factory->createVerticalPlatform(platformXPos, platformYPos, 0.174004, 0.0411);
+                break;
+            case 2:
+                platform = Factory->createHorizontalPlatform(platformXPos, platformYPos, 0.174004, 0.0411);
+                break;
+            case 3:
+                platform = Factory->createTemporaryPlatform(platformXPos, platformYPos, 0.174004, 0.0411);
+                break;
+            default:
+                std::cerr << "No platform was created" << std::endl; // default statement used for error output
+        }
+
+        // calculate where to place the platform (x position only)
+
+        platformXPos = logic::Random::Instance().uniformRealDistribution(leftBound, rightBound-platform->getWidth());
+
+        platform->setPositionX(platformXPos);
+        platforms.push_back(platform);
 
     }
 
     void World::update() {
+
+        for (auto pl = 0; pl < platforms.size(); pl++)  {
+            platforms[pl]->move();
+        }
 
         doodle->applyGravity();
         doodle->moveVertically();
@@ -104,9 +166,18 @@ namespace logic {
         doodle->setPreviousPositionX(doodle->getPositionX());
         doodle->setPreviousPositionY(doodle->getPositionY());
 
-        if (doodle->getPositionY() >= 0.6 && doodle->getPositionY() >= logic::Camera::Instance().getShiftValue()+0.6) {
-            logic::Camera::Instance().setShiftValue(doodle->getPositionY()-0.6f);
+        if (doodle->getPositionY() >= shiftBorder && doodle->getPositionY() >= logic::Camera::Instance().getShiftValue()+shiftBorder) {
+            logic::Camera::Instance().setShiftValue(doodle->getPositionY()-shiftBorder);
+
+            if (static_cast<int>(std::round(((doodle->getPositionY()+0.60)*100)))%5==0) {
+                createEntities();
+            }
         }
+//        if (doodle->getPositionY() <= logic::Camera::Instance().getShiftValue() && doodle->getPositionY() >= logic::Camera::Instance().getShiftValue()+0.5) {
+//            //logic::Camera::Instance().setShiftValue(std::min(doodle->getPositionY()-0.6f, 1.0f));
+//            logic::Camera::Instance().setShiftValue(doodle->getPositionY()-0.6f);
+//
+//        }
 
     }
 
@@ -173,6 +244,8 @@ namespace logic {
         }
         return line;
     }
+
+
 
 
 }

@@ -11,6 +11,14 @@ namespace logic {
 
     class Platform_Temporary: public Platform {
 
+    public:
+
+        Platform_Temporary();
+
+        Platform_Temporary(float posX, float posY);
+
+        bool isTouched() override;
+
     };
 
 }

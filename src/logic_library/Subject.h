@@ -33,9 +33,9 @@ namespace logic {
 
 
 
-        virtual float getPositionX() const = 0;
-
-        virtual float getPositionY() const = 0;
+//        virtual float getPositionX() const = 0;
+//
+//        virtual float getPositionY() const = 0;
     };
 }
 

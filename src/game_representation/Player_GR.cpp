@@ -6,9 +6,9 @@
 
 namespace representation {
 
-    Player_GR::Player_GR(const std::shared_ptr<logic::Subject>& subject) {
+    Player_GR::Player_GR(const std::shared_ptr<logic::EntityModel> &entityModel) {
 
-        mSubject = subject;
+        mEntityModel = entityModel;
         setSpriteTexture("assets/DoodleJumper/doodle-pow.png");
 
         sprite.setScale(1*0.077*640/236, 1*0.18*960/447);

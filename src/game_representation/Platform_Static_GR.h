@@ -13,7 +13,7 @@ namespace representation {
 
     public:
 
-        Platform_Static_GR(const std::shared_ptr<logic::Subject>& subject);
+        Platform_Static_GR(const std::shared_ptr<logic::EntityModel> &entityModel);
 
     };
 

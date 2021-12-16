@@ -14,6 +14,8 @@ namespace logic {
 
     class Random {
 
+        static Random& sInstance;
+
         std::random_device rd;
         std::mt19937 randomEngine; // mersenne_twister_engine (seeded with randomDevice())
 
@@ -21,8 +23,6 @@ namespace logic {
         ~Random();
 
     public:
-
-        static Random& sInstance;
 
         Random(const Random &) = delete;
         Random(const Random &&) = delete;

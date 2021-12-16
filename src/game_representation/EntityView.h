@@ -9,12 +9,16 @@
 #include "SFML/Graphics.hpp"
 #include "Window.h"
 #include "../logic_library/Camera.h"
+#include "../logic_library/EntityModel.h"
+
 
 namespace representation {
 
     class EntityView: public logic::Observer {
 
     protected:
+
+        std::shared_ptr<logic::EntityModel> mEntityModel;
 
         sf::Sprite sprite;
         sf::Texture texture;
@@ -23,15 +27,15 @@ namespace representation {
 
         EntityView();
 
-        EntityView(std::shared_ptr<logic::Subject> subject);
+        EntityView(std::shared_ptr<logic::EntityModel> entityModel);
 
         void setSpriteTexture(const std::string& filename);
 
-        sf::Sprite getSprite() {
+        sf::Sprite& getSprite() {
             return sprite;
         }
 
-        sf::Texture getTexture() {
+        sf::Texture& getTexture() {
             return texture;
         }
 

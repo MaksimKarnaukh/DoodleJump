@@ -26,13 +26,19 @@ namespace logic {
         std::shared_ptr<logic::BGTile> bgTile;
         std::vector<std::shared_ptr<logic::Platform>> platforms;
 
+        std::shared_ptr<logic::AbstractFactory> Factory;
+
         float leftBound = 0.0f;
         float rightBound = 1.0f;
         float lowerBound = 0.0f;
 
+        float shiftBorder = 0.6f;
+
     public:
 
         World();
+
+        World(std::shared_ptr<logic::AbstractFactory>& factory);
 
         void receiveInput(std::string &key);
 
@@ -40,9 +46,9 @@ namespace logic {
 
         bool checkForUndetectedCollision(const std::shared_ptr<logic::Platform>& pl, std::vector<std::pair<float,float>> &middleLine);
 
-        void createStartEntities(const std::shared_ptr<logic::AbstractFactory>& Factory);
+        void createStartEntities();
 
-        void createEntities(const std::shared_ptr<logic::AbstractFactory>& Factory);
+        void createEntities();
 
         void update();
 

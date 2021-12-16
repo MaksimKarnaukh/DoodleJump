@@ -6,6 +6,7 @@
 #define DOODLEJUMP_ENTITYMODEL_H
 
 #include "Subject.h"
+#include "Stopwatch.h"
 
 namespace logic {
 
@@ -67,11 +68,11 @@ namespace logic {
             return e_height;
         }
 
-        float getPositionX() const override {
+        float getPositionX() const {
             return x_pos;
         }
 
-        float getPositionY() const override {
+        float getPositionY() const {
             return y_pos;
         }
 

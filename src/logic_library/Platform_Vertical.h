@@ -11,6 +11,17 @@ namespace logic {
 
     class Platform_Vertical: public Platform {
 
+        float unit = 0.1f; // unit of distance
+
+        float startingX;
+        float startingY;
+
+    public:
+        Platform_Vertical();
+
+        Platform_Vertical(float posX, float posY);
+
+        void move() override;
     };
 
 }

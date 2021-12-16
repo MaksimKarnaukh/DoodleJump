@@ -13,7 +13,7 @@ namespace representation {
 
     public:
 
-        Player_GR(const std::shared_ptr<logic::Subject>& subject);
+        Player_GR(const std::shared_ptr<logic::EntityModel> &entityModel);
 
     };
 

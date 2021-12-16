@@ -9,4 +9,8 @@ namespace logic {
     Platform::Platform() {
 
     }
+
+    bool Platform::isTouched() {
+        return false;
+    }
 }

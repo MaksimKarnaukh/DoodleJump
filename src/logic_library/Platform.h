@@ -15,10 +15,12 @@ namespace logic {
 
         Platform();
 
+        virtual void move() {};
+
+        virtual bool isTouched();
+
     };
 
 }
-
-
 
 #endif //DOODLEJUMP_PLATFORM_H
