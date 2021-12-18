@@ -15,6 +15,10 @@ namespace representation {
 
     class Game {
 
+        sf::Font font;
+        sf::Text text;
+
+
     public:
         Game();
         ~Game();

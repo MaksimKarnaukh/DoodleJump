@@ -11,6 +11,22 @@ namespace logic {
 
     class Score: public logic::Observer {
 
+        int score;
+
+    public:
+
+        Score();
+
+    public:
+
+        void setScore(int _score) {
+            score = _score;
+        }
+
+        int getScore() const {
+            return score;
+        }
+
     };
 
 }

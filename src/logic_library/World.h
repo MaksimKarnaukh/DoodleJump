@@ -5,6 +5,7 @@
 #ifndef DOODLEJUMP_WORLD_H
 #define DOODLEJUMP_WORLD_H
 
+#include "string"
 #include "cmath"
 #include "iostream"
 #include "Player.h"
@@ -15,12 +16,15 @@
 #include "Camera.h"
 #include <memory>
 #include "Random.h"
+#include "Score.h"
 
 namespace logic {
 
     class World {
 
     public:
+
+        Score score;
 
         std::shared_ptr<logic::Player> doodle;
         std::shared_ptr<logic::BGTile> bgTile;
@@ -34,11 +38,15 @@ namespace logic {
 
         float shiftBorder = 0.6f;
 
+        float formerPlatformPosY;
+
     public:
 
         World();
 
         World(std::shared_ptr<logic::AbstractFactory>& factory);
+
+        ~World();
 
         void receiveInput(std::string &key);
 

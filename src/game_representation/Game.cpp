@@ -27,6 +27,9 @@ namespace representation {
     void Game::Render(){
         representation::Window::Instance().BeginDraw(); // Clear.
 
+        text.setString(std::to_string(world->score.getScore()));
+        representation::Window::Instance().Draw(text);
+
         world->doodle->notifyObservers();
         for (auto a = 0; a < world->platforms.size(); a++) {
             world->platforms[a]->notifyObservers();
@@ -72,6 +75,15 @@ namespace representation {
     }
 
     void Game::runGameLoop() {
+
+        if (!font.loadFromFile("assets/Fonts/Bodo_Amat.ttf")) {
+
+        }
+        text.setFont(font);
+        text.setCharacterSize(60);
+        text.setFillColor(sf::Color::Red);
+        text.setOutlineColor(sf::Color::Yellow);
+        text.setOutlineThickness(4);
 
         logic::Stopwatch& stopwatch = logic::Stopwatch::Instance();
 

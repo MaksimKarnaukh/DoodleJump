@@ -3,3 +3,8 @@
 //
 
 #include "Score.h"
+
+logic::Score::Score() {
+
+    score = 0;
+}

@@ -31,7 +31,7 @@ namespace logic {
 
         void notifyObservers();
 
-
+        std::vector<std::shared_ptr<Observer>> getObservers();
 
 //        virtual float getPositionX() const = 0;
 //

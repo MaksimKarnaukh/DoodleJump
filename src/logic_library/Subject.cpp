@@ -35,6 +35,10 @@ namespace logic {
         }
     }
 
+    std::vector<std::shared_ptr<Observer>> Subject::getObservers() {
+        return observers;
+    }
+
 }
 
 

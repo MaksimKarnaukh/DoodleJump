@@ -15,6 +15,8 @@ namespace logic {
 
         createStartEntities();
 
+        score = Score();
+
     }
 
     void World::receiveInput(std::string &key) {
@@ -75,31 +77,27 @@ namespace logic {
 
     void World::createStartEntities() {
 
-        doodle = Factory->createPlayer(0.5, 0.5, 0.077, 0.18);
+        doodle = Factory->createPlayer(0.5, 0.4, 0.077, 0.18);
 
-        std::shared_ptr<logic::Platform> p = Factory->createVerticalPlatform(0.5, 0.8, 0.174004, 0.0411);
+        // begin platformen gehardcode zodat de speler gemakkelijk vanaf het begin al kan spelen.
+
+        std::shared_ptr<logic::Platform> p = Factory->createStaticPlatform(0.4, 0.3, 0.174004, 0.0411);
         platforms.push_back(p);
 
-        std::shared_ptr<logic::Platform> p1 = Factory->createVerticalPlatform(0.2, 0.5, 0.174004, 0.0411);
+        std::shared_ptr<logic::Platform> p1 = Factory->createStaticPlatform(0.2, 0.5, 0.174004, 0.0411);
         platforms.push_back(p1);
 
-        std::shared_ptr<logic::Platform> p2 = Factory->createHorizontalPlatform(0.6, 0.3, 0.174004, 0.0411);
+        std::shared_ptr<logic::Platform> p2 = Factory->createStaticPlatform(0.6, 0.5, 0.174004, 0.0411);
         platforms.push_back(p2);
 
-//        std::shared_ptr<logic::Platform> p3 = Factory->createVerticalPlatform(0.6, 1.2, 0.174004, 0.0411);
-//        platforms.push_back(p3);
-//
-//        std::shared_ptr<logic::Platform> p4 = Factory->createVerticalPlatform(0.6, 1.7, 0.174004, 0.0411);
-//        platforms.push_back(p4);
-//
-//        std::shared_ptr<logic::Platform> p5 = Factory->createTemporaryPlatform(0.4, 1.3, 0.174004, 0.0411);
-//        platforms.push_back(p5);
-//
-//        std::shared_ptr<logic::Platform> p6 = Factory->createTemporaryPlatform(0.4, 1.5, 0.174004, 0.0411);
-//        platforms.push_back(p6);
-//
-//        std::shared_ptr<logic::Platform> p7 = Factory->createTemporaryPlatform(0.4, 1.8, 0.174004, 0.0411);
-//        platforms.push_back(p7);
+        std::shared_ptr<logic::Platform> p3 = Factory->createStaticPlatform(0.4, 0.7, 0.174004, 0.0411);
+        platforms.push_back(p3);
+
+        std::shared_ptr<logic::Platform> p4 = Factory->createStaticPlatform(0.1, 0.9, 0.174004, 0.0411);
+        platforms.push_back(p4);
+
+        std::shared_ptr<logic::Platform> p5 = Factory->createStaticPlatform(0.7, 0.9, 0.174004, 0.0411);
+        platforms.push_back(p5);
 
     }
 
@@ -107,46 +105,51 @@ namespace logic {
 
         // calculate chance of placing a platform or not.
 
-        float score = doodle->getPositionY();
-
-        float p = 0.70; // beginwaarde = 0.90 (90% kans op platform generation)
+        float p = 0.90; // beginwaarde = 0.90 (90% kans op platform generation)
         float factor = 1; // represents the depending factor on the score (y-coordinate of our player)
         bool isCreate = logic::Random::Instance().bernoulliDistribution(p*factor);
 
         // y position of our platform
 
         float platformYPos = 1+logic::Camera::Instance().getShiftValue();
+        if (formerPlatformPosY+0.05 < platformYPos) {
 
-        // decide which platform to place
+            if (isCreate) {
+                formerPlatformPosY = platformYPos;
 
-        int pl = logic::Random::Instance().uniformIntDistribution(0, 3);
-        pl = 0;
+                // decide which platform to place
 
-        std::shared_ptr<logic::Platform> platform;
-        float platformXPos = 0; // going to be overwritten
-        switch (pl) {
-            case 0:
-                platform = Factory->createStaticPlatform(platformXPos, platformYPos, 0.174004, 0.0411);
-                break;
-            case 1:
-                platform = Factory->createVerticalPlatform(platformXPos, platformYPos, 0.174004, 0.0411);
-                break;
-            case 2:
-                platform = Factory->createHorizontalPlatform(platformXPos, platformYPos, 0.174004, 0.0411);
-                break;
-            case 3:
-                platform = Factory->createTemporaryPlatform(platformXPos, platformYPos, 0.174004, 0.0411);
-                break;
-            default:
-                std::cerr << "No platform was created" << std::endl; // default statement used for error output
+                int pl = logic::Random::Instance().uniformIntDistribution(0, 3);
+                //pl = 0;
+
+                std::shared_ptr<logic::Platform> platform;
+                float platformXPos = 0; // going to be overwritten
+                switch (pl) {
+                    case 0:
+                        platform = Factory->createStaticPlatform(platformXPos, platformYPos, 0.174004, 0.0411);
+                        break;
+                    case 1:
+                        platform = Factory->createVerticalPlatform(platformXPos, platformYPos, 0.174004, 0.0411);
+                        break;
+                    case 2:
+                        platform = Factory->createHorizontalPlatform(platformXPos, platformYPos, 0.174004, 0.0411);
+                        break;
+                    case 3:
+                        platform = Factory->createTemporaryPlatform(platformXPos, platformYPos, 0.174004, 0.0411);
+                        break;
+                    default:
+                        std::cerr << "No platform was created" << std::endl; // default statement used for error output
+                }
+
+                // calculate where to place the platform (x position only)
+
+                platformXPos = logic::Random::Instance().uniformRealDistribution(leftBound, rightBound-platform->getWidth());
+
+                platform->setPositionX(platformXPos);
+                platforms.push_back(platform);
+            }
+
         }
-
-        // calculate where to place the platform (x position only)
-
-        platformXPos = logic::Random::Instance().uniformRealDistribution(leftBound, rightBound-platform->getWidth());
-
-        platform->setPositionX(platformXPos);
-        platforms.push_back(platform);
 
     }
 
@@ -169,16 +172,36 @@ namespace logic {
         if (doodle->getPositionY() >= shiftBorder && doodle->getPositionY() >= logic::Camera::Instance().getShiftValue()+shiftBorder) {
             logic::Camera::Instance().setShiftValue(doodle->getPositionY()-shiftBorder);
 
-            if (static_cast<int>(std::round(((doodle->getPositionY()+0.60)*100)))%5==0) {
+            //if (static_cast<int>(std::round(((doodle->getPositionY()+0.45)*100)))%5==0) {
                 createEntities();
-            }
+            //}
         }
+
 //        if (doodle->getPositionY() <= logic::Camera::Instance().getShiftValue() && doodle->getPositionY() >= logic::Camera::Instance().getShiftValue()+0.5) {
 //            //logic::Camera::Instance().setShiftValue(std::min(doodle->getPositionY()-0.6f, 1.0f));
 //            logic::Camera::Instance().setShiftValue(doodle->getPositionY()-0.6f);
 //
 //        }
 
+        std::cout << std::endl << platforms.size() << std::endl;
+
+        // deleten van platforms die uit scherm zijn.
+        for (int pl = 0; pl < platforms.size(); pl++) {
+            if (platforms[pl]->getPositionY() < logic::Camera::Instance().getShiftValue()) {
+
+                for (auto i = 0; i < platforms[pl]->getObservers().size(); i++) {
+                    platforms[pl]->removeObserver(platforms[pl]->getObservers()[i]); // remove all observers
+                }
+
+                platforms.erase(platforms.begin()+pl);
+            }
+        }
+
+        if (score.getScore() < static_cast<int>(std::round(doodle->getPositionY()*10))) {
+            score.setScore(static_cast<int>(std::round(doodle->getPositionY()*10)));
+        }
+
+        std::cout << "score : " << std::to_string(score.getScore()) << std::endl;
     }
 
     bool World::checkForUndetectedCollision(const std::shared_ptr<logic::Platform>& pl, std::vector<std::pair<float,float>> &middleLine) {
@@ -245,7 +268,18 @@ namespace logic {
         return line;
     }
 
+    World::~World() {
+        //doodle.reset();
 
+        for (int pl = 0; pl < platforms.size(); pl++) {
+
+            for (auto i = 0; i < platforms[pl]->getObservers().size(); i++) {
+                platforms[pl]->removeObserver(platforms[pl]->getObservers()[i]); // remove all observers
+            }
+
+            platforms.erase(platforms.begin()+pl);
+        }
+    }
 
 
 }
