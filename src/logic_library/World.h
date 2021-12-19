@@ -17,6 +17,7 @@
 #include <memory>
 #include "Random.h"
 #include "Score.h"
+#include <deque>
 
 namespace logic {
 
@@ -24,10 +25,10 @@ namespace logic {
 
     public:
 
-        Score score;
+        std::shared_ptr<logic::Score> score;
 
         std::shared_ptr<logic::Player> doodle;
-        std::shared_ptr<logic::BGTile> bgTile;
+        std::deque<std::vector<std::shared_ptr<logic::BGTile>>> bgTiles;
         std::vector<std::shared_ptr<logic::Platform>> platforms;
 
         std::shared_ptr<logic::AbstractFactory> Factory;

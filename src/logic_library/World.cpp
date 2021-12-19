@@ -15,8 +15,6 @@ namespace logic {
 
         createStartEntities();
 
-        score = Score();
-
     }
 
     void World::receiveInput(std::string &key) {
@@ -99,6 +97,16 @@ namespace logic {
         std::shared_ptr<logic::Platform> p5 = Factory->createStaticPlatform(0.7, 0.9, 0.174004, 0.0411);
         platforms.push_back(p5);
 
+        //
+
+        for (auto c = 0; c < (1.5/0.05)+5.0; c++) {
+            std::vector<std::shared_ptr<logic::BGTile>> row;
+            for (auto r = 0; r < rightBound/0.05; r++) {
+                std::shared_ptr<logic::BGTile> bgTile = Factory->createBGTile((float)(r*0.05), float((c+1)*0.03), 0.05, 0.05);
+                row.push_back(bgTile);
+            }
+            bgTiles.push_back(row);
+        }
     }
 
     void World::createEntities() {
@@ -143,7 +151,7 @@ namespace logic {
 
                 // calculate where to place the platform (x position only)
 
-                platformXPos = logic::Random::Instance().uniformRealDistribution(leftBound, rightBound-platform->getWidth());
+                platformXPos = logic::Random::Instance().uniformRealDistribution(leftBound+0.01f, rightBound-platform->getWidth()-0.01f);
 
                 platform->setPositionX(platformXPos);
                 platforms.push_back(platform);
@@ -183,7 +191,7 @@ namespace logic {
 //
 //        }
 
-        std::cout << std::endl << platforms.size() << std::endl;
+        std::cout << "Number of platforms: " << platforms.size() << std::endl;
 
         // deleten van platforms die uit scherm zijn.
         for (int pl = 0; pl < platforms.size(); pl++) {
@@ -197,11 +205,27 @@ namespace logic {
             }
         }
 
-        if (score.getScore() < static_cast<int>(std::round(doodle->getPositionY()*10))) {
-            score.setScore(static_cast<int>(std::round(doodle->getPositionY()*10)));
+        // recycling of platforms that are out of screen.
+
+        if (bgTiles.front()[0]->getPositionY() < logic::Camera::Instance().getShiftValue()) {
+            float highestYTile = bgTiles.back()[0]->getPositionY();
+            std::vector<std::shared_ptr<logic::BGTile>> r;
+            for (auto t = 0; t < bgTiles.front().size(); t++) {
+                std::shared_ptr<logic::BGTile> tile = bgTiles.front()[t];
+                tile->setPositionY(highestYTile+0.03f);
+                r.push_back(tile);
+            }
+            bgTiles.pop_front();
+            bgTiles.push_back(r);
         }
 
-        std::cout << "score : " << std::to_string(score.getScore()) << std::endl;
+
+//        for (auto i = 0; i < doodle->getObservers().size(); i++) {
+//            if (doodle->getObservers()[i]->isScore()) {
+//                score = std::dynamic_pointer_cast<logic::Score>(doodle->getObservers()[i]);
+//            }
+//        }
+//        std::cout << "score : " << std::to_string(score->getScore()) << std::endl;
     }
 
     bool World::checkForUndetectedCollision(const std::shared_ptr<logic::Platform>& pl, std::vector<std::pair<float,float>> &middleLine) {

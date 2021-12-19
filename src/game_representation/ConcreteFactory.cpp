@@ -12,10 +12,13 @@ namespace representation {
         std::shared_ptr<logic::Player> playerModel(new logic::Player(posX, posY));
         std::shared_ptr<representation::Player_GR> playerView(new representation::Player_GR(playerModel));
 
-        playerModel->setWidth(width); // hardcoded for logic
+        playerModel->setWidth(width);
         playerModel->setHeight(height);
 
         playerModel->registerObserver(playerView);
+
+        std::shared_ptr<logic::Score> score(new logic::Score(playerModel));
+        playerModel->registerObserver(score);
 
         return playerModel;
     }
@@ -84,6 +87,18 @@ namespace representation {
 
     std::shared_ptr<logic::Bonus> ConcreteFactory::createBonus(float posX, float posY, float width, float height) {
         return std::shared_ptr<logic::Bonus>();
+    }
+
+    std::shared_ptr<logic::BGTile> ConcreteFactory::createBGTile(float posX, float posY, float width, float height) {
+        std::shared_ptr<logic::BGTile> bgModel(new logic::BGTile(posX, posY));
+        std::shared_ptr<representation::BGTile_GR> bgView(new representation::BGTile_GR(bgModel));
+
+        bgModel->setWidth(width);
+        bgModel->setHeight(height);
+
+        bgModel->registerObserver(bgView);
+
+        return bgModel;
     }
 
     ConcreteFactory::ConcreteFactory() = default;

@@ -48,8 +48,6 @@ namespace logic {
 
         notifyObservers();
 
-        //setPreviousPositionX(getPositionX());
-        //setPreviousPositionY(getPositionY());
     }
 
 }

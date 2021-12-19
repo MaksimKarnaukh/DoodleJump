@@ -11,7 +11,12 @@ namespace logic {
 
     class BGTile: public logic::EntityModel {
 
+    public:
+
         BGTile();
+
+        BGTile(float posX, float posY);
+
     };
 
 }

@@ -6,6 +6,8 @@
 #define DOODLEJUMP_SCORE_H
 
 #include "Observer.h"
+#include "cmath"
+#include "EntityModel.h"
 
 namespace logic {
 
@@ -13,9 +15,19 @@ namespace logic {
 
         int score;
 
+        std::shared_ptr<logic::EntityModel> mEntityModel;
+
     public:
 
         Score();
+
+        Score(const std::shared_ptr<logic::EntityModel>& entityModel);
+
+        void update() override;
+
+        bool isScore() {
+            return true;
+        }
 
     public:
 

@@ -16,6 +16,8 @@ namespace representation {
         factory = std::make_shared<representation::ConcreteFactory>();
         world = std::make_shared<logic::World>(factory);
 
+//        logic::Stopwatch& stopwatch = logic::Stopwatch::Instance();
+
     }
 
     Game::~Game(){}
@@ -27,22 +29,29 @@ namespace representation {
     void Game::Render(){
         representation::Window::Instance().BeginDraw(); // Clear.
 
-        text.setString(std::to_string(world->score.getScore()));
-        representation::Window::Instance().Draw(text);
+        ////text.setString(std::to_string(world->score->getScore()));
+        ////representation::Window::Instance().Draw(text);
 
-        world->doodle->notifyObservers();
+        for (auto a = 0; a < world->bgTiles.size(); a++) {
+
+            for (auto b = 0; b < world->bgTiles[a].size(); b++) {
+                world->bgTiles[a][b]->notifyObservers();
+            }
+        }
+
         for (auto a = 0; a < world->platforms.size(); a++) {
             world->platforms[a]->notifyObservers();
         }
+        world->doodle->notifyObservers();
 
-        std::cout << "x =" << world->doodle->getPositionX() <<  "   ";
-        std::cout << "y =" << world->doodle->getPositionY() << "   ";
-        std::cout << "w =" << world->doodle->getWidth() << "   ";
-        std::cout << "h =" << world->doodle->getHeight() << "   " << std::endl;
-        std::cout << "pl.x =" << world->platforms[0]->getPositionX() << "   ";
-        std::cout << "pl.y =" << world->platforms[0]->getPositionY() << "   ";
-        std::cout << "pl.w =" << world->platforms[0]->getWidth() << "   ";
-        std::cout << "pl.h =" << world->platforms[0]->getHeight() << std::endl;
+        std::cout << "playerX = " << world->doodle->getPositionX() <<  "; ";
+        std::cout << "playerY = " << world->doodle->getPositionY() << "; ";
+        std::cout << "playerWidth = " << world->doodle->getWidth() << "; ";
+        std::cout << "playerHeight = " << world->doodle->getHeight() << std::endl;
+//        std::cout << "pl.x =" << world->platforms[0]->getPositionX() << "   ";
+//        std::cout << "pl.y =" << world->platforms[0]->getPositionY() << "   ";
+//        std::cout << "pl.w =" << world->platforms[0]->getWidth() << "   ";
+//        std::cout << "pl.h =" << world->platforms[0]->getHeight() << std::endl;
 
 
         //representation::Window::Instance()->Draw(world->doodle.);
@@ -76,32 +85,32 @@ namespace representation {
 
     void Game::runGameLoop() {
 
-        if (!font.loadFromFile("assets/Fonts/Bodo_Amat.ttf")) {
-
-        }
-        text.setFont(font);
-        text.setCharacterSize(60);
-        text.setFillColor(sf::Color::Red);
-        text.setOutlineColor(sf::Color::Yellow);
-        text.setOutlineThickness(4);
+//        if (!font.loadFromFile("assets/Fonts/Bodo_Amat.ttf")) {
+//
+//        }
+//        text.setFont(font);
+//        text.setCharacterSize(60);
+//        text.setFillColor(sf::Color::Red);
+//        text.setOutlineColor(sf::Color::Yellow);
+//        text.setOutlineThickness(4);
 
         logic::Stopwatch& stopwatch = logic::Stopwatch::Instance();
 
-        float frameRate = 60.0f;
+        float frameRate = 120.0f;
 
         while(!GetWindow().IsDone()) {
 
             stopwatch.tick();
 
-            if (stopwatch.getDeltaTime() < (1 / frameRate)) {
-                std::chrono::milliseconds ms = std::chrono::milliseconds((int)(((1/frameRate) - stopwatch.getDeltaTime())*1000));
+            if (stopwatch.getDeltaTime() < (1.0f/frameRate)) {
+                std::chrono::milliseconds ms = std::chrono::milliseconds((int)(((1.0f/frameRate) - stopwatch.getDeltaTime())*1000));
                 std::this_thread::sleep_for(ms);
                 // std::cout << ms.count() << std::endl; ////
             }
 
             stopwatch.tick(); // de verstreken milliseconden erbij.
 
-            std::cout /* << stopwatch->getDeltaTime() << "  " */ << 1 / stopwatch.getDeltaTime() << std::endl; ////
+            std::cout  << stopwatch.getDeltaTime() << "  "  << 1 / stopwatch.getDeltaTime() << std::endl;
 
             stopwatch.Reset(); // mStartTime = now (tijd verstreken is terug 0)
 
@@ -109,7 +118,7 @@ namespace representation {
             HandleInput();
             Update();
             Render();
-            //sf::sleep(sf::seconds(0.1));
+            //sf::sleep(sf::seconds(0.05));
 
         }
     }

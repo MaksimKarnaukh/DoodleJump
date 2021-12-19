@@ -13,6 +13,8 @@
 #include "Platform_Temporary.h"
 #include "Platform_Vertical.h"
 #include "Bonus.h"
+#include "Score.h"
+#include "BGTile.h"
 
 namespace logic {
 
@@ -32,6 +34,8 @@ namespace logic {
 
 
         virtual std::shared_ptr<logic::Bonus> createBonus(float posX, float posY, float width, float height) = 0;
+
+        virtual std::shared_ptr<logic::BGTile> createBGTile(float posX, float posY, float width, float height) = 0;
 
     };
 

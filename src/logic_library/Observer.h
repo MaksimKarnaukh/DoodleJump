@@ -29,6 +29,10 @@ namespace logic {
             mSubject = subject;
         }
 
+        bool isScore() {
+            return false;
+        }
+
     };
 
 }

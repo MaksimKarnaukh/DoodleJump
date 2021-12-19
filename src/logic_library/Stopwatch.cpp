@@ -6,7 +6,7 @@
 
 namespace logic {
 
-//    Stopwatch& Stopwatch::sInstance = nullptr;
+//    Stopwatch* Stopwatch::sInstance = nullptr;
 
     Stopwatch& Stopwatch::Instance() {
 //        if (sInstance == nullptr) {
