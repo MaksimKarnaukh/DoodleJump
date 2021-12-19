@@ -96,7 +96,7 @@ namespace representation {
 
         logic::Stopwatch& stopwatch = logic::Stopwatch::Instance();
 
-        float frameRate = 120.0f;
+        float frameRate = 60.0f;
 
         while(!GetWindow().IsDone()) {
 
@@ -105,7 +105,7 @@ namespace representation {
             if (stopwatch.getDeltaTime() < (1.0f/frameRate)) {
                 std::chrono::milliseconds ms = std::chrono::milliseconds((int)(((1.0f/frameRate) - stopwatch.getDeltaTime())*1000));
                 std::this_thread::sleep_for(ms);
-                // std::cout << ms.count() << std::endl; ////
+                std::cout << ms.count() << std::endl; ////
             }
 
             stopwatch.tick(); // de verstreken milliseconden erbij.
@@ -118,7 +118,7 @@ namespace representation {
             HandleInput();
             Update();
             Render();
-            //sf::sleep(sf::seconds(0.05));
+            //sf::sleep(sf::seconds(0.1));
 
         }
     }

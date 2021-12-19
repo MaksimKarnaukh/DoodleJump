@@ -99,7 +99,7 @@ namespace logic {
 
         //
 
-        for (auto c = 0; c < (1.5/0.05)+5.0; c++) {
+        for (auto c = 0; c < (1.5/0.05)+35.0; c++) { // +35.0 want als we op lage fps zitten, zou dit anders voor visuele problemen zorgen.
             std::vector<std::shared_ptr<logic::BGTile>> row;
             for (auto r = 0; r < rightBound/0.05; r++) {
                 std::shared_ptr<logic::BGTile> bgTile = Factory->createBGTile((float)(r*0.05), float((c+1)*0.03), 0.05, 0.05);

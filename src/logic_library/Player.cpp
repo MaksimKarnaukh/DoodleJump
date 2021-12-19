@@ -39,7 +39,7 @@ namespace logic {
 
     void Player::applyGravity() {
 
-        this->setSpeed(this->getSpeed()+gravity); // na elke tick de zwaartekracht meerekenen (aftrekken)
+        this->setSpeed(this->getSpeed()+gravity*logic::Stopwatch::Instance().getDeltaTime()*32); // na elke tick de zwaartekracht meerekenen (aftrekken)
     }
 
     void Player::moveVertically() {

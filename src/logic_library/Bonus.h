@@ -11,12 +11,12 @@ namespace logic {
 
     class Bonus: public logic::EntityModel {
 
+    public:
+
         Bonus();
 
     };
 
 }
-
-
 
 #endif //DOODLEJUMP_BONUS_H
