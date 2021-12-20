@@ -46,6 +46,16 @@ namespace logic {
             doodle->jump();
         }
 
+        for (auto b = 0; b < bonuses.size(); b++) {
+
+            if (checkForUndetectedCollision(bonuses[b], middleLine)) { // backup check
+                doodle->touchedBonus(bonuses[b]->getBonusForce());
+
+                break;
+            }
+
+        }
+
         // checken of we een platform raken.
         for (auto pl = 0; pl < platforms.size(); pl++) {
 
@@ -97,11 +107,17 @@ namespace logic {
         std::shared_ptr<logic::Platform> p5 = Factory->createStaticPlatform(0.7, 0.9, 0.174004, 0.0411);
         platforms.push_back(p5);
 
+        std::shared_ptr<logic::Bonus> b1 = Factory->createSpring(0.1, 0+0.0412, 0.174004/3, 0.0411);
+        bonuses.push_back(b1);
+
+        std::shared_ptr<logic::Bonus> b2 = Factory->createJetpack(0.9, 0+0.06576, 0.0696, 0.06576);
+        bonuses.push_back(b2);
+
         //
 
-        for (auto c = 0; c < (1.5/0.05)+35.0; c++) { // +35.0 want als we op lage fps zitten, zou dit anders voor visuele problemen zorgen.
+        for (auto c = 0; c < (1.5/0.05)+30.0; c++) { // +35.0 want als we op lage fps zitten, zou dit anders voor visuele problemen zorgen.
             std::vector<std::shared_ptr<logic::BGTile>> row;
-            for (auto r = 0; r < rightBound/0.05; r++) {
+            for (auto r = 0; r < (rightBound/0.05); r++) {
                 std::shared_ptr<logic::BGTile> bgTile = Factory->createBGTile((float)(r*0.05), float((c+1)*0.03), 0.05, 0.05);
                 row.push_back(bgTile);
             }
@@ -207,16 +223,18 @@ namespace logic {
 
         // recycling of platforms that are out of screen.
 
-        if (bgTiles.front()[0]->getPositionY() < logic::Camera::Instance().getShiftValue()) {
-            float highestYTile = bgTiles.back()[0]->getPositionY();
-            std::vector<std::shared_ptr<logic::BGTile>> r;
-            for (auto t = 0; t < bgTiles.front().size(); t++) {
-                std::shared_ptr<logic::BGTile> tile = bgTiles.front()[t];
-                tile->setPositionY(highestYTile+0.03f);
-                r.push_back(tile);
+        for (auto i = 0; i < 20; i++) { // We check the bottom 20 platforms in case we get a drop in fps. The background tile generation, with this loop, can produce without visual errors or 'glitches' at a minimum of 8 fps.
+            if (bgTiles.front()[0]->getPositionY() < logic::Camera::Instance().getShiftValue()) {
+                float highestYTile = bgTiles.back()[0]->getPositionY();
+                std::vector<std::shared_ptr<logic::BGTile>> r;
+                for (auto t = 0; t < bgTiles.front().size(); t++) {
+                    std::shared_ptr<logic::BGTile> tile = bgTiles.front()[t];
+                    tile->setPositionY(highestYTile+0.03f);
+                    r.push_back(tile);
+                }
+                bgTiles.pop_front();
+                bgTiles.push_back(r);
             }
-            bgTiles.pop_front();
-            bgTiles.push_back(r);
         }
 
 
@@ -228,20 +246,21 @@ namespace logic {
 //        std::cout << "score : " << std::to_string(score->getScore()) << std::endl;
     }
 
-    bool World::checkForUndetectedCollision(const std::shared_ptr<logic::Platform>& pl, std::vector<std::pair<float,float>> &middleLine) {
+
+    template <class entity>
+    bool World::checkForUndetectedCollision(const entity& pl, std::vector<std::pair<float,float>> &middleLine) {
 
         for (int i = 0; i < middleLine.size(); i++) {
 
             // checken op de x-coordinaten
             if (middleLine[i].first+doodle->getWidth()/2 >= pl->getPositionX() &&
-                    middleLine[i].first-doodle->getWidth()/2 <= pl->getPositionX()+pl->getWidth()) {
+                middleLine[i].first-doodle->getWidth()/2 <= pl->getPositionX()+pl->getWidth()) {
 
                 // checken op de y-coordinaten
                 if (middleLine[i].second <= pl->getPositionY() &&
-                        middleLine[i].second >= pl->getPositionY()-pl->getHeight()) {
+                    middleLine[i].second >= pl->getPositionY()-pl->getHeight()) {
 
                     return true;
-
                 }
             }
         }

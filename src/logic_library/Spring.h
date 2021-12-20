@@ -14,6 +14,8 @@ namespace logic {
     public:
         Spring();
 
+        Spring(float posX, float posY);
+
     };
 
 }

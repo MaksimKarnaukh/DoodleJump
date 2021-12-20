@@ -5,9 +5,15 @@
 #ifndef DOODLEJUMP_BONUS_GR_H
 #define DOODLEJUMP_BONUS_GR_H
 
+#include "EntityView.h"
+
 namespace representation {
 
-    class Bonus_GR {
+    class Bonus_GR: public EntityView {
+
+    public:
+
+        Bonus_GR();
 
     };
 

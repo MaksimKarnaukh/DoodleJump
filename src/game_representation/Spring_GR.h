@@ -12,7 +12,7 @@ namespace representation {
     class Spring_GR: public representation::Bonus_GR {
 
     public:
-        Spring_GR();
+        Spring_GR(const std::shared_ptr<logic::EntityModel> &entityModel);
     };
 
 }

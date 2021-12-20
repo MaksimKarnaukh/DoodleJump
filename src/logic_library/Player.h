@@ -31,6 +31,8 @@ namespace logic {
 
         void moveVertically();
 
+        void touchedBonus(float bonusForce);
+
     };
 
 }

@@ -30,6 +30,8 @@ namespace logic {
         std::shared_ptr<logic::Player> doodle;
         std::deque<std::vector<std::shared_ptr<logic::BGTile>>> bgTiles;
         std::vector<std::shared_ptr<logic::Platform>> platforms;
+        std::vector<std::shared_ptr<logic::Bonus>> bonuses;
+
 
         std::shared_ptr<logic::AbstractFactory> Factory;
 
@@ -44,16 +46,17 @@ namespace logic {
     public:
 
         World();
-
         World(std::shared_ptr<logic::AbstractFactory>& factory);
-
         ~World();
 
         void receiveInput(std::string &key);
 
         void checkForCollision();
 
-        bool checkForUndetectedCollision(const std::shared_ptr<logic::Platform>& pl, std::vector<std::pair<float,float>> &middleLine);
+        //bool checkForUndetectedCollision(const std::shared_ptr<logic::Platform>& pl, std::vector<std::pair<float,float>> &middleLine);
+
+        template<class entity>
+        bool checkForUndetectedCollision(const entity& pl, std::vector<std::pair<float,float>> &middleLine);
 
         void createStartEntities();
 

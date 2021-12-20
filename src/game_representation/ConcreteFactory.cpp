@@ -89,6 +89,30 @@ namespace representation {
         return std::shared_ptr<logic::Bonus>();
     }
 
+    std::shared_ptr<logic::Bonus> ConcreteFactory::createSpring(float posX, float posY, float width, float height) {
+        std::shared_ptr<logic::Bonus> bonusModel(new logic::Spring(posX, posY));
+        std::shared_ptr<representation::Spring_GR> bonusView(new representation::Spring_GR(bonusModel));
+
+        bonusModel->setWidth(width);
+        bonusModel->setHeight(height);
+
+        bonusModel->registerObserver(bonusView);
+
+        return bonusModel;
+    }
+
+    std::shared_ptr<logic::Bonus> ConcreteFactory::createJetpack(float posX, float posY, float width, float height) {
+        std::shared_ptr<logic::Bonus> bonusModel(new logic::Jetpack(posX, posY));
+        std::shared_ptr<representation::Jetpack_GR> bonusView(new representation::Jetpack_GR(bonusModel));
+
+        bonusModel->setWidth(width);
+        bonusModel->setHeight(height);
+
+        bonusModel->registerObserver(bonusView);
+
+        return bonusModel;
+    }
+
     std::shared_ptr<logic::BGTile> ConcreteFactory::createBGTile(float posX, float posY, float width, float height) {
         std::shared_ptr<logic::BGTile> bgModel(new logic::BGTile(posX, posY));
         std::shared_ptr<representation::BGTile_GR> bgView(new representation::BGTile_GR(bgModel));

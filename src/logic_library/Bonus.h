@@ -11,9 +11,21 @@ namespace logic {
 
     class Bonus: public logic::EntityModel {
 
+    protected:
+        float bonusForce;
+
     public:
 
         Bonus();
+
+        virtual void setBonusForce(const float force) {
+            bonusForce = force;
+        }
+
+        virtual float getBonusForce() const {
+            return bonusForce;
+        };
+
 
     };
 

@@ -42,6 +42,9 @@ namespace representation {
         for (auto a = 0; a < world->platforms.size(); a++) {
             world->platforms[a]->notifyObservers();
         }
+        for (auto a = 0; a < world->bonuses.size(); a++) {
+            world->bonuses[a]->notifyObservers();
+        }
         world->doodle->notifyObservers();
 
         std::cout << "playerX = " << world->doodle->getPositionX() <<  "; ";

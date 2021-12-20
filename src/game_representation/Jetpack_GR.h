@@ -12,7 +12,8 @@ namespace representation {
     class Jetpack_GR: public representation::Bonus_GR {
 
     public:
-        Jetpack_GR();
+
+        Jetpack_GR(const std::shared_ptr<logic::EntityModel> &entityModel);
 
     };
 

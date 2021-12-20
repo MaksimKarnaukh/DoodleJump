@@ -6,8 +6,13 @@
 
 namespace logic {
 
-    Jetpack::Jetpack() {
+    Jetpack::Jetpack() = default;
 
+    Jetpack::Jetpack(float posX, float posY) {
+        this->setPositionX(posX);
+        this->setPositionY(posY);
+
+        this->setBonusForce(5.0f);
     }
 
 }

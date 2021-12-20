@@ -11,8 +11,16 @@ namespace logic {
 
     class Jetpack: public logic::Bonus {
 
+
     public:
         Jetpack();
+
+        Jetpack(float posX, float posY);
+
+//        float getBonusForce() const override {
+//            return bonusForce;
+//        }
+
     };
 
 }
