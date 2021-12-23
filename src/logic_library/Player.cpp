@@ -53,6 +53,7 @@ namespace logic {
     void Player::touchedBonus(float bonusForce) {
 
         this->setSpeed(jumpVelocity*bonusForce); // Spring: doodle jumps with dy = 2.75 (5x larger than the normal jumpheight = 0.55)
+                                                       // Jetpack: doodle jumps with dy = 10.6
 
     }
 

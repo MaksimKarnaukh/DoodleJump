@@ -15,9 +15,13 @@ namespace representation {
 
     class Game {
 
-        sf::Font font;
-        sf::Text text;
+        sf::Font font1;
+        sf::Text scoreText;
+        sf::Text menuText;
 
+        int gameState; // 0:menu ; 1:game
+
+        float frameRate = 60.0f; // standard value
 
     public:
         Game();
@@ -28,6 +32,21 @@ namespace representation {
         Window& GetWindow();
 
         void runGameLoop();
+        void playMenu();
+        void playGame();
+
+        void loadFonts();
+        void createTexts();
+
+    public:
+
+        void setFrameRate(float fps) {
+            frameRate = fps;
+        }
+
+        float getFrameRate() const {
+            return frameRate;
+        }
 
     private:
 
@@ -38,9 +57,6 @@ namespace representation {
         std::shared_ptr<logic::AbstractFactory> factory;
 
     public:
-
-//        float getElapsed();
-//    void restartClock();
 
     };
 }

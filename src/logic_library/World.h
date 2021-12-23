@@ -32,7 +32,6 @@ namespace logic {
         std::vector<std::shared_ptr<logic::Platform>> platforms;
         std::vector<std::shared_ptr<logic::Bonus>> bonuses;
 
-
         std::shared_ptr<logic::AbstractFactory> Factory;
 
         float leftBound = 0.0f;
@@ -42,6 +41,10 @@ namespace logic {
         float shiftBorder = 0.6f;
 
         float formerPlatformPosY;
+        float formerPlatformPosX;
+        bool wasBonusGenerated = false;
+
+        bool gameOver = false;
 
     public:
 

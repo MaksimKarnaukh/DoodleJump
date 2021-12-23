@@ -12,7 +12,7 @@
 namespace logic {
     class Stopwatch {
 
-        static Stopwatch& sInstance;
+        //static Stopwatch& sInstance;
 
         std::chrono::system_clock::time_point mStartTime;
         std::chrono::duration<float> mDeltaTime;

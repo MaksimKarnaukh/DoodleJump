@@ -13,10 +13,12 @@ namespace representation {
         representation::Window& m_window = representation::Window::Instance();
         m_window.Setup("Doodle Jump", sf::Vector2u(640,960));
 
-        factory = std::make_shared<representation::ConcreteFactory>();
-        world = std::make_shared<logic::World>(factory);
+//        factory = std::make_shared<representation::ConcreteFactory>();
+//        world = logic::World(factory);
 
-//        logic::Stopwatch& stopwatch = logic::Stopwatch::Instance();
+        logic::Stopwatch& stopwatch = logic::Stopwatch::Instance();
+
+        gameState = 0;
 
     }
 
@@ -28,9 +30,6 @@ namespace representation {
 
     void Game::Render(){
         representation::Window::Instance().BeginDraw(); // Clear.
-
-        ////text.setString(std::to_string(world->score->getScore()));
-        ////representation::Window::Instance().Draw(text);
 
         for (auto a = 0; a < world->bgTiles.size(); a++) {
 
@@ -45,6 +44,9 @@ namespace representation {
         for (auto a = 0; a < world->bonuses.size(); a++) {
             world->bonuses[a]->notifyObservers();
         }
+        scoreText.setString(std::to_string(world->score->getScore()));
+        representation::Window::Instance().Draw(scoreText);
+
         world->doodle->notifyObservers();
 
         std::cout << "playerX = " << world->doodle->getPositionX() <<  "; ";
@@ -55,9 +57,6 @@ namespace representation {
 //        std::cout << "pl.y =" << world->platforms[0]->getPositionY() << "   ";
 //        std::cout << "pl.w =" << world->platforms[0]->getWidth() << "   ";
 //        std::cout << "pl.h =" << world->platforms[0]->getHeight() << std::endl;
-
-
-        //representation::Window::Instance()->Draw(world->doodle.);
 
         representation::Window::Instance().EndDraw(); // Display.
     }
@@ -88,52 +87,93 @@ namespace representation {
 
     void Game::runGameLoop() {
 
-//        if (!font.loadFromFile("assets/Fonts/Bodo_Amat.ttf")) {
-//
-//        }
-//        text.setFont(font);
-//        text.setCharacterSize(60);
-//        text.setFillColor(sf::Color::Red);
-//        text.setOutlineColor(sf::Color::Yellow);
-//        text.setOutlineThickness(4);
-
-        logic::Stopwatch& stopwatch = logic::Stopwatch::Instance();
-
-        float frameRate = 60.0f;
+        loadFonts();
+        createTexts();
 
         while(!GetWindow().IsDone()) {
 
-            stopwatch.tick();
+            if (gameState == 0) {
+                playMenu();
+            }
+            else {
+                playGame();
+            }
+            // we can add more gameStates if we want
 
-            if (stopwatch.getDeltaTime() < (1.0f/frameRate)) {
-                std::chrono::milliseconds ms = std::chrono::milliseconds((int)(((1.0f/frameRate) - stopwatch.getDeltaTime())*1000));
+        }
+    }
+
+    void Game::playMenu() {
+
+        if (! sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
+
+            representation::Window::Instance().BeginDraw(); // Clear.
+            representation::Window::Instance().Draw(menuText);
+            representation::Window::Instance().EndDraw(); // Display.
+
+        }
+        else {
+
+            gameState = 1;
+        }
+
+    }
+
+    void Game::playGame() {
+
+        factory = std::make_shared<representation::ConcreteFactory>();
+        world = std::move(std::make_shared<logic::World>(factory));
+
+        logic::Stopwatch::Instance().Reset();
+
+        while ( !(world->gameOver || GetWindow().IsDone()) ) {
+
+            logic::Stopwatch::Instance().tick();
+
+            if (logic::Stopwatch::Instance().getDeltaTime() < (1.0f/getFrameRate())) {
+                std::chrono::milliseconds ms = std::chrono::milliseconds((int)(((1.0f/getFrameRate()) - logic::Stopwatch::Instance().getDeltaTime())*1000));
                 std::this_thread::sleep_for(ms);
-                std::cout << ms.count() << std::endl; ////
+                std::cout << ms.count() << std::endl;
             }
 
-            stopwatch.tick(); // de verstreken milliseconden erbij.
-
-            std::cout  << stopwatch.getDeltaTime() << "  "  << 1 / stopwatch.getDeltaTime() << std::endl;
-
-            stopwatch.Reset(); // mStartTime = now (tijd verstreken is terug 0)
+            logic::Stopwatch::Instance().tick(); // de verstreken milliseconden erbij.
+            std::cout  << logic::Stopwatch::Instance().getDeltaTime() << "  " << 1 / logic::Stopwatch::Instance().getDeltaTime() << std::endl;
+            logic::Stopwatch::Instance().Reset(); // mStartTime = now (tijd verstreken is terug 0)
 
             // Game loop.
             HandleInput();
             Update();
             Render();
-            //sf::sleep(sf::seconds(0.1));
+        }
+        gameState = 0;
 
+
+    }
+
+    void Game::loadFonts() {
+
+        if (!font1.loadFromFile("assets/Fonts/Bodo_Amat.ttf")) {
+            std::cerr << "error" << std::endl;
         }
     }
 
-//    float Game::getElapsed() {
-//        return logic::Stopwatch::Instance()->getDeltaTime();
-//    }
+    void Game::createTexts() {
 
-//void Game::restartClock() {
-//    logic::Stopwatch::Instance()->Reset();
-//}
+        scoreText.setFont(font1);
+        scoreText.setCharacterSize(60); // 60
+        scoreText.setFillColor(sf::Color::Red);
+        scoreText.setOutlineColor(sf::Color::Yellow);
+        scoreText.setOutlineThickness(4); // 4
 
+        menuText.setFont(font1);
+        menuText.setCharacterSize(30); // 60
+        menuText.setFillColor(sf::Color::Red);
+        menuText.setOutlineColor(sf::Color::Yellow);
+        menuText.setOutlineThickness(4); // 4
+        menuText.setPosition(20.0f, (float)representation::Window::Instance().GetWindowSize().y/2);
+        menuText.setString("Press space to start the game.");
+
+    }
 }
 
 

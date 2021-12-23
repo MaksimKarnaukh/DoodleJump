@@ -4,6 +4,8 @@
 
 #include "World.h"
 
+#include <memory>
+
 namespace logic {
 
     World::World() = default;
@@ -14,6 +16,9 @@ namespace logic {
         logic::Camera& camera = logic::Camera::Instance();
 
         createStartEntities();
+
+        score = std::make_shared<logic::Score>(doodle);
+        doodle->registerObserver(score);
 
     }
 
@@ -42,15 +47,19 @@ namespace logic {
 
         std::vector<std::pair<float,float>> middleLine = getLineBetweenPoints(x0, y0, x1, y1);
 
-        if ((doodle->getPositionY()-doodle->getHeight() <= lowerBound)) {
-            doodle->jump();
+        if ((doodle->getPositionY() <= lowerBound) || (doodle->getPositionY() <= lowerBound+logic::Camera::Instance().getShiftValue())) {
+            gameOver = true;
         }
 
         for (auto b = 0; b < bonuses.size(); b++) {
 
             if (checkForUndetectedCollision(bonuses[b], middleLine)) { // backup check
                 doodle->touchedBonus(bonuses[b]->getBonusForce());
+                for (auto i = 0; i < bonuses[b]->getObservers().size(); i++) {
+                    bonuses[b]->removeObserver(bonuses[b]->getObservers()[i]); // remove all observers
+                }
 
+                bonuses.erase(bonuses.begin()+b);
                 break;
             }
 
@@ -77,7 +86,6 @@ namespace logic {
                 if (platforms[pl]->isTouched()) {
                     platforms.erase(platforms.begin()+pl);
                 }
-
                 break;
             }
         }
@@ -85,7 +93,7 @@ namespace logic {
 
     void World::createStartEntities() {
 
-        doodle = Factory->createPlayer(0.5, 0.4, 0.077, 0.18);
+        doodle = Factory->createPlayer(0.5, 0.5, 0.077, 0.18);
 
         // begin platformen gehardcode zodat de speler gemakkelijk vanaf het begin al kan spelen.
 
@@ -107,11 +115,11 @@ namespace logic {
         std::shared_ptr<logic::Platform> p5 = Factory->createStaticPlatform(0.7, 0.9, 0.174004, 0.0411);
         platforms.push_back(p5);
 
-        std::shared_ptr<logic::Bonus> b1 = Factory->createSpring(0.1, 0+0.0412, 0.174004/3, 0.0411);
-        bonuses.push_back(b1);
-
-        std::shared_ptr<logic::Bonus> b2 = Factory->createJetpack(0.9, 0+0.06576, 0.0696, 0.06576);
-        bonuses.push_back(b2);
+//        std::shared_ptr<logic::Bonus> b1 = Factory->createSpring(0.1, 0+0.0412, 0.174004/3, 0.0411);
+//        bonuses.push_back(b1);
+//
+//        std::shared_ptr<logic::Bonus> b2 = Factory->createJetpack(0.9, 0+0.06576, 0.0696, 0.06576);
+//        bonuses.push_back(b2);
 
         //
 
@@ -127,15 +135,18 @@ namespace logic {
 
     void World::createEntities() {
 
+        bool wasBonusGeneratedTemp = false; // to indicate whether we created a bonus this time
+
         // calculate chance of placing a platform or not.
 
         float p = 0.90; // beginwaarde = 0.90 (90% kans op platform generation)
-        float factor = 1; // represents the depending factor on the score (y-coordinate of our player)
+        float factor = std::max( 0.25f,  (1.0f-(std::floor(doodle->getPositionY()/3))/100) ); // represents the depending factor on the score (y-coordinate of our player)
         bool isCreate = logic::Random::Instance().bernoulliDistribution(p*factor);
+//        std::cout << "factor : " << factor << " chance : " << p*factor << std::endl;
 
         // y position of our platform
-
         float platformYPos = 1+logic::Camera::Instance().getShiftValue();
+
         if (formerPlatformPosY+0.05 < platformYPos) {
 
             if (isCreate) {
@@ -144,13 +155,36 @@ namespace logic {
                 // decide which platform to place
 
                 int pl = logic::Random::Instance().uniformIntDistribution(0, 3);
-                //pl = 0;
+                pl = 0;
 
                 std::shared_ptr<logic::Platform> platform;
+                std::shared_ptr<logic::Bonus> bonus;
+
                 float platformXPos = 0; // going to be overwritten
+
+                float chanceForBonus = 0.10;
+                float factorBonus = std::min(0.08f, (std::floor(doodle->getPositionY()/500))/100); // per 500 hoogte wordt kans op bonus verminderd met 0.01 met op het einde minimum een waarde van 0.02.
+                bool isCreateBonus;
+
                 switch (pl) {
                     case 0:
                         platform = Factory->createStaticPlatform(platformXPos, platformYPos, 0.174004, 0.0411);
+
+                        isCreateBonus = logic::Random::Instance().bernoulliDistribution(chanceForBonus-factorBonus);
+                        if (isCreateBonus) {
+
+                            // decide which bonus to place
+                            int bonusKind = logic::Random::Instance().uniformIntDistribution(0, 9);
+
+                            if (bonusKind < 8) {
+                                bonus = Factory->createSpring(0, 0, 0.058, 0.0411);
+                            }
+                            else {
+                                bonus = Factory->createJetpack(0, 0, 0.0696, 0.06576);
+                            }
+                            wasBonusGeneratedTemp = true;
+                        }
+
                         break;
                     case 1:
                         platform = Factory->createVerticalPlatform(platformXPos, platformYPos, 0.174004, 0.0411);
@@ -167,14 +201,47 @@ namespace logic {
 
                 // calculate where to place the platform (x position only)
 
-                platformXPos = logic::Random::Instance().uniformRealDistribution(leftBound+0.01f, rightBound-platform->getWidth()-0.01f);
+                if (wasBonusGenerated) {
+                    float platformXPos1 = logic::Random::Instance().uniformRealDistribution(leftBound+0.02f, formerPlatformPosX-platform->getWidth()-0.08f);
+                    float platformXPos2 = logic::Random::Instance().uniformRealDistribution(formerPlatformPosX+platform->getWidth()+0.08f, rightBound-platform->getWidth()-0.02f);
+
+                    if (platformXPos1 < leftBound) {
+                        platformXPos = platformXPos2;
+                    }
+                    else if (platformXPos2 > rightBound-platform->getWidth()-0.02f) {
+                        platformXPos = platformXPos1;
+                    }
+                    else {
+                        int posDecider = logic::Random::Instance().uniformIntDistribution(0, 9);
+                        if (posDecider < 5) {
+                            platformXPos = platformXPos1;
+                        }
+                        else {
+                            platformXPos = platformXPos2;
+                        }
+                    }
+                }
+                else {
+                    platformXPos = logic::Random::Instance().uniformRealDistribution(leftBound+0.02f, rightBound-platform->getWidth()-0.02f);
+                }
 
                 platform->setPositionX(platformXPos);
                 platforms.push_back(platform);
+
+                formerPlatformPosX = platformXPos;
+
+                if (wasBonusGeneratedTemp) {
+                    float bonusXPos = logic::Random::Instance().uniformRealDistribution(platformXPos+0.01f, platformXPos+platform->getWidth()-bonus->getWidth()-0.01f);
+                    bonus->setPositionX(bonusXPos);
+                    bonus->setPositionY(platformYPos+bonus->getHeight());
+                    bonuses.push_back(bonus);
+                    wasBonusGenerated = true;
+                }
+                else {
+                    wasBonusGenerated = false;
+                }
             }
-
         }
-
     }
 
     void World::update() {
@@ -220,7 +287,17 @@ namespace logic {
                 platforms.erase(platforms.begin()+pl);
             }
         }
+        // deleten van bonussen die uit scherm zijn
+        for (int b = 0; b < bonuses.size(); b++) {
+            if (bonuses[b]->getPositionY() < logic::Camera::Instance().getShiftValue()) {
 
+                for (auto i = 0; i < bonuses[b]->getObservers().size(); i++) {
+                    bonuses[b]->removeObserver(bonuses[b]->getObservers()[i]); // remove all observers
+                }
+
+                bonuses.erase(bonuses.begin()+b);
+            }
+        }
         // recycling of platforms that are out of screen.
 
         for (auto i = 0; i < 20; i++) { // We check the bottom 20 platforms in case we get a drop in fps. The background tile generation, with this loop, can produce without visual errors or 'glitches' at a minimum of 8 fps.
@@ -237,13 +314,7 @@ namespace logic {
             }
         }
 
-
-//        for (auto i = 0; i < doodle->getObservers().size(); i++) {
-//            if (doodle->getObservers()[i]->isScore()) {
-//                score = std::dynamic_pointer_cast<logic::Score>(doodle->getObservers()[i]);
-//            }
-//        }
-//        std::cout << "score : " << std::to_string(score->getScore()) << std::endl;
+        //std::cout << "score : " << std::to_string(score->getScore()) << std::endl;
     }
 
 
@@ -312,7 +383,10 @@ namespace logic {
     }
 
     World::~World() {
-        //doodle.reset();
+
+        for (auto o = 0; o < doodle->getObservers().size(); o++) {
+            doodle->removeObserver(doodle->getObservers()[o]);
+        }
 
         for (int pl = 0; pl < platforms.size(); pl++) {
 
@@ -322,8 +396,28 @@ namespace logic {
 
             platforms.erase(platforms.begin()+pl);
         }
-    }
+        for (int bg = 0; bg < bgTiles.size(); bg++) {
 
+            for (auto i = 0; i < bgTiles[bg].size(); i++) {
+
+                for (auto j = 0; j < bgTiles[bg][i]->getObservers().size(); j++) {
+                    bgTiles[bg][i]->removeObserver((bgTiles[bg][i]->getObservers()[j])); // remove all observers
+
+                }
+            }
+
+            bgTiles.erase(bgTiles.begin()+bg);
+        }
+        for (int b = 0; b < bonuses.size(); b++) {
+
+            for (auto i = 0; i < bonuses[b]->getObservers().size(); i++) {
+                bonuses[b]->removeObserver(bonuses[b]->getObservers()[i]); // remove all observers
+            }
+
+            bonuses.erase(bonuses.begin()+b);
+        }
+        logic::Camera::Instance().setShiftValue(0.0f);
+    }
 
 }
 
