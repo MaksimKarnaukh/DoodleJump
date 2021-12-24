@@ -17,7 +17,7 @@ namespace logic {
     void Platform_Horizontal::move() {
 
         this->setPositionX(this->getPositionX()+unit*logic::Stopwatch::Instance().getDeltaTime());
-        if (this->getPositionX() <= 0 || this->getPositionX()+this->getWidth() >= 1) {
+        if (this->getPositionX() <= 0+0.01f || this->getPositionX()+this->getWidth() >= 1-0.01f) {
             unit = -unit;
         }
 

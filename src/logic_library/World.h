@@ -18,6 +18,7 @@
 #include "Random.h"
 #include "Score.h"
 #include <deque>
+#include <map>
 
 namespace logic {
 
@@ -46,6 +47,8 @@ namespace logic {
 
         bool gameOver = false;
 
+        std::map<int, std::map<int, float>> percentages;
+
     public:
 
         World();
@@ -68,6 +71,8 @@ namespace logic {
         void update();
 
         static std::vector<std::pair<float,float>> getLineBetweenPoints(float x0, float y0, float x1, float y1);
+
+        void setupPercentages();
 
 
 

@@ -20,6 +20,8 @@ namespace logic {
         score = std::make_shared<logic::Score>(doodle);
         doodle->registerObserver(score);
 
+        setupPercentages();
+
     }
 
     void World::receiveInput(std::string &key) {
@@ -154,8 +156,35 @@ namespace logic {
 
                 // decide which platform to place
 
-                int pl = logic::Random::Instance().uniformIntDistribution(0, 3);
-                pl = 0;
+                std::map<int, float> chanceMap;
+                for (auto it = percentages.begin(); it != percentages.end(); it++) {
+                    if (doodle->getPositionY()*10 < (float) it->first) {
+                        chanceMap = it->second;
+                        break;
+
+                    }
+                }
+                if (doodle->getPositionY()*10 >= 8000) {
+                    chanceMap = {
+                            {0, 0},
+                            {1, 0.6}, // 60%
+                            {2, 0.8}, // 20%
+                            {3, 1} // 20%
+                    };
+                }
+                //
+                for (auto it = chanceMap.begin(); it != chanceMap.end(); it++) {
+                    std::cout << it->first << " " << it->second << std::endl;
+                }
+                //
+                float pl1 = logic::Random::Instance().uniformRealDistribution(0, 1);
+                int pl = 0;
+                for (auto it = chanceMap.begin(); it != chanceMap.end(); it++) {
+                    if (pl1 < it->second) {
+                        pl = it->first;
+                        break;
+                    }
+                }
 
                 std::shared_ptr<logic::Platform> platform;
                 std::shared_ptr<logic::Bonus> bonus;
@@ -184,16 +213,15 @@ namespace logic {
                             }
                             wasBonusGeneratedTemp = true;
                         }
-
                         break;
                     case 1:
-                        platform = Factory->createVerticalPlatform(platformXPos, platformYPos, 0.174004, 0.0411);
+                        platform = Factory->createTemporaryPlatform(platformXPos, platformYPos, 0.174004, 0.0411);
                         break;
                     case 2:
-                        platform = Factory->createHorizontalPlatform(platformXPos, platformYPos, 0.174004, 0.0411);
+                        platform = Factory->createVerticalPlatform(platformXPos, platformYPos, 0.174004, 0.0411);
                         break;
                     case 3:
-                        platform = Factory->createTemporaryPlatform(platformXPos, platformYPos, 0.174004, 0.0411);
+                        platform = Factory->createHorizontalPlatform(platformXPos, platformYPos, 0.174004, 0.0411);
                         break;
                     default:
                         std::cerr << "No platform was created" << std::endl; // default statement used for error output
@@ -202,7 +230,7 @@ namespace logic {
                 // calculate where to place the platform (x position only)
 
                 if (wasBonusGenerated) {
-                    float platformXPos1 = logic::Random::Instance().uniformRealDistribution(leftBound+0.02f, formerPlatformPosX-platform->getWidth()-0.08f);
+                    float platformXPos1 = logic::Random::Instance().uniformRealDistribution(leftBound+0.02f, formerPlatformPosX-platform->getWidth()-0.08f); //// +0.02 watch out
                     float platformXPos2 = logic::Random::Instance().uniformRealDistribution(formerPlatformPosX+platform->getWidth()+0.08f, rightBound-platform->getWidth()-0.02f);
 
                     if (platformXPos1 < leftBound) {
@@ -313,8 +341,6 @@ namespace logic {
                 bgTiles.push_back(r);
             }
         }
-
-        //std::cout << "score : " << std::to_string(score->getScore()) << std::endl;
     }
 
 
@@ -417,6 +443,66 @@ namespace logic {
             bonuses.erase(bonuses.begin()+b);
         }
         logic::Camera::Instance().setShiftValue(0.0f);
+    }
+
+    void World::setupPercentages() {
+
+        std::map<int, float> map100 = {
+                {0, 1}, // 0: Static
+                {1, 0}, // 1: Temporary
+                {2, 0}, // 2: Vertical
+                {3, 0} // 3: Horizontal
+        };
+        percentages[100] = map100;
+
+        std::map<int, float> map200 = {
+                {0, 0.8}, // 80%
+                {1, 0},
+                {2, 0},
+                {3, 1} // 20%
+        };
+        percentages[200] = map200;
+
+        std::map<int, float> map400 = {
+                {0, 0.6}, // 60%
+                {1, 0},
+                {2, 0.8}, // 20%
+                {3, 1} // 20%
+        };
+        percentages[400] = map400;
+
+        std::map<int, float> map800 = {
+                {0, 0.4}, // 40%
+                {1, 0.7}, // 30%
+                {2, 0.85}, // 15%
+                {3, 1} // 15%
+        };
+        percentages[800] = map800;
+
+        std::map<int, float> map2000 = {
+                {0, 0.2}, // 20%
+                {1, 0.6}, // 40%
+                {2, 0.8}, // 20%
+                {3, 1} // 20%
+        };
+        percentages[2000] = map2000;
+
+        std::map<int, float> map4000 = {
+                {0, 0.1}, // 10%
+                {1, 0.7}, // 60%
+                {2, 0.85}, // 15%
+                {3, 1} // 15%
+        };
+        percentages[4000] = map4000;
+
+        std::map<int, float> map8000 = {
+                {0, 0.05}, // 5%
+                {1, 0.7}, // 65%
+                {2, 0.85}, // 15%
+                {3, 1} // 15%
+        };
+        percentages[8000] = map8000;
+
     }
 
 }
