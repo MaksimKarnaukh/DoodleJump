@@ -27,7 +27,6 @@ namespace logic {
     public:
 
         std::shared_ptr<logic::Score> score;
-
         std::shared_ptr<logic::Player> doodle;
         std::deque<std::vector<std::shared_ptr<logic::BGTile>>> bgTiles;
         std::vector<std::shared_ptr<logic::Platform>> platforms;
@@ -35,11 +34,10 @@ namespace logic {
 
         std::shared_ptr<logic::AbstractFactory> Factory;
 
-        float leftBound = 0.0f;
-        float rightBound = 1.0f;
-        float lowerBound = 0.0f;
-
-        float shiftBorder = 0.6f;
+        float leftBound = logic::utility::Camera::Instance().getLeftBound();
+        float rightBound = logic::utility::Camera::Instance().getRightBound();
+        float lowerBound = logic::utility::Camera::Instance().getLowerBound();
+        float shiftBorder = logic::utility::Camera::Instance().getShiftBorder();
 
         float formerPlatformPosY;
         float formerPlatformPosX;

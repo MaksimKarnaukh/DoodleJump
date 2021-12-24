@@ -9,58 +9,178 @@
 #include "cmath"
 
 namespace logic {
+    namespace utility {
 
-    class Camera {
+        class Camera {
 
-        static Camera& sInstance;
+            int windowWidth = 640; // width of out window in pixels
+            int windowHeight = 960; // height of out window in pixels
 
-        int windowWidth = 640;
-        int windowHeight = 960;
+            float shiftValue = 0.0f; // value that indicates how much we need to decrease our y-coordinate to project near the origin.
 
-        float shiftValue = 0.0f;
+            float shiftBorder = 0.6f; // value at which we start increasing the shiftValue
 
-    public:
+            float leftBound = 0.0f; // leftmost logic coordinate (left boundary)
+            float rightBound = 1.0f; // rightmost logic coordinate (right boundary)
+            float lowerBound = 0.0f; // lowermost logic coordinate (lower boundary)
 
-        void setWindowWidth(int width) {
-            windowWidth = width;
-        }
+        public:
 
-        void setWindowHeight(int height) {
-            windowHeight = height;
-        }
+            /**
+            * @function : setWindowWidth
+            * Setter function for the windowWidth data member.
+            * @param width (int) : value that we want to give to windowWidth.
+            */
+            void setWindowWidth(int width) {
+                windowWidth = width;
+            }
 
-        void setShiftValue(float shift) {
-            shiftValue = shift;
-        }
+            /**
+            * @function : setWindowHeight
+            * Setter function for the windowHeight data member.
+            * @param height (int) : value that we want to give to windowHeight.
+            */
+            void setWindowHeight(int height) {
+                windowHeight = height;
+            }
 
-        int getWindowWidth() const {
-            return windowWidth;
-        }
+            /**
+            * @function : setShiftValue
+            * Setter function for the shiftValue data member.
+            * @param shift (float) : value that we want to give to shiftValue.
+            */
+            void setShiftValue(float shift) {
+                shiftValue = shift;
+            }
 
-        int getWindowHeight() const {
-            return windowHeight;
-        }
+            /**
+            * @function : setLeftBound
+            * Setter function for the leftBound data member.
+            * @param LeftBound (float) : value that we want to give to leftBound.
+            */
+            void setLeftBound(const float LeftBound) {
+                leftBound = LeftBound;
+            }
 
-        float getShiftValue() const {
-            return shiftValue;
-        }
+            /**
+            * @function : setRightBound
+            * Setter function for the rightBound data member.
+            * @param RightBound (float) : value that we want to give to rightBound.
+            */
+            void setRightBound(const float RightBound) {
+                rightBound = RightBound;
+            }
 
-    public:
+            /**
+            * @function : setLowerBound
+            * Setter function for the lowerBound data member.
+            * @param LowerBound (float) : value that we want to give to lowerBound.
+            */
+            void setLowerBound(const float LowerBound) {
+                lowerBound = LowerBound;
+            }
 
-        Camera();
+            /**
+            * @function : setShiftBorder
+            * Setter function for the shiftBorder data member.
+            * @param ShiftBorder (float) : value that we want to give to shiftBorder.
+            */
+            void setShiftBorder(const float ShiftBorder) {
+                shiftBorder = ShiftBorder;
+            }
 
-        std::pair<int,int> projectCoordinates(float x, float y) const;
+            /**
+            * @function : getWindowWidth
+            * Getter function for the windowWidth data member.
+            * @return (int) : this->windowWidth
+            */
+            int getWindowWidth() const {
+                return windowWidth;
+            }
 
-        Camera(const Camera &) = delete;
-        Camera(const Camera &&) = delete;
+            /**
+            * @function : getWindowHeight
+            * Getter function for the windowHeight data member.
+            * @return (int) : this->windowHeight
+            */
+            int getWindowHeight() const {
+                return windowHeight;
+            }
 
-        Camera& operator=(const Camera &) = delete;
-        Camera& operator=(const Camera &&) = delete;
+            /**
+            * @function : getShiftValue
+            * Getter function for the shiftValue data member.
+            * @return (float) : this->shiftValue
+            */
+            float getShiftValue() const {
+                return shiftValue;
+            }
 
-        static Camera& Instance();
+            /**
+            * @function : getLeftBound
+            * Getter function for the leftBound data member.
+            * @return (float) : this->leftBound
+            */
+            float getLeftBound() const {
+                return leftBound;
+            }
 
-    };
+            /**
+            * @function : getRightBound
+            * Getter function for the rightBound data member.
+            * @return (float) : this->rightBound
+            */
+            float getRightBound() const {
+                return rightBound;
+            }
 
+            /**
+            * @function : getLowerBound
+            * Getter function for the lowerBound data member.
+            * @return (float) : this->lowerBound
+            */
+            float getLowerBound() const {
+                return lowerBound;
+            }
+
+            /**
+            * @function : getShiftBorder
+            * Getter function for the shiftBorder data member.
+            * @return (float) : this->shiftBorder
+            */
+            float getShiftBorder() const {
+                return shiftBorder;
+            }
+
+        public:
+
+            static Camera& Instance();
+
+            /**
+            * @function : Camera
+            * Constructor for a Camera.
+            */
+            Camera();
+
+            /**
+            * @function : projectCoordinates
+            * Projects the logic coordinates (x and y) to pixel coordinates on the window.
+            * @param x (float) : logic x-coordinate.
+            * @param y (float) : logic y-coordinate.
+            * @return (std::pair<int,int>): pair (x,y) of pixel coordinates.
+            */
+            std::pair<int,int> projectCoordinates(float x, float y) const;
+
+        public:
+
+            Camera(const Camera &) = delete;
+            Camera(const Camera &&) = delete;
+
+            Camera& operator=(const Camera &) = delete;
+            Camera& operator=(const Camera &&) = delete;
+
+        };
+    }
 }
 
 

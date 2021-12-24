@@ -23,7 +23,7 @@ namespace representation {
 
     void EntityView::update() {
 
-        std::pair<int, int> pixels = logic::Camera::Instance().projectCoordinates(mEntityModel->getPositionX(),mEntityModel->getPositionY());
+        std::pair<int, int> pixels = logic::utility::Camera::Instance().projectCoordinates(mEntityModel->getPositionX(),mEntityModel->getPositionY());
 
         sprite.setPosition(pixels.first, pixels.second);
 

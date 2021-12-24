@@ -13,7 +13,7 @@ namespace logic {
     World::World(std::shared_ptr<logic::AbstractFactory> &factory) : Factory(factory) {
 
         logic::Random& random = logic::Random::Instance();
-        logic::Camera& camera = logic::Camera::Instance();
+        logic::utility::Camera& camera = logic::utility::Camera::Instance();
 
         createStartEntities();
 
@@ -21,6 +21,11 @@ namespace logic {
         doodle->registerObserver(score);
 
         setupPercentages();
+
+//        leftBound = logic::utility::Camera::Instance().getLeftBound();
+//        rightBound = logic::utility::Camera::Instance().getRightBound();
+//        lowerBound = logic::utility::Camera::Instance().getLowerBound();
+//        shiftBorder = logic::utility::Camera::Instance().getShiftBorder();
 
     }
 
@@ -49,9 +54,8 @@ namespace logic {
 
         std::vector<std::pair<float,float>> middleLine = getLineBetweenPoints(x0, y0, x1, y1);
 
-        if ((doodle->getPositionY() <= lowerBound) || (doodle->getPositionY() <= lowerBound+logic::Camera::Instance().getShiftValue())) {
-            //gameOver = true;
-            doodle->setSpeed(30);
+        if ((doodle->getPositionY() <= lowerBound) || (doodle->getPositionY() <= lowerBound+logic::utility::Camera::Instance().getShiftValue())) {
+            gameOver = true;
         }
 
         for (auto b = 0; b < bonuses.size(); b++) {
@@ -148,7 +152,7 @@ namespace logic {
         std::cout << "create : " << isCreate << std::endl;
 
         // y position of our platform
-        float platformYPos = 1+logic::Camera::Instance().getShiftValue();
+        float platformYPos = 1+logic::utility::Camera::Instance().getShiftValue();
         if (platformYPos > formerPlatformPosY+0.35) { // min distance between platforms guaranteed
             isCreate = true;
         }
@@ -172,9 +176,9 @@ namespace logic {
                 if (doodle->getPositionY()*10 >= 8000) {
                     chanceMap = {
                             {0, 0},
-                            {1, 0.6}, // 60%
-                            {2, 0.8}, // 20%
-                            {3, 1} // 20%
+                            {1, 0.5}, // 50%
+                            {2, 0.6}, // 10%
+                            {3, 1} // 40%
                     };
                 }
                 //
@@ -293,8 +297,8 @@ namespace logic {
         doodle->setPreviousPositionX(doodle->getPositionX());
         doodle->setPreviousPositionY(doodle->getPositionY());
 
-        if (doodle->getPositionY() >= shiftBorder && doodle->getPositionY() >= logic::Camera::Instance().getShiftValue()+shiftBorder) {
-            logic::Camera::Instance().setShiftValue(doodle->getPositionY()-shiftBorder);
+        if (doodle->getPositionY() >= shiftBorder && doodle->getPositionY() >= logic::utility::Camera::Instance().getShiftValue()+shiftBorder) {
+            logic::utility::Camera::Instance().setShiftValue(doodle->getPositionY()-shiftBorder);
 
             //if (static_cast<int>(std::round(((doodle->getPositionY()+0.45)*100)))%5==0) {
                 createEntities();
@@ -311,7 +315,7 @@ namespace logic {
 
         // deleten van platforms die uit scherm zijn.
         for (int pl = 0; pl < platforms.size(); pl++) {
-            if (platforms[pl]->getPositionY() < logic::Camera::Instance().getShiftValue()) {
+            if (platforms[pl]->getPositionY() < logic::utility::Camera::Instance().getShiftValue()) {
 
                 for (auto i = 0; i < platforms[pl]->getObservers().size(); i++) {
                     platforms[pl]->removeObserver(platforms[pl]->getObservers()[i]); // remove all observers
@@ -322,7 +326,7 @@ namespace logic {
         }
         // deleten van bonussen die uit scherm zijn
         for (int b = 0; b < bonuses.size(); b++) {
-            if (bonuses[b]->getPositionY() < logic::Camera::Instance().getShiftValue()) {
+            if (bonuses[b]->getPositionY() < logic::utility::Camera::Instance().getShiftValue()) {
 
                 for (auto i = 0; i < bonuses[b]->getObservers().size(); i++) {
                     bonuses[b]->removeObserver(bonuses[b]->getObservers()[i]); // remove all observers
@@ -334,7 +338,7 @@ namespace logic {
         // recycling of platforms that are out of screen.
 
         for (auto i = 0; i < 20; i++) { // We check the bottom 20 platforms in case we get a drop in fps. The background tile generation, with this loop, can produce without visual errors or 'glitches' at a minimum of 8 fps.
-            if (bgTiles.front()[0]->getPositionY() < logic::Camera::Instance().getShiftValue()) {
+            if (bgTiles.front()[0]->getPositionY() < logic::utility::Camera::Instance().getShiftValue()) {
                 float highestYTile = bgTiles.back()[0]->getPositionY();
                 std::vector<std::shared_ptr<logic::BGTile>> r;
                 for (auto t = 0; t < bgTiles.front().size(); t++) {
@@ -447,7 +451,7 @@ namespace logic {
 
             bonuses.erase(bonuses.begin()+b);
         }
-        logic::Camera::Instance().setShiftValue(0.0f);
+        logic::utility::Camera::Instance().setShiftValue(0.0f);
     }
 
     void World::setupPercentages() {
@@ -507,6 +511,14 @@ namespace logic {
                 {3, 1} // 15%
         };
         percentages[8000] = map8000;
+
+        std::map<int, float> map16000 = {
+                {0, 0.05}, // 5%
+                {1, 0.6}, // 55%
+                {2, 0.8}, // 20%
+                {3, 1} // 20%
+        };
+        percentages[8000] = map16000;
 
     }
 

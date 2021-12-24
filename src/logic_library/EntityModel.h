@@ -14,17 +14,17 @@ namespace logic {
 
     protected:
 
-        float e_width; // size
-        float e_height;
+        float e_width; // width of the entity
+        float e_height; // height of the entity
 
-        float x_pos; // position
-        float y_pos;
+        float x_pos; // x position of the entity
+        float y_pos; // y position of the entity
 
-        float e_speed = 0; // velocity (for going up and down, not right and left)
-        float unit = 0.6f; // unit of distance
+        float e_speed = 0; // velocity (used for going up and down, not right and left)
+        float unit = 0.6f; // unit of distance (used for going right and left, not up and down)
 
-        float x_posPrevious; // position of entity in previous frame
-        float y_posPrevious;
+        float x_posPrevious; // x position of entity in previous frame
+        float y_posPrevious; // y position of entity in previous frame
 
     public: // getters en setters
 
@@ -95,6 +95,7 @@ namespace logic {
     public:
 
         EntityModel();
+        //~EntityModel();
 
         void update();
 

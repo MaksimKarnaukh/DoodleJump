@@ -6,9 +6,7 @@
 
 namespace logic {
 
-    Bonus::Bonus() {
-
-    }
+    Bonus::Bonus() = default;
 
 }
 
