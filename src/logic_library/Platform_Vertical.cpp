@@ -18,8 +18,12 @@ logic::Platform_Vertical::Platform_Vertical(float posX, float posY) {
 void logic::Platform_Vertical::move() {
 
     this->setPositionY(this->getPositionY()+unit*logic::Stopwatch::Instance().getDeltaTime());
-    if (this->getPositionY() <= this->startingY-0.2 || this->getPositionY() >= this->startingY+0.2) {
-        unit = -unit;
+
+    if (this->getPositionY() <= this->startingY-0.2) { // we do the checking this way, because putting both if statements together and setting unit=-unit can cause problems at the relative borders.
+        unit = moveUp;
+    }
+    if (this->getPositionY() >= this->startingY+0.2) {
+        unit = moveDown;
     }
 
     notifyObservers();

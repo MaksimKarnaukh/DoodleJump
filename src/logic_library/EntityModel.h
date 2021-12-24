@@ -97,8 +97,6 @@ namespace logic {
         EntityModel();
         //~EntityModel();
 
-        void update();
-
     };
 }
 

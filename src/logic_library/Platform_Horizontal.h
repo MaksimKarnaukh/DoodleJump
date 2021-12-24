@@ -12,6 +12,8 @@ namespace logic {
     class Platform_Horizontal: public Platform {
 
         float unit = 0.5f; // unit of distance
+        float moveRight = unit;
+        float moveLeft = -std::abs(unit);
 
     public:
         Platform_Horizontal();

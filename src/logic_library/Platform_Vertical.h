@@ -12,6 +12,8 @@ namespace logic {
     class Platform_Vertical: public Platform {
 
         float unit = 0.1f; // unit of distance
+        float moveUp = unit;
+        float moveDown = -std::abs(unit);
 
         float startingX;
         float startingY;

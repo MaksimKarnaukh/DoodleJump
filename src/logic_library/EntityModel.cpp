@@ -8,6 +8,3 @@ logic::EntityModel::EntityModel() {
 
 }
 
-void logic::EntityModel::update() {
-
-}
