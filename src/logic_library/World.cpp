@@ -50,7 +50,8 @@ namespace logic {
         std::vector<std::pair<float,float>> middleLine = getLineBetweenPoints(x0, y0, x1, y1);
 
         if ((doodle->getPositionY() <= lowerBound) || (doodle->getPositionY() <= lowerBound+logic::Camera::Instance().getShiftValue())) {
-            gameOver = true;
+            //gameOver = true;
+            doodle->setSpeed(30);
         }
 
         for (auto b = 0; b < bonuses.size(); b++) {
@@ -60,7 +61,6 @@ namespace logic {
                 for (auto i = 0; i < bonuses[b]->getObservers().size(); i++) {
                     bonuses[b]->removeObserver(bonuses[b]->getObservers()[i]); // remove all observers
                 }
-
                 bonuses.erase(bonuses.begin()+b);
                 break;
             }
@@ -144,10 +144,15 @@ namespace logic {
         float p = 0.90; // beginwaarde = 0.90 (90% kans op platform generation)
         float factor = std::max( 0.25f,  (1.0f-(std::floor(doodle->getPositionY()/3))/100) ); // represents the depending factor on the score (y-coordinate of our player)
         bool isCreate = logic::Random::Instance().bernoulliDistribution(p*factor);
-//        std::cout << "factor : " << factor << " chance : " << p*factor << std::endl;
+        std::cout << "factor : " << factor << " chance : " << p*factor << std::endl;
+        std::cout << "create : " << isCreate << std::endl;
 
         // y position of our platform
         float platformYPos = 1+logic::Camera::Instance().getShiftValue();
+        if (platformYPos > formerPlatformPosY+0.35) { // min distance between platforms guaranteed
+            isCreate = true;
+        }
+        std::cout << "create : " << isCreate << std::endl;
 
         if (formerPlatformPosY+0.05 < platformYPos) {
 
