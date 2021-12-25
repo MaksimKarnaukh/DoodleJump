@@ -12,7 +12,7 @@ namespace logic {
 
     World::World(std::shared_ptr<logic::AbstractFactory> &factory) : Factory(factory) {
 
-        logic::Random& random = logic::Random::Instance();
+        logic::utility::Random& random = logic::utility::Random::Instance();
         logic::utility::Camera& camera = logic::utility::Camera::Instance();
 
         createStartEntities();
@@ -147,7 +147,7 @@ namespace logic {
 
         float p = 0.90; // beginwaarde = 0.90 (90% kans op platform generation)
         float factor = std::max( 0.25f,  (1.0f-(std::floor(doodle->getPositionY()/3))/100) ); // represents the depending factor on the score (y-coordinate of our player)
-        bool isCreate = logic::Random::Instance().bernoulliDistribution(p*factor);
+        bool isCreate = logic::utility::Random::Instance().bernoulliDistribution(p*factor);
         std::cout << "factor : " << factor << " chance : " << p*factor << std::endl;
         std::cout << "create : " << isCreate << std::endl;
 
@@ -186,7 +186,7 @@ namespace logic {
                     std::cout << it->first << " " << it->second << std::endl;
                 }
                 //
-                float pl1 = logic::Random::Instance().uniformRealDistribution(0, 1);
+                float pl1 = logic::utility::Random::Instance().uniformRealDistribution(0, 1);
                 int pl = 0;
                 for (auto it = chanceMap.begin(); it != chanceMap.end(); it++) {
                     if (pl1 < it->second) {
@@ -208,11 +208,11 @@ namespace logic {
                     case 0:
                         platform = Factory->createStaticPlatform(platformXPos, platformYPos, 0.174004, 0.0411);
 
-                        isCreateBonus = logic::Random::Instance().bernoulliDistribution(chanceForBonus-factorBonus);
+                        isCreateBonus = logic::utility::Random::Instance().bernoulliDistribution(chanceForBonus-factorBonus);
                         if (isCreateBonus) {
 
                             // decide which bonus to place
-                            int bonusKind = logic::Random::Instance().uniformIntDistribution(0, 9);
+                            int bonusKind = logic::utility::Random::Instance().uniformIntDistribution(0, 9);
 
                             if (bonusKind < 8) {
                                 bonus = Factory->createSpring(0, 0, 0.058, 0.0411);
@@ -239,8 +239,8 @@ namespace logic {
                 // calculate where to place the platform (x position only)
 
                 if (wasBonusGenerated) {
-                    float platformXPos1 = logic::Random::Instance().uniformRealDistribution(leftBound+0.02f, formerPlatformPosX-platform->getWidth()-0.08f); //// +0.02 watch out
-                    float platformXPos2 = logic::Random::Instance().uniformRealDistribution(formerPlatformPosX+platform->getWidth()+0.08f, rightBound-platform->getWidth()-0.02f);
+                    float platformXPos1 = logic::utility::Random::Instance().uniformRealDistribution(leftBound+0.02f, formerPlatformPosX-platform->getWidth()-0.08f); //// +0.02 watch out
+                    float platformXPos2 = logic::utility::Random::Instance().uniformRealDistribution(formerPlatformPosX+platform->getWidth()+0.08f, rightBound-platform->getWidth()-0.02f);
 
                     if (platformXPos1 < leftBound) {
                         platformXPos = platformXPos2;
@@ -249,7 +249,7 @@ namespace logic {
                         platformXPos = platformXPos1;
                     }
                     else {
-                        int posDecider = logic::Random::Instance().uniformIntDistribution(0, 9);
+                        int posDecider = logic::utility::Random::Instance().uniformIntDistribution(0, 9);
                         if (posDecider < 5) {
                             platformXPos = platformXPos1;
                         }
@@ -259,7 +259,7 @@ namespace logic {
                     }
                 }
                 else {
-                    platformXPos = logic::Random::Instance().uniformRealDistribution(leftBound+0.02f, rightBound-platform->getWidth()-0.02f);
+                    platformXPos = logic::utility::Random::Instance().uniformRealDistribution(leftBound+0.02f, rightBound-platform->getWidth()-0.02f);
                 }
 
                 platform->setPositionX(platformXPos);
@@ -268,7 +268,7 @@ namespace logic {
                 formerPlatformPosX = platformXPos;
 
                 if (wasBonusGeneratedTemp) {
-                    float bonusXPos = logic::Random::Instance().uniformRealDistribution(platformXPos+0.01f, platformXPos+platform->getWidth()-bonus->getWidth()-0.01f);
+                    float bonusXPos = logic::utility::Random::Instance().uniformRealDistribution(platformXPos+0.01f, platformXPos+platform->getWidth()-bonus->getWidth()-0.01f);
                     bonus->setPositionX(bonusXPos);
                     bonus->setPositionY(platformYPos+bonus->getHeight());
                     bonuses.push_back(bonus);

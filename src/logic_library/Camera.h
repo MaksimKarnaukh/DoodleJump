@@ -24,6 +24,12 @@ namespace logic {
             float rightBound = 1.0f; // rightmost logic coordinate (right boundary)
             float lowerBound = 0.0f; // lowermost logic coordinate (lower boundary)
 
+            /**
+            * @function : Camera
+            * Constructor for a Camera.
+            */
+            Camera();
+
         public:
 
             /**
@@ -155,12 +161,6 @@ namespace logic {
         public:
 
             static Camera& Instance();
-
-            /**
-            * @function : Camera
-            * Constructor for a Camera.
-            */
-            Camera();
 
             /**
             * @function : projectCoordinates

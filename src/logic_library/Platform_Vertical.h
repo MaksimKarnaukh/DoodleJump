@@ -15,14 +15,26 @@ namespace logic {
         float moveUp = unit;
         float moveDown = -std::abs(unit);
 
-        float startingX;
-        float startingY;
-
     public:
+
+        /**
+        * @function : Platform_Vertical
+        * Constructor for a Platform_Vertical.
+        */
         Platform_Vertical();
 
+        /**
+        * @function : Platform_Vertical
+        * Constructor for a Platform_Vertical.
+        * @param posX (float) : x-coordinate of our entity, between the range [0,1-entity.width].
+        * @param posY (float) : y-coordinate of our entity, between the range [0+entity.height, inf[.
+        */
         Platform_Vertical(float posX, float posY);
 
+        /**
+        * @function : move
+        * Function that is responsible for moving the platform correctly.
+        */
         void move() override;
     };
 

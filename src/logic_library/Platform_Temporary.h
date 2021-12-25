@@ -13,10 +13,25 @@ namespace logic {
 
     public:
 
+        /**
+        * @function : Platform_Temporary
+        * Constructor for a Platform_Temporary.
+        */
         Platform_Temporary();
 
+        /**
+        * @function : Platform_Temporary
+        * Constructor for a Platform_Temporary.
+        * @param posX (float) : x-coordinate of our entity, between the range [0,1-entity.width].
+        * @param posY (float) : y-coordinate of our entity, between the range [0+entity.height, inf[.
+        */
         Platform_Temporary(float posX, float posY);
 
+        /**
+        * @function : isTouched
+        * Function that is used for the score decrease and temporary platform deletion.
+        * @return (bool) : true if this object is of type Platform_Temporary, false otherwise. In this case, it will always return true.
+        */
         bool isTouched() override;
 
     };

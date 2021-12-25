@@ -15,19 +15,28 @@ namespace logic {
 
         int score;
 
-        std::shared_ptr<logic::EntityModel> mEntityModel;
+        std::shared_ptr<logic::EntityModel> mEntityModel; // points to an entityModel, in this case mostlikely the player.
 
     public:
 
+        /**
+        * @function : Score
+        * Constructor for a Score.
+        */
         Score();
 
+        /**
+        * @function : Score
+        * Constructor for a Score.
+        * @param entityModel (std::shared_ptr<logic::EntityModel>) : entityModel that we point to.
+        */
         Score(const std::shared_ptr<logic::EntityModel>& entityModel);
 
+        /**
+        * @function : update
+        * Updates the state of score.
+        */
         void update() override;
-
-        bool isScore() {
-            return true;
-        }
 
     public:
 

@@ -11,10 +11,18 @@ namespace logic {
 
     class Jetpack: public logic::Bonus {
 
-
     public:
+
+        /**
+        * @function : Jetpack
+        * Constructor for a Jetpack.
+        */
         Jetpack();
 
+        /**
+        * @function : Jetpack
+        * Constructor for a Jetpack.
+        */
         Jetpack(float posX, float posY);
 
 //        float getBonusForce() const override {

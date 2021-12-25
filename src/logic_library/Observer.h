@@ -15,22 +15,35 @@ namespace logic {
 
     protected:
 
-        std::shared_ptr<logic::Subject> mSubject;
+        std::shared_ptr<logic::Subject> mSubject; // subject that belongs to this observer
 
     public:
 
+        /**
+        * @function : Observer
+        * Constructor for a Observer.
+        */
         Observer();
 
-        Observer(std::shared_ptr<logic::Subject> subject);
+        /**
+        * @function : Observer
+        * Constructor for a Observer.
+        */
+        Observer(const std::shared_ptr<logic::Subject>& subject);
 
-        virtual void update();
+        /**
+        * @function : update
+        * Update the state van de observer.
+        */
+        virtual void update() = 0;
 
+        /**
+        * @function : registerSubject
+        * Sets the subject for this observer.
+        * @param subject (std::shared_ptr<logic::Subject>) : subject that we register.
+        */
         void registerSubject(const std::shared_ptr<logic::Subject>& subject) {
             mSubject = subject;
-        }
-
-        bool isScore() {
-            return false;
         }
 
     };
