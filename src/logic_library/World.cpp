@@ -287,9 +287,7 @@ namespace logic {
         if (doodle->getPositionY() >= shiftBorder && doodle->getPositionY() >= logic::utility::Camera::Instance().getShiftValue()+shiftBorder) {
             logic::utility::Camera::Instance().setShiftValue(doodle->getPositionY()-shiftBorder);
 
-            //if (static_cast<int>(std::round(((doodle->getPositionY()+0.45)*100)))%5==0) {
-                createEntities();
-            //}
+            createEntities();
         }
 
 //        if (doodle->getPositionY() <= logic::Camera::Instance().getShiftValue() && doodle->getPositionY() >= logic::Camera::Instance().getShiftValue()+0.5) {
