@@ -13,7 +13,13 @@ namespace representation {
 
     public:
 
+        /**
+        * @function : BGTile_GR
+        * Constructor for a BGTile_GR.
+        * @param entityModel (std::shared_ptr<logic::EntityModel>) : entityModel
+        */
         BGTile_GR(const std::shared_ptr<logic::EntityModel> &entityModel);
+
     };
 }
 

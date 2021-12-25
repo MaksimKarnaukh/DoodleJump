@@ -19,6 +19,8 @@ namespace representation {
 
         gameState = 0;
 
+        fontFile = "assets/Fonts/Bodo_Amat.ttf";
+
     }
 
     Game::~Game(){}
@@ -135,7 +137,7 @@ namespace representation {
 
     void Game::playGame() {
 
-        world = std::move(std::make_shared<logic::World>(factory));
+        world = std::move(std::make_unique<logic::World>(factory));
 
         logic::utility::Stopwatch::Instance().Reset();
 
@@ -165,9 +167,15 @@ namespace representation {
 
     void Game::loadFonts() {
 
-        if (!font1.loadFromFile("assets/Fonts/Bodo_Amat.ttf")) {
-            std::cerr << "error" << std::endl;
+        try {
+            if (!font1.loadFromFile(fontFile)) {
+                throw LoadFileException("Error loading from file");
+            }
         }
+        catch (LoadFileException& e) {
+            std::cout << e.what() << ": " << fontFile << std::endl;
+        }
+
     }
 
     void Game::createTexts() {

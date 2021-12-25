@@ -11,7 +11,6 @@
 #include "../logic_library/Camera.h"
 #include "../logic_library/EntityModel.h"
 
-
 namespace representation {
 
     class EntityView: public logic::Observer {

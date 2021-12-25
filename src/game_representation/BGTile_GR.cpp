@@ -11,6 +11,6 @@ namespace representation {
         mEntityModel = entityModel;
         setSpriteTexture("assets/bg_tile.png");
 
-        sprite.setScale(1*0.05*640/18, 1*0.05*640/18);
+        sprite.setScale(1.0f*mEntityModel->getWidth()*(float)logic::utility::Camera::Instance().getWindowWidth()/(float)getTexture().getSize().x, 1.0f*mEntityModel->getHeight()*(float)logic::utility::Camera::Instance().getWindowWidth()/(float)getTexture().getSize().x);
     }
 }

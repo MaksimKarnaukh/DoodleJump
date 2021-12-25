@@ -10,12 +10,14 @@
 #include "../logic_library/World.h"
 #include "ConcreteFactory.h"
 #include <thread>
+#include "../LoadFileException.h"
 
 namespace representation {
 
     class Game {
 
         sf::Font font1;
+        std::string fontFile;
 
         sf::Text scoreText;
         sf::Text menuText;
@@ -61,7 +63,7 @@ namespace representation {
 
         //Window m_window;
 
-        std::shared_ptr<logic::World> world;
+        std::unique_ptr<logic::World> world;
 
         std::shared_ptr<logic::AbstractFactory> factory;
 

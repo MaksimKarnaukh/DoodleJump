@@ -132,7 +132,7 @@ namespace logic {
 
         // calculate chance of placing a platform or not.
 
-        float p = 0.90; // beginwaarde = 0.90 (90% kans op platform generation)
+        float p = 0.90; // begin value = 0.90 (90% chance for platform generation)
         float factor = std::max( 0.25f,  (1.0f-(std::floor(doodle->getPositionY()/3))/100) ); // represents the depending factor on the score (y-coordinate of our player)
         bool isCreate = logic::utility::Random::Instance().bernoulliDistribution(p*factor);
         std::cout << "factor : " << factor << " chance : " << p*factor << std::endl;
@@ -188,7 +188,7 @@ namespace logic {
                 float platformXPos = 0; // going to be overwritten
 
                 float chanceForBonus = 0.10;
-                float factorBonus = std::min(0.08f, (std::floor(doodle->getPositionY()/500))/100); // per 500 hoogte wordt kans op bonus verminderd met 0.01 met op het einde minimum een waarde van 0.02.
+                float factorBonus = std::min(0.08f, (std::floor(doodle->getPositionY()/500))/100); // per 500 height, the chance for a bonus gets decreased by 0.01 with at the end a minimum value of 0.02.
                 bool isCreateBonus;
 
                 switch (pl) {
@@ -277,7 +277,7 @@ namespace logic {
         doodle->applyGravity();
         doodle->moveVertically();
 
-        if (doodle->getSpeed() <= 0) { // als we aan het vallen zijn
+        if (doodle->getSpeed() <= 0) { // when we are falling down
             checkForCollision();
         }
 
@@ -298,7 +298,7 @@ namespace logic {
 
         std::cout << "Number of platforms: " << platforms.size() << std::endl;
 
-        // deleten van platforms die uit scherm zijn.
+        // deleting of platforms that are out of view.
         for (int pl = 0; pl < platforms.size(); pl++) {
             if (platforms[pl]->getPositionY() < logic::utility::Camera::Instance().getShiftValue()) {
 
@@ -309,7 +309,7 @@ namespace logic {
                 platforms.erase(platforms.begin()+pl);
             }
         }
-        // deleten van bonussen die uit scherm zijn
+        // deleting of bonusses that are out of view.
         for (int b = 0; b < bonuses.size(); b++) {
             if (bonuses[b]->getPositionY() < logic::utility::Camera::Instance().getShiftValue()) {
 
@@ -320,7 +320,7 @@ namespace logic {
                 bonuses.erase(bonuses.begin()+b);
             }
         }
-        // recycling of platforms that are out of screen.
+        // recycling of platforms that are out of view.
 
         for (auto i = 0; i < 20; i++) { // We check the bottom 20 platforms in case we get a drop in fps. The background tile generation, with this loop, can produce without visual errors or 'glitches' at a minimum of 8 fps.
             if (bgTiles.front()[0]->getPositionY() < logic::utility::Camera::Instance().getShiftValue()) {
@@ -343,11 +343,11 @@ namespace logic {
 
         for (int i = 0; i < middleLine.size(); i++) {
 
-            // checken op de x-coordinaten
+            // check for the x-coordinates
             if (middleLine[i].first+doodle->getWidth()/2 >= pl->getPositionX() &&
                 middleLine[i].first-doodle->getWidth()/2 <= pl->getPositionX()+pl->getWidth()) {
 
-                // checken op de y-coordinaten
+                // check for the y-coordinates
                 if (middleLine[i].second <= pl->getPositionY() &&
                     middleLine[i].second >= pl->getPositionY()-pl->getHeight()) {
 

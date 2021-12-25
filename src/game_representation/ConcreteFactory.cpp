@@ -115,10 +115,9 @@ namespace representation {
 
     std::shared_ptr<logic::BGTile> ConcreteFactory::createBGTile(float posX, float posY, float width, float height) {
         std::shared_ptr<logic::BGTile> bgModel(new logic::BGTile(posX, posY));
-        std::shared_ptr<representation::BGTile_GR> bgView(new representation::BGTile_GR(bgModel));
-
         bgModel->setWidth(width);
         bgModel->setHeight(height);
+        std::shared_ptr<representation::BGTile_GR> bgView(new representation::BGTile_GR(bgModel));
 
         bgModel->registerObserver(bgView);
 

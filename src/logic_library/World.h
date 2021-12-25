@@ -110,6 +110,7 @@ namespace logic {
         * @param x1 (float) : x-coordinate of the second point.
         * @param y1 (float) : y-coordinate of the second point.
         * @return (std::vector<std::pair<float,float>>) : list of points which represents the line
+        * Source : algorithm from project Computer Graphics.
         */
         static std::vector<std::pair<float,float>> getLineBetweenPoints(float x0, float y0, float x1, float y1);
 

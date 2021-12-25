@@ -13,6 +13,10 @@ namespace representation {
 
     public:
 
+        /**
+        * @function : Bonus_GR
+        * Constructor for a Bonus_GR.
+        */
         Bonus_GR();
 
     };
