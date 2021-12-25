@@ -22,11 +22,6 @@ namespace logic {
 
         setupPercentages();
 
-//        leftBound = logic::utility::Camera::Instance().getLeftBound();
-//        rightBound = logic::utility::Camera::Instance().getRightBound();
-//        lowerBound = logic::utility::Camera::Instance().getLowerBound();
-//        shiftBorder = logic::utility::Camera::Instance().getShiftBorder();
-
     }
 
     void World::receiveInput(std::string &key) {
@@ -120,14 +115,6 @@ namespace logic {
 
         std::shared_ptr<logic::Platform> p5 = Factory->createStaticPlatform(0.7, 0.9, 0.174004, 0.0411);
         platforms.push_back(p5);
-
-//        std::shared_ptr<logic::Bonus> b1 = Factory->createSpring(0.1, 0+0.0412, 0.174004/3, 0.0411);
-//        bonuses.push_back(b1);
-//
-//        std::shared_ptr<logic::Bonus> b2 = Factory->createJetpack(0.9, 0+0.06576, 0.0696, 0.06576);
-//        bonuses.push_back(b2);
-
-        //
 
         for (auto c = 0; c < (1.5/0.05)+30.0; c++) { // +35.0 want als we op lage fps zitten, zou dit anders voor visuele problemen zorgen.
             std::vector<std::shared_ptr<logic::BGTile>> row;

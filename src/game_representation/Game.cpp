@@ -13,10 +13,9 @@ namespace representation {
         representation::Window& m_window = representation::Window::Instance();
         m_window.Setup("Doodle Jump", sf::Vector2u(640,960));
 
-//        factory = std::make_shared<representation::ConcreteFactory>();
-//        world = logic::World(factory);
+        logic::utility::Stopwatch::Instance();
 
-        logic::Stopwatch& stopwatch = logic::Stopwatch::Instance();
+        factory = std::make_shared<representation::ConcreteFactory>();
 
         gameState = 0;
 
@@ -105,10 +104,25 @@ namespace representation {
 
     void Game::playMenu() {
 
-        if (! sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
+        if (! sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
 
             representation::Window::Instance().BeginDraw(); // Clear.
+
             representation::Window::Instance().Draw(menuText);
+            representation::Window::Instance().Draw(menuText0);
+
+            std::string currentScore;
+            currentScore += "Score : ";
+            currentScore += std::to_string(_currentScore);
+            currentHighScore.setString(currentScore);
+            std::string AllTimeHighScore;
+            AllTimeHighScore += "All-Time High-Score : ";
+            AllTimeHighScore += std::to_string(_allTimeHighScore);
+            allTimeHighScore.setString(AllTimeHighScore);
+
+            representation::Window::Instance().Draw(allTimeHighScore);
+            representation::Window::Instance().Draw(currentHighScore);
+
             representation::Window::Instance().EndDraw(); // Display.
 
         }
@@ -121,24 +135,23 @@ namespace representation {
 
     void Game::playGame() {
 
-        factory = std::make_shared<representation::ConcreteFactory>();
         world = std::move(std::make_shared<logic::World>(factory));
 
-        logic::Stopwatch::Instance().Reset();
+        logic::utility::Stopwatch::Instance().Reset();
 
         while ( !(world->gameOver || GetWindow().IsDone()) ) {
 
-            logic::Stopwatch::Instance().tick();
+            logic::utility::Stopwatch::Instance().tick();
 
-            if (logic::Stopwatch::Instance().getDeltaTime() < (1.0f/getFrameRate())) {
-                std::chrono::milliseconds ms = std::chrono::milliseconds((int)(((1.0f/getFrameRate()) - logic::Stopwatch::Instance().getDeltaTime())*1000));
+            if (logic::utility::Stopwatch::Instance().getDeltaTime() < (1.0f/getFrameRate())) {
+                std::chrono::milliseconds ms = std::chrono::milliseconds((int)(((1.0f/getFrameRate()) - logic::utility::Stopwatch::Instance().getDeltaTime())*1000));
                 std::this_thread::sleep_for(ms);
                 std::cout << ms.count() << std::endl;
             }
 
-            logic::Stopwatch::Instance().tick(); // de verstreken milliseconden erbij.
-            std::cout  << logic::Stopwatch::Instance().getDeltaTime() << "  " << 1 / logic::Stopwatch::Instance().getDeltaTime() << std::endl;
-            logic::Stopwatch::Instance().Reset(); // mStartTime = now (tijd verstreken is terug 0)
+            logic::utility::Stopwatch::Instance().tick(); // de verstreken milliseconden erbij.
+            std::cout  << logic::utility::Stopwatch::Instance().getDeltaTime() << "  " << 1 / logic::utility::Stopwatch::Instance().getDeltaTime() << std::endl;
+            logic::utility::Stopwatch::Instance().Reset(); // mStartTime = now (tijd verstreken is terug 0)
 
             // Game loop.
             HandleInput();
@@ -146,7 +159,7 @@ namespace representation {
             Render();
         }
         gameState = 0;
-
+        calculateHighScore();
 
     }
 
@@ -166,13 +179,43 @@ namespace representation {
         scoreText.setOutlineThickness(4); // 4
 
         menuText.setFont(font1);
-        menuText.setCharacterSize(30); // 60
+        menuText.setCharacterSize(20); // 60
         menuText.setFillColor(sf::Color::Red);
         menuText.setOutlineColor(sf::Color::Yellow);
-        menuText.setOutlineThickness(4); // 4
-        menuText.setPosition(20.0f, (float)representation::Window::Instance().GetWindowSize().y/2);
-        menuText.setString("Press space to start the game.");
+        menuText.setOutlineThickness(3); // 4
+        menuText.setPosition(150.0f, (float)representation::Window::Instance().GetWindowSize().y/3);
+        menuText.setString("Press Enter to start the game.");
 
+        menuText0.setFont(font1);
+        menuText0.setCharacterSize(80); // 60
+        menuText0.setFillColor(sf::Color::Green);
+        menuText0.setOutlineColor(sf::Color::Yellow);
+        menuText0.setOutlineThickness(1); // 4
+        menuText0.setPosition(70.0f, (float)representation::Window::Instance().GetWindowSize().y/8);
+        menuText0.setString("Doodle Jump");
+
+        currentHighScore.setFont(font1);
+        currentHighScore.setCharacterSize(40); // 60
+        currentHighScore.setFillColor(sf::Color::Blue);
+        currentHighScore.setOutlineColor(sf::Color::Green);
+        currentHighScore.setOutlineThickness(2); // 4
+        currentHighScore.setPosition(80.0f, (float)representation::Window::Instance().GetWindowSize().y/1.5f);
+
+        allTimeHighScore.setFont(font1);
+        allTimeHighScore.setCharacterSize(40); // 60
+        allTimeHighScore.setFillColor(sf::Color::Blue);
+        allTimeHighScore.setOutlineColor(sf::Color::Red);
+        allTimeHighScore.setOutlineThickness(2); // 4
+        allTimeHighScore.setPosition(80.0f, (float)representation::Window::Instance().GetWindowSize().y/1.3f);
+
+
+    }
+
+    void Game::calculateHighScore() {
+        _currentScore = world->score->getScore();
+        if (_currentScore > _allTimeHighScore) {
+            _allTimeHighScore = _currentScore;
+        }
     }
 }
 

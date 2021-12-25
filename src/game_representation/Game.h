@@ -16,8 +16,15 @@ namespace representation {
     class Game {
 
         sf::Font font1;
+
         sf::Text scoreText;
         sf::Text menuText;
+        sf::Text menuText0;
+        sf::Text currentHighScore;
+        sf::Text allTimeHighScore;
+
+        int _currentScore = 0;
+        int _allTimeHighScore = 0;
 
         int gameState; // 0:menu ; 1:game
 
@@ -38,6 +45,8 @@ namespace representation {
         void loadFonts();
         void createTexts();
 
+        void calculateHighScore();
+
     public:
 
         void setFrameRate(float fps) {
@@ -55,8 +64,6 @@ namespace representation {
         std::shared_ptr<logic::World> world;
 
         std::shared_ptr<logic::AbstractFactory> factory;
-
-    public:
 
     };
 }

@@ -40,10 +40,20 @@ namespace logic {
 
     public:
 
+        /**
+        * @function : setScore
+        * Setter function for the score data member.
+        * @param _score (float) : value that we want to give to score.
+        */
         void setScore(int _score) {
             score = _score;
         }
 
+        /**
+        * @function : getScore
+        * Getter function for the score data member.
+        * @return (int) : this->score
+        */
         int getScore() const {
             return score;
         }

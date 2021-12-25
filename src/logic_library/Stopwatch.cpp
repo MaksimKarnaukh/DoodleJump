@@ -5,40 +5,32 @@
 #include "Stopwatch.h"
 
 namespace logic {
+    namespace utility {
 
-//    Stopwatch* Stopwatch::sInstance = nullptr;
+        Stopwatch& Stopwatch::Instance() {
+            static Stopwatch instance;
+            return instance;
+        }
 
-    Stopwatch& Stopwatch::Instance() {
-//        if (sInstance == nullptr) {
-//            sInstance = new Stopwatch();
-//        }
-//        return sInstance;
-        static Stopwatch instance;
-        return instance;
-    }
+        Stopwatch::Stopwatch() {
+            Reset();
+            mDeltaTime = std::chrono::duration<float>(0.0f);
+        }
 
-//    void Stopwatch::release() {
-//        delete sInstance;
-//        sInstance = nullptr;
-//    }
+        Stopwatch::~Stopwatch() = default;
 
-    Stopwatch::Stopwatch() {
-        Reset();
-        mDeltaTime = std::chrono::duration<float>(0.0f);
-    }
+        void Stopwatch::Reset() {
+            mStartTime = std::chrono::system_clock::now();
+        }
 
-    Stopwatch::~Stopwatch() = default;
+        float Stopwatch::getDeltaTime() {
+            return mDeltaTime.count();
+        }
 
-    void Stopwatch::Reset() {
-        mStartTime = std::chrono::system_clock::now();
-    }
+        void Stopwatch::tick() {
+            mDeltaTime = std::chrono::system_clock::now()-mStartTime;
+        }
 
-    float Stopwatch::getDeltaTime() {
-        return mDeltaTime.count();
-    }
-
-    void Stopwatch::tick() {
-        mDeltaTime = std::chrono::system_clock::now()-mStartTime;
     }
 }
 

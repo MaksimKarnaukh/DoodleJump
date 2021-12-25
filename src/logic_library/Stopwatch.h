@@ -10,35 +10,55 @@
 #include <chrono>
 
 namespace logic {
-    class Stopwatch {
+    namespace utility {
 
-        //static Stopwatch& sInstance;
+        class Stopwatch {
 
-        std::chrono::system_clock::time_point mStartTime;
-        std::chrono::duration<float> mDeltaTime;
+            std::chrono::system_clock::time_point mStartTime;
+            std::chrono::duration<float> mDeltaTime; // used as the elapsed time.
 
-    public:
+            /**
+            * @function : Stopwatch
+            * Constructor for a Stopwatch.
+            */
+            Stopwatch();
 
-        Stopwatch(const Stopwatch &) = delete;
-        Stopwatch(const Stopwatch &&) = delete;
+            ~Stopwatch();
 
-        Stopwatch& operator=(const Stopwatch &) = delete;
-        Stopwatch& operator=(const Stopwatch &&) = delete;
+        public:
 
-        static Stopwatch& Instance();
+            Stopwatch(const Stopwatch &) = delete;
+            Stopwatch(const Stopwatch &&) = delete;
 
-        void Reset(); // resets timer
+            Stopwatch& operator=(const Stopwatch &) = delete;
+            Stopwatch& operator=(const Stopwatch &&) = delete;
 
-        float getDeltaTime();
+        public:
 
-        void tick();
+            static Stopwatch& Instance();
 
-    private:
+            /**
+            * @function : Reset
+            * Resets the mStartTime data member, setting it equal to std::chrono::system_clock::now().
+            */
+            void Reset();
 
-        Stopwatch();
-        ~Stopwatch();
+            /**
+            * @function : getDeltaTime
+            * Returns the mDeltaTime data member.
+            * @return (float) : mDeltaTime, which is the elapsed time, set by the last tick() called.
+            */
+            float getDeltaTime();
 
-    };
+            /**
+            * @function : tick
+            * Sets the mDeltaTime equal to (std::chrono::system_clock::now()-mStartTime).
+            */
+            void tick();
+
+        };
+
+    }
 }
 
 

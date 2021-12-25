@@ -18,7 +18,7 @@ namespace logic {
 
     void Player::moveLeft() {
 
-        this->setPositionX(this->getPositionX()-unit*logic::Stopwatch::Instance().getDeltaTime());
+        this->setPositionX(this->getPositionX()-unit*logic::utility::Stopwatch::Instance().getDeltaTime());
 
         notifyObservers();
 
@@ -26,7 +26,7 @@ namespace logic {
 
     void Player::moveRight() {
 
-        this->setPositionX(this->getPositionX()+unit*logic::Stopwatch::Instance().getDeltaTime());
+        this->setPositionX(this->getPositionX()+unit*logic::utility::Stopwatch::Instance().getDeltaTime());
 
         notifyObservers();
 
@@ -39,12 +39,12 @@ namespace logic {
 
     void Player::applyGravity() {
 
-        this->setSpeed(this->getSpeed()+gravity*logic::Stopwatch::Instance().getDeltaTime()); // na elke tick de zwaartekracht meerekenen (aftrekken)
+        this->setSpeed(this->getSpeed()+gravity*logic::utility::Stopwatch::Instance().getDeltaTime()); // na elke tick de zwaartekracht meerekenen (aftrekken)
     }
 
     void Player::moveVertically() {
 
-        this->setPositionY(this->getPositionY()+e_speed*logic::Stopwatch::Instance().getDeltaTime());
+        this->setPositionY(this->getPositionY()+e_speed*logic::utility::Stopwatch::Instance().getDeltaTime());
 
         notifyObservers();
 
