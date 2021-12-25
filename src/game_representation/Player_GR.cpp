@@ -11,7 +11,7 @@ namespace representation {
         mEntityModel = entityModel;
         setSpriteTexture("assets/DoodleJumper/doodle-pow.png");
 
-        sprite.setScale(1*0.077*640/236, 1*0.18*960/447);
+        sprite.setScale(1*((float)logic::utility::Camera::Instance().getWindowWidth()*mEntityModel->getWidth())/(float)getTexture().getSize().x, 1*((float)logic::utility::Camera::Instance().getWindowHeight()*mEntityModel->getHeight())/(float)getTexture().getSize().y);
 
     }
 }

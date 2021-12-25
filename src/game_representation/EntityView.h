@@ -10,6 +10,7 @@
 #include "Window.h"
 #include "../logic_library/Camera.h"
 #include "../logic_library/EntityModel.h"
+#include "../LoadFileException.h"
 
 namespace representation {
 
@@ -24,20 +25,48 @@ namespace representation {
 
     public:
 
+        /**
+        * @function : EntityView
+        * Constructor for a EntityView.
+        */
         EntityView();
 
-        EntityView(std::shared_ptr<logic::EntityModel> entityModel);
+        /**
+        * @function : EntityView
+        * Constructor for a EntityView.
+        * @param entityModel (std::shared_ptr<logic::EntityModel>) : entityModel
+        */
+        EntityView(const std::shared_ptr<logic::EntityModel>& entityModel);
 
+        /**
+        * @function : setSpriteTexture
+        * Setter: puts the texture on the sprite.
+        * @param filename (std::string) : name of the texture file
+        */
         void setSpriteTexture(const std::string& filename);
 
+        /**
+        * @function : getSprite
+        * Getter: returns the sprite data member.
+        * @return (sf::Sprite) : this->sprite
+        */
         sf::Sprite& getSprite() {
             return sprite;
         }
 
+        /**
+        * @function : getTexture
+        * Getter: returns the texture data member.
+        * @return (sf::Texture) : this->texture
+        */
         sf::Texture& getTexture() {
             return texture;
         }
 
+        /**
+        * @function : update
+        * Updates the sprite's position correctly according to the logic coordinates.
+        */
         void update() override;
 
     };

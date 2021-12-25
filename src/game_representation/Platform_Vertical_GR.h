@@ -13,6 +13,11 @@ namespace representation {
 
     public:
 
+        /**
+        * @function : Platform_Vertical_GR
+        * Constructor for a Platform_Vertical_GR.
+        * @param entityModel (std::shared_ptr<logic::EntityModel>) : entityModel
+        */
         Platform_Vertical_GR(const std::shared_ptr<logic::EntityModel> &entityModel);
 
     };

@@ -12,6 +12,12 @@ namespace representation {
     class Spring_GR: public representation::Bonus_GR {
 
     public:
+
+        /**
+        * @function : Spring_GR
+        * Constructor for a Spring_GR.
+        * @param entityModel (std::shared_ptr<logic::EntityModel>) : entityModel
+        */
         Spring_GR(const std::shared_ptr<logic::EntityModel> &entityModel);
     };
 

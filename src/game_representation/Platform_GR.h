@@ -13,6 +13,10 @@ namespace representation {
 
     public:
 
+        /**
+        * @function : Platform_GR
+        * Constructor for a Platform_GR.
+        */
         Platform_GR();
 
     };

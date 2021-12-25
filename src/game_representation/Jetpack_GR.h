@@ -13,6 +13,11 @@ namespace representation {
 
     public:
 
+        /**
+        * @function : Jetpack_GR
+        * Constructor for a Jetpack_GR.
+        * @param entityModel (std::shared_ptr<logic::EntityModel>) : entityModel
+        */
         Jetpack_GR(const std::shared_ptr<logic::EntityModel> &entityModel);
 
     };

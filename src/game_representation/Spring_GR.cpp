@@ -11,7 +11,7 @@ namespace representation {
         mEntityModel = entityModel;
         setSpriteTexture("assets/Bonus/spring.png");
 
-        sprite.setScale(1*(640*0.174004/3)/17, 1*(960*0.0411)/14);
+        sprite.setScale(1*((float)logic::utility::Camera::Instance().getWindowWidth()*mEntityModel->getWidth())/(float)getTexture().getSize().x, 1*((float)logic::utility::Camera::Instance().getWindowHeight()*mEntityModel->getHeight())/(float)getTexture().getSize().y);
 
     }
 }

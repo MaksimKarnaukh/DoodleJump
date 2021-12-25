@@ -6,7 +6,5 @@
 
 namespace representation {
 
-    Platform_GR::Platform_GR() {
-
-    }
+    Platform_GR::Platform_GR() = default;
 }

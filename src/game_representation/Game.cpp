@@ -67,12 +67,12 @@ namespace representation {
         std::string key;
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) ||
         sf::Keyboard::isKeyPressed(sf::Keyboard::Q) ||
-        sf::Keyboard::isKeyPressed(sf::Keyboard::A)) { // links
+        sf::Keyboard::isKeyPressed(sf::Keyboard::A)) { // left
 
             key = "Left";
         }
         else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right) ||
-                 sf::Keyboard::isKeyPressed(sf::Keyboard::D)) { // rechts
+                 sf::Keyboard::isKeyPressed(sf::Keyboard::D)) { // right
 
             key = "Right";
         }
@@ -117,6 +117,7 @@ namespace representation {
             currentScore += "Score : ";
             currentScore += std::to_string(_currentScore);
             currentHighScore.setString(currentScore);
+
             std::string AllTimeHighScore;
             AllTimeHighScore += "All-Time High-Score : ";
             AllTimeHighScore += std::to_string(_allTimeHighScore);
@@ -175,6 +176,17 @@ namespace representation {
         catch (LoadFileException& e) {
             std::cout << e.what() << ": " << fontFile << std::endl;
         }
+
+//        sf::FileInputStream s;
+//        try {
+//            if (s.open("assets/Fonts/Bodo_Amat.ttf")) {
+//                font1.loadFromStream(s);
+//            } else {
+//                throw LoadFileException("Couldn't load file");
+//            }
+//        } catch (LoadFileException& e) {
+//            std::cout << e.what() << ": " << fontFile << std::endl;
+//        }
 
     }
 

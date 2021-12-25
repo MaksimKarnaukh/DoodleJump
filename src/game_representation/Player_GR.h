@@ -13,6 +13,11 @@ namespace representation {
 
     public:
 
+        /**
+        * @function : Player_GR
+        * Constructor for a Player_GR.
+        * @param entityModel (std::shared_ptr<logic::EntityModel>) : entityModel
+        */
         Player_GR(const std::shared_ptr<logic::EntityModel> &entityModel);
 
     };

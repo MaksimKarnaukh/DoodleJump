@@ -33,7 +33,7 @@ namespace logic {
 
         /**
         * @function : update
-        * Update the state van de observer.
+        * Updates the state of the observer.
         */
         virtual void update() = 0;
 
