@@ -6,7 +6,7 @@ namespace logic {
 
     Jetpack::Jetpack() = default;
 
-    Jetpack::Jetpack(float posX, float posY) {
+    Jetpack::Jetpack(const float posX, const float posY) {
         this->setPositionX(posX);
         this->setPositionY(posY);
 

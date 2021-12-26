@@ -142,6 +142,26 @@ namespace logic {
         */
         void recycleOutOfViewBGTiles();
 
+        /**
+        * @function : choosePlatformType
+        * Chooses the platform type by chance.
+        * @return (int) : integer representing the type of platform to be generated.
+        */
+        int choosePlatformType() const;
+
+        /**
+        * @function : chooseBonusType
+        * Chooses the bonus type by chance.
+        */
+        void chooseBonusType(std::shared_ptr<logic::Bonus>& bonus) const;
+
+        /**
+        * @function : calculatePlatformXPos
+        * Calculates the x-position for our platform.
+        * @return (float) : x-position.
+        */
+        float calculatePlatformXPos(const std::shared_ptr<logic::Platform>& platform) const;
+
     };
 
 }

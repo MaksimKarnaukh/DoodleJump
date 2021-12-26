@@ -142,38 +142,14 @@ namespace logic {
                 formerPlatformPosY = platformYPos;
 
                 // decide which platform to place
-
-                std::map<int, float> chanceMap;
-                for (auto it = percentages.begin(); it != percentages.end(); it++) {
-                    if (doodle->getPositionY()*10 < (float) it->first) {
-                        chanceMap = it->second;
-                        break;
-
-                    }
-                }
-                if (doodle->getPositionY()*10 >= 8000) {
-                    chanceMap = {
-                            {0, 0},
-                            {1, 0.5}, // 50%
-                            {2, 0.6}, // 10%
-                            {3, 1} // 40%
-                    };
-                }
-
-                float pl1 = logic::utility::Random::Instance().uniformRealDistribution(0, 1);
-                int pl = 0;
-                for (auto it = chanceMap.begin(); it != chanceMap.end(); it++) {
-                    if (pl1 < it->second) {
-                        pl = it->first;
-                        break;
-                    }
-                }
+                int pl = choosePlatformType();
 
                 std::shared_ptr<logic::Platform> platform;
                 std::shared_ptr<logic::Bonus> bonus;
 
                 float platformXPos = 0; // going to be overwritten
 
+                // calculate chance of placing a bonus or not.
                 float chanceForBonus = 0.10;
                 float factorBonus = std::min(0.08f, (std::floor(doodle->getPositionY()/500))/100); // per 500 height, the chance for a bonus gets decreased by 0.01 with at the end a minimum value of 0.02.
                 bool isCreateBonus;
@@ -186,14 +162,7 @@ namespace logic {
                         if (isCreateBonus) {
 
                             // decide which bonus to place
-                            int bonusKind = logic::utility::Random::Instance().uniformIntDistribution(0, 9);
-
-                            if (bonusKind < 8) {
-                                bonus = Factory->createSpring(0, 0, 0.058, 0.0411);
-                            }
-                            else {
-                                bonus = Factory->createJetpack(0, 0, 0.0696, 0.06576);
-                            }
+                            chooseBonusType(bonus);
                             wasBonusGeneratedTemp = true;
                         }
                         break;
@@ -211,30 +180,7 @@ namespace logic {
                 }
 
                 // calculate where to place the platform (x position only)
-
-                if (wasBonusGenerated) {
-                    float platformXPos1 = logic::utility::Random::Instance().uniformRealDistribution(leftBound+0.02f, formerPlatformPosX-platform->getWidth()-0.08f); //// +0.02 watch out
-                    float platformXPos2 = logic::utility::Random::Instance().uniformRealDistribution(formerPlatformPosX+platform->getWidth()+0.08f, rightBound-platform->getWidth()-0.02f);
-
-                    if (platformXPos1 < leftBound) {
-                        platformXPos = platformXPos2;
-                    }
-                    else if (platformXPos2 > rightBound-platform->getWidth()-0.02f) {
-                        platformXPos = platformXPos1;
-                    }
-                    else {
-                        int posDecider = logic::utility::Random::Instance().uniformIntDistribution(0, 9);
-                        if (posDecider < 5) {
-                            platformXPos = platformXPos1;
-                        }
-                        else {
-                            platformXPos = platformXPos2;
-                        }
-                    }
-                }
-                else {
-                    platformXPos = logic::utility::Random::Instance().uniformRealDistribution(leftBound+0.02f, rightBound-platform->getWidth()-0.02f);
-                }
+                platformXPos = calculatePlatformXPos(platform);
 
                 platform->setPositionX(platformXPos);
                 platforms.push_back(platform);
@@ -288,12 +234,10 @@ namespace logic {
 
     }
 
-
     template <class entity>
     bool World::checkForUndetectedCollision(const entity& pl, std::vector<std::pair<float,float>> &middleLine) {
 
         for (int i = 0; i < middleLine.size(); i++) {
-
             // check for the x-coordinates
             if (middleLine[i].first+doodle->getWidth()/2 >= pl->getPositionX() &&
                 middleLine[i].first-doodle->getWidth()/2 <= pl->getPositionX()+pl->getWidth()) {
@@ -515,6 +459,76 @@ namespace logic {
             }
         }
 
+    }
+
+    int World::choosePlatformType() const {
+
+        std::map<int, float> chanceMap;
+        for (auto it = percentages.begin(); it != percentages.end(); it++) {
+            if (doodle->getPositionY()*10 < (float) it->first) {
+                chanceMap = it->second;
+                break;
+
+            }
+        }
+        if (doodle->getPositionY()*10 >= 8000) {
+            chanceMap = {
+                    {0, 0},
+                    {1, 0.5}, // 50%
+                    {2, 0.6}, // 10%
+                    {3, 1} // 40%
+            };
+        }
+
+        float pl1 = logic::utility::Random::Instance().uniformRealDistribution(0, 1);
+
+        for (auto it = chanceMap.begin(); it != chanceMap.end(); it++) {
+            if (pl1 < it->second) {
+                return it->first;
+            }
+        }
+
+    }
+
+    void World::chooseBonusType(std::shared_ptr<logic::Bonus>& bonus) const {
+
+        int bonusKind = logic::utility::Random::Instance().uniformIntDistribution(0, 9);
+
+        if (bonusKind < 8) {
+            bonus = Factory->createSpring(0, 0, 0.058, 0.0411);
+        }
+        else {
+            bonus = Factory->createJetpack(0, 0, 0.0696, 0.06576);
+        }
+    }
+
+    float World::calculatePlatformXPos(const std::shared_ptr<logic::Platform>& platform) const {
+
+        float platformXPos;
+        if (wasBonusGenerated) {
+            float platformXPos1 = logic::utility::Random::Instance().uniformRealDistribution(leftBound+0.02f, formerPlatformPosX-platform->getWidth()-0.08f); //// +0.02 watch out
+            float platformXPos2 = logic::utility::Random::Instance().uniformRealDistribution(formerPlatformPosX+platform->getWidth()+0.08f, rightBound-platform->getWidth()-0.02f);
+
+            if (platformXPos1 < leftBound) {
+                platformXPos = platformXPos2;
+            }
+            else if (platformXPos2 > rightBound-platform->getWidth()-0.02f) {
+                platformXPos = platformXPos1;
+            }
+            else {
+                int posDecider = logic::utility::Random::Instance().uniformIntDistribution(0, 9);
+                if (posDecider < 5) {
+                    platformXPos = platformXPos1;
+                }
+                else {
+                    platformXPos = platformXPos2;
+                }
+            }
+        }
+        else {
+            platformXPos = logic::utility::Random::Instance().uniformRealDistribution(leftBound+0.02f, rightBound-platform->getWidth()-0.02f);
+        }
+        return platformXPos;
     }
 
 }

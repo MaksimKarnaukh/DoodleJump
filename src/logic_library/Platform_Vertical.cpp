@@ -4,7 +4,7 @@
 
 logic::Platform_Vertical::Platform_Vertical() = default;
 
-logic::Platform_Vertical::Platform_Vertical(float posX, float posY) {
+logic::Platform_Vertical::Platform_Vertical(const float posX, const float posY) {
 
     this->setPositionX(posX);
     this->setPositionY(posY);

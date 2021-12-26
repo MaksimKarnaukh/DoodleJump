@@ -6,7 +6,7 @@ namespace logic {
 
     Platform_Static::Platform_Static() = default;
 
-    Platform_Static::Platform_Static(float posX, float posY) {
+    Platform_Static::Platform_Static(const float posX, const float posY) {
 
         this->setPositionX(posX);
         this->setPositionY(posY);

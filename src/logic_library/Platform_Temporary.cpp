@@ -6,7 +6,7 @@ namespace logic {
 
     Platform_Temporary::Platform_Temporary() = default;
 
-    Platform_Temporary::Platform_Temporary(float posX, float posY) {
+    Platform_Temporary::Platform_Temporary(const float posX, const float posY) {
 
         this->setPositionX(posX);
         this->setPositionY(posY);

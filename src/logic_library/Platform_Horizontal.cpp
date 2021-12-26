@@ -6,7 +6,7 @@ namespace logic {
 
     Platform_Horizontal::Platform_Horizontal() = default;
 
-    Platform_Horizontal::Platform_Horizontal(float posX, float posY) {
+    Platform_Horizontal::Platform_Horizontal(const float posX, const float posY) {
 
         this->setPositionX(posX);
         this->setPositionY(posY);

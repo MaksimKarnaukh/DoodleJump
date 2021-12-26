@@ -6,7 +6,7 @@ namespace logic {
 
     Player::Player() = default;
 
-    Player::Player(float posX, float posY) {
+    Player::Player(const float posX, const float posY) {
         this->setPositionX(posX);
         this->setPositionY(posY);
 
@@ -37,7 +37,7 @@ namespace logic {
 
     void Player::applyGravity() {
 
-        this->setSpeed(this->getSpeed()+gravity*logic::utility::Stopwatch::Instance().getDeltaTime()); // na elke tick de zwaartekracht meerekenen (aftrekken)
+        this->setSpeed(this->getSpeed()+gravity*logic::utility::Stopwatch::Instance().getDeltaTime());
     }
 
     void Player::moveVertically() {
