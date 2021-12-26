@@ -118,7 +118,29 @@ namespace logic {
         */
         void setupPercentages();
 
+        /**
+        * @function : createStartingBGTiles
+        * Creates the background tiles in the beginning.
+        */
+        void createStartingBGTiles();
 
+        /**
+        * @function : deleteOutOfViewPlatforms
+        * Deletes all platforms that are out of view.
+        */
+        void deleteOutOfViewPlatforms();
+
+        /**
+        * @function : deleteOutOfViewBonusses
+        * Deletes all bonusees that are out of view.
+        */
+        void deleteOutOfViewBonusses();
+
+        /**
+        * @function : recycleOutOfViewBGTiles
+        * Recycles all background tiles that are out of view at the bottom (it stacks them on top).
+        */
+        void recycleOutOfViewBGTiles();
 
     };
 

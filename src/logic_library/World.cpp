@@ -9,8 +9,8 @@ namespace logic {
 
     World::World(std::shared_ptr<logic::AbstractFactory> &factory) : Factory(factory) {
 
-        logic::utility::Random& random = logic::utility::Random::Instance();
-        logic::utility::Camera& camera = logic::utility::Camera::Instance();
+        logic::utility::Random::Instance();
+        logic::utility::Camera::Instance();
 
         createStartEntities();
 
@@ -54,6 +54,7 @@ namespace logic {
 
             if (checkForUndetectedCollision(bonuses[b], middleLine)) {
                 doodle->touchedBonus(bonuses[b]->getBonusForce());
+                score->setScore(score->getScore()+bonuses[b]->getScoreIncrease());
                 for (auto i = 0; i < bonuses[b]->getObservers().size(); i++) {
                     bonuses[b]->removeObserver(bonuses[b]->getObservers()[i]); // remove all observers
                 }
@@ -105,31 +106,19 @@ namespace logic {
 
         std::shared_ptr<logic::Platform> p = Factory->createStaticPlatform(0.4, 0.3, 0.174004, 0.0411);
         platforms.push_back(p);
-
         std::shared_ptr<logic::Platform> p1 = Factory->createStaticPlatform(0.2, 0.5, 0.174004, 0.0411);
         platforms.push_back(p1);
-
         std::shared_ptr<logic::Platform> p2 = Factory->createStaticPlatform(0.6, 0.5, 0.174004, 0.0411);
         platforms.push_back(p2);
-
         std::shared_ptr<logic::Platform> p3 = Factory->createStaticPlatform(0.4, 0.7, 0.174004, 0.0411);
         platforms.push_back(p3);
-
         std::shared_ptr<logic::Platform> p4 = Factory->createStaticPlatform(0.1, 0.9, 0.174004, 0.0411);
         platforms.push_back(p4);
-
         std::shared_ptr<logic::Platform> p5 = Factory->createStaticPlatform(0.7, 0.9, 0.174004, 0.0411);
         platforms.push_back(p5);
 
-        float bgTileSideLength = 0.05f;
-        for (auto c = 0; c < (1.5/bgTileSideLength)+30.0; c++) { // +35.0, otherwise at low fps, we get visual problems.
-            std::vector<std::shared_ptr<logic::BGTile>> row;
-            for (auto r = 0; r < (rightBound/bgTileSideLength); r++) {
-                std::shared_ptr<logic::BGTile> bgTile = Factory->createBGTile((float)(r*bgTileSideLength), float((c+1)*0.03), bgTileSideLength, bgTileSideLength);
-                row.push_back(bgTile);
-            }
-            bgTiles.push_back(row);
-        }
+        createStartingBGTiles();
+
     }
 
     void World::createEntities() {
@@ -137,19 +126,15 @@ namespace logic {
         bool wasBonusGeneratedTemp = false; // to indicate whether we created a bonus this time
 
         // calculate chance of placing a platform or not.
-
         float p = 0.90; // begin value = 0.90 (90% chance for platform generation)
         float factor = std::max( 0.25f,  (1.0f-(std::floor(doodle->getPositionY()/3))/100) ); // represents the depending factor on the score (y-coordinate of our player)
         bool isCreate = logic::utility::Random::Instance().bernoulliDistribution(p*factor);
-        std::cout << "factor : " << factor << " chance : " << p*factor << std::endl;
-        std::cout << "create : " << isCreate << std::endl;
 
         // y position of our platform
         float platformYPos = 1+logic::utility::Camera::Instance().getShiftValue();
         if (platformYPos > formerPlatformPosY+0.35) { // min distance between platforms guaranteed
             isCreate = true;
         }
-        std::cout << "create : " << isCreate << std::endl;
 
         if (formerPlatformPosY+0.05 < platformYPos) {
 
@@ -174,11 +159,7 @@ namespace logic {
                             {3, 1} // 40%
                     };
                 }
-                //
-                for (auto it = chanceMap.begin(); it != chanceMap.end(); it++) {
-                    std::cout << it->first << " " << it->second << std::endl;
-                }
-                //
+
                 float pl1 = logic::utility::Random::Instance().uniformRealDistribution(0, 1);
                 int pl = 0;
                 for (auto it = chanceMap.begin(); it != chanceMap.end(); it++) {
@@ -296,53 +277,14 @@ namespace logic {
             createEntities();
         }
 
-
-
-        std::cout << "Number of platforms: " << platforms.size() << std::endl;
-
         // deleting of platforms that are out of view.
-        for (int pl = 0; pl < platforms.size(); pl++) {
-            if (platforms[pl]->getPositionY() < logic::utility::Camera::Instance().getShiftValue()) {
+        deleteOutOfViewPlatforms();
 
-                for (auto i = 0; i < platforms[pl]->getObservers().size(); i++) {
-                    platforms[pl]->removeObserver(platforms[pl]->getObservers()[i]); // remove all observers
-                }
-
-                platforms.erase(platforms.begin()+pl);
-            }
-        }
         // deleting of bonusses that are out of view.
-        for (int b = 0; b < bonuses.size(); b++) {
-            if (bonuses[b]->getPositionY() < logic::utility::Camera::Instance().getShiftValue()) {
+        deleteOutOfViewBonusses();
 
-                for (auto i = 0; i < bonuses[b]->getObservers().size(); i++) {
-                    bonuses[b]->removeObserver(bonuses[b]->getObservers()[i]); // remove all observers
-                }
-
-                bonuses.erase(bonuses.begin()+b);
-            }
-        }
-        // recycling of platforms that are out of view.
-
-        for (auto i = 0; i < 20; i++) { // We check the bottom 20 platforms in case we get a drop in fps. The background tile generation, with this loop, can produce without visual errors or 'glitches' at a minimum of 8 fps.
-            if (bgTiles.front()[0]->getPositionY() < logic::utility::Camera::Instance().getShiftValue()) {
-                float highestYTile = bgTiles.back()[0]->getPositionY();
-                std::vector<std::shared_ptr<logic::BGTile>> r;
-                for (auto t = 0; t < bgTiles.front().size(); t++) {
-                    std::shared_ptr<logic::BGTile> tile = bgTiles.front()[t];
-                    tile->setPositionY(highestYTile+0.03f);
-                    r.push_back(tile);
-                }
-                bgTiles.pop_front();
-                bgTiles.push_back(r);
-            }
-        }
-        for (auto a = 0; a < bgTiles.size(); a++) {
-
-            for (auto b = 0; b < bgTiles[a].size(); b++) {
-                bgTiles[a][b]->notifyObservers();
-            }
-        }
+        // recycling of BG tiles that are out of view.
+        recycleOutOfViewBGTiles();
 
     }
 
@@ -416,35 +358,27 @@ namespace logic {
         for (auto o = 0; o < doodle->getObservers().size(); o++) {
             doodle->removeObserver(doodle->getObservers()[o]);
         }
-
         for (int pl = 0; pl < platforms.size(); pl++) {
-
             for (auto i = 0; i < platforms[pl]->getObservers().size(); i++) {
                 platforms[pl]->removeObserver(platforms[pl]->getObservers()[i]); // remove all observers
             }
-
             platforms.erase(platforms.begin()+pl);
         }
         for (int bg = 0; bg < bgTiles.size(); bg++) {
-
             for (auto i = 0; i < bgTiles[bg].size(); i++) {
-
                 for (auto j = 0; j < bgTiles[bg][i]->getObservers().size(); j++) {
                     bgTiles[bg][i]->removeObserver((bgTiles[bg][i]->getObservers()[j])); // remove all observers
-
                 }
             }
-
             bgTiles.erase(bgTiles.begin()+bg);
         }
         for (int b = 0; b < bonuses.size(); b++) {
-
             for (auto i = 0; i < bonuses[b]->getObservers().size(); i++) {
                 bonuses[b]->removeObserver(bonuses[b]->getObservers()[i]); // remove all observers
             }
-
             bonuses.erase(bonuses.begin()+b);
         }
+
         logic::utility::Camera::Instance().setShiftValue(0.0f);
     }
 
@@ -513,6 +447,73 @@ namespace logic {
                 {3, 1} // 20%
         };
         percentages[8000] = map16000;
+
+    }
+
+    void World::createStartingBGTiles() {
+
+        float bgTileSideLength = 0.05f;
+        for (auto c = 0; c < (1.5/bgTileSideLength)+30.0; c++) { // +35.0, otherwise at low fps, we get visual problems.
+            std::vector<std::shared_ptr<logic::BGTile>> row;
+            for (auto r = 0; r < (rightBound/bgTileSideLength); r++) {
+                std::shared_ptr<logic::BGTile> bgTile = Factory->createBGTile((float)(r*bgTileSideLength), float((c+1)*0.03), bgTileSideLength, bgTileSideLength);
+                row.push_back(bgTile);
+            }
+            bgTiles.push_back(row);
+        }
+    }
+
+    void World::deleteOutOfViewPlatforms() {
+
+        for (int pl = 0; pl < platforms.size(); pl++) {
+            if (platforms[pl]->getPositionY() < logic::utility::Camera::Instance().getShiftValue()) {
+
+                for (auto i = 0; i < platforms[pl]->getObservers().size(); i++) {
+                    platforms[pl]->removeObserver(platforms[pl]->getObservers()[i]); // remove all observers
+                }
+
+                platforms.erase(platforms.begin()+pl);
+            }
+        }
+
+    }
+
+    void World::deleteOutOfViewBonusses() {
+
+        for (int b = 0; b < bonuses.size(); b++) {
+            if (bonuses[b]->getPositionY() < logic::utility::Camera::Instance().getShiftValue()) {
+
+                for (auto i = 0; i < bonuses[b]->getObservers().size(); i++) {
+                    bonuses[b]->removeObserver(bonuses[b]->getObservers()[i]); // remove all observers
+                }
+
+                bonuses.erase(bonuses.begin()+b);
+            }
+        }
+
+    }
+
+    void World::recycleOutOfViewBGTiles() {
+
+        for (auto i = 0; i < 20; i++) { // We check the bottom 20 platforms in case we get a drop in fps. The background tile generation, with this loop, can produce without visual errors or 'glitches' at a minimum of 8 fps.
+            if (bgTiles.front()[0]->getPositionY() < logic::utility::Camera::Instance().getShiftValue()) {
+                float highestYTile = bgTiles.back()[0]->getPositionY();
+                std::vector<std::shared_ptr<logic::BGTile>> r;
+                for (auto t = 0; t < bgTiles.front().size(); t++) {
+                    std::shared_ptr<logic::BGTile> tile = bgTiles.front()[t];
+                    tile->setPositionY(highestYTile+0.03f);
+                    r.push_back(tile);
+                }
+                bgTiles.pop_front();
+                bgTiles.push_back(r);
+            }
+        }
+        for (auto a = 0; a < bgTiles.size(); a++) {
+
+            for (auto b = 0; b < bgTiles[a].size(); b++) {
+                bgTiles[a][b]->notifyObservers();
+            }
+        }
 
     }
 

@@ -30,5 +30,5 @@ void logic::Platform_Vertical::move() {
 
 float logic::Platform_Vertical::isTouched() {
     timesTouched++;
-    return 0.6;
+    return 0.7;
 }

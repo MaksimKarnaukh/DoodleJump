@@ -196,19 +196,19 @@ namespace representation {
         currentHighScore.setFillColor(sf::Color::Blue);
         currentHighScore.setOutlineColor(sf::Color::Green);
         currentHighScore.setOutlineThickness(2); // 4
-        currentHighScore.setPosition(80.0f, (float)representation::Window::Instance().GetWindowSize().y/1.5f);
+        currentHighScore.setPosition(60.0f, (float)representation::Window::Instance().GetWindowSize().y/1.5f);
 
         allTimeHighScore.setFont(font1);
         allTimeHighScore.setCharacterSize(40); // 60
         allTimeHighScore.setFillColor(sf::Color::Blue);
         allTimeHighScore.setOutlineColor(sf::Color::Red);
         allTimeHighScore.setOutlineThickness(2); // 4
-        allTimeHighScore.setPosition(80.0f, (float)representation::Window::Instance().GetWindowSize().y/1.3f);
+        allTimeHighScore.setPosition(60.0f, (float)representation::Window::Instance().GetWindowSize().y/1.3f);
 
     }
 
     void Game::calculateHighScore() {
-        _currentScore = world->score->getScore();
+        _currentScore = static_cast<int>(std::round(world->score->getScore()*10));
         if (_currentScore > _allTimeHighScore) {
             _allTimeHighScore = _currentScore;
         }

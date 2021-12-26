@@ -11,6 +11,7 @@ namespace logic {
         this->setPositionY(posY);
 
         this->setBonusForce(5.0f);
+        this->setScoreIncrease(4);
     }
 
 }
