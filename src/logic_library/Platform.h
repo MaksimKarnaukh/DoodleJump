@@ -1,6 +1,4 @@
-//
-// Created by centu on 17/11/2021.
-//
+
 
 #ifndef DOODLEJUMP_PLATFORM_H
 #define DOODLEJUMP_PLATFORM_H
@@ -15,6 +13,8 @@ namespace logic {
 
         float startingX; // starting x-position of our platform (top-left corner of entity)
         float startingY; // starting y-position of our platform (top-left corner of entity)
+
+        int timesTouched = 0;
 
     public:
 
@@ -33,9 +33,13 @@ namespace logic {
         /**
         * @function : isTouched
         * Function that is used for the score decrease and temporary platform deletion.
-        * @return (bool) : true if this object is of type Platform_Temporary, false otherwise.
+        * @return (float) : score decrease.
         */
-        virtual bool isTouched();
+        virtual float isTouched() = 0;
+
+        int getTimesTouched() const {
+            return timesTouched;
+        }
 
     };
 

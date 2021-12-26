@@ -1,6 +1,4 @@
-//
-// Created by centu on 17/11/2021.
-//
+// Implemented as a singleton class.
 
 #ifndef DOODLEJUMP_CAMERA_H
 #define DOODLEJUMP_CAMERA_H

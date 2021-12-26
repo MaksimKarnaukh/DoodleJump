@@ -1,6 +1,5 @@
-//
-// Created by centu on 17/11/2021.
-//
+// Implemented as a singleton class.
+// Sources:
 // https://www.youtube.com/watch?v=Vyt-dM8gTRQ&ab_channel=AtherOmar
 // https://discuss.cocos2d-x.org/t/correct-way-to-implement-singleton/28226/22?page=2
 

@@ -1,6 +1,4 @@
-//
-// Created by centu on 18/11/2021.
-//
+
 
 #include "Platform_Vertical.h"
 
@@ -28,4 +26,9 @@ void logic::Platform_Vertical::move() {
 
     notifyObservers();
 
+}
+
+float logic::Platform_Vertical::isTouched() {
+    timesTouched++;
+    return 0.6;
 }

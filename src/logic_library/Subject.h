@@ -1,7 +1,4 @@
-//
-// Created by centu on 17/11/2021.
-//
-// https://www.youtube.com/watch?v=_BpmfnqjgzQ&list=PLrhzvIcii6GNjpARdnO4ueTUAVR9eMBpc&index=2&ab_channel=ChristopherOkhravi
+// Source: https://www.youtube.com/watch?v=_BpmfnqjgzQ&list=PLrhzvIcii6GNjpARdnO4ueTUAVR9eMBpc&index=2&ab_channel=ChristopherOkhravi
 
 #ifndef DOODLEJUMP_SUBJECT_H
 #define DOODLEJUMP_SUBJECT_H
@@ -40,7 +37,7 @@ namespace logic {
         * Removes the observer from the list of observers.
         * @param observer (std::shared_ptr<Observer>) : observer that we want to remove.
         */
-        void removeObserver(std::shared_ptr<Observer> observer);
+        void removeObserver(const std::shared_ptr<Observer>& observer);
 
         /**
         * @function : notifyObservers

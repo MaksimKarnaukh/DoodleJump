@@ -1,9 +1,6 @@
-//
-// Created by centu on 17/11/2021.
-//
+
 
 #include "World.h"
-
 #include <memory>
 
 namespace logic {
@@ -55,7 +52,7 @@ namespace logic {
 
         for (auto b = 0; b < bonuses.size(); b++) {
 
-            if (checkForUndetectedCollision(bonuses[b], middleLine)) { // backup check
+            if (checkForUndetectedCollision(bonuses[b], middleLine)) {
                 doodle->touchedBonus(bonuses[b]->getBonusForce());
                 for (auto i = 0; i < bonuses[b]->getObservers().size(); i++) {
                     bonuses[b]->removeObserver(bonuses[b]->getObservers()[i]); // remove all observers
@@ -81,11 +78,19 @@ namespace logic {
 //                }
 //            }
 
-            if (checkForUndetectedCollision(platforms[pl], middleLine)) { // backup check
+            if (checkForUndetectedCollision(platforms[pl], middleLine)) {
                 doodle->jump();
-
-                if (platforms[pl]->isTouched()) {
-                    platforms.erase(platforms.begin()+pl);
+                float dec = platforms[pl]->isTouched();
+                if ((int)(dec*10)) {
+                    if (platforms[pl]->getTimesTouched() > 1) {
+                        score->setScore(score->getScore()-dec);
+                    }
+                }
+                else {
+                    for (auto i = 0; i < platforms[pl]->getObservers().size(); i++) {
+                        platforms[pl]->removeObserver(platforms[pl]->getObservers()[i]);
+                    }
+                    platforms.erase(platforms.begin()+pl); // observers deleted in function
                 }
                 break;
             }
@@ -96,7 +101,7 @@ namespace logic {
 
         doodle = Factory->createPlayer(0.5, 0.5, 0.077, 0.18);
 
-        // begin platformen gehardcode zodat de speler gemakkelijk vanaf het begin al kan spelen.
+        // beginning platformen hardcoded so that the player can easily start playing.
 
         std::shared_ptr<logic::Platform> p = Factory->createStaticPlatform(0.4, 0.3, 0.174004, 0.0411);
         platforms.push_back(p);
@@ -116,10 +121,11 @@ namespace logic {
         std::shared_ptr<logic::Platform> p5 = Factory->createStaticPlatform(0.7, 0.9, 0.174004, 0.0411);
         platforms.push_back(p5);
 
-        for (auto c = 0; c < (1.5/0.05)+30.0; c++) { // +35.0 want als we op lage fps zitten, zou dit anders voor visuele problemen zorgen.
+        float bgTileSideLength = 0.05f;
+        for (auto c = 0; c < (1.5/bgTileSideLength)+30.0; c++) { // +35.0, otherwise at low fps, we get visual problems.
             std::vector<std::shared_ptr<logic::BGTile>> row;
-            for (auto r = 0; r < (rightBound/0.05); r++) {
-                std::shared_ptr<logic::BGTile> bgTile = Factory->createBGTile((float)(r*0.05), float((c+1)*0.03), 0.05, 0.05);
+            for (auto r = 0; r < (rightBound/bgTileSideLength); r++) {
+                std::shared_ptr<logic::BGTile> bgTile = Factory->createBGTile((float)(r*bgTileSideLength), float((c+1)*0.03), bgTileSideLength, bgTileSideLength);
                 row.push_back(bgTile);
             }
             bgTiles.push_back(row);
@@ -290,11 +296,7 @@ namespace logic {
             createEntities();
         }
 
-//        if (doodle->getPositionY() <= logic::Camera::Instance().getShiftValue() && doodle->getPositionY() >= logic::Camera::Instance().getShiftValue()+0.5) {
-//            //logic::Camera::Instance().setShiftValue(std::min(doodle->getPositionY()-0.6f, 1.0f));
-//            logic::Camera::Instance().setShiftValue(doodle->getPositionY()-0.6f);
-//
-//        }
+
 
         std::cout << "Number of platforms: " << platforms.size() << std::endl;
 
@@ -335,6 +337,13 @@ namespace logic {
                 bgTiles.push_back(r);
             }
         }
+        for (auto a = 0; a < bgTiles.size(); a++) {
+
+            for (auto b = 0; b < bgTiles[a].size(); b++) {
+                bgTiles[a][b]->notifyObservers();
+            }
+        }
+
     }
 
 

@@ -1,9 +1,6 @@
-//
-// Created by centu on 17/11/2021.
-//
+
 
 #include "Subject.h"
-
 #include "Observer.h"
 
 namespace logic {
@@ -14,9 +11,9 @@ namespace logic {
         observers.push_back(observer);
     }
 
-    void Subject::removeObserver(const std::shared_ptr<Observer> observer) {
+    void Subject::removeObserver(const std::shared_ptr<Observer>& observer) {
 
-        auto it = observers.begin(); // std::vector<Observer*>::iterator it
+        auto it = observers.begin();
         while (it != observers.end()) {
             if (*it == observer) {
                 observers.erase(it);

@@ -1,14 +1,11 @@
-//
-// Created by centu on 17/11/2021.
-//
+
 
 #include "Game.h"
-
 #include <memory>
 
 namespace representation {
 
-    Game::Game() { // : m_window("window", sf::Vector2u(640,960))
+    Game::Game() {
 
         representation::Window& m_window = representation::Window::Instance();
         m_window.Setup("Doodle Jump", sf::Vector2u(640,960));
@@ -45,19 +42,10 @@ namespace representation {
         for (auto a = 0; a < world->bonuses.size(); a++) {
             world->bonuses[a]->notifyObservers();
         }
-        scoreText.setString(std::to_string(world->score->getScore()));
+        scoreText.setString(std::to_string(static_cast<int>(std::round(world->score->getScore()*10))));
         representation::Window::Instance().Draw(scoreText);
 
         world->doodle->notifyObservers();
-
-        std::cout << "playerX = " << world->doodle->getPositionX() <<  "; ";
-        std::cout << "playerY = " << world->doodle->getPositionY() << "; ";
-        std::cout << "playerWidth = " << world->doodle->getWidth() << "; ";
-        std::cout << "playerHeight = " << world->doodle->getHeight() << std::endl;
-//        std::cout << "pl.x =" << world->platforms[0]->getPositionX() << "   ";
-//        std::cout << "pl.y =" << world->platforms[0]->getPositionY() << "   ";
-//        std::cout << "pl.w =" << world->platforms[0]->getWidth() << "   ";
-//        std::cout << "pl.h =" << world->platforms[0]->getHeight() << std::endl;
 
         representation::Window::Instance().EndDraw(); // Display.
     }
@@ -177,17 +165,6 @@ namespace representation {
             std::cout << e.what() << ": " << fontFile << std::endl;
         }
 
-//        sf::FileInputStream s;
-//        try {
-//            if (s.open("assets/Fonts/Bodo_Amat.ttf")) {
-//                font1.loadFromStream(s);
-//            } else {
-//                throw LoadFileException("Couldn't load file");
-//            }
-//        } catch (LoadFileException& e) {
-//            std::cout << e.what() << ": " << fontFile << std::endl;
-//        }
-
     }
 
     void Game::createTexts() {
@@ -227,7 +204,6 @@ namespace representation {
         allTimeHighScore.setOutlineColor(sf::Color::Red);
         allTimeHighScore.setOutlineThickness(2); // 4
         allTimeHighScore.setPosition(80.0f, (float)representation::Window::Instance().GetWindowSize().y/1.3f);
-
 
     }
 

@@ -1,6 +1,4 @@
-//
-// Created by centu on 18/11/2021.
-//
+// Implemented as a singleton class.
 // Source: Raimondas Pupius, "SFML Game Development By Example", published by Packt Publishing Ltd., ISBN 978-1-78528-734-3
 
 #ifndef DOODLEJUMP_WINDOW_H

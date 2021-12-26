@@ -1,6 +1,4 @@
-//
-// Created by centu on 18/11/2021.
-//
+
 
 #include "Platform_Temporary.h"
 
@@ -14,11 +12,8 @@ namespace logic {
         this->setPositionY(posY);
     }
 
-    bool Platform_Temporary::isTouched() {
+    float Platform_Temporary::isTouched() {
 
-        for (auto i = 0; i < observers.size(); i++) {
-            removeObserver(observers[i]);
-        }
-        return true;
+        return 0;
     }
 }

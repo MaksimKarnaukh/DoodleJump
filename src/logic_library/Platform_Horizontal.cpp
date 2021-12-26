@@ -1,6 +1,4 @@
-//
-// Created by centu on 18/11/2021.
-//
+
 
 #include "Platform_Horizontal.h"
 
@@ -26,5 +24,10 @@ namespace logic {
         }
 
         notifyObservers();
+    }
+
+    float Platform_Horizontal::isTouched() {
+        timesTouched++;
+        return 0.8;
     }
 }

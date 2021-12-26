@@ -1,6 +1,4 @@
-//
-// Created by centu on 18/11/2021.
-//
+
 
 #ifndef DOODLEJUMP_PLATFORM_STATIC_H
 #define DOODLEJUMP_PLATFORM_STATIC_H
@@ -26,6 +24,13 @@ namespace logic {
         * @param posY (float) : y-coordinate of our entity, between the range [0+entity.height, inf[.
         */
         Platform_Static(float posX, float posY);
+
+        /**
+        * @function : isTouched
+        * Function that is used for the score decrease and temporary platform deletion.
+        * @return (float) : score decrease.
+        */
+        float isTouched() override;
 
     };
 

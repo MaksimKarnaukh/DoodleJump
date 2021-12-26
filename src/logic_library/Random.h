@@ -1,6 +1,5 @@
-//
-// Created by centu on 17/11/2021.
-//
+// Implemented as a singleton class.
+// Sources:
 // https://stackoverflow.com/questions/13445688/how-to-generate-a-random-number-in-c
 // https://stackoverflow.com/questions/7114043/random-number-generation-in-c11-how-to-generate-how-does-it-work
 // https://en.cppreference.com/w/cpp/numeric/random

@@ -1,6 +1,4 @@
-//
-// Created by centu on 18/11/2021.
-//
+
 
 #ifndef DOODLEJUMP_PLATFORM_TEMPORARY_H
 #define DOODLEJUMP_PLATFORM_TEMPORARY_H
@@ -30,9 +28,9 @@ namespace logic {
         /**
         * @function : isTouched
         * Function that is used for the score decrease and temporary platform deletion.
-        * @return (bool) : true if this object is of type Platform_Temporary, false otherwise. In this case, it will always return true.
+        * @return (float) : score decrease.
         */
-        bool isTouched() override;
+        float isTouched() override;
 
     };
 

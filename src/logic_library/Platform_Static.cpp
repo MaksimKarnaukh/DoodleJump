@@ -1,6 +1,4 @@
-//
-// Created by centu on 18/11/2021.
-//
+
 
 #include "Platform_Static.h"
 
@@ -13,5 +11,10 @@ namespace logic {
         this->setPositionX(posX);
         this->setPositionY(posY);
 
+    }
+
+    float Platform_Static::isTouched() {
+        timesTouched++;
+        return 1;
     }
 }

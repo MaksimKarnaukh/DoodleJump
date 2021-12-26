@@ -1,6 +1,4 @@
-//
-// Created by centu on 17/11/2021.
-//
+
 
 #ifndef DOODLEJUMP_CONCRETEFACTORY_H
 #define DOODLEJUMP_CONCRETEFACTORY_H
@@ -14,7 +12,6 @@
 #include "BGTile_GR.h"
 #include "Jetpack_GR.h"
 #include "Spring_GR.h"
-
 #include "Window.h"
 
 namespace representation {

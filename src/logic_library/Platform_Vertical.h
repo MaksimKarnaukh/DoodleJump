@@ -1,6 +1,4 @@
-//
-// Created by centu on 18/11/2021.
-//
+
 
 #ifndef DOODLEJUMP_PLATFORM_VERTICAL_H
 #define DOODLEJUMP_PLATFORM_VERTICAL_H
@@ -36,6 +34,13 @@ namespace logic {
         * Function that is responsible for moving the platform correctly.
         */
         void move() override;
+
+        /**
+        * @function : isTouched
+        * Function that is used for the score decrease and temporary platform deletion.
+        * @return (float) : score decrease.
+        */
+        float isTouched() override;
     };
 
 }

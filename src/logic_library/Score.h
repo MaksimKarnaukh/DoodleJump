@@ -1,6 +1,4 @@
-//
-// Created by centu on 17/11/2021.
-//
+
 
 #ifndef DOODLEJUMP_SCORE_H
 #define DOODLEJUMP_SCORE_H
@@ -13,7 +11,7 @@ namespace logic {
 
     class Score: public logic::Observer {
 
-        int score;
+        float score;
 
         std::shared_ptr<logic::EntityModel> mEntityModel; // points to an entityModel, in this case mostlikely the player.
 
@@ -45,16 +43,16 @@ namespace logic {
         * Setter function for the score data member.
         * @param _score (float) : value that we want to give to score.
         */
-        void setScore(int _score) {
+        void setScore(float _score) {
             score = _score;
         }
 
         /**
         * @function : getScore
         * Getter function for the score data member.
-        * @return (int) : this->score
+        * @return (float) : this->score
         */
-        int getScore() const {
+        float getScore() const {
             return score;
         }
 
