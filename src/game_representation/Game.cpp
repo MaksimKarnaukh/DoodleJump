@@ -127,7 +127,6 @@ namespace representation {
     void Game::playGame() {
 
         world = std::move(std::make_unique<logic::World>(factory));
-
         logic::utility::Stopwatch::Instance().Reset();
 
         while ( !(world->gameOver || GetWindow().IsDone()) ) {
