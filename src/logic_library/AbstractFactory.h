@@ -35,16 +35,6 @@ namespace logic {
 
 
         /**
-        * @function : createPlatform
-        * This function is responsible for creating a random platform.
-        * @param posX (float) : x-coordinate of our entity, between the range [0,1-entity.width].
-        * @param posY (float) : y-coordinate of our entity, between the range [0+entity.height, inf[.
-        * @param width (float) : width of our entity (in logic units).
-        * @param height (float) : height of our entity (in logic units).
-        */
-        virtual std::shared_ptr<logic::Platform> createPlatform(float posX, float posY, float width, float height) = 0;
-
-        /**
         * @function : createStaticPlatform
         * This function is responsible for creating the static platform.
         * @param posX (float) : x-coordinate of our entity, between the range [0,1-entity.width].
@@ -84,16 +74,6 @@ namespace logic {
         */
         virtual std::shared_ptr<logic::Platform> createVerticalPlatform(float posX, float posY, float width, float height) = 0;
 
-
-        /**
-        * @function : createBonus
-        * This function is responsible for creating a random bonus object.
-        * @param posX (float) : x-coordinate of our entity, between the range [0,1-entity.width].
-        * @param posY (float) : y-coordinate of our entity, between the range [0+entity.height, inf[.
-        * @param width (float) : width of our entity (in logic units).
-        * @param height (float) : height of our entity (in logic units).
-        */
-        virtual std::shared_ptr<logic::Bonus> createBonus(float posX, float posY, float width, float height) = 0;
 
         /**
         * @function : createSpring

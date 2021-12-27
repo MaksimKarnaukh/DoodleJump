@@ -39,17 +39,6 @@ namespace representation {
 
 
         /**
-        * @function : createPlatform
-        * Creates and returns a platform model.
-        * @param posX (float) : x-position of the entity.
-        * @param posY (float) : y-position of the entity.
-        * @param width (float) : width of the entity.
-        * @param height (float) : height of the entity.
-        * @return (std::shared_ptr<logic::Platform) : platform model.
-        */
-        std::shared_ptr<logic::Platform> createPlatform(float posX, float posY, float width, float height) override;
-
-        /**
         * @function : createStaticPlatform
         * Creates and returns a (static) platform model.
         * @param posX (float) : x-position of the entity.
@@ -93,17 +82,6 @@ namespace representation {
         */
         std::shared_ptr<logic::Platform> createVerticalPlatform(float posX, float posY, float width, float height) override;
 
-
-        /**
-        * @function : createBonus
-        * Creates and returns a bonus model.
-        * @param posX (float) : x-position of the entity.
-        * @param posY (float) : y-position of the entity.
-        * @param width (float) : width of the entity.
-        * @param height (float) : height of the entity.
-        * @return (std::shared_ptr<logic::Bonus>) : bonus model.
-        */
-        std::shared_ptr<logic::Bonus> createBonus(float posX, float posY, float width, float height) override;
 
         /**
         * @function : createSpring

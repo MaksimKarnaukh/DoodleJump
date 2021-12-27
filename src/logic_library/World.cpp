@@ -235,7 +235,7 @@ namespace logic {
     }
 
     template <class entity>
-    bool World::checkForUndetectedCollision(const entity& pl, std::vector<std::pair<float,float>> &middleLine) {
+    bool World::checkForUndetectedCollision(const entity& pl, std::vector<std::pair<float,float>> &middleLine) const {
 
         for (int i = 0; i < middleLine.size(); i++) {
             // check for the x-coordinates
@@ -253,7 +253,7 @@ namespace logic {
         return false;
     }
 
-    std::vector<std::pair<float,float>> World::getLineBetweenPoints(float x0, float y0, float x1, float y1) {
+    std::vector<std::pair<float,float>> World::getLineBetweenPoints(float x0, float y0, float x1, float y1)  {
 
         std::vector<std::pair<float,float>> line;
         float precisionOfIterator = 0.001f;
@@ -487,6 +487,7 @@ namespace logic {
                 return it->first;
             }
         }
+        return 0; // just to have a return value
 
     }
 

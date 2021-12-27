@@ -80,7 +80,7 @@ namespace logic {
         * Function that checks for intersection between a single entity (pl) and the player using lines drawn from the sides of the player from the current frame to the previous frame.
         */
         template<class entity>
-        bool checkForUndetectedCollision(const entity& pl, std::vector<std::pair<float,float>> &middleLine);
+        bool checkForUndetectedCollision(const entity& pl, std::vector<std::pair<float,float>> &middleLine) const;
 
         /**
         * @function : createStartEntities

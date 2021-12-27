@@ -4,10 +4,13 @@
 
 logic::Platform_Vertical::Platform_Vertical() = default;
 
-logic::Platform_Vertical::Platform_Vertical(const float posX, const float posY) {
+logic::Platform_Vertical::Platform_Vertical(const float posX, const float posY) : Platform(posX, posY) {
 
-    this->setPositionX(posX);
-    this->setPositionY(posY);
+    this->startingX = posX;
+    this->startingY = posY;
+}
+
+logic::Platform_Vertical::Platform_Vertical(const float posX, const float posY, const float width, const float height) : Platform(posX, posY, width, height) {
 
     this->startingX = posX;
     this->startingY = posY;
@@ -32,3 +35,4 @@ float logic::Platform_Vertical::isTouched() {
     timesTouched++;
     return 0.7;
 }
+

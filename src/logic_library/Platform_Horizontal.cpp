@@ -6,11 +6,9 @@ namespace logic {
 
     Platform_Horizontal::Platform_Horizontal() = default;
 
-    Platform_Horizontal::Platform_Horizontal(const float posX, const float posY) {
+    Platform_Horizontal::Platform_Horizontal(const float posX, const float posY) : Platform(posX, posY) {}
 
-        this->setPositionX(posX);
-        this->setPositionY(posY);
-    }
+    Platform_Horizontal::Platform_Horizontal(const float posX, const float posY, const float width, const float height) : Platform(posX, posY, width, height) {}
 
     void Platform_Horizontal::move() {
 
@@ -30,4 +28,8 @@ namespace logic {
         timesTouched++;
         return 0.8;
     }
+
+
+
+
 }

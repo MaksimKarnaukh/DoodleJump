@@ -6,10 +6,13 @@ namespace logic {
 
     Spring::Spring() = default;
 
-    Spring::Spring(float posX, float posY) {
+    Spring::Spring(const float posX, const float posY) : Bonus(posX, posY) {
 
-        this->setPositionX(posX);
-        this->setPositionY(posY);
+        this->setBonusForce(2.5f);
+        this->setScoreIncrease(2);
+    }
+
+    Spring::Spring(const float posX, const float posY, const float width, const float height) : Bonus(posX, posY, width, height) {
 
         this->setBonusForce(2.5f);
         this->setScoreIncrease(2);

@@ -22,6 +22,24 @@ namespace logic {
         Bonus();
 
         /**
+        * @function : Bonus
+        * Constructor for a bonus.
+        * @param posX (float) : x-coordinate of our entity, between the range [0,1-entity.width].
+        * @param posY (float) : y-coordinate of our entity, between the range [0+entity.height, inf[.
+        */
+        Bonus(float posX, float posY);
+
+        /**
+        * @function : Bonus
+        * Constructor for a bonus.
+        * @param posX (float) : x-coordinate of our entity, between the range [0,1-entity.width].
+        * @param posY (float) : y-coordinate of our entity, between the range [0+entity.height, inf[.
+        * @param width (float) : width of our entity.
+        * @param height (float) : height of our entity.
+        */
+        Bonus(float posX, float posY, float width, float height);
+
+        /**
         * @function : setBonusForce
         * Setter function for the bonusForce data member.
         * @param force (float) : value that we want to give to bonusForce.

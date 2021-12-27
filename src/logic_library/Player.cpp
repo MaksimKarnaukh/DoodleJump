@@ -6,13 +6,9 @@ namespace logic {
 
     Player::Player() = default;
 
-    Player::Player(const float posX, const float posY) {
-        this->setPositionX(posX);
-        this->setPositionY(posY);
+    Player::Player(float posX, float posY) : EntityModel(posX, posY) {}
 
-//        this->setWidth(0.077f);
-//        this->setHeight(0.128f);
-    }
+    Player::Player(float posX, float posY, float width, float height) : EntityModel(posX, posY, width, height) {}
 
     void Player::moveLeft() {
 

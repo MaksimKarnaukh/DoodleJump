@@ -25,6 +25,8 @@ namespace logic {
         */
         Subject();
 
+        virtual ~Subject() = default;;
+
         /**
         * @function : registerObserver
         * Adds an observer to the list of observers.
