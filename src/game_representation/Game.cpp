@@ -16,7 +16,7 @@ namespace representation {
 
         gameState = 0;
 
-        fontFile = "assets/Fonts/Bodo_Amat.ttf";
+        fontFile = "../assets/Fonts/Bodo_Amat.ttf";
 
     }
 
@@ -137,11 +137,11 @@ namespace representation {
             if (logic::utility::Stopwatch::Instance().getDeltaTime() < (1.0f/getFrameRate())) {
                 std::chrono::milliseconds ms = std::chrono::milliseconds((int)(((1.0f/getFrameRate()) - logic::utility::Stopwatch::Instance().getDeltaTime())*1000));
                 std::this_thread::sleep_for(ms);
-                std::cout << ms.count() << std::endl;
+                //std::cout << ms.count() << std::endl;
             }
 
             logic::utility::Stopwatch::Instance().tick(); // de verstreken milliseconden erbij.
-            std::cout  << logic::utility::Stopwatch::Instance().getDeltaTime() << "  " << 1 / logic::utility::Stopwatch::Instance().getDeltaTime() << std::endl;
+            std::cout << 1 / logic::utility::Stopwatch::Instance().getDeltaTime() << std::endl;
             logic::utility::Stopwatch::Instance().Reset(); // mStartTime = now (tijd verstreken is terug 0)
 
             // Game loop.
