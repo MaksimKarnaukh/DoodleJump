@@ -23,6 +23,12 @@ namespace logic {
 
         /**
         * @function : Bonus
+        * Destructor for a bonus.
+        */
+        ~Bonus() override = default;
+
+        /**
+        * @function : Bonus
         * Constructor for a bonus.
         * @param posX (float) : x-coordinate of our entity, between the range [0,1-entity.width].
         * @param posY (float) : y-coordinate of our entity, between the range [0+entity.height, inf[.

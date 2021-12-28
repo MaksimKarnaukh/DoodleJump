@@ -136,7 +136,6 @@ namespace representation {
             if (logic::utility::Stopwatch::Instance().getDeltaTime() < (1.0f/getFrameRate())) {
                 std::chrono::milliseconds ms = std::chrono::milliseconds((int)(((1.0f/getFrameRate()) - logic::utility::Stopwatch::Instance().getDeltaTime())*1000));
                 std::this_thread::sleep_for(ms);
-                //std::cout << ms.count() << std::endl;
             }
 
             logic::utility::Stopwatch::Instance().tick(); // de verstreken milliseconden erbij.

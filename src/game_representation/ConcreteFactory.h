@@ -27,6 +27,12 @@ namespace representation {
         ConcreteFactory();
 
         /**
+        * @function : ConcreteFactory
+        * Destructor for a ConcreteFactory.
+        */
+        ~ConcreteFactory() override = default;
+
+        /**
         * @function : createPlayer
         * Creates and returns a player model.
         * @param posX (float) : x-position of the entity.

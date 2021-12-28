@@ -17,6 +17,12 @@ namespace representation {
         * @param entityModel (std::shared_ptr<logic::EntityModel>) : entityModel
         */
         Spring_GR(const std::shared_ptr<logic::EntityModel> &entityModel);
+
+        /**
+        * @function : Spring_GR
+        * Destructor for a Spring_GR.
+        */
+        ~Spring_GR() override = default;
     };
 
 }

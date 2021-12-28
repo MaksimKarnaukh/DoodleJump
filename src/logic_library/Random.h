@@ -23,6 +23,10 @@ namespace logic {
             */
             Random();
 
+            /**
+            * @function : Random
+            * Destructor for a Random.
+            */
             ~Random();
 
         public:

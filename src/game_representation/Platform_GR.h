@@ -17,6 +17,12 @@ namespace representation {
         */
         Platform_GR();
 
+        /**
+        * @function : Platform_GR
+        * Destructor for a Platform_GR.
+        */
+        ~Platform_GR() override = default;
+
     };
 
 }

@@ -18,6 +18,12 @@ namespace representation {
         */
         Platform_Static_GR(const std::shared_ptr<logic::EntityModel> &entityModel);
 
+        /**
+        * @function : Platform_Static_GR
+        * Destructor for a Platform_Static_GR.
+        */
+        ~Platform_Static_GR() override = default;
+
     };
 
 }

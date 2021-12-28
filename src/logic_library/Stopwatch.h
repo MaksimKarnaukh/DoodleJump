@@ -22,6 +22,10 @@ namespace logic {
             */
             Stopwatch();
 
+            /**
+            * @function : Stopwatch
+            * Destructor for a Stopwatch.
+            */
             ~Stopwatch();
 
         public:

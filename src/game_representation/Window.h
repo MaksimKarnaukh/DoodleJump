@@ -44,6 +44,10 @@ namespace representation {
         */
         Window(const std::string& l_title,const sf::Vector2u& l_size);
 
+        /**
+        * @function : Window
+        * Destructor for a background Window.
+        */
         ~Window();
 
         /**

@@ -19,6 +19,12 @@ namespace logic {
 
         /**
         * @function : Jetpack
+        * Destructor for a Jetpack.
+        */
+        ~Jetpack() override = default;
+
+        /**
+        * @function : Jetpack
         * Constructor for a Jetpack.
         * @param posX (float) : x-coordinate of our entity, between the range [0,1-entity.width].
         * @param posY (float) : y-coordinate of our entity, between the range [0+entity.height, inf[.

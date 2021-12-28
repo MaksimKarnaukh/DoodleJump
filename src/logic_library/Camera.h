@@ -28,6 +28,12 @@ namespace logic {
             */
             Camera();
 
+            /**
+            * @function : Camera
+            * Destructor for a Camera.
+            */
+            ~Camera() = default;
+
         public:
 
             /**

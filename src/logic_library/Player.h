@@ -23,6 +23,12 @@ namespace logic {
 
         /**
         * @function : Player
+        * Destructor for a Player.
+        */
+        ~Player() override = default;
+
+        /**
+        * @function : Player
         * Constructor for a Player.
         * @param posX (float) : x-coordinate of our entity, between the range [0,1-entity.width].
         * @param posY (float) : y-coordinate of our entity, between the range [0+entity.height, inf[.

@@ -25,7 +25,11 @@ namespace logic {
         */
         Subject();
 
-        virtual ~Subject() = default;;
+        /**
+        * @function : Subject
+        * Destructor for a Subject.
+        */
+        virtual ~Subject() = default;
 
         /**
         * @function : registerObserver

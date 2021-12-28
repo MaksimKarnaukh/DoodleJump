@@ -20,8 +20,17 @@ namespace logic {
 
     public:
 
+        /**
+        * @function : AbstractFactory
+        * Constructor for a AbstractFactory.
+        */
         AbstractFactory();
-        //virtual ~AbstractFactory();
+
+        /**
+        * @function : AbstractFactory
+        * Destructor for an AbstractFactory.
+        */
+        virtual ~AbstractFactory() = default;
 
         /**
         * @function : createPlayer

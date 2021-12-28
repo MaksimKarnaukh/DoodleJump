@@ -25,6 +25,12 @@ namespace logic {
 
         /**
         * @function : Score
+        * Destructor for a Score.
+        */
+        ~Score() override = default;
+
+        /**
+        * @function : Score
         * Constructor for a Score.
         * @param entityModel (std::shared_ptr<logic::EntityModel>) : entityModel that we point to.
         */

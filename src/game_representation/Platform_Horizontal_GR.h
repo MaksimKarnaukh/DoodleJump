@@ -18,6 +18,12 @@ namespace representation {
         */
         Platform_Horizontal_GR(const std::shared_ptr<logic::EntityModel> &entityModel);
 
+        /**
+        * @function : Platform_Horizontal_GR
+        * Destructor for a Platform_Horizontal_GR.
+        */
+        ~Platform_Horizontal_GR() override = default;
+
     };
 
 }

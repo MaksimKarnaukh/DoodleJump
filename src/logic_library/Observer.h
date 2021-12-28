@@ -25,6 +25,12 @@ namespace logic {
 
         /**
         * @function : Observer
+        * Destructor for a Observer.
+        */
+        virtual ~Observer() = default;
+
+        /**
+        * @function : Observer
         * Constructor for a Observer.
         */
         Observer(const std::shared_ptr<logic::Subject>& subject);

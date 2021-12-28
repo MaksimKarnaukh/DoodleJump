@@ -18,6 +18,12 @@ namespace representation {
         */
         Player_GR(const std::shared_ptr<logic::EntityModel> &entityModel);
 
+        /**
+        * @function : Player_GR
+        * Destructor for a Player_GR.
+        */
+        ~Player_GR() override = default;
+
     };
 
 }

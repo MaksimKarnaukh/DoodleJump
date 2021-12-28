@@ -31,6 +31,12 @@ namespace representation {
 
         /**
         * @function : EntityView
+        * Destructor for a EntityView.
+        */
+        ~EntityView() override = default;
+
+        /**
+        * @function : EntityView
         * Constructor for a EntityView.
         * @param entityModel (std::shared_ptr<logic::EntityModel>) : entityModel
         */

@@ -42,6 +42,10 @@ namespace representation {
         */
         Game();
 
+        /**
+        * @function : Game
+        * Destructor for a Game.
+        */
         ~Game();
 
         /**

@@ -18,6 +18,12 @@ namespace representation {
         */
         Platform_Temporary_GR(const std::shared_ptr<logic::EntityModel> &entityModel);
 
+        /**
+        * @function : Platform_Temporary_GR
+        * Destructor for a Platform_Temporary_GR.
+        */
+        ~Platform_Temporary_GR() override = default;
+
     };
 
 }

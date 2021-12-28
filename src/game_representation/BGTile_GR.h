@@ -18,6 +18,12 @@ namespace representation {
         */
         BGTile_GR(const std::shared_ptr<logic::EntityModel> &entityModel);
 
+        /**
+        * @function : BGTile_GR
+        * Destructor for a BGTile_GR.
+        */
+        ~BGTile_GR() override = default;
+
     };
 }
 

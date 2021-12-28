@@ -17,6 +17,12 @@ namespace representation {
         */
         Bonus_GR();
 
+        /**
+        * @function : Bonus_GR
+        * Destructor for a Bonus_GR.
+        */
+        ~Bonus_GR() override = default;
+
     };
 
 }

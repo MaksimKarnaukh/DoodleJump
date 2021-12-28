@@ -26,6 +26,12 @@ namespace logic {
 
         /**
         * @function : Platform
+        * Destructor for a Platform.
+        */
+        ~Platform() override = default;
+
+        /**
+        * @function : Platform
         * Constructor for a Platform.
         * @param posX (float) : x-coordinate of our entity, between the range [0,1-entity.width].
         * @param posY (float) : y-coordinate of our entity, between the range [0+entity.height, inf[.

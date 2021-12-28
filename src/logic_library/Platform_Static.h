@@ -19,6 +19,12 @@ namespace logic {
 
         /**
         * @function : Platform_Static
+        * Destructor for a Platform_Static.
+        */
+        ~Platform_Static() override = default;
+
+        /**
+        * @function : Platform_Static
         * Constructor for a Platform_Static.
         * @param posX (float) : x-coordinate of our entity, between the range [0,1-entity.width].
         * @param posY (float) : y-coordinate of our entity, between the range [0+entity.height, inf[.
