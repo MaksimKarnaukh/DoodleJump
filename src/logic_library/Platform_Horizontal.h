@@ -51,6 +51,8 @@ namespace logic {
         */
         void move() override;
 
+        void changeDirection() override;
+
         /**
         * @function : isTouched
         * Function that is used for the score decrease and temporary platform deletion.

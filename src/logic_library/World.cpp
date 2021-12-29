@@ -39,59 +39,48 @@ namespace logic {
 
     void World::checkForCollision() { // jump if collision from top detected
 
-        float x0 = doodle->getPreviousPositionX()+doodle->getWidth()/2;
-        float y0 = doodle->getPreviousPositionY()-doodle->getHeight();
-        float x1 = doodle->getPositionX()+doodle->getWidth()/2;
-        float y1 = doodle->getPositionY()-doodle->getHeight();
+        float x0 = doodle->getPreviousPositionX() + doodle->getWidth() / 2;
+        float y0 = doodle->getPreviousPositionY() - doodle->getHeight();
+        float x1 = doodle->getPositionX() + doodle->getWidth() / 2;
+        float y1 = doodle->getPositionY() - doodle->getHeight();
 
-        std::vector<std::pair<float,float>> middleLine = getLineBetweenPoints(x0, y0, x1, y1);
+        std::vector<std::pair<float, float>> middleLine = getLineBetweenPoints(x0, y0, x1, y1);
 
-        if ((doodle->getPositionY() <= lowerBound) || (doodle->getPositionY() <= lowerBound+logic::utility::Camera::Instance().getShiftValue())) {
-            gameOver = true;
+        if ((doodle->getPositionY() <= lowerBound) ||
+            (doodle->getPositionY() <= lowerBound + logic::utility::Camera::Instance().getShiftValue())) {
+            //gameOver = true;
+            doodle->jump();
         }
 
         for (auto b = 0; b < bonuses.size(); b++) {
 
             if (checkForUndetectedCollision(bonuses[b], middleLine, doodle)) {
                 doodle->touchedBonus(bonuses[b]->getBonusForce());
-                score->setScore(score->getScore()+bonuses[b]->getScoreIncrease());
+                score->setScore(score->getScore() + bonuses[b]->getScoreIncrease());
                 for (auto i = 0; i < bonuses[b]->getObservers().size(); i++) {
                     bonuses[b]->removeObserver(bonuses[b]->getObservers()[i]); // remove all observers
                 }
-                bonuses.erase(bonuses.begin()+b);
+                bonuses.erase(bonuses.begin() + b);
                 break;
             }
 
         }
 
-        // checken of we een platform raken.
+        // check if we hit a platform.
         for (auto pl = 0; pl < platforms.size(); pl++) {
-
-            // checken of het midden van de doodle tussen de uiteinden van het platform zit
-//            if (doodle->getPositionX()+doodle->getWidth()/2 >= platforms[pl]->getPositionX() &&
-//            doodle->getPositionX()+doodle->getWidth()/2 <= platforms[pl]->getPositionX()+platforms[pl]->getWidth()) {
-//
-//                // checken op de y-coordinaten
-//                if (doodle->getPositionY()+doodle->getHeight() >= platforms[pl]->getPositionY()-platforms[pl]->getHeight()/2 &&
-//                        doodle->getPositionY()+doodle->getHeight() <= platforms[pl]->getPositionY()+platforms[pl]->getHeight()/2) {
-//
-//                    doodle->jump();
-//                }
-//            }
 
             if (checkForUndetectedCollision(platforms[pl], middleLine, doodle)) {
                 doodle->jump();
                 float dec = platforms[pl]->isTouched();
-                if ((int)(dec*10)) {
+                if ((int) (dec * 10)) {
                     if (platforms[pl]->getTimesTouched() > 1) {
-                        score->setScore(score->getScore()-dec);
+                        score->setScore(score->getScore() - dec);
                     }
-                }
-                else {
+                } else {
                     for (auto i = 0; i < platforms[pl]->getObservers().size(); i++) {
                         platforms[pl]->removeObserver(platforms[pl]->getObservers()[i]);
                     }
-                    platforms.erase(platforms.begin()+pl); // observers deleted in function
+                    platforms.erase(platforms.begin() + pl); // observers deleted in function
                 }
                 break;
             }
@@ -105,17 +94,17 @@ namespace logic {
 
         // beginning platformen hardcoded so that the player can easily start playing.
 
-        std::shared_ptr<logic::Platform> p = Factory->createHorizontalPlatform(0.4, 0.3, 0.174004, 0.0411);
+        std::shared_ptr<logic::Platform> p = Factory->createStaticPlatform(0.4, 0.3, 0.174004, 0.0411);
         platforms.push_back(p);
-        std::shared_ptr<logic::Platform> p1 = Factory->createHorizontalPlatform(0.2, 0.5, 0.174004, 0.0411);
+        std::shared_ptr<logic::Platform> p1 = Factory->createStaticPlatform(0.2, 0.5, 0.174004, 0.0411);
         platforms.push_back(p1);
-        std::shared_ptr<logic::Platform> p2 = Factory->createHorizontalPlatform(0.6, 0.5, 0.174004, 0.0411);
+        std::shared_ptr<logic::Platform> p2 = Factory->createStaticPlatform(0.6, 0.5, 0.174004, 0.0411);
         platforms.push_back(p2);
-        std::shared_ptr<logic::Platform> p3 = Factory->createHorizontalPlatform(0.4, 0.7, 0.174004, 0.0411);
+        std::shared_ptr<logic::Platform> p3 = Factory->createStaticPlatform(0.4, 0.7, 0.174004, 0.0411);
         platforms.push_back(p3);
-        std::shared_ptr<logic::Platform> p4 = Factory->createHorizontalPlatform(0.1, 0.9, 0.174004, 0.0411);
+        std::shared_ptr<logic::Platform> p4 = Factory->createStaticPlatform(0.1, 0.9, 0.174004, 0.0411);
         platforms.push_back(p4);
-        std::shared_ptr<logic::Platform> p5 = Factory->createHorizontalPlatform(0.7, 0.9, 0.174004, 0.0411);
+        std::shared_ptr<logic::Platform> p5 = Factory->createStaticPlatform(0.7, 0.9, 0.174004, 0.0411);
         platforms.push_back(p5);
 
         createStartingBGTiles();
@@ -194,6 +183,7 @@ namespace logic {
                     bonus->setPositionY(platformYPos+bonus->getHeight());
                     bonuses.push_back(bonus);
                     wasBonusGenerated = true;
+
                 }
                 else {
                     wasBonusGenerated = false;
@@ -205,10 +195,6 @@ namespace logic {
     void World::update() {
 
         for (auto pl = 0; pl < platforms.size(); pl++)  {
-            platforms[pl]->notifyObservers();
-        }
-
-        for (auto pl = 0; pl < platforms.size(); pl++)  {
             platforms[pl]->move();
         }
 
@@ -218,6 +204,7 @@ namespace logic {
         if (doodle->getSpeed() <= 0) { // when we are falling down
             checkForCollision();
         }
+        checkForCollisionBetweenPlatforms();
 
         doodle->setPreviousPositionX(doodle->getPositionX());
         doodle->setPreviousPositionY(doodle->getPositionY());
@@ -226,6 +213,15 @@ namespace logic {
             logic::utility::Camera::Instance().setShiftValue(doodle->getPositionY()-shiftBorder);
 
             createEntities();
+
+            for (auto a = 0; a < platforms.size(); a++) {
+                platforms[a]->notifyObservers();
+            }
+            for (auto a = 0; a < bonuses.size(); a++) {
+                bonuses[a]->notifyObservers();
+            }
+            doodle->notifyObservers();
+
         }
 
         // deleting of platforms that are out of view.
@@ -443,7 +439,7 @@ namespace logic {
 
     void World::recycleOutOfViewBGTiles() {
 
-        for (auto i = 0; i < 20; i++) { // We check the bottom 20 platforms in case we get a drop in fps. The background tile generation, with this loop, can produce without visual errors or 'glitches' at a minimum of 8 fps.
+        for (auto i = 0; i < 20; i++) { // We check the bottom 20 platforms in case we get a drop in fps.
             if (bgTiles.front()[0]->getPositionY() < logic::utility::Camera::Instance().getShiftValue()) {
                 float highestYTile = bgTiles.back()[0]->getPositionY();
                 std::vector<std::shared_ptr<logic::BGTile>> r;
@@ -454,6 +450,9 @@ namespace logic {
                 }
                 bgTiles.pop_front();
                 bgTiles.push_back(r);
+            }
+            else {
+                break;
             }
         }
         for (auto a = 0; a < bgTiles.size(); a++) {
@@ -534,6 +533,29 @@ namespace logic {
             platformXPos = logic::utility::Random::Instance().uniformRealDistribution(leftBound+0.02f, rightBound-platform->getWidth()-0.02f);
         }
         return platformXPos;
+    }
+
+    void World::checkForCollisionBetweenPlatforms() {
+
+        // collision between platforms
+        for (auto pl0 = 0; pl0 < platforms.size(); pl0++) {
+            for (auto pl1 = 0; pl1 < platforms.size(); pl1++) {
+                if (pl0 != pl1) {
+                    if (platforms[pl0]->getPositionX()+platforms[pl0]->getWidth() >= platforms[pl1]->getPositionX() &&
+                        platforms[pl0]->getPositionX() <= platforms[pl1]->getPositionX()+platforms[pl1]->getWidth()) {
+
+                        // checken op de y-coordinaten
+                        if (platforms[pl0]->getPositionY() >= platforms[pl1]->getPositionY()-platforms[pl1]->getHeight() &&
+                            platforms[pl0]->getPositionY()-platforms[pl0]->getHeight() <= platforms[pl1]->getPositionY()) {
+
+                            platforms[pl0]->changeDirection();
+                            platforms[pl1]->changeDirection();
+
+                        }
+                    }
+                }
+            }
+        }
     }
 
 }

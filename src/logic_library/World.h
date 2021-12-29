@@ -76,10 +76,19 @@ namespace logic {
         void checkForCollision();
 
         /**
-        * @function : checkForUndetectedCollision
-        * Function that checks for intersection between a single entity (pl) and the player using lines drawn from the sides of the player from the current frame to the previous frame.
+        * @function : checkForCollisionBetweenPlatforms
+        * Function that checks for collision between platforms.
         */
-        bool checkForUndetectedCollision(const std::shared_ptr<logic::EntityModel>& pl, std::vector<std::pair<float,float>> &middleLine, const std::shared_ptr<logic::EntityModel>& pl2) const;
+        void checkForCollisionBetweenPlatforms();
+
+        /**
+        * @function : checkForUndetectedCollision
+        * Function that checks for intersection between entities (e1 and e2).
+        * @param e1 (std::shared_ptr<logic::EntityModel>) : first entity.
+        * @param e2 (std::shared_ptr<logic::EntityModel>) : second entity.
+        * @param middleLine (std::vector<std::pair<float,float>>) :
+        */
+        bool checkForUndetectedCollision(const std::shared_ptr<logic::EntityModel>& e1, std::vector<std::pair<float,float>> &middleLine, const std::shared_ptr<logic::EntityModel>& e2) const;
 
         /**
         * @function : createStartEntities

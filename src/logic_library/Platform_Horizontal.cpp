@@ -29,7 +29,18 @@ namespace logic {
         return 0.8;
     }
 
+    void Platform_Horizontal::changeDirection() {
+        if (unit < 0) {
+            unit = moveRight;
+            this->setPositionX(this->getPositionX()+unit*3*logic::utility::Stopwatch::Instance().getDeltaTime());
 
+        }
+        else {
+            unit = moveLeft;
+            this->setPositionX(this->getPositionX()+unit*3*logic::utility::Stopwatch::Instance().getDeltaTime());
+
+        }
+    }
 
 
 }

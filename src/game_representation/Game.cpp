@@ -12,9 +12,6 @@ namespace representation {
 
         logic::utility::Stopwatch::Instance();
 
-        cFactory = std::make_shared<representation::ConcreteFactory>();
-        factory = cFactory;
-
         gameState = 0;
 
         fontFile = "../assets/Fonts/Bodo_Amat.ttf";
@@ -25,28 +22,12 @@ namespace representation {
 
     void Game::Update(){
         representation::Window::Instance().Update(); // Update window events.
+        world->update();
+
     }
 
     void Game::Render(){
         representation::Window::Instance().BeginDraw(); // Clear.
-
-//        for (auto a = 0; a < world->bgTiles.size(); a++) {
-//
-//            for (auto b = 0; b < world->bgTiles[a].size(); b++) {
-//                world->bgTiles[a][b]->notifyObservers();
-//            }
-//        }
-//
-//        for (auto a = 0; a < world->platforms.size(); a++) {
-//            world->platforms[a]->notifyObservers();
-//        }
-//        for (auto a = 0; a < world->bonuses.size(); a++) {
-//            world->bonuses[a]->notifyObservers();
-//        }
-//        scoreText.setString(std::to_string(static_cast<int>(std::round(world->score->getScore()*10))));
-//        representation::Window::Instance().Draw(scoreText);
-//
-//        world->doodle->notifyObservers();
 
         for (int i = cFactory->bgTilesViews.size()-1; i >= 0; i--) {
             representation::Window::Instance().Draw(cFactory->bgTilesViews[i]->getSprite());
@@ -75,6 +56,7 @@ namespace representation {
         scoreText.setString(std::to_string(static_cast<int>(std::round(world->score->getScore()*10))));
         representation::Window::Instance().Draw(scoreText);
 
+//        world->doodle->notifyObservers();
         representation::Window::Instance().Draw(cFactory->playerViews[0]->getSprite());
 
         representation::Window::Instance().EndDraw(); // Display.
@@ -96,7 +78,7 @@ namespace representation {
         }
         world->receiveInput(key);
 
-        world->update();
+//        world->update();
 
     }
 
@@ -155,6 +137,9 @@ namespace representation {
     }
 
     void Game::playGame() {
+
+        cFactory = std::make_shared<representation::ConcreteFactory>();
+        factory = cFactory;
 
         world = std::move(std::make_unique<logic::World>(factory));
         logic::utility::Stopwatch::Instance().Reset();

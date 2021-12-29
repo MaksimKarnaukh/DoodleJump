@@ -54,6 +54,8 @@ namespace logic {
         */
         virtual void move() {};
 
+        virtual void changeDirection() {};
+
         /**
         * @function : isTouched
         * Function that is used for the score decrease and temporary platform deletion.

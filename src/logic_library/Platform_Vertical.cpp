@@ -37,3 +37,19 @@ float logic::Platform_Vertical::isTouched() {
     return 0.7;
 }
 
+void logic::Platform_Vertical::changeDirection() {
+//    unit = -unit;
+
+    if (unit < 0) {
+        unit = moveUp;
+        this->setPositionY(this->getPositionY()+unit*3*logic::utility::Stopwatch::Instance().getDeltaTime());
+
+    }
+    else {
+        unit = moveDown;
+        this->setPositionY(this->getPositionY()+unit*3*logic::utility::Stopwatch::Instance().getDeltaTime());
+
+    }
+
+}
+
