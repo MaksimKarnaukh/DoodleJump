@@ -58,7 +58,7 @@ namespace representation {
 
         /**
         * @function : EndDraw
-        * Displays the changes.
+        * Displays the changes to the window.
         */
         void EndDraw();
 

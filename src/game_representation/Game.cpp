@@ -12,7 +12,8 @@ namespace representation {
 
         logic::utility::Stopwatch::Instance();
 
-        factory = std::make_shared<representation::ConcreteFactory>();
+        cFactory = std::make_shared<representation::ConcreteFactory>();
+        factory = cFactory;
 
         gameState = 0;
 
@@ -29,23 +30,52 @@ namespace representation {
     void Game::Render(){
         representation::Window::Instance().BeginDraw(); // Clear.
 
-        for (auto a = 0; a < world->bgTiles.size(); a++) {
+//        for (auto a = 0; a < world->bgTiles.size(); a++) {
+//
+//            for (auto b = 0; b < world->bgTiles[a].size(); b++) {
+//                world->bgTiles[a][b]->notifyObservers();
+//            }
+//        }
+//
+//        for (auto a = 0; a < world->platforms.size(); a++) {
+//            world->platforms[a]->notifyObservers();
+//        }
+//        for (auto a = 0; a < world->bonuses.size(); a++) {
+//            world->bonuses[a]->notifyObservers();
+//        }
+//        scoreText.setString(std::to_string(static_cast<int>(std::round(world->score->getScore()*10))));
+//        representation::Window::Instance().Draw(scoreText);
+//
+//        world->doodle->notifyObservers();
 
-            for (auto b = 0; b < world->bgTiles[a].size(); b++) {
-                world->bgTiles[a][b]->notifyObservers();
+        for (int i = cFactory->bgTilesViews.size()-1; i >= 0; i--) {
+            representation::Window::Instance().Draw(cFactory->bgTilesViews[i]->getSprite());
+        }
+
+        for (int i = cFactory->platformViews.size()-1; i >= 0; i--) {
+
+            if (cFactory->platformViews[i].use_count() == 1) {
+                cFactory->platformViews.erase(cFactory->platformViews.begin()+i);
+            }
+            else {
+                representation::Window::Instance().Draw(cFactory->platformViews[i]->getSprite());
             }
         }
 
-        for (auto a = 0; a < world->platforms.size(); a++) {
-            world->platforms[a]->notifyObservers();
+        for (int i = cFactory->bonusViews.size()-1; i >= 0; i--) {
+
+            if (cFactory->bonusViews[i].use_count() == 1) {
+                cFactory->bonusViews.erase(cFactory->bonusViews.begin()+i);
+            }
+            else {
+                representation::Window::Instance().Draw(cFactory->bonusViews[i]->getSprite());
+            }
         }
-        for (auto a = 0; a < world->bonuses.size(); a++) {
-            world->bonuses[a]->notifyObservers();
-        }
+
         scoreText.setString(std::to_string(static_cast<int>(std::round(world->score->getScore()*10))));
         representation::Window::Instance().Draw(scoreText);
 
-        world->doodle->notifyObservers();
+        representation::Window::Instance().Draw(cFactory->playerViews[0]->getSprite());
 
         representation::Window::Instance().EndDraw(); // Display.
     }

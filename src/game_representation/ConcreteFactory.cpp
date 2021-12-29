@@ -15,6 +15,8 @@ namespace representation {
         std::shared_ptr<logic::Score> score(new logic::Score(playerModel));
         playerModel->registerObserver(score);
 
+        playerViews.push_back(std::move(playerView));
+
         return playerModel;
     }
 
@@ -25,6 +27,8 @@ namespace representation {
         std::shared_ptr<representation::Platform_Static_GR> platformView(new representation::Platform_Static_GR(platformModel));
 
         platformModel->registerObserver(platformView);
+
+        platformViews.push_back(std::move(platformView));
 
         return platformModel;
     }
@@ -37,6 +41,8 @@ namespace representation {
 
         platformModel->registerObserver(platformView);
 
+        platformViews.push_back(std::move(platformView));
+
         return platformModel;
     }
 
@@ -47,6 +53,8 @@ namespace representation {
         std::shared_ptr<representation::Platform_Horizontal_GR> platformView(new representation::Platform_Horizontal_GR(platformModel));
 
         platformModel->registerObserver(platformView);
+
+        platformViews.push_back(std::move(platformView));
 
         return platformModel;
     }
@@ -59,6 +67,8 @@ namespace representation {
 
         platformModel->registerObserver(platformView);
 
+        platformViews.push_back(std::move(platformView));
+
         return platformModel;
     }
 
@@ -67,6 +77,8 @@ namespace representation {
         std::shared_ptr<representation::Spring_GR> bonusView(new representation::Spring_GR(bonusModel));
 
         bonusModel->registerObserver(bonusView);
+
+        bonusViews.push_back(std::move(bonusView));
 
         return bonusModel;
     }
@@ -77,6 +89,8 @@ namespace representation {
 
         bonusModel->registerObserver(bonusView);
 
+        bonusViews.push_back(std::move(bonusView));
+
         return bonusModel;
     }
 
@@ -85,6 +99,8 @@ namespace representation {
         std::shared_ptr<representation::BGTile_GR> bgView(new representation::BGTile_GR(bgModel));
 
         bgModel->registerObserver(bgView);
+
+        bgTilesViews.push_back(std::move(bgView));
 
         return bgModel;
     }

@@ -31,7 +31,7 @@ namespace representation {
 
         sprite.setPosition((float)pixels.first, (float)pixels.second);
 
-        representation::Window::Instance().Draw(sprite);
+//        representation::Window::Instance().Draw(sprite);
 
     }
 }

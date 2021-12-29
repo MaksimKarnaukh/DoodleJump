@@ -33,6 +33,7 @@ namespace representation {
         std::unique_ptr<logic::World> world;
 
         std::shared_ptr<logic::AbstractFactory> factory;
+        std::shared_ptr<representation::ConcreteFactory> cFactory;
 
     public:
 

@@ -14,7 +14,7 @@ namespace logic {
 
         this->setPositionX(this->getPositionX()-unit*logic::utility::Stopwatch::Instance().getDeltaTime());
 
-        notifyObservers();
+        //notifyObservers();
 
     }
 
@@ -22,7 +22,7 @@ namespace logic {
 
         this->setPositionX(this->getPositionX()+unit*logic::utility::Stopwatch::Instance().getDeltaTime());
 
-        notifyObservers();
+        //notifyObservers();
 
     }
 

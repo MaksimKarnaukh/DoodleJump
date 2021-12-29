@@ -17,6 +17,12 @@
 namespace representation {
 
     class ConcreteFactory: public logic::AbstractFactory {
+    public:
+        std::vector<std::shared_ptr<representation::Platform_GR>> platformViews;
+        std::vector<std::shared_ptr<representation::Player_GR>> playerViews;
+        std::vector<std::shared_ptr<representation::Bonus_GR>> bonusViews;
+        std::vector<std::shared_ptr<representation::BGTile_GR>> bgTilesViews;
+
 
     public:
 

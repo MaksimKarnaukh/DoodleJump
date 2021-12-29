@@ -52,7 +52,7 @@ namespace logic {
 
         for (auto b = 0; b < bonuses.size(); b++) {
 
-            if (checkForUndetectedCollision(bonuses[b], middleLine)) {
+            if (checkForUndetectedCollision(bonuses[b], middleLine, doodle)) {
                 doodle->touchedBonus(bonuses[b]->getBonusForce());
                 score->setScore(score->getScore()+bonuses[b]->getScoreIncrease());
                 for (auto i = 0; i < bonuses[b]->getObservers().size(); i++) {
@@ -79,7 +79,7 @@ namespace logic {
 //                }
 //            }
 
-            if (checkForUndetectedCollision(platforms[pl], middleLine)) {
+            if (checkForUndetectedCollision(platforms[pl], middleLine, doodle)) {
                 doodle->jump();
                 float dec = platforms[pl]->isTouched();
                 if ((int)(dec*10)) {
@@ -96,6 +96,7 @@ namespace logic {
                 break;
             }
         }
+
     }
 
     void World::createStartEntities() {
@@ -104,17 +105,17 @@ namespace logic {
 
         // beginning platformen hardcoded so that the player can easily start playing.
 
-        std::shared_ptr<logic::Platform> p = Factory->createStaticPlatform(0.4, 0.3, 0.174004, 0.0411);
+        std::shared_ptr<logic::Platform> p = Factory->createHorizontalPlatform(0.4, 0.3, 0.174004, 0.0411);
         platforms.push_back(p);
-        std::shared_ptr<logic::Platform> p1 = Factory->createStaticPlatform(0.2, 0.5, 0.174004, 0.0411);
+        std::shared_ptr<logic::Platform> p1 = Factory->createHorizontalPlatform(0.2, 0.5, 0.174004, 0.0411);
         platforms.push_back(p1);
-        std::shared_ptr<logic::Platform> p2 = Factory->createStaticPlatform(0.6, 0.5, 0.174004, 0.0411);
+        std::shared_ptr<logic::Platform> p2 = Factory->createHorizontalPlatform(0.6, 0.5, 0.174004, 0.0411);
         platforms.push_back(p2);
-        std::shared_ptr<logic::Platform> p3 = Factory->createStaticPlatform(0.4, 0.7, 0.174004, 0.0411);
+        std::shared_ptr<logic::Platform> p3 = Factory->createHorizontalPlatform(0.4, 0.7, 0.174004, 0.0411);
         platforms.push_back(p3);
-        std::shared_ptr<logic::Platform> p4 = Factory->createStaticPlatform(0.1, 0.9, 0.174004, 0.0411);
+        std::shared_ptr<logic::Platform> p4 = Factory->createHorizontalPlatform(0.1, 0.9, 0.174004, 0.0411);
         platforms.push_back(p4);
-        std::shared_ptr<logic::Platform> p5 = Factory->createStaticPlatform(0.7, 0.9, 0.174004, 0.0411);
+        std::shared_ptr<logic::Platform> p5 = Factory->createHorizontalPlatform(0.7, 0.9, 0.174004, 0.0411);
         platforms.push_back(p5);
 
         createStartingBGTiles();
@@ -204,6 +205,10 @@ namespace logic {
     void World::update() {
 
         for (auto pl = 0; pl < platforms.size(); pl++)  {
+            platforms[pl]->notifyObservers();
+        }
+
+        for (auto pl = 0; pl < platforms.size(); pl++)  {
             platforms[pl]->move();
         }
 
@@ -234,13 +239,12 @@ namespace logic {
 
     }
 
-    template <class entity>
-    bool World::checkForUndetectedCollision(const entity& pl, std::vector<std::pair<float,float>> &middleLine) const {
+    bool World::checkForUndetectedCollision(const std::shared_ptr<logic::EntityModel>& pl, std::vector<std::pair<float,float>> &middleLine, const std::shared_ptr<logic::EntityModel>& pl2) const {
 
         for (int i = 0; i < middleLine.size(); i++) {
             // check for the x-coordinates
-            if (middleLine[i].first+doodle->getWidth()/2 >= pl->getPositionX() &&
-                middleLine[i].first-doodle->getWidth()/2 <= pl->getPositionX()+pl->getWidth()) {
+            if (middleLine[i].first+pl2->getWidth()/2 >= pl->getPositionX() &&
+                middleLine[i].first-pl2->getWidth()/2 <= pl->getPositionX()+pl->getWidth()) {
 
                 // check for the y-coordinates
                 if (middleLine[i].second <= pl->getPositionY() &&

@@ -6,7 +6,7 @@
 namespace logic {
     logic::Subject::Subject() = default;
 
-    void Subject::registerObserver(const std::shared_ptr<Observer> observer) {
+    void Subject::registerObserver(const std::shared_ptr<Observer>& observer) {
 
         observers.push_back(observer);
     }

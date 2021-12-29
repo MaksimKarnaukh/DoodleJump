@@ -1,5 +1,6 @@
 
 
+
 #include "Platform_Vertical.h"
 
 logic::Platform_Vertical::Platform_Vertical() = default;

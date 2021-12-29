@@ -36,7 +36,7 @@ namespace logic {
         * Adds an observer to the list of observers.
         * @param observer (std::shared_ptr<Observer>) : observer that we want to add.
         */
-        void registerObserver(std::shared_ptr<Observer> observer);
+        void registerObserver(const std::shared_ptr<Observer>& observer);
 
         /**
         * @function : removeObserver
