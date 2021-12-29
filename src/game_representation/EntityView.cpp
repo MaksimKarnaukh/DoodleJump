@@ -27,11 +27,15 @@ namespace representation {
 
     void EntityView::update() {
 
-        std::pair<int, int> pixels = logic::utility::Camera::Instance().projectCoordinates(mEntityModel->getPositionX(),mEntityModel->getPositionY()); // projection
+        if (! mEntityModel.expired()) {
+            std::shared_ptr<logic::EntityModel> p = mEntityModel.lock();
+            std::pair<int, int> pixels = logic::utility::Camera::Instance().projectCoordinates(p->getPositionX(),p->getPositionY()); // projection
+            sprite.setPosition((float)pixels.first, (float)pixels.second);
 
-        sprite.setPosition((float)pixels.first, (float)pixels.second);
+        }
+//        std::pair<int, int> pixels = logic::utility::Camera::Instance().projectCoordinates(mEntityModel->getPositionX(),mEntityModel->getPositionY()); // projection
 
-//        representation::Window::Instance().Draw(sprite);
+//        sprite.setPosition((float)pixels.first, (float)pixels.second);
 
     }
 }

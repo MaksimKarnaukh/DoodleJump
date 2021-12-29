@@ -54,6 +54,10 @@ namespace logic {
         */
         virtual void move() {};
 
+        /**
+        * @function : changeDirection
+        * Changes the direction our platform is moving to.
+        */
         virtual void changeDirection() {};
 
         /**

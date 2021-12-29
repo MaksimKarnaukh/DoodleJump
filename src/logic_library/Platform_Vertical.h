@@ -51,6 +51,10 @@ namespace logic {
         */
         void move() override;
 
+        /**
+        * @function : changeDirection
+        * Changes the direction our platform is moving to.
+        */
         void changeDirection() override;
 
         /**

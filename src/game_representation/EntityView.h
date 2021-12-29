@@ -16,7 +16,7 @@ namespace representation {
 
     protected:
 
-        std::shared_ptr<logic::EntityModel> mEntityModel;
+        std::weak_ptr<logic::EntityModel> mEntityModel;
 
         sf::Sprite sprite;
         sf::Texture texture;
@@ -65,6 +65,15 @@ namespace representation {
         */
         sf::Texture& getTexture() {
             return texture;
+        }
+
+        /**
+        * @function : setSpriteScale
+        * Sets the sprite scale.
+        * @param p (std::shared_ptr<logic::EntityModel>) : entity model.
+        */
+        void setSpriteScale(const std::shared_ptr<logic::EntityModel>& p) {
+            sprite.setScale(1*((float)logic::utility::Camera::Instance().getWindowWidth()*p->getWidth())/(float)getTexture().getSize().x, 1*((float)logic::utility::Camera::Instance().getWindowHeight()*p->getHeight())/(float)getTexture().getSize().y);
         }
 
         /**

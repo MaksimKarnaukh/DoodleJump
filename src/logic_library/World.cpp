@@ -37,7 +37,7 @@ namespace logic {
         }
     }
 
-    void World::checkForCollision() { // jump if collision from top detected
+    void World::checkForCollision() {
 
         float x0 = doodle->getPreviousPositionX() + doodle->getWidth() / 2;
         float y0 = doodle->getPreviousPositionY() - doodle->getHeight();
@@ -48,8 +48,7 @@ namespace logic {
 
         if ((doodle->getPositionY() <= lowerBound) ||
             (doodle->getPositionY() <= lowerBound + logic::utility::Camera::Instance().getShiftValue())) {
-            //gameOver = true;
-            doodle->jump();
+            gameOver = true;
         }
 
         for (auto b = 0; b < bonuses.size(); b++) {

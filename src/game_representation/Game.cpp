@@ -43,6 +43,8 @@ namespace representation {
             }
         }
 
+        std::cout << cFactory->platformViews.size() << std::endl;
+
         for (int i = cFactory->bonusViews.size()-1; i >= 0; i--) {
 
             if (cFactory->bonusViews[i].use_count() == 1) {
@@ -56,7 +58,6 @@ namespace representation {
         scoreText.setString(std::to_string(static_cast<int>(std::round(world->score->getScore()*10))));
         representation::Window::Instance().Draw(scoreText);
 
-//        world->doodle->notifyObservers();
         representation::Window::Instance().Draw(cFactory->playerViews[0]->getSprite());
 
         representation::Window::Instance().EndDraw(); // Display.
@@ -77,8 +78,6 @@ namespace representation {
             key = "Right";
         }
         world->receiveInput(key);
-
-//        world->update();
 
     }
 
