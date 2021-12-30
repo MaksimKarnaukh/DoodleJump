@@ -29,43 +29,18 @@ namespace representation {
     void Game::Render(){
         representation::Window::Instance().BeginDraw(); // Clear.
 
-        for (int i = cFactory->bgTilesViews.size()-1; i >= 0; i--) {
-            representation::Window::Instance().Draw(cFactory->bgTilesViews[i]->getSprite());
-        }
-
-        for (int i = cFactory->platformViews.size()-1; i >= 0; i--) {
-
-            if (cFactory->platformViews[i].use_count() == 1) {
-                cFactory->platformViews.erase(cFactory->platformViews.begin()+i);
-            }
-            else {
-                representation::Window::Instance().Draw(cFactory->platformViews[i]->getSprite());
-            }
-        }
-
-        std::cout << cFactory->platformViews.size() << std::endl;
-
-        for (int i = cFactory->bonusViews.size()-1; i >= 0; i--) {
-
-            if (cFactory->bonusViews[i].use_count() == 1) {
-                cFactory->bonusViews.erase(cFactory->bonusViews.begin()+i);
-            }
-            else {
-                representation::Window::Instance().Draw(cFactory->bonusViews[i]->getSprite());
-            }
-        }
-
-        scoreText.setString(std::to_string(static_cast<int>(std::round(world->score->getScore()*10))));
-        representation::Window::Instance().Draw(scoreText);
-
-        representation::Window::Instance().Draw(cFactory->playerViews[0]->getSprite());
+        drawBGTiles();
+        drawPlatforms();
+        drawBonusses();
+        drawScore();
+        drawPlayer();
 
         representation::Window::Instance().EndDraw(); // Display.
     }
 
     void Game::HandleInput() {
 
-        std::string key;
+        std::string key{};
         if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left) ||
         sf::Keyboard::isKeyPressed(sf::Keyboard::Q) ||
         sf::Keyboard::isKeyPressed(sf::Keyboard::A)) { // left
@@ -224,6 +199,45 @@ namespace representation {
         if (_currentScore > _allTimeHighScore) {
             _allTimeHighScore = _currentScore;
         }
+    }
+
+    void Game::drawBGTiles() {
+        for (int i = cFactory->bgTilesViews.size()-1; i >= 0; i--) {
+            representation::Window::Instance().Draw(cFactory->bgTilesViews[i]->getSprite());
+        }
+    }
+
+    void Game::drawPlatforms() {
+        for (int i = cFactory->platformViews.size()-1; i >= 0; i--) {
+
+            if (cFactory->platformViews[i].use_count() == 1) {
+                cFactory->platformViews.erase(cFactory->platformViews.begin()+i);
+            }
+            else {
+                representation::Window::Instance().Draw(cFactory->platformViews[i]->getSprite());
+            }
+        }
+    }
+
+    void Game::drawBonusses() {
+        for (int i = cFactory->bonusViews.size()-1; i >= 0; i--) {
+
+            if (cFactory->bonusViews[i].use_count() == 1) {
+                cFactory->bonusViews.erase(cFactory->bonusViews.begin()+i);
+            }
+            else {
+                representation::Window::Instance().Draw(cFactory->bonusViews[i]->getSprite());
+            }
+        }
+    }
+
+    void Game::drawScore() {
+        scoreText.setString(std::to_string(static_cast<int>(std::round(world->score->getScore()*10))));
+        representation::Window::Instance().Draw(scoreText);
+    }
+
+    void Game::drawPlayer() {
+        representation::Window::Instance().Draw(cFactory->playerViews[0]->getSprite());
     }
 }
 

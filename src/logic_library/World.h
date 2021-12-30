@@ -160,12 +160,14 @@ namespace logic {
         /**
         * @function : chooseBonusType
         * Chooses the bonus type by chance.
+        * @param bonus (std::shared_ptr<logic::Bonus>) : reference to the bonus that we instantiated previously.
         */
         void chooseBonusType(std::shared_ptr<logic::Bonus>& bonus) const;
 
         /**
         * @function : calculatePlatformXPos
         * Calculates the x-position for our platform.
+        * @param platform (std::shared_ptr<logic::Platform>) : reference to the platform that we instantiated previously.
         * @return (float) : x-position.
         */
         float calculatePlatformXPos(const std::shared_ptr<logic::Platform>& platform) const;

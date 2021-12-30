@@ -111,6 +111,36 @@ namespace representation {
         */
         void calculateHighScore();
 
+        /**
+        * @function : drawBGTiles
+        * Draws the background tiles.
+        */
+        void drawBGTiles();
+
+        /**
+        * @function : drawPlatforms
+        * Draws the platforms.
+        */
+        void drawPlatforms();
+
+        /**
+        * @function : drawBonusses
+        * Draws the bonusses.
+        */
+        void drawBonusses();
+
+        /**
+        * @function : drawScore
+        * Draws the score.
+        */
+        void drawScore();
+
+        /**
+        * @function : drawPlayer
+        * Draws the player.
+        */
+        void drawPlayer();
+
     public:
 
         /**

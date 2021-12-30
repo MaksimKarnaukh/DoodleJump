@@ -112,8 +112,6 @@ namespace logic {
 
     void World::createEntities() {
 
-        bool wasBonusGeneratedTemp = false; // to indicate whether we created a bonus this time
-
         // calculate chance of placing a platform or not.
         float p = 0.90; // begin value = 0.90 (90% chance for platform generation)
         float factor = std::max( 0.25f,  (1.0f-(std::floor(doodle->getPositionY()/3))/100) ); // represents the depending factor on the score (y-coordinate of our player)
@@ -133,15 +131,15 @@ namespace logic {
                 // decide which platform to place
                 int pl = choosePlatformType();
 
-                std::shared_ptr<logic::Platform> platform;
-                std::shared_ptr<logic::Bonus> bonus;
+                std::shared_ptr<logic::Platform> platform = nullptr;
+                std::shared_ptr<logic::Bonus> bonus = nullptr;
 
                 float platformXPos = 0; // going to be overwritten
 
                 // calculate chance of placing a bonus or not.
                 float chanceForBonus = 0.10;
                 float factorBonus = std::min(0.08f, (std::floor(doodle->getPositionY()/500))/100); // per 500 height, the chance for a bonus gets decreased by 0.01 with at the end a minimum value of 0.02.
-                bool isCreateBonus;
+                bool isCreateBonus = false;
 
                 switch (pl) {
                     case 0:
@@ -152,7 +150,6 @@ namespace logic {
 
                             // decide which bonus to place
                             chooseBonusType(bonus);
-                            wasBonusGeneratedTemp = true;
                         }
                         break;
                     case 1:
@@ -176,13 +173,12 @@ namespace logic {
 
                 formerPlatformPosX = platformXPos;
 
-                if (wasBonusGeneratedTemp) {
+                if (isCreateBonus) {
                     float bonusXPos = logic::utility::Random::Instance().uniformRealDistribution(platformXPos+0.01f, platformXPos+platform->getWidth()-bonus->getWidth()-0.01f);
                     bonus->setPositionX(bonusXPos);
                     bonus->setPositionY(platformYPos+bonus->getHeight());
                     bonuses.push_back(bonus);
                     wasBonusGenerated = true;
-
                 }
                 else {
                     wasBonusGenerated = false;
@@ -220,7 +216,6 @@ namespace logic {
                 bonuses[a]->notifyObservers();
             }
             doodle->notifyObservers();
-
         }
 
         // deleting of platforms that are out of view.
@@ -509,7 +504,7 @@ namespace logic {
 
         float platformXPos;
         if (wasBonusGenerated) {
-            float platformXPos1 = logic::utility::Random::Instance().uniformRealDistribution(leftBound+0.02f, formerPlatformPosX-platform->getWidth()-0.08f); //// +0.02 watch out
+            float platformXPos1 = logic::utility::Random::Instance().uniformRealDistribution(leftBound+0.02f, formerPlatformPosX-platform->getWidth()-0.08f);
             float platformXPos2 = logic::utility::Random::Instance().uniformRealDistribution(formerPlatformPosX+platform->getWidth()+0.08f, rightBound-platform->getWidth()-0.02f);
 
             if (platformXPos1 < leftBound) {

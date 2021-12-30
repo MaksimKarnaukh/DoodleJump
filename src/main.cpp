@@ -1,4 +1,4 @@
-
+// Source for textures: https://github.com/shlapkoff/DoodleJump/tree/master/Doodle%20Jump/images
 
 #include <iostream>
 #include "game_representation/Game.h"

@@ -13,7 +13,7 @@ namespace logic {
 
     protected:
 
-        std::shared_ptr<logic::Subject> mSubject; // subject that belongs to this observer
+        std::weak_ptr<logic::Subject> mSubject; // subject that belongs to this observer
 
     public:
 
