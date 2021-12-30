@@ -106,6 +106,31 @@ namespace representation {
         void createTexts();
 
         /**
+        * @function : createSingleText
+        * Assigns the esthetics to a single text item.
+        * @param _text (sf::Text) : text item.
+        * @param _font (sf::Font) : font that is applied to the text.
+        * @param charSize (int) : character size of our text.
+        * @param fillColor (sf::Color) : text color.
+        * @param outlineColor (sf::Color) : outline color of our text.
+        * @param outlineThickness (float) : outline thickness.
+        * @param pos (std::pair<float,float>) : position of the text.
+        * @param str (std::string) : the string that the text represents.
+        */
+        static void createSingleText(sf::Text& _text, const sf::Font& _font, int charSize, sf::Color fillColor, sf::Color outlineColor, float outlineThickness, std::pair<float,float> pos, const std::string& str);
+
+        /**
+        * @function : createSingleText
+        * Assigns the esthetics to a single text item.
+        * @param _text (sf::Text) : text item.
+        * @param _font (sf::Font) : font that is applied to the text.
+        * @param charSize (int) : character size of our text.
+        * @param pos (std::pair<float,float>) : position of the text.
+        * @param str (std::string) : the string that the text represents.
+        */
+        static void createSingleText(sf::Text& _text, const sf::Font& _font, int charSize, std::pair<float,float> pos, const std::string& str);
+
+        /**
         * @function : calculateHighScore
         * Calculates the previous and all-time high-score.
         */

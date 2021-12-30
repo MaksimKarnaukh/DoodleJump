@@ -7,6 +7,8 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 #include <iostream>
+#include "../logic_library/Stopwatch.h"
+#include <thread>
 
 namespace representation {
 

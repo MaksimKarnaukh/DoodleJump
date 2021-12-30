@@ -20,7 +20,7 @@ namespace representation {
 
     Game::~Game(){}
 
-    void Game::Update(){
+    void Game::Update() {
         representation::Window::Instance().Update(); // Update window events.
         world->update();
 
@@ -67,6 +67,7 @@ namespace representation {
 
         while(!GetWindow().IsDone()) {
 
+            representation::Window::Instance().Update(); // Update window events.
             if (gameState == 0) {
                 playMenu();
             }
@@ -74,7 +75,6 @@ namespace representation {
                 playGame();
             }
             // we can add more gameStates if we want
-
         }
     }
 
@@ -156,42 +156,36 @@ namespace representation {
 
     void Game::createTexts() {
 
-        scoreText.setFont(font1);
-        scoreText.setCharacterSize(60); // 60
-        scoreText.setFillColor(sf::Color::Red);
-        scoreText.setOutlineColor(sf::Color::Yellow);
-        scoreText.setOutlineThickness(4); // 4
+        createSingleText(scoreText, font1, 60, sf::Color::Red, sf::Color::Yellow, 4, std::make_pair(0,0), "");
+        createSingleText(menuText, font1, 20, sf::Color::Red, sf::Color::Yellow, 3, std::make_pair(150.0f, (float)representation::Window::Instance().GetWindowSize().y/3), "Press Enter to start the game.");
+        createSingleText(menuText0, font1, 80, sf::Color::Green, sf::Color::Yellow, 1, std::make_pair(70.0f, (float)representation::Window::Instance().GetWindowSize().y/8), "Doodle Jump");
+        createSingleText(currentHighScore, font1, 40, sf::Color::Blue, sf::Color::Green, 2, std::make_pair(60.0f, (float)representation::Window::Instance().GetWindowSize().y/1.5f), "");
+        createSingleText(allTimeHighScore, font1, 40, sf::Color::Blue, sf::Color::Red, 2, std::make_pair(60.0f, (float)representation::Window::Instance().GetWindowSize().y/1.3f), "");
 
-        menuText.setFont(font1);
-        menuText.setCharacterSize(20); // 60
-        menuText.setFillColor(sf::Color::Red);
-        menuText.setOutlineColor(sf::Color::Yellow);
-        menuText.setOutlineThickness(3); // 4
-        menuText.setPosition(150.0f, (float)representation::Window::Instance().GetWindowSize().y/3);
-        menuText.setString("Press Enter to start the game.");
+    }
 
-        menuText0.setFont(font1);
-        menuText0.setCharacterSize(80); // 60
-        menuText0.setFillColor(sf::Color::Green);
-        menuText0.setOutlineColor(sf::Color::Yellow);
-        menuText0.setOutlineThickness(1); // 4
-        menuText0.setPosition(70.0f, (float)representation::Window::Instance().GetWindowSize().y/8);
-        menuText0.setString("Doodle Jump");
+    void Game::createSingleText(sf::Text& _text, const sf::Font& _font, int charSize, sf::Color fillColor, sf::Color outlineColor, float outlineThickness, std::pair<float,float> pos, const std::string& str) {
 
-        currentHighScore.setFont(font1);
-        currentHighScore.setCharacterSize(40); // 60
-        currentHighScore.setFillColor(sf::Color::Blue);
-        currentHighScore.setOutlineColor(sf::Color::Green);
-        currentHighScore.setOutlineThickness(2); // 4
-        currentHighScore.setPosition(60.0f, (float)representation::Window::Instance().GetWindowSize().y/1.5f);
+        _text.setFont(_font);
+        _text.setCharacterSize(charSize);
+        _text.setFillColor(fillColor);
+        _text.setOutlineColor(outlineColor);
+        _text.setOutlineThickness(outlineThickness);
+        _text.setPosition(pos.first, pos.second);
+        if (! str.empty()) {
+            _text.setString(str);
+        }
+    }
 
-        allTimeHighScore.setFont(font1);
-        allTimeHighScore.setCharacterSize(40); // 60
-        allTimeHighScore.setFillColor(sf::Color::Blue);
-        allTimeHighScore.setOutlineColor(sf::Color::Red);
-        allTimeHighScore.setOutlineThickness(2); // 4
-        allTimeHighScore.setPosition(60.0f, (float)representation::Window::Instance().GetWindowSize().y/1.3f);
+    void Game::createSingleText(sf::Text &_text, const sf::Font &_font, int charSize, std::pair<float, float> pos,
+                                const std::string &str) {
 
+        _text.setFont(_font);
+        _text.setCharacterSize(charSize);
+        _text.setPosition(pos.first, pos.second);
+        if (! str.empty()) {
+            _text.setString(str);
+        }
     }
 
     void Game::calculateHighScore() {
@@ -239,6 +233,7 @@ namespace representation {
     void Game::drawPlayer() {
         representation::Window::Instance().Draw(cFactory->playerViews[0]->getSprite());
     }
+
 }
 
 
