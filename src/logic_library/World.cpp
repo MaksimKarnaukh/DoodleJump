@@ -71,15 +71,15 @@ namespace logic {
             if (checkForUndetectedCollision(platforms[pl], middleLine, doodle)) {
                 doodle->jump();
                 float dec = platforms[pl]->isTouched();
-                if ((int) (dec * 10)) {
+                if ((int) (dec * 10)) { // not temp platform
                     if (platforms[pl]->getTimesTouched() > 1) {
                         score->setScore(score->getScore() - dec);
                     }
-                } else {
+                } else { // temp platform
                     for (auto i = 0; i < platforms[pl]->getObservers().size(); i++) {
                         platforms[pl]->removeObserver(platforms[pl]->getObservers()[i]);
                     }
-                    platforms.erase(platforms.begin() + pl); // observers deleted in function
+                    platforms.erase(platforms.begin() + pl);
                 }
                 break;
             }
@@ -296,13 +296,13 @@ namespace logic {
         for (auto o = 0; o < doodle->getObservers().size(); o++) {
             doodle->removeObserver(doodle->getObservers()[o]);
         }
-        for (int pl = 0; pl < platforms.size(); pl++) {
+        for (int pl = platforms.size()-1; pl >= 0; pl--) {
             for (auto i = 0; i < platforms[pl]->getObservers().size(); i++) {
                 platforms[pl]->removeObserver(platforms[pl]->getObservers()[i]); // remove all observers
             }
             platforms.erase(platforms.begin()+pl);
         }
-        for (int bg = 0; bg < bgTiles.size(); bg++) {
+        for (int bg = bgTiles.size()-1; bg >= 0; bg--) {
             for (auto i = 0; i < bgTiles[bg].size(); i++) {
                 for (auto j = 0; j < bgTiles[bg][i]->getObservers().size(); j++) {
                     bgTiles[bg][i]->removeObserver((bgTiles[bg][i]->getObservers()[j])); // remove all observers
@@ -310,7 +310,8 @@ namespace logic {
             }
             bgTiles.erase(bgTiles.begin()+bg);
         }
-        for (int b = 0; b < bonuses.size(); b++) {
+
+        for (int b = bonuses.size()-1; b >= 0; b--) {
             for (auto i = 0; i < bonuses[b]->getObservers().size(); i++) {
                 bonuses[b]->removeObserver(bonuses[b]->getObservers()[i]); // remove all observers
             }
@@ -403,7 +404,7 @@ namespace logic {
 
     void World::deleteOutOfViewPlatforms() {
 
-        for (int pl = 0; pl < platforms.size(); pl++) {
+        for (int pl = platforms.size()-1; pl >= 0; pl--) {
             if (platforms[pl]->getPositionY() < logic::utility::Camera::Instance().getShiftValue()) {
 
                 for (auto i = 0; i < platforms[pl]->getObservers().size(); i++) {
@@ -418,7 +419,7 @@ namespace logic {
 
     void World::deleteOutOfViewBonusses() {
 
-        for (int b = 0; b < bonuses.size(); b++) {
+        for (int b = bonuses.size()-1; b >= 0; b--) {
             if (bonuses[b]->getPositionY() < logic::utility::Camera::Instance().getShiftValue()) {
 
                 for (auto i = 0; i < bonuses[b]->getObservers().size(); i++) {
