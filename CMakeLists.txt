@@ -21,17 +21,25 @@ elseif(WIN32)
 
 endif()
 
+find_package(Doxygen)
+if(DOXYGEN_FOUND)
+    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in
+            ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile @ONLY)
+    add_custom_target(doc ${DOXYGEN_EXECUTABLE}
+            ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile WORKING_DIRECTORY
+            ${CMAKE_CURRENT_BINARY_DIR} COMMENT "Generating API
+documentation" VERBATIM)
+endif(DOXYGEN_FOUND)
+
+
 link_directories(SFML_LIBRARY_DIR)
 include_directories(SFML_INCLUDE_DIR)
 
-# https://stackoverflow.com/questions/2110795/how-to-use-all-c-files-in-a-directory-with-the-cmake-build-system
 FILE(GLOB gameRepresentationFiles
-        src/game_representation/*.cpp
-        src/game_representation/*.h)
+        src/game_representation/*.cpp)
 
 FILE(GLOB logicLibraryFiles
-        src/logic_library/*.cpp
-        src/logic_library/*.h)
+        src/logic_library/*.cpp)
 
 ADD_EXECUTABLE(DoodleJump
         src/main.cpp
