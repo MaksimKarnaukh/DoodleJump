@@ -54,7 +54,8 @@ namespace logic {
         for (auto b = 0; b < bonuses.size(); b++) {
 
             if (checkForUndetectedCollision(bonuses[b], middleLine, doodle)) {
-                doodle->touchedBonus(bonuses[b]->getBonusForce());
+                //doodle->touchedBonus(bonuses[b]->getBonusForce());
+                bonuses[b]->touchedBonus(doodle);
                 score->setScore(score->getScore() + bonuses[b]->getScoreIncrease());
                 for (auto i = 0; i < bonuses[b]->getObservers().size(); i++) {
                     bonuses[b]->removeObserver(bonuses[b]->getObservers()[i]); // remove all observers

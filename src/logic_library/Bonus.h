@@ -4,6 +4,7 @@
 #define DOODLEJUMP_BONUS_H
 
 #include "EntityModel.h"
+#include "Player.h"
 
 namespace logic {
 
@@ -80,6 +81,13 @@ namespace logic {
         virtual float getScoreIncrease() const {
             return scoreIncrease;
         }
+
+        /**
+        * @function : touchedBonus
+        * Multiplies the jumpVelocity (player) by the bonusForce and sets this as the player speed.
+        * @param player (std::shared_ptr<logic::Player>) : doodle (player).
+        */
+        virtual void touchedBonus(std::shared_ptr<logic::Player>& player);
 
     };
 

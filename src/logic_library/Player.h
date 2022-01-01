@@ -15,6 +15,16 @@ namespace logic {
 
     public:
 
+        void setJumpVelocity(float v) {
+            jumpVelocity = v;
+        }
+
+        float getJumpVelocity() const {
+            return jumpVelocity;
+        }
+
+    public:
+
         /**
         * @function : Player
         * Constructor for a Player.
@@ -74,13 +84,6 @@ namespace logic {
         * Moves the player in the vertical direction (depending on the speed).
         */
         void moveVertically();
-
-        /**
-        * @function : touchedBonus
-        * Multiplies the jumpVelocity by the parameter bonusForce and sets this as the player speed.
-        * @param bonusForce (float) : jumpvelocity multiplier.
-        */
-        void touchedBonus(float bonusForce);
 
     };
 

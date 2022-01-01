@@ -128,7 +128,7 @@ namespace representation {
             }
 
             logic::utility::Stopwatch::Instance().tick(); // de verstreken milliseconden erbij.
-            //std::cout << 1 / logic::utility::Stopwatch::Instance().getDeltaTime() << std::endl;
+            std::cout << 1 / logic::utility::Stopwatch::Instance().getDeltaTime() << std::endl;
             logic::utility::Stopwatch::Instance().Reset(); // mStartTime = now (tijd verstreken is terug 0)
 
             // Game loop.
