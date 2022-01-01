@@ -54,7 +54,6 @@ namespace logic {
         for (auto b = 0; b < bonuses.size(); b++) {
 
             if (checkForUndetectedCollision(bonuses[b], middleLine, doodle)) {
-                //doodle->touchedBonus(bonuses[b]->getBonusForce());
                 bonuses[b]->touchedBonus(doodle);
                 score->setScore(score->getScore() + bonuses[b]->getScoreIncrease());
                 for (auto i = 0; i < bonuses[b]->getObservers().size(); i++) {
@@ -92,7 +91,7 @@ namespace logic {
 
         doodle = Factory->createPlayer(0.5, 0.5, playerWidth, playerHeight);
 
-        // beginning platformen hardcoded so that the player can easily start playing.
+        // beginning platforms hardcoded so that the player can easily start playing.
 
         std::shared_ptr<logic::Platform> p = Factory->createStaticPlatform(0.4, 0.3, platformWidth, platformHeight);
         platforms.push_back(p);
@@ -114,8 +113,8 @@ namespace logic {
     void World::createEntities() {
 
         // calculate chance of placing a platform or not.
-        float p = 0.90; // begin value = 0.90 (90% chance for platform generation)
-        float factor = std::max( 0.25f,  (1.0f-(std::floor(doodle->getPositionY()/3))/100) ); // represents the depending factor on the score (y-coordinate of our player)
+        float p = platformGen_startingChance; // begin value = 0.90 (90% chance for platform generation)
+        float factor = std::max( 0.25f,  (1.0f-(std::floor(doodle->getPositionY()/platformGen_interval))/100) ); // represents the depending factor on the score (y-coordinate of our player)
         bool isCreate = logic::utility::Random::Instance().bernoulliDistribution(p*factor);
 
         // y position of our platform
@@ -138,8 +137,8 @@ namespace logic {
                 float platformXPos = 0; // going to be overwritten
 
                 // calculate chance of placing a bonus or not.
-                float chanceForBonus = 0.10;
-                float factorBonus = std::min(0.08f, (std::floor(doodle->getPositionY()/500))/100); // per 500 height, the chance for a bonus gets decreased by 0.01 with at the end a minimum value of 0.02.
+                float chanceForBonus = bonusGen_startingChance;
+                float factorBonus = std::min(0.08f, (std::floor(doodle->getPositionY()/bonusGen_interval))/100); // per 500 height, the chance for a bonus gets decreased by 0.01 with at the end a minimum value of 0.02.
                 bool isCreateBonus = false;
 
                 switch (pl) {
@@ -148,7 +147,6 @@ namespace logic {
 
                         isCreateBonus = logic::utility::Random::Instance().bernoulliDistribution(chanceForBonus-factorBonus);
                         if (isCreateBonus) {
-
                             // decide which bonus to place
                             chooseBonusType(bonus);
                         }

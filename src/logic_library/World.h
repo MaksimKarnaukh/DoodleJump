@@ -30,7 +30,7 @@ namespace logic {
         std::vector<std::shared_ptr<logic::Platform>> platforms; // list that contains all platforms in our current "view" window
         std::vector<std::shared_ptr<logic::Bonus>> bonuses; // list that contains all bonusses in our current "view" window
 
-        std::shared_ptr<logic::AbstractFactory> Factory;
+        std::shared_ptr<logic::AbstractFactory> Factory = nullptr;
 
         float leftBound = logic::utility::Camera::Instance().getLeftBound();
         float rightBound = logic::utility::Camera::Instance().getRightBound();
@@ -54,6 +54,13 @@ namespace logic {
         float springHeight = 0.0411;
         float jetpackWidth = 0.0696;
         float jetpackHeight = 0.06576;
+
+        // random (chance) data :
+        float platformGen_startingChance = 0.90; // starting percentage for platform generation
+        float platformGen_interval = 3; // determines at which rate the chance gets decreased (lower digit means faster decrease). Per platformGen_interval units of height, the chance for a platform generated gets decreased by 0.01.
+
+        float bonusGen_startingChance = 0.10; // starting percentage for bonus generation
+        float bonusGen_interval = 500; // determines at which rate the chance gets decreased (lower digit means faster decrease). Per bonusGen_interval units of height, the chance for a bonus generated gets decreased by 0.01.
 
     public:
 
