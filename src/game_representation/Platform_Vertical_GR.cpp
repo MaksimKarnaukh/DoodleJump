@@ -1,4 +1,4 @@
-
+// Author: Maksim Karnaukh
 
 #include "Platform_Vertical_GR.h"
 

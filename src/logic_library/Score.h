@@ -1,4 +1,4 @@
-
+// Author: Maksim Karnaukh
 
 #ifndef DOODLEJUMP_SCORE_H
 #define DOODLEJUMP_SCORE_H

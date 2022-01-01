@@ -1,4 +1,4 @@
-
+// Author: Maksim Karnaukh
 
 #ifndef DOODLEJUMP_WORLD_H
 #define DOODLEJUMP_WORLD_H
@@ -24,7 +24,7 @@ namespace logic {
 
     public:
 
-        std::shared_ptr<logic::Score> score;
+        std::shared_ptr<logic::Score> score; // score is an observer of the doodle (player)
         std::shared_ptr<logic::Player> doodle; // player entity
         std::deque<std::vector<std::shared_ptr<logic::BGTile>>> bgTiles; // matrix of background tiles (little squares).
         std::vector<std::shared_ptr<logic::Platform>> platforms; // list that contains all platforms in our current "view" window
@@ -44,6 +44,16 @@ namespace logic {
         bool gameOver = false; // true when we fall in the void below.
 
         std::map<int, std::map<int, float>> percentages; // map for our random platform generation
+
+        // entity data :
+        float playerWidth = 0.077;
+        float playerHeight = 0.18;
+        float platformWidth = 0.174004;
+        float platformHeight = 0.0411;
+        float springWidth = 0.058;
+        float springHeight = 0.0411;
+        float jetpackWidth = 0.0696;
+        float jetpackHeight = 0.06576;
 
     public:
 

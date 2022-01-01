@@ -1,5 +1,4 @@
-
-
+// Author: Maksim Karnaukh
 
 #include "Platform_Vertical.h"
 

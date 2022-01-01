@@ -1,4 +1,4 @@
-
+// Author: Maksim Karnaukh
 
 #include "Platform_Horizontal_GR.h"
 

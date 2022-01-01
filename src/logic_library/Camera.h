@@ -1,3 +1,4 @@
+// Author: Maksim Karnaukh
 // Implemented as a singleton class.
 
 #ifndef DOODLEJUMP_CAMERA_H

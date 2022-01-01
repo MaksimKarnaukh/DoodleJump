@@ -1,3 +1,4 @@
+// Author: Maksim Karnaukh
 // Implemented as a singleton class.
 // Sources:
 // https://stackoverflow.com/questions/13445688/how-to-generate-a-random-number-in-c

@@ -1,4 +1,4 @@
-
+// Author: Maksim Karnaukh
 
 #ifndef DOODLEJUMP_SPRING_GR_H
 #define DOODLEJUMP_SPRING_GR_H

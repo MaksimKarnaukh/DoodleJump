@@ -1,4 +1,4 @@
-
+// Author: Maksim Karnaukh
 
 #include "Subject.h"
 #include "Observer.h"

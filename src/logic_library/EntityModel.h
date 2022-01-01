@@ -1,4 +1,4 @@
-
+// Author: Maksim Karnaukh
 
 #ifndef DOODLEJUMP_ENTITYMODEL_H
 #define DOODLEJUMP_ENTITYMODEL_H

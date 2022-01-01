@@ -1,4 +1,4 @@
-
+// Author: Maksim Karnaukh
 
 #ifndef DOODLEJUMP_PLATFORM_STATIC_GR_H
 #define DOODLEJUMP_PLATFORM_STATIC_GR_H

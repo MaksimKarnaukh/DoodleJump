@@ -1,4 +1,4 @@
-
+// Author: Maksim Karnaukh
 
 #include "EntityView.h"
 
@@ -33,9 +33,5 @@ namespace representation {
             sprite.setPosition((float)pixels.first, (float)pixels.second);
 
         }
-//        std::pair<int, int> pixels = logic::utility::Camera::Instance().projectCoordinates(mEntityModel->getPositionX(),mEntityModel->getPositionY()); // projection
-
-//        sprite.setPosition((float)pixels.first, (float)pixels.second);
-
     }
 }

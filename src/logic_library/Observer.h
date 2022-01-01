@@ -1,4 +1,4 @@
-
+// Author: Maksim Karnaukh
 
 #ifndef DOODLEJUMP_OBSERVER_H
 #define DOODLEJUMP_OBSERVER_H

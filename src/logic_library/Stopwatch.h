@@ -1,3 +1,4 @@
+// Author: Maksim Karnaukh
 // Implemented as a singleton class.
 // Sources:
 // https://www.youtube.com/watch?v=Vyt-dM8gTRQ&ab_channel=AtherOmar

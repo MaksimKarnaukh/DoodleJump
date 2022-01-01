@@ -1,4 +1,4 @@
-
+// Author: Maksim Karnaukh
 
 #include "World.h"
 #include <memory>
@@ -89,21 +89,21 @@ namespace logic {
 
     void World::createStartEntities() {
 
-        doodle = Factory->createPlayer(0.5, 0.5, 0.077, 0.18);
+        doodle = Factory->createPlayer(0.5, 0.5, playerWidth, playerHeight);
 
         // beginning platformen hardcoded so that the player can easily start playing.
 
-        std::shared_ptr<logic::Platform> p = Factory->createStaticPlatform(0.4, 0.3, 0.174004, 0.0411);
+        std::shared_ptr<logic::Platform> p = Factory->createStaticPlatform(0.4, 0.3, platformWidth, platformHeight);
         platforms.push_back(p);
-        std::shared_ptr<logic::Platform> p1 = Factory->createStaticPlatform(0.2, 0.5, 0.174004, 0.0411);
+        std::shared_ptr<logic::Platform> p1 = Factory->createStaticPlatform(0.2, 0.5, platformWidth, platformHeight);
         platforms.push_back(p1);
-        std::shared_ptr<logic::Platform> p2 = Factory->createStaticPlatform(0.6, 0.5, 0.174004, 0.0411);
+        std::shared_ptr<logic::Platform> p2 = Factory->createStaticPlatform(0.6, 0.5, platformWidth, platformHeight);
         platforms.push_back(p2);
-        std::shared_ptr<logic::Platform> p3 = Factory->createStaticPlatform(0.4, 0.7, 0.174004, 0.0411);
+        std::shared_ptr<logic::Platform> p3 = Factory->createStaticPlatform(0.4, 0.7, platformWidth, platformHeight);
         platforms.push_back(p3);
-        std::shared_ptr<logic::Platform> p4 = Factory->createStaticPlatform(0.1, 0.9, 0.174004, 0.0411);
+        std::shared_ptr<logic::Platform> p4 = Factory->createStaticPlatform(0.1, 0.9, platformWidth, platformHeight);
         platforms.push_back(p4);
-        std::shared_ptr<logic::Platform> p5 = Factory->createStaticPlatform(0.7, 0.9, 0.174004, 0.0411);
+        std::shared_ptr<logic::Platform> p5 = Factory->createStaticPlatform(0.7, 0.9, platformWidth, platformHeight);
         platforms.push_back(p5);
 
         createStartingBGTiles();
@@ -143,7 +143,7 @@ namespace logic {
 
                 switch (pl) {
                     case 0:
-                        platform = Factory->createStaticPlatform(platformXPos, platformYPos, 0.174004, 0.0411);
+                        platform = Factory->createStaticPlatform(platformXPos, platformYPos, platformWidth, platformHeight);
 
                         isCreateBonus = logic::utility::Random::Instance().bernoulliDistribution(chanceForBonus-factorBonus);
                         if (isCreateBonus) {
@@ -153,16 +153,16 @@ namespace logic {
                         }
                         break;
                     case 1:
-                        platform = Factory->createTemporaryPlatform(platformXPos, platformYPos, 0.174004, 0.0411);
+                        platform = Factory->createTemporaryPlatform(platformXPos, platformYPos, platformWidth, platformHeight);
                         break;
                     case 2:
-                        platform = Factory->createVerticalPlatform(platformXPos, platformYPos, 0.174004, 0.0411);
+                        platform = Factory->createVerticalPlatform(platformXPos, platformYPos, platformWidth, platformHeight);
                         break;
                     case 3:
-                        platform = Factory->createHorizontalPlatform(platformXPos, platformYPos, 0.174004, 0.0411);
+                        platform = Factory->createHorizontalPlatform(platformXPos, platformYPos, platformWidth, platformHeight);
                         break;
                     default:
-                        std::cerr << "No platform was created" << std::endl; // default statement used for error output
+                        std::cout << "No platform was created" << std::endl; // default statement used for error output
                 }
 
                 // calculate where to place the platform (x position only)
@@ -247,7 +247,7 @@ namespace logic {
         return false;
     }
 
-    std::vector<std::pair<float,float>> World::getLineBetweenPoints(float x0, float y0, float x1, float y1)  {
+    std::vector<std::pair<float,float>> World::getLineBetweenPoints(float x0, float y0, float x1, float y1)  { // self-modified for this project
 
         std::vector<std::pair<float,float>> line;
         float precisionOfIterator = 0.001f;
@@ -494,10 +494,10 @@ namespace logic {
         int bonusKind = logic::utility::Random::Instance().uniformIntDistribution(0, 9);
 
         if (bonusKind < 8) {
-            bonus = Factory->createSpring(0, 0, 0.058, 0.0411);
+            bonus = Factory->createSpring(0, 0, springWidth, springHeight);
         }
         else {
-            bonus = Factory->createJetpack(0, 0, 0.0696, 0.06576);
+            bonus = Factory->createJetpack(0, 0, jetpackWidth, jetpackHeight);
         }
     }
 

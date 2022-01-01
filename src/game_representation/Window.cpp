@@ -1,5 +1,5 @@
-// Sources :
-// https://www.sfml-dev.org/tutorials/2.5/window-events.php (pausing the game)
+// Author: Maksim Karnaukh
+
 
 #include "Window.h"
 

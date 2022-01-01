@@ -1,5 +1,8 @@
+// Author: Maksim Karnaukh
 // Implemented as a singleton class.
-// Source: Raimondas Pupius, "SFML Game Development By Example", published by Packt Publishing Ltd., ISBN 978-1-78528-734-3
+// Sources :
+// Raimondas Pupius, "SFML Game Development By Example", published by Packt Publishing Ltd., ISBN 978-1-78528-734-3
+// https://www.sfml-dev.org/tutorials/2.5/window-events.php (pausing the game)
 
 #ifndef DOODLEJUMP_WINDOW_H
 #define DOODLEJUMP_WINDOW_H

@@ -1,4 +1,4 @@
-
+// Author: Maksim Karnaukh
 
 #include "Spring_GR.h"
 

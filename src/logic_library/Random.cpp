@@ -1,4 +1,4 @@
-
+// Author: Maksim Karnaukh
 
 #include "Random.h"
 

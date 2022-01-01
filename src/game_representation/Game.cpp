@@ -1,4 +1,4 @@
-
+// Author: Maksim Karnaukh
 
 #include "Game.h"
 #include <memory>
@@ -104,7 +104,6 @@ namespace representation {
 
         }
         else {
-
             gameState = 1;
         }
 
@@ -112,7 +111,7 @@ namespace representation {
 
     void Game::playGame() {
 
-        cFactory = std::make_shared<representation::ConcreteFactory>();
+        cFactory = std::move(std::make_shared<representation::ConcreteFactory>());
         factory = cFactory;
 
         world = std::move(std::make_unique<logic::World>(factory));

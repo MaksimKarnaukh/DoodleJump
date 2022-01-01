@@ -1,4 +1,4 @@
-
+// Author: Maksim Karnaukh
 
 #ifndef DOODLEJUMP_JETPACK_H
 #define DOODLEJUMP_JETPACK_H

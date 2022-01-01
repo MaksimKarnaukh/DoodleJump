@@ -1,4 +1,4 @@
-
+// Author: Maksim Karnaukh
 
 #ifndef DOODLEJUMP_GAME_H
 #define DOODLEJUMP_GAME_H

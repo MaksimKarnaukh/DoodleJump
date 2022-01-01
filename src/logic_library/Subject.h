@@ -1,3 +1,4 @@
+// Author: Maksim Karnaukh
 // Source: https://www.youtube.com/watch?v=_BpmfnqjgzQ&list=PLrhzvIcii6GNjpARdnO4ueTUAVR9eMBpc&index=2&ab_channel=ChristopherOkhravi
 
 #ifndef DOODLEJUMP_SUBJECT_H
