@@ -37,8 +37,8 @@ namespace logic {
         float lowerBound = logic::utility::Camera::Instance().getLowerBound();
         float shiftBorder = logic::utility::Camera::Instance().getShiftBorder();
 
-        float formerPlatformPosY; // y-position of the platform we generated the previous time.
-        float formerPlatformPosX; // x-position of the platform we generated the previous time.
+        float formerPlatformPosY = 0; // y-position of the platform we generated the previous time.
+        float formerPlatformPosX = 0; // x-position of the platform we generated the previous time.
         bool wasBonusGenerated = false; // bool for knowing whether we generated a bonus last time (when we generated the platform).
 
         bool gameOver = false; // true when we fall in the void below.
@@ -70,6 +70,10 @@ namespace logic {
         */
         World(std::shared_ptr<logic::AbstractFactory>& factory);
 
+        /**
+        * @function : ~World
+        * Destructor for a World. Resets everything in the world.
+        */
         ~World();
 
         /**

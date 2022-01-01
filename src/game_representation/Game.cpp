@@ -115,6 +115,7 @@ namespace representation {
         factory = cFactory;
 
         world = std::move(std::make_unique<logic::World>(factory));
+
         logic::utility::Stopwatch::Instance().Reset();
 
         while ( !(world->gameOver || GetWindow().IsDone()) ) {
@@ -127,7 +128,7 @@ namespace representation {
             }
 
             logic::utility::Stopwatch::Instance().tick(); // de verstreken milliseconden erbij.
-            std::cout << 1 / logic::utility::Stopwatch::Instance().getDeltaTime() << std::endl;
+            //std::cout << 1 / logic::utility::Stopwatch::Instance().getDeltaTime() << std::endl;
             logic::utility::Stopwatch::Instance().Reset(); // mStartTime = now (tijd verstreken is terug 0)
 
             // Game loop.
@@ -137,7 +138,6 @@ namespace representation {
         }
         gameState = 0;
         calculateHighScore();
-
     }
 
     void Game::loadFonts() {
