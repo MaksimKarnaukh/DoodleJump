@@ -12,7 +12,7 @@ namespace representation {
 
         logic::utility::Stopwatch::Instance();
 
-        gameState = 0;
+        gameState = 1;
 
         fontFile = "../assets/Fonts/Bodo_Amat.ttf";
 
@@ -80,32 +80,30 @@ namespace representation {
 
     void Game::playMenu() {
 
-        if (! sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
-
-            representation::Window::Instance().BeginDraw(); // Clear.
-
-            representation::Window::Instance().Draw(menuText);
-            representation::Window::Instance().Draw(menuText0);
-
-            std::string currentScore;
-            currentScore += "Score : ";
-            currentScore += std::to_string(_currentScore);
-            currentHighScore.setString(currentScore);
-
-            std::string AllTimeHighScore;
-            AllTimeHighScore += "All-Time High-Score : ";
-            AllTimeHighScore += std::to_string(_allTimeHighScore);
-            allTimeHighScore.setString(AllTimeHighScore);
-
-            representation::Window::Instance().Draw(allTimeHighScore);
-            representation::Window::Instance().Draw(currentHighScore);
-
-            representation::Window::Instance().EndDraw(); // Display.
-
-        }
-        else {
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)) {
             gameState = 1;
+            return;
         }
+
+        representation::Window::Instance().BeginDraw(); // Clear.
+
+        representation::Window::Instance().Draw(menuText);
+        representation::Window::Instance().Draw(menuText0);
+
+        std::string currentScore;
+        currentScore += "Score : ";
+        currentScore += std::to_string(_currentScore);
+        currentHighScore.setString(currentScore);
+
+        std::string AllTimeHighScore;
+        AllTimeHighScore += "All-Time High-Score : ";
+        AllTimeHighScore += std::to_string(_allTimeHighScore);
+        allTimeHighScore.setString(AllTimeHighScore);
+
+        representation::Window::Instance().Draw(allTimeHighScore);
+        representation::Window::Instance().Draw(currentHighScore);
+
+        representation::Window::Instance().EndDraw(); // Display.
 
     }
 
@@ -128,7 +126,7 @@ namespace representation {
             }
 
             logic::utility::Stopwatch::Instance().tick(); // de verstreken milliseconden erbij.
-            std::cout << 1 / logic::utility::Stopwatch::Instance().getDeltaTime() << std::endl;
+            //std::cout << 1 / logic::utility::Stopwatch::Instance().getDeltaTime() << std::endl;
             logic::utility::Stopwatch::Instance().Reset(); // mStartTime = now (tijd verstreken is terug 0)
 
             // Game loop.

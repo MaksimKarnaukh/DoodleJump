@@ -13,7 +13,7 @@ namespace logic {
 
         float score;
 
-        std::shared_ptr<logic::EntityModel> mEntityModel; // points to an entityModel, in this case mostlikely the player.
+        std::weak_ptr<logic::EntityModel> mEntityModel; // points to an entityModel, in this case mostlikely the player.
 
     public:
 

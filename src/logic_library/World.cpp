@@ -292,7 +292,7 @@ namespace logic {
 
     World::~World() {
 
-        for (auto o = 0; o < doodle->getObservers().size(); o++) {
+        for (int o = doodle->getObservers().size()-1; o >= 0; o--) {
             doodle->removeObserver(doodle->getObservers()[o]);
         }
         for (int pl = platforms.size()-1; pl >= 0; pl--) {

@@ -14,11 +14,15 @@ logic::Score::Score(const std::shared_ptr<logic::EntityModel>& entityModel) {
 
 void logic::Score::update() {
 
-    float plus = (mEntityModel->getPositionY() - mEntityModel->getPreviousPositionY());
+    if (!mEntityModel.expired()) {
+        std::shared_ptr<logic::EntityModel> p = mEntityModel.lock();
+        float plus = (p->getPositionY() - p->getPreviousPositionY());
 
-    if (getScore() < getScore()+plus) {
-        setScore(getScore()+plus);
+        if (getScore() < getScore()+plus) {
+            setScore(getScore()+plus);
+        }
     }
+
 
 }
 
