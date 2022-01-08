@@ -29,18 +29,16 @@
 ////////////////////////////////////////////////////////////
 // Headers
 ////////////////////////////////////////////////////////////
-#include <SFML/Window/JoystickImpl.hpp>
-#include <SFML/System/String.hpp>
 #include <CoreFoundation/CoreFoundation.h>
 #include <IOKit/hid/IOHIDDevice.h>
 #include <IOKit/hid/IOHIDKeys.h>
+#include <SFML/System/String.hpp>
+#include <SFML/Window/JoystickImpl.hpp>
 #include <map>
 #include <vector>
 
-namespace sf
-{
-namespace priv
-{
+namespace sf {
+namespace priv {
 ////////////////////////////////////////////////////////////
 /// \brief Mac OS X implementation of joysticks
 ///
@@ -48,92 +46,89 @@ namespace priv
 class JoystickImpl
 {
 public:
+        ////////////////////////////////////////////////////////////
+        /// \brief Perform the global initialization of the joystick module
+        ///
+        ////////////////////////////////////////////////////////////
+        static void initialize();
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Perform the global initialization of the joystick module
-    ///
-    ////////////////////////////////////////////////////////////
-    static void initialize();
+        ////////////////////////////////////////////////////////////
+        /// \brief Perform the global cleanup of the joystick module
+        ///
+        ////////////////////////////////////////////////////////////
+        static void cleanup();
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Perform the global cleanup of the joystick module
-    ///
-    ////////////////////////////////////////////////////////////
-    static void cleanup();
+        ////////////////////////////////////////////////////////////
+        /// \brief Check if a joystick is currently connected
+        ///
+        /// \param index Index of the joystick to check
+        ///
+        /// \return True if the joystick is connected, false otherwise
+        ///
+        ////////////////////////////////////////////////////////////
+        static bool isConnected(unsigned int index);
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Check if a joystick is currently connected
-    ///
-    /// \param index Index of the joystick to check
-    ///
-    /// \return True if the joystick is connected, false otherwise
-    ///
-    ////////////////////////////////////////////////////////////
-    static bool isConnected(unsigned int index);
+        ////////////////////////////////////////////////////////////
+        /// \brief Open the joystick
+        ///
+        /// \param index Index assigned to the joystick
+        ///
+        /// \return True on success, false on failure
+        ///
+        ////////////////////////////////////////////////////////////
+        bool open(unsigned int index);
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Open the joystick
-    ///
-    /// \param index Index assigned to the joystick
-    ///
-    /// \return True on success, false on failure
-    ///
-    ////////////////////////////////////////////////////////////
-    bool open(unsigned int index);
+        ////////////////////////////////////////////////////////////
+        /// \brief Close the joystick
+        ///
+        ////////////////////////////////////////////////////////////
+        void close();
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Close the joystick
-    ///
-    ////////////////////////////////////////////////////////////
-    void close();
+        ////////////////////////////////////////////////////////////
+        /// \brief Get the joystick capabilities
+        ///
+        /// \return Joystick capabilities
+        ///
+        ////////////////////////////////////////////////////////////
+        JoystickCaps getCapabilities() const;
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Get the joystick capabilities
-    ///
-    /// \return Joystick capabilities
-    ///
-    ////////////////////////////////////////////////////////////
-    JoystickCaps getCapabilities() const;
+        ////////////////////////////////////////////////////////////
+        /// \brief Get the joystick identification
+        ///
+        /// \return Joystick identification
+        ///
+        ////////////////////////////////////////////////////////////
+        Joystick::Identification getIdentification() const;
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Get the joystick identification
-    ///
-    /// \return Joystick identification
-    ///
-    ////////////////////////////////////////////////////////////
-    Joystick::Identification getIdentification() const;
-
-    ////////////////////////////////////////////////////////////
-    /// \brief Update the joystick and get its new state
-    ///
-    /// \return Joystick state
-    ///
-    ////////////////////////////////////////////////////////////
-    JoystickState update();
+        ////////////////////////////////////////////////////////////
+        /// \brief Update the joystick and get its new state
+        ///
+        /// \return Joystick state
+        ///
+        ////////////////////////////////////////////////////////////
+        JoystickState update();
 
 private:
+        ////////////////////////////////////////////////////////////
+        // Member data
+        ////////////////////////////////////////////////////////////
+        typedef long Location;
+        typedef std::map<sf::Joystick::Axis, IOHIDElementRef> AxisMap;
+        typedef std::vector<IOHIDElementRef> ButtonsVector;
 
-    ////////////////////////////////////////////////////////////
-    // Member data
-    ////////////////////////////////////////////////////////////
-    typedef long                                          Location;
-    typedef std::map<sf::Joystick::Axis, IOHIDElementRef> AxisMap;
-    typedef std::vector<IOHIDElementRef>                  ButtonsVector;
+        AxisMap m_axis;                            ///< Axes (but not POV/Hat) of the joystick
+        IOHIDElementRef m_hat;                     ///< POV/Hat axis of the joystick
+        ButtonsVector m_buttons;                   ///< Buttons of the joystick
+        unsigned int m_index;                      ///< SFML index
+        Joystick::Identification m_identification; ///< Joystick identification
 
-    AxisMap                  m_axis;           ///< Axes (but not POV/Hat) of the joystick
-    IOHIDElementRef          m_hat;            ///< POV/Hat axis of the joystick
-    ButtonsVector            m_buttons;        ///< Buttons of the joystick
-    unsigned int             m_index;          ///< SFML index
-    Joystick::Identification m_identification; ///< Joystick identification
-
-    static Location m_locationIDs[sf::Joystick::Count]; ///< Global Joystick register
-    /// For a corresponding SFML index, m_locationIDs is either some USB
-    /// location or 0 if there isn't currently a connected joystick device
+        static Location m_locationIDs[sf::Joystick::Count]; ///< Global Joystick register
+        /// For a corresponding SFML index, m_locationIDs is either some USB
+        /// location or 0 if there isn't currently a connected joystick device
 };
 
 } // namespace priv
 
 } // namespace sf
-
 
 #endif // SFML_JOYSTICKIMPLOSX_HPP

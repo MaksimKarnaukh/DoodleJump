@@ -30,11 +30,8 @@
 ////////////////////////////////////////////////////////////
 #include <SFML/Window/VideoMode.hpp>
 
-
-namespace sf
-{
-namespace priv
-{
+namespace sf {
+namespace priv {
 ////////////////////////////////////////////////////////////
 /// \brief OS-specific implementation of video modes functions
 ///
@@ -42,27 +39,25 @@ namespace priv
 class VideoModeImpl
 {
 public:
+        ////////////////////////////////////////////////////////////
+        /// \brief Get the list of all the supported fullscreen video modes
+        ///
+        /// \return Array filled with the fullscreen video modes
+        ///
+        ////////////////////////////////////////////////////////////
+        static std::vector<VideoMode> getFullscreenModes();
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Get the list of all the supported fullscreen video modes
-    ///
-    /// \return Array filled with the fullscreen video modes
-    ///
-    ////////////////////////////////////////////////////////////
-    static std::vector<VideoMode> getFullscreenModes();
-
-    ////////////////////////////////////////////////////////////
-    /// \brief Get the current desktop video mode
-    ///
-    /// \return Current desktop video mode
-    ///
-    ////////////////////////////////////////////////////////////
-    static VideoMode getDesktopMode();
+        ////////////////////////////////////////////////////////////
+        /// \brief Get the current desktop video mode
+        ///
+        /// \return Current desktop video mode
+        ///
+        ////////////////////////////////////////////////////////////
+        static VideoMode getDesktopMode();
 };
 
 } // namespace priv
 
 } // namespace sf
-
 
 #endif // SFML_VIDEOMODEIMPL_HPP

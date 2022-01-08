@@ -31,11 +31,8 @@
 #include <X11/Xlib.h>
 #include <string>
 
-
-namespace sf
-{
-namespace priv
-{
+namespace sf {
+namespace priv {
 ////////////////////////////////////////////////////////////
 /// \brief Get the shared Display
 ///
@@ -69,6 +66,5 @@ Atom getAtom(const std::string& name, bool onlyIfExists = false);
 } // namespace priv
 
 } // namespace sf
-
 
 #endif // SFML_SHAREDDISPLAY_HPP

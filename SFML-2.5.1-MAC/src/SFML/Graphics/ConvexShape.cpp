@@ -27,43 +27,28 @@
 ////////////////////////////////////////////////////////////
 #include <SFML/Graphics/ConvexShape.hpp>
 
-
-namespace sf
-{
+namespace sf {
 ////////////////////////////////////////////////////////////
-ConvexShape::ConvexShape(std::size_t pointCount)
-{
-    setPointCount(pointCount);
-}
-
+ConvexShape::ConvexShape(std::size_t pointCount) { setPointCount(pointCount); }
 
 ////////////////////////////////////////////////////////////
 void ConvexShape::setPointCount(std::size_t count)
 {
-    m_points.resize(count);
-    update();
+        m_points.resize(count);
+        update();
 }
-
 
 ////////////////////////////////////////////////////////////
-std::size_t ConvexShape::getPointCount() const
-{
-    return m_points.size();
-}
-
+std::size_t ConvexShape::getPointCount() const { return m_points.size(); }
 
 ////////////////////////////////////////////////////////////
 void ConvexShape::setPoint(std::size_t index, const Vector2f& point)
 {
-    m_points[index] = point;
-    update();
+        m_points[index] = point;
+        update();
 }
-
 
 ////////////////////////////////////////////////////////////
-Vector2f ConvexShape::getPoint(std::size_t index) const
-{
-    return m_points[index];
-}
+Vector2f ConvexShape::getPoint(std::size_t index) const { return m_points[index]; }
 
 } // namespace sf

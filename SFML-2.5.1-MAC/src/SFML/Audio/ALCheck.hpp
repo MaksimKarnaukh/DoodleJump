@@ -33,26 +33,27 @@
 #include <al.h>
 #include <alc.h>
 
-namespace sf
-{
-namespace priv
-{
+namespace sf {
+namespace priv {
 ////////////////////////////////////////////////////////////
 /// Let's define a macro to quickly check every OpenAL API call
 ////////////////////////////////////////////////////////////
 #ifdef SFML_DEBUG
 
-    // If in debug mode, perform a test on every call
-    // The do-while loop is needed so that alCheck can be used as a single statement in if/else branches
-    #define alCheck(expr) do { expr; sf::priv::alCheckError(__FILE__, __LINE__, #expr); } while (false)
+// If in debug mode, perform a test on every call
+// The do-while loop is needed so that alCheck can be used as a single statement in if/else branches
+#define alCheck(expr)                                              \
+        do {                                                       \
+                expr;                                              \
+                sf::priv::alCheckError(__FILE__, __LINE__, #expr); \
+        } while (false)
 
 #else
 
-    // Else, we don't add any overhead
-    #define alCheck(expr) (expr)
+// Else, we don't add any overhead
+#define alCheck(expr) (expr)
 
 #endif
-
 
 ////////////////////////////////////////////////////////////
 /// Check the last OpenAL error
@@ -67,6 +68,5 @@ void alCheckError(const char* file, unsigned int line, const char* expression);
 } // namespace priv
 
 } // namespace sf
-
 
 #endif // SFML_ALCHECK_HPP

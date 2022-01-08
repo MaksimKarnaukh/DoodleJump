@@ -61,13 +61,13 @@
 
 #elif defined(_MSC_VER)
 #ifdef FLAC_API_EXPORTS
-#define	FLAC_API	_declspec(dllexport)
+#define FLAC_API _declspec(dllexport)
 #else
-#define FLAC_API	_declspec(dllimport)
+#define FLAC_API _declspec(dllimport)
 #endif
 
 #elif defined(FLAC__USE_VISIBILITY_ATTR)
-#define FLAC_API __attribute__ ((visibility ("default")))
+#define FLAC_API __attribute__((visibility("default")))
 
 #else
 #define FLAC_API
@@ -79,7 +79,7 @@
  */
 #define FLAC_API_VERSION_CURRENT 11
 #define FLAC_API_VERSION_REVISION 0 /**< see above */
-#define FLAC_API_VERSION_AGE 3 /**< see above */
+#define FLAC_API_VERSION_AGE 3      /**< see above */
 
 #ifdef __cplusplus
 extern "C" {

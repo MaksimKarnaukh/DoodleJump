@@ -7,26 +7,24 @@
 
 namespace representation {
 
-    class Spring_GR: public representation::Bonus_GR {
+class Spring_GR : public representation::Bonus_GR
+{
 
-    public:
+public:
+        /**
+         * @function : Spring_GR
+         * Constructor for a Spring_GR.
+         * @param entityModel (std::shared_ptr<logic::EntityModel>) : entityModel
+         */
+        Spring_GR(const std::shared_ptr<logic::EntityModel>& entityModel);
 
         /**
-        * @function : Spring_GR
-        * Constructor for a Spring_GR.
-        * @param entityModel (std::shared_ptr<logic::EntityModel>) : entityModel
-        */
-        Spring_GR(const std::shared_ptr<logic::EntityModel> &entityModel);
-
-        /**
-        * @function : Spring_GR
-        * Destructor for a Spring_GR.
-        */
+         * @function : Spring_GR
+         * Destructor for a Spring_GR.
+         */
         ~Spring_GR() override = default;
-    };
+};
 
-}
+} // namespace representation
 
-
-
-#endif //DOODLEJUMP_SPRING_GR_H
+#endif // DOODLEJUMP_SPRING_GR_H

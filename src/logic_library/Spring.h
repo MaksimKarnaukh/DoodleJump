@@ -7,44 +7,41 @@
 
 namespace logic {
 
-    class Spring: public logic::Bonus {
+class Spring : public logic::Bonus
+{
 
-    public:
-
+public:
         /**
-        * @function : Spring
-        * Constructor for a Spring.
-        */
+         * @function : Spring
+         * Constructor for a Spring.
+         */
         Spring();
 
         /**
-        * @function : Spring
-        * Destructor for a Spring.
-        */
+         * @function : Spring
+         * Destructor for a Spring.
+         */
         ~Spring() override = default;
 
         /**
-        * @function : Spring
-        * Constructor for a Spring.
-        * @param posX (float) : x-coordinate of our entity, between the range [0,1-entity.width].
-        * @param posY (float) : y-coordinate of our entity, between the range [0+entity.height, inf[.
-        */
+         * @function : Spring
+         * Constructor for a Spring.
+         * @param posX (float) : x-coordinate of our entity, between the range [0,1-entity.width].
+         * @param posY (float) : y-coordinate of our entity, between the range [0+entity.height, inf[.
+         */
         Spring(float posX, float posY);
 
         /**
-        * @function : Spring
-        * Constructor for a Spring.
-        * @param posX (float) : x-coordinate of our entity, between the range [0,1-entity.width].
-        * @param posY (float) : y-coordinate of our entity, between the range [0+entity.height, inf[.
-        * @param width (float) : width of our entity.
-        * @param height (float) : height of our entity.
-        */
+         * @function : Spring
+         * Constructor for a Spring.
+         * @param posX (float) : x-coordinate of our entity, between the range [0,1-entity.width].
+         * @param posY (float) : y-coordinate of our entity, between the range [0+entity.height, inf[.
+         * @param width (float) : width of our entity.
+         * @param height (float) : height of our entity.
+         */
         Spring(float posX, float posY, float width, float height);
+};
 
-    };
+} // namespace logic
 
-}
-
-
-
-#endif //DOODLEJUMP_SPRING_H
+#endif // DOODLEJUMP_SPRING_H

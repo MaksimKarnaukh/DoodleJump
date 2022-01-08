@@ -25,27 +25,20 @@
 ////////////////////////////////////////////////////////////
 // Headers
 ////////////////////////////////////////////////////////////
-#include <SFML/Window/Android/ClipboardImpl.hpp>
 #include <SFML/System/Err.hpp>
+#include <SFML/Window/Android/ClipboardImpl.hpp>
 
-
-namespace sf
-{
-namespace priv
-{
+namespace sf {
+namespace priv {
 ////////////////////////////////////////////////////////////
 String ClipboardImpl::getString()
 {
-    sf::err() << "Clipboard API not implemented for Android.\n";
-    return String();
+        sf::err() << "Clipboard API not implemented for Android.\n";
+        return String();
 }
-
 
 ////////////////////////////////////////////////////////////
-void ClipboardImpl::setString(const String& text)
-{
-    sf::err() << "Clipboard API not implemented for Android.\n";
-}
+void ClipboardImpl::setString(const String& text) { sf::err() << "Clipboard API not implemented for Android.\n"; }
 
 } // namespace priv
 

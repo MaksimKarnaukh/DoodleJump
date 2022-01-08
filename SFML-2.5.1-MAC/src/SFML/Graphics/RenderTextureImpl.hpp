@@ -30,14 +30,11 @@
 ////////////////////////////////////////////////////////////
 #include <SFML/System/NonCopyable.hpp>
 
-
-namespace sf
-{
+namespace sf {
 
 struct ContextSettings;
 
-namespace priv
-{
+namespace priv {
 ////////////////////////////////////////////////////////////
 /// \brief Abstract base class for render-texture implementations
 ///
@@ -45,48 +42,47 @@ namespace priv
 class RenderTextureImpl : NonCopyable
 {
 public:
+        ////////////////////////////////////////////////////////////
+        /// \brief Destructor
+        ///
+        ////////////////////////////////////////////////////////////
+        virtual ~RenderTextureImpl();
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Destructor
-    ///
-    ////////////////////////////////////////////////////////////
-    virtual ~RenderTextureImpl();
+        ////////////////////////////////////////////////////////////
+        /// \brief Create the render texture implementation
+        ///
+        /// \param width      Width of the texture to render to
+        /// \param height     Height of the texture to render to
+        /// \param textureId  OpenGL identifier of the target texture
+        /// \param settings   Context settings to create render-texture with
+        ///
+        /// \return True if creation has been successful
+        ///
+        ////////////////////////////////////////////////////////////
+        virtual bool create(unsigned int width, unsigned int height, unsigned int textureId,
+                            const ContextSettings& settings) = 0;
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Create the render texture implementation
-    ///
-    /// \param width      Width of the texture to render to
-    /// \param height     Height of the texture to render to
-    /// \param textureId  OpenGL identifier of the target texture
-    /// \param settings   Context settings to create render-texture with
-    ///
-    /// \return True if creation has been successful
-    ///
-    ////////////////////////////////////////////////////////////
-    virtual bool create(unsigned int width, unsigned int height, unsigned int textureId, const ContextSettings& settings) = 0;
+        ////////////////////////////////////////////////////////////
+        /// \brief Activate or deactivate the render texture for rendering
+        ///
+        /// \param active True to activate, false to deactivate
+        ///
+        /// \return True on success, false on failure
+        ///
+        ////////////////////////////////////////////////////////////
+        virtual bool activate(bool active) = 0;
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Activate or deactivate the render texture for rendering
-    ///
-    /// \param active True to activate, false to deactivate
-    ///
-    /// \return True on success, false on failure
-    ///
-    ////////////////////////////////////////////////////////////
-    virtual bool activate(bool active) = 0;
-
-    ////////////////////////////////////////////////////////////
-    /// \brief Update the pixels of the target texture
-    ///
-    /// \param textureId OpenGL identifier of the target texture
-    ///
-    ////////////////////////////////////////////////////////////
-    virtual void updateTexture(unsigned int textureId) = 0;
+        ////////////////////////////////////////////////////////////
+        /// \brief Update the pixels of the target texture
+        ///
+        /// \param textureId OpenGL identifier of the target texture
+        ///
+        ////////////////////////////////////////////////////////////
+        virtual void updateTexture(unsigned int textureId) = 0;
 };
 
 } // namespace priv
 
 } // namespace sf
-
 
 #endif // SFML_RENDERTEXTUREIMPL_HPP

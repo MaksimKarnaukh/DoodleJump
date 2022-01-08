@@ -31,16 +31,15 @@
 #include <SFML/Config.hpp>
 
 #if defined(SFML_SYSTEM_WINDOWS)
-    #include <SFML/Window/Win32/InputImpl.hpp>
+#include <SFML/Window/Win32/InputImpl.hpp>
 #elif defined(SFML_SYSTEM_LINUX) || defined(SFML_SYSTEM_FREEBSD) || defined(SFML_SYSTEM_OPENBSD)
-    #include <SFML/Window/Unix/InputImpl.hpp>
+#include <SFML/Window/Unix/InputImpl.hpp>
 #elif defined(SFML_SYSTEM_MACOS)
-    #include <SFML/Window/OSX/InputImpl.hpp>
+#include <SFML/Window/OSX/InputImpl.hpp>
 #elif defined(SFML_SYSTEM_IOS)
-    #include <SFML/Window/iOS/InputImpl.hpp>
+#include <SFML/Window/iOS/InputImpl.hpp>
 #elif defined(SFML_SYSTEM_ANDROID)
-    #include <SFML/Window/Android/InputImpl.hpp>
+#include <SFML/Window/Android/InputImpl.hpp>
 #endif
-
 
 #endif // SFML_INPUTIMPL_HPP

@@ -27,15 +27,12 @@
 ////////////////////////////////////////////////////////////
 #include <SFML/Graphics/RenderTextureImpl.hpp>
 
-
-namespace sf
-{
-namespace priv
-{
+namespace sf {
+namespace priv {
 ////////////////////////////////////////////////////////////
 RenderTextureImpl::~RenderTextureImpl()
 {
-    // Nothing to do
+        // Nothing to do
 }
 
 } // namespace priv

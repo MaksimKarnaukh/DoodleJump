@@ -7,26 +7,23 @@
 
 namespace representation {
 
-    class Bonus_GR: public EntityView {
+class Bonus_GR : public EntityView
+{
 
-    public:
-
+public:
         /**
-        * @function : Bonus_GR
-        * Constructor for a Bonus_GR.
-        */
+         * @function : Bonus_GR
+         * Constructor for a Bonus_GR.
+         */
         Bonus_GR();
 
         /**
-        * @function : Bonus_GR
-        * Destructor for a Bonus_GR.
-        */
+         * @function : Bonus_GR
+         * Destructor for a Bonus_GR.
+         */
         ~Bonus_GR() override = default;
+};
 
-    };
+} // namespace representation
 
-}
-
-
-
-#endif //DOODLEJUMP_BONUS_GR_H
+#endif // DOODLEJUMP_BONUS_GR_H

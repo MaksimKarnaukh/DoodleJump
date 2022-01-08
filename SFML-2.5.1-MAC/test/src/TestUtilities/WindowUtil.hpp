@@ -11,23 +11,22 @@
 #include <SFML/Graphics/Rect.hpp>
 
 // Forward declarations for non-template types
-namespace sf
-{
-    class VideoMode;
+namespace sf {
+class VideoMode;
 }
 
 // String conversions for Catch framework
-namespace Catch
-{
-    std::string toString(const sf::VideoMode& videoMode);
+namespace Catch {
+std::string toString(const sf::VideoMode& videoMode);
 
-    template <typename T>
-    std::string toString(const sf::Rect<T>& rect)
-    {
+template <typename T>
+std::string toString(const sf::Rect<T>& rect)
+{
         std::ostringstream stream;
-        stream << "(left=" << rect.left << ", top=" << rect.top << ", width=" << rect.width << ", height=" << rect.height << ")";
+        stream << "(left=" << rect.left << ", top=" << rect.top << ", width=" << rect.width
+               << ", height=" << rect.height << ")";
         return stream.str();
-    }
 }
+} // namespace Catch
 
 #endif // SFML_TESTUTILITIES_WINDOW_HPP

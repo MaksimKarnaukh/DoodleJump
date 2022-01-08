@@ -10,61 +10,57 @@
 #include <chrono>
 
 namespace logic {
-    namespace utility {
+namespace utility {
 
-        class Stopwatch {
+class Stopwatch
+{
 
-            std::chrono::system_clock::time_point mStartTime;
-            std::chrono::duration<float> mDeltaTime; // used as the elapsed time.
+        std::chrono::system_clock::time_point mStartTime;
+        std::chrono::duration<float> mDeltaTime; // used as the elapsed time.
 
-            /**
-            * @function : Stopwatch
-            * Constructor for a Stopwatch.
-            */
-            Stopwatch();
+        /**
+         * @function : Stopwatch
+         * Constructor for a Stopwatch.
+         */
+        Stopwatch();
 
-            /**
-            * @function : Stopwatch
-            * Destructor for a Stopwatch.
-            */
-            ~Stopwatch();
+        /**
+         * @function : Stopwatch
+         * Destructor for a Stopwatch.
+         */
+        ~Stopwatch();
 
-        public:
+public:
+        Stopwatch(const Stopwatch&) = delete;
+        Stopwatch(const Stopwatch&&) = delete;
 
-            Stopwatch(const Stopwatch &) = delete;
-            Stopwatch(const Stopwatch &&) = delete;
+        Stopwatch& operator=(const Stopwatch&) = delete;
+        Stopwatch& operator=(const Stopwatch&&) = delete;
 
-            Stopwatch& operator=(const Stopwatch &) = delete;
-            Stopwatch& operator=(const Stopwatch &&) = delete;
+public:
+        static Stopwatch& Instance();
 
-        public:
+        /**
+         * @function : Reset
+         * Resets the mStartTime data member, setting it equal to std::chrono::system_clock::now().
+         */
+        void Reset();
 
-            static Stopwatch& Instance();
+        /**
+         * @function : getDeltaTime
+         * Returns the mDeltaTime data member.
+         * @return (float) : mDeltaTime, which is the elapsed time, set by the last tick() called.
+         */
+        float getDeltaTime();
 
-            /**
-            * @function : Reset
-            * Resets the mStartTime data member, setting it equal to std::chrono::system_clock::now().
-            */
-            void Reset();
+        /**
+         * @function : tick
+         * Sets the mDeltaTime equal to (std::chrono::system_clock::now()-mStartTime).
+         */
+        void tick();
+};
 
-            /**
-            * @function : getDeltaTime
-            * Returns the mDeltaTime data member.
-            * @return (float) : mDeltaTime, which is the elapsed time, set by the last tick() called.
-            */
-            float getDeltaTime();
+} // namespace utility
+} // namespace logic
 
-            /**
-            * @function : tick
-            * Sets the mDeltaTime equal to (std::chrono::system_clock::now()-mStartTime).
-            */
-            void tick();
-
-        };
-
-    }
-}
-
-
-
-#endif //DOODLEJUMP_STOPWATCH_H
+#endif // DOODLEJUMP_STOPWATCH_H

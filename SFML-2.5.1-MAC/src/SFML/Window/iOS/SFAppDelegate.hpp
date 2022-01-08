@@ -28,10 +28,9 @@
 ////////////////////////////////////////////////////////////
 // Headers
 ////////////////////////////////////////////////////////////
+#include <CoreMotion/CoreMotion.h>
 #include <SFML/Window/iOS/WindowImplUIKit.hpp>
 #include <UIKit/UIKit.h>
-#include <CoreMotion/CoreMotion.h>
-
 
 ////////////////////////////////////////////////////////////
 /// \brief Our custom application delegate
@@ -39,13 +38,13 @@
 /// This class handles global application events.
 ///
 ////////////////////////////////////////////////////////////
-@interface SFAppDelegate : NSObject<UIApplicationDelegate>
+@interface SFAppDelegate : NSObject <UIApplicationDelegate>
 
 ////////////////////////////////////////////////////////////
 /// \brief Return the instance of the application delegate
 ///
 ////////////////////////////////////////////////////////////
-+(SFAppDelegate*)getInstance;
++ (SFAppDelegate*)getInstance;
 
 ////////////////////////////////////////////////////////////
 /// \brief Show or hide the virtual keyboard
@@ -125,11 +124,10 @@
 ////////////////////////////////////////////////////////////
 // Member data
 ////////////////////////////////////////////////////////////
-@property (nonatomic) sf::priv::WindowImplUIKit* sfWindow; ///< Main window of the application
-@property (readonly, nonatomic) CMMotionManager* motionManager; ///< Instance of the motion manager
-@property (nonatomic) CGFloat backingScaleFactor;
+@property(nonatomic) sf::priv::WindowImplUIKit* sfWindow;      ///< Main window of the application
+@property(readonly, nonatomic) CMMotionManager* motionManager; ///< Instance of the motion manager
+@property(nonatomic) CGFloat backingScaleFactor;
 
 @end
 
 #endif // SFML_SFAPPDELEGATE_HPP
-

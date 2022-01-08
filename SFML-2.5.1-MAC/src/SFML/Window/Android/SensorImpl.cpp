@@ -25,188 +25,172 @@
 ////////////////////////////////////////////////////////////
 // Headers
 ////////////////////////////////////////////////////////////
-#include <SFML/Window/SensorImpl.hpp>
 #include <SFML/System/Time.hpp>
+#include <SFML/Window/SensorImpl.hpp>
 #include <android/looper.h>
 
 // Define missing constants
-#define ASENSOR_TYPE_GRAVITY             0x00000009
+#define ASENSOR_TYPE_GRAVITY 0x00000009
 #define ASENSOR_TYPE_LINEAR_ACCELERATION 0x0000000a
-#define ASENSOR_TYPE_ORIENTATION         0x00000003
+#define ASENSOR_TYPE_ORIENTATION 0x00000003
 
-namespace
-{
-    ALooper* looper;
-    ASensorManager*    sensorManager;
-    ASensorEventQueue* sensorEventQueue;
-    sf::Vector3f       sensorData[sf::Sensor::Count];
-}
+namespace {
+ALooper* looper;
+ASensorManager* sensorManager;
+ASensorEventQueue* sensorEventQueue;
+sf::Vector3f sensorData[sf::Sensor::Count];
+} // namespace
 
-
-namespace sf
-{
-namespace priv
-{
+namespace sf {
+namespace priv {
 ////////////////////////////////////////////////////////////
 void SensorImpl::initialize()
 {
-    // Get the looper associated with this thread
-    looper = ALooper_forThread();
+        // Get the looper associated with this thread
+        looper = ALooper_forThread();
 
-    // Get the unique sensor manager
-    sensorManager = ASensorManager_getInstance();
+        // Get the unique sensor manager
+        sensorManager = ASensorManager_getInstance();
 
-    // Create the sensor events queue and attach it to the looper
-    sensorEventQueue = ASensorManager_createEventQueue(sensorManager, looper,
-        1, &processSensorEvents, NULL);
+        // Create the sensor events queue and attach it to the looper
+        sensorEventQueue = ASensorManager_createEventQueue(sensorManager, looper, 1, &processSensorEvents, NULL);
 }
-
 
 ////////////////////////////////////////////////////////////
 void SensorImpl::cleanup()
 {
-    // Detach the sensor events queue from the looper and destroy it
-    ASensorManager_destroyEventQueue(sensorManager, sensorEventQueue);
+        // Detach the sensor events queue from the looper and destroy it
+        ASensorManager_destroyEventQueue(sensorManager, sensorEventQueue);
 }
-
 
 ////////////////////////////////////////////////////////////
 bool SensorImpl::isAvailable(Sensor::Type sensor)
 {
-    const ASensor* available = getDefaultSensor(sensor);
+        const ASensor* available = getDefaultSensor(sensor);
 
-    return available? true : false;
+        return available ? true : false;
 }
-
 
 ////////////////////////////////////////////////////////////
 bool SensorImpl::open(Sensor::Type sensor)
 {
-    // Get the default sensor matching the type
-    m_sensor = getDefaultSensor(sensor);
+        // Get the default sensor matching the type
+        m_sensor = getDefaultSensor(sensor);
 
-    // Sensor not available, stop here
-    if (!m_sensor)
-        return false;
+        // Sensor not available, stop here
+        if (!m_sensor)
+                return false;
 
-    // Get the minimum delay allowed between events
-    Time minimumDelay = microseconds(ASensor_getMinDelay(m_sensor));
+        // Get the minimum delay allowed between events
+        Time minimumDelay = microseconds(ASensor_getMinDelay(m_sensor));
 
-    // Set the event rate (not to consume too much battery)
-    ASensorEventQueue_setEventRate(sensorEventQueue, m_sensor, minimumDelay.asMicroseconds());
+        // Set the event rate (not to consume too much battery)
+        ASensorEventQueue_setEventRate(sensorEventQueue, m_sensor, minimumDelay.asMicroseconds());
 
-    // Save the index of the sensor
-    m_index = static_cast<unsigned int>(sensor);
+        // Save the index of the sensor
+        m_index = static_cast<unsigned int>(sensor);
 
-    return true;
+        return true;
 }
-
 
 ////////////////////////////////////////////////////////////
 void SensorImpl::close()
 {
-    // Nothing to do
+        // Nothing to do
 }
-
 
 ////////////////////////////////////////////////////////////
 Vector3f SensorImpl::update()
 {
-    // Update our sensor data list
-    ALooper_pollAll(0, NULL, NULL, NULL);
+        // Update our sensor data list
+        ALooper_pollAll(0, NULL, NULL, NULL);
 
-    return sensorData[m_index];
+        return sensorData[m_index];
 }
-
 
 ////////////////////////////////////////////////////////////
 void SensorImpl::setEnabled(bool enabled)
 {
-    if (enabled)
-        ASensorEventQueue_enableSensor(sensorEventQueue, m_sensor);
-    else
-        ASensorEventQueue_disableSensor(sensorEventQueue, m_sensor);
+        if (enabled)
+                ASensorEventQueue_enableSensor(sensorEventQueue, m_sensor);
+        else
+                ASensorEventQueue_disableSensor(sensorEventQueue, m_sensor);
 }
-
 
 ////////////////////////////////////////////////////////////
 ASensor const* SensorImpl::getDefaultSensor(Sensor::Type sensor)
 {
-    // Find the Android sensor type
-    static int types[] = {ASENSOR_TYPE_ACCELEROMETER, ASENSOR_TYPE_GYROSCOPE,
-        ASENSOR_TYPE_MAGNETIC_FIELD, ASENSOR_TYPE_GRAVITY, ASENSOR_TYPE_LINEAR_ACCELERATION,
-        ASENSOR_TYPE_ORIENTATION};
+        // Find the Android sensor type
+        static int types[] = {ASENSOR_TYPE_ACCELEROMETER, ASENSOR_TYPE_GYROSCOPE,           ASENSOR_TYPE_MAGNETIC_FIELD,
+                              ASENSOR_TYPE_GRAVITY,       ASENSOR_TYPE_LINEAR_ACCELERATION, ASENSOR_TYPE_ORIENTATION};
 
-    int type = types[sensor];
+        int type = types[sensor];
 
-    // Retrieve the default sensor matching this type
-    return ASensorManager_getDefaultSensor(sensorManager, type);
+        // Retrieve the default sensor matching this type
+        return ASensorManager_getDefaultSensor(sensorManager, type);
 }
-
 
 ////////////////////////////////////////////////////////////
 int SensorImpl::processSensorEvents(int fd, int events, void* data)
 {
-    ASensorEvent event;
+        ASensorEvent event;
 
-    while (ASensorEventQueue_getEvents(sensorEventQueue, &event, 1) > 0)
-    {
-        unsigned int type = Sensor::Count;
-        Vector3f data;
+        while (ASensorEventQueue_getEvents(sensorEventQueue, &event, 1) > 0) {
+                unsigned int type = Sensor::Count;
+                Vector3f data;
 
-        switch (event.type)
-        {
-            case ASENSOR_TYPE_ACCELEROMETER:
-                type = Sensor::Accelerometer;
-                data.x = event.acceleration.x;
-                data.y = event.acceleration.y;
-                data.z = event.acceleration.z;
-                break;
+                switch (event.type) {
+                case ASENSOR_TYPE_ACCELEROMETER:
+                        type = Sensor::Accelerometer;
+                        data.x = event.acceleration.x;
+                        data.y = event.acceleration.y;
+                        data.z = event.acceleration.z;
+                        break;
 
-            case ASENSOR_TYPE_GYROSCOPE:
-                type = Sensor::Gyroscope;
-                data.x = event.vector.x;
-                data.y = event.vector.y;
-                data.z = event.vector.z;
-                break;
+                case ASENSOR_TYPE_GYROSCOPE:
+                        type = Sensor::Gyroscope;
+                        data.x = event.vector.x;
+                        data.y = event.vector.y;
+                        data.z = event.vector.z;
+                        break;
 
-            case ASENSOR_TYPE_MAGNETIC_FIELD:
-                type = Sensor::Magnetometer;
-                data.x = event.magnetic.x;
-                data.y = event.magnetic.y;
-                data.z = event.magnetic.z;
-                break;
+                case ASENSOR_TYPE_MAGNETIC_FIELD:
+                        type = Sensor::Magnetometer;
+                        data.x = event.magnetic.x;
+                        data.y = event.magnetic.y;
+                        data.z = event.magnetic.z;
+                        break;
 
-            case ASENSOR_TYPE_GRAVITY:
-                type = Sensor::Gravity;
-                data.x = event.vector.x;
-                data.y = event.vector.y;
-                data.z = event.vector.z;
-                break;
+                case ASENSOR_TYPE_GRAVITY:
+                        type = Sensor::Gravity;
+                        data.x = event.vector.x;
+                        data.y = event.vector.y;
+                        data.z = event.vector.z;
+                        break;
 
-            case ASENSOR_TYPE_LINEAR_ACCELERATION:
-                type = Sensor::UserAcceleration;
-                data.x = event.acceleration.x;
-                data.y = event.acceleration.y;
-                data.z = event.acceleration.z;
-                break;
+                case ASENSOR_TYPE_LINEAR_ACCELERATION:
+                        type = Sensor::UserAcceleration;
+                        data.x = event.acceleration.x;
+                        data.y = event.acceleration.y;
+                        data.z = event.acceleration.z;
+                        break;
 
-            case ASENSOR_TYPE_ORIENTATION:
-                type = Sensor::Orientation;
-                data.x = event.vector.x;
-                data.y = event.vector.y;
-                data.z = event.vector.z;
-                break;
+                case ASENSOR_TYPE_ORIENTATION:
+                        type = Sensor::Orientation;
+                        data.x = event.vector.x;
+                        data.y = event.vector.y;
+                        data.z = event.vector.z;
+                        break;
+                }
+
+                // An unknown sensor event has been detected, we don't know how to process it
+                if (type == Sensor::Count)
+                        continue;
+
+                sensorData[type] = data;
         }
 
-        // An unknown sensor event has been detected, we don't know how to process it
-        if (type == Sensor::Count)
-            continue;
-
-        sensorData[type] = data;
-    }
-
-    return 1;
+        return 1;
 }
 
 } // namespace priv

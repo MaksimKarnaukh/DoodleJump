@@ -25,44 +25,26 @@
 ////////////////////////////////////////////////////////////
 // Headers
 ////////////////////////////////////////////////////////////
-#include <SFML/Window/GlResource.hpp>
 #include <SFML/Window/GlContext.hpp>
+#include <SFML/Window/GlResource.hpp>
 
-
-namespace sf
-{
+namespace sf {
 ////////////////////////////////////////////////////////////
-GlResource::GlResource()
-{
-    priv::GlContext::initResource();
-}
-
+GlResource::GlResource() { priv::GlContext::initResource(); }
 
 ////////////////////////////////////////////////////////////
-GlResource::~GlResource()
-{
-    priv::GlContext::cleanupResource();
-}
-
+GlResource::~GlResource() { priv::GlContext::cleanupResource(); }
 
 ////////////////////////////////////////////////////////////
 void GlResource::registerContextDestroyCallback(ContextDestroyCallback callback, void* arg)
 {
-    priv::GlContext::registerContextDestroyCallback(callback, arg);
+        priv::GlContext::registerContextDestroyCallback(callback, arg);
 }
-
 
 ////////////////////////////////////////////////////////////
-GlResource::TransientContextLock::TransientContextLock()
-{
-    priv::GlContext::acquireTransientContext();
-}
-
+GlResource::TransientContextLock::TransientContextLock() { priv::GlContext::acquireTransientContext(); }
 
 ////////////////////////////////////////////////////////////
-GlResource::TransientContextLock::~TransientContextLock()
-{
-    priv::GlContext::releaseTransientContext();
-}
+GlResource::TransientContextLock::~TransientContextLock() { priv::GlContext::releaseTransientContext(); }
 
 } // namespace sf

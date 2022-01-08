@@ -27,42 +27,35 @@
 ////////////////////////////////////////////////////////////
 #include <SFML/Window/Android/CursorImpl.hpp>
 
-namespace sf
-{
-namespace priv
-{
+namespace sf {
+namespace priv {
 
 ////////////////////////////////////////////////////////////
 CursorImpl::CursorImpl()
 {
-    // Nothing.
+        // Nothing.
 }
-
 
 ////////////////////////////////////////////////////////////
 CursorImpl::~CursorImpl()
 {
-    // Nothing.
+        // Nothing.
 }
-
 
 ////////////////////////////////////////////////////////////
 bool CursorImpl::loadFromPixels(const Uint8* pixels, Vector2u size, Vector2u hotspot)
 {
-    // Not supported
-    return false;
+        // Not supported
+        return false;
 }
-
 
 ////////////////////////////////////////////////////////////
 bool CursorImpl::loadFromSystem(Cursor::Type type)
 {
-    // Not supported
-    return false;
+        // Not supported
+        return false;
 }
-
 
 } // namespace priv
 
 } // namespace sf
-

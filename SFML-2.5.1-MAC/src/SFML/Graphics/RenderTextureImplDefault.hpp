@@ -29,14 +29,11 @@
 // Headers
 ////////////////////////////////////////////////////////////
 #include <SFML/Graphics/RenderTextureImpl.hpp>
-#include <SFML/Window/GlResource.hpp>
 #include <SFML/Window/Context.hpp>
+#include <SFML/Window/GlResource.hpp>
 
-
-namespace sf
-{
-namespace priv
-{
+namespace sf {
+namespace priv {
 ////////////////////////////////////////////////////////////
 /// \brief Default specialization of RenderTextureImpl,
 ///        using an in-memory context
@@ -45,71 +42,69 @@ namespace priv
 class RenderTextureImplDefault : public RenderTextureImpl, GlResource
 {
 public:
+        ////////////////////////////////////////////////////////////
+        /// \brief Default constructor
+        ///
+        ////////////////////////////////////////////////////////////
+        RenderTextureImplDefault();
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Default constructor
-    ///
-    ////////////////////////////////////////////////////////////
-    RenderTextureImplDefault();
+        ////////////////////////////////////////////////////////////
+        /// \brief Destructor
+        ///
+        ////////////////////////////////////////////////////////////
+        ~RenderTextureImplDefault();
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Destructor
-    ///
-    ////////////////////////////////////////////////////////////
-    ~RenderTextureImplDefault();
-
-    ////////////////////////////////////////////////////////////
-    /// \brief Get the maximum anti-aliasing level supported by the system
-    ///
-    /// \return The maximum anti-aliasing level supported by the system
-    ///
-    ////////////////////////////////////////////////////////////
-    static unsigned int getMaximumAntialiasingLevel();
+        ////////////////////////////////////////////////////////////
+        /// \brief Get the maximum anti-aliasing level supported by the system
+        ///
+        /// \return The maximum anti-aliasing level supported by the system
+        ///
+        ////////////////////////////////////////////////////////////
+        static unsigned int getMaximumAntialiasingLevel();
 
 private:
+        ////////////////////////////////////////////////////////////
+        /// \brief Create the render texture implementation
+        ///
+        /// \param width      Width of the texture to render to
+        /// \param height     Height of the texture to render to
+        /// \param textureId  OpenGL identifier of the target texture
+        /// \param settings   Context settings to create render-texture with
+        ///
+        /// \return True if creation has been successful
+        ///
+        ////////////////////////////////////////////////////////////
+        virtual bool create(unsigned int width, unsigned int height, unsigned int textureId,
+                            const ContextSettings& settings);
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Create the render texture implementation
-    ///
-    /// \param width      Width of the texture to render to
-    /// \param height     Height of the texture to render to
-    /// \param textureId  OpenGL identifier of the target texture
-    /// \param settings   Context settings to create render-texture with
-    ///
-    /// \return True if creation has been successful
-    ///
-    ////////////////////////////////////////////////////////////
-    virtual bool create(unsigned int width, unsigned int height, unsigned int textureId, const ContextSettings& settings);
+        ////////////////////////////////////////////////////////////
+        /// \brief Activate or deactivate the render texture for rendering
+        ///
+        /// \param active True to activate, false to deactivate
+        ///
+        /// \return True on success, false on failure
+        ///
+        ////////////////////////////////////////////////////////////
+        virtual bool activate(bool active);
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Activate or deactivate the render texture for rendering
-    ///
-    /// \param active True to activate, false to deactivate
-    ///
-    /// \return True on success, false on failure
-    ///
-    ////////////////////////////////////////////////////////////
-    virtual bool activate(bool active);
+        ////////////////////////////////////////////////////////////
+        /// \brief Update the pixels of the target texture
+        ///
+        /// \param textureId OpenGL identifier of the target texture
+        ///
+        ////////////////////////////////////////////////////////////
+        virtual void updateTexture(unsigned textureId);
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Update the pixels of the target texture
-    ///
-    /// \param textureId OpenGL identifier of the target texture
-    ///
-    ////////////////////////////////////////////////////////////
-    virtual void updateTexture(unsigned textureId);
-
-    ////////////////////////////////////////////////////////////
-    // Member data
-    ////////////////////////////////////////////////////////////
-    Context*     m_context; //!< P-Buffer based context
-    unsigned int m_width;   //!< Width of the P-Buffer
-    unsigned int m_height;  //!< Height of the P-Buffer
+        ////////////////////////////////////////////////////////////
+        // Member data
+        ////////////////////////////////////////////////////////////
+        Context* m_context;    //!< P-Buffer based context
+        unsigned int m_width;  //!< Width of the P-Buffer
+        unsigned int m_height; //!< Height of the P-Buffer
 };
 
 } // namespace priv
 
 } // namespace sf
-
 
 #endif // SFML_RENDERTEXTUREIMPLDEFAULT_HPP

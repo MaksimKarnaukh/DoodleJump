@@ -30,7 +30,6 @@
 ////////////////////////////////////////////////////////////
 #include <UIKit/UIKit.h>
 
-
 ////////////////////////////////////////////////////////////
 /// \brief The view controller handles the view's orientation
 ///
@@ -58,7 +57,7 @@
 ////////////////////////////////////////////////////////////
 // Member data
 ////////////////////////////////////////////////////////////
-@property (nonatomic) bool orientationCanChange; ///< Tells whether the controller's view can rotate or not
+@property(nonatomic) bool orientationCanChange; ///< Tells whether the controller's view can rotate or not
 
 @end
 

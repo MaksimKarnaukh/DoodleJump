@@ -43,51 +43,47 @@ typedef sf::priv::VulkanImplX11 VulkanImplType;
 
 #endif
 
-
-namespace sf
-{
+namespace sf {
 ////////////////////////////////////////////////////////////
 bool Vulkan::isAvailable(bool requireGraphics)
 {
 #if defined(SFML_VULKAN_IMPLEMENTATION_NOT_AVAILABLE)
 
-    return false;
+        return false;
 
 #else
 
-    return VulkanImplType::isAvailable(requireGraphics);
+        return VulkanImplType::isAvailable(requireGraphics);
 
 #endif
 }
-
 
 ////////////////////////////////////////////////////////////
 VulkanFunctionPointer Vulkan::getFunction(const char* name)
 {
 #if defined(SFML_VULKAN_IMPLEMENTATION_NOT_AVAILABLE)
 
-    return NULL;
+        return NULL;
 
 #else
 
-    return VulkanImplType::getFunction(name);
+        return VulkanImplType::getFunction(name);
 
 #endif
 }
-
 
 ////////////////////////////////////////////////////////////
 const std::vector<const char*>& Vulkan::getGraphicsRequiredInstanceExtensions()
 {
 #if defined(SFML_VULKAN_IMPLEMENTATION_NOT_AVAILABLE)
 
-    static const std::vector<const char*> empty;
+        static const std::vector<const char*> empty;
 
-    return empty;
+        return empty;
 
 #else
 
-    return VulkanImplType::getGraphicsRequiredInstanceExtensions();
+        return VulkanImplType::getGraphicsRequiredInstanceExtensions();
 
 #endif
 }

@@ -3,12 +3,11 @@
 #include <sstream>
 
 // String conversions for Catch framework
-namespace Catch
+namespace Catch {
+std::string toString(const sf::VideoMode& videoMode)
 {
-    std::string toString(const sf::VideoMode& videoMode)
-    {
         std::ostringstream stream;
         stream << videoMode.width << "x" << videoMode.height << "x" << videoMode.bitsPerPixel;
         return stream.str();
-    }
 }
+} // namespace Catch

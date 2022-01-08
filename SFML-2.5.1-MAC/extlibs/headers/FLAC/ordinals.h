@@ -71,7 +71,6 @@ typedef int FLAC__bool;
 
 typedef FLAC__uint8 FLAC__byte;
 
-
 #ifdef true
 #undef true
 #endif

@@ -9,15 +9,13 @@
 #include "WindowUtil.hpp"
 
 // Forward declarations for non-template types
-namespace sf
-{
-    class Color;
+namespace sf {
+class Color;
 }
 
 // String conversions for Catch framework
-namespace Catch
-{
-    std::string toString(const sf::Color& color);
+namespace Catch {
+std::string toString(const sf::Color& color);
 }
 
 #endif // SFML_TESTUTILITIES_GRAPHICS_HPP

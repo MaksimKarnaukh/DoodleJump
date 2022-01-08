@@ -25,11 +25,8 @@
 #ifndef SFML_SFMAIN_HPP
 #define SFML_SFMAIN_HPP
 
-
 int sfmlMain(int argc, char** argv);
 
 int sfmlMain();
 
-
 #endif // SFML_SFMAIN_HPP
-

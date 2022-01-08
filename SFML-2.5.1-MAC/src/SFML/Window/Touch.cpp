@@ -25,30 +25,20 @@
 ////////////////////////////////////////////////////////////
 // Headers
 ////////////////////////////////////////////////////////////
-#include <SFML/Window/Touch.hpp>
 #include <SFML/Window/InputImpl.hpp>
+#include <SFML/Window/Touch.hpp>
 
-
-namespace sf
-{
+namespace sf {
 ////////////////////////////////////////////////////////////
-bool Touch::isDown(unsigned int finger)
-{
-    return priv::InputImpl::isTouchDown(finger);
-}
-
+bool Touch::isDown(unsigned int finger) { return priv::InputImpl::isTouchDown(finger); }
 
 ////////////////////////////////////////////////////////////
-Vector2i Touch::getPosition(unsigned int finger)
-{
-    return priv::InputImpl::getTouchPosition(finger);
-}
-
+Vector2i Touch::getPosition(unsigned int finger) { return priv::InputImpl::getTouchPosition(finger); }
 
 ////////////////////////////////////////////////////////////
 Vector2i Touch::getPosition(unsigned int finger, const WindowBase& relativeTo)
 {
-    return priv::InputImpl::getTouchPosition(finger, relativeTo);
+        return priv::InputImpl::getTouchPosition(finger, relativeTo);
 }
 
 } // namespace sf

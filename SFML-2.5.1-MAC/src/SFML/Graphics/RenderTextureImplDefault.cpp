@@ -25,75 +25,59 @@
 ////////////////////////////////////////////////////////////
 // Headers
 ////////////////////////////////////////////////////////////
-#include <SFML/Graphics/RenderTextureImplDefault.hpp>
 #include <SFML/Graphics/GLCheck.hpp>
+#include <SFML/Graphics/RenderTextureImplDefault.hpp>
 #include <SFML/Graphics/TextureSaver.hpp>
-#include <SFML/Window/Context.hpp>
 #include <SFML/System/Err.hpp>
+#include <SFML/Window/Context.hpp>
 
-
-namespace sf
-{
-namespace priv
-{
+namespace sf {
+namespace priv {
 ////////////////////////////////////////////////////////////
-RenderTextureImplDefault::RenderTextureImplDefault() :
-m_context(0),
-m_width  (0),
-m_height (0)
-{
-
-}
-
+RenderTextureImplDefault::RenderTextureImplDefault() : m_context(0), m_width(0), m_height(0) {}
 
 ////////////////////////////////////////////////////////////
 RenderTextureImplDefault::~RenderTextureImplDefault()
 {
-    // Destroy the context
-    delete m_context;
+        // Destroy the context
+        delete m_context;
 }
-
 
 ////////////////////////////////////////////////////////////
 unsigned int RenderTextureImplDefault::getMaximumAntialiasingLevel()
 {
-    // If the system is so old that it doesn't support FBOs, chances are it is
-    // also using either a software renderer or some CPU emulated support for AA
-    // In order to not cripple performance in this rare case, we just return 0 here
-    return 0;
+        // If the system is so old that it doesn't support FBOs, chances are it is
+        // also using either a software renderer or some CPU emulated support for AA
+        // In order to not cripple performance in this rare case, we just return 0 here
+        return 0;
 }
-
 
 ////////////////////////////////////////////////////////////
-bool RenderTextureImplDefault::create(unsigned int width, unsigned int height, unsigned int, const ContextSettings& settings)
+bool RenderTextureImplDefault::create(unsigned int width, unsigned int height, unsigned int,
+                                      const ContextSettings& settings)
 {
-    // Store the dimensions
-    m_width = width;
-    m_height = height;
+        // Store the dimensions
+        m_width = width;
+        m_height = height;
 
-    // Create the in-memory OpenGL context
-    m_context = new Context(settings, width, height);
+        // Create the in-memory OpenGL context
+        m_context = new Context(settings, width, height);
 
-    return true;
+        return true;
 }
-
 
 ////////////////////////////////////////////////////////////
-bool RenderTextureImplDefault::activate(bool active)
-{
-    return m_context->setActive(active);
-}
-
+bool RenderTextureImplDefault::activate(bool active) { return m_context->setActive(active); }
 
 ////////////////////////////////////////////////////////////
 void RenderTextureImplDefault::updateTexture(unsigned int textureId)
 {
-    // Make sure that the current texture binding will be preserved
-    priv::TextureSaver save;
+        // Make sure that the current texture binding will be preserved
+        priv::TextureSaver save;
 
-    // Copy the rendered pixels to the texture
-    glCheck(glBindTexture(GL_TEXTURE_2D, textureId));
-    glCheck(glCopyTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, 0, 0, m_width, m_height));
+        // Copy the rendered pixels to the texture
+        glCheck(glBindTexture(GL_TEXTURE_2D, textureId));
+        glCheck(glCopyTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, 0, 0, m_width, m_height));
 }
 
 } // namespace priv

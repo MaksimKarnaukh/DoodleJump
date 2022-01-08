@@ -25,222 +25,182 @@
 ////////////////////////////////////////////////////////////
 // Headers
 ////////////////////////////////////////////////////////////
-#include <SFML/Window/Window.hpp>
-#include <SFML/Window/GlContext.hpp>
-#include <SFML/Window/WindowImpl.hpp>
-#include <SFML/System/Sleep.hpp>
 #include <SFML/System/Err.hpp>
+#include <SFML/System/Sleep.hpp>
+#include <SFML/Window/GlContext.hpp>
+#include <SFML/Window/Window.hpp>
+#include <SFML/Window/WindowImpl.hpp>
 
-
-namespace sf
-{
+namespace sf {
 ////////////////////////////////////////////////////////////
-Window::Window() :
-m_context       (NULL),
-m_frameTimeLimit(Time::Zero)
-{
-
-}
-
+Window::Window() : m_context(NULL), m_frameTimeLimit(Time::Zero) {}
 
 ////////////////////////////////////////////////////////////
-Window::Window(VideoMode mode, const String& title, Uint32 style, const ContextSettings& settings) :
-m_context       (NULL),
-m_frameTimeLimit(Time::Zero)
+Window::Window(VideoMode mode, const String& title, Uint32 style, const ContextSettings& settings)
+    : m_context(NULL), m_frameTimeLimit(Time::Zero)
 {
-    Window::create(mode, title, style, settings);
+        Window::create(mode, title, style, settings);
 }
-
 
 ////////////////////////////////////////////////////////////
-Window::Window(WindowHandle handle, const ContextSettings& settings) :
-m_context       (NULL),
-m_frameTimeLimit(Time::Zero)
+Window::Window(WindowHandle handle, const ContextSettings& settings) : m_context(NULL), m_frameTimeLimit(Time::Zero)
 {
-    Window::create(handle, settings);
+        Window::create(handle, settings);
 }
-
 
 ////////////////////////////////////////////////////////////
-Window::~Window()
-{
-    close();
-}
-
+Window::~Window() { close(); }
 
 ////////////////////////////////////////////////////////////
 void Window::create(VideoMode mode, const String& title, Uint32 style)
 {
-    Window::create(mode, title, style, ContextSettings());
+        Window::create(mode, title, style, ContextSettings());
 }
-
 
 ////////////////////////////////////////////////////////////
 void Window::create(VideoMode mode, const String& title, Uint32 style, const ContextSettings& settings)
 {
-    // Destroy the previous window implementation
-    close();
+        // Destroy the previous window implementation
+        close();
 
-    // Fullscreen style requires some tests
-    if (style & Style::Fullscreen)
-    {
-        // Make sure there's not already a fullscreen window (only one is allowed)
-        if (getFullscreenWindow())
-        {
-            err() << "Creating two fullscreen windows is not allowed, switching to windowed mode" << std::endl;
-            style &= ~Style::Fullscreen;
+        // Fullscreen style requires some tests
+        if (style & Style::Fullscreen) {
+                // Make sure there's not already a fullscreen window (only one is allowed)
+                if (getFullscreenWindow()) {
+                        err() << "Creating two fullscreen windows is not allowed, switching to windowed mode"
+                              << std::endl;
+                        style &= ~Style::Fullscreen;
+                } else {
+                        // Make sure that the chosen video mode is compatible
+                        if (!mode.isValid()) {
+                                err() << "The requested video mode is not available, switching to a valid mode"
+                                      << std::endl;
+                                mode = VideoMode::getFullscreenModes()[0];
+                        }
+
+                        // Update the fullscreen window
+                        setFullscreenWindow(this);
+                }
         }
-        else
-        {
-            // Make sure that the chosen video mode is compatible
-            if (!mode.isValid())
-            {
-                err() << "The requested video mode is not available, switching to a valid mode" << std::endl;
-                mode = VideoMode::getFullscreenModes()[0];
-            }
 
-            // Update the fullscreen window
-            setFullscreenWindow(this);
-        }
-    }
-
-    // Check validity of style according to the underlying platform
-    #if defined(SFML_SYSTEM_IOS) || defined(SFML_SYSTEM_ANDROID)
+// Check validity of style according to the underlying platform
+#if defined(SFML_SYSTEM_IOS) || defined(SFML_SYSTEM_ANDROID)
         if (style & Style::Fullscreen)
-            style &= ~Style::Titlebar;
+                style &= ~Style::Titlebar;
         else
-            style |= Style::Titlebar;
-    #else
+                style |= Style::Titlebar;
+#else
         if ((style & Style::Close) || (style & Style::Resize))
-            style |= Style::Titlebar;
-    #endif
+                style |= Style::Titlebar;
+#endif
 
-    // Recreate the window implementation
-    m_impl = priv::WindowImpl::create(mode, title, style, settings);
+        // Recreate the window implementation
+        m_impl = priv::WindowImpl::create(mode, title, style, settings);
 
-    // Recreate the context
-    m_context = priv::GlContext::create(settings, m_impl, mode.bitsPerPixel);
+        // Recreate the context
+        m_context = priv::GlContext::create(settings, m_impl, mode.bitsPerPixel);
 
-    // Perform common initializations
-    initialize();
+        // Perform common initializations
+        initialize();
 }
-
 
 ////////////////////////////////////////////////////////////
-void Window::create(WindowHandle handle)
-{
-    Window::create(handle, ContextSettings());
-}
-
+void Window::create(WindowHandle handle) { Window::create(handle, ContextSettings()); }
 
 ////////////////////////////////////////////////////////////
 void Window::create(WindowHandle handle, const ContextSettings& settings)
 {
-    // Destroy the previous window implementation
-    close();
+        // Destroy the previous window implementation
+        close();
 
-    // Recreate the window implementation
-    WindowBase::create(handle);
+        // Recreate the window implementation
+        WindowBase::create(handle);
 
-    // Recreate the context
-    m_context = priv::GlContext::create(settings, m_impl, VideoMode::getDesktopMode().bitsPerPixel);
+        // Recreate the context
+        m_context = priv::GlContext::create(settings, m_impl, VideoMode::getDesktopMode().bitsPerPixel);
 
-    // Perform common initializations
-    initialize();
+        // Perform common initializations
+        initialize();
 }
-
 
 ////////////////////////////////////////////////////////////
 void Window::close()
 {
-    // Delete the context
-    delete m_context;
-    m_context = NULL;
+        // Delete the context
+        delete m_context;
+        m_context = NULL;
 
-    // Close the base window
-    WindowBase::close();
+        // Close the base window
+        WindowBase::close();
 }
-
 
 ////////////////////////////////////////////////////////////
 const ContextSettings& Window::getSettings() const
 {
-    static const ContextSettings empty(0, 0, 0);
+        static const ContextSettings empty(0, 0, 0);
 
-    return m_context ? m_context->getSettings() : empty;
+        return m_context ? m_context->getSettings() : empty;
 }
-
 
 ////////////////////////////////////////////////////////////
 void Window::setVerticalSyncEnabled(bool enabled)
 {
-    if (setActive())
-        m_context->setVerticalSyncEnabled(enabled);
+        if (setActive())
+                m_context->setVerticalSyncEnabled(enabled);
 }
-
 
 ////////////////////////////////////////////////////////////
 void Window::setFramerateLimit(unsigned int limit)
 {
-    if (limit > 0)
-        m_frameTimeLimit = seconds(1.f / limit);
-    else
-        m_frameTimeLimit = Time::Zero;
+        if (limit > 0)
+                m_frameTimeLimit = seconds(1.f / limit);
+        else
+                m_frameTimeLimit = Time::Zero;
 }
-
 
 ////////////////////////////////////////////////////////////
 bool Window::setActive(bool active) const
 {
-    if (m_context)
-    {
-        if (m_context->setActive(active))
-        {
-            return true;
+        if (m_context) {
+                if (m_context->setActive(active)) {
+                        return true;
+                } else {
+                        err() << "Failed to activate the window's context" << std::endl;
+                        return false;
+                }
+        } else {
+                return false;
         }
-        else
-        {
-            err() << "Failed to activate the window's context" << std::endl;
-            return false;
-        }
-    }
-    else
-    {
-        return false;
-    }
 }
-
 
 ////////////////////////////////////////////////////////////
 void Window::display()
 {
-    // Display the backbuffer on screen
-    if (setActive())
-        m_context->display();
+        // Display the backbuffer on screen
+        if (setActive())
+                m_context->display();
 
-    // Limit the framerate if needed
-    if (m_frameTimeLimit != Time::Zero)
-    {
-        sleep(m_frameTimeLimit - m_clock.getElapsedTime());
-        m_clock.restart();
-    }
+        // Limit the framerate if needed
+        if (m_frameTimeLimit != Time::Zero) {
+                sleep(m_frameTimeLimit - m_clock.getElapsedTime());
+                m_clock.restart();
+        }
 }
-
 
 ////////////////////////////////////////////////////////////
 void Window::initialize()
 {
-    // Setup default behaviors (to get a consistent behavior across different implementations)
-    setVerticalSyncEnabled(false);
-    setFramerateLimit(0);
+        // Setup default behaviors (to get a consistent behavior across different implementations)
+        setVerticalSyncEnabled(false);
+        setFramerateLimit(0);
 
-    // Reset frame time
-    m_clock.restart();
+        // Reset frame time
+        m_clock.restart();
 
-    // Activate the window
-    setActive();
+        // Activate the window
+        setActive();
 
-    WindowBase::initialize();
+        WindowBase::initialize();
 }
 
 } // namespace sf

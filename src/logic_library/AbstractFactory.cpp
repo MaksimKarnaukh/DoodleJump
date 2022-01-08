@@ -4,6 +4,6 @@
 
 namespace logic {
 
-    AbstractFactory::AbstractFactory() = default;
+AbstractFactory::AbstractFactory() = default;
 
 }

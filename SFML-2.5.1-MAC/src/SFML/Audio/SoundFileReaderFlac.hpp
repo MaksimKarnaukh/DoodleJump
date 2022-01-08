@@ -28,16 +28,13 @@
 ////////////////////////////////////////////////////////////
 // Headers
 ////////////////////////////////////////////////////////////
-#include <SFML/Audio/SoundFileReader.hpp>
 #include <FLAC/stream_decoder.h>
+#include <SFML/Audio/SoundFileReader.hpp>
 #include <string>
 #include <vector>
 
-
-namespace sf
-{
-namespace priv
-{
+namespace sf {
+namespace priv {
 ////////////////////////////////////////////////////////////
 /// \brief Implementation of sound file reader that handles FLAC files
 ///
@@ -45,100 +42,95 @@ namespace priv
 class SoundFileReaderFlac : public SoundFileReader
 {
 public:
-
-    ////////////////////////////////////////////////////////////
-    /// \brief Check if this reader can handle a file given by an input stream
-    ///
-    /// \param stream Source stream to check
-    ///
-    /// \return True if the file is supported by this reader
-    ///
-    ////////////////////////////////////////////////////////////
-    static bool check(InputStream& stream);
-
-public:
-
-    ////////////////////////////////////////////////////////////
-    /// \brief Default constructor
-    ///
-    ////////////////////////////////////////////////////////////
-    SoundFileReaderFlac();
-
-    ////////////////////////////////////////////////////////////
-    /// \brief Default constructor
-    ///
-    ////////////////////////////////////////////////////////////
-    ~SoundFileReaderFlac();
-
-    ////////////////////////////////////////////////////////////
-    /// \brief Open a sound file for reading
-    ///
-    /// \param stream Stream to open
-    /// \param info   Structure to fill with the attributes of the loaded sound
-    ///
-    ////////////////////////////////////////////////////////////
-    virtual bool open(sf::InputStream& stream, Info& info);
-
-    ////////////////////////////////////////////////////////////
-    /// \brief Change the current read position to the given sample offset
-    ///
-    /// The sample offset takes the channels into account.
-    /// If you have a time offset instead, you can easily find
-    /// the corresponding sample offset with the following formula:
-    /// `timeInSeconds * sampleRate * channelCount`
-    /// If the given offset exceeds to total number of samples,
-    /// this function must jump to the end of the file.
-    ///
-    /// \param sampleOffset Index of the sample to jump to, relative to the beginning
-    ///
-    ////////////////////////////////////////////////////////////
-    virtual void seek(Uint64 sampleOffset);
-
-    ////////////////////////////////////////////////////////////
-    /// \brief Read audio samples from the open file
-    ///
-    /// \param samples  Pointer to the sample array to fill
-    /// \param maxCount Maximum number of samples to read
-    ///
-    /// \return Number of samples actually read (may be less than \a maxCount)
-    ///
-    ////////////////////////////////////////////////////////////
-    virtual Uint64 read(Int16* samples, Uint64 maxCount);
+        ////////////////////////////////////////////////////////////
+        /// \brief Check if this reader can handle a file given by an input stream
+        ///
+        /// \param stream Source stream to check
+        ///
+        /// \return True if the file is supported by this reader
+        ///
+        ////////////////////////////////////////////////////////////
+        static bool check(InputStream& stream);
 
 public:
+        ////////////////////////////////////////////////////////////
+        /// \brief Default constructor
+        ///
+        ////////////////////////////////////////////////////////////
+        SoundFileReaderFlac();
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Hold the state that is passed to the decoder callbacks
-    ///
-    ////////////////////////////////////////////////////////////
-    struct ClientData
-    {
-        InputStream*          stream;
-        SoundFileReader::Info info;
-        Int16*                buffer;
-        Uint64                remaining;
-        std::vector<Int16>    leftovers;
-        bool                  error;
-    };
+        ////////////////////////////////////////////////////////////
+        /// \brief Default constructor
+        ///
+        ////////////////////////////////////////////////////////////
+        ~SoundFileReaderFlac();
+
+        ////////////////////////////////////////////////////////////
+        /// \brief Open a sound file for reading
+        ///
+        /// \param stream Stream to open
+        /// \param info   Structure to fill with the attributes of the loaded sound
+        ///
+        ////////////////////////////////////////////////////////////
+        virtual bool open(sf::InputStream& stream, Info& info);
+
+        ////////////////////////////////////////////////////////////
+        /// \brief Change the current read position to the given sample offset
+        ///
+        /// The sample offset takes the channels into account.
+        /// If you have a time offset instead, you can easily find
+        /// the corresponding sample offset with the following formula:
+        /// `timeInSeconds * sampleRate * channelCount`
+        /// If the given offset exceeds to total number of samples,
+        /// this function must jump to the end of the file.
+        ///
+        /// \param sampleOffset Index of the sample to jump to, relative to the beginning
+        ///
+        ////////////////////////////////////////////////////////////
+        virtual void seek(Uint64 sampleOffset);
+
+        ////////////////////////////////////////////////////////////
+        /// \brief Read audio samples from the open file
+        ///
+        /// \param samples  Pointer to the sample array to fill
+        /// \param maxCount Maximum number of samples to read
+        ///
+        /// \return Number of samples actually read (may be less than \a maxCount)
+        ///
+        ////////////////////////////////////////////////////////////
+        virtual Uint64 read(Int16* samples, Uint64 maxCount);
+
+public:
+        ////////////////////////////////////////////////////////////
+        /// \brief Hold the state that is passed to the decoder callbacks
+        ///
+        ////////////////////////////////////////////////////////////
+        struct ClientData
+        {
+                InputStream* stream;
+                SoundFileReader::Info info;
+                Int16* buffer;
+                Uint64 remaining;
+                std::vector<Int16> leftovers;
+                bool error;
+        };
 
 private:
+        ////////////////////////////////////////////////////////////
+        /// \brief Close the open FLAC file
+        ///
+        ////////////////////////////////////////////////////////////
+        void close();
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Close the open FLAC file
-    ///
-    ////////////////////////////////////////////////////////////
-    void close();
-
-    ////////////////////////////////////////////////////////////
-    // Member data
-    ////////////////////////////////////////////////////////////
-    FLAC__StreamDecoder* m_decoder;    //!< FLAC decoder
-    ClientData           m_clientData; //!< Structure passed to the decoder callbacks
+        ////////////////////////////////////////////////////////////
+        // Member data
+        ////////////////////////////////////////////////////////////
+        FLAC__StreamDecoder* m_decoder; //!< FLAC decoder
+        ClientData m_clientData;        //!< Structure passed to the decoder callbacks
 };
 
 } // namespace priv
 
 } // namespace sf
-
 
 #endif // SFML_SOUNDFILEREADERFLAC_HPP

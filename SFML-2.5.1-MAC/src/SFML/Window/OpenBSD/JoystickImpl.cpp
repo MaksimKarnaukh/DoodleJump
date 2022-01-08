@@ -27,69 +27,55 @@
 ////////////////////////////////////////////////////////////
 #include <SFML/Window/JoystickImpl.hpp>
 
-
-namespace sf
-{
-namespace priv
-{
+namespace sf {
+namespace priv {
 ////////////////////////////////////////////////////////////
 void JoystickImpl::initialize()
 {
-    // To implement
+        // To implement
 }
-
-
 
 ////////////////////////////////////////////////////////////
 void JoystickImpl::cleanup()
 {
-    // To implement
+        // To implement
 }
-
 
 ////////////////////////////////////////////////////////////
 bool JoystickImpl::isConnected(unsigned int index)
 {
-    // To implement
-    return false;
+        // To implement
+        return false;
 }
-
 
 ////////////////////////////////////////////////////////////
 bool JoystickImpl::open(unsigned int index)
 {
-    // To implement
-    return false;
+        // To implement
+        return false;
 }
-
 
 ////////////////////////////////////////////////////////////
 void JoystickImpl::close()
 {
-    // To implement
+        // To implement
 }
-
 
 ////////////////////////////////////////////////////////////
 JoystickCaps JoystickImpl::getCapabilities() const
 {
-    // To implement
-    return JoystickCaps();
+        // To implement
+        return JoystickCaps();
 }
-
 
 ////////////////////////////////////////////////////////////
-Joystick::Identification JoystickImpl::getIdentification() const
-{
-    return m_identification;
-}
-
+Joystick::Identification JoystickImpl::getIdentification() const { return m_identification; }
 
 ////////////////////////////////////////////////////////////
 JoystickState JoystickImpl::update()
 {
-    // To implement
-    return JoystickState();
+        // To implement
+        return JoystickState();
 }
 
 } // namespace priv

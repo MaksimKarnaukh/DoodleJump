@@ -4,5 +4,5 @@
 
 namespace representation {
 
-    Bonus_GR::Bonus_GR() = default;
+Bonus_GR::Bonus_GR() = default;
 }

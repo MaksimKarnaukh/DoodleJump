@@ -32,10 +32,8 @@
 #include <usbhid.h>
 #include <vector>
 
-namespace sf
-{
-namespace priv
-{
+namespace sf {
+namespace priv {
 ////////////////////////////////////////////////////////////
 /// \brief FreeBSD implementation of joysticks
 ///
@@ -44,86 +42,83 @@ namespace priv
 class JoystickImpl
 {
 public:
+        ////////////////////////////////////////////////////////////
+        /// \brief Perform the global initialization of the joystick module
+        ///
+        ////////////////////////////////////////////////////////////
+        static void initialize();
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Perform the global initialization of the joystick module
-    ///
-    ////////////////////////////////////////////////////////////
-    static void initialize();
+        ////////////////////////////////////////////////////////////
+        /// \brief Perform the global cleanup of the joystick module
+        ///
+        ////////////////////////////////////////////////////////////
+        static void cleanup();
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Perform the global cleanup of the joystick module
-    ///
-    ////////////////////////////////////////////////////////////
-    static void cleanup();
+        ////////////////////////////////////////////////////////////
+        /// \brief Check if a joystick is currently connected
+        ///
+        /// \param index Index of the joystick to check
+        ///
+        /// \return True if the joystick is connected, false otherwise
+        ///
+        ////////////////////////////////////////////////////////////
+        static bool isConnected(unsigned int index);
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Check if a joystick is currently connected
-    ///
-    /// \param index Index of the joystick to check
-    ///
-    /// \return True if the joystick is connected, false otherwise
-    ///
-    ////////////////////////////////////////////////////////////
-    static bool isConnected(unsigned int index);
+        ////////////////////////////////////////////////////////////
+        /// \brief Open the joystick
+        ///
+        /// \param index Index assigned to the joystick
+        ///
+        /// \return True on success, false on failure
+        ///
+        ////////////////////////////////////////////////////////////
+        bool open(unsigned int index);
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Open the joystick
-    ///
-    /// \param index Index assigned to the joystick
-    ///
-    /// \return True on success, false on failure
-    ///
-    ////////////////////////////////////////////////////////////
-    bool open(unsigned int index);
+        ////////////////////////////////////////////////////////////
+        /// \brief Close the joystick
+        ///
+        ////////////////////////////////////////////////////////////
+        void close();
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Close the joystick
-    ///
-    ////////////////////////////////////////////////////////////
-    void close();
+        ////////////////////////////////////////////////////////////
+        /// \brief Get the joystick capabilities
+        ///
+        /// \return Joystick capabilities
+        ///
+        ////////////////////////////////////////////////////////////
+        JoystickCaps getCapabilities() const;
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Get the joystick capabilities
-    ///
-    /// \return Joystick capabilities
-    ///
-    ////////////////////////////////////////////////////////////
-    JoystickCaps getCapabilities() const;
+        ////////////////////////////////////////////////////////////
+        /// \brief Get the joystick identification
+        ///
+        /// \return Joystick identification
+        ///
+        ////////////////////////////////////////////////////////////
+        Joystick::Identification getIdentification() const;
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Get the joystick identification
-    ///
-    /// \return Joystick identification
-    ///
-    ////////////////////////////////////////////////////////////
-    Joystick::Identification getIdentification() const;
-
-    ////////////////////////////////////////////////////////////
-    /// \brief Update the joystick and get its new state
-    ///
-    /// \return Joystick state
-    ///
-    ////////////////////////////////////////////////////////////
-    JoystickState update();
+        ////////////////////////////////////////////////////////////
+        /// \brief Update the joystick and get its new state
+        ///
+        /// \return Joystick state
+        ///
+        ////////////////////////////////////////////////////////////
+        JoystickState update();
 
 private:
-
-    ////////////////////////////////////////////////////////////
-    // Member data
-    ////////////////////////////////////////////////////////////
-    int                      m_file;           ///< File descriptor of the joystick
-    report_desc_t            m_desc;           ///< USB report descriptor
-    int                      m_id;             ///< USB id
-    std::vector<char>        m_buffer;         ///< USB HID buffer
-    int                      m_length;         ///< Buffer length
-    Joystick::Identification m_identification; ///< Joystick identification
-    JoystickState            m_state;          ///< Current state of the joystick
+        ////////////////////////////////////////////////////////////
+        // Member data
+        ////////////////////////////////////////////////////////////
+        int m_file;                                ///< File descriptor of the joystick
+        report_desc_t m_desc;                      ///< USB report descriptor
+        int m_id;                                  ///< USB id
+        std::vector<char> m_buffer;                ///< USB HID buffer
+        int m_length;                              ///< Buffer length
+        Joystick::Identification m_identification; ///< Joystick identification
+        JoystickState m_state;                     ///< Current state of the joystick
 };
 
 } // namespace priv
 
 } // namespace sf
-
 
 #endif // SFML_JOYSTICKIMPLFREEBSD_HPP

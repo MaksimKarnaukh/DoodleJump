@@ -32,11 +32,8 @@
 #include <SFML/Window/WindowHandle.hpp>
 #include <vector>
 
-
-namespace sf
-{
-namespace priv
-{
+namespace sf {
+namespace priv {
 ////////////////////////////////////////////////////////////
 /// \brief Windows implementation of Vulkan
 ///
@@ -44,60 +41,59 @@ namespace priv
 class VulkanImplWin32
 {
 public:
+        ////////////////////////////////////////////////////////////
+        /// \brief Tell whether or not the system supports Vulkan
+        ///
+        /// This function should always be called before using
+        /// the Vulkan features. If it returns false, then
+        /// any attempt to use Vulkan will fail.
+        ///
+        /// If only compute is required, set \a requireGraphics
+        /// to false to skip checking for the extensions necessary
+        /// for graphics rendering.
+        ///
+        /// \param requireGraphics
+        ///
+        /// \return True if Vulkan is supported, false otherwise
+        ///
+        ////////////////////////////////////////////////////////////
+        static bool isAvailable(bool requireGraphics = true);
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Tell whether or not the system supports Vulkan
-    ///
-    /// This function should always be called before using
-    /// the Vulkan features. If it returns false, then
-    /// any attempt to use Vulkan will fail.
-    ///
-    /// If only compute is required, set \a requireGraphics
-    /// to false to skip checking for the extensions necessary
-    /// for graphics rendering.
-    ///
-    /// \param requireGraphics
-    ///
-    /// \return True if Vulkan is supported, false otherwise
-    ///
-    ////////////////////////////////////////////////////////////
-    static bool isAvailable(bool requireGraphics = true);
+        ////////////////////////////////////////////////////////////
+        /// \brief Get the address of a Vulkan function
+        ///
+        /// \param name Name of the function to get the address of
+        ///
+        /// \return Address of the Vulkan function, 0 on failure
+        ///
+        ////////////////////////////////////////////////////////////
+        static VulkanFunctionPointer getFunction(const char* name);
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Get the address of a Vulkan function
-    ///
-    /// \param name Name of the function to get the address of
-    ///
-    /// \return Address of the Vulkan function, 0 on failure
-    ///
-    ////////////////////////////////////////////////////////////
-    static VulkanFunctionPointer getFunction(const char* name);
+        ////////////////////////////////////////////////////////////
+        /// \brief Get Vulkan instance extensions required for graphics
+        ///
+        /// \return Vulkan instance extensions required for graphics
+        ///
+        ////////////////////////////////////////////////////////////
+        static const std::vector<const char*>& getGraphicsRequiredInstanceExtensions();
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Get Vulkan instance extensions required for graphics
-    ///
-    /// \return Vulkan instance extensions required for graphics
-    ///
-    ////////////////////////////////////////////////////////////
-    static const std::vector<const char*>& getGraphicsRequiredInstanceExtensions();
-
-    ////////////////////////////////////////////////////////////
-    /// \brief Create a Vulkan rendering surface
-    ///
-    /// \param instance     Vulkan instance
-    /// \param windowHandle Handle to the window to create the surface for
-    /// \param surface      Created surface
-    /// \param allocator    Allocator to use
-    ///
-    /// \return True if surface creation was successful, false otherwise
-    ///
-    ////////////////////////////////////////////////////////////
-    static bool createVulkanSurface(const VkInstance& instance, WindowHandle windowHandle, VkSurfaceKHR& surface, const VkAllocationCallbacks* allocator);
+        ////////////////////////////////////////////////////////////
+        /// \brief Create a Vulkan rendering surface
+        ///
+        /// \param instance     Vulkan instance
+        /// \param windowHandle Handle to the window to create the surface for
+        /// \param surface      Created surface
+        /// \param allocator    Allocator to use
+        ///
+        /// \return True if surface creation was successful, false otherwise
+        ///
+        ////////////////////////////////////////////////////////////
+        static bool createVulkanSurface(const VkInstance& instance, WindowHandle windowHandle, VkSurfaceKHR& surface,
+                                        const VkAllocationCallbacks* allocator);
 };
 
 } // namespace priv
 
 } // namespace sf
-
 
 #endif // SFML_VULKANIMPLWIN32_HPP

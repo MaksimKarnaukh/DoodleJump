@@ -13,33 +13,31 @@
 #include <sstream>
 
 // Forward declarations for non-template types
-namespace sf
-{
-    class String;
-    class Time;
-}
+namespace sf {
+class String;
+class Time;
+} // namespace sf
 
 // String conversions for Catch framework
-namespace Catch
-{
-    std::string toString(const sf::String& string);
-    std::string toString(sf::Time time);
+namespace Catch {
+std::string toString(const sf::String& string);
+std::string toString(sf::Time time);
 
-    template <typename T>
-    std::string toString(const sf::Vector2<T>& vector)
-    {
+template <typename T>
+std::string toString(const sf::Vector2<T>& vector)
+{
         std::ostringstream stream;
         stream << "(" << vector.x << ", " << vector.y << ")";
         return stream.str();
-    }
+}
 
-    template <typename T>
-    std::string toString(const sf::Vector3<T>& vector)
-    {
+template <typename T>
+std::string toString(const sf::Vector3<T>& vector)
+{
         std::ostringstream stream;
         stream << "(" << vector.x << ", " << vector.y << ", " << vector.z << ")";
         return stream.str();
-    }
 }
+} // namespace Catch
 
 #endif // SFML_TESTUTILITIES_SYSTEM_HPP

@@ -7,27 +7,23 @@
 
 namespace representation {
 
-    class Platform_GR: public EntityView {
+class Platform_GR : public EntityView
+{
 
-    public:
-
+public:
         /**
-        * @function : Platform_GR
-        * Constructor for a Platform_GR.
-        */
+         * @function : Platform_GR
+         * Constructor for a Platform_GR.
+         */
         Platform_GR();
 
         /**
-        * @function : Platform_GR
-        * Destructor for a Platform_GR.
-        */
+         * @function : Platform_GR
+         * Destructor for a Platform_GR.
+         */
         ~Platform_GR() override = default;
+};
 
-    };
+} // namespace representation
 
-}
-
-
-
-
-#endif //DOODLEJUMP_PLATFORM_GR_H
+#endif // DOODLEJUMP_PLATFORM_GR_H

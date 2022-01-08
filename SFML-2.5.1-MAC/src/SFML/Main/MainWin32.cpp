@@ -23,14 +23,12 @@
 //
 ////////////////////////////////////////////////////////////
 
-
 ////////////////////////////////////////////////////////////
 // Windows specific: we define the WinMain entry point,
 // so that developers can use the standard main function
 // even in a Win32 Application project, and thus keep a
 // portable code
 ////////////////////////////////////////////////////////////
-
 
 ////////////////////////////////////////////////////////////
 // Headers
@@ -44,10 +42,6 @@
 extern int main(int argc, char* argv[]);
 
 ////////////////////////////////////////////////////////////
-int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT)
-{
-    return main(__argc, __argv);
-}
+int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, INT) { return main(__argc, __argv); }
 
 #endif // SFML_SYSTEM_WINDOWS
-

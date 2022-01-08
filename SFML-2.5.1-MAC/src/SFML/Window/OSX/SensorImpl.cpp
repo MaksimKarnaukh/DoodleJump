@@ -27,60 +27,51 @@
 ////////////////////////////////////////////////////////////
 #include <SFML/Window/SensorImpl.hpp>
 
-
-namespace sf
-{
-namespace priv
-{
+namespace sf {
+namespace priv {
 ////////////////////////////////////////////////////////////
 void SensorImpl::initialize()
 {
-    // To be implemented
+        // To be implemented
 }
-
 
 ////////////////////////////////////////////////////////////
 void SensorImpl::cleanup()
 {
-    // To be implemented
+        // To be implemented
 }
-
 
 ////////////////////////////////////////////////////////////
 bool SensorImpl::isAvailable(Sensor::Type /*sensor*/)
 {
-    // To be implemented
-    return false;
+        // To be implemented
+        return false;
 }
-
 
 ////////////////////////////////////////////////////////////
 bool SensorImpl::open(Sensor::Type /*sensor*/)
 {
-    // To be implemented
-    return false;
+        // To be implemented
+        return false;
 }
-
 
 ////////////////////////////////////////////////////////////
 void SensorImpl::close()
 {
-    // To be implemented
+        // To be implemented
 }
-
 
 ////////////////////////////////////////////////////////////
 Vector3f SensorImpl::update()
 {
-    // To be implemented
-    return Vector3f(0, 0, 0);
+        // To be implemented
+        return Vector3f(0, 0, 0);
 }
-
 
 ////////////////////////////////////////////////////////////
 void SensorImpl::setEnabled(bool /*enabled*/)
 {
-    // To be implemented
+        // To be implemented
 }
 
 } // namespace priv

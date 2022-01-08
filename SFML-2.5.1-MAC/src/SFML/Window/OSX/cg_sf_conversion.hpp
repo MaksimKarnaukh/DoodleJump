@@ -29,13 +29,11 @@
 ////////////////////////////////////////////////////////////
 // Headers
 ////////////////////////////////////////////////////////////
-#include <SFML/Window/VideoMode.hpp>
 #include <ApplicationServices/ApplicationServices.h>
+#include <SFML/Window/VideoMode.hpp>
 
-namespace sf
-{
-namespace priv
-{
+namespace sf {
+namespace priv {
 ////////////////////////////////////////////////////////////
 /// \brief Get bpp of a video mode for OS 10.6 or later
 ///

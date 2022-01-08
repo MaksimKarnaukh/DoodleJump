@@ -25,77 +25,67 @@
 ////////////////////////////////////////////////////////////
 // Headers
 ////////////////////////////////////////////////////////////
-#include <SFML/Window/Win32/ClipboardImpl.hpp>
 #include <SFML/System/String.hpp>
+#include <SFML/Window/Win32/ClipboardImpl.hpp>
 #include <iostream>
 #include <windows.h>
 
-
-namespace sf
-{
-namespace priv
-{
+namespace sf {
+namespace priv {
 ////////////////////////////////////////////////////////////
 String ClipboardImpl::getString()
 {
-    String text;
+        String text;
 
-    if (!IsClipboardFormatAvailable(CF_UNICODETEXT))
-    {
-        std::cerr << "Failed to get the clipboard data in Unicode format." << std::endl;
-        return text;
-    }
+        if (!IsClipboardFormatAvailable(CF_UNICODETEXT)) {
+                std::cerr << "Failed to get the clipboard data in Unicode format." << std::endl;
+                return text;
+        }
 
-    if (!OpenClipboard(NULL))
-    {
-        std::cerr << "Failed to open the Win32 clipboard." << std::endl;
-        return text;
-    }
+        if (!OpenClipboard(NULL)) {
+                std::cerr << "Failed to open the Win32 clipboard." << std::endl;
+                return text;
+        }
 
-    HANDLE clipboard_handle = GetClipboardData(CF_UNICODETEXT);
+        HANDLE clipboard_handle = GetClipboardData(CF_UNICODETEXT);
 
-    if (!clipboard_handle)
-    {
-        std::cerr << "Failed to get Win32 handle for clipboard content." << std::endl;
+        if (!clipboard_handle) {
+                std::cerr << "Failed to get Win32 handle for clipboard content." << std::endl;
+                CloseClipboard();
+                return text;
+        }
+
+        text = String(static_cast<wchar_t*>(GlobalLock(clipboard_handle)));
+        GlobalUnlock(clipboard_handle);
+
         CloseClipboard();
         return text;
-    }
-
-    text = String(static_cast<wchar_t*>(GlobalLock(clipboard_handle)));
-    GlobalUnlock(clipboard_handle);
-
-    CloseClipboard();
-    return text;
 }
-
 
 ////////////////////////////////////////////////////////////
 void ClipboardImpl::setString(const String& text)
 {
-    if (!OpenClipboard(NULL))
-    {
-        std::cerr << "Failed to open the Win32 clipboard." << std::endl;
-        return;
-    }
+        if (!OpenClipboard(NULL)) {
+                std::cerr << "Failed to open the Win32 clipboard." << std::endl;
+                return;
+        }
 
-    if (!EmptyClipboard())
-    {
-        std::cerr << "Failed to empty the Win32 clipboard." << std::endl;
-        return;
-    }
+        if (!EmptyClipboard()) {
+                std::cerr << "Failed to empty the Win32 clipboard." << std::endl;
+                return;
+        }
 
-    // Create a Win32-compatible string
-    size_t string_size = (text.getSize() + 1) * sizeof(WCHAR);
-    HANDLE string_handle = GlobalAlloc(GMEM_MOVEABLE, string_size);
+        // Create a Win32-compatible string
+        size_t string_size = (text.getSize() + 1) * sizeof(WCHAR);
+        HANDLE string_handle = GlobalAlloc(GMEM_MOVEABLE, string_size);
 
-    if (string_handle)
-    {
-        memcpy(GlobalLock(string_handle), text.toWideString().data(), string_size);
-        GlobalUnlock(string_handle);
-        SetClipboardData(CF_UNICODETEXT, string_handle);
-    }
+        if (string_handle) {
+                memcpy(GlobalLock(string_handle), text.toWideString().data(), string_size);
+                GlobalUnlock(string_handle);
+                SetClipboardData(CF_UNICODETEXT, string_handle);
+        }
 
-    CloseClipboard();
+        CloseClipboard();
 }
 
 } // namespace priv

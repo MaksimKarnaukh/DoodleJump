@@ -28,57 +28,43 @@
 #include <SFML/Graphics/CircleShape.hpp>
 #include <cmath>
 
-
-namespace sf
-{
+namespace sf {
 ////////////////////////////////////////////////////////////
-CircleShape::CircleShape(float radius, std::size_t pointCount) :
-m_radius    (radius),
-m_pointCount(pointCount)
+CircleShape::CircleShape(float radius, std::size_t pointCount) : m_radius(radius), m_pointCount(pointCount)
 {
-    update();
+        update();
 }
-
 
 ////////////////////////////////////////////////////////////
 void CircleShape::setRadius(float radius)
 {
-    m_radius = radius;
-    update();
+        m_radius = radius;
+        update();
 }
-
 
 ////////////////////////////////////////////////////////////
-float CircleShape::getRadius() const
-{
-    return m_radius;
-}
-
+float CircleShape::getRadius() const { return m_radius; }
 
 ////////////////////////////////////////////////////////////
 void CircleShape::setPointCount(std::size_t count)
 {
-    m_pointCount = count;
-    update();
+        m_pointCount = count;
+        update();
 }
 
 ////////////////////////////////////////////////////////////
-std::size_t CircleShape::getPointCount() const
-{
-    return m_pointCount;
-}
-
+std::size_t CircleShape::getPointCount() const { return m_pointCount; }
 
 ////////////////////////////////////////////////////////////
 Vector2f CircleShape::getPoint(std::size_t index) const
 {
-    static const float pi = 3.141592654f;
+        static const float pi = 3.141592654f;
 
-    float angle = index * 2 * pi / m_pointCount - pi / 2;
-    float x = std::cos(angle) * m_radius;
-    float y = std::sin(angle) * m_radius;
+        float angle = index * 2 * pi / m_pointCount - pi / 2;
+        float x = std::cos(angle) * m_radius;
+        float y = std::sin(angle) * m_radius;
 
-    return Vector2f(m_radius + x, m_radius + y);
+        return Vector2f(m_radius + x, m_radius + y);
 }
 
 } // namespace sf

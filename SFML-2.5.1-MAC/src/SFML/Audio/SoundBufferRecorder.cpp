@@ -29,48 +29,39 @@
 #include <algorithm>
 #include <iterator>
 
-
-namespace sf
-{
+namespace sf {
 ////////////////////////////////////////////////////////////
 SoundBufferRecorder::~SoundBufferRecorder()
 {
-    // Make sure to stop the recording thread
-    stop();
+        // Make sure to stop the recording thread
+        stop();
 }
-
 
 ////////////////////////////////////////////////////////////
 bool SoundBufferRecorder::onStart()
 {
-    m_samples.clear();
-    m_buffer = SoundBuffer();
+        m_samples.clear();
+        m_buffer = SoundBuffer();
 
-    return true;
+        return true;
 }
-
 
 ////////////////////////////////////////////////////////////
 bool SoundBufferRecorder::onProcessSamples(const Int16* samples, std::size_t sampleCount)
 {
-    std::copy(samples, samples + sampleCount, std::back_inserter(m_samples));
+        std::copy(samples, samples + sampleCount, std::back_inserter(m_samples));
 
-    return true;
+        return true;
 }
-
 
 ////////////////////////////////////////////////////////////
 void SoundBufferRecorder::onStop()
 {
-    if (!m_samples.empty())
-        m_buffer.loadFromSamples(&m_samples[0], m_samples.size(), getChannelCount(), getSampleRate());
+        if (!m_samples.empty())
+                m_buffer.loadFromSamples(&m_samples[0], m_samples.size(), getChannelCount(), getSampleRate());
 }
-
 
 ////////////////////////////////////////////////////////////
-const SoundBuffer& SoundBufferRecorder::getBuffer() const
-{
-    return m_buffer;
-}
+const SoundBuffer& SoundBufferRecorder::getBuffer() const { return m_buffer; }
 
 } // namespace sf

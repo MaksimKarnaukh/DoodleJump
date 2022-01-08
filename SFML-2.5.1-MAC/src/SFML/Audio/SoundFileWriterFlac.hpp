@@ -28,15 +28,12 @@
 ////////////////////////////////////////////////////////////
 // Headers
 ////////////////////////////////////////////////////////////
-#include <SFML/Audio/SoundFileWriter.hpp>
 #include <FLAC/stream_encoder.h>
+#include <SFML/Audio/SoundFileWriter.hpp>
 #include <vector>
 
-
-namespace sf
-{
-namespace priv
-{
+namespace sf {
+namespace priv {
 ////////////////////////////////////////////////////////////
 /// \brief Implementation of sound file writer that handles FLAC files
 ///
@@ -44,71 +41,67 @@ namespace priv
 class SoundFileWriterFlac : public SoundFileWriter
 {
 public:
-
-    ////////////////////////////////////////////////////////////
-    /// \brief Check if this writer can handle a file on disk
-    ///
-    /// \param filename Path of the sound file to check
-    ///
-    /// \return True if the file can be written by this writer
-    ///
-    ////////////////////////////////////////////////////////////
-    static bool check(const std::string& filename);
+        ////////////////////////////////////////////////////////////
+        /// \brief Check if this writer can handle a file on disk
+        ///
+        /// \param filename Path of the sound file to check
+        ///
+        /// \return True if the file can be written by this writer
+        ///
+        ////////////////////////////////////////////////////////////
+        static bool check(const std::string& filename);
 
 public:
+        ////////////////////////////////////////////////////////////
+        /// \brief Default constructor
+        ///
+        ////////////////////////////////////////////////////////////
+        SoundFileWriterFlac();
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Default constructor
-    ///
-    ////////////////////////////////////////////////////////////
-    SoundFileWriterFlac();
+        ////////////////////////////////////////////////////////////
+        /// \brief Destructor
+        ///
+        ////////////////////////////////////////////////////////////
+        ~SoundFileWriterFlac();
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Destructor
-    ///
-    ////////////////////////////////////////////////////////////
-    ~SoundFileWriterFlac();
+        ////////////////////////////////////////////////////////////
+        /// \brief Open a sound file for writing
+        ///
+        /// \param filename     Path of the file to open
+        /// \param sampleRate   Sample rate of the sound
+        /// \param channelCount Number of channels of the sound
+        ///
+        /// \return True if the file was successfully opened
+        ///
+        ////////////////////////////////////////////////////////////
+        virtual bool open(const std::string& filename, unsigned int sampleRate, unsigned int channelCount);
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Open a sound file for writing
-    ///
-    /// \param filename     Path of the file to open
-    /// \param sampleRate   Sample rate of the sound
-    /// \param channelCount Number of channels of the sound
-    ///
-    /// \return True if the file was successfully opened
-    ///
-    ////////////////////////////////////////////////////////////
-    virtual bool open(const std::string& filename, unsigned int sampleRate, unsigned int channelCount);
-
-    ////////////////////////////////////////////////////////////
-    /// \brief Write audio samples to the open file
-    ///
-    /// \param samples Pointer to the sample array to write
-    /// \param count   Number of samples to write
-    ///
-    ////////////////////////////////////////////////////////////
-    virtual void write(const Int16* samples, Uint64 count);
+        ////////////////////////////////////////////////////////////
+        /// \brief Write audio samples to the open file
+        ///
+        /// \param samples Pointer to the sample array to write
+        /// \param count   Number of samples to write
+        ///
+        ////////////////////////////////////////////////////////////
+        virtual void write(const Int16* samples, Uint64 count);
 
 private:
+        ////////////////////////////////////////////////////////////
+        /// \brief Close the file
+        ///
+        ////////////////////////////////////////////////////////////
+        void close();
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Close the file
-    ///
-    ////////////////////////////////////////////////////////////
-    void close();
-
-    ////////////////////////////////////////////////////////////
-    // Member data
-    ////////////////////////////////////////////////////////////
-    FLAC__StreamEncoder* m_encoder;      //!< FLAC stream encoder
-    unsigned int         m_channelCount; //!< Number of channels
-    std::vector<Int32>   m_samples32;    //!< Conversion buffer
+        ////////////////////////////////////////////////////////////
+        // Member data
+        ////////////////////////////////////////////////////////////
+        FLAC__StreamEncoder* m_encoder; //!< FLAC stream encoder
+        unsigned int m_channelCount;    //!< Number of channels
+        std::vector<Int32> m_samples32; //!< Conversion buffer
 };
 
 } // namespace priv
 
 } // namespace sf
-
 
 #endif // SFML_SOUNDFILEWRITERFLAC_HPP

@@ -33,14 +33,13 @@
 #ifndef FLAC__STREAM_DECODER_H
 #define FLAC__STREAM_DECODER_H
 
-#include <stdio.h> /* for FILE */
 #include "export.h"
 #include "format.h"
+#include <stdio.h> /* for FILE */
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-
 
 /** \file include/FLAC/stream_decoder.h
  *
@@ -194,52 +193,52 @@ extern "C" {
  * \{
  */
 
-
 /** State values for a FLAC__StreamDecoder
  *
  * The decoder's state can be obtained by calling FLAC__stream_decoder_get_state().
  */
-typedef enum {
+typedef enum
+{
 
-	FLAC__STREAM_DECODER_SEARCH_FOR_METADATA = 0,
-	/**< The decoder is ready to search for metadata. */
+        FLAC__STREAM_DECODER_SEARCH_FOR_METADATA = 0,
+        /**< The decoder is ready to search for metadata. */
 
-	FLAC__STREAM_DECODER_READ_METADATA,
-	/**< The decoder is ready to or is in the process of reading metadata. */
+        FLAC__STREAM_DECODER_READ_METADATA,
+        /**< The decoder is ready to or is in the process of reading metadata. */
 
-	FLAC__STREAM_DECODER_SEARCH_FOR_FRAME_SYNC,
-	/**< The decoder is ready to or is in the process of searching for the
-	 * frame sync code.
-	 */
+        FLAC__STREAM_DECODER_SEARCH_FOR_FRAME_SYNC,
+        /**< The decoder is ready to or is in the process of searching for the
+         * frame sync code.
+         */
 
-	FLAC__STREAM_DECODER_READ_FRAME,
-	/**< The decoder is ready to or is in the process of reading a frame. */
+        FLAC__STREAM_DECODER_READ_FRAME,
+        /**< The decoder is ready to or is in the process of reading a frame. */
 
-	FLAC__STREAM_DECODER_END_OF_STREAM,
-	/**< The decoder has reached the end of the stream. */
+        FLAC__STREAM_DECODER_END_OF_STREAM,
+        /**< The decoder has reached the end of the stream. */
 
-	FLAC__STREAM_DECODER_OGG_ERROR,
-	/**< An error occurred in the underlying Ogg layer.  */
+        FLAC__STREAM_DECODER_OGG_ERROR,
+        /**< An error occurred in the underlying Ogg layer.  */
 
-	FLAC__STREAM_DECODER_SEEK_ERROR,
-	/**< An error occurred while seeking.  The decoder must be flushed
-	 * with FLAC__stream_decoder_flush() or reset with
-	 * FLAC__stream_decoder_reset() before decoding can continue.
-	 */
+        FLAC__STREAM_DECODER_SEEK_ERROR,
+        /**< An error occurred while seeking.  The decoder must be flushed
+         * with FLAC__stream_decoder_flush() or reset with
+         * FLAC__stream_decoder_reset() before decoding can continue.
+         */
 
-	FLAC__STREAM_DECODER_ABORTED,
-	/**< The decoder was aborted by the read callback. */
+        FLAC__STREAM_DECODER_ABORTED,
+        /**< The decoder was aborted by the read callback. */
 
-	FLAC__STREAM_DECODER_MEMORY_ALLOCATION_ERROR,
-	/**< An error occurred allocating memory.  The decoder is in an invalid
-	 * state and can no longer be used.
-	 */
+        FLAC__STREAM_DECODER_MEMORY_ALLOCATION_ERROR,
+        /**< An error occurred allocating memory.  The decoder is in an invalid
+         * state and can no longer be used.
+         */
 
-	FLAC__STREAM_DECODER_UNINITIALIZED
-	/**< The decoder is in the uninitialized state; one of the
-	 * FLAC__stream_decoder_init_*() functions must be called before samples
-	 * can be processed.
-	 */
+        FLAC__STREAM_DECODER_UNINITIALIZED
+        /**< The decoder is in the uninitialized state; one of the
+         * FLAC__stream_decoder_init_*() functions must be called before samples
+         * can be processed.
+         */
 
 } FLAC__StreamDecoderState;
 
@@ -248,36 +247,36 @@ typedef enum {
  *  Using a FLAC__StreamDecoderState as the index to this array
  *  will give the string equivalent.  The contents should not be modified.
  */
-extern FLAC_API const char * const FLAC__StreamDecoderStateString[];
-
+extern FLAC_API const char* const FLAC__StreamDecoderStateString[];
 
 /** Possible return values for the FLAC__stream_decoder_init_*() functions.
  */
-typedef enum {
+typedef enum
+{
 
-	FLAC__STREAM_DECODER_INIT_STATUS_OK = 0,
-	/**< Initialization was successful. */
+        FLAC__STREAM_DECODER_INIT_STATUS_OK = 0,
+        /**< Initialization was successful. */
 
-	FLAC__STREAM_DECODER_INIT_STATUS_UNSUPPORTED_CONTAINER,
-	/**< The library was not compiled with support for the given container
-	 * format.
-	 */
+        FLAC__STREAM_DECODER_INIT_STATUS_UNSUPPORTED_CONTAINER,
+        /**< The library was not compiled with support for the given container
+         * format.
+         */
 
-	FLAC__STREAM_DECODER_INIT_STATUS_INVALID_CALLBACKS,
-	/**< A required callback was not supplied. */
+        FLAC__STREAM_DECODER_INIT_STATUS_INVALID_CALLBACKS,
+        /**< A required callback was not supplied. */
 
-	FLAC__STREAM_DECODER_INIT_STATUS_MEMORY_ALLOCATION_ERROR,
-	/**< An error occurred allocating memory. */
+        FLAC__STREAM_DECODER_INIT_STATUS_MEMORY_ALLOCATION_ERROR,
+        /**< An error occurred allocating memory. */
 
-	FLAC__STREAM_DECODER_INIT_STATUS_ERROR_OPENING_FILE,
-	/**< fopen() failed in FLAC__stream_decoder_init_file() or
-	 * FLAC__stream_decoder_init_ogg_file(). */
+        FLAC__STREAM_DECODER_INIT_STATUS_ERROR_OPENING_FILE,
+        /**< fopen() failed in FLAC__stream_decoder_init_file() or
+         * FLAC__stream_decoder_init_ogg_file(). */
 
-	FLAC__STREAM_DECODER_INIT_STATUS_ALREADY_INITIALIZED
-	/**< FLAC__stream_decoder_init_*() was called when the decoder was
-	 * already initialized, usually because
-	 * FLAC__stream_decoder_finish() was not called.
-	 */
+        FLAC__STREAM_DECODER_INIT_STATUS_ALREADY_INITIALIZED
+        /**< FLAC__stream_decoder_init_*() was called when the decoder was
+         * already initialized, usually because
+         * FLAC__stream_decoder_finish() was not called.
+         */
 
 } FLAC__StreamDecoderInitStatus;
 
@@ -286,29 +285,29 @@ typedef enum {
  *  Using a FLAC__StreamDecoderInitStatus as the index to this array
  *  will give the string equivalent.  The contents should not be modified.
  */
-extern FLAC_API const char * const FLAC__StreamDecoderInitStatusString[];
-
+extern FLAC_API const char* const FLAC__StreamDecoderInitStatusString[];
 
 /** Return values for the FLAC__StreamDecoder read callback.
  */
-typedef enum {
+typedef enum
+{
 
-	FLAC__STREAM_DECODER_READ_STATUS_CONTINUE,
-	/**< The read was OK and decoding can continue. */
+        FLAC__STREAM_DECODER_READ_STATUS_CONTINUE,
+        /**< The read was OK and decoding can continue. */
 
-	FLAC__STREAM_DECODER_READ_STATUS_END_OF_STREAM,
-	/**< The read was attempted while at the end of the stream.  Note that
-	 * the client must only return this value when the read callback was
-	 * called when already at the end of the stream.  Otherwise, if the read
-	 * itself moves to the end of the stream, the client should still return
-	 * the data and \c FLAC__STREAM_DECODER_READ_STATUS_CONTINUE, and then on
-	 * the next read callback it should return
-	 * \c FLAC__STREAM_DECODER_READ_STATUS_END_OF_STREAM with a byte count
-	 * of \c 0.
-	 */
+        FLAC__STREAM_DECODER_READ_STATUS_END_OF_STREAM,
+        /**< The read was attempted while at the end of the stream.  Note that
+         * the client must only return this value when the read callback was
+         * called when already at the end of the stream.  Otherwise, if the read
+         * itself moves to the end of the stream, the client should still return
+         * the data and \c FLAC__STREAM_DECODER_READ_STATUS_CONTINUE, and then on
+         * the next read callback it should return
+         * \c FLAC__STREAM_DECODER_READ_STATUS_END_OF_STREAM with a byte count
+         * of \c 0.
+         */
 
-	FLAC__STREAM_DECODER_READ_STATUS_ABORT
-	/**< An unrecoverable error occurred.  The decoder will return from the process call. */
+        FLAC__STREAM_DECODER_READ_STATUS_ABORT
+        /**< An unrecoverable error occurred.  The decoder will return from the process call. */
 
 } FLAC__StreamDecoderReadStatus;
 
@@ -317,21 +316,21 @@ typedef enum {
  *  Using a FLAC__StreamDecoderReadStatus as the index to this array
  *  will give the string equivalent.  The contents should not be modified.
  */
-extern FLAC_API const char * const FLAC__StreamDecoderReadStatusString[];
-
+extern FLAC_API const char* const FLAC__StreamDecoderReadStatusString[];
 
 /** Return values for the FLAC__StreamDecoder seek callback.
  */
-typedef enum {
+typedef enum
+{
 
-	FLAC__STREAM_DECODER_SEEK_STATUS_OK,
-	/**< The seek was OK and decoding can continue. */
+        FLAC__STREAM_DECODER_SEEK_STATUS_OK,
+        /**< The seek was OK and decoding can continue. */
 
-	FLAC__STREAM_DECODER_SEEK_STATUS_ERROR,
-	/**< An unrecoverable error occurred.  The decoder will return from the process call. */
+        FLAC__STREAM_DECODER_SEEK_STATUS_ERROR,
+        /**< An unrecoverable error occurred.  The decoder will return from the process call. */
 
-	FLAC__STREAM_DECODER_SEEK_STATUS_UNSUPPORTED
-	/**< Client does not support seeking. */
+        FLAC__STREAM_DECODER_SEEK_STATUS_UNSUPPORTED
+        /**< Client does not support seeking. */
 
 } FLAC__StreamDecoderSeekStatus;
 
@@ -340,21 +339,21 @@ typedef enum {
  *  Using a FLAC__StreamDecoderSeekStatus as the index to this array
  *  will give the string equivalent.  The contents should not be modified.
  */
-extern FLAC_API const char * const FLAC__StreamDecoderSeekStatusString[];
-
+extern FLAC_API const char* const FLAC__StreamDecoderSeekStatusString[];
 
 /** Return values for the FLAC__StreamDecoder tell callback.
  */
-typedef enum {
+typedef enum
+{
 
-	FLAC__STREAM_DECODER_TELL_STATUS_OK,
-	/**< The tell was OK and decoding can continue. */
+        FLAC__STREAM_DECODER_TELL_STATUS_OK,
+        /**< The tell was OK and decoding can continue. */
 
-	FLAC__STREAM_DECODER_TELL_STATUS_ERROR,
-	/**< An unrecoverable error occurred.  The decoder will return from the process call. */
+        FLAC__STREAM_DECODER_TELL_STATUS_ERROR,
+        /**< An unrecoverable error occurred.  The decoder will return from the process call. */
 
-	FLAC__STREAM_DECODER_TELL_STATUS_UNSUPPORTED
-	/**< Client does not support telling the position. */
+        FLAC__STREAM_DECODER_TELL_STATUS_UNSUPPORTED
+        /**< Client does not support telling the position. */
 
 } FLAC__StreamDecoderTellStatus;
 
@@ -363,21 +362,21 @@ typedef enum {
  *  Using a FLAC__StreamDecoderTellStatus as the index to this array
  *  will give the string equivalent.  The contents should not be modified.
  */
-extern FLAC_API const char * const FLAC__StreamDecoderTellStatusString[];
-
+extern FLAC_API const char* const FLAC__StreamDecoderTellStatusString[];
 
 /** Return values for the FLAC__StreamDecoder length callback.
  */
-typedef enum {
+typedef enum
+{
 
-	FLAC__STREAM_DECODER_LENGTH_STATUS_OK,
-	/**< The length call was OK and decoding can continue. */
+        FLAC__STREAM_DECODER_LENGTH_STATUS_OK,
+        /**< The length call was OK and decoding can continue. */
 
-	FLAC__STREAM_DECODER_LENGTH_STATUS_ERROR,
-	/**< An unrecoverable error occurred.  The decoder will return from the process call. */
+        FLAC__STREAM_DECODER_LENGTH_STATUS_ERROR,
+        /**< An unrecoverable error occurred.  The decoder will return from the process call. */
 
-	FLAC__STREAM_DECODER_LENGTH_STATUS_UNSUPPORTED
-	/**< Client does not support reporting the length. */
+        FLAC__STREAM_DECODER_LENGTH_STATUS_UNSUPPORTED
+        /**< Client does not support reporting the length. */
 
 } FLAC__StreamDecoderLengthStatus;
 
@@ -386,18 +385,18 @@ typedef enum {
  *  Using a FLAC__StreamDecoderLengthStatus as the index to this array
  *  will give the string equivalent.  The contents should not be modified.
  */
-extern FLAC_API const char * const FLAC__StreamDecoderLengthStatusString[];
-
+extern FLAC_API const char* const FLAC__StreamDecoderLengthStatusString[];
 
 /** Return values for the FLAC__StreamDecoder write callback.
  */
-typedef enum {
+typedef enum
+{
 
-	FLAC__STREAM_DECODER_WRITE_STATUS_CONTINUE,
-	/**< The write was OK and decoding can continue. */
+        FLAC__STREAM_DECODER_WRITE_STATUS_CONTINUE,
+        /**< The write was OK and decoding can continue. */
 
-	FLAC__STREAM_DECODER_WRITE_STATUS_ABORT
-	/**< An unrecoverable error occurred.  The decoder will return from the process call. */
+        FLAC__STREAM_DECODER_WRITE_STATUS_ABORT
+        /**< An unrecoverable error occurred.  The decoder will return from the process call. */
 
 } FLAC__StreamDecoderWriteStatus;
 
@@ -406,8 +405,7 @@ typedef enum {
  *  Using a FLAC__StreamDecoderWriteStatus as the index to this array
  *  will give the string equivalent.  The contents should not be modified.
  */
-extern FLAC_API const char * const FLAC__StreamDecoderWriteStatusString[];
-
+extern FLAC_API const char* const FLAC__StreamDecoderWriteStatusString[];
 
 /** Possible values passed back to the FLAC__StreamDecoder error callback.
  *  \c FLAC__STREAM_DECODER_ERROR_STATUS_LOST_SYNC is the generic catch-
@@ -424,19 +422,20 @@ extern FLAC_API const char * const FLAC__StreamDecoderWriteStatusString[];
  *  sync making it appear as though an encountered frame was generated by
  *  a future encoder.
  */
-typedef enum {
+typedef enum
+{
 
-	FLAC__STREAM_DECODER_ERROR_STATUS_LOST_SYNC,
-	/**< An error in the stream caused the decoder to lose synchronization. */
+        FLAC__STREAM_DECODER_ERROR_STATUS_LOST_SYNC,
+        /**< An error in the stream caused the decoder to lose synchronization. */
 
-	FLAC__STREAM_DECODER_ERROR_STATUS_BAD_HEADER,
-	/**< The decoder encountered a corrupted frame header. */
+        FLAC__STREAM_DECODER_ERROR_STATUS_BAD_HEADER,
+        /**< The decoder encountered a corrupted frame header. */
 
-	FLAC__STREAM_DECODER_ERROR_STATUS_FRAME_CRC_MISMATCH,
-	/**< The frame's data did not match the CRC in the footer. */
+        FLAC__STREAM_DECODER_ERROR_STATUS_FRAME_CRC_MISMATCH,
+        /**< The frame's data did not match the CRC in the footer. */
 
-	FLAC__STREAM_DECODER_ERROR_STATUS_UNPARSEABLE_STREAM
-	/**< The decoder encountered reserved fields in use in the stream. */
+        FLAC__STREAM_DECODER_ERROR_STATUS_UNPARSEABLE_STREAM
+        /**< The decoder encountered reserved fields in use in the stream. */
 
 } FLAC__StreamDecoderErrorStatus;
 
@@ -445,8 +444,7 @@ typedef enum {
  *  Using a FLAC__StreamDecoderErrorStatus as the index to this array
  *  will give the string equivalent.  The contents should not be modified.
  */
-extern FLAC_API const char * const FLAC__StreamDecoderErrorStatusString[];
-
+extern FLAC_API const char* const FLAC__StreamDecoderErrorStatusString[];
 
 /***********************************************************************
  *
@@ -460,9 +458,10 @@ struct FLAC__StreamDecoderPrivate;
  *  See the \link flac_stream_decoder stream decoder module \endlink
  *  for a detailed description.
  */
-typedef struct {
-	struct FLAC__StreamDecoderProtected *protected_; /* avoid the C++ keyword 'protected' */
-	struct FLAC__StreamDecoderPrivate *private_; /* avoid the C++ keyword 'private' */
+typedef struct
+{
+        struct FLAC__StreamDecoderProtected* protected_; /* avoid the C++ keyword 'protected' */
+        struct FLAC__StreamDecoderPrivate* private_;     /* avoid the C++ keyword 'private' */
 } FLAC__StreamDecoder;
 
 /** Signature for the read callback.
@@ -478,7 +477,8 @@ typedef struct {
  *
  * Here is an example of a read callback for stdio streams:
  * \code
- * FLAC__StreamDecoderReadStatus read_cb(const FLAC__StreamDecoder *decoder, FLAC__byte buffer[], size_t *bytes, void *client_data)
+ * FLAC__StreamDecoderReadStatus read_cb(const FLAC__StreamDecoder *decoder, FLAC__byte buffer[], size_t *bytes, void
+ * *client_data)
  * {
  *   FILE *file = ((MyClientData*)client_data)->file;
  *   if(*bytes > 0) {
@@ -514,7 +514,9 @@ typedef struct {
  *    \c FLAC__STREAM_DECODER_READ_STATUS_END_OF_STREAM if and only if
  *    zero bytes were read and there is no more data to be read.
  */
-typedef FLAC__StreamDecoderReadStatus (*FLAC__StreamDecoderReadCallback)(const FLAC__StreamDecoder *decoder, FLAC__byte buffer[], size_t *bytes, void *client_data);
+typedef FLAC__StreamDecoderReadStatus (*FLAC__StreamDecoderReadCallback)(const FLAC__StreamDecoder* decoder,
+                                                                         FLAC__byte buffer[], size_t* bytes,
+                                                                         void* client_data);
 
 /** Signature for the seek callback.
  *
@@ -526,7 +528,8 @@ typedef FLAC__StreamDecoderReadStatus (*FLAC__StreamDecoderReadCallback)(const F
  *
  * Here is an example of a seek callback for stdio streams:
  * \code
- * FLAC__StreamDecoderSeekStatus seek_cb(const FLAC__StreamDecoder *decoder, FLAC__uint64 absolute_byte_offset, void *client_data)
+ * FLAC__StreamDecoderSeekStatus seek_cb(const FLAC__StreamDecoder *decoder, FLAC__uint64 absolute_byte_offset, void
+ * *client_data)
  * {
  *   FILE *file = ((MyClientData*)client_data)->file;
  *   if(file == stdin)
@@ -549,7 +552,9 @@ typedef FLAC__StreamDecoderReadStatus (*FLAC__StreamDecoderReadCallback)(const F
  * \retval FLAC__StreamDecoderSeekStatus
  *    The callee's return status.
  */
-typedef FLAC__StreamDecoderSeekStatus (*FLAC__StreamDecoderSeekCallback)(const FLAC__StreamDecoder *decoder, FLAC__uint64 absolute_byte_offset, void *client_data);
+typedef FLAC__StreamDecoderSeekStatus (*FLAC__StreamDecoderSeekCallback)(const FLAC__StreamDecoder* decoder,
+                                                                         FLAC__uint64 absolute_byte_offset,
+                                                                         void* client_data);
 
 /** Signature for the tell callback.
  *
@@ -561,7 +566,8 @@ typedef FLAC__StreamDecoderSeekStatus (*FLAC__StreamDecoderSeekCallback)(const F
  *
  * Here is an example of a tell callback for stdio streams:
  * \code
- * FLAC__StreamDecoderTellStatus tell_cb(const FLAC__StreamDecoder *decoder, FLAC__uint64 *absolute_byte_offset, void *client_data)
+ * FLAC__StreamDecoderTellStatus tell_cb(const FLAC__StreamDecoder *decoder, FLAC__uint64 *absolute_byte_offset, void
+ * *client_data)
  * {
  *   FILE *file = ((MyClientData*)client_data)->file;
  *   off_t pos;
@@ -587,7 +593,9 @@ typedef FLAC__StreamDecoderSeekStatus (*FLAC__StreamDecoderSeekCallback)(const F
  * \retval FLAC__StreamDecoderTellStatus
  *    The callee's return status.
  */
-typedef FLAC__StreamDecoderTellStatus (*FLAC__StreamDecoderTellCallback)(const FLAC__StreamDecoder *decoder, FLAC__uint64 *absolute_byte_offset, void *client_data);
+typedef FLAC__StreamDecoderTellStatus (*FLAC__StreamDecoderTellCallback)(const FLAC__StreamDecoder* decoder,
+                                                                         FLAC__uint64* absolute_byte_offset,
+                                                                         void* client_data);
 
 /** Signature for the length callback.
  *
@@ -598,7 +606,8 @@ typedef FLAC__StreamDecoderTellStatus (*FLAC__StreamDecoderTellCallback)(const F
  *
  * Here is an example of a length callback for stdio streams:
  * \code
- * FLAC__StreamDecoderLengthStatus length_cb(const FLAC__StreamDecoder *decoder, FLAC__uint64 *stream_length, void *client_data)
+ * FLAC__StreamDecoderLengthStatus length_cb(const FLAC__StreamDecoder *decoder, FLAC__uint64 *stream_length, void
+ * *client_data)
  * {
  *   FILE *file = ((MyClientData*)client_data)->file;
  *   struct stat filestats;
@@ -625,7 +634,9 @@ typedef FLAC__StreamDecoderTellStatus (*FLAC__StreamDecoderTellCallback)(const F
  * \retval FLAC__StreamDecoderLengthStatus
  *    The callee's return status.
  */
-typedef FLAC__StreamDecoderLengthStatus (*FLAC__StreamDecoderLengthCallback)(const FLAC__StreamDecoder *decoder, FLAC__uint64 *stream_length, void *client_data);
+typedef FLAC__StreamDecoderLengthStatus (*FLAC__StreamDecoderLengthCallback)(const FLAC__StreamDecoder* decoder,
+                                                                             FLAC__uint64* stream_length,
+                                                                             void* client_data);
 
 /** Signature for the EOF callback.
  *
@@ -652,7 +663,7 @@ typedef FLAC__StreamDecoderLengthStatus (*FLAC__StreamDecoderLengthCallback)(con
  * \retval FLAC__bool
  *    \c true if the currently at the end of the stream, else \c false.
  */
-typedef FLAC__bool (*FLAC__StreamDecoderEofCallback)(const FLAC__StreamDecoder *decoder, void *client_data);
+typedef FLAC__bool (*FLAC__StreamDecoderEofCallback)(const FLAC__StreamDecoder* decoder, void* client_data);
 
 /** Signature for the write callback.
  *
@@ -680,7 +691,10 @@ typedef FLAC__bool (*FLAC__StreamDecoderEofCallback)(const FLAC__StreamDecoder *
  * \retval FLAC__StreamDecoderWriteStatus
  *    The callee's return status.
  */
-typedef FLAC__StreamDecoderWriteStatus (*FLAC__StreamDecoderWriteCallback)(const FLAC__StreamDecoder *decoder, const FLAC__Frame *frame, const FLAC__int32 * const buffer[], void *client_data);
+typedef FLAC__StreamDecoderWriteStatus (*FLAC__StreamDecoderWriteCallback)(const FLAC__StreamDecoder* decoder,
+                                                                           const FLAC__Frame* frame,
+                                                                           const FLAC__int32* const buffer[],
+                                                                           void* client_data);
 
 /** Signature for the metadata callback.
  *
@@ -707,7 +721,8 @@ typedef FLAC__StreamDecoderWriteStatus (*FLAC__StreamDecoderWriteCallback)(const
  * \param  client_data  The callee's client data set through
  *                      FLAC__stream_decoder_init_*().
  */
-typedef void (*FLAC__StreamDecoderMetadataCallback)(const FLAC__StreamDecoder *decoder, const FLAC__StreamMetadata *metadata, void *client_data);
+typedef void (*FLAC__StreamDecoderMetadataCallback)(const FLAC__StreamDecoder* decoder,
+                                                    const FLAC__StreamMetadata* metadata, void* client_data);
 
 /** Signature for the error callback.
  *
@@ -724,8 +739,8 @@ typedef void (*FLAC__StreamDecoderMetadataCallback)(const FLAC__StreamDecoder *d
  * \param  client_data  The callee's client data set through
  *                      FLAC__stream_decoder_init_*().
  */
-typedef void (*FLAC__StreamDecoderErrorCallback)(const FLAC__StreamDecoder *decoder, FLAC__StreamDecoderErrorStatus status, void *client_data);
-
+typedef void (*FLAC__StreamDecoderErrorCallback)(const FLAC__StreamDecoder* decoder,
+                                                 FLAC__StreamDecoderErrorStatus status, void* client_data);
 
 /***********************************************************************
  *
@@ -740,7 +755,7 @@ typedef void (*FLAC__StreamDecoderErrorCallback)(const FLAC__StreamDecoder *deco
  * \retval FLAC__StreamDecoder*
  *    \c NULL if there was an error allocating memory, else the new instance.
  */
-FLAC_API FLAC__StreamDecoder *FLAC__stream_decoder_new(void);
+FLAC_API FLAC__StreamDecoder* FLAC__stream_decoder_new(void);
 
 /** Free a decoder instance.  Deletes the object pointed to by \a decoder.
  *
@@ -748,8 +763,7 @@ FLAC_API FLAC__StreamDecoder *FLAC__stream_decoder_new(void);
  * \assert
  *    \code decoder != NULL \endcode
  */
-FLAC_API void FLAC__stream_decoder_delete(FLAC__StreamDecoder *decoder);
-
+FLAC_API void FLAC__stream_decoder_delete(FLAC__StreamDecoder* decoder);
 
 /***********************************************************************
  *
@@ -773,7 +787,7 @@ FLAC_API void FLAC__stream_decoder_delete(FLAC__StreamDecoder *decoder);
  * \retval FLAC__bool
  *    \c false if the decoder is already initialized, else \c true.
  */
-FLAC_API FLAC__bool FLAC__stream_decoder_set_ogg_serial_number(FLAC__StreamDecoder *decoder, long serial_number);
+FLAC_API FLAC__bool FLAC__stream_decoder_set_ogg_serial_number(FLAC__StreamDecoder* decoder, long serial_number);
 
 /** Set the "MD5 signature checking" flag.  If \c true, the decoder will
  *  compute the MD5 signature of the unencoded audio data while decoding
@@ -795,7 +809,7 @@ FLAC_API FLAC__bool FLAC__stream_decoder_set_ogg_serial_number(FLAC__StreamDecod
  * \retval FLAC__bool
  *    \c false if the decoder is already initialized, else \c true.
  */
-FLAC_API FLAC__bool FLAC__stream_decoder_set_md5_checking(FLAC__StreamDecoder *decoder, FLAC__bool value);
+FLAC_API FLAC__bool FLAC__stream_decoder_set_md5_checking(FLAC__StreamDecoder* decoder, FLAC__bool value);
 
 /** Direct the decoder to pass on all metadata blocks of type \a type.
  *
@@ -809,7 +823,7 @@ FLAC_API FLAC__bool FLAC__stream_decoder_set_md5_checking(FLAC__StreamDecoder *d
  * \retval FLAC__bool
  *    \c false if the decoder is already initialized, else \c true.
  */
-FLAC_API FLAC__bool FLAC__stream_decoder_set_metadata_respond(FLAC__StreamDecoder *decoder, FLAC__MetadataType type);
+FLAC_API FLAC__bool FLAC__stream_decoder_set_metadata_respond(FLAC__StreamDecoder* decoder, FLAC__MetadataType type);
 
 /** Direct the decoder to pass on all APPLICATION metadata blocks of the
  *  given \a id.
@@ -824,7 +838,8 @@ FLAC_API FLAC__bool FLAC__stream_decoder_set_metadata_respond(FLAC__StreamDecode
  * \retval FLAC__bool
  *    \c false if the decoder is already initialized, else \c true.
  */
-FLAC_API FLAC__bool FLAC__stream_decoder_set_metadata_respond_application(FLAC__StreamDecoder *decoder, const FLAC__byte id[4]);
+FLAC_API FLAC__bool FLAC__stream_decoder_set_metadata_respond_application(FLAC__StreamDecoder* decoder,
+                                                                          const FLAC__byte id[4]);
 
 /** Direct the decoder to pass on all metadata blocks of any type.
  *
@@ -836,7 +851,7 @@ FLAC_API FLAC__bool FLAC__stream_decoder_set_metadata_respond_application(FLAC__
  * \retval FLAC__bool
  *    \c false if the decoder is already initialized, else \c true.
  */
-FLAC_API FLAC__bool FLAC__stream_decoder_set_metadata_respond_all(FLAC__StreamDecoder *decoder);
+FLAC_API FLAC__bool FLAC__stream_decoder_set_metadata_respond_all(FLAC__StreamDecoder* decoder);
 
 /** Direct the decoder to filter out all metadata blocks of type \a type.
  *
@@ -850,7 +865,7 @@ FLAC_API FLAC__bool FLAC__stream_decoder_set_metadata_respond_all(FLAC__StreamDe
  * \retval FLAC__bool
  *    \c false if the decoder is already initialized, else \c true.
  */
-FLAC_API FLAC__bool FLAC__stream_decoder_set_metadata_ignore(FLAC__StreamDecoder *decoder, FLAC__MetadataType type);
+FLAC_API FLAC__bool FLAC__stream_decoder_set_metadata_ignore(FLAC__StreamDecoder* decoder, FLAC__MetadataType type);
 
 /** Direct the decoder to filter out all APPLICATION metadata blocks of
  *  the given \a id.
@@ -865,7 +880,8 @@ FLAC_API FLAC__bool FLAC__stream_decoder_set_metadata_ignore(FLAC__StreamDecoder
  * \retval FLAC__bool
  *    \c false if the decoder is already initialized, else \c true.
  */
-FLAC_API FLAC__bool FLAC__stream_decoder_set_metadata_ignore_application(FLAC__StreamDecoder *decoder, const FLAC__byte id[4]);
+FLAC_API FLAC__bool FLAC__stream_decoder_set_metadata_ignore_application(FLAC__StreamDecoder* decoder,
+                                                                         const FLAC__byte id[4]);
 
 /** Direct the decoder to filter out all metadata blocks of any type.
  *
@@ -877,7 +893,7 @@ FLAC_API FLAC__bool FLAC__stream_decoder_set_metadata_ignore_application(FLAC__S
  * \retval FLAC__bool
  *    \c false if the decoder is already initialized, else \c true.
  */
-FLAC_API FLAC__bool FLAC__stream_decoder_set_metadata_ignore_all(FLAC__StreamDecoder *decoder);
+FLAC_API FLAC__bool FLAC__stream_decoder_set_metadata_ignore_all(FLAC__StreamDecoder* decoder);
 
 /** Get the current decoder state.
  *
@@ -887,7 +903,7 @@ FLAC_API FLAC__bool FLAC__stream_decoder_set_metadata_ignore_all(FLAC__StreamDec
  * \retval FLAC__StreamDecoderState
  *    The current decoder state.
  */
-FLAC_API FLAC__StreamDecoderState FLAC__stream_decoder_get_state(const FLAC__StreamDecoder *decoder);
+FLAC_API FLAC__StreamDecoderState FLAC__stream_decoder_get_state(const FLAC__StreamDecoder* decoder);
 
 /** Get the current decoder state as a C string.
  *
@@ -897,7 +913,7 @@ FLAC_API FLAC__StreamDecoderState FLAC__stream_decoder_get_state(const FLAC__Str
  * \retval const char *
  *    The decoder state as a C string.  Do not modify the contents.
  */
-FLAC_API const char *FLAC__stream_decoder_get_resolved_state_string(const FLAC__StreamDecoder *decoder);
+FLAC_API const char* FLAC__stream_decoder_get_resolved_state_string(const FLAC__StreamDecoder* decoder);
 
 /** Get the "MD5 signature checking" flag.
  *  This is the value of the setting, not whether or not the decoder is
@@ -911,7 +927,7 @@ FLAC_API const char *FLAC__stream_decoder_get_resolved_state_string(const FLAC__
  * \retval FLAC__bool
  *    See above.
  */
-FLAC_API FLAC__bool FLAC__stream_decoder_get_md5_checking(const FLAC__StreamDecoder *decoder);
+FLAC_API FLAC__bool FLAC__stream_decoder_get_md5_checking(const FLAC__StreamDecoder* decoder);
 
 /** Get the total number of samples in the stream being decoded.
  *  Will only be valid after decoding has started and will contain the
@@ -923,7 +939,7 @@ FLAC_API FLAC__bool FLAC__stream_decoder_get_md5_checking(const FLAC__StreamDeco
  * \retval unsigned
  *    See above.
  */
-FLAC_API FLAC__uint64 FLAC__stream_decoder_get_total_samples(const FLAC__StreamDecoder *decoder);
+FLAC_API FLAC__uint64 FLAC__stream_decoder_get_total_samples(const FLAC__StreamDecoder* decoder);
 
 /** Get the current number of channels in the stream being decoded.
  *  Will only be valid after decoding has started and will contain the
@@ -935,7 +951,7 @@ FLAC_API FLAC__uint64 FLAC__stream_decoder_get_total_samples(const FLAC__StreamD
  * \retval unsigned
  *    See above.
  */
-FLAC_API unsigned FLAC__stream_decoder_get_channels(const FLAC__StreamDecoder *decoder);
+FLAC_API unsigned FLAC__stream_decoder_get_channels(const FLAC__StreamDecoder* decoder);
 
 /** Get the current channel assignment in the stream being decoded.
  *  Will only be valid after decoding has started and will contain the
@@ -947,7 +963,7 @@ FLAC_API unsigned FLAC__stream_decoder_get_channels(const FLAC__StreamDecoder *d
  * \retval FLAC__ChannelAssignment
  *    See above.
  */
-FLAC_API FLAC__ChannelAssignment FLAC__stream_decoder_get_channel_assignment(const FLAC__StreamDecoder *decoder);
+FLAC_API FLAC__ChannelAssignment FLAC__stream_decoder_get_channel_assignment(const FLAC__StreamDecoder* decoder);
 
 /** Get the current sample resolution in the stream being decoded.
  *  Will only be valid after decoding has started and will contain the
@@ -959,7 +975,7 @@ FLAC_API FLAC__ChannelAssignment FLAC__stream_decoder_get_channel_assignment(con
  * \retval unsigned
  *    See above.
  */
-FLAC_API unsigned FLAC__stream_decoder_get_bits_per_sample(const FLAC__StreamDecoder *decoder);
+FLAC_API unsigned FLAC__stream_decoder_get_bits_per_sample(const FLAC__StreamDecoder* decoder);
 
 /** Get the current sample rate in Hz of the stream being decoded.
  *  Will only be valid after decoding has started and will contain the
@@ -971,7 +987,7 @@ FLAC_API unsigned FLAC__stream_decoder_get_bits_per_sample(const FLAC__StreamDec
  * \retval unsigned
  *    See above.
  */
-FLAC_API unsigned FLAC__stream_decoder_get_sample_rate(const FLAC__StreamDecoder *decoder);
+FLAC_API unsigned FLAC__stream_decoder_get_sample_rate(const FLAC__StreamDecoder* decoder);
 
 /** Get the current blocksize of the stream being decoded.
  *  Will only be valid after decoding has started and will contain the
@@ -983,7 +999,7 @@ FLAC_API unsigned FLAC__stream_decoder_get_sample_rate(const FLAC__StreamDecoder
  * \retval unsigned
  *    See above.
  */
-FLAC_API unsigned FLAC__stream_decoder_get_blocksize(const FLAC__StreamDecoder *decoder);
+FLAC_API unsigned FLAC__stream_decoder_get_blocksize(const FLAC__StreamDecoder* decoder);
 
 /** Returns the decoder's current read position within the stream.
  *  The position is the byte offset from the start of the stream.
@@ -1004,7 +1020,8 @@ FLAC_API unsigned FLAC__stream_decoder_get_blocksize(const FLAC__StreamDecoder *
  *    or there was an error from the 'tell' callback or it returned
  *    \c FLAC__STREAM_DECODER_TELL_STATUS_UNSUPPORTED.
  */
-FLAC_API FLAC__bool FLAC__stream_decoder_get_decode_position(const FLAC__StreamDecoder *decoder, FLAC__uint64 *position);
+FLAC_API FLAC__bool FLAC__stream_decoder_get_decode_position(const FLAC__StreamDecoder* decoder,
+                                                             FLAC__uint64* position);
 
 /** Initialize the decoder instance to decode native FLAC streams.
  *
@@ -1071,17 +1088,11 @@ FLAC_API FLAC__bool FLAC__stream_decoder_get_decode_position(const FLAC__StreamD
  *    see FLAC__StreamDecoderInitStatus for the meanings of other return values.
  */
 FLAC_API FLAC__StreamDecoderInitStatus FLAC__stream_decoder_init_stream(
-	FLAC__StreamDecoder *decoder,
-	FLAC__StreamDecoderReadCallback read_callback,
-	FLAC__StreamDecoderSeekCallback seek_callback,
-	FLAC__StreamDecoderTellCallback tell_callback,
-	FLAC__StreamDecoderLengthCallback length_callback,
-	FLAC__StreamDecoderEofCallback eof_callback,
-	FLAC__StreamDecoderWriteCallback write_callback,
-	FLAC__StreamDecoderMetadataCallback metadata_callback,
-	FLAC__StreamDecoderErrorCallback error_callback,
-	void *client_data
-);
+    FLAC__StreamDecoder* decoder, FLAC__StreamDecoderReadCallback read_callback,
+    FLAC__StreamDecoderSeekCallback seek_callback, FLAC__StreamDecoderTellCallback tell_callback,
+    FLAC__StreamDecoderLengthCallback length_callback, FLAC__StreamDecoderEofCallback eof_callback,
+    FLAC__StreamDecoderWriteCallback write_callback, FLAC__StreamDecoderMetadataCallback metadata_callback,
+    FLAC__StreamDecoderErrorCallback error_callback, void* client_data);
 
 /** Initialize the decoder instance to decode Ogg FLAC streams.
  *
@@ -1152,17 +1163,11 @@ FLAC_API FLAC__StreamDecoderInitStatus FLAC__stream_decoder_init_stream(
  *    see FLAC__StreamDecoderInitStatus for the meanings of other return values.
  */
 FLAC_API FLAC__StreamDecoderInitStatus FLAC__stream_decoder_init_ogg_stream(
-	FLAC__StreamDecoder *decoder,
-	FLAC__StreamDecoderReadCallback read_callback,
-	FLAC__StreamDecoderSeekCallback seek_callback,
-	FLAC__StreamDecoderTellCallback tell_callback,
-	FLAC__StreamDecoderLengthCallback length_callback,
-	FLAC__StreamDecoderEofCallback eof_callback,
-	FLAC__StreamDecoderWriteCallback write_callback,
-	FLAC__StreamDecoderMetadataCallback metadata_callback,
-	FLAC__StreamDecoderErrorCallback error_callback,
-	void *client_data
-);
+    FLAC__StreamDecoder* decoder, FLAC__StreamDecoderReadCallback read_callback,
+    FLAC__StreamDecoderSeekCallback seek_callback, FLAC__StreamDecoderTellCallback tell_callback,
+    FLAC__StreamDecoderLengthCallback length_callback, FLAC__StreamDecoderEofCallback eof_callback,
+    FLAC__StreamDecoderWriteCallback write_callback, FLAC__StreamDecoderMetadataCallback metadata_callback,
+    FLAC__StreamDecoderErrorCallback error_callback, void* client_data);
 
 /** Initialize the decoder instance to decode native FLAC files.
  *
@@ -1202,13 +1207,9 @@ FLAC_API FLAC__StreamDecoderInitStatus FLAC__stream_decoder_init_ogg_stream(
  *    see FLAC__StreamDecoderInitStatus for the meanings of other return values.
  */
 FLAC_API FLAC__StreamDecoderInitStatus FLAC__stream_decoder_init_FILE(
-	FLAC__StreamDecoder *decoder,
-	FILE *file,
-	FLAC__StreamDecoderWriteCallback write_callback,
-	FLAC__StreamDecoderMetadataCallback metadata_callback,
-	FLAC__StreamDecoderErrorCallback error_callback,
-	void *client_data
-);
+    FLAC__StreamDecoder* decoder, FILE* file, FLAC__StreamDecoderWriteCallback write_callback,
+    FLAC__StreamDecoderMetadataCallback metadata_callback, FLAC__StreamDecoderErrorCallback error_callback,
+    void* client_data);
 
 /** Initialize the decoder instance to decode Ogg FLAC files.
  *
@@ -1252,13 +1253,9 @@ FLAC_API FLAC__StreamDecoderInitStatus FLAC__stream_decoder_init_FILE(
  *    see FLAC__StreamDecoderInitStatus for the meanings of other return values.
  */
 FLAC_API FLAC__StreamDecoderInitStatus FLAC__stream_decoder_init_ogg_FILE(
-	FLAC__StreamDecoder *decoder,
-	FILE *file,
-	FLAC__StreamDecoderWriteCallback write_callback,
-	FLAC__StreamDecoderMetadataCallback metadata_callback,
-	FLAC__StreamDecoderErrorCallback error_callback,
-	void *client_data
-);
+    FLAC__StreamDecoder* decoder, FILE* file, FLAC__StreamDecoderWriteCallback write_callback,
+    FLAC__StreamDecoderMetadataCallback metadata_callback, FLAC__StreamDecoderErrorCallback error_callback,
+    void* client_data);
 
 /** Initialize the decoder instance to decode native FLAC files.
  *
@@ -1294,13 +1291,9 @@ FLAC_API FLAC__StreamDecoderInitStatus FLAC__stream_decoder_init_ogg_FILE(
  *    see FLAC__StreamDecoderInitStatus for the meanings of other return values.
  */
 FLAC_API FLAC__StreamDecoderInitStatus FLAC__stream_decoder_init_file(
-	FLAC__StreamDecoder *decoder,
-	const char *filename,
-	FLAC__StreamDecoderWriteCallback write_callback,
-	FLAC__StreamDecoderMetadataCallback metadata_callback,
-	FLAC__StreamDecoderErrorCallback error_callback,
-	void *client_data
-);
+    FLAC__StreamDecoder* decoder, const char* filename, FLAC__StreamDecoderWriteCallback write_callback,
+    FLAC__StreamDecoderMetadataCallback metadata_callback, FLAC__StreamDecoderErrorCallback error_callback,
+    void* client_data);
 
 /** Initialize the decoder instance to decode Ogg FLAC files.
  *
@@ -1340,13 +1333,9 @@ FLAC_API FLAC__StreamDecoderInitStatus FLAC__stream_decoder_init_file(
  *    see FLAC__StreamDecoderInitStatus for the meanings of other return values.
  */
 FLAC_API FLAC__StreamDecoderInitStatus FLAC__stream_decoder_init_ogg_file(
-	FLAC__StreamDecoder *decoder,
-	const char *filename,
-	FLAC__StreamDecoderWriteCallback write_callback,
-	FLAC__StreamDecoderMetadataCallback metadata_callback,
-	FLAC__StreamDecoderErrorCallback error_callback,
-	void *client_data
-);
+    FLAC__StreamDecoder* decoder, const char* filename, FLAC__StreamDecoderWriteCallback write_callback,
+    FLAC__StreamDecoderMetadataCallback metadata_callback, FLAC__StreamDecoderErrorCallback error_callback,
+    void* client_data);
 
 /** Finish the decoding process.
  *  Flushes the decoding buffer, releases resources, resets the decoder
@@ -1367,7 +1356,7 @@ FLAC_API FLAC__StreamDecoderInitStatus FLAC__stream_decoder_init_ogg_file(
  *    signature does not match the one computed by the decoder; else
  *    \c true.
  */
-FLAC_API FLAC__bool FLAC__stream_decoder_finish(FLAC__StreamDecoder *decoder);
+FLAC_API FLAC__bool FLAC__stream_decoder_finish(FLAC__StreamDecoder* decoder);
 
 /** Flush the stream input.
  *  The decoder's input buffer will be cleared and the state set to
@@ -1382,7 +1371,7 @@ FLAC_API FLAC__bool FLAC__stream_decoder_finish(FLAC__StreamDecoder *decoder);
  *    error occurs (in which case the state will be set to
  *    \c FLAC__STREAM_DECODER_MEMORY_ALLOCATION_ERROR).
  */
-FLAC_API FLAC__bool FLAC__stream_decoder_flush(FLAC__StreamDecoder *decoder);
+FLAC_API FLAC__bool FLAC__stream_decoder_flush(FLAC__StreamDecoder* decoder);
 
 /** Reset the decoding process.
  *  The decoder's input buffer will be cleared and the state set to
@@ -1415,7 +1404,7 @@ FLAC_API FLAC__bool FLAC__stream_decoder_flush(FLAC__StreamDecoder *decoder);
  *    \c FLAC__STREAM_DECODER_MEMORY_ALLOCATION_ERROR) or a seek error
  *    occurs (the state will be unchanged).
  */
-FLAC_API FLAC__bool FLAC__stream_decoder_reset(FLAC__StreamDecoder *decoder);
+FLAC_API FLAC__bool FLAC__stream_decoder_reset(FLAC__StreamDecoder* decoder);
 
 /** Decode one metadata block or audio frame.
  *  This version instructs the decoder to decode a either a single metadata
@@ -1448,7 +1437,7 @@ FLAC_API FLAC__bool FLAC__stream_decoder_reset(FLAC__StreamDecoder *decoder);
  *    information about the decoder, check the decoder state with
  *    FLAC__stream_decoder_get_state().
  */
-FLAC_API FLAC__bool FLAC__stream_decoder_process_single(FLAC__StreamDecoder *decoder);
+FLAC_API FLAC__bool FLAC__stream_decoder_process_single(FLAC__StreamDecoder* decoder);
 
 /** Decode until the end of the metadata.
  *  This version instructs the decoder to decode from the current position
@@ -1469,7 +1458,7 @@ FLAC_API FLAC__bool FLAC__stream_decoder_process_single(FLAC__StreamDecoder *dec
  *    information about the decoder, check the decoder state with
  *    FLAC__stream_decoder_get_state().
  */
-FLAC_API FLAC__bool FLAC__stream_decoder_process_until_end_of_metadata(FLAC__StreamDecoder *decoder);
+FLAC_API FLAC__bool FLAC__stream_decoder_process_until_end_of_metadata(FLAC__StreamDecoder* decoder);
 
 /** Decode until the end of the stream.
  *  This version instructs the decoder to decode from the current position
@@ -1490,7 +1479,7 @@ FLAC_API FLAC__bool FLAC__stream_decoder_process_until_end_of_metadata(FLAC__Str
  *    information about the decoder, check the decoder state with
  *    FLAC__stream_decoder_get_state().
  */
-FLAC_API FLAC__bool FLAC__stream_decoder_process_until_end_of_stream(FLAC__StreamDecoder *decoder);
+FLAC_API FLAC__bool FLAC__stream_decoder_process_until_end_of_stream(FLAC__StreamDecoder* decoder);
 
 /** Skip one audio frame.
  *  This version instructs the decoder to 'skip' a single frame and stop,
@@ -1531,7 +1520,7 @@ FLAC_API FLAC__bool FLAC__stream_decoder_process_until_end_of_stream(FLAC__Strea
  *    information about the decoder, check the decoder state with
  *    FLAC__stream_decoder_get_state().
  */
-FLAC_API FLAC__bool FLAC__stream_decoder_skip_single_frame(FLAC__StreamDecoder *decoder);
+FLAC_API FLAC__bool FLAC__stream_decoder_skip_single_frame(FLAC__StreamDecoder* decoder);
 
 /** Flush the input and seek to an absolute sample.
  *  Decoding will resume at the given sample.  Note that because of
@@ -1549,7 +1538,7 @@ FLAC_API FLAC__bool FLAC__stream_decoder_skip_single_frame(FLAC__StreamDecoder *
  * \retval FLAC__bool
  *    \c true if successful, else \c false.
  */
-FLAC_API FLAC__bool FLAC__stream_decoder_seek_absolute(FLAC__StreamDecoder *decoder, FLAC__uint64 sample);
+FLAC_API FLAC__bool FLAC__stream_decoder_seek_absolute(FLAC__StreamDecoder* decoder, FLAC__uint64 sample);
 
 /* \} */
 

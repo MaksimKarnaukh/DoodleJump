@@ -25,13 +25,11 @@
 #ifndef SFML_OBJCTYPE_HPP
 #define SFML_OBJCTYPE_HPP
 
-
 // Forward declare an Objective-C class
 #ifdef __OBJC__
-    #define SFML_DECLARE_OBJC_CLASS(c) @class c
+#define SFML_DECLARE_OBJC_CLASS(c) @class c
 #else
-    #define SFML_DECLARE_OBJC_CLASS(c) typedef struct objc_object c
+#define SFML_DECLARE_OBJC_CLASS(c) typedef struct objc_object c
 #endif
-
 
 #endif // SFML_OBJCTYPE_HPP

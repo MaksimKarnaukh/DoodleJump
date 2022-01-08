@@ -7,27 +7,24 @@
 
 namespace representation {
 
-    class Jetpack_GR: public representation::Bonus_GR {
+class Jetpack_GR : public representation::Bonus_GR
+{
 
-    public:
+public:
+        /**
+         * @function : Jetpack_GR
+         * Constructor for a Jetpack_GR.
+         * @param entityModel (std::shared_ptr<logic::EntityModel>) : entityModel
+         */
+        Jetpack_GR(const std::shared_ptr<logic::EntityModel>& entityModel);
 
         /**
-        * @function : Jetpack_GR
-        * Constructor for a Jetpack_GR.
-        * @param entityModel (std::shared_ptr<logic::EntityModel>) : entityModel
-        */
-        Jetpack_GR(const std::shared_ptr<logic::EntityModel> &entityModel);
-
-        /**
-        * @function : Jetpack_GR
-        * Destructor for a Jetpack_GR.
-        */
+         * @function : Jetpack_GR
+         * Destructor for a Jetpack_GR.
+         */
         ~Jetpack_GR() override = default;
+};
 
-    };
+} // namespace representation
 
-}
-
-
-
-#endif //DOODLEJUMP_JETPACK_GR_H
+#endif // DOODLEJUMP_JETPACK_GR_H

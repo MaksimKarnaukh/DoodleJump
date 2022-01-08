@@ -32,121 +32,98 @@
 ////////////////////////////////////////////////////////////
 // Private data
 ////////////////////////////////////////////////////////////
-namespace
-{
-    // Using a custom run loop mode solve some issues that appears when SFML
-    // is used with Cocoa.
-    const CFStringRef RunLoopMode = CFSTR("SFML_RUN_LOOP_MODE");
-}
+namespace {
+// Using a custom run loop mode solve some issues that appears when SFML
+// is used with Cocoa.
+const CFStringRef RunLoopMode = CFSTR("SFML_RUN_LOOP_MODE");
+} // namespace
 
-
-namespace sf
-{
-namespace priv
-{
+namespace sf {
+namespace priv {
 ////////////////////////////////////////////////////////////
 HIDJoystickManager& HIDJoystickManager::getInstance()
 {
-    static HIDJoystickManager manager;
-    return manager;
+        static HIDJoystickManager manager;
+        return manager;
 }
-
 
 ////////////////////////////////////////////////////////////
 unsigned int HIDJoystickManager::getJoystickCount()
 {
-    update();
-    return m_joystickCount;
+        update();
+        return m_joystickCount;
 }
-
 
 ////////////////////////////////////////////////////////////
 CFSetRef HIDJoystickManager::copyJoysticks()
 {
-    CFSetRef devices = IOHIDManagerCopyDevices(m_manager);
-    return devices;
+        CFSetRef devices = IOHIDManagerCopyDevices(m_manager);
+        return devices;
 }
-
 
 ////////////////////////////////////////////////////////////
-HIDJoystickManager::HIDJoystickManager() :
-m_manager(0),
-m_joystickCount(0)
+HIDJoystickManager::HIDJoystickManager() : m_manager(0), m_joystickCount(0)
 {
-    m_manager = IOHIDManagerCreate(kCFAllocatorDefault, kIOHIDOptionsTypeNone);
+        m_manager = IOHIDManagerCreate(kCFAllocatorDefault, kIOHIDOptionsTypeNone);
 
-    CFDictionaryRef mask0 = HIDInputManager::copyDevicesMask(kHIDPage_GenericDesktop,
-                                                             kHIDUsage_GD_Joystick);
+        CFDictionaryRef mask0 = HIDInputManager::copyDevicesMask(kHIDPage_GenericDesktop, kHIDUsage_GD_Joystick);
 
-    CFDictionaryRef mask1 = HIDInputManager::copyDevicesMask(kHIDPage_GenericDesktop,
-                                                             kHIDUsage_GD_GamePad);
+        CFDictionaryRef mask1 = HIDInputManager::copyDevicesMask(kHIDPage_GenericDesktop, kHIDUsage_GD_GamePad);
 
-    CFDictionaryRef maskArray[2];
-    maskArray[0] = mask0;
-    maskArray[1] = mask1;
+        CFDictionaryRef maskArray[2];
+        maskArray[0] = mask0;
+        maskArray[1] = mask1;
 
-    CFArrayRef mask = CFArrayCreate(NULL, (const void**)maskArray, 2, NULL);
+        CFArrayRef mask = CFArrayCreate(NULL, (const void**)maskArray, 2, NULL);
 
-    IOHIDManagerSetDeviceMatchingMultiple(m_manager, mask);
-    CFRelease(mask);
-    CFRelease(mask1);
-    CFRelease(mask0);
+        IOHIDManagerSetDeviceMatchingMultiple(m_manager, mask);
+        CFRelease(mask);
+        CFRelease(mask1);
+        CFRelease(mask0);
 
+        IOHIDManagerRegisterDeviceMatchingCallback(m_manager, pluggedIn, this);
+        IOHIDManagerRegisterDeviceRemovalCallback(m_manager, pluggedOut, this);
 
-    IOHIDManagerRegisterDeviceMatchingCallback(m_manager, pluggedIn, this);
-    IOHIDManagerRegisterDeviceRemovalCallback(m_manager, pluggedOut, this);
+        IOHIDManagerScheduleWithRunLoop(m_manager, CFRunLoopGetCurrent(), RunLoopMode);
 
-    IOHIDManagerScheduleWithRunLoop(m_manager,
-                                    CFRunLoopGetCurrent(),
-                                    RunLoopMode);
-
-    IOHIDManagerOpen(m_manager, kIOHIDOptionsTypeNone);
+        IOHIDManagerOpen(m_manager, kIOHIDOptionsTypeNone);
 }
-
 
 ////////////////////////////////////////////////////////////
 HIDJoystickManager::~HIDJoystickManager()
 {
-    IOHIDManagerUnscheduleFromRunLoop(m_manager,
-                                      CFRunLoopGetCurrent(),
-                                      RunLoopMode);
+        IOHIDManagerUnscheduleFromRunLoop(m_manager, CFRunLoopGetCurrent(), RunLoopMode);
 
-    IOHIDManagerRegisterDeviceMatchingCallback(m_manager, NULL, 0);
-    IOHIDManagerRegisterDeviceRemovalCallback(m_manager, NULL, 0);
+        IOHIDManagerRegisterDeviceMatchingCallback(m_manager, NULL, 0);
+        IOHIDManagerRegisterDeviceRemovalCallback(m_manager, NULL, 0);
 
-    IOHIDManagerClose(m_manager, kIOHIDOptionsTypeNone);
+        IOHIDManagerClose(m_manager, kIOHIDOptionsTypeNone);
 }
-
 
 ////////////////////////////////////////////////////////////
 void HIDJoystickManager::update()
 {
-    SInt32 status = kCFRunLoopRunHandledSource;
+        SInt32 status = kCFRunLoopRunHandledSource;
 
-    while (status == kCFRunLoopRunHandledSource)
-    {
-        status = CFRunLoopRunInMode(RunLoopMode, 0, true);
-    }
+        while (status == kCFRunLoopRunHandledSource) {
+                status = CFRunLoopRunInMode(RunLoopMode, 0, true);
+        }
 }
-
 
 ////////////////////////////////////////////////////////////
 void HIDJoystickManager::pluggedIn(void* context, IOReturn, void*, IOHIDDeviceRef)
 {
-    HIDJoystickManager* manager = static_cast<HIDJoystickManager*>(context);
-    manager->m_joystickCount++;
+        HIDJoystickManager* manager = static_cast<HIDJoystickManager*>(context);
+        manager->m_joystickCount++;
 }
-
 
 ////////////////////////////////////////////////////////////
 void HIDJoystickManager::pluggedOut(void* context, IOReturn, void*, IOHIDDeviceRef)
 {
-    HIDJoystickManager* manager = static_cast<HIDJoystickManager*>(context);
-    manager->m_joystickCount--;
+        HIDJoystickManager* manager = static_cast<HIDJoystickManager*>(context);
+        manager->m_joystickCount--;
 }
-
 
 } // namespace priv
 
 } // namespace sf
-

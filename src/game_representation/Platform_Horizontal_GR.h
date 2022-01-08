@@ -7,27 +7,24 @@
 
 namespace representation {
 
-    class Platform_Horizontal_GR: public Platform_GR {
+class Platform_Horizontal_GR : public Platform_GR
+{
 
-    public:
+public:
+        /**
+         * @function : Platform_Horizontal_GR
+         * Constructor for a Platform_Horizontal_GR.
+         * @param entityModel (std::shared_ptr<logic::EntityModel>) : entityModel
+         */
+        Platform_Horizontal_GR(const std::shared_ptr<logic::EntityModel>& entityModel);
 
         /**
-        * @function : Platform_Horizontal_GR
-        * Constructor for a Platform_Horizontal_GR.
-        * @param entityModel (std::shared_ptr<logic::EntityModel>) : entityModel
-        */
-        Platform_Horizontal_GR(const std::shared_ptr<logic::EntityModel> &entityModel);
-
-        /**
-        * @function : Platform_Horizontal_GR
-        * Destructor for a Platform_Horizontal_GR.
-        */
+         * @function : Platform_Horizontal_GR
+         * Destructor for a Platform_Horizontal_GR.
+         */
         ~Platform_Horizontal_GR() override = default;
+};
 
-    };
+} // namespace representation
 
-}
-
-
-
-#endif //DOODLEJUMP_PLATFORM_HORIZONTAL_GR_H
+#endif // DOODLEJUMP_PLATFORM_HORIZONTAL_GR_H

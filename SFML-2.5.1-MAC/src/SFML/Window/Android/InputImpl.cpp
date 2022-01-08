@@ -25,187 +25,162 @@
 ////////////////////////////////////////////////////////////
 // Headers
 ////////////////////////////////////////////////////////////
-#include <SFML/Window/Android/InputImpl.hpp>
 #include <SFML/System/Android/Activity.hpp>
-#include <SFML/System/Lock.hpp>
 #include <SFML/System/Err.hpp>
+#include <SFML/System/Lock.hpp>
+#include <SFML/Window/Android/InputImpl.hpp>
 #include <jni.h>
 
-
-namespace sf
-{
-namespace priv
-{
+namespace sf {
+namespace priv {
 ////////////////////////////////////////////////////////////
 bool InputImpl::isKeyPressed(Keyboard::Key key)
 {
-    // Not applicable
-    return false;
+        // Not applicable
+        return false;
 }
 
 ////////////////////////////////////////////////////////////
 void InputImpl::setVirtualKeyboardVisible(bool visible)
 {
-    // todo: Check if the window is active
+        // todo: Check if the window is active
 
-    ActivityStates* states = getActivity(NULL);
-    Lock lock(states->mutex);
+        ActivityStates* states = getActivity(NULL);
+        Lock lock(states->mutex);
 
-    // Initializes JNI
-    jint lResult;
-    jint lFlags = 0;
+        // Initializes JNI
+        jint lResult;
+        jint lFlags = 0;
 
-    JavaVM* lJavaVM = states->activity->vm;
-    JNIEnv* lJNIEnv = states->activity->env;
+        JavaVM* lJavaVM = states->activity->vm;
+        JNIEnv* lJNIEnv = states->activity->env;
 
-    JavaVMAttachArgs lJavaVMAttachArgs;
-    lJavaVMAttachArgs.version = JNI_VERSION_1_6;
-    lJavaVMAttachArgs.name = "NativeThread";
-    lJavaVMAttachArgs.group = NULL;
+        JavaVMAttachArgs lJavaVMAttachArgs;
+        lJavaVMAttachArgs.version = JNI_VERSION_1_6;
+        lJavaVMAttachArgs.name = "NativeThread";
+        lJavaVMAttachArgs.group = NULL;
 
-    lResult=lJavaVM->AttachCurrentThread(&lJNIEnv, &lJavaVMAttachArgs);
+        lResult = lJavaVM->AttachCurrentThread(&lJNIEnv, &lJavaVMAttachArgs);
 
-    if (lResult == JNI_ERR)
-        err() << "Failed to initialize JNI, couldn't switch the keyboard visibility" << std::endl;
+        if (lResult == JNI_ERR)
+                err() << "Failed to initialize JNI, couldn't switch the keyboard visibility" << std::endl;
 
-    // Retrieves NativeActivity
-    jobject lNativeActivity = states->activity->clazz;
-    jclass ClassNativeActivity = lJNIEnv->GetObjectClass(lNativeActivity);
+        // Retrieves NativeActivity
+        jobject lNativeActivity = states->activity->clazz;
+        jclass ClassNativeActivity = lJNIEnv->GetObjectClass(lNativeActivity);
 
-    // Retrieves Context.INPUT_METHOD_SERVICE
-    jclass ClassContext = lJNIEnv->FindClass("android/content/Context");
-    jfieldID FieldINPUT_METHOD_SERVICE = lJNIEnv->GetStaticFieldID(ClassContext,
-        "INPUT_METHOD_SERVICE", "Ljava/lang/String;");
-    jobject INPUT_METHOD_SERVICE = lJNIEnv->GetStaticObjectField(ClassContext,
-        FieldINPUT_METHOD_SERVICE);
-    lJNIEnv->DeleteLocalRef(ClassContext);
+        // Retrieves Context.INPUT_METHOD_SERVICE
+        jclass ClassContext = lJNIEnv->FindClass("android/content/Context");
+        jfieldID FieldINPUT_METHOD_SERVICE =
+            lJNIEnv->GetStaticFieldID(ClassContext, "INPUT_METHOD_SERVICE", "Ljava/lang/String;");
+        jobject INPUT_METHOD_SERVICE = lJNIEnv->GetStaticObjectField(ClassContext, FieldINPUT_METHOD_SERVICE);
+        lJNIEnv->DeleteLocalRef(ClassContext);
 
-    // Runs getSystemService(Context.INPUT_METHOD_SERVICE)
-    jclass ClassInputMethodManager =
-        lJNIEnv->FindClass("android/view/inputmethod/InputMethodManager");
-    jmethodID MethodGetSystemService = lJNIEnv->GetMethodID(ClassNativeActivity,
-        "getSystemService", "(Ljava/lang/String;)Ljava/lang/Object;");
-    jobject lInputMethodManager = lJNIEnv->CallObjectMethod(lNativeActivity,
-        MethodGetSystemService, INPUT_METHOD_SERVICE);
-    lJNIEnv->DeleteLocalRef(INPUT_METHOD_SERVICE);
+        // Runs getSystemService(Context.INPUT_METHOD_SERVICE)
+        jclass ClassInputMethodManager = lJNIEnv->FindClass("android/view/inputmethod/InputMethodManager");
+        jmethodID MethodGetSystemService =
+            lJNIEnv->GetMethodID(ClassNativeActivity, "getSystemService", "(Ljava/lang/String;)Ljava/lang/Object;");
+        jobject lInputMethodManager =
+            lJNIEnv->CallObjectMethod(lNativeActivity, MethodGetSystemService, INPUT_METHOD_SERVICE);
+        lJNIEnv->DeleteLocalRef(INPUT_METHOD_SERVICE);
 
-    // Runs getWindow().getDecorView()
-    jmethodID MethodGetWindow = lJNIEnv->GetMethodID(ClassNativeActivity,
-        "getWindow", "()Landroid/view/Window;");
-    jobject lWindow = lJNIEnv->CallObjectMethod(lNativeActivity, MethodGetWindow);
-    jclass ClassWindow = lJNIEnv->FindClass("android/view/Window");
-    jmethodID MethodGetDecorView = lJNIEnv->GetMethodID(ClassWindow,
-        "getDecorView", "()Landroid/view/view;");
-    jobject lDecorView = lJNIEnv->CallObjectMethod(lWindow, MethodGetDecorView);
-    lJNIEnv->DeleteLocalRef(lWindow);
-    lJNIEnv->DeleteLocalRef(ClassWindow);
+        // Runs getWindow().getDecorView()
+        jmethodID MethodGetWindow = lJNIEnv->GetMethodID(ClassNativeActivity, "getWindow", "()Landroid/view/Window;");
+        jobject lWindow = lJNIEnv->CallObjectMethod(lNativeActivity, MethodGetWindow);
+        jclass ClassWindow = lJNIEnv->FindClass("android/view/Window");
+        jmethodID MethodGetDecorView = lJNIEnv->GetMethodID(ClassWindow, "getDecorView", "()Landroid/view/view;");
+        jobject lDecorView = lJNIEnv->CallObjectMethod(lWindow, MethodGetDecorView);
+        lJNIEnv->DeleteLocalRef(lWindow);
+        lJNIEnv->DeleteLocalRef(ClassWindow);
 
-    if (visible)
-    {
-        // Runs lInputMethodManager.showSoftInput(...)
-        jmethodID MethodShowSoftInput = lJNIEnv->GetMethodID(ClassInputMethodManager,
-            "showSoftInput", "(Landroid/view/view;I)Z");
-        jboolean lResult = lJNIEnv->CallBooleanMethod(lInputMethodManager,
-            MethodShowSoftInput, lDecorView, lFlags);
-    }
-    else
-    {
-        // Runs lWindow.getViewToken()
-        jclass ClassView = lJNIEnv->FindClass("android/view/view");
-        jmethodID MethodGetWindowToken = lJNIEnv->GetMethodID(ClassView,
-            "getWindowToken", "()Landroid/os/IBinder;");
-        jobject lBinder = lJNIEnv->CallObjectMethod(lDecorView,
-            MethodGetWindowToken);
-        lJNIEnv->DeleteLocalRef(ClassView);
+        if (visible) {
+                // Runs lInputMethodManager.showSoftInput(...)
+                jmethodID MethodShowSoftInput =
+                    lJNIEnv->GetMethodID(ClassInputMethodManager, "showSoftInput", "(Landroid/view/view;I)Z");
+                jboolean lResult =
+                    lJNIEnv->CallBooleanMethod(lInputMethodManager, MethodShowSoftInput, lDecorView, lFlags);
+        } else {
+                // Runs lWindow.getViewToken()
+                jclass ClassView = lJNIEnv->FindClass("android/view/view");
+                jmethodID MethodGetWindowToken =
+                    lJNIEnv->GetMethodID(ClassView, "getWindowToken", "()Landroid/os/IBinder;");
+                jobject lBinder = lJNIEnv->CallObjectMethod(lDecorView, MethodGetWindowToken);
+                lJNIEnv->DeleteLocalRef(ClassView);
 
-        // lInputMethodManager.hideSoftInput(...)
-        jmethodID MethodHideSoftInput = lJNIEnv->GetMethodID(ClassInputMethodManager,
-            "hideSoftInputFromWindow", "(Landroid/os/IBinder;I)Z");
-        jboolean lRes = lJNIEnv->CallBooleanMethod(lInputMethodManager,
-            MethodHideSoftInput, lBinder, lFlags);
-        lJNIEnv->DeleteLocalRef(lBinder);
-    }
-    lJNIEnv->DeleteLocalRef(ClassNativeActivity);
-    lJNIEnv->DeleteLocalRef(ClassInputMethodManager);
-    lJNIEnv->DeleteLocalRef(lDecorView);
+                // lInputMethodManager.hideSoftInput(...)
+                jmethodID MethodHideSoftInput = lJNIEnv->GetMethodID(ClassInputMethodManager, "hideSoftInputFromWindow",
+                                                                     "(Landroid/os/IBinder;I)Z");
+                jboolean lRes = lJNIEnv->CallBooleanMethod(lInputMethodManager, MethodHideSoftInput, lBinder, lFlags);
+                lJNIEnv->DeleteLocalRef(lBinder);
+        }
+        lJNIEnv->DeleteLocalRef(ClassNativeActivity);
+        lJNIEnv->DeleteLocalRef(ClassInputMethodManager);
+        lJNIEnv->DeleteLocalRef(lDecorView);
 
-    // Finished with the JVM
-    lJavaVM->DetachCurrentThread();
+        // Finished with the JVM
+        lJavaVM->DetachCurrentThread();
 }
 
 ////////////////////////////////////////////////////////////
 bool InputImpl::isMouseButtonPressed(Mouse::Button button)
 {
-    ALooper_pollAll(0, NULL, NULL, NULL);
+        ALooper_pollAll(0, NULL, NULL, NULL);
 
-    priv::ActivityStates* states = priv::getActivity(NULL);
-    Lock lock(states->mutex);
+        priv::ActivityStates* states = priv::getActivity(NULL);
+        Lock lock(states->mutex);
 
-    return states->isButtonPressed[button];
+        return states->isButtonPressed[button];
 }
-
 
 ////////////////////////////////////////////////////////////
 Vector2i InputImpl::getMousePosition()
 {
-    ALooper_pollAll(0, NULL, NULL, NULL);
+        ALooper_pollAll(0, NULL, NULL, NULL);
 
-    priv::ActivityStates* states = priv::getActivity(NULL);
-    Lock lock(states->mutex);
+        priv::ActivityStates* states = priv::getActivity(NULL);
+        Lock lock(states->mutex);
 
-    return states->mousePosition;
+        return states->mousePosition;
 }
-
 
 ////////////////////////////////////////////////////////////
-Vector2i InputImpl::getMousePosition(const WindowBase& relativeTo)
-{
-    return getMousePosition();
-}
-
+Vector2i InputImpl::getMousePosition(const WindowBase& relativeTo) { return getMousePosition(); }
 
 ////////////////////////////////////////////////////////////
 void InputImpl::setMousePosition(const Vector2i& position)
 {
-    // Injecting events is impossible on Android
+        // Injecting events is impossible on Android
 }
-
 
 ////////////////////////////////////////////////////////////
-void InputImpl::setMousePosition(const Vector2i& position, const WindowBase& relativeTo)
-{
-    setMousePosition(position);
-}
-
+void InputImpl::setMousePosition(const Vector2i& position, const WindowBase& relativeTo) { setMousePosition(position); }
 
 ////////////////////////////////////////////////////////////
 bool InputImpl::isTouchDown(unsigned int finger)
 {
-    ALooper_pollAll(0, NULL, NULL, NULL);
+        ALooper_pollAll(0, NULL, NULL, NULL);
 
-    priv::ActivityStates* states = priv::getActivity(NULL);
-    Lock lock(states->mutex);
+        priv::ActivityStates* states = priv::getActivity(NULL);
+        Lock lock(states->mutex);
 
-    return states->touchEvents.find(finger) != states->touchEvents.end();
+        return states->touchEvents.find(finger) != states->touchEvents.end();
 }
-
 
 ////////////////////////////////////////////////////////////
 Vector2i InputImpl::getTouchPosition(unsigned int finger)
 {
-    ALooper_pollAll(0, NULL, NULL, NULL);
+        ALooper_pollAll(0, NULL, NULL, NULL);
 
-    priv::ActivityStates* states = priv::getActivity(NULL);
-    Lock lock(states->mutex);
+        priv::ActivityStates* states = priv::getActivity(NULL);
+        Lock lock(states->mutex);
 
-    return states->touchEvents.find(finger)->second;
+        return states->touchEvents.find(finger)->second;
 }
-
 
 ////////////////////////////////////////////////////////////
 Vector2i InputImpl::getTouchPosition(unsigned int finger, const WindowBase& relativeTo)
 {
-    return getTouchPosition(finger);
+        return getTouchPosition(finger);
 }
 
 } // namespace priv

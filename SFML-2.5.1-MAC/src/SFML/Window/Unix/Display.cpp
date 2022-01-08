@@ -26,83 +26,77 @@
 // Headers
 ////////////////////////////////////////////////////////////
 #include <SFML/System/Err.hpp>
-#include <SFML/System/Mutex.hpp>
 #include <SFML/System/Lock.hpp>
+#include <SFML/System/Mutex.hpp>
 #include <SFML/Window/Unix/Display.hpp>
 #include <X11/keysym.h>
 #include <cassert>
 #include <cstdlib>
 #include <map>
 
+namespace {
+// The shared display and its reference counter
+Display* sharedDisplay = NULL;
+unsigned int referenceCount = 0;
+sf::Mutex mutex;
 
-namespace
-{
-    // The shared display and its reference counter
-    Display* sharedDisplay = NULL;
-    unsigned int referenceCount = 0;
-    sf::Mutex mutex;
+typedef std::map<std::string, Atom> AtomMap;
+AtomMap atoms;
+} // namespace
 
-    typedef std::map<std::string, Atom> AtomMap;
-    AtomMap atoms;
-}
-
-namespace sf
-{
-namespace priv
-{
+namespace sf {
+namespace priv {
 ////////////////////////////////////////////////////////////
 Display* OpenDisplay()
 {
-    Lock lock(mutex);
+        Lock lock(mutex);
 
-    if (referenceCount == 0)
-    {
-        sharedDisplay = XOpenDisplay(NULL);
+        if (referenceCount == 0) {
+                sharedDisplay = XOpenDisplay(NULL);
 
-        // Opening display failed: The best we can do at the moment is to output a meaningful error message
-        // and cause an abnormal program termination
-        if (!sharedDisplay)
-        {
-            err() << "Failed to open X11 display; make sure the DISPLAY environment variable is set correctly" << std::endl;
-            std::abort();
+                // Opening display failed: The best we can do at the moment is to output a meaningful error message
+                // and cause an abnormal program termination
+                if (!sharedDisplay) {
+                        err()
+                            << "Failed to open X11 display; make sure the DISPLAY environment variable is set correctly"
+                            << std::endl;
+                        std::abort();
+                }
         }
-    }
 
-    referenceCount++;
-    return sharedDisplay;
+        referenceCount++;
+        return sharedDisplay;
 }
-
 
 ////////////////////////////////////////////////////////////
 void CloseDisplay(Display* display)
 {
-    Lock lock(mutex);
+        Lock lock(mutex);
 
-    assert(display == sharedDisplay);
+        assert(display == sharedDisplay);
 
-    referenceCount--;
-    if (referenceCount == 0)
-        XCloseDisplay(display);
+        referenceCount--;
+        if (referenceCount == 0)
+                XCloseDisplay(display);
 }
-
 
 ////////////////////////////////////////////////////////////
 Atom getAtom(const std::string& name, bool onlyIfExists)
 {
-    AtomMap::const_iterator iter = atoms.find(name);
+        AtomMap::const_iterator iter = atoms.find(name);
 
-    if (iter != atoms.end())
-        return iter->second;
+        if (iter != atoms.end())
+                return iter->second;
 
-    Display* display = OpenDisplay();
+        Display* display = OpenDisplay();
 
-    Atom atom = XInternAtom(display, name.c_str(), onlyIfExists ? True : False);
+        Atom atom = XInternAtom(display, name.c_str(), onlyIfExists ? True : False);
 
-    CloseDisplay(display);
+        CloseDisplay(display);
 
-    atoms[name] = atom;
+        atoms[name] = atom;
 
-    return atom;
+        return atom;
 }
 
 } // namespace priv

@@ -18,7 +18,9 @@
  *  - MX = False
  *
  * Commandline:
- *    --api='wgl=1.0' --extensions='WGL_ARB_create_context,WGL_ARB_create_context_profile,WGL_ARB_extensions_string,WGL_ARB_framebuffer_sRGB,WGL_ARB_multisample,WGL_ARB_pbuffer,WGL_ARB_pixel_format,WGL_EXT_extensions_string,WGL_EXT_framebuffer_sRGB,WGL_EXT_swap_control' c --loader --alias --header-only
+ *    --api='wgl=1.0'
+ * --extensions='WGL_ARB_create_context,WGL_ARB_create_context_profile,WGL_ARB_extensions_string,WGL_ARB_framebuffer_sRGB,WGL_ARB_multisample,WGL_ARB_pbuffer,WGL_ARB_pixel_format,WGL_EXT_extensions_string,WGL_EXT_framebuffer_sRGB,WGL_EXT_swap_control'
+ * c --loader --alias --header-only
  *
  * Online:
  *    http://glad.sh/#api=wgl%3D1.0&extensions=WGL_ARB_create_context%2CWGL_ARB_create_context_profile%2CWGL_ARB_extensions_string%2CWGL_ARB_framebuffer_sRGB%2CWGL_ARB_multisample%2CWGL_ARB_pbuffer%2CWGL_ARB_pixel_format%2CWGL_EXT_extensions_string%2CWGL_EXT_framebuffer_sRGB%2CWGL_EXT_swap_control&generator=c&options=LOADER%2CALIAS%2CHEADER_ONLY
@@ -28,8 +30,8 @@
 #ifndef SF_GLAD_WGL_H_
 #define SF_GLAD_WGL_H_
 
-#include <windows.h>
 #include <glad/gl.h>
+#include <windows.h>
 
 #define SF_GLAD_WGL
 #define GLAD_OPTION_WGL_LOADER
@@ -44,90 +46,90 @@ extern "C" {
 #define GLAD_PLATFORM_H_
 
 #ifndef GLAD_PLATFORM_WIN32
-  #if defined(_WIN32) || defined(__WIN32__) || defined(WIN32) || defined(__MINGW32__)
-    #define GLAD_PLATFORM_WIN32 1
-  #else
-    #define GLAD_PLATFORM_WIN32 0
-  #endif
+#if defined(_WIN32) || defined(__WIN32__) || defined(WIN32) || defined(__MINGW32__)
+#define GLAD_PLATFORM_WIN32 1
+#else
+#define GLAD_PLATFORM_WIN32 0
+#endif
 #endif
 
 #ifndef GLAD_PLATFORM_APPLE
-  #ifdef __APPLE__
-    #define GLAD_PLATFORM_APPLE 1
-  #else
-    #define GLAD_PLATFORM_APPLE 0
-  #endif
+#ifdef __APPLE__
+#define GLAD_PLATFORM_APPLE 1
+#else
+#define GLAD_PLATFORM_APPLE 0
+#endif
 #endif
 
 #ifndef GLAD_PLATFORM_EMSCRIPTEN
-  #ifdef __EMSCRIPTEN__
-    #define GLAD_PLATFORM_EMSCRIPTEN 1
-  #else
-    #define GLAD_PLATFORM_EMSCRIPTEN 0
-  #endif
+#ifdef __EMSCRIPTEN__
+#define GLAD_PLATFORM_EMSCRIPTEN 1
+#else
+#define GLAD_PLATFORM_EMSCRIPTEN 0
+#endif
 #endif
 
 #ifndef GLAD_PLATFORM_UWP
-  #if defined(_MSC_VER) && !defined(GLAD_INTERNAL_HAVE_WINAPIFAMILY)
-    #ifdef __has_include
-      #if __has_include(<winapifamily.h>)
-        #define GLAD_INTERNAL_HAVE_WINAPIFAMILY 1
-      #endif
-    #elif _MSC_VER >= 1700 && !_USING_V110_SDK71_
-      #define GLAD_INTERNAL_HAVE_WINAPIFAMILY 1
-    #endif
-  #endif
+#if defined(_MSC_VER) && !defined(GLAD_INTERNAL_HAVE_WINAPIFAMILY)
+#ifdef __has_include
+#if __has_include(<winapifamily.h>)
+#define GLAD_INTERNAL_HAVE_WINAPIFAMILY 1
+#endif
+#elif _MSC_VER >= 1700 && !_USING_V110_SDK71_
+#define GLAD_INTERNAL_HAVE_WINAPIFAMILY 1
+#endif
+#endif
 
-  #ifdef GLAD_INTERNAL_HAVE_WINAPIFAMILY
-    #include <winapifamily.h>
-    #if !WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) && WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
-      #define GLAD_PLATFORM_UWP 1
-    #endif
-  #endif
+#ifdef GLAD_INTERNAL_HAVE_WINAPIFAMILY
+#include <winapifamily.h>
+#if !WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) && WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
+#define GLAD_PLATFORM_UWP 1
+#endif
+#endif
 
-  #ifndef GLAD_PLATFORM_UWP
-    #define GLAD_PLATFORM_UWP 0
-  #endif
+#ifndef GLAD_PLATFORM_UWP
+#define GLAD_PLATFORM_UWP 0
+#endif
 #endif
 
 #ifdef __GNUC__
-  #define GLAD_GNUC_EXTENSION __extension__
+#define GLAD_GNUC_EXTENSION __extension__
 #else
-  #define GLAD_GNUC_EXTENSION
+#define GLAD_GNUC_EXTENSION
 #endif
 
 #ifndef GLAD_API_CALL
-  #if defined(GLAD_API_CALL_EXPORT)
-    #if GLAD_PLATFORM_WIN32 || defined(__CYGWIN__)
-      #if defined(GLAD_API_CALL_EXPORT_BUILD)
-        #if defined(__GNUC__)
-          #define GLAD_API_CALL __attribute__ ((dllexport)) extern
-        #else
-          #define GLAD_API_CALL __declspec(dllexport) extern
-        #endif
-      #else
-        #if defined(__GNUC__)
-          #define GLAD_API_CALL __attribute__ ((dllimport)) extern
-        #else
-          #define GLAD_API_CALL __declspec(dllimport) extern
-        #endif
-      #endif
-    #elif defined(__GNUC__) && defined(GLAD_API_CALL_EXPORT_BUILD)
-      #define GLAD_API_CALL __attribute__ ((visibility ("default"))) extern
-    #else
-      #define GLAD_API_CALL extern
-    #endif
-  #else
-    #define GLAD_API_CALL extern
-  #endif
+#if defined(GLAD_API_CALL_EXPORT)
+#if GLAD_PLATFORM_WIN32 || defined(__CYGWIN__)
+#if defined(GLAD_API_CALL_EXPORT_BUILD)
+#if defined(__GNUC__)
+#define GLAD_API_CALL __attribute__((dllexport)) extern
+#else
+#define GLAD_API_CALL __declspec(dllexport) extern
+#endif
+#else
+#if defined(__GNUC__)
+#define GLAD_API_CALL __attribute__((dllimport)) extern
+#else
+#define GLAD_API_CALL __declspec(dllimport) extern
+#endif
+#endif
+#elif defined(__GNUC__) && defined(GLAD_API_CALL_EXPORT_BUILD)
+#define GLAD_API_CALL __attribute__((visibility("default"))) extern
+#else
+#define GLAD_API_CALL extern
+#endif
+#else
+#define GLAD_API_CALL extern
+#endif
 #endif
 
 #ifdef APIENTRY
-  #define GLAD_API_PTR APIENTRY
+#define GLAD_API_PTR APIENTRY
 #elif GLAD_PLATFORM_WIN32
-  #define GLAD_API_PTR __stdcall
+#define GLAD_API_PTR __stdcall
 #else
-  #define GLAD_API_PTR
+#define GLAD_API_PTR
 #endif
 
 #ifndef GLAPI
@@ -146,11 +148,11 @@ extern "C" {
 
 typedef void (*GLADapiproc)(void);
 
-typedef GLADapiproc (*GLADloadfunc)(const char *name);
-typedef GLADapiproc (*GLADuserptrloadfunc)(void *userptr, const char *name);
+typedef GLADapiproc (*GLADloadfunc)(const char* name);
+typedef GLADapiproc (*GLADuserptrloadfunc)(void* userptr, const char* name);
 
-typedef void (*GLADprecallback)(const char *name, GLADapiproc apiproc, int len_args, ...);
-typedef void (*GLADpostcallback)(void *ret, const char *name, GLADapiproc apiproc, int len_args, ...);
+typedef void (*GLADprecallback)(const char* name, GLADapiproc apiproc, int len_args, ...);
+typedef void (*GLADpostcallback)(void* ret, const char* name, GLADapiproc apiproc, int len_args, ...);
 
 #endif /* GLAD_PLATFORM_H_ */
 
@@ -260,43 +262,13 @@ typedef void (*GLADpostcallback)(void *ret, const char *name, GLADapiproc apipro
 #define WGL_TYPE_COLORINDEX_ARB 0x202C
 #define WGL_TYPE_RGBA_ARB 0x202B
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-struct _GPU_DEVICE {
-    DWORD  cb;
-    CHAR   DeviceName[32];
-    CHAR   DeviceString[128];
-    DWORD  Flags;
-    RECT   rcVirtualScreen;
+struct _GPU_DEVICE
+{
+        DWORD cb;
+        CHAR DeviceName[32];
+        CHAR DeviceString[128];
+        DWORD Flags;
+        RECT rcVirtualScreen;
 };
 DECLARE_HANDLE(HPBUFFERARB);
 DECLARE_HANDLE(HPBUFFEREXT);
@@ -306,8 +278,7 @@ DECLARE_HANDLE(HPGPUNV);
 DECLARE_HANDLE(HGPUNV);
 DECLARE_HANDLE(HVIDEOINPUTDEVICENV);
 typedef struct _GPU_DEVICE GPU_DEVICE;
-typedef struct _GPU_DEVICE *PGPU_DEVICE;
-
+typedef struct _GPU_DEVICE* PGPU_DEVICE;
 
 #define WGL_VERSION_1_0 1
 GLAD_API_CALL int SF_GLAD_WGL_VERSION_1_0;
@@ -332,46 +303,61 @@ GLAD_API_CALL int SF_GLAD_WGL_EXT_framebuffer_sRGB;
 #define WGL_EXT_swap_control 1
 GLAD_API_CALL int SF_GLAD_WGL_EXT_swap_control;
 
-
-typedef int (GLAD_API_PTR *PFNCHOOSEPIXELFORMATPROC)(HDC hDc, const PIXELFORMATDESCRIPTOR * pPfd);
-typedef int (GLAD_API_PTR *PFNDESCRIBEPIXELFORMATPROC)(HDC hdc, int ipfd, UINT cjpfd, const PIXELFORMATDESCRIPTOR * ppfd);
-typedef UINT (GLAD_API_PTR *PFNGETENHMETAFILEPIXELFORMATPROC)(HENHMETAFILE hemf, const PIXELFORMATDESCRIPTOR * ppfd);
-typedef int (GLAD_API_PTR *PFNGETPIXELFORMATPROC)(HDC hdc);
-typedef BOOL (GLAD_API_PTR *PFNSETPIXELFORMATPROC)(HDC hdc, int ipfd, const PIXELFORMATDESCRIPTOR * ppfd);
-typedef BOOL (GLAD_API_PTR *PFNSWAPBUFFERSPROC)(HDC hdc);
-typedef BOOL (GLAD_API_PTR *PFNWGLCHOOSEPIXELFORMATARBPROC)(HDC hdc, const int * piAttribIList, const FLOAT * pfAttribFList, UINT nMaxFormats, int * piFormats, UINT * nNumFormats);
-typedef BOOL (GLAD_API_PTR *PFNWGLCOPYCONTEXTPROC)(HGLRC hglrcSrc, HGLRC hglrcDst, UINT mask);
-typedef HGLRC (GLAD_API_PTR *PFNWGLCREATECONTEXTPROC)(HDC hDc);
-typedef HGLRC (GLAD_API_PTR *PFNWGLCREATECONTEXTATTRIBSARBPROC)(HDC hDC, HGLRC hShareContext, const int * attribList);
-typedef HGLRC (GLAD_API_PTR *PFNWGLCREATELAYERCONTEXTPROC)(HDC hDc, int level);
-typedef HPBUFFERARB (GLAD_API_PTR *PFNWGLCREATEPBUFFERARBPROC)(HDC hDC, int iPixelFormat, int iWidth, int iHeight, const int * piAttribList);
-typedef BOOL (GLAD_API_PTR *PFNWGLDELETECONTEXTPROC)(HGLRC oldContext);
-typedef BOOL (GLAD_API_PTR *PFNWGLDESCRIBELAYERPLANEPROC)(HDC hDc, int pixelFormat, int layerPlane, UINT nBytes, const LAYERPLANEDESCRIPTOR * plpd);
-typedef BOOL (GLAD_API_PTR *PFNWGLDESTROYPBUFFERARBPROC)(HPBUFFERARB hPbuffer);
-typedef HGLRC (GLAD_API_PTR *PFNWGLGETCURRENTCONTEXTPROC)(void);
-typedef HDC (GLAD_API_PTR *PFNWGLGETCURRENTDCPROC)(void);
-typedef const char * (GLAD_API_PTR *PFNWGLGETEXTENSIONSSTRINGARBPROC)(HDC hdc);
-typedef const char * (GLAD_API_PTR *PFNWGLGETEXTENSIONSSTRINGEXTPROC)(void);
-typedef int (GLAD_API_PTR *PFNWGLGETLAYERPALETTEENTRIESPROC)(HDC hdc, int iLayerPlane, int iStart, int cEntries, const COLORREF * pcr);
-typedef HDC (GLAD_API_PTR *PFNWGLGETPBUFFERDCARBPROC)(HPBUFFERARB hPbuffer);
-typedef BOOL (GLAD_API_PTR *PFNWGLGETPIXELFORMATATTRIBFVARBPROC)(HDC hdc, int iPixelFormat, int iLayerPlane, UINT nAttributes, const int * piAttributes, FLOAT * pfValues);
-typedef BOOL (GLAD_API_PTR *PFNWGLGETPIXELFORMATATTRIBIVARBPROC)(HDC hdc, int iPixelFormat, int iLayerPlane, UINT nAttributes, const int * piAttributes, int * piValues);
-typedef PROC (GLAD_API_PTR *PFNWGLGETPROCADDRESSPROC)(LPCSTR lpszProc);
-typedef int (GLAD_API_PTR *PFNWGLGETSWAPINTERVALEXTPROC)(void);
-typedef BOOL (GLAD_API_PTR *PFNWGLMAKECURRENTPROC)(HDC hDc, HGLRC newContext);
-typedef BOOL (GLAD_API_PTR *PFNWGLQUERYPBUFFERARBPROC)(HPBUFFERARB hPbuffer, int iAttribute, int * piValue);
-typedef BOOL (GLAD_API_PTR *PFNWGLREALIZELAYERPALETTEPROC)(HDC hdc, int iLayerPlane, BOOL bRealize);
-typedef int (GLAD_API_PTR *PFNWGLRELEASEPBUFFERDCARBPROC)(HPBUFFERARB hPbuffer, HDC hDC);
-typedef int (GLAD_API_PTR *PFNWGLSETLAYERPALETTEENTRIESPROC)(HDC hdc, int iLayerPlane, int iStart, int cEntries, const COLORREF * pcr);
-typedef BOOL (GLAD_API_PTR *PFNWGLSHARELISTSPROC)(HGLRC hrcSrvShare, HGLRC hrcSrvSource);
-typedef BOOL (GLAD_API_PTR *PFNWGLSWAPINTERVALEXTPROC)(int interval);
-typedef BOOL (GLAD_API_PTR *PFNWGLSWAPLAYERBUFFERSPROC)(HDC hdc, UINT fuFlags);
-typedef BOOL (GLAD_API_PTR *PFNWGLUSEFONTBITMAPSPROC)(HDC hDC, DWORD first, DWORD count, DWORD listBase);
-typedef BOOL (GLAD_API_PTR *PFNWGLUSEFONTBITMAPSAPROC)(HDC hDC, DWORD first, DWORD count, DWORD listBase);
-typedef BOOL (GLAD_API_PTR *PFNWGLUSEFONTBITMAPSWPROC)(HDC hDC, DWORD first, DWORD count, DWORD listBase);
-typedef BOOL (GLAD_API_PTR *PFNWGLUSEFONTOUTLINESPROC)(HDC hDC, DWORD first, DWORD count, DWORD listBase, FLOAT deviation, FLOAT extrusion, int format, LPGLYPHMETRICSFLOAT lpgmf);
-typedef BOOL (GLAD_API_PTR *PFNWGLUSEFONTOUTLINESAPROC)(HDC hDC, DWORD first, DWORD count, DWORD listBase, FLOAT deviation, FLOAT extrusion, int format, LPGLYPHMETRICSFLOAT lpgmf);
-typedef BOOL (GLAD_API_PTR *PFNWGLUSEFONTOUTLINESWPROC)(HDC hDC, DWORD first, DWORD count, DWORD listBase, FLOAT deviation, FLOAT extrusion, int format, LPGLYPHMETRICSFLOAT lpgmf);
+typedef int(GLAD_API_PTR* PFNCHOOSEPIXELFORMATPROC)(HDC hDc, const PIXELFORMATDESCRIPTOR* pPfd);
+typedef int(GLAD_API_PTR* PFNDESCRIBEPIXELFORMATPROC)(HDC hdc, int ipfd, UINT cjpfd, const PIXELFORMATDESCRIPTOR* ppfd);
+typedef UINT(GLAD_API_PTR* PFNGETENHMETAFILEPIXELFORMATPROC)(HENHMETAFILE hemf, const PIXELFORMATDESCRIPTOR* ppfd);
+typedef int(GLAD_API_PTR* PFNGETPIXELFORMATPROC)(HDC hdc);
+typedef BOOL(GLAD_API_PTR* PFNSETPIXELFORMATPROC)(HDC hdc, int ipfd, const PIXELFORMATDESCRIPTOR* ppfd);
+typedef BOOL(GLAD_API_PTR* PFNSWAPBUFFERSPROC)(HDC hdc);
+typedef BOOL(GLAD_API_PTR* PFNWGLCHOOSEPIXELFORMATARBPROC)(HDC hdc, const int* piAttribIList,
+                                                           const FLOAT* pfAttribFList, UINT nMaxFormats, int* piFormats,
+                                                           UINT* nNumFormats);
+typedef BOOL(GLAD_API_PTR* PFNWGLCOPYCONTEXTPROC)(HGLRC hglrcSrc, HGLRC hglrcDst, UINT mask);
+typedef HGLRC(GLAD_API_PTR* PFNWGLCREATECONTEXTPROC)(HDC hDc);
+typedef HGLRC(GLAD_API_PTR* PFNWGLCREATECONTEXTATTRIBSARBPROC)(HDC hDC, HGLRC hShareContext, const int* attribList);
+typedef HGLRC(GLAD_API_PTR* PFNWGLCREATELAYERCONTEXTPROC)(HDC hDc, int level);
+typedef HPBUFFERARB(GLAD_API_PTR* PFNWGLCREATEPBUFFERARBPROC)(HDC hDC, int iPixelFormat, int iWidth, int iHeight,
+                                                              const int* piAttribList);
+typedef BOOL(GLAD_API_PTR* PFNWGLDELETECONTEXTPROC)(HGLRC oldContext);
+typedef BOOL(GLAD_API_PTR* PFNWGLDESCRIBELAYERPLANEPROC)(HDC hDc, int pixelFormat, int layerPlane, UINT nBytes,
+                                                         const LAYERPLANEDESCRIPTOR* plpd);
+typedef BOOL(GLAD_API_PTR* PFNWGLDESTROYPBUFFERARBPROC)(HPBUFFERARB hPbuffer);
+typedef HGLRC(GLAD_API_PTR* PFNWGLGETCURRENTCONTEXTPROC)(void);
+typedef HDC(GLAD_API_PTR* PFNWGLGETCURRENTDCPROC)(void);
+typedef const char*(GLAD_API_PTR* PFNWGLGETEXTENSIONSSTRINGARBPROC)(HDC hdc);
+typedef const char*(GLAD_API_PTR* PFNWGLGETEXTENSIONSSTRINGEXTPROC)(void);
+typedef int(GLAD_API_PTR* PFNWGLGETLAYERPALETTEENTRIESPROC)(HDC hdc, int iLayerPlane, int iStart, int cEntries,
+                                                            const COLORREF* pcr);
+typedef HDC(GLAD_API_PTR* PFNWGLGETPBUFFERDCARBPROC)(HPBUFFERARB hPbuffer);
+typedef BOOL(GLAD_API_PTR* PFNWGLGETPIXELFORMATATTRIBFVARBPROC)(HDC hdc, int iPixelFormat, int iLayerPlane,
+                                                                UINT nAttributes, const int* piAttributes,
+                                                                FLOAT* pfValues);
+typedef BOOL(GLAD_API_PTR* PFNWGLGETPIXELFORMATATTRIBIVARBPROC)(HDC hdc, int iPixelFormat, int iLayerPlane,
+                                                                UINT nAttributes, const int* piAttributes,
+                                                                int* piValues);
+typedef PROC(GLAD_API_PTR* PFNWGLGETPROCADDRESSPROC)(LPCSTR lpszProc);
+typedef int(GLAD_API_PTR* PFNWGLGETSWAPINTERVALEXTPROC)(void);
+typedef BOOL(GLAD_API_PTR* PFNWGLMAKECURRENTPROC)(HDC hDc, HGLRC newContext);
+typedef BOOL(GLAD_API_PTR* PFNWGLQUERYPBUFFERARBPROC)(HPBUFFERARB hPbuffer, int iAttribute, int* piValue);
+typedef BOOL(GLAD_API_PTR* PFNWGLREALIZELAYERPALETTEPROC)(HDC hdc, int iLayerPlane, BOOL bRealize);
+typedef int(GLAD_API_PTR* PFNWGLRELEASEPBUFFERDCARBPROC)(HPBUFFERARB hPbuffer, HDC hDC);
+typedef int(GLAD_API_PTR* PFNWGLSETLAYERPALETTEENTRIESPROC)(HDC hdc, int iLayerPlane, int iStart, int cEntries,
+                                                            const COLORREF* pcr);
+typedef BOOL(GLAD_API_PTR* PFNWGLSHARELISTSPROC)(HGLRC hrcSrvShare, HGLRC hrcSrvSource);
+typedef BOOL(GLAD_API_PTR* PFNWGLSWAPINTERVALEXTPROC)(int interval);
+typedef BOOL(GLAD_API_PTR* PFNWGLSWAPLAYERBUFFERSPROC)(HDC hdc, UINT fuFlags);
+typedef BOOL(GLAD_API_PTR* PFNWGLUSEFONTBITMAPSPROC)(HDC hDC, DWORD first, DWORD count, DWORD listBase);
+typedef BOOL(GLAD_API_PTR* PFNWGLUSEFONTBITMAPSAPROC)(HDC hDC, DWORD first, DWORD count, DWORD listBase);
+typedef BOOL(GLAD_API_PTR* PFNWGLUSEFONTBITMAPSWPROC)(HDC hDC, DWORD first, DWORD count, DWORD listBase);
+typedef BOOL(GLAD_API_PTR* PFNWGLUSEFONTOUTLINESPROC)(HDC hDC, DWORD first, DWORD count, DWORD listBase,
+                                                      FLOAT deviation, FLOAT extrusion, int format,
+                                                      LPGLYPHMETRICSFLOAT lpgmf);
+typedef BOOL(GLAD_API_PTR* PFNWGLUSEFONTOUTLINESAPROC)(HDC hDC, DWORD first, DWORD count, DWORD listBase,
+                                                       FLOAT deviation, FLOAT extrusion, int format,
+                                                       LPGLYPHMETRICSFLOAT lpgmf);
+typedef BOOL(GLAD_API_PTR* PFNWGLUSEFONTOUTLINESWPROC)(HDC hDC, DWORD first, DWORD count, DWORD listBase,
+                                                       FLOAT deviation, FLOAT extrusion, int format,
+                                                       LPGLYPHMETRICSFLOAT lpgmf);
 
 GLAD_API_CALL PFNWGLCHOOSEPIXELFORMATARBPROC sf_glad_wglChoosePixelFormatARB;
 #define wglChoosePixelFormatARB sf_glad_wglChoosePixelFormatARB
@@ -400,10 +386,6 @@ GLAD_API_CALL PFNWGLRELEASEPBUFFERDCARBPROC sf_glad_wglReleasePbufferDCARB;
 GLAD_API_CALL PFNWGLSWAPINTERVALEXTPROC sf_glad_wglSwapIntervalEXT;
 #define wglSwapIntervalEXT sf_glad_wglSwapIntervalEXT
 
-
-
-
-
 #ifdef __cplusplus
 }
 #endif
@@ -426,7 +408,6 @@ GLAD_API_CALL PFNWGLSWAPINTERVALEXTPROC sf_glad_wglSwapIntervalEXT;
 
 #endif /* GLAD_IMPL_UTIL_C_ */
 
-
 int SF_GLAD_WGL_VERSION_1_0 = 0;
 int SF_GLAD_WGL_ARB_create_context = 0;
 int SF_GLAD_WGL_ARB_create_context_profile = 0;
@@ -438,8 +419,6 @@ int SF_GLAD_WGL_ARB_pixel_format = 0;
 int SF_GLAD_WGL_EXT_extensions_string = 0;
 int SF_GLAD_WGL_EXT_framebuffer_sRGB = 0;
 int SF_GLAD_WGL_EXT_swap_control = 0;
-
-
 
 PFNWGLCHOOSEPIXELFORMATARBPROC sf_glad_wglChoosePixelFormatARB = NULL;
 PFNWGLCREATECONTEXTATTRIBSARBPROC sf_glad_wglCreateContextAttribsARB = NULL;
@@ -455,132 +434,149 @@ PFNWGLQUERYPBUFFERARBPROC sf_glad_wglQueryPbufferARB = NULL;
 PFNWGLRELEASEPBUFFERDCARBPROC sf_glad_wglReleasePbufferDCARB = NULL;
 PFNWGLSWAPINTERVALEXTPROC sf_glad_wglSwapIntervalEXT = NULL;
 
-
-static void sf_glad_wgl_load_WGL_ARB_create_context(GLADuserptrloadfunc load, void *userptr) {
-    if(!SF_GLAD_WGL_ARB_create_context) return;
-    sf_glad_wglCreateContextAttribsARB = (PFNWGLCREATECONTEXTATTRIBSARBPROC) load(userptr, "wglCreateContextAttribsARB");
+static void sf_glad_wgl_load_WGL_ARB_create_context(GLADuserptrloadfunc load, void* userptr)
+{
+        if (!SF_GLAD_WGL_ARB_create_context)
+                return;
+        sf_glad_wglCreateContextAttribsARB =
+            (PFNWGLCREATECONTEXTATTRIBSARBPROC)load(userptr, "wglCreateContextAttribsARB");
 }
-static void sf_glad_wgl_load_WGL_ARB_extensions_string(GLADuserptrloadfunc load, void *userptr) {
-    if(!SF_GLAD_WGL_ARB_extensions_string) return;
-    sf_glad_wglGetExtensionsStringARB = (PFNWGLGETEXTENSIONSSTRINGARBPROC) load(userptr, "wglGetExtensionsStringARB");
+static void sf_glad_wgl_load_WGL_ARB_extensions_string(GLADuserptrloadfunc load, void* userptr)
+{
+        if (!SF_GLAD_WGL_ARB_extensions_string)
+                return;
+        sf_glad_wglGetExtensionsStringARB =
+            (PFNWGLGETEXTENSIONSSTRINGARBPROC)load(userptr, "wglGetExtensionsStringARB");
 }
-static void sf_glad_wgl_load_WGL_ARB_pbuffer(GLADuserptrloadfunc load, void *userptr) {
-    if(!SF_GLAD_WGL_ARB_pbuffer) return;
-    sf_glad_wglCreatePbufferARB = (PFNWGLCREATEPBUFFERARBPROC) load(userptr, "wglCreatePbufferARB");
-    sf_glad_wglDestroyPbufferARB = (PFNWGLDESTROYPBUFFERARBPROC) load(userptr, "wglDestroyPbufferARB");
-    sf_glad_wglGetPbufferDCARB = (PFNWGLGETPBUFFERDCARBPROC) load(userptr, "wglGetPbufferDCARB");
-    sf_glad_wglQueryPbufferARB = (PFNWGLQUERYPBUFFERARBPROC) load(userptr, "wglQueryPbufferARB");
-    sf_glad_wglReleasePbufferDCARB = (PFNWGLRELEASEPBUFFERDCARBPROC) load(userptr, "wglReleasePbufferDCARB");
+static void sf_glad_wgl_load_WGL_ARB_pbuffer(GLADuserptrloadfunc load, void* userptr)
+{
+        if (!SF_GLAD_WGL_ARB_pbuffer)
+                return;
+        sf_glad_wglCreatePbufferARB = (PFNWGLCREATEPBUFFERARBPROC)load(userptr, "wglCreatePbufferARB");
+        sf_glad_wglDestroyPbufferARB = (PFNWGLDESTROYPBUFFERARBPROC)load(userptr, "wglDestroyPbufferARB");
+        sf_glad_wglGetPbufferDCARB = (PFNWGLGETPBUFFERDCARBPROC)load(userptr, "wglGetPbufferDCARB");
+        sf_glad_wglQueryPbufferARB = (PFNWGLQUERYPBUFFERARBPROC)load(userptr, "wglQueryPbufferARB");
+        sf_glad_wglReleasePbufferDCARB = (PFNWGLRELEASEPBUFFERDCARBPROC)load(userptr, "wglReleasePbufferDCARB");
 }
-static void sf_glad_wgl_load_WGL_ARB_pixel_format(GLADuserptrloadfunc load, void *userptr) {
-    if(!SF_GLAD_WGL_ARB_pixel_format) return;
-    sf_glad_wglChoosePixelFormatARB = (PFNWGLCHOOSEPIXELFORMATARBPROC) load(userptr, "wglChoosePixelFormatARB");
-    sf_glad_wglGetPixelFormatAttribfvARB = (PFNWGLGETPIXELFORMATATTRIBFVARBPROC) load(userptr, "wglGetPixelFormatAttribfvARB");
-    sf_glad_wglGetPixelFormatAttribivARB = (PFNWGLGETPIXELFORMATATTRIBIVARBPROC) load(userptr, "wglGetPixelFormatAttribivARB");
+static void sf_glad_wgl_load_WGL_ARB_pixel_format(GLADuserptrloadfunc load, void* userptr)
+{
+        if (!SF_GLAD_WGL_ARB_pixel_format)
+                return;
+        sf_glad_wglChoosePixelFormatARB = (PFNWGLCHOOSEPIXELFORMATARBPROC)load(userptr, "wglChoosePixelFormatARB");
+        sf_glad_wglGetPixelFormatAttribfvARB =
+            (PFNWGLGETPIXELFORMATATTRIBFVARBPROC)load(userptr, "wglGetPixelFormatAttribfvARB");
+        sf_glad_wglGetPixelFormatAttribivARB =
+            (PFNWGLGETPIXELFORMATATTRIBIVARBPROC)load(userptr, "wglGetPixelFormatAttribivARB");
 }
-static void sf_glad_wgl_load_WGL_EXT_extensions_string(GLADuserptrloadfunc load, void *userptr) {
-    if(!SF_GLAD_WGL_EXT_extensions_string) return;
-    sf_glad_wglGetExtensionsStringEXT = (PFNWGLGETEXTENSIONSSTRINGEXTPROC) load(userptr, "wglGetExtensionsStringEXT");
+static void sf_glad_wgl_load_WGL_EXT_extensions_string(GLADuserptrloadfunc load, void* userptr)
+{
+        if (!SF_GLAD_WGL_EXT_extensions_string)
+                return;
+        sf_glad_wglGetExtensionsStringEXT =
+            (PFNWGLGETEXTENSIONSSTRINGEXTPROC)load(userptr, "wglGetExtensionsStringEXT");
 }
-static void sf_glad_wgl_load_WGL_EXT_swap_control(GLADuserptrloadfunc load, void *userptr) {
-    if(!SF_GLAD_WGL_EXT_swap_control) return;
-    sf_glad_wglGetSwapIntervalEXT = (PFNWGLGETSWAPINTERVALEXTPROC) load(userptr, "wglGetSwapIntervalEXT");
-    sf_glad_wglSwapIntervalEXT = (PFNWGLSWAPINTERVALEXTPROC) load(userptr, "wglSwapIntervalEXT");
+static void sf_glad_wgl_load_WGL_EXT_swap_control(GLADuserptrloadfunc load, void* userptr)
+{
+        if (!SF_GLAD_WGL_EXT_swap_control)
+                return;
+        sf_glad_wglGetSwapIntervalEXT = (PFNWGLGETSWAPINTERVALEXTPROC)load(userptr, "wglGetSwapIntervalEXT");
+        sf_glad_wglSwapIntervalEXT = (PFNWGLSWAPINTERVALEXTPROC)load(userptr, "wglSwapIntervalEXT");
 }
 
+static void sf_glad_wgl_resolve_aliases(void) {}
 
-static void sf_glad_wgl_resolve_aliases(void) {
-}
+static int sf_glad_wgl_has_extension(HDC hdc, const char* ext)
+{
+        const char* terminator;
+        const char* loc;
+        const char* extensions;
 
-static int sf_glad_wgl_has_extension(HDC hdc, const char *ext) {
-    const char *terminator;
-    const char *loc;
-    const char *extensions;
+        if (wglGetExtensionsStringEXT == NULL && wglGetExtensionsStringARB == NULL)
+                return 0;
 
-    if(wglGetExtensionsStringEXT == NULL && wglGetExtensionsStringARB == NULL)
-        return 0;
+        if (wglGetExtensionsStringARB == NULL || hdc == INVALID_HANDLE_VALUE)
+                extensions = wglGetExtensionsStringEXT();
+        else
+                extensions = wglGetExtensionsStringARB(hdc);
 
-    if(wglGetExtensionsStringARB == NULL || hdc == INVALID_HANDLE_VALUE)
-        extensions = wglGetExtensionsStringEXT();
-    else
-        extensions = wglGetExtensionsStringARB(hdc);
+        if (extensions == NULL || ext == NULL)
+                return 0;
 
-    if(extensions == NULL || ext == NULL)
-        return 0;
+        while (1) {
+                loc = strstr(extensions, ext);
+                if (loc == NULL)
+                        break;
 
-    while(1) {
-        loc = strstr(extensions, ext);
-        if(loc == NULL)
-            break;
-
-        terminator = loc + strlen(ext);
-        if((loc == extensions || *(loc - 1) == ' ') &&
-            (*terminator == ' ' || *terminator == '\0'))
-        {
-            return 1;
+                terminator = loc + strlen(ext);
+                if ((loc == extensions || *(loc - 1) == ' ') && (*terminator == ' ' || *terminator == '\0')) {
+                        return 1;
+                }
+                extensions = terminator;
         }
-        extensions = terminator;
-    }
 
-    return 0;
+        return 0;
 }
 
-static GLADapiproc sf_glad_wgl_get_proc_from_userptr(void *userptr, const char* name) {
-    return (GLAD_GNUC_EXTENSION (GLADapiproc (*)(const char *name)) userptr)(name);
+static GLADapiproc sf_glad_wgl_get_proc_from_userptr(void* userptr, const char* name)
+{
+        return (GLAD_GNUC_EXTENSION(GLADapiproc(*)(const char* name)) userptr)(name);
 }
 
-static int sf_glad_wgl_find_extensions_wgl(HDC hdc) {
-    SF_GLAD_WGL_ARB_create_context = sf_glad_wgl_has_extension(hdc, "WGL_ARB_create_context");
-    SF_GLAD_WGL_ARB_create_context_profile = sf_glad_wgl_has_extension(hdc, "WGL_ARB_create_context_profile");
-    SF_GLAD_WGL_ARB_extensions_string = sf_glad_wgl_has_extension(hdc, "WGL_ARB_extensions_string");
-    SF_GLAD_WGL_ARB_framebuffer_sRGB = sf_glad_wgl_has_extension(hdc, "WGL_ARB_framebuffer_sRGB");
-    SF_GLAD_WGL_ARB_multisample = sf_glad_wgl_has_extension(hdc, "WGL_ARB_multisample");
-    SF_GLAD_WGL_ARB_pbuffer = sf_glad_wgl_has_extension(hdc, "WGL_ARB_pbuffer");
-    SF_GLAD_WGL_ARB_pixel_format = sf_glad_wgl_has_extension(hdc, "WGL_ARB_pixel_format");
-    SF_GLAD_WGL_EXT_extensions_string = sf_glad_wgl_has_extension(hdc, "WGL_EXT_extensions_string");
-    SF_GLAD_WGL_EXT_framebuffer_sRGB = sf_glad_wgl_has_extension(hdc, "WGL_EXT_framebuffer_sRGB");
-    SF_GLAD_WGL_EXT_swap_control = sf_glad_wgl_has_extension(hdc, "WGL_EXT_swap_control");
-    return 1;
+static int sf_glad_wgl_find_extensions_wgl(HDC hdc)
+{
+        SF_GLAD_WGL_ARB_create_context = sf_glad_wgl_has_extension(hdc, "WGL_ARB_create_context");
+        SF_GLAD_WGL_ARB_create_context_profile = sf_glad_wgl_has_extension(hdc, "WGL_ARB_create_context_profile");
+        SF_GLAD_WGL_ARB_extensions_string = sf_glad_wgl_has_extension(hdc, "WGL_ARB_extensions_string");
+        SF_GLAD_WGL_ARB_framebuffer_sRGB = sf_glad_wgl_has_extension(hdc, "WGL_ARB_framebuffer_sRGB");
+        SF_GLAD_WGL_ARB_multisample = sf_glad_wgl_has_extension(hdc, "WGL_ARB_multisample");
+        SF_GLAD_WGL_ARB_pbuffer = sf_glad_wgl_has_extension(hdc, "WGL_ARB_pbuffer");
+        SF_GLAD_WGL_ARB_pixel_format = sf_glad_wgl_has_extension(hdc, "WGL_ARB_pixel_format");
+        SF_GLAD_WGL_EXT_extensions_string = sf_glad_wgl_has_extension(hdc, "WGL_EXT_extensions_string");
+        SF_GLAD_WGL_EXT_framebuffer_sRGB = sf_glad_wgl_has_extension(hdc, "WGL_EXT_framebuffer_sRGB");
+        SF_GLAD_WGL_EXT_swap_control = sf_glad_wgl_has_extension(hdc, "WGL_EXT_swap_control");
+        return 1;
 }
 
-static int sf_glad_wgl_find_core_wgl(void) {
-    int major = 1, minor = 0;
-    SF_GLAD_WGL_VERSION_1_0 = (major == 1 && minor >= 0) || major > 1;
-    return GLAD_MAKE_VERSION(major, minor);
+static int sf_glad_wgl_find_core_wgl(void)
+{
+        int major = 1, minor = 0;
+        SF_GLAD_WGL_VERSION_1_0 = (major == 1 && minor >= 0) || major > 1;
+        return GLAD_MAKE_VERSION(major, minor);
 }
 
-static int gladLoadWGLUserPtr(HDC hdc, GLADuserptrloadfunc load, void *userptr) {
-    int version;
-    wglGetExtensionsStringARB = (PFNWGLGETEXTENSIONSSTRINGARBPROC) load(userptr, "wglGetExtensionsStringARB");
-    wglGetExtensionsStringEXT = (PFNWGLGETEXTENSIONSSTRINGEXTPROC) load(userptr, "wglGetExtensionsStringEXT");
-    if(wglGetExtensionsStringARB == NULL && wglGetExtensionsStringEXT == NULL) return 0;
-    version = sf_glad_wgl_find_core_wgl();
+static int gladLoadWGLUserPtr(HDC hdc, GLADuserptrloadfunc load, void* userptr)
+{
+        int version;
+        wglGetExtensionsStringARB = (PFNWGLGETEXTENSIONSSTRINGARBPROC)load(userptr, "wglGetExtensionsStringARB");
+        wglGetExtensionsStringEXT = (PFNWGLGETEXTENSIONSSTRINGEXTPROC)load(userptr, "wglGetExtensionsStringEXT");
+        if (wglGetExtensionsStringARB == NULL && wglGetExtensionsStringEXT == NULL)
+                return 0;
+        version = sf_glad_wgl_find_core_wgl();
 
+        if (!sf_glad_wgl_find_extensions_wgl(hdc))
+                return 0;
+        sf_glad_wgl_load_WGL_ARB_create_context(load, userptr);
+        sf_glad_wgl_load_WGL_ARB_extensions_string(load, userptr);
+        sf_glad_wgl_load_WGL_ARB_pbuffer(load, userptr);
+        sf_glad_wgl_load_WGL_ARB_pixel_format(load, userptr);
+        sf_glad_wgl_load_WGL_EXT_extensions_string(load, userptr);
+        sf_glad_wgl_load_WGL_EXT_swap_control(load, userptr);
 
-    if (!sf_glad_wgl_find_extensions_wgl(hdc)) return 0;
-    sf_glad_wgl_load_WGL_ARB_create_context(load, userptr);
-    sf_glad_wgl_load_WGL_ARB_extensions_string(load, userptr);
-    sf_glad_wgl_load_WGL_ARB_pbuffer(load, userptr);
-    sf_glad_wgl_load_WGL_ARB_pixel_format(load, userptr);
-    sf_glad_wgl_load_WGL_EXT_extensions_string(load, userptr);
-    sf_glad_wgl_load_WGL_EXT_swap_control(load, userptr);
-
-    return version;
+        return version;
 }
 
-static int gladLoadWGL(HDC hdc, GLADloadfunc load) {
-    return gladLoadWGLUserPtr(hdc, sf_glad_wgl_get_proc_from_userptr, GLAD_GNUC_EXTENSION (void*) load);
+static int gladLoadWGL(HDC hdc, GLADloadfunc load)
+{
+        return gladLoadWGLUserPtr(hdc, sf_glad_wgl_get_proc_from_userptr, GLAD_GNUC_EXTENSION(void*) load);
 }
- 
 
 #ifdef SF_GLAD_WGL
 
-static int gladLoaderLoadWGL(HDC hdc) {
-    return gladLoadWGLUserPtr(hdc, sf_glad_wgl_get_proc_from_userptr, GLAD_GNUC_EXTENSION (void*) wglGetProcAddress);
+static int gladLoaderLoadWGL(HDC hdc)
+{
+        return gladLoadWGLUserPtr(hdc, sf_glad_wgl_get_proc_from_userptr, GLAD_GNUC_EXTENSION(void*) wglGetProcAddress);
 }
-
 
 #endif /* SF_GLAD_WGL */
 
 #endif /* SF_GLAD_WGL_IMPLEMENTATION */
-

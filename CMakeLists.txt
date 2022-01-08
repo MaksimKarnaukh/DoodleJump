@@ -44,7 +44,8 @@ FILE(GLOB logicLibraryFiles
 ADD_EXECUTABLE(DoodleJump
         src/main.cpp
         src/LoadFileException.cpp
-        ${gameRepresentationFiles})
+        ${gameRepresentationFiles}
+        )
 
 ADD_LIBRARY(logicLibrary STATIC
         ${logicLibraryFiles})

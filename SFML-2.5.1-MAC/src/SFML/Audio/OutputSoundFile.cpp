@@ -26,63 +26,53 @@
 // Headers
 ////////////////////////////////////////////////////////////
 #include <SFML/Audio/OutputSoundFile.hpp>
-#include <SFML/Audio/SoundFileWriter.hpp>
 #include <SFML/Audio/SoundFileFactory.hpp>
+#include <SFML/Audio/SoundFileWriter.hpp>
 
-
-namespace sf
-{
+namespace sf {
 ////////////////////////////////////////////////////////////
-OutputSoundFile::OutputSoundFile() :
-m_writer(NULL)
-{
-}
-
+OutputSoundFile::OutputSoundFile() : m_writer(NULL) {}
 
 ////////////////////////////////////////////////////////////
 OutputSoundFile::~OutputSoundFile()
 {
-    // Close the file in case it was open
-    close();
+        // Close the file in case it was open
+        close();
 }
-
 
 ////////////////////////////////////////////////////////////
 bool OutputSoundFile::openFromFile(const std::string& filename, unsigned int sampleRate, unsigned int channelCount)
 {
-    // If the file is already open, first close it
-    close();
-
-    // Find a suitable writer for the file type
-    m_writer = SoundFileFactory::createWriterFromFilename(filename);
-    if (!m_writer)
-        return false;
-
-    // Pass the stream to the reader
-    if (!m_writer->open(filename, sampleRate, channelCount))
-    {
+        // If the file is already open, first close it
         close();
-        return false;
-    }
 
-    return true;
+        // Find a suitable writer for the file type
+        m_writer = SoundFileFactory::createWriterFromFilename(filename);
+        if (!m_writer)
+                return false;
+
+        // Pass the stream to the reader
+        if (!m_writer->open(filename, sampleRate, channelCount)) {
+                close();
+                return false;
+        }
+
+        return true;
 }
-
 
 ////////////////////////////////////////////////////////////
 void OutputSoundFile::write(const Int16* samples, Uint64 count)
 {
-    if (m_writer && samples && count)
-        m_writer->write(samples, count);
+        if (m_writer && samples && count)
+                m_writer->write(samples, count);
 }
-
 
 ////////////////////////////////////////////////////////////
 void OutputSoundFile::close()
 {
-    // Destroy the reader
-    delete m_writer;
-    m_writer = NULL;
+        // Destroy the reader
+        delete m_writer;
+        m_writer = NULL;
 }
 
 } // namespace sf

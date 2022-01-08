@@ -4,11 +4,8 @@
 
 namespace logic {
 
-    Observer::Observer() = default;
+Observer::Observer() = default;
 
-    Observer::Observer(const std::shared_ptr<logic::Subject>& subject) {
-        mSubject = subject;
-    }
+Observer::Observer(const std::shared_ptr<logic::Subject>& subject) { mSubject = subject; }
 
-}
-
+} // namespace logic

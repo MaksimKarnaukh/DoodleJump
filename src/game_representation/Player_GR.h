@@ -7,27 +7,24 @@
 
 namespace representation {
 
-    class Player_GR: public EntityView {
+class Player_GR : public EntityView
+{
 
-    public:
+public:
+        /**
+         * @function : Player_GR
+         * Constructor for a Player_GR.
+         * @param entityModel (std::shared_ptr<logic::EntityModel>) : entityModel
+         */
+        Player_GR(const std::shared_ptr<logic::EntityModel>& entityModel);
 
         /**
-        * @function : Player_GR
-        * Constructor for a Player_GR.
-        * @param entityModel (std::shared_ptr<logic::EntityModel>) : entityModel
-        */
-        Player_GR(const std::shared_ptr<logic::EntityModel> &entityModel);
-
-        /**
-        * @function : Player_GR
-        * Destructor for a Player_GR.
-        */
+         * @function : Player_GR
+         * Destructor for a Player_GR.
+         */
         ~Player_GR() override = default;
+};
 
-    };
+} // namespace representation
 
-}
-
-
-
-#endif //DOODLEJUMP_PLAYER_GR_H
+#endif // DOODLEJUMP_PLAYER_GR_H

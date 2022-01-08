@@ -31,11 +31,8 @@
 #include <SFML/Config.hpp>
 #include <SFML/System/Time.hpp>
 
-
-namespace sf
-{
-namespace priv
-{
+namespace sf {
+namespace priv {
 ////////////////////////////////////////////////////////////
 /// \brief Unix implementation of sf::Sleep
 ///
@@ -47,6 +44,5 @@ void sleepImpl(Time time);
 } // namespace priv
 
 } // namespace sf
-
 
 #endif // SFML_SLEEPIMPLUNIX_HPP

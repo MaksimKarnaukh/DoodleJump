@@ -25,87 +25,61 @@
 ////////////////////////////////////////////////////////////
 // Headers
 ////////////////////////////////////////////////////////////
+#include <SFML/System/ThreadLocalPtr.hpp>
 #include <SFML/Window/Context.hpp>
 #include <SFML/Window/GlContext.hpp>
-#include <SFML/System/ThreadLocalPtr.hpp>
 
+namespace {
+// This per-thread variable holds the current context for each thread
+sf::ThreadLocalPtr<sf::Context> currentContext(NULL);
+} // namespace
 
-namespace
-{
-    // This per-thread variable holds the current context for each thread
-    sf::ThreadLocalPtr<sf::Context> currentContext(NULL);
-}
-
-namespace sf
-{
+namespace sf {
 ////////////////////////////////////////////////////////////
 Context::Context()
 {
-    m_context = priv::GlContext::create();
-    setActive(true);
+        m_context = priv::GlContext::create();
+        setActive(true);
 }
-
 
 ////////////////////////////////////////////////////////////
 Context::~Context()
 {
-    setActive(false);
-    delete m_context;
+        setActive(false);
+        delete m_context;
 }
-
 
 ////////////////////////////////////////////////////////////
 bool Context::setActive(bool active)
 {
-    bool result = m_context->setActive(active);
+        bool result = m_context->setActive(active);
 
-    if (result)
-        currentContext = (active ? this : NULL);
+        if (result)
+                currentContext = (active ? this : NULL);
 
-    return result;
+        return result;
 }
-
 
 ////////////////////////////////////////////////////////////
-const ContextSettings& Context::getSettings() const
-{
-    return m_context->getSettings();
-}
-
+const ContextSettings& Context::getSettings() const { return m_context->getSettings(); }
 
 ////////////////////////////////////////////////////////////
-const Context* Context::getActiveContext()
-{
-    return currentContext;
-}
-
+const Context* Context::getActiveContext() { return currentContext; }
 
 ////////////////////////////////////////////////////////////
-Uint64 Context::getActiveContextId()
-{
-    return priv::GlContext::getActiveContextId();
-}
-
+Uint64 Context::getActiveContextId() { return priv::GlContext::getActiveContextId(); }
 
 ////////////////////////////////////////////////////////////
-bool Context::isExtensionAvailable(const char* name)
-{
-    return priv::GlContext::isExtensionAvailable(name);
-}
-
+bool Context::isExtensionAvailable(const char* name) { return priv::GlContext::isExtensionAvailable(name); }
 
 ////////////////////////////////////////////////////////////
-GlFunctionPointer Context::getFunction(const char* name)
-{
-    return priv::GlContext::getFunction(name);
-}
-
+GlFunctionPointer Context::getFunction(const char* name) { return priv::GlContext::getFunction(name); }
 
 ////////////////////////////////////////////////////////////
 Context::Context(const ContextSettings& settings, unsigned int width, unsigned int height)
 {
-    m_context = priv::GlContext::create(settings, width, height);
-    setActive(true);
+        m_context = priv::GlContext::create(settings, width, height);
+        setActive(true);
 }
 
 } // namespace sf

@@ -25,86 +25,41 @@
 ////////////////////////////////////////////////////////////
 // Headers
 ////////////////////////////////////////////////////////////
-#include <SFML/Audio/Listener.hpp>
 #include <SFML/Audio/AudioDevice.hpp>
+#include <SFML/Audio/Listener.hpp>
 
-
-namespace sf
-{
+namespace sf {
 ////////////////////////////////////////////////////////////
-void Listener::setGlobalVolume(float volume)
-{
-    priv::AudioDevice::setGlobalVolume(volume);
-}
-
+void Listener::setGlobalVolume(float volume) { priv::AudioDevice::setGlobalVolume(volume); }
 
 ////////////////////////////////////////////////////////////
-float Listener::getGlobalVolume()
-{
-    return priv::AudioDevice::getGlobalVolume();
-}
-
+float Listener::getGlobalVolume() { return priv::AudioDevice::getGlobalVolume(); }
 
 ////////////////////////////////////////////////////////////
-void Listener::setPosition(float x, float y, float z)
-{
-    setPosition(Vector3f(x, y, z));
-}
-
+void Listener::setPosition(float x, float y, float z) { setPosition(Vector3f(x, y, z)); }
 
 ////////////////////////////////////////////////////////////
-void Listener::setPosition(const Vector3f& position)
-{
-    priv::AudioDevice::setPosition(position);
-}
-
+void Listener::setPosition(const Vector3f& position) { priv::AudioDevice::setPosition(position); }
 
 ////////////////////////////////////////////////////////////
-Vector3f Listener::getPosition()
-{
-    return priv::AudioDevice::getPosition();
-}
-
+Vector3f Listener::getPosition() { return priv::AudioDevice::getPosition(); }
 
 ////////////////////////////////////////////////////////////
-void Listener::setDirection(float x, float y, float z)
-{
-    setDirection(Vector3f(x, y, z));
-}
-
+void Listener::setDirection(float x, float y, float z) { setDirection(Vector3f(x, y, z)); }
 
 ////////////////////////////////////////////////////////////
-void Listener::setDirection(const Vector3f& direction)
-{
-    priv::AudioDevice::setDirection(direction);
-}
-
+void Listener::setDirection(const Vector3f& direction) { priv::AudioDevice::setDirection(direction); }
 
 ////////////////////////////////////////////////////////////
-Vector3f Listener::getDirection()
-{
-    return priv::AudioDevice::getDirection();
-}
-
+Vector3f Listener::getDirection() { return priv::AudioDevice::getDirection(); }
 
 ////////////////////////////////////////////////////////////
-void Listener::setUpVector(float x, float y, float z)
-{
-    setUpVector(Vector3f(x, y, z));
-}
-
+void Listener::setUpVector(float x, float y, float z) { setUpVector(Vector3f(x, y, z)); }
 
 ////////////////////////////////////////////////////////////
-void Listener::setUpVector(const Vector3f& upVector)
-{
-    priv::AudioDevice::setUpVector(upVector);
-}
-
+void Listener::setUpVector(const Vector3f& upVector) { priv::AudioDevice::setUpVector(upVector); }
 
 ////////////////////////////////////////////////////////////
-Vector3f Listener::getUpVector()
-{
-    return priv::AudioDevice::getUpVector();
-}
+Vector3f Listener::getUpVector() { return priv::AudioDevice::getUpVector(); }
 
 } // namespace sf

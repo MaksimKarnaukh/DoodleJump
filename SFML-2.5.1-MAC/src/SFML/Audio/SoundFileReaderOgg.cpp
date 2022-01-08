@@ -26,152 +26,124 @@
 // Headers
 ////////////////////////////////////////////////////////////
 #include <SFML/Audio/SoundFileReaderOgg.hpp>
-#include <SFML/System/MemoryInputStream.hpp>
 #include <SFML/System/Err.hpp>
+#include <SFML/System/MemoryInputStream.hpp>
 #include <algorithm>
-#include <cctype>
 #include <cassert>
+#include <cctype>
 
-
-namespace
+namespace {
+size_t read(void* ptr, size_t size, size_t nmemb, void* data)
 {
-    size_t read(void* ptr, size_t size, size_t nmemb, void* data)
-    {
         sf::InputStream* stream = static_cast<sf::InputStream*>(data);
         return static_cast<std::size_t>(stream->read(ptr, size * nmemb));
-    }
+}
 
-    int seek(void* data, ogg_int64_t offset, int whence)
-    {
+int seek(void* data, ogg_int64_t offset, int whence)
+{
         sf::InputStream* stream = static_cast<sf::InputStream*>(data);
-        switch (whence)
-        {
-            case SEEK_SET:
+        switch (whence) {
+        case SEEK_SET:
                 break;
-            case SEEK_CUR:
+        case SEEK_CUR:
                 offset += stream->tell();
                 break;
-            case SEEK_END:
+        case SEEK_END:
                 offset = stream->getSize() - offset;
         }
         return static_cast<int>(stream->seek(offset));
-    }
-
-    long tell(void* data)
-    {
-        sf::InputStream* stream = static_cast<sf::InputStream*>(data);
-        return static_cast<long>(stream->tell());
-    }
-
-    static ov_callbacks callbacks = {&read, &seek, NULL, &tell};
 }
 
-namespace sf
+long tell(void* data)
 {
-namespace priv
-{
+        sf::InputStream* stream = static_cast<sf::InputStream*>(data);
+        return static_cast<long>(stream->tell());
+}
+
+static ov_callbacks callbacks = {&read, &seek, NULL, &tell};
+} // namespace
+
+namespace sf {
+namespace priv {
 ////////////////////////////////////////////////////////////
 bool SoundFileReaderOgg::check(InputStream& stream)
 {
-    OggVorbis_File file;
-    if (ov_test_callbacks(&stream, &file, NULL, 0, callbacks) == 0)
-    {
-        ov_clear(&file);
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+        OggVorbis_File file;
+        if (ov_test_callbacks(&stream, &file, NULL, 0, callbacks) == 0) {
+                ov_clear(&file);
+                return true;
+        } else {
+                return false;
+        }
 }
-
 
 ////////////////////////////////////////////////////////////
-SoundFileReaderOgg::SoundFileReaderOgg() :
-m_vorbis      (),
-m_channelCount(0)
-{
-    m_vorbis.datasource = NULL;
-}
-
+SoundFileReaderOgg::SoundFileReaderOgg() : m_vorbis(), m_channelCount(0) { m_vorbis.datasource = NULL; }
 
 ////////////////////////////////////////////////////////////
-SoundFileReaderOgg::~SoundFileReaderOgg()
-{
-    close();
-}
-
+SoundFileReaderOgg::~SoundFileReaderOgg() { close(); }
 
 ////////////////////////////////////////////////////////////
 bool SoundFileReaderOgg::open(InputStream& stream, Info& info)
 {
-    // Open the Vorbis stream
-    int status = ov_open_callbacks(&stream, &m_vorbis, NULL, 0, callbacks);
-    if (status < 0)
-    {
-        err() << "Failed to open Vorbis file for reading" << std::endl;
-        return false;
-    }
+        // Open the Vorbis stream
+        int status = ov_open_callbacks(&stream, &m_vorbis, NULL, 0, callbacks);
+        if (status < 0) {
+                err() << "Failed to open Vorbis file for reading" << std::endl;
+                return false;
+        }
 
-    // Retrieve the music attributes
-    vorbis_info* vorbisInfo = ov_info(&m_vorbis, -1);
-    info.channelCount = vorbisInfo->channels;
-    info.sampleRate = vorbisInfo->rate;
-    info.sampleCount = static_cast<std::size_t>(ov_pcm_total(&m_vorbis, -1) * vorbisInfo->channels);
+        // Retrieve the music attributes
+        vorbis_info* vorbisInfo = ov_info(&m_vorbis, -1);
+        info.channelCount = vorbisInfo->channels;
+        info.sampleRate = vorbisInfo->rate;
+        info.sampleCount = static_cast<std::size_t>(ov_pcm_total(&m_vorbis, -1) * vorbisInfo->channels);
 
-    // We must keep the channel count for the seek function
-    m_channelCount = info.channelCount;
+        // We must keep the channel count for the seek function
+        m_channelCount = info.channelCount;
 
-    return true;
+        return true;
 }
-
 
 ////////////////////////////////////////////////////////////
 void SoundFileReaderOgg::seek(Uint64 sampleOffset)
 {
-    assert(m_vorbis.datasource);
+        assert(m_vorbis.datasource);
 
-    ov_pcm_seek(&m_vorbis, sampleOffset / m_channelCount);
+        ov_pcm_seek(&m_vorbis, sampleOffset / m_channelCount);
 }
-
 
 ////////////////////////////////////////////////////////////
 Uint64 SoundFileReaderOgg::read(Int16* samples, Uint64 maxCount)
 {
-    assert(m_vorbis.datasource);
+        assert(m_vorbis.datasource);
 
-    // Try to read the requested number of samples, stop only on error or end of file
-    Uint64 count = 0;
-    while (count < maxCount)
-    {
-        int bytesToRead = static_cast<int>(maxCount - count) * sizeof(Int16);
-        long bytesRead = ov_read(&m_vorbis, reinterpret_cast<char*>(samples), bytesToRead, 0, 2, 1, NULL);
-        if (bytesRead > 0)
-        {
-            long samplesRead = bytesRead / sizeof(Int16);
-            count += samplesRead;
-            samples += samplesRead;
+        // Try to read the requested number of samples, stop only on error or end of file
+        Uint64 count = 0;
+        while (count < maxCount) {
+                int bytesToRead = static_cast<int>(maxCount - count) * sizeof(Int16);
+                long bytesRead = ov_read(&m_vorbis, reinterpret_cast<char*>(samples), bytesToRead, 0, 2, 1, NULL);
+                if (bytesRead > 0) {
+                        long samplesRead = bytesRead / sizeof(Int16);
+                        count += samplesRead;
+                        samples += samplesRead;
+                } else {
+                        // error or end of file
+                        break;
+                }
         }
-        else
-        {
-            // error or end of file
-            break;
-        }
-    }
 
-    return count;
+        return count;
 }
-
 
 ////////////////////////////////////////////////////////////
 void SoundFileReaderOgg::close()
 {
-    if (m_vorbis.datasource)
-    {
-        ov_clear(&m_vorbis);
-        m_vorbis.datasource = NULL;
-        m_channelCount = 0;
-    }
+        if (m_vorbis.datasource) {
+                ov_clear(&m_vorbis);
+                m_vorbis.datasource = NULL;
+                m_channelCount = 0;
+        }
 }
 
 } // namespace priv

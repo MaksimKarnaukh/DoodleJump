@@ -99,7 +99,7 @@ typedef void* FLAC__IOHandle;
  * \retval size_t
  *    The number of records read.
  */
-typedef size_t (*FLAC__IOCallback_Read) (void *ptr, size_t size, size_t nmemb, FLAC__IOHandle handle);
+typedef size_t (*FLAC__IOCallback_Read)(void* ptr, size_t size, size_t nmemb, FLAC__IOHandle handle);
 
 /** Signature for the write callback.
  *  The signature and semantics match POSIX fwrite() implementations
@@ -112,7 +112,7 @@ typedef size_t (*FLAC__IOCallback_Read) (void *ptr, size_t size, size_t nmemb, F
  * \retval size_t
  *    The number of records written.
  */
-typedef size_t (*FLAC__IOCallback_Write) (const void *ptr, size_t size, size_t nmemb, FLAC__IOHandle handle);
+typedef size_t (*FLAC__IOCallback_Write)(const void* ptr, size_t size, size_t nmemb, FLAC__IOHandle handle);
 
 /** Signature for the seek callback.
  *  The signature and semantics mostly match POSIX fseek() WITH ONE IMPORTANT
@@ -125,7 +125,7 @@ typedef size_t (*FLAC__IOCallback_Write) (const void *ptr, size_t size, size_t n
  * \retval int
  *    \c 0 on success, \c -1 on error.
  */
-typedef int (*FLAC__IOCallback_Seek) (FLAC__IOHandle handle, FLAC__int64 offset, int whence);
+typedef int (*FLAC__IOCallback_Seek)(FLAC__IOHandle handle, FLAC__int64 offset, int whence);
 
 /** Signature for the tell callback.
  *  The signature and semantics mostly match POSIX ftell() WITH ONE IMPORTANT
@@ -136,7 +136,7 @@ typedef int (*FLAC__IOCallback_Seek) (FLAC__IOHandle handle, FLAC__int64 offset,
  * \retval FLAC__int64
  *    The current position on success, \c -1 on error.
  */
-typedef FLAC__int64 (*FLAC__IOCallback_Tell) (FLAC__IOHandle handle);
+typedef FLAC__int64 (*FLAC__IOCallback_Tell)(FLAC__IOHandle handle);
 
 /** Signature for the EOF callback.
  *  The signature and semantics mostly match POSIX feof() but WATCHOUT:
@@ -147,7 +147,7 @@ typedef FLAC__int64 (*FLAC__IOCallback_Tell) (FLAC__IOHandle handle);
  * \retval int
  *    \c 0 if not at end of file, nonzero if at end of file.
  */
-typedef int (*FLAC__IOCallback_Eof) (FLAC__IOHandle handle);
+typedef int (*FLAC__IOCallback_Eof)(FLAC__IOHandle handle);
 
 /** Signature for the close callback.
  *  The signature and semantics match POSIX fclose() implementations
@@ -157,7 +157,7 @@ typedef int (*FLAC__IOCallback_Eof) (FLAC__IOHandle handle);
  * \retval int
  *    \c 0 on success, \c EOF on error.
  */
-typedef int (*FLAC__IOCallback_Close) (FLAC__IOHandle handle);
+typedef int (*FLAC__IOCallback_Close)(FLAC__IOHandle handle);
 
 /** A structure for holding a set of callbacks.
  *  Each FLAC interface that requires a FLAC__IOCallbacks structure will
@@ -167,13 +167,14 @@ typedef int (*FLAC__IOCallback_Close) (FLAC__IOHandle handle);
  *  If the seek requirement for an interface is optional, you can signify that
  *  a data sorce is not seekable by setting the \a seek field to \c NULL.
  */
-typedef struct {
-	FLAC__IOCallback_Read read;
-	FLAC__IOCallback_Write write;
-	FLAC__IOCallback_Seek seek;
-	FLAC__IOCallback_Tell tell;
-	FLAC__IOCallback_Eof eof;
-	FLAC__IOCallback_Close close;
+typedef struct
+{
+        FLAC__IOCallback_Read read;
+        FLAC__IOCallback_Write write;
+        FLAC__IOCallback_Seek seek;
+        FLAC__IOCallback_Tell tell;
+        FLAC__IOCallback_Eof eof;
+        FLAC__IOCallback_Close close;
 } FLAC__IOCallbacks;
 
 /* \} */

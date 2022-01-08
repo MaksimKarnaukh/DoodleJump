@@ -26,161 +26,110 @@
 // Headers
 ////////////////////////////////////////////////////////////
 #include <SFML/Graphics/RenderTexture.hpp>
-#include <SFML/Graphics/RenderTextureImplFBO.hpp>
 #include <SFML/Graphics/RenderTextureImplDefault.hpp>
+#include <SFML/Graphics/RenderTextureImplFBO.hpp>
 #include <SFML/System/Err.hpp>
 
-
-namespace sf
-{
+namespace sf {
 ////////////////////////////////////////////////////////////
-RenderTexture::RenderTexture() :
-m_impl(NULL)
-{
-
-}
-
+RenderTexture::RenderTexture() : m_impl(NULL) {}
 
 ////////////////////////////////////////////////////////////
-RenderTexture::~RenderTexture()
-{
-    delete m_impl;
-}
-
+RenderTexture::~RenderTexture() { delete m_impl; }
 
 ////////////////////////////////////////////////////////////
 bool RenderTexture::create(unsigned int width, unsigned int height, bool depthBuffer)
 {
-    return create(width, height, ContextSettings(depthBuffer ? 32 : 0));
+        return create(width, height, ContextSettings(depthBuffer ? 32 : 0));
 }
-
 
 ////////////////////////////////////////////////////////////
 bool RenderTexture::create(unsigned int width, unsigned int height, const ContextSettings& settings)
 {
-    // Create the texture
-    if (!m_texture.create(width, height))
-    {
-        err() << "Impossible to create render texture (failed to create the target texture)" << std::endl;
-        return false;
-    }
+        // Create the texture
+        if (!m_texture.create(width, height)) {
+                err() << "Impossible to create render texture (failed to create the target texture)" << std::endl;
+                return false;
+        }
 
-    // We disable smoothing by default for render textures
-    setSmooth(false);
+        // We disable smoothing by default for render textures
+        setSmooth(false);
 
-    // Create the implementation
-    delete m_impl;
-    if (priv::RenderTextureImplFBO::isAvailable())
-    {
-        // Use frame-buffer object (FBO)
-        m_impl = new priv::RenderTextureImplFBO;
+        // Create the implementation
+        delete m_impl;
+        if (priv::RenderTextureImplFBO::isAvailable()) {
+                // Use frame-buffer object (FBO)
+                m_impl = new priv::RenderTextureImplFBO;
 
-        // Mark the texture as being a framebuffer object attachment
-        m_texture.m_fboAttachment = true;
-    }
-    else
-    {
-        // Use default implementation
-        m_impl = new priv::RenderTextureImplDefault;
-    }
+                // Mark the texture as being a framebuffer object attachment
+                m_texture.m_fboAttachment = true;
+        } else {
+                // Use default implementation
+                m_impl = new priv::RenderTextureImplDefault;
+        }
 
-    // Initialize the render texture
-    if (!m_impl->create(width, height, m_texture.m_texture, settings))
-        return false;
+        // Initialize the render texture
+        if (!m_impl->create(width, height, m_texture.m_texture, settings))
+                return false;
 
-    // We can now initialize the render target part
-    RenderTarget::initialize();
+        // We can now initialize the render target part
+        RenderTarget::initialize();
 
-    return true;
+        return true;
 }
-
 
 ////////////////////////////////////////////////////////////
 unsigned int RenderTexture::getMaximumAntialiasingLevel()
 {
-    if (priv::RenderTextureImplFBO::isAvailable())
-    {
-        return priv::RenderTextureImplFBO::getMaximumAntialiasingLevel();
-    }
-    else
-    {
-        return priv::RenderTextureImplDefault::getMaximumAntialiasingLevel();
-    }
+        if (priv::RenderTextureImplFBO::isAvailable()) {
+                return priv::RenderTextureImplFBO::getMaximumAntialiasingLevel();
+        } else {
+                return priv::RenderTextureImplDefault::getMaximumAntialiasingLevel();
+        }
 }
-
 
 ////////////////////////////////////////////////////////////
-void RenderTexture::setSmooth(bool smooth)
-{
-    m_texture.setSmooth(smooth);
-}
-
+void RenderTexture::setSmooth(bool smooth) { m_texture.setSmooth(smooth); }
 
 ////////////////////////////////////////////////////////////
-bool RenderTexture::isSmooth() const
-{
-    return m_texture.isSmooth();
-}
-
+bool RenderTexture::isSmooth() const { return m_texture.isSmooth(); }
 
 ////////////////////////////////////////////////////////////
-void RenderTexture::setRepeated(bool repeated)
-{
-    m_texture.setRepeated(repeated);
-}
-
+void RenderTexture::setRepeated(bool repeated) { m_texture.setRepeated(repeated); }
 
 ////////////////////////////////////////////////////////////
-bool RenderTexture::isRepeated() const
-{
-    return m_texture.isRepeated();
-}
-
+bool RenderTexture::isRepeated() const { return m_texture.isRepeated(); }
 
 ////////////////////////////////////////////////////////////
-bool RenderTexture::generateMipmap()
-{
-    return m_texture.generateMipmap();
-}
-
+bool RenderTexture::generateMipmap() { return m_texture.generateMipmap(); }
 
 ////////////////////////////////////////////////////////////
 bool RenderTexture::setActive(bool active)
 {
-    bool result = m_impl && m_impl->activate(active);
+        bool result = m_impl && m_impl->activate(active);
 
-    // Update RenderTarget tracking
-    if (result)
-        RenderTarget::setActive(active);
+        // Update RenderTarget tracking
+        if (result)
+                RenderTarget::setActive(active);
 
-    return result;
+        return result;
 }
-
 
 ////////////////////////////////////////////////////////////
 void RenderTexture::display()
 {
-    // Update the target texture
-    if (m_impl && (priv::RenderTextureImplFBO::isAvailable() || setActive(true)))
-    {
-        m_impl->updateTexture(m_texture.m_texture);
-        m_texture.m_pixelsFlipped = true;
-        m_texture.invalidateMipmap();
-    }
+        // Update the target texture
+        if (m_impl && (priv::RenderTextureImplFBO::isAvailable() || setActive(true))) {
+                m_impl->updateTexture(m_texture.m_texture);
+                m_texture.m_pixelsFlipped = true;
+                m_texture.invalidateMipmap();
+        }
 }
-
 
 ////////////////////////////////////////////////////////////
-Vector2u RenderTexture::getSize() const
-{
-    return m_texture.getSize();
-}
-
+Vector2u RenderTexture::getSize() const { return m_texture.getSize(); }
 
 ////////////////////////////////////////////////////////////
-const Texture& RenderTexture::getTexture() const
-{
-    return m_texture;
-}
+const Texture& RenderTexture::getTexture() const { return m_texture; }
 
 } // namespace sf

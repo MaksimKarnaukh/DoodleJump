@@ -4,51 +4,56 @@
 
 logic::Platform_Vertical::Platform_Vertical() = default;
 
-logic::Platform_Vertical::Platform_Vertical(const float posX, const float posY) : Platform(posX, posY) {
+logic::Platform_Vertical::Platform_Vertical(const float posX, const float posY) : Platform(posX, posY)
+{
 
-    this->startingX = posX;
-    this->startingY = posY;
+        this->startingX = posX;
+        this->startingY = posY;
 }
 
-logic::Platform_Vertical::Platform_Vertical(const float posX, const float posY, const float width, const float height) : Platform(posX, posY, width, height) {
+logic::Platform_Vertical::Platform_Vertical(const float posX, const float posY, const float width, const float height)
+    : Platform(posX, posY, width, height)
+{
 
-    this->startingX = posX;
-    this->startingY = posY;
+        this->startingX = posX;
+        this->startingY = posY;
 }
 
-void logic::Platform_Vertical::move() {
+void logic::Platform_Vertical::move()
+{
 
-    this->setPositionY(this->getPositionY()+unit*logic::utility::Stopwatch::Instance().getDeltaTime());
+        this->setPositionY(this->getPositionY() + unit * logic::utility::Stopwatch::Instance().getDeltaTime());
 
-    if (this->getPositionY() <= this->startingY-0.2) { // we do the checking this way, because putting both if statements together and setting unit=-unit can cause problems at the relative borders.
-        unit = moveUp;
-    }
-    if (this->getPositionY() >= this->startingY+0.2) {
-        unit = moveDown;
-    }
+        if (this->getPositionY() <=
+            this->startingY - 0.2) { // we do the checking this way, because putting both if statements together and
+                                     // setting unit=-unit can cause problems at the relative borders.
+                unit = moveUp;
+        }
+        if (this->getPositionY() >= this->startingY + 0.2) {
+                unit = moveDown;
+        }
 
-    notifyObservers();
-
+        notifyObservers();
 }
 
-float logic::Platform_Vertical::isTouched() {
-    timesTouched++;
-    return 0.7;
+float logic::Platform_Vertical::isTouched()
+{
+        timesTouched++;
+        return 0.7;
 }
 
-void logic::Platform_Vertical::changeDirection() {
-//    unit = -unit;
+void logic::Platform_Vertical::changeDirection()
+{
+        //    unit = -unit;
 
-    if (unit < 0) {
-        unit = moveUp;
-        this->setPositionY(this->getPositionY()+unit*3*logic::utility::Stopwatch::Instance().getDeltaTime());
+        if (unit < 0) {
+                unit = moveUp;
+                this->setPositionY(this->getPositionY() +
+                                   unit * 3 * logic::utility::Stopwatch::Instance().getDeltaTime());
 
-    }
-    else {
-        unit = moveDown;
-        this->setPositionY(this->getPositionY()+unit*3*logic::utility::Stopwatch::Instance().getDeltaTime());
-
-    }
-
+        } else {
+                unit = moveDown;
+                this->setPositionY(this->getPositionY() +
+                                   unit * 3 * logic::utility::Stopwatch::Instance().getDeltaTime());
+        }
 }
-

@@ -18,7 +18,9 @@
  *  - MX = False
  *
  * Commandline:
- *    --api='egl=1.5' --extensions='EGL_KHR_cl_event2,EGL_KHR_fence_sync,EGL_KHR_image,EGL_KHR_image_base,EGL_KHR_reusable_sync' c --loader --alias --header-only
+ *    --api='egl=1.5'
+ * --extensions='EGL_KHR_cl_event2,EGL_KHR_fence_sync,EGL_KHR_image,EGL_KHR_image_base,EGL_KHR_reusable_sync' c --loader
+ * --alias --header-only
  *
  * Online:
  *    http://glad.sh/#api=egl%3D1.5&extensions=EGL_KHR_cl_event2%2CEGL_KHR_fence_sync%2CEGL_KHR_image%2CEGL_KHR_image_base%2CEGL_KHR_reusable_sync&generator=c&options=LOADER%2CALIAS%2CHEADER_ONLY
@@ -27,7 +29,6 @@
 
 #ifndef SF_GLAD_EGL_H_
 #define SF_GLAD_EGL_H_
-
 
 #define SF_GLAD_EGL
 #define GLAD_OPTION_EGL_LOADER
@@ -42,90 +43,90 @@ extern "C" {
 #define GLAD_PLATFORM_H_
 
 #ifndef GLAD_PLATFORM_WIN32
-  #if defined(_WIN32) || defined(__WIN32__) || defined(WIN32) || defined(__MINGW32__)
-    #define GLAD_PLATFORM_WIN32 1
-  #else
-    #define GLAD_PLATFORM_WIN32 0
-  #endif
+#if defined(_WIN32) || defined(__WIN32__) || defined(WIN32) || defined(__MINGW32__)
+#define GLAD_PLATFORM_WIN32 1
+#else
+#define GLAD_PLATFORM_WIN32 0
+#endif
 #endif
 
 #ifndef GLAD_PLATFORM_APPLE
-  #ifdef __APPLE__
-    #define GLAD_PLATFORM_APPLE 1
-  #else
-    #define GLAD_PLATFORM_APPLE 0
-  #endif
+#ifdef __APPLE__
+#define GLAD_PLATFORM_APPLE 1
+#else
+#define GLAD_PLATFORM_APPLE 0
+#endif
 #endif
 
 #ifndef GLAD_PLATFORM_EMSCRIPTEN
-  #ifdef __EMSCRIPTEN__
-    #define GLAD_PLATFORM_EMSCRIPTEN 1
-  #else
-    #define GLAD_PLATFORM_EMSCRIPTEN 0
-  #endif
+#ifdef __EMSCRIPTEN__
+#define GLAD_PLATFORM_EMSCRIPTEN 1
+#else
+#define GLAD_PLATFORM_EMSCRIPTEN 0
+#endif
 #endif
 
 #ifndef GLAD_PLATFORM_UWP
-  #if defined(_MSC_VER) && !defined(GLAD_INTERNAL_HAVE_WINAPIFAMILY)
-    #ifdef __has_include
-      #if __has_include(<winapifamily.h>)
-        #define GLAD_INTERNAL_HAVE_WINAPIFAMILY 1
-      #endif
-    #elif _MSC_VER >= 1700 && !_USING_V110_SDK71_
-      #define GLAD_INTERNAL_HAVE_WINAPIFAMILY 1
-    #endif
-  #endif
+#if defined(_MSC_VER) && !defined(GLAD_INTERNAL_HAVE_WINAPIFAMILY)
+#ifdef __has_include
+#if __has_include(<winapifamily.h>)
+#define GLAD_INTERNAL_HAVE_WINAPIFAMILY 1
+#endif
+#elif _MSC_VER >= 1700 && !_USING_V110_SDK71_
+#define GLAD_INTERNAL_HAVE_WINAPIFAMILY 1
+#endif
+#endif
 
-  #ifdef GLAD_INTERNAL_HAVE_WINAPIFAMILY
-    #include <winapifamily.h>
-    #if !WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) && WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
-      #define GLAD_PLATFORM_UWP 1
-    #endif
-  #endif
+#ifdef GLAD_INTERNAL_HAVE_WINAPIFAMILY
+#include <winapifamily.h>
+#if !WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_DESKTOP) && WINAPI_FAMILY_PARTITION(WINAPI_PARTITION_APP)
+#define GLAD_PLATFORM_UWP 1
+#endif
+#endif
 
-  #ifndef GLAD_PLATFORM_UWP
-    #define GLAD_PLATFORM_UWP 0
-  #endif
+#ifndef GLAD_PLATFORM_UWP
+#define GLAD_PLATFORM_UWP 0
+#endif
 #endif
 
 #ifdef __GNUC__
-  #define GLAD_GNUC_EXTENSION __extension__
+#define GLAD_GNUC_EXTENSION __extension__
 #else
-  #define GLAD_GNUC_EXTENSION
+#define GLAD_GNUC_EXTENSION
 #endif
 
 #ifndef GLAD_API_CALL
-  #if defined(GLAD_API_CALL_EXPORT)
-    #if GLAD_PLATFORM_WIN32 || defined(__CYGWIN__)
-      #if defined(GLAD_API_CALL_EXPORT_BUILD)
-        #if defined(__GNUC__)
-          #define GLAD_API_CALL __attribute__ ((dllexport)) extern
-        #else
-          #define GLAD_API_CALL __declspec(dllexport) extern
-        #endif
-      #else
-        #if defined(__GNUC__)
-          #define GLAD_API_CALL __attribute__ ((dllimport)) extern
-        #else
-          #define GLAD_API_CALL __declspec(dllimport) extern
-        #endif
-      #endif
-    #elif defined(__GNUC__) && defined(GLAD_API_CALL_EXPORT_BUILD)
-      #define GLAD_API_CALL __attribute__ ((visibility ("default"))) extern
-    #else
-      #define GLAD_API_CALL extern
-    #endif
-  #else
-    #define GLAD_API_CALL extern
-  #endif
+#if defined(GLAD_API_CALL_EXPORT)
+#if GLAD_PLATFORM_WIN32 || defined(__CYGWIN__)
+#if defined(GLAD_API_CALL_EXPORT_BUILD)
+#if defined(__GNUC__)
+#define GLAD_API_CALL __attribute__((dllexport)) extern
+#else
+#define GLAD_API_CALL __declspec(dllexport) extern
+#endif
+#else
+#if defined(__GNUC__)
+#define GLAD_API_CALL __attribute__((dllimport)) extern
+#else
+#define GLAD_API_CALL __declspec(dllimport) extern
+#endif
+#endif
+#elif defined(__GNUC__) && defined(GLAD_API_CALL_EXPORT_BUILD)
+#define GLAD_API_CALL __attribute__((visibility("default"))) extern
+#else
+#define GLAD_API_CALL extern
+#endif
+#else
+#define GLAD_API_CALL extern
+#endif
 #endif
 
 #ifdef APIENTRY
-  #define GLAD_API_PTR APIENTRY
+#define GLAD_API_PTR APIENTRY
 #elif GLAD_PLATFORM_WIN32
-  #define GLAD_API_PTR __stdcall
+#define GLAD_API_PTR __stdcall
 #else
-  #define GLAD_API_PTR
+#define GLAD_API_PTR
 #endif
 
 #ifndef GLAPI
@@ -144,11 +145,11 @@ extern "C" {
 
 typedef void (*GLADapiproc)(void);
 
-typedef GLADapiproc (*GLADloadfunc)(const char *name);
-typedef GLADapiproc (*GLADuserptrloadfunc)(void *userptr, const char *name);
+typedef GLADapiproc (*GLADloadfunc)(const char* name);
+typedef GLADapiproc (*GLADuserptrloadfunc)(void* userptr, const char* name);
 
-typedef void (*GLADprecallback)(const char *name, GLADapiproc apiproc, int len_args, ...);
-typedef void (*GLADpostcallback)(void *ret, const char *name, GLADapiproc apiproc, int len_args, ...);
+typedef void (*GLADprecallback)(const char* name, GLADapiproc apiproc, int len_args, ...);
+typedef void (*GLADpostcallback)(void* ret, const char* name, GLADapiproc apiproc, int len_args, ...);
 
 #endif /* GLAD_PLATFORM_H_ */
 
@@ -201,10 +202,10 @@ typedef void (*GLADpostcallback)(void *ret, const char *name, GLADapiproc apipro
 #define EGL_CONTEXT_OPENGL_RESET_NOTIFICATION_STRATEGY 0x31BD
 #define EGL_CONTEXT_OPENGL_ROBUST_ACCESS 0x31B2
 #define EGL_CORE_NATIVE_ENGINE 0x305B
-#define EGL_DEFAULT_DISPLAY EGL_CAST(EGLNativeDisplayType,0)
+#define EGL_DEFAULT_DISPLAY EGL_CAST(EGLNativeDisplayType, 0)
 #define EGL_DEPTH_SIZE 0x3025
 #define EGL_DISPLAY_SCALING 10000
-#define EGL_DONT_CARE EGL_CAST(EGLint,-1)
+#define EGL_DONT_CARE EGL_CAST(EGLint, -1)
 #define EGL_DRAW 0x3059
 #define EGL_EXTENSIONS 0x3055
 #define EGL_FALSE 0
@@ -253,14 +254,14 @@ typedef void (*GLADpostcallback)(void *ret, const char *name, GLADapiproc apipro
 #define EGL_NONE 0x3038
 #define EGL_NON_CONFORMANT_CONFIG 0x3051
 #define EGL_NOT_INITIALIZED 0x3001
-#define EGL_NO_CONTEXT EGL_CAST(EGLContext,0)
-#define EGL_NO_DISPLAY EGL_CAST(EGLDisplay,0)
-#define EGL_NO_IMAGE EGL_CAST(EGLImage,0)
-#define EGL_NO_IMAGE_KHR EGL_CAST(EGLImageKHR,0)
+#define EGL_NO_CONTEXT EGL_CAST(EGLContext, 0)
+#define EGL_NO_DISPLAY EGL_CAST(EGLDisplay, 0)
+#define EGL_NO_IMAGE EGL_CAST(EGLImage, 0)
+#define EGL_NO_IMAGE_KHR EGL_CAST(EGLImageKHR, 0)
 #define EGL_NO_RESET_NOTIFICATION 0x31BE
-#define EGL_NO_SURFACE EGL_CAST(EGLSurface,0)
-#define EGL_NO_SYNC EGL_CAST(EGLSync,0)
-#define EGL_NO_SYNC_KHR EGL_CAST(EGLSync,0)
+#define EGL_NO_SURFACE EGL_CAST(EGLSurface, 0)
+#define EGL_NO_SYNC EGL_CAST(EGLSync, 0)
+#define EGL_NO_SYNC_KHR EGL_CAST(EGLSync, 0)
 #define EGL_NO_TEXTURE 0x305C
 #define EGL_OPENGL_API 0x30A2
 #define EGL_OPENGL_BIT 0x0008
@@ -320,7 +321,7 @@ typedef void (*GLADpostcallback)(void *ret, const char *name, GLADapiproc apipro
 #define EGL_TRANSPARENT_RGB 0x3052
 #define EGL_TRANSPARENT_TYPE 0x3034
 #define EGL_TRUE 1
-#define EGL_UNKNOWN EGL_CAST(EGLint,-1)
+#define EGL_UNKNOWN EGL_CAST(EGLint, -1)
 #define EGL_UNSIGNALED 0x30F3
 #define EGL_UNSIGNALED_KHR 0x30F3
 #define EGL_VENDOR 0x3053
@@ -336,7 +337,6 @@ typedef void (*GLADpostcallback)(void *ret, const char *name, GLADapiproc apipro
 #define EGL_VG_COLORSPACE_sRGB 0x3089
 #define EGL_WIDTH 0x3057
 #define EGL_WINDOW_BIT 0x0004
-
 
 #ifndef __khrplatform_h_
 #define __khrplatform_h_
@@ -431,7 +431,7 @@ typedef void (*GLADpostcallback)(void *ret, const char *name, GLADapiproc apipro
  */
 
 #if defined(__SCITECH_SNAP__) && !defined(KHRONOS_STATIC)
-#   define KHRONOS_STATIC 1
+#define KHRONOS_STATIC 1
 #endif
 
 /*-------------------------------------------------------------------------
@@ -440,17 +440,17 @@ typedef void (*GLADpostcallback)(void *ret, const char *name, GLADapiproc apipro
  * This precedes the return type of the function in the function prototype.
  */
 #if defined(KHRONOS_STATIC)
-    /* If the preprocessor constant KHRONOS_STATIC is defined, make the
-     * header compatible with static linking. */
-#   define KHRONOS_APICALL
+/* If the preprocessor constant KHRONOS_STATIC is defined, make the
+ * header compatible with static linking. */
+#define KHRONOS_APICALL
 #elif defined(_WIN32)
-#   define KHRONOS_APICALL __declspec(dllimport)
-#elif defined (__SYMBIAN32__)
-#   define KHRONOS_APICALL IMPORT_C
+#define KHRONOS_APICALL __declspec(dllimport)
+#elif defined(__SYMBIAN32__)
+#define KHRONOS_APICALL IMPORT_C
 #elif defined(__ANDROID__)
-#   define KHRONOS_APICALL __attribute__((visibility("default")))
+#define KHRONOS_APICALL __attribute__((visibility("default")))
 #else
-#   define KHRONOS_APICALL
+#define KHRONOS_APICALL
 #endif
 
 /*-------------------------------------------------------------------------
@@ -460,10 +460,10 @@ typedef void (*GLADpostcallback)(void *ret, const char *name, GLADapiproc apipro
  * name in the function prototype.
  */
 #if defined(_WIN32) && !defined(_WIN32_WCE) && !defined(KHRONOS_STATIC)
-    /* Win32 but not WinCE */
-#   define KHRONOS_GLAD_API_PTR __stdcall
+/* Win32 but not WinCE */
+#define KHRONOS_GLAD_API_PTR __stdcall
 #else
-#   define KHRONOS_GLAD_API_PTR
+#define KHRONOS_GLAD_API_PTR
 #endif
 
 /*-------------------------------------------------------------------------
@@ -471,7 +471,7 @@ typedef void (*GLADpostcallback)(void *ret, const char *name, GLADapiproc apipro
  *-------------------------------------------------------------------------
  * This follows the closing parenthesis of the function prototype arguments.
  */
-#if defined (__ARMCC_2__)
+#if defined(__ARMCC_2__)
 #define KHRONOS_APIATTRIBUTES __softfp
 #else
 #define KHRONOS_APIATTRIBUTES
@@ -480,71 +480,71 @@ typedef void (*GLADpostcallback)(void *ret, const char *name, GLADapiproc apipro
 /*-------------------------------------------------------------------------
  * basic type definitions
  *-----------------------------------------------------------------------*/
-#if (defined(__STDC_VERSION__) && __STDC_VERSION__ >= 199901L) || defined(__GNUC__) || defined(__SCO__) || defined(__USLC__)
-
+#if (defined(__STDC_VERSION__) && __STDC_VERSION__ >= 199901L) || defined(__GNUC__) || defined(__SCO__) || \
+    defined(__USLC__)
 
 /*
  * Using <stdint.h>
  */
 #include <stdint.h>
-typedef int32_t                 khronos_int32_t;
-typedef uint32_t                khronos_uint32_t;
-typedef int64_t                 khronos_int64_t;
-typedef uint64_t                khronos_uint64_t;
-#define KHRONOS_SUPPORT_INT64   1
-#define KHRONOS_SUPPORT_FLOAT   1
+typedef int32_t khronos_int32_t;
+typedef uint32_t khronos_uint32_t;
+typedef int64_t khronos_int64_t;
+typedef uint64_t khronos_uint64_t;
+#define KHRONOS_SUPPORT_INT64 1
+#define KHRONOS_SUPPORT_FLOAT 1
 
-#elif defined(__VMS ) || defined(__sgi)
+#elif defined(__VMS) || defined(__sgi)
 
 /*
  * Using <inttypes.h>
  */
 #include <inttypes.h>
-typedef int32_t                 khronos_int32_t;
-typedef uint32_t                khronos_uint32_t;
-typedef int64_t                 khronos_int64_t;
-typedef uint64_t                khronos_uint64_t;
-#define KHRONOS_SUPPORT_INT64   1
-#define KHRONOS_SUPPORT_FLOAT   1
+typedef int32_t khronos_int32_t;
+typedef uint32_t khronos_uint32_t;
+typedef int64_t khronos_int64_t;
+typedef uint64_t khronos_uint64_t;
+#define KHRONOS_SUPPORT_INT64 1
+#define KHRONOS_SUPPORT_FLOAT 1
 
 #elif defined(_WIN32) && !defined(__SCITECH_SNAP__)
 
 /*
  * Win32
  */
-typedef __int32                 khronos_int32_t;
-typedef unsigned __int32        khronos_uint32_t;
-typedef __int64                 khronos_int64_t;
-typedef unsigned __int64        khronos_uint64_t;
-#define KHRONOS_SUPPORT_INT64   1
-#define KHRONOS_SUPPORT_FLOAT   1
+typedef __int32 khronos_int32_t;
+typedef unsigned __int32 khronos_uint32_t;
+typedef __int64 khronos_int64_t;
+typedef unsigned __int64 khronos_uint64_t;
+#define KHRONOS_SUPPORT_INT64 1
+#define KHRONOS_SUPPORT_FLOAT 1
 
 #elif defined(__sun__) || defined(__digital__)
 
 /*
  * Sun or Digital
  */
-typedef int                     khronos_int32_t;
-typedef unsigned int            khronos_uint32_t;
+typedef int khronos_int32_t;
+typedef unsigned int khronos_uint32_t;
 #if defined(__arch64__) || defined(_LP64)
-typedef long int                khronos_int64_t;
-typedef unsigned long int       khronos_uint64_t;
+typedef long int khronos_int64_t;
+typedef unsigned long int khronos_uint64_t;
 #else
-typedef long long int           khronos_int64_t;
-typedef unsigned long long int  khronos_uint64_t;
+typedef long long int khronos_int64_t;
+typedef unsigned long long int khronos_uint64_t;
 #endif /* __arch64__ */
-#define KHRONOS_SUPPORT_INT64   1
-#define KHRONOS_SUPPORT_FLOAT   1
+#define KHRONOS_SUPPORT_INT64 1
+#define KHRONOS_SUPPORT_FLOAT 1
 
 #elif 0
 
 /*
  * Hypothetical platform with no float or int64 support
  */
-typedef int                     khronos_int32_t;
-typedef unsigned int            khronos_uint32_t;
-#define KHRONOS_SUPPORT_INT64   0
-#define KHRONOS_SUPPORT_FLOAT   0
+typedef int khronos_int32_t;
+typedef unsigned int khronos_uint32_t;
+#define KHRONOS_SUPPORT_INT64 0
+#define KHRONOS_SUPPORT_FLOAT 0
 
 #else
 
@@ -552,23 +552,22 @@ typedef unsigned int            khronos_uint32_t;
  * Generic fallback
  */
 #include <stdint.h>
-typedef int32_t                 khronos_int32_t;
-typedef uint32_t                khronos_uint32_t;
-typedef int64_t                 khronos_int64_t;
-typedef uint64_t                khronos_uint64_t;
-#define KHRONOS_SUPPORT_INT64   1
-#define KHRONOS_SUPPORT_FLOAT   1
+typedef int32_t khronos_int32_t;
+typedef uint32_t khronos_uint32_t;
+typedef int64_t khronos_int64_t;
+typedef uint64_t khronos_uint64_t;
+#define KHRONOS_SUPPORT_INT64 1
+#define KHRONOS_SUPPORT_FLOAT 1
 
 #endif
-
 
 /*
  * Types that are (so far) the same on all platforms
  */
-typedef signed   char          khronos_int8_t;
-typedef unsigned char          khronos_uint8_t;
-typedef signed   short int     khronos_int16_t;
-typedef unsigned short int     khronos_uint16_t;
+typedef signed char khronos_int8_t;
+typedef unsigned char khronos_uint8_t;
+typedef signed short int khronos_int16_t;
+typedef unsigned short int khronos_uint16_t;
 
 /*
  * Types that differ between LLP64 and LP64 architectures - in LLP64,
@@ -576,22 +575,22 @@ typedef unsigned short int     khronos_uint16_t;
  * to be the only LLP64 architecture in current use.
  */
 #ifdef _WIN64
-typedef signed   long long int khronos_intptr_t;
+typedef signed long long int khronos_intptr_t;
 typedef unsigned long long int khronos_uintptr_t;
-typedef signed   long long int khronos_ssize_t;
+typedef signed long long int khronos_ssize_t;
 typedef unsigned long long int khronos_usize_t;
 #else
-typedef signed   long  int     khronos_intptr_t;
-typedef unsigned long  int     khronos_uintptr_t;
-typedef signed   long  int     khronos_ssize_t;
-typedef unsigned long  int     khronos_usize_t;
+typedef signed long int khronos_intptr_t;
+typedef unsigned long int khronos_uintptr_t;
+typedef signed long int khronos_ssize_t;
+typedef unsigned long int khronos_usize_t;
 #endif
 
 #if KHRONOS_SUPPORT_FLOAT
 /*
  * Float type
  */
-typedef          float         khronos_float_t;
+typedef float khronos_float_t;
 #endif
 
 #if KHRONOS_SUPPORT_INT64
@@ -604,8 +603,8 @@ typedef          float         khronos_float_t;
  * 64 bit value that wraps back to 0 every 584 years.  Time intervals
  * may be either signed or unsigned.
  */
-typedef khronos_uint64_t       khronos_utime_nanoseconds_t;
-typedef khronos_int64_t        khronos_stime_nanoseconds_t;
+typedef khronos_uint64_t khronos_utime_nanoseconds_t;
+typedef khronos_int64_t khronos_stime_nanoseconds_t;
 #endif
 
 /*
@@ -621,10 +620,11 @@ typedef khronos_int64_t        khronos_stime_nanoseconds_t;
  * Values other than zero should be considered to be true.  Therefore
  * comparisons should not be made against KHRONOS_TRUE.
  */
-typedef enum {
-    KHRONOS_FALSE = 0,
-    KHRONOS_TRUE  = 1,
-    KHRONOS_BOOLEAN_ENUM_FORCE_SIZE = KHRONOS_MAX_ENUM
+typedef enum
+{
+        KHRONOS_FALSE = 0,
+        KHRONOS_TRUE = 1,
+        KHRONOS_BOOLEAN_ENUM_FORCE_SIZE = KHRONOS_MAX_ENUM
 } khronos_boolean_enum_t;
 
 #endif /* __khrplatform_h_ */
@@ -681,7 +681,7 @@ typedef enum {
 #endif
 
 #ifndef EGLGLAD_API_PTR
-#define EGLGLAD_API_PTR  KHRONOS_GLAD_API_PTR
+#define EGLGLAD_API_PTR KHRONOS_GLAD_API_PTR
 #endif
 #define EGLGLAD_API_PTRP EGLGLAD_API_PTR*
 
@@ -703,9 +703,9 @@ typedef enum {
 #endif
 #include <windows.h>
 
-typedef HDC     EGLNativeDisplayType;
+typedef HDC EGLNativeDisplayType;
 typedef HBITMAP EGLNativePixmapType;
-typedef HWND    EGLNativeWindowType;
+typedef HWND EGLNativeWindowType;
 
 #elif defined(__EMSCRIPTEN__)
 
@@ -713,32 +713,32 @@ typedef int EGLNativeDisplayType;
 typedef int EGLNativePixmapType;
 typedef int EGLNativeWindowType;
 
-#elif defined(__WINSCW__) || defined(__SYMBIAN32__)  /* Symbian */
+#elif defined(__WINSCW__) || defined(__SYMBIAN32__) /* Symbian */
 
-typedef int   EGLNativeDisplayType;
-typedef void *EGLNativePixmapType;
-typedef void *EGLNativeWindowType;
+typedef int EGLNativeDisplayType;
+typedef void* EGLNativePixmapType;
+typedef void* EGLNativeWindowType;
 
 #elif defined(WL_EGL_PLATFORM)
 
-typedef struct wl_display     *EGLNativeDisplayType;
-typedef struct wl_egl_pixmap  *EGLNativePixmapType;
-typedef struct wl_egl_window  *EGLNativeWindowType;
+typedef struct wl_display* EGLNativeDisplayType;
+typedef struct wl_egl_pixmap* EGLNativePixmapType;
+typedef struct wl_egl_window* EGLNativeWindowType;
 
 #elif defined(__GBM__)
 
-typedef struct gbm_device  *EGLNativeDisplayType;
-typedef struct gbm_bo      *EGLNativePixmapType;
-typedef void               *EGLNativeWindowType;
+typedef struct gbm_device* EGLNativeDisplayType;
+typedef struct gbm_bo* EGLNativePixmapType;
+typedef void* EGLNativeWindowType;
 
 #elif defined(__ANDROID__) || defined(ANDROID)
 
 struct ANativeWindow;
 struct egl_native_pixmap_t;
 
-typedef void*                           EGLNativeDisplayType;
-typedef struct egl_native_pixmap_t*     EGLNativePixmapType;
-typedef struct ANativeWindow*           EGLNativeWindowType;
+typedef void* EGLNativeDisplayType;
+typedef struct egl_native_pixmap_t* EGLNativePixmapType;
+typedef struct ANativeWindow* EGLNativeWindowType;
 
 #elif defined(USE_OZONE)
 
@@ -752,23 +752,23 @@ typedef intptr_t EGLNativeWindowType;
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 
-typedef Display *EGLNativeDisplayType;
-typedef Pixmap   EGLNativePixmapType;
-typedef Window   EGLNativeWindowType;
+typedef Display* EGLNativeDisplayType;
+typedef Pixmap EGLNativePixmapType;
+typedef Window EGLNativeWindowType;
 
 #elif defined(__APPLE__)
 
-typedef int   EGLNativeDisplayType;
-typedef void *EGLNativePixmapType;
-typedef void *EGLNativeWindowType;
+typedef int EGLNativeDisplayType;
+typedef void* EGLNativePixmapType;
+typedef void* EGLNativeWindowType;
 
 #elif defined(__HAIKU__)
 
 #include <kernel/image.h>
 
-typedef void              *EGLNativeDisplayType;
-typedef khronos_uintptr_t  EGLNativePixmapType;
-typedef khronos_uintptr_t  EGLNativeWindowType;
+typedef void* EGLNativeDisplayType;
+typedef khronos_uintptr_t EGLNativePixmapType;
+typedef khronos_uintptr_t EGLNativeWindowType;
 
 #else
 #error "Platform not recognized"
@@ -776,9 +776,8 @@ typedef khronos_uintptr_t  EGLNativeWindowType;
 
 /* EGL 1.2 types, renamed for consistency in EGL 1.3 */
 typedef EGLNativeDisplayType NativeDisplayType;
-typedef EGLNativePixmapType  NativePixmapType;
-typedef EGLNativeWindowType  NativeWindowType;
-
+typedef EGLNativePixmapType NativePixmapType;
+typedef EGLNativeWindowType NativeWindowType;
 
 /* Define EGLint. This must be a signed integral type large enough to contain
  * all legal attribute names and values passed into and out of EGL, whether
@@ -789,25 +788,14 @@ typedef EGLNativeWindowType  NativeWindowType;
  */
 typedef khronos_int32_t EGLint;
 
-
 /* C++ / C typecast macros for special EGL handle values */
 #if defined(__cplusplus)
 #define EGL_CAST(type, value) (static_cast<type>(value))
 #else
-#define EGL_CAST(type, value) ((type) (value))
+#define EGL_CAST(type, value) ((type)(value))
 #endif
 
 #endif /* __eglplatform_h */
-
-
-
-
-
-
-
-
-
-
 
 struct AHardwareBuffer;
 
@@ -815,22 +803,22 @@ typedef unsigned int EGLBoolean;
 typedef unsigned int EGLenum;
 typedef intptr_t EGLAttribKHR;
 typedef intptr_t EGLAttrib;
-typedef void *EGLClientBuffer;
-typedef void *EGLConfig;
-typedef void *EGLContext;
-typedef void *EGLDeviceEXT;
-typedef void *EGLDisplay;
-typedef void *EGLImage;
-typedef void *EGLImageKHR;
-typedef void *EGLLabelKHR;
-typedef void *EGLObjectKHR;
-typedef void *EGLOutputLayerEXT;
-typedef void *EGLOutputPortEXT;
-typedef void *EGLStreamKHR;
-typedef void *EGLSurface;
-typedef void *EGLSync;
-typedef void *EGLSyncKHR;
-typedef void *EGLSyncNV;
+typedef void* EGLClientBuffer;
+typedef void* EGLConfig;
+typedef void* EGLContext;
+typedef void* EGLDeviceEXT;
+typedef void* EGLDisplay;
+typedef void* EGLImage;
+typedef void* EGLImageKHR;
+typedef void* EGLLabelKHR;
+typedef void* EGLObjectKHR;
+typedef void* EGLOutputLayerEXT;
+typedef void* EGLOutputPortEXT;
+typedef void* EGLStreamKHR;
+typedef void* EGLSurface;
+typedef void* EGLSync;
+typedef void* EGLSyncKHR;
+typedef void* EGLSyncNV;
 typedef void (*__eglMustCastToProperFunctionPointerType)(void);
 typedef khronos_utime_nanoseconds_t EGLTimeKHR;
 typedef khronos_utime_nanoseconds_t EGLTime;
@@ -840,16 +828,19 @@ typedef khronos_uint64_t EGLuint64KHR;
 typedef khronos_stime_nanoseconds_t EGLnsecsANDROID;
 typedef int EGLNativeFileDescriptorKHR;
 typedef khronos_ssize_t EGLsizeiANDROID;
-typedef void (*EGLSetBlobFuncANDROID) (const void *key, EGLsizeiANDROID keySize, const void *value, EGLsizeiANDROID valueSize);
-typedef EGLsizeiANDROID (*EGLGetBlobFuncANDROID) (const void *key, EGLsizeiANDROID keySize, void *value, EGLsizeiANDROID valueSize);
-struct EGLClientPixmapHI {
-    void  *pData;
-    EGLint iWidth;
-    EGLint iHeight;
-    EGLint iStride;
+typedef void (*EGLSetBlobFuncANDROID)(const void* key, EGLsizeiANDROID keySize, const void* value,
+                                      EGLsizeiANDROID valueSize);
+typedef EGLsizeiANDROID (*EGLGetBlobFuncANDROID)(const void* key, EGLsizeiANDROID keySize, void* value,
+                                                 EGLsizeiANDROID valueSize);
+struct EGLClientPixmapHI
+{
+        void* pData;
+        EGLint iWidth;
+        EGLint iHeight;
+        EGLint iStride;
 };
-typedef void ( *EGLDEBUGPROCKHR)(EGLenum error,const char *command,EGLint messageType,EGLLabelKHR threadLabel,EGLLabelKHR objectLabel,const char* message);
-
+typedef void (*EGLDEBUGPROCKHR)(EGLenum error, const char* command, EGLint messageType, EGLLabelKHR threadLabel,
+                                EGLLabelKHR objectLabel, const char* message);
 
 #define EGL_VERSION_1_0 1
 GLAD_API_CALL int SF_GLAD_EGL_VERSION_1_0;
@@ -874,59 +865,82 @@ GLAD_API_CALL int SF_GLAD_EGL_KHR_image_base;
 #define EGL_KHR_reusable_sync 1
 GLAD_API_CALL int SF_GLAD_EGL_KHR_reusable_sync;
 
-
-typedef EGLBoolean (GLAD_API_PTR *PFNEGLBINDAPIPROC)(EGLenum api);
-typedef EGLBoolean (GLAD_API_PTR *PFNEGLBINDTEXIMAGEPROC)(EGLDisplay dpy, EGLSurface surface, EGLint buffer);
-typedef EGLBoolean (GLAD_API_PTR *PFNEGLCHOOSECONFIGPROC)(EGLDisplay dpy, const EGLint * attrib_list, EGLConfig * configs, EGLint config_size, EGLint * num_config);
-typedef EGLint (GLAD_API_PTR *PFNEGLCLIENTWAITSYNCPROC)(EGLDisplay dpy, EGLSync sync, EGLint flags, EGLTime timeout);
-typedef EGLint (GLAD_API_PTR *PFNEGLCLIENTWAITSYNCKHRPROC)(EGLDisplay dpy, EGLSyncKHR sync, EGLint flags, EGLTimeKHR timeout);
-typedef EGLBoolean (GLAD_API_PTR *PFNEGLCOPYBUFFERSPROC)(EGLDisplay dpy, EGLSurface surface, EGLNativePixmapType target);
-typedef EGLContext (GLAD_API_PTR *PFNEGLCREATECONTEXTPROC)(EGLDisplay dpy, EGLConfig config, EGLContext share_context, const EGLint * attrib_list);
-typedef EGLImage (GLAD_API_PTR *PFNEGLCREATEIMAGEPROC)(EGLDisplay dpy, EGLContext ctx, EGLenum target, EGLClientBuffer buffer, const EGLAttrib * attrib_list);
-typedef EGLImageKHR (GLAD_API_PTR *PFNEGLCREATEIMAGEKHRPROC)(EGLDisplay dpy, EGLContext ctx, EGLenum target, EGLClientBuffer buffer, const EGLint * attrib_list);
-typedef EGLSurface (GLAD_API_PTR *PFNEGLCREATEPBUFFERFROMCLIENTBUFFERPROC)(EGLDisplay dpy, EGLenum buftype, EGLClientBuffer buffer, EGLConfig config, const EGLint * attrib_list);
-typedef EGLSurface (GLAD_API_PTR *PFNEGLCREATEPBUFFERSURFACEPROC)(EGLDisplay dpy, EGLConfig config, const EGLint * attrib_list);
-typedef EGLSurface (GLAD_API_PTR *PFNEGLCREATEPIXMAPSURFACEPROC)(EGLDisplay dpy, EGLConfig config, EGLNativePixmapType pixmap, const EGLint * attrib_list);
-typedef EGLSurface (GLAD_API_PTR *PFNEGLCREATEPLATFORMPIXMAPSURFACEPROC)(EGLDisplay dpy, EGLConfig config, void * native_pixmap, const EGLAttrib * attrib_list);
-typedef EGLSurface (GLAD_API_PTR *PFNEGLCREATEPLATFORMWINDOWSURFACEPROC)(EGLDisplay dpy, EGLConfig config, void * native_window, const EGLAttrib * attrib_list);
-typedef EGLSync (GLAD_API_PTR *PFNEGLCREATESYNCPROC)(EGLDisplay dpy, EGLenum type, const EGLAttrib * attrib_list);
-typedef EGLSyncKHR (GLAD_API_PTR *PFNEGLCREATESYNC64KHRPROC)(EGLDisplay dpy, EGLenum type, const EGLAttribKHR * attrib_list);
-typedef EGLSyncKHR (GLAD_API_PTR *PFNEGLCREATESYNCKHRPROC)(EGLDisplay dpy, EGLenum type, const EGLint * attrib_list);
-typedef EGLSurface (GLAD_API_PTR *PFNEGLCREATEWINDOWSURFACEPROC)(EGLDisplay dpy, EGLConfig config, EGLNativeWindowType win, const EGLint * attrib_list);
-typedef EGLBoolean (GLAD_API_PTR *PFNEGLDESTROYCONTEXTPROC)(EGLDisplay dpy, EGLContext ctx);
-typedef EGLBoolean (GLAD_API_PTR *PFNEGLDESTROYIMAGEPROC)(EGLDisplay dpy, EGLImage image);
-typedef EGLBoolean (GLAD_API_PTR *PFNEGLDESTROYIMAGEKHRPROC)(EGLDisplay dpy, EGLImageKHR image);
-typedef EGLBoolean (GLAD_API_PTR *PFNEGLDESTROYSURFACEPROC)(EGLDisplay dpy, EGLSurface surface);
-typedef EGLBoolean (GLAD_API_PTR *PFNEGLDESTROYSYNCPROC)(EGLDisplay dpy, EGLSync sync);
-typedef EGLBoolean (GLAD_API_PTR *PFNEGLDESTROYSYNCKHRPROC)(EGLDisplay dpy, EGLSyncKHR sync);
-typedef EGLBoolean (GLAD_API_PTR *PFNEGLGETCONFIGATTRIBPROC)(EGLDisplay dpy, EGLConfig config, EGLint attribute, EGLint * value);
-typedef EGLBoolean (GLAD_API_PTR *PFNEGLGETCONFIGSPROC)(EGLDisplay dpy, EGLConfig * configs, EGLint config_size, EGLint * num_config);
-typedef EGLContext (GLAD_API_PTR *PFNEGLGETCURRENTCONTEXTPROC)(void);
-typedef EGLDisplay (GLAD_API_PTR *PFNEGLGETCURRENTDISPLAYPROC)(void);
-typedef EGLSurface (GLAD_API_PTR *PFNEGLGETCURRENTSURFACEPROC)(EGLint readdraw);
-typedef EGLDisplay (GLAD_API_PTR *PFNEGLGETDISPLAYPROC)(EGLNativeDisplayType display_id);
-typedef EGLint (GLAD_API_PTR *PFNEGLGETERRORPROC)(void);
-typedef EGLDisplay (GLAD_API_PTR *PFNEGLGETPLATFORMDISPLAYPROC)(EGLenum platform, void * native_display, const EGLAttrib * attrib_list);
-typedef __eglMustCastToProperFunctionPointerType (GLAD_API_PTR *PFNEGLGETPROCADDRESSPROC)(const char * procname);
-typedef EGLBoolean (GLAD_API_PTR *PFNEGLGETSYNCATTRIBPROC)(EGLDisplay dpy, EGLSync sync, EGLint attribute, EGLAttrib * value);
-typedef EGLBoolean (GLAD_API_PTR *PFNEGLGETSYNCATTRIBKHRPROC)(EGLDisplay dpy, EGLSyncKHR sync, EGLint attribute, EGLint * value);
-typedef EGLBoolean (GLAD_API_PTR *PFNEGLINITIALIZEPROC)(EGLDisplay dpy, EGLint * major, EGLint * minor);
-typedef EGLBoolean (GLAD_API_PTR *PFNEGLMAKECURRENTPROC)(EGLDisplay dpy, EGLSurface draw, EGLSurface read, EGLContext ctx);
-typedef EGLenum (GLAD_API_PTR *PFNEGLQUERYAPIPROC)(void);
-typedef EGLBoolean (GLAD_API_PTR *PFNEGLQUERYCONTEXTPROC)(EGLDisplay dpy, EGLContext ctx, EGLint attribute, EGLint * value);
-typedef const char * (GLAD_API_PTR *PFNEGLQUERYSTRINGPROC)(EGLDisplay dpy, EGLint name);
-typedef EGLBoolean (GLAD_API_PTR *PFNEGLQUERYSURFACEPROC)(EGLDisplay dpy, EGLSurface surface, EGLint attribute, EGLint * value);
-typedef EGLBoolean (GLAD_API_PTR *PFNEGLRELEASETEXIMAGEPROC)(EGLDisplay dpy, EGLSurface surface, EGLint buffer);
-typedef EGLBoolean (GLAD_API_PTR *PFNEGLRELEASETHREADPROC)(void);
-typedef EGLBoolean (GLAD_API_PTR *PFNEGLSIGNALSYNCKHRPROC)(EGLDisplay dpy, EGLSyncKHR sync, EGLenum mode);
-typedef EGLBoolean (GLAD_API_PTR *PFNEGLSURFACEATTRIBPROC)(EGLDisplay dpy, EGLSurface surface, EGLint attribute, EGLint value);
-typedef EGLBoolean (GLAD_API_PTR *PFNEGLSWAPBUFFERSPROC)(EGLDisplay dpy, EGLSurface surface);
-typedef EGLBoolean (GLAD_API_PTR *PFNEGLSWAPINTERVALPROC)(EGLDisplay dpy, EGLint interval);
-typedef EGLBoolean (GLAD_API_PTR *PFNEGLTERMINATEPROC)(EGLDisplay dpy);
-typedef EGLBoolean (GLAD_API_PTR *PFNEGLWAITCLIENTPROC)(void);
-typedef EGLBoolean (GLAD_API_PTR *PFNEGLWAITGLPROC)(void);
-typedef EGLBoolean (GLAD_API_PTR *PFNEGLWAITNATIVEPROC)(EGLint engine);
-typedef EGLBoolean (GLAD_API_PTR *PFNEGLWAITSYNCPROC)(EGLDisplay dpy, EGLSync sync, EGLint flags);
+typedef EGLBoolean(GLAD_API_PTR* PFNEGLBINDAPIPROC)(EGLenum api);
+typedef EGLBoolean(GLAD_API_PTR* PFNEGLBINDTEXIMAGEPROC)(EGLDisplay dpy, EGLSurface surface, EGLint buffer);
+typedef EGLBoolean(GLAD_API_PTR* PFNEGLCHOOSECONFIGPROC)(EGLDisplay dpy, const EGLint* attrib_list, EGLConfig* configs,
+                                                         EGLint config_size, EGLint* num_config);
+typedef EGLint(GLAD_API_PTR* PFNEGLCLIENTWAITSYNCPROC)(EGLDisplay dpy, EGLSync sync, EGLint flags, EGLTime timeout);
+typedef EGLint(GLAD_API_PTR* PFNEGLCLIENTWAITSYNCKHRPROC)(EGLDisplay dpy, EGLSyncKHR sync, EGLint flags,
+                                                          EGLTimeKHR timeout);
+typedef EGLBoolean(GLAD_API_PTR* PFNEGLCOPYBUFFERSPROC)(EGLDisplay dpy, EGLSurface surface, EGLNativePixmapType target);
+typedef EGLContext(GLAD_API_PTR* PFNEGLCREATECONTEXTPROC)(EGLDisplay dpy, EGLConfig config, EGLContext share_context,
+                                                          const EGLint* attrib_list);
+typedef EGLImage(GLAD_API_PTR* PFNEGLCREATEIMAGEPROC)(EGLDisplay dpy, EGLContext ctx, EGLenum target,
+                                                      EGLClientBuffer buffer, const EGLAttrib* attrib_list);
+typedef EGLImageKHR(GLAD_API_PTR* PFNEGLCREATEIMAGEKHRPROC)(EGLDisplay dpy, EGLContext ctx, EGLenum target,
+                                                            EGLClientBuffer buffer, const EGLint* attrib_list);
+typedef EGLSurface(GLAD_API_PTR* PFNEGLCREATEPBUFFERFROMCLIENTBUFFERPROC)(EGLDisplay dpy, EGLenum buftype,
+                                                                          EGLClientBuffer buffer, EGLConfig config,
+                                                                          const EGLint* attrib_list);
+typedef EGLSurface(GLAD_API_PTR* PFNEGLCREATEPBUFFERSURFACEPROC)(EGLDisplay dpy, EGLConfig config,
+                                                                 const EGLint* attrib_list);
+typedef EGLSurface(GLAD_API_PTR* PFNEGLCREATEPIXMAPSURFACEPROC)(EGLDisplay dpy, EGLConfig config,
+                                                                EGLNativePixmapType pixmap, const EGLint* attrib_list);
+typedef EGLSurface(GLAD_API_PTR* PFNEGLCREATEPLATFORMPIXMAPSURFACEPROC)(EGLDisplay dpy, EGLConfig config,
+                                                                        void* native_pixmap,
+                                                                        const EGLAttrib* attrib_list);
+typedef EGLSurface(GLAD_API_PTR* PFNEGLCREATEPLATFORMWINDOWSURFACEPROC)(EGLDisplay dpy, EGLConfig config,
+                                                                        void* native_window,
+                                                                        const EGLAttrib* attrib_list);
+typedef EGLSync(GLAD_API_PTR* PFNEGLCREATESYNCPROC)(EGLDisplay dpy, EGLenum type, const EGLAttrib* attrib_list);
+typedef EGLSyncKHR(GLAD_API_PTR* PFNEGLCREATESYNC64KHRPROC)(EGLDisplay dpy, EGLenum type,
+                                                            const EGLAttribKHR* attrib_list);
+typedef EGLSyncKHR(GLAD_API_PTR* PFNEGLCREATESYNCKHRPROC)(EGLDisplay dpy, EGLenum type, const EGLint* attrib_list);
+typedef EGLSurface(GLAD_API_PTR* PFNEGLCREATEWINDOWSURFACEPROC)(EGLDisplay dpy, EGLConfig config,
+                                                                EGLNativeWindowType win, const EGLint* attrib_list);
+typedef EGLBoolean(GLAD_API_PTR* PFNEGLDESTROYCONTEXTPROC)(EGLDisplay dpy, EGLContext ctx);
+typedef EGLBoolean(GLAD_API_PTR* PFNEGLDESTROYIMAGEPROC)(EGLDisplay dpy, EGLImage image);
+typedef EGLBoolean(GLAD_API_PTR* PFNEGLDESTROYIMAGEKHRPROC)(EGLDisplay dpy, EGLImageKHR image);
+typedef EGLBoolean(GLAD_API_PTR* PFNEGLDESTROYSURFACEPROC)(EGLDisplay dpy, EGLSurface surface);
+typedef EGLBoolean(GLAD_API_PTR* PFNEGLDESTROYSYNCPROC)(EGLDisplay dpy, EGLSync sync);
+typedef EGLBoolean(GLAD_API_PTR* PFNEGLDESTROYSYNCKHRPROC)(EGLDisplay dpy, EGLSyncKHR sync);
+typedef EGLBoolean(GLAD_API_PTR* PFNEGLGETCONFIGATTRIBPROC)(EGLDisplay dpy, EGLConfig config, EGLint attribute,
+                                                            EGLint* value);
+typedef EGLBoolean(GLAD_API_PTR* PFNEGLGETCONFIGSPROC)(EGLDisplay dpy, EGLConfig* configs, EGLint config_size,
+                                                       EGLint* num_config);
+typedef EGLContext(GLAD_API_PTR* PFNEGLGETCURRENTCONTEXTPROC)(void);
+typedef EGLDisplay(GLAD_API_PTR* PFNEGLGETCURRENTDISPLAYPROC)(void);
+typedef EGLSurface(GLAD_API_PTR* PFNEGLGETCURRENTSURFACEPROC)(EGLint readdraw);
+typedef EGLDisplay(GLAD_API_PTR* PFNEGLGETDISPLAYPROC)(EGLNativeDisplayType display_id);
+typedef EGLint(GLAD_API_PTR* PFNEGLGETERRORPROC)(void);
+typedef EGLDisplay(GLAD_API_PTR* PFNEGLGETPLATFORMDISPLAYPROC)(EGLenum platform, void* native_display,
+                                                               const EGLAttrib* attrib_list);
+typedef __eglMustCastToProperFunctionPointerType(GLAD_API_PTR* PFNEGLGETPROCADDRESSPROC)(const char* procname);
+typedef EGLBoolean(GLAD_API_PTR* PFNEGLGETSYNCATTRIBPROC)(EGLDisplay dpy, EGLSync sync, EGLint attribute,
+                                                          EGLAttrib* value);
+typedef EGLBoolean(GLAD_API_PTR* PFNEGLGETSYNCATTRIBKHRPROC)(EGLDisplay dpy, EGLSyncKHR sync, EGLint attribute,
+                                                             EGLint* value);
+typedef EGLBoolean(GLAD_API_PTR* PFNEGLINITIALIZEPROC)(EGLDisplay dpy, EGLint* major, EGLint* minor);
+typedef EGLBoolean(GLAD_API_PTR* PFNEGLMAKECURRENTPROC)(EGLDisplay dpy, EGLSurface draw, EGLSurface read,
+                                                        EGLContext ctx);
+typedef EGLenum(GLAD_API_PTR* PFNEGLQUERYAPIPROC)(void);
+typedef EGLBoolean(GLAD_API_PTR* PFNEGLQUERYCONTEXTPROC)(EGLDisplay dpy, EGLContext ctx, EGLint attribute,
+                                                         EGLint* value);
+typedef const char*(GLAD_API_PTR* PFNEGLQUERYSTRINGPROC)(EGLDisplay dpy, EGLint name);
+typedef EGLBoolean(GLAD_API_PTR* PFNEGLQUERYSURFACEPROC)(EGLDisplay dpy, EGLSurface surface, EGLint attribute,
+                                                         EGLint* value);
+typedef EGLBoolean(GLAD_API_PTR* PFNEGLRELEASETEXIMAGEPROC)(EGLDisplay dpy, EGLSurface surface, EGLint buffer);
+typedef EGLBoolean(GLAD_API_PTR* PFNEGLRELEASETHREADPROC)(void);
+typedef EGLBoolean(GLAD_API_PTR* PFNEGLSIGNALSYNCKHRPROC)(EGLDisplay dpy, EGLSyncKHR sync, EGLenum mode);
+typedef EGLBoolean(GLAD_API_PTR* PFNEGLSURFACEATTRIBPROC)(EGLDisplay dpy, EGLSurface surface, EGLint attribute,
+                                                          EGLint value);
+typedef EGLBoolean(GLAD_API_PTR* PFNEGLSWAPBUFFERSPROC)(EGLDisplay dpy, EGLSurface surface);
+typedef EGLBoolean(GLAD_API_PTR* PFNEGLSWAPINTERVALPROC)(EGLDisplay dpy, EGLint interval);
+typedef EGLBoolean(GLAD_API_PTR* PFNEGLTERMINATEPROC)(EGLDisplay dpy);
+typedef EGLBoolean(GLAD_API_PTR* PFNEGLWAITCLIENTPROC)(void);
+typedef EGLBoolean(GLAD_API_PTR* PFNEGLWAITGLPROC)(void);
+typedef EGLBoolean(GLAD_API_PTR* PFNEGLWAITNATIVEPROC)(EGLint engine);
+typedef EGLBoolean(GLAD_API_PTR* PFNEGLWAITSYNCPROC)(EGLDisplay dpy, EGLSync sync, EGLint flags);
 
 GLAD_API_CALL PFNEGLBINDAPIPROC sf_glad_eglBindAPI;
 #define eglBindAPI sf_glad_eglBindAPI
@@ -1033,10 +1047,6 @@ GLAD_API_CALL PFNEGLWAITNATIVEPROC sf_glad_eglWaitNative;
 GLAD_API_CALL PFNEGLWAITSYNCPROC sf_glad_eglWaitSync;
 #define eglWaitSync sf_glad_eglWaitSync
 
-
-
-
-
 #ifdef __cplusplus
 }
 #endif
@@ -1059,7 +1069,6 @@ GLAD_API_CALL PFNEGLWAITSYNCPROC sf_glad_eglWaitSync;
 
 #endif /* GLAD_IMPL_UTIL_C_ */
 
-
 int SF_GLAD_EGL_VERSION_1_0 = 0;
 int SF_GLAD_EGL_VERSION_1_1 = 0;
 int SF_GLAD_EGL_VERSION_1_2 = 0;
@@ -1071,8 +1080,6 @@ int SF_GLAD_EGL_KHR_fence_sync = 0;
 int SF_GLAD_EGL_KHR_image = 0;
 int SF_GLAD_EGL_KHR_image_base = 0;
 int SF_GLAD_EGL_KHR_reusable_sync = 0;
-
-
 
 PFNEGLBINDAPIPROC sf_glad_eglBindAPI = NULL;
 PFNEGLBINDTEXIMAGEPROC sf_glad_eglBindTexImage = NULL;
@@ -1127,228 +1134,266 @@ PFNEGLWAITGLPROC sf_glad_eglWaitGL = NULL;
 PFNEGLWAITNATIVEPROC sf_glad_eglWaitNative = NULL;
 PFNEGLWAITSYNCPROC sf_glad_eglWaitSync = NULL;
 
+static void sf_glad_egl_load_EGL_VERSION_1_0(GLADuserptrloadfunc load, void* userptr)
+{
+        if (!SF_GLAD_EGL_VERSION_1_0)
+                return;
+        sf_glad_eglChooseConfig = (PFNEGLCHOOSECONFIGPROC)load(userptr, "eglChooseConfig");
+        sf_glad_eglCopyBuffers = (PFNEGLCOPYBUFFERSPROC)load(userptr, "eglCopyBuffers");
+        sf_glad_eglCreateContext = (PFNEGLCREATECONTEXTPROC)load(userptr, "eglCreateContext");
+        sf_glad_eglCreatePbufferSurface = (PFNEGLCREATEPBUFFERSURFACEPROC)load(userptr, "eglCreatePbufferSurface");
+        sf_glad_eglCreatePixmapSurface = (PFNEGLCREATEPIXMAPSURFACEPROC)load(userptr, "eglCreatePixmapSurface");
+        sf_glad_eglCreateWindowSurface = (PFNEGLCREATEWINDOWSURFACEPROC)load(userptr, "eglCreateWindowSurface");
+        sf_glad_eglDestroyContext = (PFNEGLDESTROYCONTEXTPROC)load(userptr, "eglDestroyContext");
+        sf_glad_eglDestroySurface = (PFNEGLDESTROYSURFACEPROC)load(userptr, "eglDestroySurface");
+        sf_glad_eglGetConfigAttrib = (PFNEGLGETCONFIGATTRIBPROC)load(userptr, "eglGetConfigAttrib");
+        sf_glad_eglGetConfigs = (PFNEGLGETCONFIGSPROC)load(userptr, "eglGetConfigs");
+        sf_glad_eglGetCurrentDisplay = (PFNEGLGETCURRENTDISPLAYPROC)load(userptr, "eglGetCurrentDisplay");
+        sf_glad_eglGetCurrentSurface = (PFNEGLGETCURRENTSURFACEPROC)load(userptr, "eglGetCurrentSurface");
+        sf_glad_eglGetDisplay = (PFNEGLGETDISPLAYPROC)load(userptr, "eglGetDisplay");
+        sf_glad_eglGetError = (PFNEGLGETERRORPROC)load(userptr, "eglGetError");
+        sf_glad_eglGetProcAddress = (PFNEGLGETPROCADDRESSPROC)load(userptr, "eglGetProcAddress");
+        sf_glad_eglInitialize = (PFNEGLINITIALIZEPROC)load(userptr, "eglInitialize");
+        sf_glad_eglMakeCurrent = (PFNEGLMAKECURRENTPROC)load(userptr, "eglMakeCurrent");
+        sf_glad_eglQueryContext = (PFNEGLQUERYCONTEXTPROC)load(userptr, "eglQueryContext");
+        sf_glad_eglQueryString = (PFNEGLQUERYSTRINGPROC)load(userptr, "eglQueryString");
+        sf_glad_eglQuerySurface = (PFNEGLQUERYSURFACEPROC)load(userptr, "eglQuerySurface");
+        sf_glad_eglSwapBuffers = (PFNEGLSWAPBUFFERSPROC)load(userptr, "eglSwapBuffers");
+        sf_glad_eglTerminate = (PFNEGLTERMINATEPROC)load(userptr, "eglTerminate");
+        sf_glad_eglWaitGL = (PFNEGLWAITGLPROC)load(userptr, "eglWaitGL");
+        sf_glad_eglWaitNative = (PFNEGLWAITNATIVEPROC)load(userptr, "eglWaitNative");
+}
+static void sf_glad_egl_load_EGL_VERSION_1_1(GLADuserptrloadfunc load, void* userptr)
+{
+        if (!SF_GLAD_EGL_VERSION_1_1)
+                return;
+        sf_glad_eglBindTexImage = (PFNEGLBINDTEXIMAGEPROC)load(userptr, "eglBindTexImage");
+        sf_glad_eglReleaseTexImage = (PFNEGLRELEASETEXIMAGEPROC)load(userptr, "eglReleaseTexImage");
+        sf_glad_eglSurfaceAttrib = (PFNEGLSURFACEATTRIBPROC)load(userptr, "eglSurfaceAttrib");
+        sf_glad_eglSwapInterval = (PFNEGLSWAPINTERVALPROC)load(userptr, "eglSwapInterval");
+}
+static void sf_glad_egl_load_EGL_VERSION_1_2(GLADuserptrloadfunc load, void* userptr)
+{
+        if (!SF_GLAD_EGL_VERSION_1_2)
+                return;
+        sf_glad_eglBindAPI = (PFNEGLBINDAPIPROC)load(userptr, "eglBindAPI");
+        sf_glad_eglCreatePbufferFromClientBuffer =
+            (PFNEGLCREATEPBUFFERFROMCLIENTBUFFERPROC)load(userptr, "eglCreatePbufferFromClientBuffer");
+        sf_glad_eglQueryAPI = (PFNEGLQUERYAPIPROC)load(userptr, "eglQueryAPI");
+        sf_glad_eglReleaseThread = (PFNEGLRELEASETHREADPROC)load(userptr, "eglReleaseThread");
+        sf_glad_eglWaitClient = (PFNEGLWAITCLIENTPROC)load(userptr, "eglWaitClient");
+}
+static void sf_glad_egl_load_EGL_VERSION_1_4(GLADuserptrloadfunc load, void* userptr)
+{
+        if (!SF_GLAD_EGL_VERSION_1_4)
+                return;
+        sf_glad_eglGetCurrentContext = (PFNEGLGETCURRENTCONTEXTPROC)load(userptr, "eglGetCurrentContext");
+}
+static void sf_glad_egl_load_EGL_VERSION_1_5(GLADuserptrloadfunc load, void* userptr)
+{
+        if (!SF_GLAD_EGL_VERSION_1_5)
+                return;
+        sf_glad_eglClientWaitSync = (PFNEGLCLIENTWAITSYNCPROC)load(userptr, "eglClientWaitSync");
+        sf_glad_eglCreateImage = (PFNEGLCREATEIMAGEPROC)load(userptr, "eglCreateImage");
+        sf_glad_eglCreatePlatformPixmapSurface =
+            (PFNEGLCREATEPLATFORMPIXMAPSURFACEPROC)load(userptr, "eglCreatePlatformPixmapSurface");
+        sf_glad_eglCreatePlatformWindowSurface =
+            (PFNEGLCREATEPLATFORMWINDOWSURFACEPROC)load(userptr, "eglCreatePlatformWindowSurface");
+        sf_glad_eglCreateSync = (PFNEGLCREATESYNCPROC)load(userptr, "eglCreateSync");
+        sf_glad_eglDestroyImage = (PFNEGLDESTROYIMAGEPROC)load(userptr, "eglDestroyImage");
+        sf_glad_eglDestroySync = (PFNEGLDESTROYSYNCPROC)load(userptr, "eglDestroySync");
+        sf_glad_eglGetPlatformDisplay = (PFNEGLGETPLATFORMDISPLAYPROC)load(userptr, "eglGetPlatformDisplay");
+        sf_glad_eglGetSyncAttrib = (PFNEGLGETSYNCATTRIBPROC)load(userptr, "eglGetSyncAttrib");
+        sf_glad_eglWaitSync = (PFNEGLWAITSYNCPROC)load(userptr, "eglWaitSync");
+}
+static void sf_glad_egl_load_EGL_KHR_cl_event2(GLADuserptrloadfunc load, void* userptr)
+{
+        if (!SF_GLAD_EGL_KHR_cl_event2)
+                return;
+        sf_glad_eglCreateSync = (PFNEGLCREATESYNCPROC)load(userptr, "eglCreateSync");
+        sf_glad_eglCreateSync64KHR = (PFNEGLCREATESYNC64KHRPROC)load(userptr, "eglCreateSync64KHR");
+}
+static void sf_glad_egl_load_EGL_KHR_fence_sync(GLADuserptrloadfunc load, void* userptr)
+{
+        if (!SF_GLAD_EGL_KHR_fence_sync)
+                return;
+        sf_glad_eglClientWaitSync = (PFNEGLCLIENTWAITSYNCPROC)load(userptr, "eglClientWaitSync");
+        sf_glad_eglClientWaitSyncKHR = (PFNEGLCLIENTWAITSYNCKHRPROC)load(userptr, "eglClientWaitSyncKHR");
+        sf_glad_eglCreateSyncKHR = (PFNEGLCREATESYNCKHRPROC)load(userptr, "eglCreateSyncKHR");
+        sf_glad_eglDestroySync = (PFNEGLDESTROYSYNCPROC)load(userptr, "eglDestroySync");
+        sf_glad_eglDestroySyncKHR = (PFNEGLDESTROYSYNCKHRPROC)load(userptr, "eglDestroySyncKHR");
+        sf_glad_eglGetSyncAttribKHR = (PFNEGLGETSYNCATTRIBKHRPROC)load(userptr, "eglGetSyncAttribKHR");
+}
+static void sf_glad_egl_load_EGL_KHR_image(GLADuserptrloadfunc load, void* userptr)
+{
+        if (!SF_GLAD_EGL_KHR_image)
+                return;
+        sf_glad_eglCreateImageKHR = (PFNEGLCREATEIMAGEKHRPROC)load(userptr, "eglCreateImageKHR");
+        sf_glad_eglDestroyImage = (PFNEGLDESTROYIMAGEPROC)load(userptr, "eglDestroyImage");
+        sf_glad_eglDestroyImageKHR = (PFNEGLDESTROYIMAGEKHRPROC)load(userptr, "eglDestroyImageKHR");
+}
+static void sf_glad_egl_load_EGL_KHR_image_base(GLADuserptrloadfunc load, void* userptr)
+{
+        if (!SF_GLAD_EGL_KHR_image_base)
+                return;
+        sf_glad_eglCreateImageKHR = (PFNEGLCREATEIMAGEKHRPROC)load(userptr, "eglCreateImageKHR");
+        sf_glad_eglDestroyImage = (PFNEGLDESTROYIMAGEPROC)load(userptr, "eglDestroyImage");
+        sf_glad_eglDestroyImageKHR = (PFNEGLDESTROYIMAGEKHRPROC)load(userptr, "eglDestroyImageKHR");
+}
+static void sf_glad_egl_load_EGL_KHR_reusable_sync(GLADuserptrloadfunc load, void* userptr)
+{
+        if (!SF_GLAD_EGL_KHR_reusable_sync)
+                return;
+        sf_glad_eglClientWaitSync = (PFNEGLCLIENTWAITSYNCPROC)load(userptr, "eglClientWaitSync");
+        sf_glad_eglClientWaitSyncKHR = (PFNEGLCLIENTWAITSYNCKHRPROC)load(userptr, "eglClientWaitSyncKHR");
+        sf_glad_eglCreateSyncKHR = (PFNEGLCREATESYNCKHRPROC)load(userptr, "eglCreateSyncKHR");
+        sf_glad_eglDestroySync = (PFNEGLDESTROYSYNCPROC)load(userptr, "eglDestroySync");
+        sf_glad_eglDestroySyncKHR = (PFNEGLDESTROYSYNCKHRPROC)load(userptr, "eglDestroySyncKHR");
+        sf_glad_eglGetSyncAttribKHR = (PFNEGLGETSYNCATTRIBKHRPROC)load(userptr, "eglGetSyncAttribKHR");
+        sf_glad_eglSignalSyncKHR = (PFNEGLSIGNALSYNCKHRPROC)load(userptr, "eglSignalSyncKHR");
+}
 
-static void sf_glad_egl_load_EGL_VERSION_1_0( GLADuserptrloadfunc load, void* userptr) {
-    if(!SF_GLAD_EGL_VERSION_1_0) return;
-    sf_glad_eglChooseConfig = (PFNEGLCHOOSECONFIGPROC) load(userptr, "eglChooseConfig");
-    sf_glad_eglCopyBuffers = (PFNEGLCOPYBUFFERSPROC) load(userptr, "eglCopyBuffers");
-    sf_glad_eglCreateContext = (PFNEGLCREATECONTEXTPROC) load(userptr, "eglCreateContext");
-    sf_glad_eglCreatePbufferSurface = (PFNEGLCREATEPBUFFERSURFACEPROC) load(userptr, "eglCreatePbufferSurface");
-    sf_glad_eglCreatePixmapSurface = (PFNEGLCREATEPIXMAPSURFACEPROC) load(userptr, "eglCreatePixmapSurface");
-    sf_glad_eglCreateWindowSurface = (PFNEGLCREATEWINDOWSURFACEPROC) load(userptr, "eglCreateWindowSurface");
-    sf_glad_eglDestroyContext = (PFNEGLDESTROYCONTEXTPROC) load(userptr, "eglDestroyContext");
-    sf_glad_eglDestroySurface = (PFNEGLDESTROYSURFACEPROC) load(userptr, "eglDestroySurface");
-    sf_glad_eglGetConfigAttrib = (PFNEGLGETCONFIGATTRIBPROC) load(userptr, "eglGetConfigAttrib");
-    sf_glad_eglGetConfigs = (PFNEGLGETCONFIGSPROC) load(userptr, "eglGetConfigs");
-    sf_glad_eglGetCurrentDisplay = (PFNEGLGETCURRENTDISPLAYPROC) load(userptr, "eglGetCurrentDisplay");
-    sf_glad_eglGetCurrentSurface = (PFNEGLGETCURRENTSURFACEPROC) load(userptr, "eglGetCurrentSurface");
-    sf_glad_eglGetDisplay = (PFNEGLGETDISPLAYPROC) load(userptr, "eglGetDisplay");
-    sf_glad_eglGetError = (PFNEGLGETERRORPROC) load(userptr, "eglGetError");
-    sf_glad_eglGetProcAddress = (PFNEGLGETPROCADDRESSPROC) load(userptr, "eglGetProcAddress");
-    sf_glad_eglInitialize = (PFNEGLINITIALIZEPROC) load(userptr, "eglInitialize");
-    sf_glad_eglMakeCurrent = (PFNEGLMAKECURRENTPROC) load(userptr, "eglMakeCurrent");
-    sf_glad_eglQueryContext = (PFNEGLQUERYCONTEXTPROC) load(userptr, "eglQueryContext");
-    sf_glad_eglQueryString = (PFNEGLQUERYSTRINGPROC) load(userptr, "eglQueryString");
-    sf_glad_eglQuerySurface = (PFNEGLQUERYSURFACEPROC) load(userptr, "eglQuerySurface");
-    sf_glad_eglSwapBuffers = (PFNEGLSWAPBUFFERSPROC) load(userptr, "eglSwapBuffers");
-    sf_glad_eglTerminate = (PFNEGLTERMINATEPROC) load(userptr, "eglTerminate");
-    sf_glad_eglWaitGL = (PFNEGLWAITGLPROC) load(userptr, "eglWaitGL");
-    sf_glad_eglWaitNative = (PFNEGLWAITNATIVEPROC) load(userptr, "eglWaitNative");
-}
-static void sf_glad_egl_load_EGL_VERSION_1_1( GLADuserptrloadfunc load, void* userptr) {
-    if(!SF_GLAD_EGL_VERSION_1_1) return;
-    sf_glad_eglBindTexImage = (PFNEGLBINDTEXIMAGEPROC) load(userptr, "eglBindTexImage");
-    sf_glad_eglReleaseTexImage = (PFNEGLRELEASETEXIMAGEPROC) load(userptr, "eglReleaseTexImage");
-    sf_glad_eglSurfaceAttrib = (PFNEGLSURFACEATTRIBPROC) load(userptr, "eglSurfaceAttrib");
-    sf_glad_eglSwapInterval = (PFNEGLSWAPINTERVALPROC) load(userptr, "eglSwapInterval");
-}
-static void sf_glad_egl_load_EGL_VERSION_1_2( GLADuserptrloadfunc load, void* userptr) {
-    if(!SF_GLAD_EGL_VERSION_1_2) return;
-    sf_glad_eglBindAPI = (PFNEGLBINDAPIPROC) load(userptr, "eglBindAPI");
-    sf_glad_eglCreatePbufferFromClientBuffer = (PFNEGLCREATEPBUFFERFROMCLIENTBUFFERPROC) load(userptr, "eglCreatePbufferFromClientBuffer");
-    sf_glad_eglQueryAPI = (PFNEGLQUERYAPIPROC) load(userptr, "eglQueryAPI");
-    sf_glad_eglReleaseThread = (PFNEGLRELEASETHREADPROC) load(userptr, "eglReleaseThread");
-    sf_glad_eglWaitClient = (PFNEGLWAITCLIENTPROC) load(userptr, "eglWaitClient");
-}
-static void sf_glad_egl_load_EGL_VERSION_1_4( GLADuserptrloadfunc load, void* userptr) {
-    if(!SF_GLAD_EGL_VERSION_1_4) return;
-    sf_glad_eglGetCurrentContext = (PFNEGLGETCURRENTCONTEXTPROC) load(userptr, "eglGetCurrentContext");
-}
-static void sf_glad_egl_load_EGL_VERSION_1_5( GLADuserptrloadfunc load, void* userptr) {
-    if(!SF_GLAD_EGL_VERSION_1_5) return;
-    sf_glad_eglClientWaitSync = (PFNEGLCLIENTWAITSYNCPROC) load(userptr, "eglClientWaitSync");
-    sf_glad_eglCreateImage = (PFNEGLCREATEIMAGEPROC) load(userptr, "eglCreateImage");
-    sf_glad_eglCreatePlatformPixmapSurface = (PFNEGLCREATEPLATFORMPIXMAPSURFACEPROC) load(userptr, "eglCreatePlatformPixmapSurface");
-    sf_glad_eglCreatePlatformWindowSurface = (PFNEGLCREATEPLATFORMWINDOWSURFACEPROC) load(userptr, "eglCreatePlatformWindowSurface");
-    sf_glad_eglCreateSync = (PFNEGLCREATESYNCPROC) load(userptr, "eglCreateSync");
-    sf_glad_eglDestroyImage = (PFNEGLDESTROYIMAGEPROC) load(userptr, "eglDestroyImage");
-    sf_glad_eglDestroySync = (PFNEGLDESTROYSYNCPROC) load(userptr, "eglDestroySync");
-    sf_glad_eglGetPlatformDisplay = (PFNEGLGETPLATFORMDISPLAYPROC) load(userptr, "eglGetPlatformDisplay");
-    sf_glad_eglGetSyncAttrib = (PFNEGLGETSYNCATTRIBPROC) load(userptr, "eglGetSyncAttrib");
-    sf_glad_eglWaitSync = (PFNEGLWAITSYNCPROC) load(userptr, "eglWaitSync");
-}
-static void sf_glad_egl_load_EGL_KHR_cl_event2( GLADuserptrloadfunc load, void* userptr) {
-    if(!SF_GLAD_EGL_KHR_cl_event2) return;
-    sf_glad_eglCreateSync = (PFNEGLCREATESYNCPROC) load(userptr, "eglCreateSync");
-    sf_glad_eglCreateSync64KHR = (PFNEGLCREATESYNC64KHRPROC) load(userptr, "eglCreateSync64KHR");
-}
-static void sf_glad_egl_load_EGL_KHR_fence_sync( GLADuserptrloadfunc load, void* userptr) {
-    if(!SF_GLAD_EGL_KHR_fence_sync) return;
-    sf_glad_eglClientWaitSync = (PFNEGLCLIENTWAITSYNCPROC) load(userptr, "eglClientWaitSync");
-    sf_glad_eglClientWaitSyncKHR = (PFNEGLCLIENTWAITSYNCKHRPROC) load(userptr, "eglClientWaitSyncKHR");
-    sf_glad_eglCreateSyncKHR = (PFNEGLCREATESYNCKHRPROC) load(userptr, "eglCreateSyncKHR");
-    sf_glad_eglDestroySync = (PFNEGLDESTROYSYNCPROC) load(userptr, "eglDestroySync");
-    sf_glad_eglDestroySyncKHR = (PFNEGLDESTROYSYNCKHRPROC) load(userptr, "eglDestroySyncKHR");
-    sf_glad_eglGetSyncAttribKHR = (PFNEGLGETSYNCATTRIBKHRPROC) load(userptr, "eglGetSyncAttribKHR");
-}
-static void sf_glad_egl_load_EGL_KHR_image( GLADuserptrloadfunc load, void* userptr) {
-    if(!SF_GLAD_EGL_KHR_image) return;
-    sf_glad_eglCreateImageKHR = (PFNEGLCREATEIMAGEKHRPROC) load(userptr, "eglCreateImageKHR");
-    sf_glad_eglDestroyImage = (PFNEGLDESTROYIMAGEPROC) load(userptr, "eglDestroyImage");
-    sf_glad_eglDestroyImageKHR = (PFNEGLDESTROYIMAGEKHRPROC) load(userptr, "eglDestroyImageKHR");
-}
-static void sf_glad_egl_load_EGL_KHR_image_base( GLADuserptrloadfunc load, void* userptr) {
-    if(!SF_GLAD_EGL_KHR_image_base) return;
-    sf_glad_eglCreateImageKHR = (PFNEGLCREATEIMAGEKHRPROC) load(userptr, "eglCreateImageKHR");
-    sf_glad_eglDestroyImage = (PFNEGLDESTROYIMAGEPROC) load(userptr, "eglDestroyImage");
-    sf_glad_eglDestroyImageKHR = (PFNEGLDESTROYIMAGEKHRPROC) load(userptr, "eglDestroyImageKHR");
-}
-static void sf_glad_egl_load_EGL_KHR_reusable_sync( GLADuserptrloadfunc load, void* userptr) {
-    if(!SF_GLAD_EGL_KHR_reusable_sync) return;
-    sf_glad_eglClientWaitSync = (PFNEGLCLIENTWAITSYNCPROC) load(userptr, "eglClientWaitSync");
-    sf_glad_eglClientWaitSyncKHR = (PFNEGLCLIENTWAITSYNCKHRPROC) load(userptr, "eglClientWaitSyncKHR");
-    sf_glad_eglCreateSyncKHR = (PFNEGLCREATESYNCKHRPROC) load(userptr, "eglCreateSyncKHR");
-    sf_glad_eglDestroySync = (PFNEGLDESTROYSYNCPROC) load(userptr, "eglDestroySync");
-    sf_glad_eglDestroySyncKHR = (PFNEGLDESTROYSYNCKHRPROC) load(userptr, "eglDestroySyncKHR");
-    sf_glad_eglGetSyncAttribKHR = (PFNEGLGETSYNCATTRIBKHRPROC) load(userptr, "eglGetSyncAttribKHR");
-    sf_glad_eglSignalSyncKHR = (PFNEGLSIGNALSYNCKHRPROC) load(userptr, "eglSignalSyncKHR");
+static void sf_glad_egl_resolve_aliases(void)
+{
+        if (sf_glad_eglClientWaitSync == NULL && sf_glad_eglClientWaitSyncKHR != NULL)
+                sf_glad_eglClientWaitSync = (PFNEGLCLIENTWAITSYNCPROC)sf_glad_eglClientWaitSyncKHR;
+        if (sf_glad_eglClientWaitSyncKHR == NULL && sf_glad_eglClientWaitSync != NULL)
+                sf_glad_eglClientWaitSyncKHR = (PFNEGLCLIENTWAITSYNCKHRPROC)sf_glad_eglClientWaitSync;
+        if (sf_glad_eglCreateSync == NULL && sf_glad_eglCreateSync64KHR != NULL)
+                sf_glad_eglCreateSync = (PFNEGLCREATESYNCPROC)sf_glad_eglCreateSync64KHR;
+        if (sf_glad_eglCreateSync64KHR == NULL && sf_glad_eglCreateSync != NULL)
+                sf_glad_eglCreateSync64KHR = (PFNEGLCREATESYNC64KHRPROC)sf_glad_eglCreateSync;
+        if (sf_glad_eglDestroyImage == NULL && sf_glad_eglDestroyImageKHR != NULL)
+                sf_glad_eglDestroyImage = (PFNEGLDESTROYIMAGEPROC)sf_glad_eglDestroyImageKHR;
+        if (sf_glad_eglDestroyImageKHR == NULL && sf_glad_eglDestroyImage != NULL)
+                sf_glad_eglDestroyImageKHR = (PFNEGLDESTROYIMAGEKHRPROC)sf_glad_eglDestroyImage;
+        if (sf_glad_eglDestroySync == NULL && sf_glad_eglDestroySyncKHR != NULL)
+                sf_glad_eglDestroySync = (PFNEGLDESTROYSYNCPROC)sf_glad_eglDestroySyncKHR;
+        if (sf_glad_eglDestroySyncKHR == NULL && sf_glad_eglDestroySync != NULL)
+                sf_glad_eglDestroySyncKHR = (PFNEGLDESTROYSYNCKHRPROC)sf_glad_eglDestroySync;
 }
 
+static int sf_glad_egl_get_extensions(EGLDisplay display, const char** extensions)
+{
+        *extensions = eglQueryString(display, EGL_EXTENSIONS);
 
-static void sf_glad_egl_resolve_aliases(void) {
-    if (sf_glad_eglClientWaitSync == NULL && sf_glad_eglClientWaitSyncKHR != NULL) sf_glad_eglClientWaitSync = (PFNEGLCLIENTWAITSYNCPROC)sf_glad_eglClientWaitSyncKHR;
-    if (sf_glad_eglClientWaitSyncKHR == NULL && sf_glad_eglClientWaitSync != NULL) sf_glad_eglClientWaitSyncKHR = (PFNEGLCLIENTWAITSYNCKHRPROC)sf_glad_eglClientWaitSync;
-    if (sf_glad_eglCreateSync == NULL && sf_glad_eglCreateSync64KHR != NULL) sf_glad_eglCreateSync = (PFNEGLCREATESYNCPROC)sf_glad_eglCreateSync64KHR;
-    if (sf_glad_eglCreateSync64KHR == NULL && sf_glad_eglCreateSync != NULL) sf_glad_eglCreateSync64KHR = (PFNEGLCREATESYNC64KHRPROC)sf_glad_eglCreateSync;
-    if (sf_glad_eglDestroyImage == NULL && sf_glad_eglDestroyImageKHR != NULL) sf_glad_eglDestroyImage = (PFNEGLDESTROYIMAGEPROC)sf_glad_eglDestroyImageKHR;
-    if (sf_glad_eglDestroyImageKHR == NULL && sf_glad_eglDestroyImage != NULL) sf_glad_eglDestroyImageKHR = (PFNEGLDESTROYIMAGEKHRPROC)sf_glad_eglDestroyImage;
-    if (sf_glad_eglDestroySync == NULL && sf_glad_eglDestroySyncKHR != NULL) sf_glad_eglDestroySync = (PFNEGLDESTROYSYNCPROC)sf_glad_eglDestroySyncKHR;
-    if (sf_glad_eglDestroySyncKHR == NULL && sf_glad_eglDestroySync != NULL) sf_glad_eglDestroySyncKHR = (PFNEGLDESTROYSYNCKHRPROC)sf_glad_eglDestroySync;
+        return extensions != NULL;
 }
 
-static int sf_glad_egl_get_extensions(EGLDisplay display, const char **extensions) {
-    *extensions = eglQueryString(display, EGL_EXTENSIONS);
-
-    return extensions != NULL;
-}
-
-static int sf_glad_egl_has_extension(const char *extensions, const char *ext) {
-    const char *loc;
-    const char *terminator;
-    if(extensions == NULL) {
-        return 0;
-    }
-    while(1) {
-        loc = strstr(extensions, ext);
-        if(loc == NULL) {
-            return 0;
+static int sf_glad_egl_has_extension(const char* extensions, const char* ext)
+{
+        const char* loc;
+        const char* terminator;
+        if (extensions == NULL) {
+                return 0;
         }
-        terminator = loc + strlen(ext);
-        if((loc == extensions || *(loc - 1) == ' ') &&
-            (*terminator == ' ' || *terminator == '\0')) {
-            return 1;
+        while (1) {
+                loc = strstr(extensions, ext);
+                if (loc == NULL) {
+                        return 0;
+                }
+                terminator = loc + strlen(ext);
+                if ((loc == extensions || *(loc - 1) == ' ') && (*terminator == ' ' || *terminator == '\0')) {
+                        return 1;
+                }
+                extensions = terminator;
         }
-        extensions = terminator;
-    }
 }
 
-static GLADapiproc sf_glad_egl_get_proc_from_userptr(void *userptr, const char *name) {
-    return (GLAD_GNUC_EXTENSION (GLADapiproc (*)(const char *name)) userptr)(name);
+static GLADapiproc sf_glad_egl_get_proc_from_userptr(void* userptr, const char* name)
+{
+        return (GLAD_GNUC_EXTENSION(GLADapiproc(*)(const char* name)) userptr)(name);
 }
 
-static int sf_glad_egl_find_extensions_egl(EGLDisplay display) {
-    const char *extensions;
-    if (!sf_glad_egl_get_extensions(display, &extensions)) return 0;
+static int sf_glad_egl_find_extensions_egl(EGLDisplay display)
+{
+        const char* extensions;
+        if (!sf_glad_egl_get_extensions(display, &extensions))
+                return 0;
 
-    SF_GLAD_EGL_KHR_cl_event2 = sf_glad_egl_has_extension(extensions, "EGL_KHR_cl_event2");
-    SF_GLAD_EGL_KHR_fence_sync = sf_glad_egl_has_extension(extensions, "EGL_KHR_fence_sync");
-    SF_GLAD_EGL_KHR_image = sf_glad_egl_has_extension(extensions, "EGL_KHR_image");
-    SF_GLAD_EGL_KHR_image_base = sf_glad_egl_has_extension(extensions, "EGL_KHR_image_base");
-    SF_GLAD_EGL_KHR_reusable_sync = sf_glad_egl_has_extension(extensions, "EGL_KHR_reusable_sync");
+        SF_GLAD_EGL_KHR_cl_event2 = sf_glad_egl_has_extension(extensions, "EGL_KHR_cl_event2");
+        SF_GLAD_EGL_KHR_fence_sync = sf_glad_egl_has_extension(extensions, "EGL_KHR_fence_sync");
+        SF_GLAD_EGL_KHR_image = sf_glad_egl_has_extension(extensions, "EGL_KHR_image");
+        SF_GLAD_EGL_KHR_image_base = sf_glad_egl_has_extension(extensions, "EGL_KHR_image_base");
+        SF_GLAD_EGL_KHR_reusable_sync = sf_glad_egl_has_extension(extensions, "EGL_KHR_reusable_sync");
 
-    return 1;
+        return 1;
 }
 
-static int sf_glad_egl_find_core_egl(EGLDisplay display) {
-    int major, minor;
-    const char *version;
+static int sf_glad_egl_find_core_egl(EGLDisplay display)
+{
+        int major, minor;
+        const char* version;
 
-    if (display == NULL) {
-        display = EGL_NO_DISPLAY; /* this is usually NULL, better safe than sorry */
-    }
-    if (display == EGL_NO_DISPLAY) {
-        display = eglGetCurrentDisplay();
-    }
+        if (display == NULL) {
+                display = EGL_NO_DISPLAY; /* this is usually NULL, better safe than sorry */
+        }
+        if (display == EGL_NO_DISPLAY) {
+                display = eglGetCurrentDisplay();
+        }
 #ifdef EGL_VERSION_1_4
-    if (display == EGL_NO_DISPLAY) {
-        display = eglGetDisplay(EGL_DEFAULT_DISPLAY);
-    }
+        if (display == EGL_NO_DISPLAY) {
+                display = eglGetDisplay(EGL_DEFAULT_DISPLAY);
+        }
 #endif
-    if (display == EGL_NO_DISPLAY) {
-        return 0;
-    }
+        if (display == EGL_NO_DISPLAY) {
+                return 0;
+        }
 
-    version = eglQueryString(display, EGL_VERSION);
-    (void) eglGetError();
+        version = eglQueryString(display, EGL_VERSION);
+        (void)eglGetError();
 
-    if (version == NULL) {
-        major = 1;
-        minor = 0;
-    } else {
-        GLAD_IMPL_UTIL_SSCANF(version, "%d.%d", &major, &minor);
-    }
+        if (version == NULL) {
+                major = 1;
+                minor = 0;
+        } else {
+                GLAD_IMPL_UTIL_SSCANF(version, "%d.%d", &major, &minor);
+        }
 
-    SF_GLAD_EGL_VERSION_1_0 = (major == 1 && minor >= 0) || major > 1;
-    SF_GLAD_EGL_VERSION_1_1 = (major == 1 && minor >= 1) || major > 1;
-    SF_GLAD_EGL_VERSION_1_2 = (major == 1 && minor >= 2) || major > 1;
-    SF_GLAD_EGL_VERSION_1_3 = (major == 1 && minor >= 3) || major > 1;
-    SF_GLAD_EGL_VERSION_1_4 = (major == 1 && minor >= 4) || major > 1;
-    SF_GLAD_EGL_VERSION_1_5 = (major == 1 && minor >= 5) || major > 1;
+        SF_GLAD_EGL_VERSION_1_0 = (major == 1 && minor >= 0) || major > 1;
+        SF_GLAD_EGL_VERSION_1_1 = (major == 1 && minor >= 1) || major > 1;
+        SF_GLAD_EGL_VERSION_1_2 = (major == 1 && minor >= 2) || major > 1;
+        SF_GLAD_EGL_VERSION_1_3 = (major == 1 && minor >= 3) || major > 1;
+        SF_GLAD_EGL_VERSION_1_4 = (major == 1 && minor >= 4) || major > 1;
+        SF_GLAD_EGL_VERSION_1_5 = (major == 1 && minor >= 5) || major > 1;
 
-    return GLAD_MAKE_VERSION(major, minor);
+        return GLAD_MAKE_VERSION(major, minor);
 }
 
-static int gladLoadEGLUserPtr(EGLDisplay display, GLADuserptrloadfunc load, void* userptr) {
-    int version;
-    eglGetDisplay = (PFNEGLGETDISPLAYPROC) load(userptr, "eglGetDisplay");
-    eglGetCurrentDisplay = (PFNEGLGETCURRENTDISPLAYPROC) load(userptr, "eglGetCurrentDisplay");
-    eglQueryString = (PFNEGLQUERYSTRINGPROC) load(userptr, "eglQueryString");
-    eglGetError = (PFNEGLGETERRORPROC) load(userptr, "eglGetError");
-    if (eglGetDisplay == NULL || eglGetCurrentDisplay == NULL || eglQueryString == NULL || eglGetError == NULL) return 0;
+static int gladLoadEGLUserPtr(EGLDisplay display, GLADuserptrloadfunc load, void* userptr)
+{
+        int version;
+        eglGetDisplay = (PFNEGLGETDISPLAYPROC)load(userptr, "eglGetDisplay");
+        eglGetCurrentDisplay = (PFNEGLGETCURRENTDISPLAYPROC)load(userptr, "eglGetCurrentDisplay");
+        eglQueryString = (PFNEGLQUERYSTRINGPROC)load(userptr, "eglQueryString");
+        eglGetError = (PFNEGLGETERRORPROC)load(userptr, "eglGetError");
+        if (eglGetDisplay == NULL || eglGetCurrentDisplay == NULL || eglQueryString == NULL || eglGetError == NULL)
+                return 0;
 
-    version = sf_glad_egl_find_core_egl(display);
-    if (!version) return 0;
-    sf_glad_egl_load_EGL_VERSION_1_0(load, userptr);
-    sf_glad_egl_load_EGL_VERSION_1_1(load, userptr);
-    sf_glad_egl_load_EGL_VERSION_1_2(load, userptr);
-    sf_glad_egl_load_EGL_VERSION_1_4(load, userptr);
-    sf_glad_egl_load_EGL_VERSION_1_5(load, userptr);
+        version = sf_glad_egl_find_core_egl(display);
+        if (!version)
+                return 0;
+        sf_glad_egl_load_EGL_VERSION_1_0(load, userptr);
+        sf_glad_egl_load_EGL_VERSION_1_1(load, userptr);
+        sf_glad_egl_load_EGL_VERSION_1_2(load, userptr);
+        sf_glad_egl_load_EGL_VERSION_1_4(load, userptr);
+        sf_glad_egl_load_EGL_VERSION_1_5(load, userptr);
 
-    if (!sf_glad_egl_find_extensions_egl(display)) return 0;
-    sf_glad_egl_load_EGL_KHR_cl_event2(load, userptr);
-    sf_glad_egl_load_EGL_KHR_fence_sync(load, userptr);
-    sf_glad_egl_load_EGL_KHR_image(load, userptr);
-    sf_glad_egl_load_EGL_KHR_image_base(load, userptr);
-    sf_glad_egl_load_EGL_KHR_reusable_sync(load, userptr);
+        if (!sf_glad_egl_find_extensions_egl(display))
+                return 0;
+        sf_glad_egl_load_EGL_KHR_cl_event2(load, userptr);
+        sf_glad_egl_load_EGL_KHR_fence_sync(load, userptr);
+        sf_glad_egl_load_EGL_KHR_image(load, userptr);
+        sf_glad_egl_load_EGL_KHR_image_base(load, userptr);
+        sf_glad_egl_load_EGL_KHR_reusable_sync(load, userptr);
 
-    return version;
+        return version;
 }
 
-static int gladLoadEGL(EGLDisplay display, GLADloadfunc load) {
-    return gladLoadEGLUserPtr(display, sf_glad_egl_get_proc_from_userptr, GLAD_GNUC_EXTENSION (void*) load);
+static int gladLoadEGL(EGLDisplay display, GLADloadfunc load)
+{
+        return gladLoadEGLUserPtr(display, sf_glad_egl_get_proc_from_userptr, GLAD_GNUC_EXTENSION(void*) load);
 }
-
-
 
 #ifdef SF_GLAD_EGL
 
@@ -1364,134 +1409,141 @@ static int gladLoadEGL(EGLDisplay display, GLADloadfunc load) {
 #include <dlfcn.h>
 #endif
 
+static void* glad_get_dlopen_handle(const char* lib_names[], int length)
+{
+        void* handle = NULL;
+        int i;
 
-static void* glad_get_dlopen_handle(const char *lib_names[], int length) {
-    void *handle = NULL;
-    int i;
-
-    for (i = 0; i < length; ++i) {
+        for (i = 0; i < length; ++i) {
 #if GLAD_PLATFORM_WIN32
-  #if GLAD_PLATFORM_UWP
-        size_t buffer_size = (strlen(lib_names[i]) + 1) * sizeof(WCHAR);
-        LPWSTR buffer = (LPWSTR) malloc(buffer_size);
-        if (buffer != NULL) {
-            int ret = MultiByteToWideChar(CP_ACP, 0, lib_names[i], -1, buffer, buffer_size);
-            if (ret != 0) {
-                handle = (void*) LoadPackagedLibrary(buffer, 0);
-            }
-            free((void*) buffer);
-        }
-  #else
-        handle = (void*) LoadLibraryA(lib_names[i]);
-  #endif
+#if GLAD_PLATFORM_UWP
+                size_t buffer_size = (strlen(lib_names[i]) + 1) * sizeof(WCHAR);
+                LPWSTR buffer = (LPWSTR)malloc(buffer_size);
+                if (buffer != NULL) {
+                        int ret = MultiByteToWideChar(CP_ACP, 0, lib_names[i], -1, buffer, buffer_size);
+                        if (ret != 0) {
+                                handle = (void*)LoadPackagedLibrary(buffer, 0);
+                        }
+                        free((void*)buffer);
+                }
 #else
-        handle = dlopen(lib_names[i], RTLD_LAZY | RTLD_LOCAL);
+                handle = (void*)LoadLibraryA(lib_names[i]);
 #endif
-        if (handle != NULL) {
-            return handle;
-        }
-    }
-
-    return NULL;
-}
-
-static void glad_close_dlopen_handle(void* handle) {
-    if (handle != NULL) {
-#if GLAD_PLATFORM_WIN32
-        FreeLibrary((HMODULE) handle);
 #else
-        dlclose(handle);
+                handle = dlopen(lib_names[i], RTLD_LAZY | RTLD_LOCAL);
 #endif
-    }
-}
+                if (handle != NULL) {
+                        return handle;
+                }
+        }
 
-static GLADapiproc glad_dlsym_handle(void* handle, const char *name) {
-    if (handle == NULL) {
         return NULL;
-    }
+}
+
+static void glad_close_dlopen_handle(void* handle)
+{
+        if (handle != NULL) {
+#if GLAD_PLATFORM_WIN32
+                FreeLibrary((HMODULE)handle);
+#else
+                dlclose(handle);
+#endif
+        }
+}
+
+static GLADapiproc glad_dlsym_handle(void* handle, const char* name)
+{
+        if (handle == NULL) {
+                return NULL;
+        }
 
 #if GLAD_PLATFORM_WIN32
-    return (GLADapiproc) GetProcAddress((HMODULE) handle, name);
+        return (GLADapiproc)GetProcAddress((HMODULE)handle, name);
 #else
-    return GLAD_GNUC_EXTENSION (GLADapiproc) dlsym(handle, name);
+        return GLAD_GNUC_EXTENSION(GLADapiproc) dlsym(handle, name);
 #endif
 }
 
 #endif /* GLAD_LOADER_LIBRARY_C_ */
 
-struct _sf_glad_egl_userptr {
-    void *handle;
-    PFNEGLGETPROCADDRESSPROC get_proc_address_ptr;
+struct _sf_glad_egl_userptr
+{
+        void* handle;
+        PFNEGLGETPROCADDRESSPROC get_proc_address_ptr;
 };
 
-static GLADapiproc sf_glad_egl_get_proc(void *vuserptr, const char* name) {
-    struct _sf_glad_egl_userptr userptr = *(struct _sf_glad_egl_userptr*) vuserptr;
-    GLADapiproc result = NULL;
+static GLADapiproc sf_glad_egl_get_proc(void* vuserptr, const char* name)
+{
+        struct _sf_glad_egl_userptr userptr = *(struct _sf_glad_egl_userptr*)vuserptr;
+        GLADapiproc result = NULL;
 
-    result = glad_dlsym_handle(userptr.handle, name);
-    if (result == NULL) {
-        result = GLAD_GNUC_EXTENSION (GLADapiproc) userptr.get_proc_address_ptr(name);
-    }
+        result = glad_dlsym_handle(userptr.handle, name);
+        if (result == NULL) {
+                result = GLAD_GNUC_EXTENSION(GLADapiproc) userptr.get_proc_address_ptr(name);
+        }
 
-    return result;
+        return result;
 }
 
 static void* _egl_handle = NULL;
 
-static void* sf_glad_egl_dlopen_handle(void) {
+static void* sf_glad_egl_dlopen_handle(void)
+{
 #if GLAD_PLATFORM_APPLE
-    static const char *NAMES[] = {"libEGL.dylib"};
+        static const char* NAMES[] = {"libEGL.dylib"};
 #elif GLAD_PLATFORM_WIN32
-    static const char *NAMES[] = {"libEGL.dll", "EGL.dll"};
+        static const char* NAMES[] = {"libEGL.dll", "EGL.dll"};
 #else
-    static const char *NAMES[] = {"libEGL.so.1", "libEGL.so"};
+        static const char* NAMES[] = {"libEGL.so.1", "libEGL.so"};
 #endif
 
-    if (_egl_handle == NULL) {
-        _egl_handle = glad_get_dlopen_handle(NAMES, sizeof(NAMES) / sizeof(NAMES[0]));
-    }
-
-    return _egl_handle;
-}
-
-static struct _sf_glad_egl_userptr sf_glad_egl_build_userptr(void *handle) {
-    struct _sf_glad_egl_userptr userptr;
-    userptr.handle = handle;
-    userptr.get_proc_address_ptr = (PFNEGLGETPROCADDRESSPROC) glad_dlsym_handle(handle, "eglGetProcAddress");
-    return userptr;
-}
-
-static void gladLoaderUnloadEGL() {
-    if (_egl_handle != NULL) {
-        glad_close_dlopen_handle(_egl_handle);
-        _egl_handle = NULL;
-    }
-}
-
-static int gladLoaderLoadEGL(EGLDisplay display) {
-    int version = 0;
-    void *handle = NULL;
-    int did_load = 0;
-    struct _sf_glad_egl_userptr userptr;
-
-    did_load = _egl_handle == NULL;
-    handle = sf_glad_egl_dlopen_handle();
-    if (handle != NULL) {
-        userptr = sf_glad_egl_build_userptr(handle);
-
-        if (userptr.get_proc_address_ptr != NULL) {
-            version = gladLoadEGLUserPtr(display, sf_glad_egl_get_proc, &userptr);
+        if (_egl_handle == NULL) {
+                _egl_handle = glad_get_dlopen_handle(NAMES, sizeof(NAMES) / sizeof(NAMES[0]));
         }
 
-        if (!version && did_load) {
-            gladLoaderUnloadEGL();
-        }
-    }
+        return _egl_handle;
+}
 
-    return version;
+static struct _sf_glad_egl_userptr sf_glad_egl_build_userptr(void* handle)
+{
+        struct _sf_glad_egl_userptr userptr;
+        userptr.handle = handle;
+        userptr.get_proc_address_ptr = (PFNEGLGETPROCADDRESSPROC)glad_dlsym_handle(handle, "eglGetProcAddress");
+        return userptr;
+}
+
+static void gladLoaderUnloadEGL()
+{
+        if (_egl_handle != NULL) {
+                glad_close_dlopen_handle(_egl_handle);
+                _egl_handle = NULL;
+        }
+}
+
+static int gladLoaderLoadEGL(EGLDisplay display)
+{
+        int version = 0;
+        void* handle = NULL;
+        int did_load = 0;
+        struct _sf_glad_egl_userptr userptr;
+
+        did_load = _egl_handle == NULL;
+        handle = sf_glad_egl_dlopen_handle();
+        if (handle != NULL) {
+                userptr = sf_glad_egl_build_userptr(handle);
+
+                if (userptr.get_proc_address_ptr != NULL) {
+                        version = gladLoadEGLUserPtr(display, sf_glad_egl_get_proc, &userptr);
+                }
+
+                if (!version && did_load) {
+                        gladLoaderUnloadEGL();
+                }
+        }
+
+        return version;
 }
 
 #endif /* SF_GLAD_EGL */
 
 #endif /* SF_GLAD_EGL_IMPLEMENTATION */
-

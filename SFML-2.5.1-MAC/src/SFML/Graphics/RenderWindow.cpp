@@ -25,109 +25,92 @@
 ////////////////////////////////////////////////////////////
 // Headers
 ////////////////////////////////////////////////////////////
-#include <SFML/Graphics/RenderWindow.hpp>
-#include <SFML/Graphics/Texture.hpp>
 #include <SFML/Graphics/GLCheck.hpp>
 #include <SFML/Graphics/RenderTextureImplFBO.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Graphics/Texture.hpp>
 
-
-namespace sf
-{
+namespace sf {
 ////////////////////////////////////////////////////////////
-RenderWindow::RenderWindow() :
-m_defaultFrameBuffer(0)
+RenderWindow::RenderWindow() : m_defaultFrameBuffer(0)
 {
-    // Nothing to do
+        // Nothing to do
 }
 
-
 ////////////////////////////////////////////////////////////
-RenderWindow::RenderWindow(VideoMode mode, const String& title, Uint32 style, const ContextSettings& settings) :
-m_defaultFrameBuffer(0)
+RenderWindow::RenderWindow(VideoMode mode, const String& title, Uint32 style, const ContextSettings& settings)
+    : m_defaultFrameBuffer(0)
 {
-    // Don't call the base class constructor because it contains virtual function calls
-    Window::create(mode, title, style, settings);
+        // Don't call the base class constructor because it contains virtual function calls
+        Window::create(mode, title, style, settings);
 }
 
-
 ////////////////////////////////////////////////////////////
-RenderWindow::RenderWindow(WindowHandle handle, const ContextSettings& settings) :
-m_defaultFrameBuffer(0)
+RenderWindow::RenderWindow(WindowHandle handle, const ContextSettings& settings) : m_defaultFrameBuffer(0)
 {
-    // Don't call the base class constructor because it contains virtual function calls
-    Window::create(handle, settings);
+        // Don't call the base class constructor because it contains virtual function calls
+        Window::create(handle, settings);
 }
-
 
 ////////////////////////////////////////////////////////////
 RenderWindow::~RenderWindow()
 {
-    // Nothing to do
+        // Nothing to do
 }
-
 
 ////////////////////////////////////////////////////////////
-Vector2u RenderWindow::getSize() const
-{
-    return Window::getSize();
-}
-
+Vector2u RenderWindow::getSize() const { return Window::getSize(); }
 
 ////////////////////////////////////////////////////////////
 bool RenderWindow::setActive(bool active)
 {
-    bool result = Window::setActive(active);
+        bool result = Window::setActive(active);
 
-    // Update RenderTarget tracking
-    if (result)
-        RenderTarget::setActive(active);
+        // Update RenderTarget tracking
+        if (result)
+                RenderTarget::setActive(active);
 
-    // If FBOs are available, make sure none are bound when we
-    // try to draw to the default framebuffer of the RenderWindow
-    if (active && result && priv::RenderTextureImplFBO::isAvailable())
-    {
-        glCheck(GLEXT_glBindFramebuffer(GLEXT_GL_FRAMEBUFFER, m_defaultFrameBuffer));
+        // If FBOs are available, make sure none are bound when we
+        // try to draw to the default framebuffer of the RenderWindow
+        if (active && result && priv::RenderTextureImplFBO::isAvailable()) {
+                glCheck(GLEXT_glBindFramebuffer(GLEXT_GL_FRAMEBUFFER, m_defaultFrameBuffer));
 
-        return true;
-    }
+                return true;
+        }
 
-    return result;
+        return result;
 }
-
 
 ////////////////////////////////////////////////////////////
 Image RenderWindow::capture() const
 {
-    Vector2u windowSize = getSize();
+        Vector2u windowSize = getSize();
 
-    Texture texture;
-    texture.create(windowSize.x, windowSize.y);
-    texture.update(*this);
+        Texture texture;
+        texture.create(windowSize.x, windowSize.y);
+        texture.update(*this);
 
-    return texture.copyToImage();
+        return texture.copyToImage();
 }
-
 
 ////////////////////////////////////////////////////////////
 void RenderWindow::onCreate()
 {
-    if (priv::RenderTextureImplFBO::isAvailable())
-    {
-        // Retrieve the framebuffer ID we have to bind when targeting the window for rendering
-        // We assume that this window's context is still active at this point
-        glCheck(glGetIntegerv(GLEXT_GL_FRAMEBUFFER_BINDING, reinterpret_cast<GLint*>(&m_defaultFrameBuffer)));
-    }
+        if (priv::RenderTextureImplFBO::isAvailable()) {
+                // Retrieve the framebuffer ID we have to bind when targeting the window for rendering
+                // We assume that this window's context is still active at this point
+                glCheck(glGetIntegerv(GLEXT_GL_FRAMEBUFFER_BINDING, reinterpret_cast<GLint*>(&m_defaultFrameBuffer)));
+        }
 
-    // Just initialize the render target part
-    RenderTarget::initialize();
+        // Just initialize the render target part
+        RenderTarget::initialize();
 }
-
 
 ////////////////////////////////////////////////////////////
 void RenderWindow::onResize()
 {
-    // Update the current view (recompute the viewport, which is stored in relative coordinates)
-    setView(getView());
+        // Update the current view (recompute the viewport, which is stored in relative coordinates)
+        setView(getView());
 }
 
 } // namespace sf

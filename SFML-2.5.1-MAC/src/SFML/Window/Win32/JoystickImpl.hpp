@@ -29,26 +29,23 @@
 // Headers
 ////////////////////////////////////////////////////////////
 #ifdef _WIN32_WINDOWS
-    #undef _WIN32_WINDOWS
+#undef _WIN32_WINDOWS
 #endif
 #ifdef _WIN32_WINNT
-    #undef _WIN32_WINNT
+#undef _WIN32_WINNT
 #endif
-#define _WIN32_WINDOWS      0x0501
-#define _WIN32_WINNT        0x0501
+#define _WIN32_WINDOWS 0x0501
+#define _WIN32_WINNT 0x0501
 #define DIRECTINPUT_VERSION 0x0800
+#include <SFML/System/String.hpp>
 #include <SFML/Window/Joystick.hpp>
 #include <SFML/Window/JoystickImpl.hpp>
-#include <SFML/System/String.hpp>
-#include <windows.h>
-#include <mmsystem.h>
 #include <dinput.h>
+#include <mmsystem.h>
+#include <windows.h>
 
-
-namespace sf
-{
-namespace priv
-{
+namespace sf {
+namespace priv {
 ////////////////////////////////////////////////////////////
 /// \brief Windows implementation of joysticks
 ///
@@ -56,182 +53,181 @@ namespace priv
 class JoystickImpl
 {
 public:
+        ////////////////////////////////////////////////////////////
+        /// \brief Perform the global initialization of the joystick module
+        ///
+        ////////////////////////////////////////////////////////////
+        static void initialize();
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Perform the global initialization of the joystick module
-    ///
-    ////////////////////////////////////////////////////////////
-    static void initialize();
+        ////////////////////////////////////////////////////////////
+        /// \brief Perform the global cleanup of the joystick module
+        ///
+        ////////////////////////////////////////////////////////////
+        static void cleanup();
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Perform the global cleanup of the joystick module
-    ///
-    ////////////////////////////////////////////////////////////
-    static void cleanup();
+        ////////////////////////////////////////////////////////////
+        /// \brief Check if a joystick is currently connected
+        ///
+        /// \param index Index of the joystick to check
+        ///
+        /// \return True if the joystick is connected, false otherwise
+        ///
+        ////////////////////////////////////////////////////////////
+        static bool isConnected(unsigned int index);
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Check if a joystick is currently connected
-    ///
-    /// \param index Index of the joystick to check
-    ///
-    /// \return True if the joystick is connected, false otherwise
-    ///
-    ////////////////////////////////////////////////////////////
-    static bool isConnected(unsigned int index);
+        ////////////////////////////////////////////////////////////
+        /// \brief Enable or disable lazy enumeration updates
+        ///
+        /// \param status Whether to rely on windows triggering enumeration updates
+        ///
+        ////////////////////////////////////////////////////////////
+        static void setLazyUpdates(bool status);
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Enable or disable lazy enumeration updates
-    ///
-    /// \param status Whether to rely on windows triggering enumeration updates
-    ///
-    ////////////////////////////////////////////////////////////
-    static void setLazyUpdates(bool status);
+        ////////////////////////////////////////////////////////////
+        /// \brief Update the connection status of all joysticks
+        ///
+        ////////////////////////////////////////////////////////////
+        static void updateConnections();
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Update the connection status of all joysticks
-    ///
-    ////////////////////////////////////////////////////////////
-    static void updateConnections();
+        ////////////////////////////////////////////////////////////
+        /// \brief Open the joystick
+        ///
+        /// \param index Index assigned to the joystick
+        ///
+        /// \return True on success, false on failure
+        ///
+        ////////////////////////////////////////////////////////////
+        bool open(unsigned int index);
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Open the joystick
-    ///
-    /// \param index Index assigned to the joystick
-    ///
-    /// \return True on success, false on failure
-    ///
-    ////////////////////////////////////////////////////////////
-    bool open(unsigned int index);
+        ////////////////////////////////////////////////////////////
+        /// \brief Close the joystick
+        ///
+        ////////////////////////////////////////////////////////////
+        void close();
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Close the joystick
-    ///
-    ////////////////////////////////////////////////////////////
-    void close();
+        ////////////////////////////////////////////////////////////
+        /// \brief Get the joystick capabilities
+        ///
+        /// \return Joystick capabilities
+        ///
+        ////////////////////////////////////////////////////////////
+        JoystickCaps getCapabilities() const;
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Get the joystick capabilities
-    ///
-    /// \return Joystick capabilities
-    ///
-    ////////////////////////////////////////////////////////////
-    JoystickCaps getCapabilities() const;
+        ////////////////////////////////////////////////////////////
+        /// \brief Get the joystick identification
+        ///
+        /// \return Joystick identification
+        ///
+        ////////////////////////////////////////////////////////////
+        Joystick::Identification getIdentification() const;
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Get the joystick identification
-    ///
-    /// \return Joystick identification
-    ///
-    ////////////////////////////////////////////////////////////
-    Joystick::Identification getIdentification() const;
+        ////////////////////////////////////////////////////////////
+        /// \brief Update the joystick and get its new state
+        ///
+        /// \return Joystick state
+        ///
+        ////////////////////////////////////////////////////////////
+        JoystickState update();
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Update the joystick and get its new state
-    ///
-    /// \return Joystick state
-    ///
-    ////////////////////////////////////////////////////////////
-    JoystickState update();
+        ////////////////////////////////////////////////////////////
+        /// \brief Perform the global initialization of the joystick module (DInput)
+        ///
+        ////////////////////////////////////////////////////////////
+        static void initializeDInput();
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Perform the global initialization of the joystick module (DInput)
-    ///
-    ////////////////////////////////////////////////////////////
-    static void initializeDInput();
+        ////////////////////////////////////////////////////////////
+        /// \brief Perform the global cleanup of the joystick module (DInput)
+        ///
+        ////////////////////////////////////////////////////////////
+        static void cleanupDInput();
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Perform the global cleanup of the joystick module (DInput)
-    ///
-    ////////////////////////////////////////////////////////////
-    static void cleanupDInput();
+        ////////////////////////////////////////////////////////////
+        /// \brief Check if a joystick is currently connected (DInput)
+        ///
+        /// \param index Index of the joystick to check
+        ///
+        /// \return True if the joystick is connected, false otherwise
+        ///
+        ////////////////////////////////////////////////////////////
+        static bool isConnectedDInput(unsigned int index);
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Check if a joystick is currently connected (DInput)
-    ///
-    /// \param index Index of the joystick to check
-    ///
-    /// \return True if the joystick is connected, false otherwise
-    ///
-    ////////////////////////////////////////////////////////////
-    static bool isConnectedDInput(unsigned int index);
+        ////////////////////////////////////////////////////////////
+        /// \brief Update the connection status of all joysticks (DInput)
+        ///
+        ////////////////////////////////////////////////////////////
+        static void updateConnectionsDInput();
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Update the connection status of all joysticks (DInput)
-    ///
-    ////////////////////////////////////////////////////////////
-    static void updateConnectionsDInput();
+        ////////////////////////////////////////////////////////////
+        /// \brief Open the joystick (DInput)
+        ///
+        /// \param index Index assigned to the joystick
+        ///
+        /// \return True on success, false on failure
+        ///
+        ////////////////////////////////////////////////////////////
+        bool openDInput(unsigned int index);
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Open the joystick (DInput)
-    ///
-    /// \param index Index assigned to the joystick
-    ///
-    /// \return True on success, false on failure
-    ///
-    ////////////////////////////////////////////////////////////
-    bool openDInput(unsigned int index);
+        ////////////////////////////////////////////////////////////
+        /// \brief Close the joystick (DInput)
+        ///
+        ////////////////////////////////////////////////////////////
+        void closeDInput();
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Close the joystick (DInput)
-    ///
-    ////////////////////////////////////////////////////////////
-    void closeDInput();
+        ////////////////////////////////////////////////////////////
+        /// \brief Get the joystick capabilities (DInput)
+        ///
+        /// \return Joystick capabilities
+        ///
+        ////////////////////////////////////////////////////////////
+        JoystickCaps getCapabilitiesDInput() const;
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Get the joystick capabilities (DInput)
-    ///
-    /// \return Joystick capabilities
-    ///
-    ////////////////////////////////////////////////////////////
-    JoystickCaps getCapabilitiesDInput() const;
-
-    ////////////////////////////////////////////////////////////
-    /// \brief Update the joystick and get its new state (DInput)
-    ///
-    /// \return Joystick state
-    ///
-    ////////////////////////////////////////////////////////////
-    JoystickState updateDInput();
+        ////////////////////////////////////////////////////////////
+        /// \brief Update the joystick and get its new state (DInput)
+        ///
+        /// \return Joystick state
+        ///
+        ////////////////////////////////////////////////////////////
+        JoystickState updateDInput();
 
 private:
+        ////////////////////////////////////////////////////////////
+        /// \brief Device enumeration callback function passed to EnumDevices in updateConnections
+        ///
+        /// \param deviceInstance Device object instance
+        /// \param userData       User data (unused)
+        ///
+        /// \return DIENUM_CONTINUE to continue enumerating devices or DIENUM_STOP to stop
+        ///
+        ////////////////////////////////////////////////////////////
+        static BOOL CALLBACK deviceEnumerationCallback(const DIDEVICEINSTANCE* deviceInstance, void* userData);
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Device enumeration callback function passed to EnumDevices in updateConnections
-    ///
-    /// \param deviceInstance Device object instance
-    /// \param userData       User data (unused)
-    ///
-    /// \return DIENUM_CONTINUE to continue enumerating devices or DIENUM_STOP to stop
-    ///
-    ////////////////////////////////////////////////////////////
-    static BOOL CALLBACK deviceEnumerationCallback(const DIDEVICEINSTANCE* deviceInstance, void* userData);
+        ////////////////////////////////////////////////////////////
+        /// \brief Device object enumeration callback function passed to EnumObjects in open
+        ///
+        /// \param deviceObjectInstance Device object instance
+        /// \param userData             User data (pointer to our JoystickImpl object)
+        ///
+        /// \return DIENUM_CONTINUE to continue enumerating objects or DIENUM_STOP to stop
+        ///
+        ////////////////////////////////////////////////////////////
+        static BOOL CALLBACK deviceObjectEnumerationCallback(const DIDEVICEOBJECTINSTANCE* deviceObjectInstance,
+                                                             void* userData);
 
-    ////////////////////////////////////////////////////////////
-    /// \brief Device object enumeration callback function passed to EnumObjects in open
-    ///
-    /// \param deviceObjectInstance Device object instance
-    /// \param userData             User data (pointer to our JoystickImpl object)
-    ///
-    /// \return DIENUM_CONTINUE to continue enumerating objects or DIENUM_STOP to stop
-    ///
-    ////////////////////////////////////////////////////////////
-    static BOOL CALLBACK deviceObjectEnumerationCallback(const DIDEVICEOBJECTINSTANCE* deviceObjectInstance, void* userData);
-
-    ////////////////////////////////////////////////////////////
-    // Member data
-    ////////////////////////////////////////////////////////////
-    unsigned int             m_index;                          //!< Index of the joystick
-    JOYCAPS                  m_caps;                           //!< Joystick capabilities
-    IDirectInputDevice8W*    m_device;                         //!< DirectInput 8.x device
-    DIDEVCAPS                m_deviceCaps;                     //!< DirectInput device capabilities
-    int                      m_axes[Joystick::AxisCount];      //!< Offsets to the bytes containing the axes states, -1 if not available
-    int                      m_buttons[Joystick::ButtonCount]; //!< Offsets to the bytes containing the button states, -1 if not available
-    Joystick::Identification m_identification;                 //!< Joystick identification
+        ////////////////////////////////////////////////////////////
+        // Member data
+        ////////////////////////////////////////////////////////////
+        unsigned int m_index;                 //!< Index of the joystick
+        JOYCAPS m_caps;                       //!< Joystick capabilities
+        IDirectInputDevice8W* m_device;       //!< DirectInput 8.x device
+        DIDEVCAPS m_deviceCaps;               //!< DirectInput device capabilities
+        int m_axes[Joystick::AxisCount];      //!< Offsets to the bytes containing the axes states, -1 if not available
+        int m_buttons[Joystick::ButtonCount]; //!< Offsets to the bytes containing the button states, -1 if not
+                                              //!< available
+        Joystick::Identification m_identification; //!< Joystick identification
 };
 
 } // namespace priv
 
 } // namespace sf
-
 
 #endif // SFML_JOYSTICKIMPLWIN32_HPP
