@@ -408,7 +408,6 @@ void World::setupPercentages()
 void World::createStartingBGTiles()
 {
 
-        float bgTileSideLength = 0.05f;
         for (auto c = 0; c < (1.5 / bgTileSideLength) + 30.0;
              c++) { // +35.0, otherwise at low fps, we get visual problems.
                 std::vector<std::shared_ptr<logic::BGTile>> row;

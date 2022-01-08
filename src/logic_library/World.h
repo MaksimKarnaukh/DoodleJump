@@ -49,7 +49,7 @@ public:
         std::map<int, std::map<int, float>> percentages; // map for our random platform generation
 
         // entity data :
-        float playerWidth = 0.08; // 0.077
+        float playerWidth = 0.08;  // 0.077
         float playerHeight = 0.15; // 0.18
         float platformWidth = 0.174004;
         float platformHeight = 0.0411;
@@ -57,6 +57,8 @@ public:
         float springHeight = 0.0411;
         float jetpackWidth = 0.0696;
         float jetpackHeight = 0.06576;
+
+        float bgTileSideLength = 0.05f;
 
         // random (chance) data :
         float platformGen_startingChance = 0.90; // starting percentage for platform generation
