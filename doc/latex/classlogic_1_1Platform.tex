@@ -1,0 +1,164 @@
+\hypertarget{classlogic_1_1Platform}{}\doxysubsection{logic\+::Platform Class Reference}
+\label{classlogic_1_1Platform}\index{logic::Platform@{logic::Platform}}
+
+
+Inheritance diagram for logic\+::Platform\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classlogic_1_1Platform__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for logic\+::Platform\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classlogic_1_1Platform__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlogic_1_1Platform_a5e24eed117cfbc29eca54dabfe4909da}{Platform}} ()
+\item 
+\mbox{\hyperlink{classlogic_1_1Platform_a17681236a1e376cac1136ce7a5e5d167}{$\sim$\+Platform}} () override=default
+\item 
+\mbox{\hyperlink{classlogic_1_1Platform_a298c1eaf3ef77b12747c3a8d9d87cea0}{Platform}} (float posX, float posY)
+\item 
+\mbox{\hyperlink{classlogic_1_1Platform_a8551b4454d623edb2f53ad1ae69b319c}{Platform}} (float posX, float posY, float width, float height)
+\item 
+virtual void \mbox{\hyperlink{classlogic_1_1Platform_aa6cd1a0cccf86ab38472d0e788cc4ab3}{move}} ()
+\item 
+virtual void \mbox{\hyperlink{classlogic_1_1Platform_a0b9c3064b4f6af098215a1be82ca870b}{change\+Direction}} ()
+\item 
+virtual float \mbox{\hyperlink{classlogic_1_1Platform_a3068bfc983aa98b0b415f4ddad424b06}{is\+Touched}} ()=0
+\item 
+\mbox{\Hypertarget{classlogic_1_1Platform_a43271a1bd3cf21ef160d14d6886cb861}\label{classlogic_1_1Platform_a43271a1bd3cf21ef160d14d6886cb861}} 
+int {\bfseries get\+Times\+Touched} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlogic_1_1Platform_aa1bf30b92f99cab81fe3b61868978dfe}\label{classlogic_1_1Platform_aa1bf30b92f99cab81fe3b61868978dfe}} 
+float {\bfseries startingX}
+\item 
+\mbox{\Hypertarget{classlogic_1_1Platform_a7cc503332440c6d91f5ded11ed84b8dc}\label{classlogic_1_1Platform_a7cc503332440c6d91f5ded11ed84b8dc}} 
+float {\bfseries startingY}
+\item 
+\mbox{\Hypertarget{classlogic_1_1Platform_a1f81b942e5e3849f11580106725277c8}\label{classlogic_1_1Platform_a1f81b942e5e3849f11580106725277c8}} 
+int {\bfseries times\+Touched} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+Definition at line 10 of file Platform.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlogic_1_1Platform_a5e24eed117cfbc29eca54dabfe4909da}\label{classlogic_1_1Platform_a5e24eed117cfbc29eca54dabfe4909da}} 
+\index{logic::Platform@{logic::Platform}!Platform@{Platform}}
+\index{Platform@{Platform}!logic::Platform@{logic::Platform}}
+\doxyparagraph{\texorpdfstring{Platform()}{Platform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily logic\+::\+Platform\+::\+Platform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+@function \+: \mbox{\hyperlink{classlogic_1_1Platform}{Platform}} Constructor for a \mbox{\hyperlink{classlogic_1_1Platform}{Platform}}. \mbox{\Hypertarget{classlogic_1_1Platform_a17681236a1e376cac1136ce7a5e5d167}\label{classlogic_1_1Platform_a17681236a1e376cac1136ce7a5e5d167}} 
+\index{logic::Platform@{logic::Platform}!````~Platform@{$\sim$Platform}}
+\index{````~Platform@{$\sim$Platform}!logic::Platform@{logic::Platform}}
+\doxyparagraph{\texorpdfstring{$\sim$Platform()}{~Platform()}}
+{\footnotesize\ttfamily logic\+::\+Platform\+::$\sim$\+Platform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+@function \+: \mbox{\hyperlink{classlogic_1_1Platform}{Platform}} Destructor for a \mbox{\hyperlink{classlogic_1_1Platform}{Platform}}. \mbox{\Hypertarget{classlogic_1_1Platform_a298c1eaf3ef77b12747c3a8d9d87cea0}\label{classlogic_1_1Platform_a298c1eaf3ef77b12747c3a8d9d87cea0}} 
+\index{logic::Platform@{logic::Platform}!Platform@{Platform}}
+\index{Platform@{Platform}!logic::Platform@{logic::Platform}}
+\doxyparagraph{\texorpdfstring{Platform()}{Platform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily logic\+::\+Platform\+::\+Platform (\begin{DoxyParamCaption}\item[{float}]{posX,  }\item[{float}]{posY }\end{DoxyParamCaption})}
+
+@function \+: \mbox{\hyperlink{classlogic_1_1Platform}{Platform}} Constructor for a \mbox{\hyperlink{classlogic_1_1Platform}{Platform}}. 
+\begin{DoxyParams}{Parameters}
+{\em posX} & (float) \+: x-\/coordinate of our entity, between the range \mbox{[}0,1-\/entity.\+width\mbox{]}. \\
+\hline
+{\em posY} & (float) \+: y-\/coordinate of our entity, between the range \mbox{[}0+entity.\+height, inf\mbox{[}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 9 of file Platform.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1Platform_a8551b4454d623edb2f53ad1ae69b319c}\label{classlogic_1_1Platform_a8551b4454d623edb2f53ad1ae69b319c}} 
+\index{logic::Platform@{logic::Platform}!Platform@{Platform}}
+\index{Platform@{Platform}!logic::Platform@{logic::Platform}}
+\doxyparagraph{\texorpdfstring{Platform()}{Platform()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily logic\+::\+Platform\+::\+Platform (\begin{DoxyParamCaption}\item[{float}]{posX,  }\item[{float}]{posY,  }\item[{float}]{width,  }\item[{float}]{height }\end{DoxyParamCaption})}
+
+@function \+: \mbox{\hyperlink{classlogic_1_1Platform}{Platform}} Constructor for a \mbox{\hyperlink{classlogic_1_1Platform}{Platform}}. 
+\begin{DoxyParams}{Parameters}
+{\em posX} & (float) \+: x-\/coordinate of our entity, between the range \mbox{[}0,1-\/entity.\+width\mbox{]}. \\
+\hline
+{\em posY} & (float) \+: y-\/coordinate of our entity, between the range \mbox{[}0+entity.\+height, inf\mbox{[}. \\
+\hline
+{\em width} & (float) \+: width of our entity. \\
+\hline
+{\em height} & (float) \+: height of our entity. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 11 of file Platform.\+cpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classlogic_1_1Platform_a0b9c3064b4f6af098215a1be82ca870b}\label{classlogic_1_1Platform_a0b9c3064b4f6af098215a1be82ca870b}} 
+\index{logic::Platform@{logic::Platform}!changeDirection@{changeDirection}}
+\index{changeDirection@{changeDirection}!logic::Platform@{logic::Platform}}
+\doxyparagraph{\texorpdfstring{changeDirection()}{changeDirection()}}
+{\footnotesize\ttfamily virtual void logic\+::\+Platform\+::change\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+@function \+: change\+Direction Changes the direction our platform is moving to. 
+
+Reimplemented in \mbox{\hyperlink{classlogic_1_1Platform__Horizontal_a869f8e9aa3fdc79639cdf6f343394a59}{logic\+::\+Platform\+\_\+\+Horizontal}}, and \mbox{\hyperlink{classlogic_1_1Platform__Vertical_a2e6a71039e48e4df3f0e449c5bb3651e}{logic\+::\+Platform\+\_\+\+Vertical}}.
+
+
+
+Definition at line 60 of file Platform.\+h.
+
+\mbox{\Hypertarget{classlogic_1_1Platform_a3068bfc983aa98b0b415f4ddad424b06}\label{classlogic_1_1Platform_a3068bfc983aa98b0b415f4ddad424b06}} 
+\index{logic::Platform@{logic::Platform}!isTouched@{isTouched}}
+\index{isTouched@{isTouched}!logic::Platform@{logic::Platform}}
+\doxyparagraph{\texorpdfstring{isTouched()}{isTouched()}}
+{\footnotesize\ttfamily virtual float logic\+::\+Platform\+::is\+Touched (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+@function \+: is\+Touched Function that is used for the score decrease and temporary platform deletion. \begin{DoxyReturn}{Returns}
+(float) \+: score decrease. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classlogic_1_1Platform__Horizontal_a4b83d74e3833141c2e8c22aaf0c03de0}{logic\+::\+Platform\+\_\+\+Horizontal}}, \mbox{\hyperlink{classlogic_1_1Platform__Vertical_a69bc246d80039977248e1b9dcf2cfc94}{logic\+::\+Platform\+\_\+\+Vertical}}, \mbox{\hyperlink{classlogic_1_1Platform__Static_a0f32530297c6df2c0d7a98d3dd75c53a}{logic\+::\+Platform\+\_\+\+Static}}, and \mbox{\hyperlink{classlogic_1_1Platform__Temporary_ab3d693cc06ce653658357652dc09d527}{logic\+::\+Platform\+\_\+\+Temporary}}.
+
+\mbox{\Hypertarget{classlogic_1_1Platform_aa6cd1a0cccf86ab38472d0e788cc4ab3}\label{classlogic_1_1Platform_aa6cd1a0cccf86ab38472d0e788cc4ab3}} 
+\index{logic::Platform@{logic::Platform}!move@{move}}
+\index{move@{move}!logic::Platform@{logic::Platform}}
+\doxyparagraph{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily virtual void logic\+::\+Platform\+::move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+@function \+: move Function that is responsible for moving the platform correctly. 
+
+Reimplemented in \mbox{\hyperlink{classlogic_1_1Platform__Horizontal_ad15c0c05451f10b73aa84aca0b67fdae}{logic\+::\+Platform\+\_\+\+Horizontal}}, and \mbox{\hyperlink{classlogic_1_1Platform__Vertical_a8bf2ee42c33d40562f174cd006c07eae}{logic\+::\+Platform\+\_\+\+Vertical}}.
+
+
+
+Definition at line 54 of file Platform.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/logic\+\_\+library/Platform.\+h\item 
+src/logic\+\_\+library/Platform.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="Bonus_8h" kind="file" language="C++">
+    <compoundname>Bonus.h</compoundname>
+    <includes refid="EntityModel_8h" local="yes">EntityModel.h</includes>
+    <includes refid="Player_8h" local="yes">Player.h</includes>
+    <includedby refid="Jetpack_8h" local="yes">src/logic_library/Jetpack.h</includedby>
+    <includedby refid="Spring_8h" local="yes">src/logic_library/Spring.h</includedby>
+    <includedby refid="World_8h" local="yes">src/logic_library/World.h</includedby>
+    <includedby refid="Bonus_8cpp" local="yes">src/logic_library/Bonus.cpp</includedby>
+    <incdepgraph>
+      <node id="9">
+        <label>Player.h</label>
+        <link refid="Player_8h_source"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>EntityModel.h</label>
+        <link refid="EntityModel_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>string</label>
+      </node>
+      <node id="1">
+        <label>src/logic_library/Bonus.h</label>
+        <link refid="Bonus_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Subject.h</label>
+        <link refid="Subject_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>vector</label>
+      </node>
+      <node id="4">
+        <label>chrono</label>
+      </node>
+      <node id="3">
+        <label>Stopwatch.h</label>
+        <link refid="Stopwatch_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>src/logic_library/AbstractFactory.h</label>
+        <link refid="AbstractFactory_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>src/logic_library/AbstractFactory.cpp</label>
+        <link refid="AbstractFactory_8cpp_source"/>
+      </node>
+      <node id="7">
+        <label>src/game_representation/Game.cpp</label>
+        <link refid="Game_8cpp_source"/>
+      </node>
+      <node id="14">
+        <label>src/logic_library/Spring.cpp</label>
+        <link refid="Spring_8cpp_source"/>
+      </node>
+      <node id="15">
+        <label>src/logic_library/Bonus.cpp</label>
+        <link refid="Bonus_8cpp_source"/>
+      </node>
+      <node id="1">
+        <label>src/logic_library/Bonus.h</label>
+        <link refid="Bonus_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>src/logic_library/Jetpack.cpp</label>
+        <link refid="Jetpack_8cpp_source"/>
+      </node>
+      <node id="9">
+        <label>src/logic_library/World.h</label>
+        <link refid="World_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp_source"/>
+      </node>
+      <node id="10">
+        <label>src/logic_library/World.cpp</label>
+        <link refid="World_8cpp_source"/>
+      </node>
+      <node id="13">
+        <label>src/logic_library/Spring.h</label>
+        <link refid="Spring_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>src/logic_library/Jetpack.h</label>
+        <link refid="Jetpack_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>src/game_representation/ConcreteFactory.cpp</label>
+        <link refid="ConcreteFactory_8cpp_source"/>
+      </node>
+      <node id="6">
+        <label>src/game_representation/Game.h</label>
+        <link refid="Game_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>src/game_representation/ConcreteFactory.h</label>
+        <link refid="ConcreteFactory_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classlogic_1_1Bonus" prot="public">logic::Bonus</innerclass>
+    <innernamespace refid="namespacelogic">logic</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Author:<sp/>Maksim<sp/>Karnaukh</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DOODLEJUMP_BONUS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DOODLEJUMP_BONUS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;EntityModel.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Player.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">logic<sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="classlogic_1_1Bonus" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classlogic_1_1Bonus" kindref="compound">Bonus</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1EntityModel" kindref="compound">logic::EntityModel</ref></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>bonusForce;<sp/></highlight><highlight class="comment">//<sp/>multiplier<sp/>for<sp/>the<sp/>player<sp/>speed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>scoreIncrease;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlogic_1_1Bonus_1a4e53c7177ee1931b6b89a3a5ede2b232" kindref="member">Bonus</ref>();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlogic_1_1Bonus_1acc16cb789e509beab0ebbcef6f933188" kindref="member">~Bonus</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlogic_1_1Bonus_1a4e53c7177ee1931b6b89a3a5ede2b232" kindref="member">Bonus</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>posX,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>posY);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlogic_1_1Bonus_1a4e53c7177ee1931b6b89a3a5ede2b232" kindref="member">Bonus</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>posX,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>posY,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>height);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="classlogic_1_1Bonus_1aaccacb779e0e99cac631cb060c628c63" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1Bonus_1aaccacb779e0e99cac631cb060c628c63" kindref="member">setBonusForce</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>force)<sp/>{<sp/>bonusForce<sp/>=<sp/>force;<sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="classlogic_1_1Bonus_1ad735683bc5cb289c8599b70f968a2619" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1Bonus_1ad735683bc5cb289c8599b70f968a2619" kindref="member">setScoreIncrease</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>inc)<sp/>{<sp/>scoreIncrease<sp/>=<sp/>inc;<sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="classlogic_1_1Bonus_1a682ba19d90d766eeadb906aa29ff6e71" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1Bonus_1a682ba19d90d766eeadb906aa29ff6e71" kindref="member">getBonusForce</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>bonusForce;<sp/>};</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="classlogic_1_1Bonus_1a5c95afdc93abe9ab626aba5682c0c1b1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1Bonus_1a5c95afdc93abe9ab626aba5682c0c1b1" kindref="member">getScoreIncrease</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>scoreIncrease;<sp/>}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1Bonus_1ab480bdebc33ae05569c5c033a00983f0" kindref="member">touchedBonus</ref>(std::shared_ptr&lt;logic::Player&gt;&amp;<sp/>player);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>logic</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>DOODLEJUMP_BONUS_H</highlight></codeline>
+    </programlisting>
+    <location file="src/logic_library/Bonus.h"/>
+  </compounddef>
+</doxygen>

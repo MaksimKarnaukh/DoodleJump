@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacerepresentation" kind="namespace" language="C++">
+    <compoundname>representation</compoundname>
+    <innerclass refid="classrepresentation_1_1BGTile__GR" prot="public">representation::BGTile_GR</innerclass>
+    <innerclass refid="classrepresentation_1_1Bonus__GR" prot="public">representation::Bonus_GR</innerclass>
+    <innerclass refid="classrepresentation_1_1ConcreteFactory" prot="public">representation::ConcreteFactory</innerclass>
+    <innerclass refid="classrepresentation_1_1EntityView" prot="public">representation::EntityView</innerclass>
+    <innerclass refid="classrepresentation_1_1Game" prot="public">representation::Game</innerclass>
+    <innerclass refid="classrepresentation_1_1Jetpack__GR" prot="public">representation::Jetpack_GR</innerclass>
+    <innerclass refid="classrepresentation_1_1Platform__GR" prot="public">representation::Platform_GR</innerclass>
+    <innerclass refid="classrepresentation_1_1Platform__Horizontal__GR" prot="public">representation::Platform_Horizontal_GR</innerclass>
+    <innerclass refid="classrepresentation_1_1Platform__Static__GR" prot="public">representation::Platform_Static_GR</innerclass>
+    <innerclass refid="classrepresentation_1_1Platform__Temporary__GR" prot="public">representation::Platform_Temporary_GR</innerclass>
+    <innerclass refid="classrepresentation_1_1Platform__Vertical__GR" prot="public">representation::Platform_Vertical_GR</innerclass>
+    <innerclass refid="classrepresentation_1_1Player__GR" prot="public">representation::Player_GR</innerclass>
+    <innerclass refid="classrepresentation_1_1Spring__GR" prot="public">representation::Spring_GR</innerclass>
+    <innerclass refid="classrepresentation_1_1Window" prot="public">representation::Window</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/game_representation/BGTile_GR.cpp" line="5" column="24"/>
+  </compounddef>
+</doxygen>

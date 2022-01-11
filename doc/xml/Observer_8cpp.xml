@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="Observer_8cpp" kind="file" language="C++">
+    <compoundname>Observer.cpp</compoundname>
+    <includes refid="Observer_8h" local="yes">Observer.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/logic_library/Observer.cpp</label>
+        <link refid="Observer_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+      <node id="3">
+        <label>Subject.h</label>
+        <link refid="Subject_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Observer.h</label>
+        <link refid="Observer_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>vector</label>
+      </node>
+      <node id="4">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacelogic">logic</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Author:<sp/>Maksim<sp/>Karnaukh</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Observer.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">logic<sp/>{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><ref refid="classlogic_1_1Observer_1a6c8e55f7a0cc16af2994520cbf6739d7" kindref="member">Observer::Observer</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="classlogic_1_1Observer_1a91bdbdf67a9983d2dee5f46344131dc3" refkind="member"><highlight class="normal"><ref refid="classlogic_1_1Observer_1a6c8e55f7a0cc16af2994520cbf6739d7" kindref="member">Observer::Observer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;logic::Subject&gt;&amp;<sp/>subject)<sp/>{<sp/>mSubject<sp/>=<sp/>subject;<sp/>}</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>logic</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/logic_library/Observer.cpp"/>
+  </compounddef>
+</doxygen>

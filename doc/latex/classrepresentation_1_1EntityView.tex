@@ -1,0 +1,169 @@
+\hypertarget{classrepresentation_1_1EntityView}{}\doxysubsection{representation\+::Entity\+View Class Reference}
+\label{classrepresentation_1_1EntityView}\index{representation::EntityView@{representation::EntityView}}
+
+
+Inheritance diagram for representation\+::Entity\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classrepresentation_1_1EntityView__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for representation\+::Entity\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{classrepresentation_1_1EntityView__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrepresentation_1_1EntityView_aa7ee9ae264ef678092634a4974bd5f8c}{Entity\+View}} ()
+\item 
+\mbox{\hyperlink{classrepresentation_1_1EntityView_a3ae850ef8ded8fdaca88a590912b58b4}{$\sim$\+Entity\+View}} () override=default
+\item 
+\mbox{\hyperlink{classrepresentation_1_1EntityView_a315a7da48bf17c559405ae38a70258c9}{Entity\+View}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1EntityModel}{logic\+::\+Entity\+Model}} $>$ \&entity\+Model)
+\item 
+void \mbox{\hyperlink{classrepresentation_1_1EntityView_a1a28801738745333c1ed6079e60b7111}{set\+Sprite\+Texture}} (const std\+::string \&filename)
+\item 
+sf\+::\+Sprite \& \mbox{\hyperlink{classrepresentation_1_1EntityView_a036973e73e1c5f97caff7afcfb331774}{get\+Sprite}} ()
+\item 
+sf\+::\+Texture \& \mbox{\hyperlink{classrepresentation_1_1EntityView_a6faf90849bc4fc35bc5fe3d80a8df652}{get\+Texture}} ()
+\item 
+void \mbox{\hyperlink{classrepresentation_1_1EntityView_af952d66591aefd0a19d2d7b882fd8395}{set\+Sprite\+Scale}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1EntityModel}{logic\+::\+Entity\+Model}} $>$ \&p)
+\item 
+void \mbox{\hyperlink{classrepresentation_1_1EntityView_a609e08de8dbeec013659ab4a12df6601}{update}} () override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrepresentation_1_1EntityView_ae59ed4678fa9a297bc466f6321d9f965}\label{classrepresentation_1_1EntityView_ae59ed4678fa9a297bc466f6321d9f965}} 
+std\+::weak\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1EntityModel}{logic\+::\+Entity\+Model}} $>$ {\bfseries m\+Entity\+Model}
+\item 
+\mbox{\Hypertarget{classrepresentation_1_1EntityView_a3b5f8a1369244fe8e08f74835054820c}\label{classrepresentation_1_1EntityView_a3b5f8a1369244fe8e08f74835054820c}} 
+sf\+::\+Sprite {\bfseries sprite}
+\item 
+\mbox{\Hypertarget{classrepresentation_1_1EntityView_abaa963085d77cf39443a4e2c9952dd13}\label{classrepresentation_1_1EntityView_abaa963085d77cf39443a4e2c9952dd13}} 
+sf\+::\+Texture {\bfseries texture}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+Definition at line 15 of file Entity\+View.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrepresentation_1_1EntityView_aa7ee9ae264ef678092634a4974bd5f8c}\label{classrepresentation_1_1EntityView_aa7ee9ae264ef678092634a4974bd5f8c}} 
+\index{representation::EntityView@{representation::EntityView}!EntityView@{EntityView}}
+\index{EntityView@{EntityView}!representation::EntityView@{representation::EntityView}}
+\doxyparagraph{\texorpdfstring{EntityView()}{EntityView()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily representation\+::\+Entity\+View\+::\+Entity\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+@function \+: \mbox{\hyperlink{classrepresentation_1_1EntityView}{Entity\+View}} Constructor for a \mbox{\hyperlink{classrepresentation_1_1EntityView}{Entity\+View}}. \mbox{\Hypertarget{classrepresentation_1_1EntityView_a3ae850ef8ded8fdaca88a590912b58b4}\label{classrepresentation_1_1EntityView_a3ae850ef8ded8fdaca88a590912b58b4}} 
+\index{representation::EntityView@{representation::EntityView}!````~EntityView@{$\sim$EntityView}}
+\index{````~EntityView@{$\sim$EntityView}!representation::EntityView@{representation::EntityView}}
+\doxyparagraph{\texorpdfstring{$\sim$EntityView()}{~EntityView()}}
+{\footnotesize\ttfamily representation\+::\+Entity\+View\+::$\sim$\+Entity\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+@function \+: \mbox{\hyperlink{classrepresentation_1_1EntityView}{Entity\+View}} Destructor for a \mbox{\hyperlink{classrepresentation_1_1EntityView}{Entity\+View}}. \mbox{\Hypertarget{classrepresentation_1_1EntityView_a315a7da48bf17c559405ae38a70258c9}\label{classrepresentation_1_1EntityView_a315a7da48bf17c559405ae38a70258c9}} 
+\index{representation::EntityView@{representation::EntityView}!EntityView@{EntityView}}
+\index{EntityView@{EntityView}!representation::EntityView@{representation::EntityView}}
+\doxyparagraph{\texorpdfstring{EntityView()}{EntityView()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily representation\+::\+Entity\+View\+::\+Entity\+View (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1EntityModel}{logic\+::\+Entity\+Model}} $>$ \&}]{entity\+Model }\end{DoxyParamCaption})}
+
+@function \+: \mbox{\hyperlink{classrepresentation_1_1EntityView}{Entity\+View}} Constructor for a \mbox{\hyperlink{classrepresentation_1_1EntityView}{Entity\+View}}. 
+\begin{DoxyParams}{Parameters}
+{\em entity\+Model} & (std\+::shared\+\_\+ptr$<$logic\+::\+Entity\+Model$>$) \+: entity\+Model \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 9 of file Entity\+View.\+cpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrepresentation_1_1EntityView_a036973e73e1c5f97caff7afcfb331774}\label{classrepresentation_1_1EntityView_a036973e73e1c5f97caff7afcfb331774}} 
+\index{representation::EntityView@{representation::EntityView}!getSprite@{getSprite}}
+\index{getSprite@{getSprite}!representation::EntityView@{representation::EntityView}}
+\doxyparagraph{\texorpdfstring{getSprite()}{getSprite()}}
+{\footnotesize\ttfamily sf\+::\+Sprite\& representation\+::\+Entity\+View\+::get\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+@function \+: get\+Sprite Getter\+: returns the sprite data member. \begin{DoxyReturn}{Returns}
+(sf\+::\+Sprite) \+: this-\/$>$sprite 
+\end{DoxyReturn}
+
+
+Definition at line 56 of file Entity\+View.\+h.
+
+\mbox{\Hypertarget{classrepresentation_1_1EntityView_a6faf90849bc4fc35bc5fe3d80a8df652}\label{classrepresentation_1_1EntityView_a6faf90849bc4fc35bc5fe3d80a8df652}} 
+\index{representation::EntityView@{representation::EntityView}!getTexture@{getTexture}}
+\index{getTexture@{getTexture}!representation::EntityView@{representation::EntityView}}
+\doxyparagraph{\texorpdfstring{getTexture()}{getTexture()}}
+{\footnotesize\ttfamily sf\+::\+Texture\& representation\+::\+Entity\+View\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+@function \+: get\+Texture Getter\+: returns the texture data member. \begin{DoxyReturn}{Returns}
+(sf\+::\+Texture) \+: this-\/$>$texture 
+\end{DoxyReturn}
+
+
+Definition at line 63 of file Entity\+View.\+h.
+
+\mbox{\Hypertarget{classrepresentation_1_1EntityView_af952d66591aefd0a19d2d7b882fd8395}\label{classrepresentation_1_1EntityView_af952d66591aefd0a19d2d7b882fd8395}} 
+\index{representation::EntityView@{representation::EntityView}!setSpriteScale@{setSpriteScale}}
+\index{setSpriteScale@{setSpriteScale}!representation::EntityView@{representation::EntityView}}
+\doxyparagraph{\texorpdfstring{setSpriteScale()}{setSpriteScale()}}
+{\footnotesize\ttfamily void representation\+::\+Entity\+View\+::set\+Sprite\+Scale (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1EntityModel}{logic\+::\+Entity\+Model}} $>$ \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+@function \+: set\+Sprite\+Scale Sets the sprite scale. 
+\begin{DoxyParams}{Parameters}
+{\em p} & (std\+::shared\+\_\+ptr$<$logic\+::\+Entity\+Model$>$) \+: entity model. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 70 of file Entity\+View.\+h.
+
+\mbox{\Hypertarget{classrepresentation_1_1EntityView_a1a28801738745333c1ed6079e60b7111}\label{classrepresentation_1_1EntityView_a1a28801738745333c1ed6079e60b7111}} 
+\index{representation::EntityView@{representation::EntityView}!setSpriteTexture@{setSpriteTexture}}
+\index{setSpriteTexture@{setSpriteTexture}!representation::EntityView@{representation::EntityView}}
+\doxyparagraph{\texorpdfstring{setSpriteTexture()}{setSpriteTexture()}}
+{\footnotesize\ttfamily void representation\+::\+Entity\+View\+::set\+Sprite\+Texture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})}
+
+@function \+: set\+Sprite\+Texture Setter\+: puts the texture on the sprite. 
+\begin{DoxyParams}{Parameters}
+{\em filename} & (std\+::string) \+: name of the texture file \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 11 of file Entity\+View.\+cpp.
+
+\mbox{\Hypertarget{classrepresentation_1_1EntityView_a609e08de8dbeec013659ab4a12df6601}\label{classrepresentation_1_1EntityView_a609e08de8dbeec013659ab4a12df6601}} 
+\index{representation::EntityView@{representation::EntityView}!update@{update}}
+\index{update@{update}!representation::EntityView@{representation::EntityView}}
+\doxyparagraph{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void representation\+::\+Entity\+View\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+@function \+: update Updates the sprite\textquotesingle{}s position correctly according to the logic coordinates. 
+
+Implements \mbox{\hyperlink{classlogic_1_1Observer_abde36ace3e49511c155687a32dd765e1}{logic\+::\+Observer}}.
+
+
+
+Definition at line 25 of file Entity\+View.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/game\+\_\+representation/Entity\+View.\+h\item 
+src/game\+\_\+representation/Entity\+View.\+cpp\end{DoxyCompactItemize}

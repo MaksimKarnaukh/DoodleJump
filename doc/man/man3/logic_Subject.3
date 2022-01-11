@@ -1,0 +1,91 @@
+.TH "logic::Subject" 3 "Tue Jan 11 2022" "Doxygen Test" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+logic::Subject
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBlogic::EntityModel\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSubject\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~Subject\fP ()=default"
+.br
+.ti -1c
+.RI "void \fBregisterObserver\fP (const std::shared_ptr< \fBObserver\fP > &observer)"
+.br
+.ti -1c
+.RI "void \fBremoveObserver\fP (const std::shared_ptr< \fBObserver\fP > &observer)"
+.br
+.ti -1c
+.RI "void \fBnotifyObservers\fP ()"
+.br
+.ti -1c
+.RI "std::vector< std::shared_ptr< \fBObserver\fP > > \fBgetObservers\fP ()"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< std::shared_ptr< \fBObserver\fP > > \fBobservers\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 16 of file Subject\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "logic::Subject::Subject ()\fC [default]\fP"
+@function : \fBSubject\fP Constructor for a \fBSubject\fP\&. 
+.SS "virtual logic::Subject::~Subject ()\fC [virtual]\fP, \fC [default]\fP"
+@function : \fBSubject\fP Destructor for a \fBSubject\fP\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "std::vector< std::shared_ptr< \fBObserver\fP > > logic::Subject::getObservers ()"
+@function : getObservers Returns the list of observers\&. 
+.PP
+\fBReturns\fP
+.RS 4
+(std::vector<std::shared_ptr<Observer>>) : list of observers\&. 
+.RE
+.PP
+
+.PP
+Definition at line 33 of file Subject\&.cpp\&.
+.SS "void logic::Subject::notifyObservers ()"
+@function : notifyObservers Updates each observer in the list of observers\&. 
+.PP
+Definition at line 25 of file Subject\&.cpp\&.
+.SS "void logic::Subject::registerObserver (const std::shared_ptr< \fBObserver\fP > & observer)"
+@function : registerObserver Adds an observer to the list of observers\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIobserver\fP (std::shared_ptr<Observer>) : observer that we want to add\&. 
+.RE
+.PP
+
+.PP
+Definition at line 9 of file Subject\&.cpp\&.
+.SS "void logic::Subject::removeObserver (const std::shared_ptr< \fBObserver\fP > & observer)"
+@function : removeObserver Removes the observer from the list of observers\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIobserver\fP (std::shared_ptr<Observer>) : observer that we want to remove\&. 
+.RE
+.PP
+
+.PP
+Definition at line 11 of file Subject\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Doxygen Test from the source code\&.

@@ -1,0 +1,117 @@
+\hypertarget{classlogic_1_1Subject}{}\doxysubsection{logic\+::Subject Class Reference}
+\label{classlogic_1_1Subject}\index{logic::Subject@{logic::Subject}}
+
+
+Inheritance diagram for logic\+::Subject\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classlogic_1_1Subject__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlogic_1_1Subject_ae1277f400422f50b425c204b11dd8995}{Subject}} ()
+\item 
+virtual \mbox{\hyperlink{classlogic_1_1Subject_ae4238075ca667706bba792bfb96ee6c0}{$\sim$\+Subject}} ()=default
+\item 
+void \mbox{\hyperlink{classlogic_1_1Subject_a375e972ed74af83f46a8debd49f2e3e0}{register\+Observer}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Observer}{Observer}} $>$ \&observer)
+\item 
+void \mbox{\hyperlink{classlogic_1_1Subject_a5a3db9e4c842eb2828c5586be9f4cf81}{remove\+Observer}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Observer}{Observer}} $>$ \&observer)
+\item 
+void \mbox{\hyperlink{classlogic_1_1Subject_a33567537c69863eaff2279f398f80ab4}{notify\+Observers}} ()
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Observer}{Observer}} $>$ $>$ \mbox{\hyperlink{classlogic_1_1Subject_a202f1cd7a6af78750886d0b60d388450}{get\+Observers}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlogic_1_1Subject_a2c82c974d7838157824bdcecc4d0e59b}\label{classlogic_1_1Subject_a2c82c974d7838157824bdcecc4d0e59b}} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Observer}{Observer}} $>$ $>$ {\bfseries observers}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+Definition at line 16 of file Subject.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlogic_1_1Subject_ae1277f400422f50b425c204b11dd8995}\label{classlogic_1_1Subject_ae1277f400422f50b425c204b11dd8995}} 
+\index{logic::Subject@{logic::Subject}!Subject@{Subject}}
+\index{Subject@{Subject}!logic::Subject@{logic::Subject}}
+\doxyparagraph{\texorpdfstring{Subject()}{Subject()}}
+{\footnotesize\ttfamily logic\+::\+Subject\+::\+Subject (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+@function \+: \mbox{\hyperlink{classlogic_1_1Subject}{Subject}} Constructor for a \mbox{\hyperlink{classlogic_1_1Subject}{Subject}}. \mbox{\Hypertarget{classlogic_1_1Subject_ae4238075ca667706bba792bfb96ee6c0}\label{classlogic_1_1Subject_ae4238075ca667706bba792bfb96ee6c0}} 
+\index{logic::Subject@{logic::Subject}!````~Subject@{$\sim$Subject}}
+\index{````~Subject@{$\sim$Subject}!logic::Subject@{logic::Subject}}
+\doxyparagraph{\texorpdfstring{$\sim$Subject()}{~Subject()}}
+{\footnotesize\ttfamily virtual logic\+::\+Subject\+::$\sim$\+Subject (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+@function \+: \mbox{\hyperlink{classlogic_1_1Subject}{Subject}} Destructor for a \mbox{\hyperlink{classlogic_1_1Subject}{Subject}}. 
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classlogic_1_1Subject_a202f1cd7a6af78750886d0b60d388450}\label{classlogic_1_1Subject_a202f1cd7a6af78750886d0b60d388450}} 
+\index{logic::Subject@{logic::Subject}!getObservers@{getObservers}}
+\index{getObservers@{getObservers}!logic::Subject@{logic::Subject}}
+\doxyparagraph{\texorpdfstring{getObservers()}{getObservers()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Observer}{Observer}} $>$ $>$ logic\+::\+Subject\+::get\+Observers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: get\+Observers Returns the list of observers. \begin{DoxyReturn}{Returns}
+(std\+::vector$<$std\+::shared\+\_\+ptr$<$\+Observer$>$$>$) \+: list of observers. 
+\end{DoxyReturn}
+
+
+Definition at line 33 of file Subject.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1Subject_a33567537c69863eaff2279f398f80ab4}\label{classlogic_1_1Subject_a33567537c69863eaff2279f398f80ab4}} 
+\index{logic::Subject@{logic::Subject}!notifyObservers@{notifyObservers}}
+\index{notifyObservers@{notifyObservers}!logic::Subject@{logic::Subject}}
+\doxyparagraph{\texorpdfstring{notifyObservers()}{notifyObservers()}}
+{\footnotesize\ttfamily void logic\+::\+Subject\+::notify\+Observers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: notify\+Observers Updates each observer in the list of observers. 
+
+Definition at line 25 of file Subject.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1Subject_a375e972ed74af83f46a8debd49f2e3e0}\label{classlogic_1_1Subject_a375e972ed74af83f46a8debd49f2e3e0}} 
+\index{logic::Subject@{logic::Subject}!registerObserver@{registerObserver}}
+\index{registerObserver@{registerObserver}!logic::Subject@{logic::Subject}}
+\doxyparagraph{\texorpdfstring{registerObserver()}{registerObserver()}}
+{\footnotesize\ttfamily void logic\+::\+Subject\+::register\+Observer (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Observer}{Observer}} $>$ \&}]{observer }\end{DoxyParamCaption})}
+
+@function \+: register\+Observer Adds an observer to the list of observers. 
+\begin{DoxyParams}{Parameters}
+{\em observer} & (std\+::shared\+\_\+ptr$<$\+Observer$>$) \+: observer that we want to add. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 9 of file Subject.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1Subject_a5a3db9e4c842eb2828c5586be9f4cf81}\label{classlogic_1_1Subject_a5a3db9e4c842eb2828c5586be9f4cf81}} 
+\index{logic::Subject@{logic::Subject}!removeObserver@{removeObserver}}
+\index{removeObserver@{removeObserver}!logic::Subject@{logic::Subject}}
+\doxyparagraph{\texorpdfstring{removeObserver()}{removeObserver()}}
+{\footnotesize\ttfamily void logic\+::\+Subject\+::remove\+Observer (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Observer}{Observer}} $>$ \&}]{observer }\end{DoxyParamCaption})}
+
+@function \+: remove\+Observer Removes the observer from the list of observers. 
+\begin{DoxyParams}{Parameters}
+{\em observer} & (std\+::shared\+\_\+ptr$<$\+Observer$>$) \+: observer that we want to remove. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 11 of file Subject.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/logic\+\_\+library/Subject.\+h\item 
+src/logic\+\_\+library/Subject.\+cpp\end{DoxyCompactItemize}

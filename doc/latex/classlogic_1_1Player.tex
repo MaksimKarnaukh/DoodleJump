@@ -1,0 +1,169 @@
+\hypertarget{classlogic_1_1Player}{}\doxysubsection{logic\+::Player Class Reference}
+\label{classlogic_1_1Player}\index{logic::Player@{logic::Player}}
+
+
+Inheritance diagram for logic\+::Player\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classlogic_1_1Player__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for logic\+::Player\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classlogic_1_1Player__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlogic_1_1Player_a992273ee348db04229f4304d7aae6d5b}\label{classlogic_1_1Player_a992273ee348db04229f4304d7aae6d5b}} 
+void {\bfseries set\+Jump\+Velocity} (float v)
+\item 
+\mbox{\Hypertarget{classlogic_1_1Player_a02291c72693f8a36aa3e7fb5dbb8ea16}\label{classlogic_1_1Player_a02291c72693f8a36aa3e7fb5dbb8ea16}} 
+float {\bfseries get\+Jump\+Velocity} () const
+\item 
+\mbox{\hyperlink{classlogic_1_1Player_a54bdacf937a367629c3ca10acda369d9}{Player}} ()
+\item 
+\mbox{\hyperlink{classlogic_1_1Player_ae72f8b653617b6ed4b15847c137ea4f3}{$\sim$\+Player}} () override=default
+\item 
+\mbox{\hyperlink{classlogic_1_1Player_a21d41f4dc79003bf020fc8d9d504a35b}{Player}} (float posX, float posY)
+\item 
+\mbox{\hyperlink{classlogic_1_1Player_accdcf9a039c5af47a96ebcee13ffbb66}{Player}} (float posX, float posY, float width, float height)
+\item 
+void \mbox{\hyperlink{classlogic_1_1Player_abad88e5963199f783db752446965be47}{move\+Left}} ()
+\item 
+void \mbox{\hyperlink{classlogic_1_1Player_a570ba657c77f615ed22ee8aea9819e72}{move\+Right}} ()
+\item 
+void \mbox{\hyperlink{classlogic_1_1Player_a204be6b9cc516367919e8f88b5606650}{jump}} ()
+\item 
+void \mbox{\hyperlink{classlogic_1_1Player_ae2452b58e44d6246fb24ca3cb128b61a}{apply\+Gravity}} ()
+\item 
+void \mbox{\hyperlink{classlogic_1_1Player_a4a613cbbe8aa9a27c53c3481c6ae6411}{move\+Vertically}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+Definition at line 11 of file Player.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlogic_1_1Player_a54bdacf937a367629c3ca10acda369d9}\label{classlogic_1_1Player_a54bdacf937a367629c3ca10acda369d9}} 
+\index{logic::Player@{logic::Player}!Player@{Player}}
+\index{Player@{Player}!logic::Player@{logic::Player}}
+\doxyparagraph{\texorpdfstring{Player()}{Player()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily logic\+::\+Player\+::\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+@function \+: \mbox{\hyperlink{classlogic_1_1Player}{Player}} Constructor for a \mbox{\hyperlink{classlogic_1_1Player}{Player}}. \mbox{\Hypertarget{classlogic_1_1Player_ae72f8b653617b6ed4b15847c137ea4f3}\label{classlogic_1_1Player_ae72f8b653617b6ed4b15847c137ea4f3}} 
+\index{logic::Player@{logic::Player}!````~Player@{$\sim$Player}}
+\index{````~Player@{$\sim$Player}!logic::Player@{logic::Player}}
+\doxyparagraph{\texorpdfstring{$\sim$Player()}{~Player()}}
+{\footnotesize\ttfamily logic\+::\+Player\+::$\sim$\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+@function \+: \mbox{\hyperlink{classlogic_1_1Player}{Player}} Destructor for a \mbox{\hyperlink{classlogic_1_1Player}{Player}}. \mbox{\Hypertarget{classlogic_1_1Player_a21d41f4dc79003bf020fc8d9d504a35b}\label{classlogic_1_1Player_a21d41f4dc79003bf020fc8d9d504a35b}} 
+\index{logic::Player@{logic::Player}!Player@{Player}}
+\index{Player@{Player}!logic::Player@{logic::Player}}
+\doxyparagraph{\texorpdfstring{Player()}{Player()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily logic\+::\+Player\+::\+Player (\begin{DoxyParamCaption}\item[{float}]{posX,  }\item[{float}]{posY }\end{DoxyParamCaption})}
+
+@function \+: \mbox{\hyperlink{classlogic_1_1Player}{Player}} Constructor for a \mbox{\hyperlink{classlogic_1_1Player}{Player}}. 
+\begin{DoxyParams}{Parameters}
+{\em posX} & (float) \+: x-\/coordinate of our entity, between the range \mbox{[}0,1-\/entity.\+width\mbox{]}. \\
+\hline
+{\em posY} & (float) \+: y-\/coordinate of our entity, between the range \mbox{[}0+entity.\+height, inf\mbox{[}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 9 of file Player.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1Player_accdcf9a039c5af47a96ebcee13ffbb66}\label{classlogic_1_1Player_accdcf9a039c5af47a96ebcee13ffbb66}} 
+\index{logic::Player@{logic::Player}!Player@{Player}}
+\index{Player@{Player}!logic::Player@{logic::Player}}
+\doxyparagraph{\texorpdfstring{Player()}{Player()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily logic\+::\+Player\+::\+Player (\begin{DoxyParamCaption}\item[{float}]{posX,  }\item[{float}]{posY,  }\item[{float}]{width,  }\item[{float}]{height }\end{DoxyParamCaption})}
+
+@function \+: \mbox{\hyperlink{classlogic_1_1Player}{Player}} Constructor for a \mbox{\hyperlink{classlogic_1_1Player}{Player}}. 
+\begin{DoxyParams}{Parameters}
+{\em posX} & (float) \+: x-\/coordinate of our entity, between the range \mbox{[}0,1-\/entity.\+width\mbox{]}. \\
+\hline
+{\em posY} & (float) \+: y-\/coordinate of our entity, between the range \mbox{[}0+entity.\+height, inf\mbox{[}. \\
+\hline
+{\em width} & (float) \+: width of our entity. \\
+\hline
+{\em height} & (float) \+: height of our entity. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 11 of file Player.\+cpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classlogic_1_1Player_ae2452b58e44d6246fb24ca3cb128b61a}\label{classlogic_1_1Player_ae2452b58e44d6246fb24ca3cb128b61a}} 
+\index{logic::Player@{logic::Player}!applyGravity@{applyGravity}}
+\index{applyGravity@{applyGravity}!logic::Player@{logic::Player}}
+\doxyparagraph{\texorpdfstring{applyGravity()}{applyGravity()}}
+{\footnotesize\ttfamily void logic\+::\+Player\+::apply\+Gravity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: apply\+Gravity Applies gravity to the speed of the player (=$>$ as a result, the speed decreases). 
+
+Definition at line 31 of file Player.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1Player_a204be6b9cc516367919e8f88b5606650}\label{classlogic_1_1Player_a204be6b9cc516367919e8f88b5606650}} 
+\index{logic::Player@{logic::Player}!jump@{jump}}
+\index{jump@{jump}!logic::Player@{logic::Player}}
+\doxyparagraph{\texorpdfstring{jump()}{jump()}}
+{\footnotesize\ttfamily void logic\+::\+Player\+::jump (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: jump Sets the speed of the player to jump\+Velocity, so that the player \char`\"{}jumps\char`\"{}. 
+
+Definition at line 29 of file Player.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1Player_abad88e5963199f783db752446965be47}\label{classlogic_1_1Player_abad88e5963199f783db752446965be47}} 
+\index{logic::Player@{logic::Player}!moveLeft@{moveLeft}}
+\index{moveLeft@{moveLeft}!logic::Player@{logic::Player}}
+\doxyparagraph{\texorpdfstring{moveLeft()}{moveLeft()}}
+{\footnotesize\ttfamily void logic\+::\+Player\+::move\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: move\+Left Moves the player left. 
+
+Definition at line 13 of file Player.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1Player_a570ba657c77f615ed22ee8aea9819e72}\label{classlogic_1_1Player_a570ba657c77f615ed22ee8aea9819e72}} 
+\index{logic::Player@{logic::Player}!moveRight@{moveRight}}
+\index{moveRight@{moveRight}!logic::Player@{logic::Player}}
+\doxyparagraph{\texorpdfstring{moveRight()}{moveRight()}}
+{\footnotesize\ttfamily void logic\+::\+Player\+::move\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: move\+Right Moves the player right. 
+
+Definition at line 21 of file Player.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1Player_a4a613cbbe8aa9a27c53c3481c6ae6411}\label{classlogic_1_1Player_a4a613cbbe8aa9a27c53c3481c6ae6411}} 
+\index{logic::Player@{logic::Player}!moveVertically@{moveVertically}}
+\index{moveVertically@{moveVertically}!logic::Player@{logic::Player}}
+\doxyparagraph{\texorpdfstring{moveVertically()}{moveVertically()}}
+{\footnotesize\ttfamily void logic\+::\+Player\+::move\+Vertically (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: move\+Vertically Moves the player in the vertical direction (depending on the speed). 
+
+Definition at line 37 of file Player.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/logic\+\_\+library/Player.\+h\item 
+src/logic\+\_\+library/Player.\+cpp\end{DoxyCompactItemize}

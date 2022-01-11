@@ -1,0 +1,113 @@
+.TH "logic::Player" 3 "Tue Jan 11 2022" "Doxygen Test" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+logic::Player
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBlogic::EntityModel\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetJumpVelocity\fP (float v)"
+.br
+.ti -1c
+.RI "float \fBgetJumpVelocity\fP () const"
+.br
+.ti -1c
+.RI "\fBPlayer\fP ()"
+.br
+.ti -1c
+.RI "\fB~Player\fP () override=default"
+.br
+.ti -1c
+.RI "\fBPlayer\fP (float posX, float posY)"
+.br
+.ti -1c
+.RI "\fBPlayer\fP (float posX, float posY, float width, float height)"
+.br
+.ti -1c
+.RI "void \fBmoveLeft\fP ()"
+.br
+.ti -1c
+.RI "void \fBmoveRight\fP ()"
+.br
+.ti -1c
+.RI "void \fBjump\fP ()"
+.br
+.ti -1c
+.RI "void \fBapplyGravity\fP ()"
+.br
+.ti -1c
+.RI "void \fBmoveVertically\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 11 of file Player\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "logic::Player::Player ()\fC [default]\fP"
+@function : \fBPlayer\fP Constructor for a \fBPlayer\fP\&. 
+.SS "logic::Player::~Player ()\fC [override]\fP, \fC [default]\fP"
+@function : \fBPlayer\fP Destructor for a \fBPlayer\fP\&. 
+.SS "logic::Player::Player (float posX, float posY)"
+@function : \fBPlayer\fP Constructor for a \fBPlayer\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposX\fP (float) : x-coordinate of our entity, between the range [0,1-entity\&.width]\&. 
+.br
+\fIposY\fP (float) : y-coordinate of our entity, between the range [0+entity\&.height, inf[\&. 
+.RE
+.PP
+
+.PP
+Definition at line 9 of file Player\&.cpp\&.
+.SS "logic::Player::Player (float posX, float posY, float width, float height)"
+@function : \fBPlayer\fP Constructor for a \fBPlayer\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposX\fP (float) : x-coordinate of our entity, between the range [0,1-entity\&.width]\&. 
+.br
+\fIposY\fP (float) : y-coordinate of our entity, between the range [0+entity\&.height, inf[\&. 
+.br
+\fIwidth\fP (float) : width of our entity\&. 
+.br
+\fIheight\fP (float) : height of our entity\&. 
+.RE
+.PP
+
+.PP
+Definition at line 11 of file Player\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void logic::Player::applyGravity ()"
+@function : applyGravity Applies gravity to the speed of the player (=> as a result, the speed decreases)\&. 
+.PP
+Definition at line 31 of file Player\&.cpp\&.
+.SS "void logic::Player::jump ()"
+@function : jump Sets the speed of the player to jumpVelocity, so that the player 'jumps'\&. 
+.PP
+Definition at line 29 of file Player\&.cpp\&.
+.SS "void logic::Player::moveLeft ()"
+@function : moveLeft Moves the player left\&. 
+.PP
+Definition at line 13 of file Player\&.cpp\&.
+.SS "void logic::Player::moveRight ()"
+@function : moveRight Moves the player right\&. 
+.PP
+Definition at line 21 of file Player\&.cpp\&.
+.SS "void logic::Player::moveVertically ()"
+@function : moveVertically Moves the player in the vertical direction (depending on the speed)\&. 
+.PP
+Definition at line 37 of file Player\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Doxygen Test from the source code\&.

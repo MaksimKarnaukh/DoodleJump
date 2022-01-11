@@ -1,0 +1,815 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classlogic_1_1utility_1_1Random" kind="class" language="C++" prot="public">
+    <compoundname>logic::utility::Random</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classlogic_1_1utility_1_1Random_1a45dab7770e1bba994c1b484650ce0324" prot="private" static="no" mutable="no">
+        <type>std::random_device</type>
+        <definition>std::random_device logic::utility::Random::rd</definition>
+        <argsstring></argsstring>
+        <name>rd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Random.h" line="19" column="28" bodyfile="src/logic_library/Random.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1utility_1_1Random_1aaea2ece5dd757c4e1754cad185df217d" prot="private" static="no" mutable="no">
+        <type>std::mt19937</type>
+        <definition>std::mt19937 logic::utility::Random::randomEngine</definition>
+        <argsstring></argsstring>
+        <name>randomEngine</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Random.h" line="20" column="22" bodyfile="src/logic_library/Random.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Random_1a0d3f6df8310f82299969dde1923c2047" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::utility::Random::Random</definition>
+        <argsstring>()</argsstring>
+        <name>Random</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1utility_1_1Random" kindref="compound">Random</ref> Constructor for a <ref refid="classlogic_1_1utility_1_1Random" kindref="compound">Random</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Random.h" line="26" column="9" bodyfile="src/logic_library/Random.cpp" bodystart="8" bodyend="8"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Random_1af055e4e36bbb24e79afa4dece6346f2a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::utility::Random::~Random</definition>
+        <argsstring>()</argsstring>
+        <name>~Random</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1utility_1_1Random" kindref="compound">Random</ref> Destructor for a <ref refid="classlogic_1_1utility_1_1Random" kindref="compound">Random</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Random.h" line="32" column="9"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Random_1a23a95f1aee034007ea7a0492d6784d32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::utility::Random::Random</definition>
+        <argsstring>(const Random &amp;)=delete</argsstring>
+        <name>Random</name>
+        <param>
+          <type>const <ref refid="classlogic_1_1utility_1_1Random" kindref="compound">Random</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Random.h" line="35" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Random_1abfd1b492d3308ba8722f311ef6ba0276" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::utility::Random::Random</definition>
+        <argsstring>(const Random &amp;&amp;)=delete</argsstring>
+        <name>Random</name>
+        <param>
+          <type>const <ref refid="classlogic_1_1utility_1_1Random" kindref="compound">Random</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Random.h" line="36" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Random_1aaf952742b5ac0e187e8c235ed93e040b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classlogic_1_1utility_1_1Random" kindref="compound">Random</ref> &amp;</type>
+        <definition>Random&amp; logic::utility::Random::operator=</definition>
+        <argsstring>(const Random &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classlogic_1_1utility_1_1Random" kindref="compound">Random</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Random.h" line="38" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Random_1acaf7db45d3317166adaedb25bd17c0ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classlogic_1_1utility_1_1Random" kindref="compound">Random</ref> &amp;</type>
+        <definition>Random&amp; logic::utility::Random::operator=</definition>
+        <argsstring>(const Random &amp;&amp;)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classlogic_1_1utility_1_1Random" kindref="compound">Random</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Random.h" line="39" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Random_1aa216eb86e1317d2da2d595fd1828e60f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int logic::utility::Random::uniformIntDistribution</definition>
+        <argsstring>(int a, int b)</argsstring>
+        <name>uniformIntDistribution</name>
+        <param>
+          <type>int</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : uniformIntDistribution Returns a value generated by a uniform integer distribution. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(int) : left range. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(int) : right range. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>(int) : random integer in the range between a and b. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Random.h" line="53" column="13" bodyfile="src/logic_library/Random.cpp" bodystart="18" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Random_1a5978e1a3732969120776209989a7c1b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float logic::utility::Random::uniformRealDistribution</definition>
+        <argsstring>(float a, float b)</argsstring>
+        <name>uniformRealDistribution</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : uniformRealDistribution Returns a value generated by a uniform real distribution. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : left range. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : right range. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>(float) : random float in the range between a and b. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Random.h" line="62" column="15" bodyfile="src/logic_library/Random.cpp" bodystart="24" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Random_1a018512eae8e64d73ec0d4f619a8bf957" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool logic::utility::Random::bernoulliDistribution</definition>
+        <argsstring>(float p)</argsstring>
+        <name>bernoulliDistribution</name>
+        <param>
+          <type>float</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : uniformRealDistribution Returns a value generated by a bernoulli distribution. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : . </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>(bool) : true or false. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Random.h" line="72" column="14" bodyfile="src/logic_library/Random.cpp" bodystart="30" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Random_1a0bacc081b1f2e71f0acdab2588e55773" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int logic::utility::Random::binomialDistribution</definition>
+        <argsstring>(float p, int t)</argsstring>
+        <name>binomialDistribution</name>
+        <param>
+          <type>float</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : binomialDistribution Returns a value generated by a binomial distribution. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : . </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(int) : . </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>(int) : </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Random.h" line="81" column="13" bodyfile="src/logic_library/Random.cpp" bodystart="36" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Random_1aa2895b8c51cde0aff1a7ff6d662a40e7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int logic::utility::Random::negativeBinomialDistribution</definition>
+        <argsstring>(float p, int k)</argsstring>
+        <name>negativeBinomialDistribution</name>
+        <param>
+          <type>float</type>
+          <declname>p</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : negativeBinomialDistribution Returns a value generated by a negative binomial distribution. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : . </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>t</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(int) : . </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>(int) : . </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Random.h" line="90" column="13" bodyfile="src/logic_library/Random.cpp" bodystart="42" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Random_1a4f9fcb845132c7b6de7bfe3377fb1e50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int logic::utility::Random::geometricDistribution</definition>
+        <argsstring>(float p)</argsstring>
+        <name>geometricDistribution</name>
+        <param>
+          <type>float</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : geometricDistribution Returns a value generated by a geometric distribution. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : . </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>(int) : . </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Random.h" line="98" column="13" bodyfile="src/logic_library/Random.cpp" bodystart="48" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Random_1af7a10ae8bb5392a7829b15214be86bb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int logic::utility::Random::poissonDistribution</definition>
+        <argsstring>(float mean)</argsstring>
+        <name>poissonDistribution</name>
+        <param>
+          <type>float</type>
+          <declname>mean</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : poissonDistribution Returns a value generated by a poisson distribution. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mean</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : . </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>(int) : . </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Random.h" line="108" column="13" bodyfile="src/logic_library/Random.cpp" bodystart="54" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Random_1ad11ebd7d28b38a0132a7f35cd98174ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float logic::utility::Random::exponentialDistribution</definition>
+        <argsstring>(float lambda)</argsstring>
+        <name>exponentialDistribution</name>
+        <param>
+          <type>float</type>
+          <declname>lambda</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : exponentialDistribution Returns a value generated by an exponential distribution. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lambda</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : . </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>(float) : . </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Random.h" line="116" column="15" bodyfile="src/logic_library/Random.cpp" bodystart="60" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Random_1af087cb4141a0a4b2d99b40cb86a01488" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float logic::utility::Random::gammaDistribution</definition>
+        <argsstring>(float alpha, float beta)</argsstring>
+        <name>gammaDistribution</name>
+        <param>
+          <type>float</type>
+          <declname>alpha</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>beta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : gammaDistribution Returns a value generated by a gamma distribution. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>alpha</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : . </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>beta</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : . </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>(float) : . </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Random.h" line="125" column="15" bodyfile="src/logic_library/Random.cpp" bodystart="66" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Random_1ae1173912d52a94ce53d1fdd1138226e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float logic::utility::Random::weibullDistribution</definition>
+        <argsstring>(float a, float b)</argsstring>
+        <name>weibullDistribution</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : weibullDistribution Returns a value generated by a weibull distribution. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : . </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : . </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>(float) : . </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Random.h" line="134" column="15" bodyfile="src/logic_library/Random.cpp" bodystart="72" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Random_1a87fdfbbb51c336292ba99bdd84e71119" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float logic::utility::Random::extremeValueDistribution</definition>
+        <argsstring>(float a, float b)</argsstring>
+        <name>extremeValueDistribution</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : extremeValueDistribution Returns a value generated by an extreme value distribution. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : . </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : . </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>(float) : . </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Random.h" line="143" column="15" bodyfile="src/logic_library/Random.cpp" bodystart="78" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Random_1a6113ffeeb55b8d1a7c6ec9525befc22a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float logic::utility::Random::normalDistribution</definition>
+        <argsstring>(float mean, float stddev)</argsstring>
+        <name>normalDistribution</name>
+        <param>
+          <type>float</type>
+          <declname>mean</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>stddev</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : normalDistribution Returns a value generated by a normal distribution. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mean</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : . </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>stddev</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : . </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>(float) : . </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Random.h" line="154" column="15" bodyfile="src/logic_library/Random.cpp" bodystart="84" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Random_1ab7e0667dcd71e4478e15a8be43c4c25d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float logic::utility::Random::lognormalDistribution</definition>
+        <argsstring>(float m, float s)</argsstring>
+        <name>lognormalDistribution</name>
+        <param>
+          <type>float</type>
+          <declname>m</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : lognormalDistribution Returns a value generated by a lognormal distribution. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>m</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : . </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : . </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>(float) : . </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Random.h" line="163" column="15" bodyfile="src/logic_library/Random.cpp" bodystart="90" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Random_1aa5477e4c594073bc7300069083ad38dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float logic::utility::Random::cauchyDistribution</definition>
+        <argsstring>(float a, float b)</argsstring>
+        <name>cauchyDistribution</name>
+        <param>
+          <type>float</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>b</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : cauchyDistribution Returns a value generated by a cauchy distribution. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>a</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : . </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>b</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : . </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>(float) : . </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Random.h" line="172" column="15" bodyfile="src/logic_library/Random.cpp" bodystart="96" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Random_1a36104e28e05a70f17eded56c35d302ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int logic::utility::Random::discreteDistribution</definition>
+        <argsstring>(const std::initializer_list&lt; double &gt; &amp;probabilities)</argsstring>
+        <name>discreteDistribution</name>
+        <param>
+          <type>const std::initializer_list&lt; double &gt; &amp;</type>
+          <declname>probabilities</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : discreteDistribution Returns a value generated by a discrete distribution. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>probabilities</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(std::initializer_list&lt;double&gt;) : list of probabilities. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>(int) : . </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Random.h" line="182" column="13" bodyfile="src/logic_library/Random.cpp" bodystart="102" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Random_1a1d5a2a5064daa3c314265af830268bb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float logic::utility::Random::piecewiseConstantDistribution</definition>
+        <argsstring>(const std::vector&lt; float &gt; &amp;intervals, const std::vector&lt; float &gt; &amp;densities)</argsstring>
+        <name>piecewiseConstantDistribution</name>
+        <param>
+          <type>const std::vector&lt; float &gt; &amp;</type>
+          <declname>intervals</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; float &gt; &amp;</type>
+          <declname>densities</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : piecewiseConstantDistribution Returns a value generated by a piecewise constant distribution. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>intervals</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(std::vector&lt;float&gt;) : list of the intervals. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>densities</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(std::vector&lt;float&gt;) : list of the densities (for the intervals). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>(float) : random float from between one of the ranges in the intervals. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Random.h" line="192" column="15" bodyfile="src/logic_library/Random.cpp" bodystart="108" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Random_1aaae5eff95d19ebb7b660c584ce9c3b54" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float logic::utility::Random::piecewiseLineairDistribution</definition>
+        <argsstring>(const std::vector&lt; float &gt; &amp;intervals, const std::vector&lt; float &gt; &amp;densities)</argsstring>
+        <name>piecewiseLineairDistribution</name>
+        <param>
+          <type>const std::vector&lt; float &gt; &amp;</type>
+          <declname>intervals</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; float &gt; &amp;</type>
+          <declname>densities</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : piecewiseLineairDistribution Returns a value generated by a piecewise lineair distribution. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>intervals</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(std::vector&lt;float&gt;) : list of the intervals. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>densities</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(std::vector&lt;float&gt;) : list of the densities (for the intervals). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>(float) : random float from between one of the ranges in the intervals. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Random.h" line="202" column="15" bodyfile="src/logic_library/Random.cpp" bodystart="115" bodyend="120"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Random_1a82b333aaf643e246aa4d4a2cfe290f9a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classlogic_1_1utility_1_1Random" kindref="compound">Random</ref> &amp;</type>
+        <definition>Random &amp; logic::utility::Random::Instance</definition>
+        <argsstring>()</argsstring>
+        <name>Instance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Random.h" line="42" column="23" bodyfile="src/logic_library/Random.cpp" bodystart="12" bodyend="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/logic_library/Random.h" line="17" column="1" bodyfile="src/logic_library/Random.h" bodystart="16" bodyend="203"/>
+    <listofallmembers>
+      <member refid="classlogic_1_1utility_1_1Random_1a018512eae8e64d73ec0d4f619a8bf957" prot="public" virt="non-virtual"><scope>logic::utility::Random</scope><name>bernoulliDistribution</name></member>
+      <member refid="classlogic_1_1utility_1_1Random_1a0bacc081b1f2e71f0acdab2588e55773" prot="public" virt="non-virtual"><scope>logic::utility::Random</scope><name>binomialDistribution</name></member>
+      <member refid="classlogic_1_1utility_1_1Random_1aa5477e4c594073bc7300069083ad38dd" prot="public" virt="non-virtual"><scope>logic::utility::Random</scope><name>cauchyDistribution</name></member>
+      <member refid="classlogic_1_1utility_1_1Random_1a36104e28e05a70f17eded56c35d302ab" prot="public" virt="non-virtual"><scope>logic::utility::Random</scope><name>discreteDistribution</name></member>
+      <member refid="classlogic_1_1utility_1_1Random_1ad11ebd7d28b38a0132a7f35cd98174ad" prot="public" virt="non-virtual"><scope>logic::utility::Random</scope><name>exponentialDistribution</name></member>
+      <member refid="classlogic_1_1utility_1_1Random_1a87fdfbbb51c336292ba99bdd84e71119" prot="public" virt="non-virtual"><scope>logic::utility::Random</scope><name>extremeValueDistribution</name></member>
+      <member refid="classlogic_1_1utility_1_1Random_1af087cb4141a0a4b2d99b40cb86a01488" prot="public" virt="non-virtual"><scope>logic::utility::Random</scope><name>gammaDistribution</name></member>
+      <member refid="classlogic_1_1utility_1_1Random_1a4f9fcb845132c7b6de7bfe3377fb1e50" prot="public" virt="non-virtual"><scope>logic::utility::Random</scope><name>geometricDistribution</name></member>
+      <member refid="classlogic_1_1utility_1_1Random_1a82b333aaf643e246aa4d4a2cfe290f9a" prot="public" virt="non-virtual"><scope>logic::utility::Random</scope><name>Instance</name></member>
+      <member refid="classlogic_1_1utility_1_1Random_1ab7e0667dcd71e4478e15a8be43c4c25d" prot="public" virt="non-virtual"><scope>logic::utility::Random</scope><name>lognormalDistribution</name></member>
+      <member refid="classlogic_1_1utility_1_1Random_1aa2895b8c51cde0aff1a7ff6d662a40e7" prot="public" virt="non-virtual"><scope>logic::utility::Random</scope><name>negativeBinomialDistribution</name></member>
+      <member refid="classlogic_1_1utility_1_1Random_1a6113ffeeb55b8d1a7c6ec9525befc22a" prot="public" virt="non-virtual"><scope>logic::utility::Random</scope><name>normalDistribution</name></member>
+      <member refid="classlogic_1_1utility_1_1Random_1aaf952742b5ac0e187e8c235ed93e040b" prot="public" virt="non-virtual"><scope>logic::utility::Random</scope><name>operator=</name></member>
+      <member refid="classlogic_1_1utility_1_1Random_1acaf7db45d3317166adaedb25bd17c0ad" prot="public" virt="non-virtual"><scope>logic::utility::Random</scope><name>operator=</name></member>
+      <member refid="classlogic_1_1utility_1_1Random_1a1d5a2a5064daa3c314265af830268bb9" prot="public" virt="non-virtual"><scope>logic::utility::Random</scope><name>piecewiseConstantDistribution</name></member>
+      <member refid="classlogic_1_1utility_1_1Random_1aaae5eff95d19ebb7b660c584ce9c3b54" prot="public" virt="non-virtual"><scope>logic::utility::Random</scope><name>piecewiseLineairDistribution</name></member>
+      <member refid="classlogic_1_1utility_1_1Random_1af7a10ae8bb5392a7829b15214be86bb3" prot="public" virt="non-virtual"><scope>logic::utility::Random</scope><name>poissonDistribution</name></member>
+      <member refid="classlogic_1_1utility_1_1Random_1a0d3f6df8310f82299969dde1923c2047" prot="private" virt="non-virtual"><scope>logic::utility::Random</scope><name>Random</name></member>
+      <member refid="classlogic_1_1utility_1_1Random_1a23a95f1aee034007ea7a0492d6784d32" prot="public" virt="non-virtual"><scope>logic::utility::Random</scope><name>Random</name></member>
+      <member refid="classlogic_1_1utility_1_1Random_1abfd1b492d3308ba8722f311ef6ba0276" prot="public" virt="non-virtual"><scope>logic::utility::Random</scope><name>Random</name></member>
+      <member refid="classlogic_1_1utility_1_1Random_1aaea2ece5dd757c4e1754cad185df217d" prot="private" virt="non-virtual"><scope>logic::utility::Random</scope><name>randomEngine</name></member>
+      <member refid="classlogic_1_1utility_1_1Random_1a45dab7770e1bba994c1b484650ce0324" prot="private" virt="non-virtual"><scope>logic::utility::Random</scope><name>rd</name></member>
+      <member refid="classlogic_1_1utility_1_1Random_1aa216eb86e1317d2da2d595fd1828e60f" prot="public" virt="non-virtual"><scope>logic::utility::Random</scope><name>uniformIntDistribution</name></member>
+      <member refid="classlogic_1_1utility_1_1Random_1a5978e1a3732969120776209989a7c1b4" prot="public" virt="non-virtual"><scope>logic::utility::Random</scope><name>uniformRealDistribution</name></member>
+      <member refid="classlogic_1_1utility_1_1Random_1ae1173912d52a94ce53d1fdd1138226e2" prot="public" virt="non-virtual"><scope>logic::utility::Random</scope><name>weibullDistribution</name></member>
+      <member refid="classlogic_1_1utility_1_1Random_1af055e4e36bbb24e79afa4dece6346f2a" prot="private" virt="non-virtual"><scope>logic::utility::Random</scope><name>~Random</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

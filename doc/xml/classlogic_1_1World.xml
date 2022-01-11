@@ -1,0 +1,880 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classlogic_1_1World" kind="class" language="C++" prot="public">
+    <compoundname>logic::World</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classlogic_1_1World_1a65e730a632d1fddfd28ec786c200f209" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classlogic_1_1Score" kindref="compound">logic::Score</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;logic::Score&gt; logic::World::score</definition>
+        <argsstring></argsstring>
+        <name>score</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="27" column="25" bodyfile="src/logic_library/World.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1World_1aacd05db007092a3553c3e81b26fbbf19" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classlogic_1_1Player" kindref="compound">logic::Player</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;logic::Player&gt; logic::World::doodle</definition>
+        <argsstring></argsstring>
+        <name>doodle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="28" column="25" bodyfile="src/logic_library/World.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1World_1add6aee875789135e50f193d4ee7ae6d6" prot="public" static="no" mutable="no">
+        <type>std::deque&lt; std::vector&lt; std::shared_ptr&lt; <ref refid="classlogic_1_1BGTile" kindref="compound">logic::BGTile</ref> &gt; &gt; &gt;</type>
+        <definition>std::deque&lt;std::vector&lt;std::shared_ptr&lt;logic::BGTile&gt; &gt; &gt; logic::World::bgTiles</definition>
+        <argsstring></argsstring>
+        <name>bgTiles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="29" column="20" bodyfile="src/logic_library/World.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1World_1aec68a0d631018e42eb791752e72a90ae" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="classlogic_1_1Platform" kindref="compound">logic::Platform</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::shared_ptr&lt;logic::Platform&gt; &gt; logic::World::platforms</definition>
+        <argsstring></argsstring>
+        <name>platforms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="31" column="13" bodyfile="src/logic_library/World.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1World_1ae654a3ca9427466f96233668831fa0a7" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="classlogic_1_1Bonus" kindref="compound">logic::Bonus</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::shared_ptr&lt;logic::Bonus&gt; &gt; logic::World::bonuses</definition>
+        <argsstring></argsstring>
+        <name>bonuses</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="33" column="13" bodyfile="src/logic_library/World.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1World_1a6248604ea8514e30b66f55885fa2d404" prot="public" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="classlogic_1_1AbstractFactory" kindref="compound">logic::AbstractFactory</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;logic::AbstractFactory&gt; logic::World::Factory</definition>
+        <argsstring></argsstring>
+        <name>Factory</name>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="35" column="25" bodyfile="src/logic_library/World.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1World_1a41c1a9644abbc0a28cc98790a6488e06" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::World::leftBound</definition>
+        <argsstring></argsstring>
+        <name>leftBound</name>
+        <initializer>= logic::utility::Camera::Instance().getLeftBound()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="37" column="15" bodyfile="src/logic_library/World.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1World_1af85bff3fd6b94b057466bb998d433a9e" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::World::rightBound</definition>
+        <argsstring></argsstring>
+        <name>rightBound</name>
+        <initializer>= logic::utility::Camera::Instance().getRightBound()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="38" column="15" bodyfile="src/logic_library/World.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1World_1ae334607d9e1c6a2588c2dca740d94fcd" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::World::lowerBound</definition>
+        <argsstring></argsstring>
+        <name>lowerBound</name>
+        <initializer>= logic::utility::Camera::Instance().getLowerBound()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="39" column="15" bodyfile="src/logic_library/World.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1World_1a1d4b213e5bc1aae994ec01c291f8b8c2" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::World::shiftBorder</definition>
+        <argsstring></argsstring>
+        <name>shiftBorder</name>
+        <initializer>= logic::utility::Camera::Instance().getShiftBorder()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="40" column="15" bodyfile="src/logic_library/World.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1World_1a57f6aa6e902c93df69633df518a6b538" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::World::formerPlatformPosY</definition>
+        <argsstring></argsstring>
+        <name>formerPlatformPosY</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="42" column="15" bodyfile="src/logic_library/World.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1World_1a171aedd38effbc3927bb70c1426fd39d" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::World::formerPlatformPosX</definition>
+        <argsstring></argsstring>
+        <name>formerPlatformPosX</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="43" column="15" bodyfile="src/logic_library/World.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1World_1a02fd267895299bc14e9a0e11ab158b87" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool logic::World::wasBonusGenerated</definition>
+        <argsstring></argsstring>
+        <name>wasBonusGenerated</name>
+        <initializer>=
+            false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="44" column="14" bodyfile="src/logic_library/World.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1World_1a27b5e0401504046b4557ae3f8be575e0" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool logic::World::gameOver</definition>
+        <argsstring></argsstring>
+        <name>gameOver</name>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="47" column="14" bodyfile="src/logic_library/World.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1World_1abefc4e742ad8f0f762c72d4078fc67fa" prot="public" static="no" mutable="no">
+        <type>std::map&lt; int, std::map&lt; int, float &gt; &gt;</type>
+        <definition>std::map&lt;int, std::map&lt;int, float&gt; &gt; logic::World::percentages</definition>
+        <argsstring></argsstring>
+        <name>percentages</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="49" column="18" bodyfile="src/logic_library/World.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1World_1a3b82cea504751ed57e2abd11d5b0c1a5" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::World::playerWidth</definition>
+        <argsstring></argsstring>
+        <name>playerWidth</name>
+        <initializer>= 0.08</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="52" column="15" bodyfile="src/logic_library/World.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1World_1a1cabdc20a0351ec8ef5b7e493dedc9c9" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::World::playerHeight</definition>
+        <argsstring></argsstring>
+        <name>playerHeight</name>
+        <initializer>= 0.15</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="53" column="15" bodyfile="src/logic_library/World.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1World_1a7d74daa829e2509446bebb55296575f3" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::World::platformWidth</definition>
+        <argsstring></argsstring>
+        <name>platformWidth</name>
+        <initializer>= 0.174004</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="54" column="15" bodyfile="src/logic_library/World.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1World_1a00db8942e64fc6d7840de9a079ab3caa" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::World::platformHeight</definition>
+        <argsstring></argsstring>
+        <name>platformHeight</name>
+        <initializer>= 0.0411</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="55" column="15" bodyfile="src/logic_library/World.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1World_1a85436a90fd3acd2c6baa2991630a350e" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::World::springWidth</definition>
+        <argsstring></argsstring>
+        <name>springWidth</name>
+        <initializer>= 0.058</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="56" column="15" bodyfile="src/logic_library/World.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1World_1a7ef5397cea8f6c428d78a5124f983944" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::World::springHeight</definition>
+        <argsstring></argsstring>
+        <name>springHeight</name>
+        <initializer>= 0.0411</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="57" column="15" bodyfile="src/logic_library/World.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1World_1a212e04cfd5aaab1998dcd45948186655" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::World::jetpackWidth</definition>
+        <argsstring></argsstring>
+        <name>jetpackWidth</name>
+        <initializer>= 0.0696</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="58" column="15" bodyfile="src/logic_library/World.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1World_1ad3d5c0e97178e852910d29e5d4dcd263" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::World::jetpackHeight</definition>
+        <argsstring></argsstring>
+        <name>jetpackHeight</name>
+        <initializer>= 0.06576</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="59" column="15" bodyfile="src/logic_library/World.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1World_1aef23435b7d20cb7b1f37252aaf138552" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::World::bgTileSideLength</definition>
+        <argsstring></argsstring>
+        <name>bgTileSideLength</name>
+        <initializer>= 0.05f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="61" column="15" bodyfile="src/logic_library/World.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1World_1af073045a6e14a9cfe6831eda73f70058" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::World::platformGen_startingChance</definition>
+        <argsstring></argsstring>
+        <name>platformGen_startingChance</name>
+        <initializer>= 0.90</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="64" column="15" bodyfile="src/logic_library/World.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1World_1aba977b9da782a09ccea8671df376d168" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::World::platformGen_interval</definition>
+        <argsstring></argsstring>
+        <name>platformGen_interval</name>
+        <initializer>=
+            3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="65" column="15" bodyfile="src/logic_library/World.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1World_1ad4d6b4741111b704ea3397872e07caf9" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::World::bonusGen_startingChance</definition>
+        <argsstring></argsstring>
+        <name>bonusGen_startingChance</name>
+        <initializer>= 0.10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="69" column="15" bodyfile="src/logic_library/World.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1World_1a2d7bac9a5d0a35fed3f6597f5cf08f46" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::World::bonusGen_interval</definition>
+        <argsstring></argsstring>
+        <name>bonusGen_interval</name>
+        <initializer>=
+            500</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="70" column="15" bodyfile="src/logic_library/World.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1World_1ab854d1dd1dfd1731561bc6f4aab59c3f" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::World::minDistanceBetweenPlatforms</definition>
+        <argsstring></argsstring>
+        <name>minDistanceBetweenPlatforms</name>
+        <initializer>= 0.30</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="74" column="15" bodyfile="src/logic_library/World.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classlogic_1_1World_1a6584e6a004b71fa1c2a7177eb932d0c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::World::World</definition>
+        <argsstring>()</argsstring>
+        <name>World</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1World" kindref="compound">World</ref> Constructor for a <ref refid="classlogic_1_1World" kindref="compound">World</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="81" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1World_1a194fbdf6452d58fba672e87fbf074338" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::World::World</definition>
+        <argsstring>(std::shared_ptr&lt; logic::AbstractFactory &gt; &amp;factory)</argsstring>
+        <name>World</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classlogic_1_1AbstractFactory" kindref="compound">logic::AbstractFactory</ref> &gt; &amp;</type>
+          <declname>factory</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1World" kindref="compound">World</ref> Constructor for a <ref refid="classlogic_1_1World" kindref="compound">World</ref>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>factory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(std::shared_ptr&lt;logic::AbstractFactory&gt;) : abstract factory (actually concrete factory). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="88" column="9" bodyfile="src/logic_library/World.cpp" bodystart="10" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1World_1a4212a52dd94c62ee8ec3e4366d165687" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::World::~World</definition>
+        <argsstring>()</argsstring>
+        <name>~World</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : ~World Destructor for a <ref refid="classlogic_1_1World" kindref="compound">World</ref>. Resets everything in the world. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="94" column="9" bodyfile="src/logic_library/World.cpp" bodystart="308" bodyend="338"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1World_1aa7e8c59517e769fa5babe35e15fc3bab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::World::receiveInput</definition>
+        <argsstring>(std::string &amp;key)</argsstring>
+        <name>receiveInput</name>
+        <param>
+          <type>std::string &amp;</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : receiveInput Function that handles the received input from the game class and moves the player accordingly. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(std::string) : key that was pressed by the user. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="101" column="14" bodyfile="src/logic_library/World.cpp" bodystart="24" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1World_1a69b23e3a63b4a9c8a33df64c59eba7da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::World::checkForCollision</definition>
+        <argsstring>()</argsstring>
+        <name>checkForCollision</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : checkForCollision Function that checks for collision between the player and other entities. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="107" column="14" bodyfile="src/logic_library/World.cpp" bodystart="42" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1World_1a00671bb872ea3d1f72e6a17edba9968a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::World::checkForCollisionBetweenPlatforms</definition>
+        <argsstring>()</argsstring>
+        <name>checkForCollisionBetweenPlatforms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : checkForCollisionBetweenPlatforms Function that checks for collision between platforms. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="113" column="14" bodyfile="src/logic_library/World.cpp" bodystart="549" bodyend="574"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1World_1a68f41a7e6daa31354d4eb9b7f5b29b6c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool logic::World::checkForUndetectedCollision</definition>
+        <argsstring>(const std::shared_ptr&lt; logic::EntityModel &gt; &amp;e1, std::vector&lt; std::pair&lt; float, float &gt;&gt; &amp;middleLine, const std::shared_ptr&lt; logic::EntityModel &gt; &amp;e2) const</argsstring>
+        <name>checkForUndetectedCollision</name>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classlogic_1_1EntityModel" kindref="compound">logic::EntityModel</ref> &gt; &amp;</type>
+          <declname>e1</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; std::pair&lt; float, float &gt;&gt; &amp;</type>
+          <declname>middleLine</declname>
+        </param>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classlogic_1_1EntityModel" kindref="compound">logic::EntityModel</ref> &gt; &amp;</type>
+          <declname>e2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : checkForUndetectedCollision Function that checks for intersection between entities (e1 and e2). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>e1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(std::shared_ptr&lt;logic::EntityModel&gt;) : first entity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(std::shared_ptr&lt;logic::EntityModel&gt;) : second entity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>middleLine</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(std::vector&lt;std::pair&lt;float,float&gt;&gt;) : </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="122" column="14" bodyfile="src/logic_library/World.cpp" bodystart="246" bodyend="265"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1World_1a75ff1124f0ba857741a7663a1d37c6a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::World::createStartEntities</definition>
+        <argsstring>()</argsstring>
+        <name>createStartEntities</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : createStartEntities Handles the creation of the entities at the start of the game (player, background tiles and some prebuilt platforms </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="131" column="14" bodyfile="src/logic_library/World.cpp" bodystart="91" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1World_1a616b3601d68abd56cd7c7d2bcb77c70a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::World::createEntities</definition>
+        <argsstring>()</argsstring>
+        <name>createEntities</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : createEntities Handles the spontaneous creation of entities throughout the game (i.e. platform and bonus generation). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="137" column="14" bodyfile="src/logic_library/World.cpp" bodystart="114" bodyend="201"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1World_1a8c069541cc88b46fd9849bf2d7f4008c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::World::update</definition>
+        <argsstring>()</argsstring>
+        <name>update</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : update Updates everything in the world (movement of player, collision checking, creating entities,...). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="143" column="14" bodyfile="src/logic_library/World.cpp" bodystart="203" bodyend="244"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1World_1ae9ccbc8551ad41e2a80fab0fa4262fbc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::World::setupPercentages</definition>
+        <argsstring>()</argsstring>
+        <name>setupPercentages</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : setupPercentages Sets up the percentages map, that we use for our random platform generation. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="161" column="14" bodyfile="src/logic_library/World.cpp" bodystart="340" bodyend="406"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1World_1a30dda4da6312d08b8cd8828b69b9d17d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::World::createStartingBGTiles</definition>
+        <argsstring>()</argsstring>
+        <name>createStartingBGTiles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : createStartingBGTiles Creates the background tiles in the beginning. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="167" column="14" bodyfile="src/logic_library/World.cpp" bodystart="408" bodyend="421"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1World_1ab42ba12c3860b44f232b3c47c7ce48f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::World::deleteOutOfViewPlatforms</definition>
+        <argsstring>()</argsstring>
+        <name>deleteOutOfViewPlatforms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : deleteOutOfViewPlatforms Deletes all platforms that are out of view. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="173" column="14" bodyfile="src/logic_library/World.cpp" bodystart="423" bodyend="436"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1World_1a45d253a6ac2e7ac2e4efee2b121948cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::World::deleteOutOfViewBonusses</definition>
+        <argsstring>()</argsstring>
+        <name>deleteOutOfViewBonusses</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : deleteOutOfViewBonusses Deletes all bonusees that are out of view. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="179" column="14" bodyfile="src/logic_library/World.cpp" bodystart="438" bodyend="451"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1World_1aa57efbce318e58249d86a715714531ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::World::recycleOutOfViewBGTiles</definition>
+        <argsstring>()</argsstring>
+        <name>recycleOutOfViewBGTiles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : recycleOutOfViewBGTiles Recycles all background tiles that are out of view at the bottom (it stacks them on top). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="185" column="14" bodyfile="src/logic_library/World.cpp" bodystart="453" bodyend="477"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1World_1a9b6ab159eca0afc534d0d78d34d841d4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int logic::World::choosePlatformType</definition>
+        <argsstring>() const</argsstring>
+        <name>choosePlatformType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : choosePlatformType Chooses the platform type by chance. <simplesect kind="return"><para>(int) : integer representing the type of platform to be generated. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="192" column="13" bodyfile="src/logic_library/World.cpp" bodystart="479" bodyend="506"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1World_1ac6101ff29a6ab76c6fe7cb38e39889c3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::World::chooseBonusType</definition>
+        <argsstring>(std::shared_ptr&lt; logic::Bonus &gt; &amp;bonus) const</argsstring>
+        <name>chooseBonusType</name>
+        <param>
+          <type>std::shared_ptr&lt; <ref refid="classlogic_1_1Bonus" kindref="compound">logic::Bonus</ref> &gt; &amp;</type>
+          <declname>bonus</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : chooseBonusType Chooses the bonus type by chance. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>bonus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(std::shared_ptr&lt;logic::Bonus&gt;) : reference to the bonus that we instantiated previously. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="199" column="14" bodyfile="src/logic_library/World.cpp" bodystart="508" bodyend="518"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1World_1afead1e149190b760d32ae7255fe043f6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float logic::World::calculatePlatformXPos</definition>
+        <argsstring>(const std::shared_ptr&lt; logic::Platform &gt; &amp;platform) const</argsstring>
+        <name>calculatePlatformXPos</name>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classlogic_1_1Platform" kindref="compound">logic::Platform</ref> &gt; &amp;</type>
+          <declname>platform</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : calculatePlatformXPos Calculates the x-position for our platform. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>platform</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(std::shared_ptr&lt;logic::Platform&gt;) : reference to the platform that we instantiated previously. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>(float) : x-position. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="208" column="15" bodyfile="src/logic_library/World.cpp" bodystart="520" bodyend="547"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classlogic_1_1World_1ae80d95443f7aad388417027932303f69" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::vector&lt; std::pair&lt; float, float &gt; &gt;</type>
+        <definition>std::vector&lt; std::pair&lt; float, float &gt; &gt; logic::World::getLineBetweenPoints</definition>
+        <argsstring>(float x0, float y0, float x1, float y1)</argsstring>
+        <name>getLineBetweenPoints</name>
+        <param>
+          <type>float</type>
+          <declname>x0</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y0</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>x1</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : getLineBetweenPoints Returns a line between the first and second point in the form of a list of pairs of floats. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : x-coordinate of the first point. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : y-coordinate of the first point. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>x1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : x-coordinate of the second point. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : y-coordinate of the second point. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>(std::vector&lt;std::pair&lt;float,float&gt;&gt;) : list of points which represents the line Source : algorithm from project Computer Graphics. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/World.h" line="155" column="28" bodyfile="src/logic_library/World.cpp" bodystart="267" bodyend="306"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/logic_library/World.h" line="24" column="1" bodyfile="src/logic_library/World.h" bodystart="23" bodyend="209"/>
+    <listofallmembers>
+      <member refid="classlogic_1_1World_1add6aee875789135e50f193d4ee7ae6d6" prot="public" virt="non-virtual"><scope>logic::World</scope><name>bgTiles</name></member>
+      <member refid="classlogic_1_1World_1aef23435b7d20cb7b1f37252aaf138552" prot="public" virt="non-virtual"><scope>logic::World</scope><name>bgTileSideLength</name></member>
+      <member refid="classlogic_1_1World_1ae654a3ca9427466f96233668831fa0a7" prot="public" virt="non-virtual"><scope>logic::World</scope><name>bonuses</name></member>
+      <member refid="classlogic_1_1World_1a2d7bac9a5d0a35fed3f6597f5cf08f46" prot="public" virt="non-virtual"><scope>logic::World</scope><name>bonusGen_interval</name></member>
+      <member refid="classlogic_1_1World_1ad4d6b4741111b704ea3397872e07caf9" prot="public" virt="non-virtual"><scope>logic::World</scope><name>bonusGen_startingChance</name></member>
+      <member refid="classlogic_1_1World_1afead1e149190b760d32ae7255fe043f6" prot="public" virt="non-virtual"><scope>logic::World</scope><name>calculatePlatformXPos</name></member>
+      <member refid="classlogic_1_1World_1a69b23e3a63b4a9c8a33df64c59eba7da" prot="public" virt="non-virtual"><scope>logic::World</scope><name>checkForCollision</name></member>
+      <member refid="classlogic_1_1World_1a00671bb872ea3d1f72e6a17edba9968a" prot="public" virt="non-virtual"><scope>logic::World</scope><name>checkForCollisionBetweenPlatforms</name></member>
+      <member refid="classlogic_1_1World_1a68f41a7e6daa31354d4eb9b7f5b29b6c" prot="public" virt="non-virtual"><scope>logic::World</scope><name>checkForUndetectedCollision</name></member>
+      <member refid="classlogic_1_1World_1ac6101ff29a6ab76c6fe7cb38e39889c3" prot="public" virt="non-virtual"><scope>logic::World</scope><name>chooseBonusType</name></member>
+      <member refid="classlogic_1_1World_1a9b6ab159eca0afc534d0d78d34d841d4" prot="public" virt="non-virtual"><scope>logic::World</scope><name>choosePlatformType</name></member>
+      <member refid="classlogic_1_1World_1a616b3601d68abd56cd7c7d2bcb77c70a" prot="public" virt="non-virtual"><scope>logic::World</scope><name>createEntities</name></member>
+      <member refid="classlogic_1_1World_1a75ff1124f0ba857741a7663a1d37c6a1" prot="public" virt="non-virtual"><scope>logic::World</scope><name>createStartEntities</name></member>
+      <member refid="classlogic_1_1World_1a30dda4da6312d08b8cd8828b69b9d17d" prot="public" virt="non-virtual"><scope>logic::World</scope><name>createStartingBGTiles</name></member>
+      <member refid="classlogic_1_1World_1a45d253a6ac2e7ac2e4efee2b121948cd" prot="public" virt="non-virtual"><scope>logic::World</scope><name>deleteOutOfViewBonusses</name></member>
+      <member refid="classlogic_1_1World_1ab42ba12c3860b44f232b3c47c7ce48f2" prot="public" virt="non-virtual"><scope>logic::World</scope><name>deleteOutOfViewPlatforms</name></member>
+      <member refid="classlogic_1_1World_1aacd05db007092a3553c3e81b26fbbf19" prot="public" virt="non-virtual"><scope>logic::World</scope><name>doodle</name></member>
+      <member refid="classlogic_1_1World_1a6248604ea8514e30b66f55885fa2d404" prot="public" virt="non-virtual"><scope>logic::World</scope><name>Factory</name></member>
+      <member refid="classlogic_1_1World_1a171aedd38effbc3927bb70c1426fd39d" prot="public" virt="non-virtual"><scope>logic::World</scope><name>formerPlatformPosX</name></member>
+      <member refid="classlogic_1_1World_1a57f6aa6e902c93df69633df518a6b538" prot="public" virt="non-virtual"><scope>logic::World</scope><name>formerPlatformPosY</name></member>
+      <member refid="classlogic_1_1World_1a27b5e0401504046b4557ae3f8be575e0" prot="public" virt="non-virtual"><scope>logic::World</scope><name>gameOver</name></member>
+      <member refid="classlogic_1_1World_1ae80d95443f7aad388417027932303f69" prot="public" virt="non-virtual"><scope>logic::World</scope><name>getLineBetweenPoints</name></member>
+      <member refid="classlogic_1_1World_1ad3d5c0e97178e852910d29e5d4dcd263" prot="public" virt="non-virtual"><scope>logic::World</scope><name>jetpackHeight</name></member>
+      <member refid="classlogic_1_1World_1a212e04cfd5aaab1998dcd45948186655" prot="public" virt="non-virtual"><scope>logic::World</scope><name>jetpackWidth</name></member>
+      <member refid="classlogic_1_1World_1a41c1a9644abbc0a28cc98790a6488e06" prot="public" virt="non-virtual"><scope>logic::World</scope><name>leftBound</name></member>
+      <member refid="classlogic_1_1World_1ae334607d9e1c6a2588c2dca740d94fcd" prot="public" virt="non-virtual"><scope>logic::World</scope><name>lowerBound</name></member>
+      <member refid="classlogic_1_1World_1ab854d1dd1dfd1731561bc6f4aab59c3f" prot="public" virt="non-virtual"><scope>logic::World</scope><name>minDistanceBetweenPlatforms</name></member>
+      <member refid="classlogic_1_1World_1abefc4e742ad8f0f762c72d4078fc67fa" prot="public" virt="non-virtual"><scope>logic::World</scope><name>percentages</name></member>
+      <member refid="classlogic_1_1World_1aba977b9da782a09ccea8671df376d168" prot="public" virt="non-virtual"><scope>logic::World</scope><name>platformGen_interval</name></member>
+      <member refid="classlogic_1_1World_1af073045a6e14a9cfe6831eda73f70058" prot="public" virt="non-virtual"><scope>logic::World</scope><name>platformGen_startingChance</name></member>
+      <member refid="classlogic_1_1World_1a00db8942e64fc6d7840de9a079ab3caa" prot="public" virt="non-virtual"><scope>logic::World</scope><name>platformHeight</name></member>
+      <member refid="classlogic_1_1World_1aec68a0d631018e42eb791752e72a90ae" prot="public" virt="non-virtual"><scope>logic::World</scope><name>platforms</name></member>
+      <member refid="classlogic_1_1World_1a7d74daa829e2509446bebb55296575f3" prot="public" virt="non-virtual"><scope>logic::World</scope><name>platformWidth</name></member>
+      <member refid="classlogic_1_1World_1a1cabdc20a0351ec8ef5b7e493dedc9c9" prot="public" virt="non-virtual"><scope>logic::World</scope><name>playerHeight</name></member>
+      <member refid="classlogic_1_1World_1a3b82cea504751ed57e2abd11d5b0c1a5" prot="public" virt="non-virtual"><scope>logic::World</scope><name>playerWidth</name></member>
+      <member refid="classlogic_1_1World_1aa7e8c59517e769fa5babe35e15fc3bab" prot="public" virt="non-virtual"><scope>logic::World</scope><name>receiveInput</name></member>
+      <member refid="classlogic_1_1World_1aa57efbce318e58249d86a715714531ee" prot="public" virt="non-virtual"><scope>logic::World</scope><name>recycleOutOfViewBGTiles</name></member>
+      <member refid="classlogic_1_1World_1af85bff3fd6b94b057466bb998d433a9e" prot="public" virt="non-virtual"><scope>logic::World</scope><name>rightBound</name></member>
+      <member refid="classlogic_1_1World_1a65e730a632d1fddfd28ec786c200f209" prot="public" virt="non-virtual"><scope>logic::World</scope><name>score</name></member>
+      <member refid="classlogic_1_1World_1ae9ccbc8551ad41e2a80fab0fa4262fbc" prot="public" virt="non-virtual"><scope>logic::World</scope><name>setupPercentages</name></member>
+      <member refid="classlogic_1_1World_1a1d4b213e5bc1aae994ec01c291f8b8c2" prot="public" virt="non-virtual"><scope>logic::World</scope><name>shiftBorder</name></member>
+      <member refid="classlogic_1_1World_1a7ef5397cea8f6c428d78a5124f983944" prot="public" virt="non-virtual"><scope>logic::World</scope><name>springHeight</name></member>
+      <member refid="classlogic_1_1World_1a85436a90fd3acd2c6baa2991630a350e" prot="public" virt="non-virtual"><scope>logic::World</scope><name>springWidth</name></member>
+      <member refid="classlogic_1_1World_1a8c069541cc88b46fd9849bf2d7f4008c" prot="public" virt="non-virtual"><scope>logic::World</scope><name>update</name></member>
+      <member refid="classlogic_1_1World_1a02fd267895299bc14e9a0e11ab158b87" prot="public" virt="non-virtual"><scope>logic::World</scope><name>wasBonusGenerated</name></member>
+      <member refid="classlogic_1_1World_1a6584e6a004b71fa1c2a7177eb932d0c3" prot="public" virt="non-virtual"><scope>logic::World</scope><name>World</name></member>
+      <member refid="classlogic_1_1World_1a194fbdf6452d58fba672e87fbf074338" prot="public" virt="non-virtual"><scope>logic::World</scope><name>World</name></member>
+      <member refid="classlogic_1_1World_1a4212a52dd94c62ee8ec3e4366d165687" prot="public" virt="non-virtual"><scope>logic::World</scope><name>~World</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

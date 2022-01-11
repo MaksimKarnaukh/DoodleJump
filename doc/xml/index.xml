@@ -1,0 +1,579 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.17">
+  <compound refid="classlogic_1_1AbstractFactory" kind="class"><name>logic::AbstractFactory</name>
+    <member refid="classlogic_1_1AbstractFactory_1abf6c6fe130a97426c9682800fa0d6dd9" kind="function"><name>AbstractFactory</name></member>
+    <member refid="classlogic_1_1AbstractFactory_1a391dc2c32c339bb7841b7e41aef2fba5" kind="function"><name>~AbstractFactory</name></member>
+    <member refid="classlogic_1_1AbstractFactory_1a9f4ebed2900945df1e3d584715c68955" kind="function"><name>createPlayer</name></member>
+    <member refid="classlogic_1_1AbstractFactory_1a4450d2814b928702e932cfc21b7c69b1" kind="function"><name>createStaticPlatform</name></member>
+    <member refid="classlogic_1_1AbstractFactory_1a1b991e2b6bcd7545065ea967bf2f0342" kind="function"><name>createTemporaryPlatform</name></member>
+    <member refid="classlogic_1_1AbstractFactory_1a5f2b10dec4090b4a7f893096c8986488" kind="function"><name>createHorizontalPlatform</name></member>
+    <member refid="classlogic_1_1AbstractFactory_1addd3c9d4d9f5e9e3f9c53bbd90ee6e82" kind="function"><name>createVerticalPlatform</name></member>
+    <member refid="classlogic_1_1AbstractFactory_1a363088d16ef335f8961634c05bfef604" kind="function"><name>createSpring</name></member>
+    <member refid="classlogic_1_1AbstractFactory_1a5797bb1e8d2bcc19da10ca5fd39d70ba" kind="function"><name>createJetpack</name></member>
+    <member refid="classlogic_1_1AbstractFactory_1ac8eed90b3c4adaad363526d1bb01f98d" kind="function"><name>createBGTile</name></member>
+  </compound>
+  <compound refid="classlogic_1_1BGTile" kind="class"><name>logic::BGTile</name>
+    <member refid="classlogic_1_1BGTile_1a7c79d740c79cbd03220199de9e3ef361" kind="function"><name>BGTile</name></member>
+    <member refid="classlogic_1_1BGTile_1a1791edace311805bbb69aa417c26b69d" kind="function"><name>~BGTile</name></member>
+    <member refid="classlogic_1_1BGTile_1af680198ea0872826c5ee47dfab8468bf" kind="function"><name>BGTile</name></member>
+    <member refid="classlogic_1_1BGTile_1aa125433e530ec2915a681aab1c2b9989" kind="function"><name>BGTile</name></member>
+  </compound>
+  <compound refid="classrepresentation_1_1BGTile__GR" kind="class"><name>representation::BGTile_GR</name>
+    <member refid="classrepresentation_1_1BGTile__GR_1ad6822076b8abb83267f113eaf5b1b533" kind="function"><name>BGTile_GR</name></member>
+    <member refid="classrepresentation_1_1BGTile__GR_1ad65cb36d8825bd812562eb0513806e12" kind="function"><name>~BGTile_GR</name></member>
+  </compound>
+  <compound refid="classlogic_1_1Bonus" kind="class"><name>logic::Bonus</name>
+    <member refid="classlogic_1_1Bonus_1aaf79c9f2940ecb7fbf6f2f21ce1a1efd" kind="variable"><name>bonusForce</name></member>
+    <member refid="classlogic_1_1Bonus_1a2fc399304a2df67490b01b875e3076f9" kind="variable"><name>scoreIncrease</name></member>
+    <member refid="classlogic_1_1Bonus_1a4e53c7177ee1931b6b89a3a5ede2b232" kind="function"><name>Bonus</name></member>
+    <member refid="classlogic_1_1Bonus_1acc16cb789e509beab0ebbcef6f933188" kind="function"><name>~Bonus</name></member>
+    <member refid="classlogic_1_1Bonus_1afeddff38f71dc5d0e120664e9ae55aa8" kind="function"><name>Bonus</name></member>
+    <member refid="classlogic_1_1Bonus_1a0a7f62e4191b2d78f30651cdb190f53c" kind="function"><name>Bonus</name></member>
+    <member refid="classlogic_1_1Bonus_1aaccacb779e0e99cac631cb060c628c63" kind="function"><name>setBonusForce</name></member>
+    <member refid="classlogic_1_1Bonus_1ad735683bc5cb289c8599b70f968a2619" kind="function"><name>setScoreIncrease</name></member>
+    <member refid="classlogic_1_1Bonus_1a682ba19d90d766eeadb906aa29ff6e71" kind="function"><name>getBonusForce</name></member>
+    <member refid="classlogic_1_1Bonus_1a5c95afdc93abe9ab626aba5682c0c1b1" kind="function"><name>getScoreIncrease</name></member>
+    <member refid="classlogic_1_1Bonus_1ab480bdebc33ae05569c5c033a00983f0" kind="function"><name>touchedBonus</name></member>
+  </compound>
+  <compound refid="classrepresentation_1_1Bonus__GR" kind="class"><name>representation::Bonus_GR</name>
+    <member refid="classrepresentation_1_1Bonus__GR_1aa9f07e327b48da00057716220cb45f8f" kind="function"><name>Bonus_GR</name></member>
+    <member refid="classrepresentation_1_1Bonus__GR_1a845c17b63107a4e2b112de885f9c4350" kind="function"><name>~Bonus_GR</name></member>
+  </compound>
+  <compound refid="classlogic_1_1utility_1_1Camera" kind="class"><name>logic::utility::Camera</name>
+    <member refid="classlogic_1_1utility_1_1Camera_1ad03f5f84ad6acb19593d1c50dbdb0a0f" kind="variable"><name>windowWidth</name></member>
+    <member refid="classlogic_1_1utility_1_1Camera_1a69f37ef24efdb8eee964c74d94f3b126" kind="variable"><name>windowHeight</name></member>
+    <member refid="classlogic_1_1utility_1_1Camera_1a6c0c42c7b52b939fdd326f146264584e" kind="variable"><name>shiftValue</name></member>
+    <member refid="classlogic_1_1utility_1_1Camera_1a9f02bfb0104cc6099dca739a018a7d42" kind="variable"><name>shiftBorder</name></member>
+    <member refid="classlogic_1_1utility_1_1Camera_1ad97c8d52baf03ed514f6c8ab145913cc" kind="variable"><name>leftBound</name></member>
+    <member refid="classlogic_1_1utility_1_1Camera_1aa57a766491ffa51f68f71f2247cfad8f" kind="variable"><name>rightBound</name></member>
+    <member refid="classlogic_1_1utility_1_1Camera_1a3b1cd948b4b2e4bd7792959402d42cbe" kind="variable"><name>lowerBound</name></member>
+    <member refid="classlogic_1_1utility_1_1Camera_1afd51dcc61a2fb6e6ecf9f5c904537300" kind="function"><name>Camera</name></member>
+    <member refid="classlogic_1_1utility_1_1Camera_1ae84704a55694bec4c3a585e20950c669" kind="function"><name>~Camera</name></member>
+    <member refid="classlogic_1_1utility_1_1Camera_1a5fc1ec52e52b61d7bc6178798f62c78d" kind="function"><name>setWindowWidth</name></member>
+    <member refid="classlogic_1_1utility_1_1Camera_1a426b33c498fb7a0c1e886e984b096f81" kind="function"><name>setWindowHeight</name></member>
+    <member refid="classlogic_1_1utility_1_1Camera_1aec06c4dd87d40b369a5d19f38999e2ef" kind="function"><name>setShiftValue</name></member>
+    <member refid="classlogic_1_1utility_1_1Camera_1a92d9970be047084f5dfb1c14fcb9f3df" kind="function"><name>setLeftBound</name></member>
+    <member refid="classlogic_1_1utility_1_1Camera_1a2335dd2e7687c77e8673f8d699a67018" kind="function"><name>setRightBound</name></member>
+    <member refid="classlogic_1_1utility_1_1Camera_1a7f2dd527ad699121bb931760aae4ea8f" kind="function"><name>setLowerBound</name></member>
+    <member refid="classlogic_1_1utility_1_1Camera_1a939325b373c675b0ee7b2e6f5255add1" kind="function"><name>setShiftBorder</name></member>
+    <member refid="classlogic_1_1utility_1_1Camera_1a9c78fca6374884e68af2a107c465dc1d" kind="function"><name>getWindowWidth</name></member>
+    <member refid="classlogic_1_1utility_1_1Camera_1a3b2ed77db738ec3dd1d8dd5cf6b2a14f" kind="function"><name>getWindowHeight</name></member>
+    <member refid="classlogic_1_1utility_1_1Camera_1ae3267818f50442dda850e8bb5e46bbae" kind="function"><name>getShiftValue</name></member>
+    <member refid="classlogic_1_1utility_1_1Camera_1a9cb85248ebbcb7d1c10e4a9c3ac6d854" kind="function"><name>getLeftBound</name></member>
+    <member refid="classlogic_1_1utility_1_1Camera_1a8b6ce95902ef9432c3eebcf0efae9a3b" kind="function"><name>getRightBound</name></member>
+    <member refid="classlogic_1_1utility_1_1Camera_1ad4e204bbd91130acbf96719edb5177e2" kind="function"><name>getLowerBound</name></member>
+    <member refid="classlogic_1_1utility_1_1Camera_1aff2c50b8a70b4323b3ccdcb56aed576d" kind="function"><name>getShiftBorder</name></member>
+    <member refid="classlogic_1_1utility_1_1Camera_1a8bfb5ca6b5ab20ea0a6986db74cd2b0a" kind="function"><name>projectCoordinates</name></member>
+    <member refid="classlogic_1_1utility_1_1Camera_1afa0d0f8bbe17919983faa4827d56f1a4" kind="function"><name>Camera</name></member>
+    <member refid="classlogic_1_1utility_1_1Camera_1a972ea27ac053c1d7913608f95bc7ef11" kind="function"><name>Camera</name></member>
+    <member refid="classlogic_1_1utility_1_1Camera_1a8cdb3aee944bb894f3c1a88d842cc7d7" kind="function"><name>operator=</name></member>
+    <member refid="classlogic_1_1utility_1_1Camera_1a6e851077307b2f0a5f825ec15e4f7014" kind="function"><name>operator=</name></member>
+    <member refid="classlogic_1_1utility_1_1Camera_1a89ae1c3484b8a3f8fd54f2a766bf6b05" kind="function"><name>Instance</name></member>
+  </compound>
+  <compound refid="classrepresentation_1_1ConcreteFactory" kind="class"><name>representation::ConcreteFactory</name>
+    <member refid="classrepresentation_1_1ConcreteFactory_1a3d6e21e4d98192e2ded8dd6ddfcfff79" kind="variable"><name>platformViews</name></member>
+    <member refid="classrepresentation_1_1ConcreteFactory_1a0a1ad326a4ad11f44c7edcaea1cc7527" kind="variable"><name>playerViews</name></member>
+    <member refid="classrepresentation_1_1ConcreteFactory_1af5fc4068605a901d4e5f48bc9470d07e" kind="variable"><name>bonusViews</name></member>
+    <member refid="classrepresentation_1_1ConcreteFactory_1a6e53ecd6e076e7000f7f1d54cd90ea68" kind="variable"><name>bgTilesViews</name></member>
+    <member refid="classrepresentation_1_1ConcreteFactory_1aaea91f080dfdd66b807ddb50b901d4dd" kind="function"><name>ConcreteFactory</name></member>
+    <member refid="classrepresentation_1_1ConcreteFactory_1a3816317f86c6aaf402ad190940ba182d" kind="function"><name>~ConcreteFactory</name></member>
+    <member refid="classrepresentation_1_1ConcreteFactory_1a8157c2ea33f3aed279650ace88fc7627" kind="function"><name>createPlayer</name></member>
+    <member refid="classrepresentation_1_1ConcreteFactory_1a85b7082f2ae47a924481cf1921dd39f1" kind="function"><name>createStaticPlatform</name></member>
+    <member refid="classrepresentation_1_1ConcreteFactory_1a06856fd92ae6355880390d81f61fc723" kind="function"><name>createTemporaryPlatform</name></member>
+    <member refid="classrepresentation_1_1ConcreteFactory_1a8e50c892bd9d46e12bdf9949a32a2bb1" kind="function"><name>createHorizontalPlatform</name></member>
+    <member refid="classrepresentation_1_1ConcreteFactory_1ac2e6fe32f9fabcb7572848e1a14f77f4" kind="function"><name>createVerticalPlatform</name></member>
+    <member refid="classrepresentation_1_1ConcreteFactory_1aba785c0e6855e1d9f1de859df6f9d2ca" kind="function"><name>createSpring</name></member>
+    <member refid="classrepresentation_1_1ConcreteFactory_1adb2a655b4b00c97ef92912c6003fd871" kind="function"><name>createJetpack</name></member>
+    <member refid="classrepresentation_1_1ConcreteFactory_1a9da814a5fe1269a478df8d5dd57db664" kind="function"><name>createBGTile</name></member>
+  </compound>
+  <compound refid="classlogic_1_1EntityModel" kind="class"><name>logic::EntityModel</name>
+    <member refid="classlogic_1_1EntityModel_1ac823e3f35ecfa439b2883d7601929ce5" kind="variable"><name>e_width</name></member>
+    <member refid="classlogic_1_1EntityModel_1a9c913c80599c18622aa329759865aa6b" kind="variable"><name>e_height</name></member>
+    <member refid="classlogic_1_1EntityModel_1a894fed55ddd23d3e0a9d442b2a17d62c" kind="variable"><name>x_pos</name></member>
+    <member refid="classlogic_1_1EntityModel_1a351557932831e0db1ad5138ee4a92ec9" kind="variable"><name>y_pos</name></member>
+    <member refid="classlogic_1_1EntityModel_1a14b0d640abc1de9f0d26857525fb8588" kind="variable"><name>e_speed</name></member>
+    <member refid="classlogic_1_1EntityModel_1a54b5161f038a4636baba4b17f7042425" kind="variable"><name>unit</name></member>
+    <member refid="classlogic_1_1EntityModel_1a515fb152a30fd35aa2825b78bb8fdc90" kind="variable"><name>x_posPrevious</name></member>
+    <member refid="classlogic_1_1EntityModel_1acdcaa7615dfcec6b495ece5df8a3a40c" kind="variable"><name>y_posPrevious</name></member>
+    <member refid="classlogic_1_1EntityModel_1a99c0c979c10a90eecf3620afc8ecbc12" kind="function"><name>setWidth</name></member>
+    <member refid="classlogic_1_1EntityModel_1ad703de4900c6b276f824804bebfba006" kind="function"><name>setHeight</name></member>
+    <member refid="classlogic_1_1EntityModel_1a0d63f4dc9f2dcab997c5acb43a58b761" kind="function"><name>setPositionX</name></member>
+    <member refid="classlogic_1_1EntityModel_1a755cc5054fad5a67111f00a137666ab1" kind="function"><name>setPositionY</name></member>
+    <member refid="classlogic_1_1EntityModel_1a78e9ab3fad35775a1780cd7bfff0622a" kind="function"><name>setPreviousPositionX</name></member>
+    <member refid="classlogic_1_1EntityModel_1a579a9928acff3b4ba2bb0821e952d452" kind="function"><name>setPreviousPositionY</name></member>
+    <member refid="classlogic_1_1EntityModel_1a0a61bc5dc0e6a2a3aed489a604625593" kind="function"><name>setSpeed</name></member>
+    <member refid="classlogic_1_1EntityModel_1a642a7a6075bf35bfe9e0c55d52f4982d" kind="function"><name>setUnitOfDistance</name></member>
+    <member refid="classlogic_1_1EntityModel_1aa377acce5e474892230da31ee39bbbc9" kind="function"><name>getWidth</name></member>
+    <member refid="classlogic_1_1EntityModel_1a7cdaafc31f97ab0ba835593046138c57" kind="function"><name>getHeight</name></member>
+    <member refid="classlogic_1_1EntityModel_1aed96cfbc730f4fd9a0e59bebc6727ef9" kind="function"><name>getPositionX</name></member>
+    <member refid="classlogic_1_1EntityModel_1afb9776a3e5b8ebff029914499fe55ce6" kind="function"><name>getPositionY</name></member>
+    <member refid="classlogic_1_1EntityModel_1a89709427e4b0dd62de52d3d8c884ee76" kind="function"><name>getPreviousPositionX</name></member>
+    <member refid="classlogic_1_1EntityModel_1af1d0394edaf591860ebe06ef94a47276" kind="function"><name>getPreviousPositionY</name></member>
+    <member refid="classlogic_1_1EntityModel_1a0713ad1449d82b61f4e22bbdaa212b40" kind="function"><name>getSpeed</name></member>
+    <member refid="classlogic_1_1EntityModel_1ae85c34e45e8fec66993b870a937b2025" kind="function"><name>getUnit</name></member>
+    <member refid="classlogic_1_1EntityModel_1af763d5b72c30f1d2f7f87f3f229ce362" kind="function"><name>EntityModel</name></member>
+    <member refid="classlogic_1_1EntityModel_1a55519f45ff78ff9dcb4b14fc1f868589" kind="function"><name>EntityModel</name></member>
+    <member refid="classlogic_1_1EntityModel_1a0d8dd2e45002dd1177b74f27389e548e" kind="function"><name>EntityModel</name></member>
+    <member refid="classlogic_1_1EntityModel_1a70a0041b77dbb40c88e83847ea3523b7" kind="function"><name>~EntityModel</name></member>
+  </compound>
+  <compound refid="classrepresentation_1_1EntityView" kind="class"><name>representation::EntityView</name>
+    <member refid="classrepresentation_1_1EntityView_1ae59ed4678fa9a297bc466f6321d9f965" kind="variable"><name>mEntityModel</name></member>
+    <member refid="classrepresentation_1_1EntityView_1a3b5f8a1369244fe8e08f74835054820c" kind="variable"><name>sprite</name></member>
+    <member refid="classrepresentation_1_1EntityView_1abaa963085d77cf39443a4e2c9952dd13" kind="variable"><name>texture</name></member>
+    <member refid="classrepresentation_1_1EntityView_1aa7ee9ae264ef678092634a4974bd5f8c" kind="function"><name>EntityView</name></member>
+    <member refid="classrepresentation_1_1EntityView_1a3ae850ef8ded8fdaca88a590912b58b4" kind="function"><name>~EntityView</name></member>
+    <member refid="classrepresentation_1_1EntityView_1a315a7da48bf17c559405ae38a70258c9" kind="function"><name>EntityView</name></member>
+    <member refid="classrepresentation_1_1EntityView_1a1a28801738745333c1ed6079e60b7111" kind="function"><name>setSpriteTexture</name></member>
+    <member refid="classrepresentation_1_1EntityView_1a036973e73e1c5f97caff7afcfb331774" kind="function"><name>getSprite</name></member>
+    <member refid="classrepresentation_1_1EntityView_1a6faf90849bc4fc35bc5fe3d80a8df652" kind="function"><name>getTexture</name></member>
+    <member refid="classrepresentation_1_1EntityView_1af952d66591aefd0a19d2d7b882fd8395" kind="function"><name>setSpriteScale</name></member>
+    <member refid="classrepresentation_1_1EntityView_1a609e08de8dbeec013659ab4a12df6601" kind="function"><name>update</name></member>
+  </compound>
+  <compound refid="classrepresentation_1_1Game" kind="class"><name>representation::Game</name>
+    <member refid="classrepresentation_1_1Game_1a8ae744efdb720f6e6ccf1e1cdcbc15cb" kind="variable"><name>font1</name></member>
+    <member refid="classrepresentation_1_1Game_1a3f637e139a73494eb69d979eeef3844a" kind="variable"><name>fontFile</name></member>
+    <member refid="classrepresentation_1_1Game_1a357c11913d653a1591bce632e908050c" kind="variable"><name>scoreText</name></member>
+    <member refid="classrepresentation_1_1Game_1a15d757ec6886cefcd674e6253330c88f" kind="variable"><name>menuText</name></member>
+    <member refid="classrepresentation_1_1Game_1ada3da3d51eeca8c0d3c4ffa3637c4e8c" kind="variable"><name>menuText0</name></member>
+    <member refid="classrepresentation_1_1Game_1ae8cb6aefcf844982e720b211d9eae15a" kind="variable"><name>currentHighScore</name></member>
+    <member refid="classrepresentation_1_1Game_1ae58c4f7373e87ab89e6528c439a9fdb5" kind="variable"><name>allTimeHighScore</name></member>
+    <member refid="classrepresentation_1_1Game_1aa1fb9e9b5e24fb2a811526b09f809095" kind="variable"><name>_currentScore</name></member>
+    <member refid="classrepresentation_1_1Game_1a65cc93d9b8382d1320a1650823072d12" kind="variable"><name>_allTimeHighScore</name></member>
+    <member refid="classrepresentation_1_1Game_1adee0650227fd0ca449d045bf18620be9" kind="variable"><name>gameState</name></member>
+    <member refid="classrepresentation_1_1Game_1a876e3000bebb45f4f96d76c130b611d2" kind="variable"><name>frameRate</name></member>
+    <member refid="classrepresentation_1_1Game_1a9b7254abf72ab7ff7315a521430d626f" kind="variable"><name>world</name></member>
+    <member refid="classrepresentation_1_1Game_1a33c65567f2617056469c17ba21828b84" kind="variable"><name>factory</name></member>
+    <member refid="classrepresentation_1_1Game_1addc67e30936ff9cff27dfa18ce9b2677" kind="variable"><name>cFactory</name></member>
+    <member refid="classrepresentation_1_1Game_1a7889375f7112234007bb9ba75be750d8" kind="function"><name>Game</name></member>
+    <member refid="classrepresentation_1_1Game_1aec0583c96de8be0b5b5c59eb66a434d0" kind="function"><name>~Game</name></member>
+    <member refid="classrepresentation_1_1Game_1adccf8d0e3a0b2257eaeda34cc934ff53" kind="function"><name>HandleInput</name></member>
+    <member refid="classrepresentation_1_1Game_1a71a55fe103e2fdc3cec220d24bf95343" kind="function"><name>Update</name></member>
+    <member refid="classrepresentation_1_1Game_1aee4b5192fbdfea96b67872533080fac5" kind="function"><name>Render</name></member>
+    <member refid="classrepresentation_1_1Game_1a065d151fc9f30b6c732d4ebf10e19b7e" kind="function"><name>GetWindow</name></member>
+    <member refid="classrepresentation_1_1Game_1ab2257f0707b7c49d7c48ecf8c8fd1580" kind="function"><name>runGameLoop</name></member>
+    <member refid="classrepresentation_1_1Game_1abb2e64d484ca4e81e8f74505b5dfd2b9" kind="function"><name>playMenu</name></member>
+    <member refid="classrepresentation_1_1Game_1a99a4bb7b3e86e94fd35193ead50b9b15" kind="function"><name>playGame</name></member>
+    <member refid="classrepresentation_1_1Game_1ad8f5d32a839f06eaf5e6532a7b939415" kind="function"><name>loadFonts</name></member>
+    <member refid="classrepresentation_1_1Game_1ac8d745da320414774a6d06a6da05299e" kind="function"><name>createTexts</name></member>
+    <member refid="classrepresentation_1_1Game_1afdd28c211aa02574bb5ed16384f56c1b" kind="function"><name>calculateHighScore</name></member>
+    <member refid="classrepresentation_1_1Game_1aa34f2390947b803ad5e29c95cb69e791" kind="function"><name>drawBGTiles</name></member>
+    <member refid="classrepresentation_1_1Game_1aa5f23176af501fce8b510fbffc6fca9c" kind="function"><name>drawPlatforms</name></member>
+    <member refid="classrepresentation_1_1Game_1a0ded73c02cb88f6d0591050fc8cf487b" kind="function"><name>drawBonusses</name></member>
+    <member refid="classrepresentation_1_1Game_1ae754be8869dc1dd1336f81e256e67992" kind="function"><name>drawScore</name></member>
+    <member refid="classrepresentation_1_1Game_1a12fad4e83aee259670813a7673f51065" kind="function"><name>drawPlayer</name></member>
+    <member refid="classrepresentation_1_1Game_1aed0b085f771b532ae1dfa17289a6a523" kind="function"><name>setFrameRate</name></member>
+    <member refid="classrepresentation_1_1Game_1a46c53a159c1075e06f72efacfaa7da10" kind="function"><name>getFrameRate</name></member>
+    <member refid="classrepresentation_1_1Game_1adfc3b43a87a2ebb78d39daed0360606d" kind="function"><name>createSingleText</name></member>
+    <member refid="classrepresentation_1_1Game_1a6fcf39bf44601ac3bff978ea29428243" kind="function"><name>createSingleText</name></member>
+  </compound>
+  <compound refid="classlogic_1_1Jetpack" kind="class"><name>logic::Jetpack</name>
+    <member refid="classlogic_1_1Jetpack_1a103675805793a4d785852ae296cf5155" kind="function"><name>Jetpack</name></member>
+    <member refid="classlogic_1_1Jetpack_1aaa5d9c54a22813da7229bd99e0090f7f" kind="function"><name>~Jetpack</name></member>
+    <member refid="classlogic_1_1Jetpack_1a25b85c4916341ef364c5142c2b6e294c" kind="function"><name>Jetpack</name></member>
+    <member refid="classlogic_1_1Jetpack_1ab253288c94e02b18447eaf82ece63060" kind="function"><name>Jetpack</name></member>
+  </compound>
+  <compound refid="classrepresentation_1_1Jetpack__GR" kind="class"><name>representation::Jetpack_GR</name>
+    <member refid="classrepresentation_1_1Jetpack__GR_1a6ae5028d20f032b4a137278978a7eeca" kind="function"><name>Jetpack_GR</name></member>
+    <member refid="classrepresentation_1_1Jetpack__GR_1a5c0cac04c16d252b6f1bec6813687966" kind="function"><name>~Jetpack_GR</name></member>
+  </compound>
+  <compound refid="classLoadFileException" kind="class"><name>LoadFileException</name>
+    <member refid="classLoadFileException_1ae3df58efaec2f16b92d838375618b98e" kind="function"><name>LoadFileException</name></member>
+  </compound>
+  <compound refid="classlogic_1_1Observer" kind="class"><name>logic::Observer</name>
+    <member refid="classlogic_1_1Observer_1a697de16e32151a82b415bc2a9aa132b4" kind="variable"><name>mSubject</name></member>
+    <member refid="classlogic_1_1Observer_1a6c8e55f7a0cc16af2994520cbf6739d7" kind="function"><name>Observer</name></member>
+    <member refid="classlogic_1_1Observer_1a9ffb621699cd68a8e165297d145f593e" kind="function"><name>~Observer</name></member>
+    <member refid="classlogic_1_1Observer_1a91bdbdf67a9983d2dee5f46344131dc3" kind="function"><name>Observer</name></member>
+    <member refid="classlogic_1_1Observer_1abde36ace3e49511c155687a32dd765e1" kind="function"><name>update</name></member>
+    <member refid="classlogic_1_1Observer_1ad986dcdc61ec66e5a44252280153daad" kind="function"><name>registerSubject</name></member>
+  </compound>
+  <compound refid="classlogic_1_1Platform" kind="class"><name>logic::Platform</name>
+    <member refid="classlogic_1_1Platform_1aa1bf30b92f99cab81fe3b61868978dfe" kind="variable"><name>startingX</name></member>
+    <member refid="classlogic_1_1Platform_1a7cc503332440c6d91f5ded11ed84b8dc" kind="variable"><name>startingY</name></member>
+    <member refid="classlogic_1_1Platform_1a1f81b942e5e3849f11580106725277c8" kind="variable"><name>timesTouched</name></member>
+    <member refid="classlogic_1_1Platform_1a5e24eed117cfbc29eca54dabfe4909da" kind="function"><name>Platform</name></member>
+    <member refid="classlogic_1_1Platform_1a17681236a1e376cac1136ce7a5e5d167" kind="function"><name>~Platform</name></member>
+    <member refid="classlogic_1_1Platform_1a298c1eaf3ef77b12747c3a8d9d87cea0" kind="function"><name>Platform</name></member>
+    <member refid="classlogic_1_1Platform_1a8551b4454d623edb2f53ad1ae69b319c" kind="function"><name>Platform</name></member>
+    <member refid="classlogic_1_1Platform_1aa6cd1a0cccf86ab38472d0e788cc4ab3" kind="function"><name>move</name></member>
+    <member refid="classlogic_1_1Platform_1a0b9c3064b4f6af098215a1be82ca870b" kind="function"><name>changeDirection</name></member>
+    <member refid="classlogic_1_1Platform_1a3068bfc983aa98b0b415f4ddad424b06" kind="function"><name>isTouched</name></member>
+    <member refid="classlogic_1_1Platform_1a43271a1bd3cf21ef160d14d6886cb861" kind="function"><name>getTimesTouched</name></member>
+  </compound>
+  <compound refid="classrepresentation_1_1Platform__GR" kind="class"><name>representation::Platform_GR</name>
+    <member refid="classrepresentation_1_1Platform__GR_1abd4391b711d7a22947248620c3714260" kind="function"><name>Platform_GR</name></member>
+    <member refid="classrepresentation_1_1Platform__GR_1ad21319e39bab807639e5edbcea958399" kind="function"><name>~Platform_GR</name></member>
+  </compound>
+  <compound refid="classlogic_1_1Platform__Horizontal" kind="class"><name>logic::Platform_Horizontal</name>
+    <member refid="classlogic_1_1Platform__Horizontal_1ab570189d3ec04c37db0a1efd325a54f9" kind="variable"><name>unit</name></member>
+    <member refid="classlogic_1_1Platform__Horizontal_1a234b95a91c18b3cbb9512264e82e11b6" kind="variable"><name>moveRight</name></member>
+    <member refid="classlogic_1_1Platform__Horizontal_1a556ad6368fd8384f88d2a387309e0fde" kind="variable"><name>moveLeft</name></member>
+    <member refid="classlogic_1_1Platform__Horizontal_1a321652c9d268f4ae6d7d4aea0419e328" kind="function"><name>Platform_Horizontal</name></member>
+    <member refid="classlogic_1_1Platform__Horizontal_1ad089e04773943bcf4938b3f4cac38b8b" kind="function"><name>~Platform_Horizontal</name></member>
+    <member refid="classlogic_1_1Platform__Horizontal_1a539d3b837c2dbed4499cf9dea7972704" kind="function"><name>Platform_Horizontal</name></member>
+    <member refid="classlogic_1_1Platform__Horizontal_1a3aead40aad1c48688c3350f1bc13ae75" kind="function"><name>Platform_Horizontal</name></member>
+    <member refid="classlogic_1_1Platform__Horizontal_1ad15c0c05451f10b73aa84aca0b67fdae" kind="function"><name>move</name></member>
+    <member refid="classlogic_1_1Platform__Horizontal_1a869f8e9aa3fdc79639cdf6f343394a59" kind="function"><name>changeDirection</name></member>
+    <member refid="classlogic_1_1Platform__Horizontal_1a4b83d74e3833141c2e8c22aaf0c03de0" kind="function"><name>isTouched</name></member>
+  </compound>
+  <compound refid="classrepresentation_1_1Platform__Horizontal__GR" kind="class"><name>representation::Platform_Horizontal_GR</name>
+    <member refid="classrepresentation_1_1Platform__Horizontal__GR_1a9873299fa66da47f17b7da5534fd9a71" kind="function"><name>Platform_Horizontal_GR</name></member>
+    <member refid="classrepresentation_1_1Platform__Horizontal__GR_1ac6b6cc9131ea491d14900e78b51ea9c8" kind="function"><name>~Platform_Horizontal_GR</name></member>
+  </compound>
+  <compound refid="classlogic_1_1Platform__Static" kind="class"><name>logic::Platform_Static</name>
+    <member refid="classlogic_1_1Platform__Static_1a9113b3a17c6e1c761d739696c89a246c" kind="function"><name>Platform_Static</name></member>
+    <member refid="classlogic_1_1Platform__Static_1a7f29d6794b33f1376a2c01dddb4590e7" kind="function"><name>~Platform_Static</name></member>
+    <member refid="classlogic_1_1Platform__Static_1a8ca1631f3441970d6125c2b8b502e385" kind="function"><name>Platform_Static</name></member>
+    <member refid="classlogic_1_1Platform__Static_1ad28056db19cf3f2cd32a9e6c648e28ad" kind="function"><name>Platform_Static</name></member>
+    <member refid="classlogic_1_1Platform__Static_1a0f32530297c6df2c0d7a98d3dd75c53a" kind="function"><name>isTouched</name></member>
+  </compound>
+  <compound refid="classrepresentation_1_1Platform__Static__GR" kind="class"><name>representation::Platform_Static_GR</name>
+    <member refid="classrepresentation_1_1Platform__Static__GR_1a5c9f7fcd9a54372e1e382ad5c7915971" kind="function"><name>Platform_Static_GR</name></member>
+    <member refid="classrepresentation_1_1Platform__Static__GR_1a09088fc35381c6abdf46d50629638867" kind="function"><name>~Platform_Static_GR</name></member>
+  </compound>
+  <compound refid="classlogic_1_1Platform__Temporary" kind="class"><name>logic::Platform_Temporary</name>
+    <member refid="classlogic_1_1Platform__Temporary_1a9f7d8bc6918a31c32867aeae81db227c" kind="function"><name>Platform_Temporary</name></member>
+    <member refid="classlogic_1_1Platform__Temporary_1a4eab871f76e896ec2fd5c7eb6c146495" kind="function"><name>~Platform_Temporary</name></member>
+    <member refid="classlogic_1_1Platform__Temporary_1ade20b307ef9aa83d885e69afeb95361a" kind="function"><name>Platform_Temporary</name></member>
+    <member refid="classlogic_1_1Platform__Temporary_1abfd33c0b1ace30ca3f7b28debe5fad91" kind="function"><name>Platform_Temporary</name></member>
+    <member refid="classlogic_1_1Platform__Temporary_1ab3d693cc06ce653658357652dc09d527" kind="function"><name>isTouched</name></member>
+  </compound>
+  <compound refid="classrepresentation_1_1Platform__Temporary__GR" kind="class"><name>representation::Platform_Temporary_GR</name>
+    <member refid="classrepresentation_1_1Platform__Temporary__GR_1a769f773b365f706223c1dd33fca53f0f" kind="function"><name>Platform_Temporary_GR</name></member>
+    <member refid="classrepresentation_1_1Platform__Temporary__GR_1a262278c27cf763b57919e3d4620ba1d5" kind="function"><name>~Platform_Temporary_GR</name></member>
+  </compound>
+  <compound refid="classlogic_1_1Platform__Vertical" kind="class"><name>logic::Platform_Vertical</name>
+    <member refid="classlogic_1_1Platform__Vertical_1a518179fc5cdceda66c113fb19336502c" kind="variable"><name>unit</name></member>
+    <member refid="classlogic_1_1Platform__Vertical_1ae4628c79f42f0a670fcbe275800b74d8" kind="variable"><name>moveUp</name></member>
+    <member refid="classlogic_1_1Platform__Vertical_1ab80895b320f82136d925151d0187ad5c" kind="variable"><name>moveDown</name></member>
+    <member refid="classlogic_1_1Platform__Vertical_1a7d65e7ff626eab9cb4b80d61e7746a5a" kind="function"><name>Platform_Vertical</name></member>
+    <member refid="classlogic_1_1Platform__Vertical_1ac61d9ac22339b0002c72fe3aa5329bad" kind="function"><name>~Platform_Vertical</name></member>
+    <member refid="classlogic_1_1Platform__Vertical_1aa122332b1b463706c0a17d2fdc73dc73" kind="function"><name>Platform_Vertical</name></member>
+    <member refid="classlogic_1_1Platform__Vertical_1a09715217e6ba9294183069feab358a96" kind="function"><name>Platform_Vertical</name></member>
+    <member refid="classlogic_1_1Platform__Vertical_1a8bf2ee42c33d40562f174cd006c07eae" kind="function"><name>move</name></member>
+    <member refid="classlogic_1_1Platform__Vertical_1a2e6a71039e48e4df3f0e449c5bb3651e" kind="function"><name>changeDirection</name></member>
+    <member refid="classlogic_1_1Platform__Vertical_1a69bc246d80039977248e1b9dcf2cfc94" kind="function"><name>isTouched</name></member>
+  </compound>
+  <compound refid="classrepresentation_1_1Platform__Vertical__GR" kind="class"><name>representation::Platform_Vertical_GR</name>
+    <member refid="classrepresentation_1_1Platform__Vertical__GR_1a52ce74c0465270dd5eae3c4c0713e5db" kind="function"><name>Platform_Vertical_GR</name></member>
+    <member refid="classrepresentation_1_1Platform__Vertical__GR_1a70eff61cdf650a24315b04492611f620" kind="function"><name>~Platform_Vertical_GR</name></member>
+  </compound>
+  <compound refid="classlogic_1_1Player" kind="class"><name>logic::Player</name>
+    <member refid="classlogic_1_1Player_1a87d168ccf7b714d2d2442937aacb627f" kind="variable"><name>gravity</name></member>
+    <member refid="classlogic_1_1Player_1a89dc67b85792df33d17a4785988709f6" kind="variable"><name>jumpVelocity</name></member>
+    <member refid="classlogic_1_1Player_1a992273ee348db04229f4304d7aae6d5b" kind="function"><name>setJumpVelocity</name></member>
+    <member refid="classlogic_1_1Player_1a02291c72693f8a36aa3e7fb5dbb8ea16" kind="function"><name>getJumpVelocity</name></member>
+    <member refid="classlogic_1_1Player_1a54bdacf937a367629c3ca10acda369d9" kind="function"><name>Player</name></member>
+    <member refid="classlogic_1_1Player_1ae72f8b653617b6ed4b15847c137ea4f3" kind="function"><name>~Player</name></member>
+    <member refid="classlogic_1_1Player_1a21d41f4dc79003bf020fc8d9d504a35b" kind="function"><name>Player</name></member>
+    <member refid="classlogic_1_1Player_1accdcf9a039c5af47a96ebcee13ffbb66" kind="function"><name>Player</name></member>
+    <member refid="classlogic_1_1Player_1abad88e5963199f783db752446965be47" kind="function"><name>moveLeft</name></member>
+    <member refid="classlogic_1_1Player_1a570ba657c77f615ed22ee8aea9819e72" kind="function"><name>moveRight</name></member>
+    <member refid="classlogic_1_1Player_1a204be6b9cc516367919e8f88b5606650" kind="function"><name>jump</name></member>
+    <member refid="classlogic_1_1Player_1ae2452b58e44d6246fb24ca3cb128b61a" kind="function"><name>applyGravity</name></member>
+    <member refid="classlogic_1_1Player_1a4a613cbbe8aa9a27c53c3481c6ae6411" kind="function"><name>moveVertically</name></member>
+  </compound>
+  <compound refid="classrepresentation_1_1Player__GR" kind="class"><name>representation::Player_GR</name>
+    <member refid="classrepresentation_1_1Player__GR_1a4a26cbe2ee174201d9e3816aedd946f8" kind="function"><name>Player_GR</name></member>
+    <member refid="classrepresentation_1_1Player__GR_1aec94105f5c67e09c626d9376cae322de" kind="function"><name>~Player_GR</name></member>
+  </compound>
+  <compound refid="classlogic_1_1utility_1_1Random" kind="class"><name>logic::utility::Random</name>
+    <member refid="classlogic_1_1utility_1_1Random_1a45dab7770e1bba994c1b484650ce0324" kind="variable"><name>rd</name></member>
+    <member refid="classlogic_1_1utility_1_1Random_1aaea2ece5dd757c4e1754cad185df217d" kind="variable"><name>randomEngine</name></member>
+    <member refid="classlogic_1_1utility_1_1Random_1a0d3f6df8310f82299969dde1923c2047" kind="function"><name>Random</name></member>
+    <member refid="classlogic_1_1utility_1_1Random_1af055e4e36bbb24e79afa4dece6346f2a" kind="function"><name>~Random</name></member>
+    <member refid="classlogic_1_1utility_1_1Random_1a23a95f1aee034007ea7a0492d6784d32" kind="function"><name>Random</name></member>
+    <member refid="classlogic_1_1utility_1_1Random_1abfd1b492d3308ba8722f311ef6ba0276" kind="function"><name>Random</name></member>
+    <member refid="classlogic_1_1utility_1_1Random_1aaf952742b5ac0e187e8c235ed93e040b" kind="function"><name>operator=</name></member>
+    <member refid="classlogic_1_1utility_1_1Random_1acaf7db45d3317166adaedb25bd17c0ad" kind="function"><name>operator=</name></member>
+    <member refid="classlogic_1_1utility_1_1Random_1aa216eb86e1317d2da2d595fd1828e60f" kind="function"><name>uniformIntDistribution</name></member>
+    <member refid="classlogic_1_1utility_1_1Random_1a5978e1a3732969120776209989a7c1b4" kind="function"><name>uniformRealDistribution</name></member>
+    <member refid="classlogic_1_1utility_1_1Random_1a018512eae8e64d73ec0d4f619a8bf957" kind="function"><name>bernoulliDistribution</name></member>
+    <member refid="classlogic_1_1utility_1_1Random_1a0bacc081b1f2e71f0acdab2588e55773" kind="function"><name>binomialDistribution</name></member>
+    <member refid="classlogic_1_1utility_1_1Random_1aa2895b8c51cde0aff1a7ff6d662a40e7" kind="function"><name>negativeBinomialDistribution</name></member>
+    <member refid="classlogic_1_1utility_1_1Random_1a4f9fcb845132c7b6de7bfe3377fb1e50" kind="function"><name>geometricDistribution</name></member>
+    <member refid="classlogic_1_1utility_1_1Random_1af7a10ae8bb5392a7829b15214be86bb3" kind="function"><name>poissonDistribution</name></member>
+    <member refid="classlogic_1_1utility_1_1Random_1ad11ebd7d28b38a0132a7f35cd98174ad" kind="function"><name>exponentialDistribution</name></member>
+    <member refid="classlogic_1_1utility_1_1Random_1af087cb4141a0a4b2d99b40cb86a01488" kind="function"><name>gammaDistribution</name></member>
+    <member refid="classlogic_1_1utility_1_1Random_1ae1173912d52a94ce53d1fdd1138226e2" kind="function"><name>weibullDistribution</name></member>
+    <member refid="classlogic_1_1utility_1_1Random_1a87fdfbbb51c336292ba99bdd84e71119" kind="function"><name>extremeValueDistribution</name></member>
+    <member refid="classlogic_1_1utility_1_1Random_1a6113ffeeb55b8d1a7c6ec9525befc22a" kind="function"><name>normalDistribution</name></member>
+    <member refid="classlogic_1_1utility_1_1Random_1ab7e0667dcd71e4478e15a8be43c4c25d" kind="function"><name>lognormalDistribution</name></member>
+    <member refid="classlogic_1_1utility_1_1Random_1aa5477e4c594073bc7300069083ad38dd" kind="function"><name>cauchyDistribution</name></member>
+    <member refid="classlogic_1_1utility_1_1Random_1a36104e28e05a70f17eded56c35d302ab" kind="function"><name>discreteDistribution</name></member>
+    <member refid="classlogic_1_1utility_1_1Random_1a1d5a2a5064daa3c314265af830268bb9" kind="function"><name>piecewiseConstantDistribution</name></member>
+    <member refid="classlogic_1_1utility_1_1Random_1aaae5eff95d19ebb7b660c584ce9c3b54" kind="function"><name>piecewiseLineairDistribution</name></member>
+    <member refid="classlogic_1_1utility_1_1Random_1a82b333aaf643e246aa4d4a2cfe290f9a" kind="function"><name>Instance</name></member>
+  </compound>
+  <compound refid="classlogic_1_1Score" kind="class"><name>logic::Score</name>
+    <member refid="classlogic_1_1Score_1a1133f5f939adb001148f47e86041cb39" kind="variable"><name>score</name></member>
+    <member refid="classlogic_1_1Score_1aad30740e7fc824535a95b8e100ed177b" kind="variable"><name>mEntityModel</name></member>
+    <member refid="classlogic_1_1Score_1a07b6ac91ebef7416e8544d80295d4b22" kind="function"><name>Score</name></member>
+    <member refid="classlogic_1_1Score_1a5f4b6a1ca3971cdc0fb516c5ec957016" kind="function"><name>~Score</name></member>
+    <member refid="classlogic_1_1Score_1a4c970d6c1a2fbb330f877179bdf77e4b" kind="function"><name>Score</name></member>
+    <member refid="classlogic_1_1Score_1a33f2bad5cc4c080f8e7c4382570609be" kind="function"><name>update</name></member>
+    <member refid="classlogic_1_1Score_1a5f385cc6f45f9d1f65e89fc5e1351793" kind="function"><name>setScore</name></member>
+    <member refid="classlogic_1_1Score_1a8a102d1a10e853bff7e20620efa7c8bc" kind="function"><name>getScore</name></member>
+  </compound>
+  <compound refid="classlogic_1_1Spring" kind="class"><name>logic::Spring</name>
+    <member refid="classlogic_1_1Spring_1a86f71f53ea48d41eb40f2e6d1e610dd2" kind="function"><name>Spring</name></member>
+    <member refid="classlogic_1_1Spring_1a55974048d7a61049de99b92d7c1948dc" kind="function"><name>~Spring</name></member>
+    <member refid="classlogic_1_1Spring_1ab005cea15b1d0ea2c0ba73791826b11e" kind="function"><name>Spring</name></member>
+    <member refid="classlogic_1_1Spring_1a4e5eb899837de96cb058409a6aaaa9d1" kind="function"><name>Spring</name></member>
+  </compound>
+  <compound refid="classrepresentation_1_1Spring__GR" kind="class"><name>representation::Spring_GR</name>
+    <member refid="classrepresentation_1_1Spring__GR_1a1a26add30b9573e04e23a926e90ade77" kind="function"><name>Spring_GR</name></member>
+    <member refid="classrepresentation_1_1Spring__GR_1a1b49f4d6554981b0763cd74d7da37b2f" kind="function"><name>~Spring_GR</name></member>
+  </compound>
+  <compound refid="classlogic_1_1utility_1_1Stopwatch" kind="class"><name>logic::utility::Stopwatch</name>
+    <member refid="classlogic_1_1utility_1_1Stopwatch_1aa30aa3bc596cc945e8761ce7387c0129" kind="variable"><name>mStartTime</name></member>
+    <member refid="classlogic_1_1utility_1_1Stopwatch_1a80b9ed34ef8ab6b7f6c141ad3046b4ad" kind="variable"><name>mDeltaTime</name></member>
+    <member refid="classlogic_1_1utility_1_1Stopwatch_1a483d20545d557f2cfaf1790a572ac231" kind="function"><name>Stopwatch</name></member>
+    <member refid="classlogic_1_1utility_1_1Stopwatch_1a0ec0819aeca476a8c6821c0629f29ec9" kind="function"><name>~Stopwatch</name></member>
+    <member refid="classlogic_1_1utility_1_1Stopwatch_1a4b12cc484acced949f3a0174451e08a9" kind="function"><name>Stopwatch</name></member>
+    <member refid="classlogic_1_1utility_1_1Stopwatch_1abbbf9a6e92baf4551bd64203c240aa1c" kind="function"><name>Stopwatch</name></member>
+    <member refid="classlogic_1_1utility_1_1Stopwatch_1aea255a4d1e02fed712afbb2a97161db7" kind="function"><name>operator=</name></member>
+    <member refid="classlogic_1_1utility_1_1Stopwatch_1a3acb9b8099dfc9eb6b0612834258ed1f" kind="function"><name>operator=</name></member>
+    <member refid="classlogic_1_1utility_1_1Stopwatch_1ac297718829acfbd89ab809952708111e" kind="function"><name>Reset</name></member>
+    <member refid="classlogic_1_1utility_1_1Stopwatch_1a07974f366fb33668a10a24d12d3beb67" kind="function"><name>getDeltaTime</name></member>
+    <member refid="classlogic_1_1utility_1_1Stopwatch_1a5a119ec7cac51cccf73a2d0b3c1a0808" kind="function"><name>tick</name></member>
+    <member refid="classlogic_1_1utility_1_1Stopwatch_1a2c9371353a6e638cbc80011d50437638" kind="function"><name>Instance</name></member>
+  </compound>
+  <compound refid="classlogic_1_1Subject" kind="class"><name>logic::Subject</name>
+    <member refid="classlogic_1_1Subject_1a2c82c974d7838157824bdcecc4d0e59b" kind="variable"><name>observers</name></member>
+    <member refid="classlogic_1_1Subject_1ae1277f400422f50b425c204b11dd8995" kind="function"><name>Subject</name></member>
+    <member refid="classlogic_1_1Subject_1ae4238075ca667706bba792bfb96ee6c0" kind="function"><name>~Subject</name></member>
+    <member refid="classlogic_1_1Subject_1a375e972ed74af83f46a8debd49f2e3e0" kind="function"><name>registerObserver</name></member>
+    <member refid="classlogic_1_1Subject_1a5a3db9e4c842eb2828c5586be9f4cf81" kind="function"><name>removeObserver</name></member>
+    <member refid="classlogic_1_1Subject_1a33567537c69863eaff2279f398f80ab4" kind="function"><name>notifyObservers</name></member>
+    <member refid="classlogic_1_1Subject_1a202f1cd7a6af78750886d0b60d388450" kind="function"><name>getObservers</name></member>
+  </compound>
+  <compound refid="classrepresentation_1_1Window" kind="class"><name>representation::Window</name>
+    <member refid="classrepresentation_1_1Window_1aa8d17308901540473a56b858fb155cdc" kind="variable"><name>m_window</name></member>
+    <member refid="classrepresentation_1_1Window_1a138ee61192c3cde33d904bf5c4a2da44" kind="variable"><name>m_windowSize</name></member>
+    <member refid="classrepresentation_1_1Window_1a858906125a4ffba93533e4fd53c48cc2" kind="variable"><name>m_windowTitle</name></member>
+    <member refid="classrepresentation_1_1Window_1ac4b6f7082fd352b5084d85a51d95dfb6" kind="variable"><name>m_isDone</name></member>
+    <member refid="classrepresentation_1_1Window_1ae0c8a645063122b0971015df1f4ddb88" kind="function"><name>Instance</name></member>
+    <member refid="classrepresentation_1_1Window_1a1430952ed839ef66bc4ca43587062863" kind="function"><name>Window</name></member>
+    <member refid="classrepresentation_1_1Window_1a3a87b7b66771bfbe7cbfd0066c1cf6cd" kind="function"><name>Window</name></member>
+    <member refid="classrepresentation_1_1Window_1ac25482f2b0b50ffff2562c93d733273b" kind="function"><name>operator=</name></member>
+    <member refid="classrepresentation_1_1Window_1ab6ee4caff0b62fecdfd829c451966ff9" kind="function"><name>operator=</name></member>
+    <member refid="classrepresentation_1_1Window_1ac7c17b23d548b02a0a179318107bb9d7" kind="function"><name>Window</name></member>
+    <member refid="classrepresentation_1_1Window_1a2ae147b1f6765e084d4477c55fdd256f" kind="function"><name>Window</name></member>
+    <member refid="classrepresentation_1_1Window_1a2f04ea949b929c1fe3a4a63ceab98349" kind="function"><name>~Window</name></member>
+    <member refid="classrepresentation_1_1Window_1afdb4b6b0be4742be7a4673ae106e6dc9" kind="function"><name>BeginDraw</name></member>
+    <member refid="classrepresentation_1_1Window_1a8aa7f03a4e8d51f856ada4b1e8afc0d2" kind="function"><name>EndDraw</name></member>
+    <member refid="classrepresentation_1_1Window_1a98480615aa29a151b1bf8c03bfd4cc0e" kind="function"><name>Update</name></member>
+    <member refid="classrepresentation_1_1Window_1a8c5ae5a2c1c7370d6a6200cff5ebd32c" kind="function"><name>IsDone</name></member>
+    <member refid="classrepresentation_1_1Window_1af425ee3f206d9ce21c9bb2d06910079a" kind="function"><name>GetWindowSize</name></member>
+    <member refid="classrepresentation_1_1Window_1a91cb009a727c54df87713ec7bda3ecb1" kind="function"><name>Draw</name></member>
+    <member refid="classrepresentation_1_1Window_1a98906693a2a1428e03c2631ca1bdad2f" kind="function"><name>Setup</name></member>
+    <member refid="classrepresentation_1_1Window_1ae3653aea57010440996e66f14e1e2ed5" kind="function"><name>Destroy</name></member>
+    <member refid="classrepresentation_1_1Window_1a5ec030005835704e54b5e3ff1ca38127" kind="function"><name>Create</name></member>
+  </compound>
+  <compound refid="classlogic_1_1World" kind="class"><name>logic::World</name>
+    <member refid="classlogic_1_1World_1a65e730a632d1fddfd28ec786c200f209" kind="variable"><name>score</name></member>
+    <member refid="classlogic_1_1World_1aacd05db007092a3553c3e81b26fbbf19" kind="variable"><name>doodle</name></member>
+    <member refid="classlogic_1_1World_1add6aee875789135e50f193d4ee7ae6d6" kind="variable"><name>bgTiles</name></member>
+    <member refid="classlogic_1_1World_1aec68a0d631018e42eb791752e72a90ae" kind="variable"><name>platforms</name></member>
+    <member refid="classlogic_1_1World_1ae654a3ca9427466f96233668831fa0a7" kind="variable"><name>bonuses</name></member>
+    <member refid="classlogic_1_1World_1a6248604ea8514e30b66f55885fa2d404" kind="variable"><name>Factory</name></member>
+    <member refid="classlogic_1_1World_1a41c1a9644abbc0a28cc98790a6488e06" kind="variable"><name>leftBound</name></member>
+    <member refid="classlogic_1_1World_1af85bff3fd6b94b057466bb998d433a9e" kind="variable"><name>rightBound</name></member>
+    <member refid="classlogic_1_1World_1ae334607d9e1c6a2588c2dca740d94fcd" kind="variable"><name>lowerBound</name></member>
+    <member refid="classlogic_1_1World_1a1d4b213e5bc1aae994ec01c291f8b8c2" kind="variable"><name>shiftBorder</name></member>
+    <member refid="classlogic_1_1World_1a57f6aa6e902c93df69633df518a6b538" kind="variable"><name>formerPlatformPosY</name></member>
+    <member refid="classlogic_1_1World_1a171aedd38effbc3927bb70c1426fd39d" kind="variable"><name>formerPlatformPosX</name></member>
+    <member refid="classlogic_1_1World_1a02fd267895299bc14e9a0e11ab158b87" kind="variable"><name>wasBonusGenerated</name></member>
+    <member refid="classlogic_1_1World_1a27b5e0401504046b4557ae3f8be575e0" kind="variable"><name>gameOver</name></member>
+    <member refid="classlogic_1_1World_1abefc4e742ad8f0f762c72d4078fc67fa" kind="variable"><name>percentages</name></member>
+    <member refid="classlogic_1_1World_1a3b82cea504751ed57e2abd11d5b0c1a5" kind="variable"><name>playerWidth</name></member>
+    <member refid="classlogic_1_1World_1a1cabdc20a0351ec8ef5b7e493dedc9c9" kind="variable"><name>playerHeight</name></member>
+    <member refid="classlogic_1_1World_1a7d74daa829e2509446bebb55296575f3" kind="variable"><name>platformWidth</name></member>
+    <member refid="classlogic_1_1World_1a00db8942e64fc6d7840de9a079ab3caa" kind="variable"><name>platformHeight</name></member>
+    <member refid="classlogic_1_1World_1a85436a90fd3acd2c6baa2991630a350e" kind="variable"><name>springWidth</name></member>
+    <member refid="classlogic_1_1World_1a7ef5397cea8f6c428d78a5124f983944" kind="variable"><name>springHeight</name></member>
+    <member refid="classlogic_1_1World_1a212e04cfd5aaab1998dcd45948186655" kind="variable"><name>jetpackWidth</name></member>
+    <member refid="classlogic_1_1World_1ad3d5c0e97178e852910d29e5d4dcd263" kind="variable"><name>jetpackHeight</name></member>
+    <member refid="classlogic_1_1World_1aef23435b7d20cb7b1f37252aaf138552" kind="variable"><name>bgTileSideLength</name></member>
+    <member refid="classlogic_1_1World_1af073045a6e14a9cfe6831eda73f70058" kind="variable"><name>platformGen_startingChance</name></member>
+    <member refid="classlogic_1_1World_1aba977b9da782a09ccea8671df376d168" kind="variable"><name>platformGen_interval</name></member>
+    <member refid="classlogic_1_1World_1ad4d6b4741111b704ea3397872e07caf9" kind="variable"><name>bonusGen_startingChance</name></member>
+    <member refid="classlogic_1_1World_1a2d7bac9a5d0a35fed3f6597f5cf08f46" kind="variable"><name>bonusGen_interval</name></member>
+    <member refid="classlogic_1_1World_1ab854d1dd1dfd1731561bc6f4aab59c3f" kind="variable"><name>minDistanceBetweenPlatforms</name></member>
+    <member refid="classlogic_1_1World_1a6584e6a004b71fa1c2a7177eb932d0c3" kind="function"><name>World</name></member>
+    <member refid="classlogic_1_1World_1a194fbdf6452d58fba672e87fbf074338" kind="function"><name>World</name></member>
+    <member refid="classlogic_1_1World_1a4212a52dd94c62ee8ec3e4366d165687" kind="function"><name>~World</name></member>
+    <member refid="classlogic_1_1World_1aa7e8c59517e769fa5babe35e15fc3bab" kind="function"><name>receiveInput</name></member>
+    <member refid="classlogic_1_1World_1a69b23e3a63b4a9c8a33df64c59eba7da" kind="function"><name>checkForCollision</name></member>
+    <member refid="classlogic_1_1World_1a00671bb872ea3d1f72e6a17edba9968a" kind="function"><name>checkForCollisionBetweenPlatforms</name></member>
+    <member refid="classlogic_1_1World_1a68f41a7e6daa31354d4eb9b7f5b29b6c" kind="function"><name>checkForUndetectedCollision</name></member>
+    <member refid="classlogic_1_1World_1a75ff1124f0ba857741a7663a1d37c6a1" kind="function"><name>createStartEntities</name></member>
+    <member refid="classlogic_1_1World_1a616b3601d68abd56cd7c7d2bcb77c70a" kind="function"><name>createEntities</name></member>
+    <member refid="classlogic_1_1World_1a8c069541cc88b46fd9849bf2d7f4008c" kind="function"><name>update</name></member>
+    <member refid="classlogic_1_1World_1ae9ccbc8551ad41e2a80fab0fa4262fbc" kind="function"><name>setupPercentages</name></member>
+    <member refid="classlogic_1_1World_1a30dda4da6312d08b8cd8828b69b9d17d" kind="function"><name>createStartingBGTiles</name></member>
+    <member refid="classlogic_1_1World_1ab42ba12c3860b44f232b3c47c7ce48f2" kind="function"><name>deleteOutOfViewPlatforms</name></member>
+    <member refid="classlogic_1_1World_1a45d253a6ac2e7ac2e4efee2b121948cd" kind="function"><name>deleteOutOfViewBonusses</name></member>
+    <member refid="classlogic_1_1World_1aa57efbce318e58249d86a715714531ee" kind="function"><name>recycleOutOfViewBGTiles</name></member>
+    <member refid="classlogic_1_1World_1a9b6ab159eca0afc534d0d78d34d841d4" kind="function"><name>choosePlatformType</name></member>
+    <member refid="classlogic_1_1World_1ac6101ff29a6ab76c6fe7cb38e39889c3" kind="function"><name>chooseBonusType</name></member>
+    <member refid="classlogic_1_1World_1afead1e149190b760d32ae7255fe043f6" kind="function"><name>calculatePlatformXPos</name></member>
+    <member refid="classlogic_1_1World_1ae80d95443f7aad388417027932303f69" kind="function"><name>getLineBetweenPoints</name></member>
+  </compound>
+  <compound refid="namespacelogic" kind="namespace"><name>logic</name>
+  </compound>
+  <compound refid="namespacelogic_1_1utility" kind="namespace"><name>logic::utility</name>
+  </compound>
+  <compound refid="namespacerepresentation" kind="namespace"><name>representation</name>
+  </compound>
+  <compound refid="README_8md" kind="file"><name>README.md</name>
+  </compound>
+  <compound refid="BGTile__GR_8cpp" kind="file"><name>BGTile_GR.cpp</name>
+  </compound>
+  <compound refid="BGTile__GR_8h" kind="file"><name>BGTile_GR.h</name>
+  </compound>
+  <compound refid="Bonus__GR_8cpp" kind="file"><name>Bonus_GR.cpp</name>
+  </compound>
+  <compound refid="Bonus__GR_8h" kind="file"><name>Bonus_GR.h</name>
+  </compound>
+  <compound refid="ConcreteFactory_8cpp" kind="file"><name>ConcreteFactory.cpp</name>
+  </compound>
+  <compound refid="ConcreteFactory_8h" kind="file"><name>ConcreteFactory.h</name>
+  </compound>
+  <compound refid="EntityView_8cpp" kind="file"><name>EntityView.cpp</name>
+  </compound>
+  <compound refid="EntityView_8h" kind="file"><name>EntityView.h</name>
+  </compound>
+  <compound refid="Game_8cpp" kind="file"><name>Game.cpp</name>
+  </compound>
+  <compound refid="Game_8h" kind="file"><name>Game.h</name>
+  </compound>
+  <compound refid="Jetpack__GR_8cpp" kind="file"><name>Jetpack_GR.cpp</name>
+  </compound>
+  <compound refid="Jetpack__GR_8h" kind="file"><name>Jetpack_GR.h</name>
+  </compound>
+  <compound refid="Platform__GR_8cpp" kind="file"><name>Platform_GR.cpp</name>
+  </compound>
+  <compound refid="Platform__GR_8h" kind="file"><name>Platform_GR.h</name>
+  </compound>
+  <compound refid="Platform__Horizontal__GR_8cpp" kind="file"><name>Platform_Horizontal_GR.cpp</name>
+  </compound>
+  <compound refid="Platform__Horizontal__GR_8h" kind="file"><name>Platform_Horizontal_GR.h</name>
+  </compound>
+  <compound refid="Platform__Static__GR_8cpp" kind="file"><name>Platform_Static_GR.cpp</name>
+  </compound>
+  <compound refid="Platform__Static__GR_8h" kind="file"><name>Platform_Static_GR.h</name>
+  </compound>
+  <compound refid="Platform__Temporary__GR_8cpp" kind="file"><name>Platform_Temporary_GR.cpp</name>
+  </compound>
+  <compound refid="Platform__Temporary__GR_8h" kind="file"><name>Platform_Temporary_GR.h</name>
+  </compound>
+  <compound refid="Platform__Vertical__GR_8cpp" kind="file"><name>Platform_Vertical_GR.cpp</name>
+  </compound>
+  <compound refid="Platform__Vertical__GR_8h" kind="file"><name>Platform_Vertical_GR.h</name>
+  </compound>
+  <compound refid="Player__GR_8cpp" kind="file"><name>Player_GR.cpp</name>
+  </compound>
+  <compound refid="Player__GR_8h" kind="file"><name>Player_GR.h</name>
+  </compound>
+  <compound refid="Spring__GR_8cpp" kind="file"><name>Spring_GR.cpp</name>
+  </compound>
+  <compound refid="Spring__GR_8h" kind="file"><name>Spring_GR.h</name>
+  </compound>
+  <compound refid="Window_8cpp" kind="file"><name>Window.cpp</name>
+  </compound>
+  <compound refid="Window_8h" kind="file"><name>Window.h</name>
+  </compound>
+  <compound refid="LoadFileException_8cpp" kind="file"><name>LoadFileException.cpp</name>
+  </compound>
+  <compound refid="LoadFileException_8h" kind="file"><name>LoadFileException.h</name>
+  </compound>
+  <compound refid="AbstractFactory_8cpp" kind="file"><name>AbstractFactory.cpp</name>
+  </compound>
+  <compound refid="AbstractFactory_8h" kind="file"><name>AbstractFactory.h</name>
+  </compound>
+  <compound refid="BGTile_8cpp" kind="file"><name>BGTile.cpp</name>
+  </compound>
+  <compound refid="BGTile_8h" kind="file"><name>BGTile.h</name>
+  </compound>
+  <compound refid="Bonus_8cpp" kind="file"><name>Bonus.cpp</name>
+  </compound>
+  <compound refid="Bonus_8h" kind="file"><name>Bonus.h</name>
+  </compound>
+  <compound refid="Camera_8cpp" kind="file"><name>Camera.cpp</name>
+  </compound>
+  <compound refid="Camera_8h" kind="file"><name>Camera.h</name>
+  </compound>
+  <compound refid="EntityModel_8cpp" kind="file"><name>EntityModel.cpp</name>
+  </compound>
+  <compound refid="EntityModel_8h" kind="file"><name>EntityModel.h</name>
+  </compound>
+  <compound refid="Jetpack_8cpp" kind="file"><name>Jetpack.cpp</name>
+  </compound>
+  <compound refid="Jetpack_8h" kind="file"><name>Jetpack.h</name>
+  </compound>
+  <compound refid="Observer_8cpp" kind="file"><name>Observer.cpp</name>
+  </compound>
+  <compound refid="Observer_8h" kind="file"><name>Observer.h</name>
+  </compound>
+  <compound refid="Platform_8cpp" kind="file"><name>Platform.cpp</name>
+  </compound>
+  <compound refid="Platform_8h" kind="file"><name>Platform.h</name>
+  </compound>
+  <compound refid="Platform__Horizontal_8cpp" kind="file"><name>Platform_Horizontal.cpp</name>
+  </compound>
+  <compound refid="Platform__Horizontal_8h" kind="file"><name>Platform_Horizontal.h</name>
+  </compound>
+  <compound refid="Platform__Static_8cpp" kind="file"><name>Platform_Static.cpp</name>
+  </compound>
+  <compound refid="Platform__Static_8h" kind="file"><name>Platform_Static.h</name>
+  </compound>
+  <compound refid="Platform__Temporary_8cpp" kind="file"><name>Platform_Temporary.cpp</name>
+  </compound>
+  <compound refid="Platform__Temporary_8h" kind="file"><name>Platform_Temporary.h</name>
+  </compound>
+  <compound refid="Platform__Vertical_8cpp" kind="file"><name>Platform_Vertical.cpp</name>
+  </compound>
+  <compound refid="Platform__Vertical_8h" kind="file"><name>Platform_Vertical.h</name>
+  </compound>
+  <compound refid="Player_8cpp" kind="file"><name>Player.cpp</name>
+  </compound>
+  <compound refid="Player_8h" kind="file"><name>Player.h</name>
+  </compound>
+  <compound refid="Random_8cpp" kind="file"><name>Random.cpp</name>
+  </compound>
+  <compound refid="Random_8h" kind="file"><name>Random.h</name>
+  </compound>
+  <compound refid="Score_8cpp" kind="file"><name>Score.cpp</name>
+  </compound>
+  <compound refid="Score_8h" kind="file"><name>Score.h</name>
+  </compound>
+  <compound refid="Spring_8cpp" kind="file"><name>Spring.cpp</name>
+  </compound>
+  <compound refid="Spring_8h" kind="file"><name>Spring.h</name>
+  </compound>
+  <compound refid="Stopwatch_8cpp" kind="file"><name>Stopwatch.cpp</name>
+  </compound>
+  <compound refid="Stopwatch_8h" kind="file"><name>Stopwatch.h</name>
+  </compound>
+  <compound refid="Subject_8cpp" kind="file"><name>Subject.cpp</name>
+  </compound>
+  <compound refid="Subject_8h" kind="file"><name>Subject.h</name>
+  </compound>
+  <compound refid="World_8cpp" kind="file"><name>World.cpp</name>
+  </compound>
+  <compound refid="World_8h" kind="file"><name>World.h</name>
+  </compound>
+  <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="main_8cpp_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="dir_2fb4fe6e5858512e6c8ae1a89e960497" kind="dir"><name>src/game_representation</name>
+  </compound>
+  <compound refid="dir_420a9ccd9b8bf9ead4442c9154532e46" kind="dir"><name>src/logic_library</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+  <compound refid="indexpage" kind="page"><name>index</name>
+  </compound>
+</doxygenindex>

@@ -1,0 +1,318 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="Observer_8h" kind="file" language="C++">
+    <compoundname>Observer.h</compoundname>
+    <includes refid="Subject_8h" local="yes">Subject.h</includes>
+    <includedby refid="EntityView_8h" local="yes">src/game_representation/EntityView.h</includedby>
+    <includedby refid="AbstractFactory_8h" local="yes">src/logic_library/AbstractFactory.h</includedby>
+    <includedby refid="Score_8h" local="yes">src/logic_library/Score.h</includedby>
+    <includedby refid="Observer_8cpp" local="yes">src/logic_library/Observer.cpp</includedby>
+    <includedby refid="Subject_8cpp" local="yes">src/logic_library/Subject.cpp</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>string</label>
+      </node>
+      <node id="2">
+        <label>Subject.h</label>
+        <link refid="Subject_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/logic_library/Observer.h</label>
+        <link refid="Observer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>vector</label>
+      </node>
+      <node id="3">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="29">
+        <label>src/logic_library/AbstractFactory.h</label>
+        <link refid="AbstractFactory_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>src/game_representation/Bonus_GR.cpp</label>
+        <link refid="Bonus__GR_8cpp_source"/>
+      </node>
+      <node id="32">
+        <label>src/logic_library/AbstractFactory.cpp</label>
+        <link refid="AbstractFactory_8cpp_source"/>
+      </node>
+      <node id="8">
+        <label>src/game_representation/Game.cpp</label>
+        <link refid="Game_8cpp_source"/>
+      </node>
+      <node id="35">
+        <label>src/logic_library/Observer.cpp</label>
+        <link refid="Observer_8cpp_source"/>
+      </node>
+      <node id="22">
+        <label>src/game_representation/Platform_Temporary_GR.cpp</label>
+        <link refid="Platform__Temporary__GR_8cpp_source"/>
+      </node>
+      <node id="12">
+        <label>src/game_representation/Jetpack_GR.h</label>
+        <link refid="Jetpack__GR_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>src/logic_library/Subject.cpp</label>
+        <link refid="Subject_8cpp_source"/>
+      </node>
+      <node id="15">
+        <label>src/game_representation/Spring_GR.cpp</label>
+        <link refid="Spring__GR_8cpp_source"/>
+      </node>
+      <node id="16">
+        <label>src/game_representation/Platform_GR.h</label>
+        <link refid="Platform__GR_8h_source"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>src/game_representation/Platform_Static_GR.h</label>
+        <link refid="Platform__Static__GR_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>src/logic_library/Score.cpp</label>
+        <link refid="Score_8cpp_source"/>
+      </node>
+      <node id="1">
+        <label>src/logic_library/Observer.h</label>
+        <link refid="Observer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>src/game_representation/BGTile_GR.h</label>
+        <link refid="BGTile__GR_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>src/game_representation/Bonus_GR.h</label>
+        <link refid="Bonus__GR_8h_source"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>src/logic_library/Score.h</label>
+        <link refid="Score_8h_source"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>src/game_representation/Platform_Vertical_GR.cpp</label>
+        <link refid="Platform__Vertical__GR_8cpp_source"/>
+      </node>
+      <node id="23">
+        <label>src/game_representation/Platform_Vertical_GR.h</label>
+        <link refid="Platform__Vertical__GR_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>src/logic_library/World.h</label>
+        <link refid="World_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>src/game_representation/Spring_GR.h</label>
+        <link refid="Spring__GR_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp_source"/>
+      </node>
+      <node id="31">
+        <label>src/logic_library/World.cpp</label>
+        <link refid="World_8cpp_source"/>
+      </node>
+      <node id="26">
+        <label>src/game_representation/Player_GR.h</label>
+        <link refid="Player__GR_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>src/game_representation/Platform_Horizontal_GR.h</label>
+        <link refid="Platform__Horizontal__GR_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>src/game_representation/Platform_Static_GR.cpp</label>
+        <link refid="Platform__Static__GR_8cpp_source"/>
+      </node>
+      <node id="6">
+        <label>src/game_representation/ConcreteFactory.cpp</label>
+        <link refid="ConcreteFactory_8cpp_source"/>
+      </node>
+      <node id="13">
+        <label>src/game_representation/Jetpack_GR.cpp</label>
+        <link refid="Jetpack__GR_8cpp_source"/>
+      </node>
+      <node id="21">
+        <label>src/game_representation/Platform_Temporary_GR.h</label>
+        <link refid="Platform__Temporary__GR_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>src/game_representation/Player_GR.cpp</label>
+        <link refid="Player__GR_8cpp_source"/>
+      </node>
+      <node id="25">
+        <label>src/game_representation/Platform_GR.cpp</label>
+        <link refid="Platform__GR_8cpp_source"/>
+      </node>
+      <node id="18">
+        <label>src/game_representation/Platform_Horizontal_GR.cpp</label>
+        <link refid="Platform__Horizontal__GR_8cpp_source"/>
+      </node>
+      <node id="7">
+        <label>src/game_representation/Game.h</label>
+        <link refid="Game_8h_source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>src/game_representation/ConcreteFactory.h</label>
+        <link refid="ConcreteFactory_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>src/game_representation/EntityView.h</label>
+        <link refid="EntityView_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>src/game_representation/EntityView.cpp</label>
+        <link refid="EntityView_8cpp_source"/>
+      </node>
+      <node id="4">
+        <label>src/game_representation/BGTile_GR.cpp</label>
+        <link refid="BGTile__GR_8cpp_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classlogic_1_1Observer" prot="public">logic::Observer</innerclass>
+    <innernamespace refid="namespacelogic">logic</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Author:<sp/>Maksim<sp/>Karnaukh</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DOODLEJUMP_OBSERVER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DOODLEJUMP_OBSERVER_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Subject.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Subject;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">logic<sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="classlogic_1_1Observer" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classlogic_1_1Observer" kindref="compound">Observer</ref></highlight></codeline>
+<codeline lineno="13"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::weak_ptr&lt;logic::Subject&gt;<sp/>mSubject;<sp/></highlight><highlight class="comment">//<sp/>subject<sp/>that<sp/>belongs<sp/>to<sp/>this<sp/>observer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlogic_1_1Observer_1a6c8e55f7a0cc16af2994520cbf6739d7" kindref="member">Observer</ref>();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1Observer_1a9ffb621699cd68a8e165297d145f593e" kindref="member">~Observer</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlogic_1_1Observer_1a6c8e55f7a0cc16af2994520cbf6739d7" kindref="member">Observer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;logic::Subject&gt;&amp;<sp/>subject);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1Observer_1abde36ace3e49511c155687a32dd765e1" kindref="member">update</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="classlogic_1_1Observer_1ad986dcdc61ec66e5a44252280153daad" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1Observer_1ad986dcdc61ec66e5a44252280153daad" kindref="member">registerSubject</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;logic::Subject&gt;&amp;<sp/>subject)<sp/>{<sp/>mSubject<sp/>=<sp/>subject;<sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>logic</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>DOODLEJUMP_OBSERVER_H</highlight></codeline>
+    </programlisting>
+    <location file="src/logic_library/Observer.h"/>
+  </compounddef>
+</doxygen>

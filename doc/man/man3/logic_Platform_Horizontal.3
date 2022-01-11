@@ -1,0 +1,106 @@
+.TH "logic::Platform_Horizontal" 3 "Tue Jan 11 2022" "Doxygen Test" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+logic::Platform_Horizontal
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBlogic::Platform\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPlatform_Horizontal\fP ()"
+.br
+.ti -1c
+.RI "\fB~Platform_Horizontal\fP () override=default"
+.br
+.ti -1c
+.RI "\fBPlatform_Horizontal\fP (float posX, float posY)"
+.br
+.ti -1c
+.RI "\fBPlatform_Horizontal\fP (float posX, float posY, float width, float height)"
+.br
+.ti -1c
+.RI "void \fBmove\fP () override"
+.br
+.ti -1c
+.RI "void \fBchangeDirection\fP () override"
+.br
+.ti -1c
+.RI "float \fBisTouched\fP () override"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 10 of file Platform_Horizontal\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "logic::Platform_Horizontal::Platform_Horizontal ()\fC [default]\fP"
+@function : \fBPlatform_Horizontal\fP Constructor for a \fBPlatform_Horizontal\fP\&. 
+.SS "logic::Platform_Horizontal::~Platform_Horizontal ()\fC [override]\fP, \fC [default]\fP"
+@function : \fBPlatform_Horizontal\fP Destructor for a \fBPlatform_Horizontal\fP\&. 
+.SS "logic::Platform_Horizontal::Platform_Horizontal (float posX, float posY)"
+@function : \fBPlatform_Horizontal\fP Constructor for a \fBPlatform_Horizontal\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposX\fP (float) : x-coordinate of our entity, between the range [0,1-entity\&.width]\&. 
+.br
+\fIposY\fP (float) : y-coordinate of our entity, between the range [0+entity\&.height, inf[\&. 
+.RE
+.PP
+
+.PP
+Definition at line 9 of file Platform_Horizontal\&.cpp\&.
+.SS "logic::Platform_Horizontal::Platform_Horizontal (float posX, float posY, float width, float height)"
+@function : \fBPlatform_Horizontal\fP Constructor for a \fBPlatform_Horizontal\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposX\fP (float) : x-coordinate of our entity, between the range [0,1-entity\&.width]\&. 
+.br
+\fIposY\fP (float) : y-coordinate of our entity, between the range [0+entity\&.height, inf[\&. 
+.br
+\fIwidth\fP (float) : width of our entity\&. 
+.br
+\fIheight\fP (float) : height of our entity\&. 
+.RE
+.PP
+
+.PP
+Definition at line 11 of file Platform_Horizontal\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void logic::Platform_Horizontal::changeDirection ()\fC [override]\fP, \fC [virtual]\fP"
+@function : changeDirection Changes the direction our platform is moving to\&. 
+.PP
+Reimplemented from \fBlogic::Platform\fP\&.
+.PP
+Definition at line 38 of file Platform_Horizontal\&.cpp\&.
+.SS "float logic::Platform_Horizontal::isTouched ()\fC [override]\fP, \fC [virtual]\fP"
+@function : isTouched Function that is used for the score decrease and temporary platform deletion\&. 
+.PP
+\fBReturns\fP
+.RS 4
+(float) : score decrease\&. 
+.RE
+.PP
+
+.PP
+Implements \fBlogic::Platform\fP\&.
+.PP
+Definition at line 32 of file Platform_Horizontal\&.cpp\&.
+.SS "void logic::Platform_Horizontal::move ()\fC [override]\fP, \fC [virtual]\fP"
+@function : move Function that is responsible for moving the platform correctly\&. 
+.PP
+Reimplemented from \fBlogic::Platform\fP\&.
+.PP
+Definition at line 16 of file Platform_Horizontal\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Doxygen Test from the source code\&.

@@ -1,0 +1,360 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classlogic_1_1Player" kind="class" language="C++" prot="public">
+    <compoundname>logic::Player</compoundname>
+    <basecompoundref refid="classlogic_1_1EntityModel" prot="public" virt="non-virtual">logic::EntityModel</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classlogic_1_1Player_1a87d168ccf7b714d2d2442937aacb627f" prot="private" static="no" mutable="no">
+        <type>const float</type>
+        <definition>const float logic::Player::gravity</definition>
+        <argsstring></argsstring>
+        <name>gravity</name>
+        <initializer>= -2.08f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Player.h" line="14" column="21" bodyfile="src/logic_library/Player.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1Player_1a89dc67b85792df33d17a4785988709f6" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::Player::jumpVelocity</definition>
+        <argsstring></argsstring>
+        <name>jumpVelocity</name>
+        <initializer>= 1.32f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Player.h" line="15" column="15" bodyfile="src/logic_library/Player.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classlogic_1_1Player_1a992273ee348db04229f4304d7aae6d5b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::Player::setJumpVelocity</definition>
+        <argsstring>(float v)</argsstring>
+        <name>setJumpVelocity</name>
+        <param>
+          <type>float</type>
+          <declname>v</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Player.h" line="18" column="14" bodyfile="src/logic_library/Player.h" bodystart="18" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1Player_1a02291c72693f8a36aa3e7fb5dbb8ea16" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float logic::Player::getJumpVelocity</definition>
+        <argsstring>() const</argsstring>
+        <name>getJumpVelocity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Player.h" line="20" column="15" bodyfile="src/logic_library/Player.h" bodystart="20" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1Player_1a54bdacf937a367629c3ca10acda369d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::Player::Player</definition>
+        <argsstring>()</argsstring>
+        <name>Player</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1Player" kindref="compound">Player</ref> Constructor for a <ref refid="classlogic_1_1Player" kindref="compound">Player</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Player.h" line="27" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1Player_1ae72f8b653617b6ed4b15847c137ea4f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::Player::~Player</definition>
+        <argsstring>() override=default</argsstring>
+        <name>~Player</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1Player" kindref="compound">Player</ref> Destructor for a <ref refid="classlogic_1_1Player" kindref="compound">Player</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Player.h" line="33" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1Player_1a21d41f4dc79003bf020fc8d9d504a35b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::Player::Player</definition>
+        <argsstring>(float posX, float posY)</argsstring>
+        <name>Player</name>
+        <param>
+          <type>float</type>
+          <declname>posX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>posY</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1Player" kindref="compound">Player</ref> Constructor for a <ref refid="classlogic_1_1Player" kindref="compound">Player</ref>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>posX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : x-coordinate of our entity, between the range [0,1-entity.width]. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>posY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : y-coordinate of our entity, between the range [0+entity.height, inf[. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Player.h" line="41" column="9" bodyfile="src/logic_library/Player.cpp" bodystart="9" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1Player_1accdcf9a039c5af47a96ebcee13ffbb66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::Player::Player</definition>
+        <argsstring>(float posX, float posY, float width, float height)</argsstring>
+        <name>Player</name>
+        <param>
+          <type>float</type>
+          <declname>posX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>posY</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1Player" kindref="compound">Player</ref> Constructor for a <ref refid="classlogic_1_1Player" kindref="compound">Player</ref>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>posX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : x-coordinate of our entity, between the range [0,1-entity.width]. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>posY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : y-coordinate of our entity, between the range [0+entity.height, inf[. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : width of our entity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : height of our entity. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Player.h" line="51" column="9" bodyfile="src/logic_library/Player.cpp" bodystart="11" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1Player_1abad88e5963199f783db752446965be47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::Player::moveLeft</definition>
+        <argsstring>()</argsstring>
+        <name>moveLeft</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : moveLeft Moves the player left. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Player.h" line="57" column="14" bodyfile="src/logic_library/Player.cpp" bodystart="13" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1Player_1a570ba657c77f615ed22ee8aea9819e72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::Player::moveRight</definition>
+        <argsstring>()</argsstring>
+        <name>moveRight</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : moveRight Moves the player right. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Player.h" line="63" column="14" bodyfile="src/logic_library/Player.cpp" bodystart="21" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1Player_1a204be6b9cc516367919e8f88b5606650" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::Player::jump</definition>
+        <argsstring>()</argsstring>
+        <name>jump</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : jump Sets the speed of the player to jumpVelocity, so that the player &quot;jumps&quot;. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Player.h" line="69" column="14" bodyfile="src/logic_library/Player.cpp" bodystart="29" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1Player_1ae2452b58e44d6246fb24ca3cb128b61a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::Player::applyGravity</definition>
+        <argsstring>()</argsstring>
+        <name>applyGravity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : applyGravity Applies gravity to the speed of the player (=&gt; as a result, the speed decreases). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Player.h" line="75" column="14" bodyfile="src/logic_library/Player.cpp" bodystart="31" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1Player_1a4a613cbbe8aa9a27c53c3481c6ae6411" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::Player::moveVertically</definition>
+        <argsstring>()</argsstring>
+        <name>moveVertically</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : moveVertically Moves the player in the vertical direction (depending on the speed). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Player.h" line="81" column="14" bodyfile="src/logic_library/Player.cpp" bodystart="37" bodyend="43"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>logic::Subject</label>
+        <link refid="classlogic_1_1Subject"/>
+      </node>
+      <node id="2">
+        <label>logic::EntityModel</label>
+        <link refid="classlogic_1_1EntityModel"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>logic::Player</label>
+        <link refid="classlogic_1_1Player"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>logic::Subject</label>
+        <link refid="classlogic_1_1Subject"/>
+      </node>
+      <node id="2">
+        <label>logic::EntityModel</label>
+        <link refid="classlogic_1_1EntityModel"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>logic::Player</label>
+        <link refid="classlogic_1_1Player"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/logic_library/Player.h" line="12" column="1" bodyfile="src/logic_library/Player.h" bodystart="11" bodyend="82"/>
+    <listofallmembers>
+      <member refid="classlogic_1_1Player_1ae2452b58e44d6246fb24ca3cb128b61a" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>applyGravity</name></member>
+      <member refid="classlogic_1_1EntityModel_1a9c913c80599c18622aa329759865aa6b" prot="protected" virt="non-virtual"><scope>logic::Player</scope><name>e_height</name></member>
+      <member refid="classlogic_1_1EntityModel_1a14b0d640abc1de9f0d26857525fb8588" prot="protected" virt="non-virtual"><scope>logic::Player</scope><name>e_speed</name></member>
+      <member refid="classlogic_1_1EntityModel_1ac823e3f35ecfa439b2883d7601929ce5" prot="protected" virt="non-virtual"><scope>logic::Player</scope><name>e_width</name></member>
+      <member refid="classlogic_1_1EntityModel_1af763d5b72c30f1d2f7f87f3f229ce362" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>EntityModel</name></member>
+      <member refid="classlogic_1_1EntityModel_1a55519f45ff78ff9dcb4b14fc1f868589" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>EntityModel</name></member>
+      <member refid="classlogic_1_1EntityModel_1a0d8dd2e45002dd1177b74f27389e548e" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>EntityModel</name></member>
+      <member refid="classlogic_1_1EntityModel_1a7cdaafc31f97ab0ba835593046138c57" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>getHeight</name></member>
+      <member refid="classlogic_1_1Player_1a02291c72693f8a36aa3e7fb5dbb8ea16" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>getJumpVelocity</name></member>
+      <member refid="classlogic_1_1Subject_1a202f1cd7a6af78750886d0b60d388450" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>getObservers</name></member>
+      <member refid="classlogic_1_1EntityModel_1aed96cfbc730f4fd9a0e59bebc6727ef9" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>getPositionX</name></member>
+      <member refid="classlogic_1_1EntityModel_1afb9776a3e5b8ebff029914499fe55ce6" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>getPositionY</name></member>
+      <member refid="classlogic_1_1EntityModel_1a89709427e4b0dd62de52d3d8c884ee76" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>getPreviousPositionX</name></member>
+      <member refid="classlogic_1_1EntityModel_1af1d0394edaf591860ebe06ef94a47276" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>getPreviousPositionY</name></member>
+      <member refid="classlogic_1_1EntityModel_1a0713ad1449d82b61f4e22bbdaa212b40" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>getSpeed</name></member>
+      <member refid="classlogic_1_1EntityModel_1ae85c34e45e8fec66993b870a937b2025" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>getUnit</name></member>
+      <member refid="classlogic_1_1EntityModel_1aa377acce5e474892230da31ee39bbbc9" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>getWidth</name></member>
+      <member refid="classlogic_1_1Player_1a87d168ccf7b714d2d2442937aacb627f" prot="private" virt="non-virtual"><scope>logic::Player</scope><name>gravity</name></member>
+      <member refid="classlogic_1_1Player_1a204be6b9cc516367919e8f88b5606650" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>jump</name></member>
+      <member refid="classlogic_1_1Player_1a89dc67b85792df33d17a4785988709f6" prot="private" virt="non-virtual"><scope>logic::Player</scope><name>jumpVelocity</name></member>
+      <member refid="classlogic_1_1Player_1abad88e5963199f783db752446965be47" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>moveLeft</name></member>
+      <member refid="classlogic_1_1Player_1a570ba657c77f615ed22ee8aea9819e72" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>moveRight</name></member>
+      <member refid="classlogic_1_1Player_1a4a613cbbe8aa9a27c53c3481c6ae6411" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>moveVertically</name></member>
+      <member refid="classlogic_1_1Subject_1a33567537c69863eaff2279f398f80ab4" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>notifyObservers</name></member>
+      <member refid="classlogic_1_1Subject_1a2c82c974d7838157824bdcecc4d0e59b" prot="protected" virt="non-virtual"><scope>logic::Player</scope><name>observers</name></member>
+      <member refid="classlogic_1_1Player_1a54bdacf937a367629c3ca10acda369d9" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>Player</name></member>
+      <member refid="classlogic_1_1Player_1a21d41f4dc79003bf020fc8d9d504a35b" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>Player</name></member>
+      <member refid="classlogic_1_1Player_1accdcf9a039c5af47a96ebcee13ffbb66" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>Player</name></member>
+      <member refid="classlogic_1_1Subject_1a375e972ed74af83f46a8debd49f2e3e0" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>registerObserver</name></member>
+      <member refid="classlogic_1_1Subject_1a5a3db9e4c842eb2828c5586be9f4cf81" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>removeObserver</name></member>
+      <member refid="classlogic_1_1EntityModel_1ad703de4900c6b276f824804bebfba006" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>setHeight</name></member>
+      <member refid="classlogic_1_1Player_1a992273ee348db04229f4304d7aae6d5b" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>setJumpVelocity</name></member>
+      <member refid="classlogic_1_1EntityModel_1a0d63f4dc9f2dcab997c5acb43a58b761" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>setPositionX</name></member>
+      <member refid="classlogic_1_1EntityModel_1a755cc5054fad5a67111f00a137666ab1" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>setPositionY</name></member>
+      <member refid="classlogic_1_1EntityModel_1a78e9ab3fad35775a1780cd7bfff0622a" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>setPreviousPositionX</name></member>
+      <member refid="classlogic_1_1EntityModel_1a579a9928acff3b4ba2bb0821e952d452" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>setPreviousPositionY</name></member>
+      <member refid="classlogic_1_1EntityModel_1a0a61bc5dc0e6a2a3aed489a604625593" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>setSpeed</name></member>
+      <member refid="classlogic_1_1EntityModel_1a642a7a6075bf35bfe9e0c55d52f4982d" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>setUnitOfDistance</name></member>
+      <member refid="classlogic_1_1EntityModel_1a99c0c979c10a90eecf3620afc8ecbc12" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>setWidth</name></member>
+      <member refid="classlogic_1_1Subject_1ae1277f400422f50b425c204b11dd8995" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>Subject</name></member>
+      <member refid="classlogic_1_1EntityModel_1a54b5161f038a4636baba4b17f7042425" prot="protected" virt="non-virtual"><scope>logic::Player</scope><name>unit</name></member>
+      <member refid="classlogic_1_1EntityModel_1a894fed55ddd23d3e0a9d442b2a17d62c" prot="protected" virt="non-virtual"><scope>logic::Player</scope><name>x_pos</name></member>
+      <member refid="classlogic_1_1EntityModel_1a515fb152a30fd35aa2825b78bb8fdc90" prot="protected" virt="non-virtual"><scope>logic::Player</scope><name>x_posPrevious</name></member>
+      <member refid="classlogic_1_1EntityModel_1a351557932831e0db1ad5138ee4a92ec9" prot="protected" virt="non-virtual"><scope>logic::Player</scope><name>y_pos</name></member>
+      <member refid="classlogic_1_1EntityModel_1acdcaa7615dfcec6b495ece5df8a3a40c" prot="protected" virt="non-virtual"><scope>logic::Player</scope><name>y_posPrevious</name></member>
+      <member refid="classlogic_1_1EntityModel_1a70a0041b77dbb40c88e83847ea3523b7" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>~EntityModel</name></member>
+      <member refid="classlogic_1_1Player_1ae72f8b653617b6ed4b15847c137ea4f3" prot="public" virt="non-virtual"><scope>logic::Player</scope><name>~Player</name></member>
+      <member refid="classlogic_1_1Subject_1ae4238075ca667706bba792bfb96ee6c0" prot="public" virt="virtual"><scope>logic::Player</scope><name>~Subject</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

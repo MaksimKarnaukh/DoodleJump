@@ -1,0 +1,317 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classrepresentation_1_1EntityView" kind="class" language="C++" prot="public">
+    <compoundname>representation::EntityView</compoundname>
+    <basecompoundref refid="classlogic_1_1Observer" prot="public" virt="non-virtual">logic::Observer</basecompoundref>
+    <derivedcompoundref refid="classrepresentation_1_1BGTile__GR" prot="public" virt="non-virtual">representation::BGTile_GR</derivedcompoundref>
+    <derivedcompoundref refid="classrepresentation_1_1Bonus__GR" prot="public" virt="non-virtual">representation::Bonus_GR</derivedcompoundref>
+    <derivedcompoundref refid="classrepresentation_1_1Platform__GR" prot="public" virt="non-virtual">representation::Platform_GR</derivedcompoundref>
+    <derivedcompoundref refid="classrepresentation_1_1Player__GR" prot="public" virt="non-virtual">representation::Player_GR</derivedcompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classrepresentation_1_1EntityView_1ae59ed4678fa9a297bc466f6321d9f965" prot="protected" static="no" mutable="no">
+        <type>std::weak_ptr&lt; <ref refid="classlogic_1_1EntityModel" kindref="compound">logic::EntityModel</ref> &gt;</type>
+        <definition>std::weak_ptr&lt;logic::EntityModel&gt; representation::EntityView::mEntityModel</definition>
+        <argsstring></argsstring>
+        <name>mEntityModel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/game_representation/EntityView.h" line="19" column="23" bodyfile="src/game_representation/EntityView.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrepresentation_1_1EntityView_1a3b5f8a1369244fe8e08f74835054820c" prot="protected" static="no" mutable="no">
+        <type>sf::Sprite</type>
+        <definition>sf::Sprite representation::EntityView::sprite</definition>
+        <argsstring></argsstring>
+        <name>sprite</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/game_representation/EntityView.h" line="21" column="20" bodyfile="src/game_representation/EntityView.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrepresentation_1_1EntityView_1abaa963085d77cf39443a4e2c9952dd13" prot="protected" static="no" mutable="no">
+        <type>sf::Texture</type>
+        <definition>sf::Texture representation::EntityView::texture</definition>
+        <argsstring></argsstring>
+        <name>texture</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/game_representation/EntityView.h" line="22" column="21" bodyfile="src/game_representation/EntityView.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrepresentation_1_1EntityView_1aa7ee9ae264ef678092634a4974bd5f8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>representation::EntityView::EntityView</definition>
+        <argsstring>()</argsstring>
+        <name>EntityView</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classrepresentation_1_1EntityView" kindref="compound">EntityView</ref> Constructor for a <ref refid="classrepresentation_1_1EntityView" kindref="compound">EntityView</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/game_representation/EntityView.h" line="29" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classrepresentation_1_1EntityView_1a3ae850ef8ded8fdaca88a590912b58b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>representation::EntityView::~EntityView</definition>
+        <argsstring>() override=default</argsstring>
+        <name>~EntityView</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classrepresentation_1_1EntityView" kindref="compound">EntityView</ref> Destructor for a <ref refid="classrepresentation_1_1EntityView" kindref="compound">EntityView</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/game_representation/EntityView.h" line="35" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classrepresentation_1_1EntityView_1a315a7da48bf17c559405ae38a70258c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>representation::EntityView::EntityView</definition>
+        <argsstring>(const std::shared_ptr&lt; logic::EntityModel &gt; &amp;entityModel)</argsstring>
+        <name>EntityView</name>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classlogic_1_1EntityModel" kindref="compound">logic::EntityModel</ref> &gt; &amp;</type>
+          <declname>entityModel</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classrepresentation_1_1EntityView" kindref="compound">EntityView</ref> Constructor for a <ref refid="classrepresentation_1_1EntityView" kindref="compound">EntityView</ref>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>entityModel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(std::shared_ptr&lt;logic::EntityModel&gt;) : entityModel </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/game_representation/EntityView.h" line="42" column="9" bodyfile="src/game_representation/EntityView.cpp" bodystart="9" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classrepresentation_1_1EntityView_1a1a28801738745333c1ed6079e60b7111" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void representation::EntityView::setSpriteTexture</definition>
+        <argsstring>(const std::string &amp;filename)</argsstring>
+        <name>setSpriteTexture</name>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : setSpriteTexture Setter: puts the texture on the sprite. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(std::string) : name of the texture file </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/game_representation/EntityView.h" line="49" column="14" bodyfile="src/game_representation/EntityView.cpp" bodystart="11" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classrepresentation_1_1EntityView_1a036973e73e1c5f97caff7afcfb331774" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>sf::Sprite &amp;</type>
+        <definition>sf::Sprite&amp; representation::EntityView::getSprite</definition>
+        <argsstring>()</argsstring>
+        <name>getSprite</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : getSprite Getter: returns the sprite data member. <simplesect kind="return"><para>(sf::Sprite) : this-&gt;sprite </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/game_representation/EntityView.h" line="56" column="20" bodyfile="src/game_representation/EntityView.h" bodystart="56" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classrepresentation_1_1EntityView_1a6faf90849bc4fc35bc5fe3d80a8df652" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>sf::Texture &amp;</type>
+        <definition>sf::Texture&amp; representation::EntityView::getTexture</definition>
+        <argsstring>()</argsstring>
+        <name>getTexture</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : getTexture Getter: returns the texture data member. <simplesect kind="return"><para>(sf::Texture) : this-&gt;texture </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/game_representation/EntityView.h" line="63" column="21" bodyfile="src/game_representation/EntityView.h" bodystart="63" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classrepresentation_1_1EntityView_1af952d66591aefd0a19d2d7b882fd8395" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void representation::EntityView::setSpriteScale</definition>
+        <argsstring>(const std::shared_ptr&lt; logic::EntityModel &gt; &amp;p)</argsstring>
+        <name>setSpriteScale</name>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classlogic_1_1EntityModel" kindref="compound">logic::EntityModel</ref> &gt; &amp;</type>
+          <declname>p</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : setSpriteScale Sets the sprite scale. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(std::shared_ptr&lt;logic::EntityModel&gt;) : entity model. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/game_representation/EntityView.h" line="70" column="14" bodyfile="src/game_representation/EntityView.h" bodystart="70" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classrepresentation_1_1EntityView_1a609e08de8dbeec013659ab4a12df6601" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void representation::EntityView::update</definition>
+        <argsstring>() override</argsstring>
+        <name>update</name>
+        <reimplements refid="classlogic_1_1Observer_1abde36ace3e49511c155687a32dd765e1">update</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : update Updates the sprite&apos;s position correctly according to the logic coordinates. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/game_representation/EntityView.h" line="82" column="14" bodyfile="src/game_representation/EntityView.cpp" bodystart="25" bodyend="34"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>logic::Observer</label>
+        <link refid="classlogic_1_1Observer"/>
+      </node>
+      <node id="1">
+        <label>representation::EntityView</label>
+        <link refid="classrepresentation_1_1EntityView"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>representation::BGTile_GR</label>
+        <link refid="classrepresentation_1_1BGTile__GR"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>representation::Platform_Static_GR</label>
+        <link refid="classrepresentation_1_1Platform__Static__GR"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>representation::Spring_GR</label>
+        <link refid="classrepresentation_1_1Spring__GR"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>representation::Platform_GR</label>
+        <link refid="classrepresentation_1_1Platform__GR"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>representation::Platform_Temporary_GR</label>
+        <link refid="classrepresentation_1_1Platform__Temporary__GR"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>representation::Bonus_GR</label>
+        <link refid="classrepresentation_1_1Bonus__GR"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>representation::Player_GR</label>
+        <link refid="classrepresentation_1_1Player__GR"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>representation::Platform_Vertical_GR</label>
+        <link refid="classrepresentation_1_1Platform__Vertical__GR"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>representation::Platform_Horizontal_GR</label>
+        <link refid="classrepresentation_1_1Platform__Horizontal__GR"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>representation::Jetpack_GR</label>
+        <link refid="classrepresentation_1_1Jetpack__GR"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>logic::Observer</label>
+        <link refid="classlogic_1_1Observer"/>
+      </node>
+      <node id="1">
+        <label>representation::EntityView</label>
+        <link refid="classrepresentation_1_1EntityView"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/game_representation/EntityView.h" line="16" column="1" bodyfile="src/game_representation/EntityView.h" bodystart="15" bodyend="83"/>
+    <listofallmembers>
+      <member refid="classrepresentation_1_1EntityView_1aa7ee9ae264ef678092634a4974bd5f8c" prot="public" virt="non-virtual"><scope>representation::EntityView</scope><name>EntityView</name></member>
+      <member refid="classrepresentation_1_1EntityView_1a315a7da48bf17c559405ae38a70258c9" prot="public" virt="non-virtual"><scope>representation::EntityView</scope><name>EntityView</name></member>
+      <member refid="classrepresentation_1_1EntityView_1a036973e73e1c5f97caff7afcfb331774" prot="public" virt="non-virtual"><scope>representation::EntityView</scope><name>getSprite</name></member>
+      <member refid="classrepresentation_1_1EntityView_1a6faf90849bc4fc35bc5fe3d80a8df652" prot="public" virt="non-virtual"><scope>representation::EntityView</scope><name>getTexture</name></member>
+      <member refid="classrepresentation_1_1EntityView_1ae59ed4678fa9a297bc466f6321d9f965" prot="protected" virt="non-virtual"><scope>representation::EntityView</scope><name>mEntityModel</name></member>
+      <member refid="classlogic_1_1Observer_1a697de16e32151a82b415bc2a9aa132b4" prot="protected" virt="non-virtual"><scope>representation::EntityView</scope><name>mSubject</name></member>
+      <member refid="classlogic_1_1Observer_1a6c8e55f7a0cc16af2994520cbf6739d7" prot="public" virt="non-virtual"><scope>representation::EntityView</scope><name>Observer</name></member>
+      <member refid="classlogic_1_1Observer_1a91bdbdf67a9983d2dee5f46344131dc3" prot="public" virt="non-virtual"><scope>representation::EntityView</scope><name>Observer</name></member>
+      <member refid="classlogic_1_1Observer_1ad986dcdc61ec66e5a44252280153daad" prot="public" virt="non-virtual"><scope>representation::EntityView</scope><name>registerSubject</name></member>
+      <member refid="classrepresentation_1_1EntityView_1af952d66591aefd0a19d2d7b882fd8395" prot="public" virt="non-virtual"><scope>representation::EntityView</scope><name>setSpriteScale</name></member>
+      <member refid="classrepresentation_1_1EntityView_1a1a28801738745333c1ed6079e60b7111" prot="public" virt="non-virtual"><scope>representation::EntityView</scope><name>setSpriteTexture</name></member>
+      <member refid="classrepresentation_1_1EntityView_1a3b5f8a1369244fe8e08f74835054820c" prot="protected" virt="non-virtual"><scope>representation::EntityView</scope><name>sprite</name></member>
+      <member refid="classrepresentation_1_1EntityView_1abaa963085d77cf39443a4e2c9952dd13" prot="protected" virt="non-virtual"><scope>representation::EntityView</scope><name>texture</name></member>
+      <member refid="classrepresentation_1_1EntityView_1a609e08de8dbeec013659ab4a12df6601" prot="public" virt="virtual"><scope>representation::EntityView</scope><name>update</name></member>
+      <member refid="classrepresentation_1_1EntityView_1a3ae850ef8ded8fdaca88a590912b58b4" prot="public" virt="non-virtual"><scope>representation::EntityView</scope><name>~EntityView</name></member>
+      <member refid="classlogic_1_1Observer_1a9ffb621699cd68a8e165297d145f593e" prot="public" virt="virtual"><scope>representation::EntityView</scope><name>~Observer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

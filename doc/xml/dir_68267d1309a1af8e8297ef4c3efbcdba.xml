@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>src</compoundname>
+    <innerdir refid="dir_2fb4fe6e5858512e6c8ae1a89e960497">src/game_representation</innerdir>
+    <innerdir refid="dir_420a9ccd9b8bf9ead4442c9154532e46">src/logic_library</innerdir>
+    <innerfile refid="LoadFileException_8cpp">LoadFileException.cpp</innerfile>
+    <innerfile refid="LoadFileException_8h">LoadFileException.h</innerfile>
+    <innerfile refid="main_8cpp">main.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,9 @@
+<map id="logic::Platform" name="logic::Platform">
+<area shape="rect" id="node1" title=" " alt="" coords="349,81,467,108"/>
+<area shape="rect" id="node4" href="$classlogic_1_1Platform__Horizontal.html" title=" " alt="" coords="516,5,707,32"/>
+<area shape="rect" id="node5" href="$classlogic_1_1Platform__Static.html" title=" " alt="" coords="531,56,692,83"/>
+<area shape="rect" id="node6" href="$classlogic_1_1Platform__Temporary.html" title=" " alt="" coords="515,107,708,133"/>
+<area shape="rect" id="node7" href="$classlogic_1_1Platform__Vertical.html" title=" " alt="" coords="525,157,698,184"/>
+<area shape="rect" id="node2" href="$classlogic_1_1EntityModel.html" title=" " alt="" coords="163,81,301,108"/>
+<area shape="rect" id="node3" href="$classlogic_1_1Subject.html" title=" " alt="" coords="5,81,115,108"/>
+</map>

@@ -1,0 +1,153 @@
+.TH "logic::Bonus" 3 "Tue Jan 11 2022" "Doxygen Test" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+logic::Bonus
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBlogic::EntityModel\fP\&.
+.PP
+Inherited by \fBlogic::Jetpack\fP, and \fBlogic::Spring\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBonus\fP ()"
+.br
+.ti -1c
+.RI "\fB~Bonus\fP () override=default"
+.br
+.ti -1c
+.RI "\fBBonus\fP (float posX, float posY)"
+.br
+.ti -1c
+.RI "\fBBonus\fP (float posX, float posY, float width, float height)"
+.br
+.ti -1c
+.RI "virtual void \fBsetBonusForce\fP (const float force)"
+.br
+.ti -1c
+.RI "virtual void \fBsetScoreIncrease\fP (const float inc)"
+.br
+.ti -1c
+.RI "virtual float \fBgetBonusForce\fP () const"
+.br
+.ti -1c
+.RI "virtual float \fBgetScoreIncrease\fP () const"
+.br
+.ti -1c
+.RI "virtual void \fBtouchedBonus\fP (std::shared_ptr< \fBlogic::Player\fP > &player)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "float \fBbonusForce\fP"
+.br
+.ti -1c
+.RI "float \fBscoreIncrease\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 11 of file Bonus\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "logic::Bonus::Bonus ()\fC [default]\fP"
+@function : \fBBonus\fP Constructor for a bonus\&. 
+.SS "logic::Bonus::~Bonus ()\fC [override]\fP, \fC [default]\fP"
+@function : \fBBonus\fP Destructor for a bonus\&. 
+.SS "logic::Bonus::Bonus (float posX, float posY)"
+@function : \fBBonus\fP Constructor for a bonus\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposX\fP (float) : x-coordinate of our entity, between the range [0,1-entity\&.width]\&. 
+.br
+\fIposY\fP (float) : y-coordinate of our entity, between the range [0+entity\&.height, inf[\&. 
+.RE
+.PP
+
+.PP
+Definition at line 9 of file Bonus\&.cpp\&.
+.SS "logic::Bonus::Bonus (float posX, float posY, float width, float height)"
+@function : \fBBonus\fP Constructor for a bonus\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposX\fP (float) : x-coordinate of our entity, between the range [0,1-entity\&.width]\&. 
+.br
+\fIposY\fP (float) : y-coordinate of our entity, between the range [0+entity\&.height, inf[\&. 
+.br
+\fIwidth\fP (float) : width of our entity\&. 
+.br
+\fIheight\fP (float) : height of our entity\&. 
+.RE
+.PP
+
+.PP
+Definition at line 11 of file Bonus\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual float logic::Bonus::getBonusForce () const\fC [inline]\fP, \fC [virtual]\fP"
+@function : getBonusForce Getter function for the bonusForce data member\&. 
+.PP
+\fBReturns\fP
+.RS 4
+(float) : this->bonusForce 
+.RE
+.PP
+
+.PP
+Definition at line 68 of file Bonus\&.h\&.
+.SS "virtual float logic::Bonus::getScoreIncrease () const\fC [inline]\fP, \fC [virtual]\fP"
+@function : getScoreIncrease Getter function for the scoreIncrease data member\&. 
+.PP
+\fBReturns\fP
+.RS 4
+(float) : this->scoreIncrease 
+.RE
+.PP
+
+.PP
+Definition at line 75 of file Bonus\&.h\&.
+.SS "virtual void logic::Bonus::setBonusForce (const float force)\fC [inline]\fP, \fC [virtual]\fP"
+@function : setBonusForce Setter function for the bonusForce data member\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIforce\fP (float) : value that we want to give to bonusForce\&. 
+.RE
+.PP
+
+.PP
+Definition at line 54 of file Bonus\&.h\&.
+.SS "virtual void logic::Bonus::setScoreIncrease (const float inc)\fC [inline]\fP, \fC [virtual]\fP"
+@function : setScoreIncrease Setter function for the scoreIncrease data member\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinc\fP (float) : value that we want to give to scoreIncrease\&. 
+.RE
+.PP
+
+.PP
+Definition at line 61 of file Bonus\&.h\&.
+.SS "void logic::Bonus::touchedBonus (std::shared_ptr< \fBlogic::Player\fP > & player)\fC [virtual]\fP"
+@function : touchedBonus Multiplies the jumpVelocity (player) by the bonusForce and sets this as the player speed\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIplayer\fP (std::shared_ptr<logic::Player>) : doodle (player)\&. 
+.RE
+.PP
+
+.PP
+Definition at line 16 of file Bonus\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Doxygen Test from the source code\&.

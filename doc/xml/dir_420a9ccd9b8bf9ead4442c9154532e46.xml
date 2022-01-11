@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_420a9ccd9b8bf9ead4442c9154532e46" kind="dir">
+    <compoundname>src/logic_library</compoundname>
+    <innerfile refid="AbstractFactory_8cpp">AbstractFactory.cpp</innerfile>
+    <innerfile refid="AbstractFactory_8h">AbstractFactory.h</innerfile>
+    <innerfile refid="BGTile_8cpp">BGTile.cpp</innerfile>
+    <innerfile refid="BGTile_8h">BGTile.h</innerfile>
+    <innerfile refid="Bonus_8cpp">Bonus.cpp</innerfile>
+    <innerfile refid="Bonus_8h">Bonus.h</innerfile>
+    <innerfile refid="Camera_8cpp">Camera.cpp</innerfile>
+    <innerfile refid="Camera_8h">Camera.h</innerfile>
+    <innerfile refid="EntityModel_8cpp">EntityModel.cpp</innerfile>
+    <innerfile refid="EntityModel_8h">EntityModel.h</innerfile>
+    <innerfile refid="Jetpack_8cpp">Jetpack.cpp</innerfile>
+    <innerfile refid="Jetpack_8h">Jetpack.h</innerfile>
+    <innerfile refid="Observer_8cpp">Observer.cpp</innerfile>
+    <innerfile refid="Observer_8h">Observer.h</innerfile>
+    <innerfile refid="Platform_8cpp">Platform.cpp</innerfile>
+    <innerfile refid="Platform_8h">Platform.h</innerfile>
+    <innerfile refid="Platform__Horizontal_8cpp">Platform_Horizontal.cpp</innerfile>
+    <innerfile refid="Platform__Horizontal_8h">Platform_Horizontal.h</innerfile>
+    <innerfile refid="Platform__Static_8cpp">Platform_Static.cpp</innerfile>
+    <innerfile refid="Platform__Static_8h">Platform_Static.h</innerfile>
+    <innerfile refid="Platform__Temporary_8cpp">Platform_Temporary.cpp</innerfile>
+    <innerfile refid="Platform__Temporary_8h">Platform_Temporary.h</innerfile>
+    <innerfile refid="Platform__Vertical_8cpp">Platform_Vertical.cpp</innerfile>
+    <innerfile refid="Platform__Vertical_8h">Platform_Vertical.h</innerfile>
+    <innerfile refid="Player_8cpp">Player.cpp</innerfile>
+    <innerfile refid="Player_8h">Player.h</innerfile>
+    <innerfile refid="Random_8cpp">Random.cpp</innerfile>
+    <innerfile refid="Random_8h">Random.h</innerfile>
+    <innerfile refid="Score_8cpp">Score.cpp</innerfile>
+    <innerfile refid="Score_8h">Score.h</innerfile>
+    <innerfile refid="Spring_8cpp">Spring.cpp</innerfile>
+    <innerfile refid="Spring_8h">Spring.h</innerfile>
+    <innerfile refid="Stopwatch_8cpp">Stopwatch.cpp</innerfile>
+    <innerfile refid="Stopwatch_8h">Stopwatch.h</innerfile>
+    <innerfile refid="Subject_8cpp">Subject.cpp</innerfile>
+    <innerfile refid="Subject_8h">Subject.h</innerfile>
+    <innerfile refid="World_8cpp">World.cpp</innerfile>
+    <innerfile refid="World_8h">World.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/logic_library/"/>
+  </compounddef>
+</doxygen>

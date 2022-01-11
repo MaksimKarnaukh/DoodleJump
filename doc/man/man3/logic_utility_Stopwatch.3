@@ -1,0 +1,68 @@
+.TH "logic::utility::Stopwatch" 3 "Tue Jan 11 2022" "Doxygen Test" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+logic::utility::Stopwatch
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBStopwatch\fP (const \fBStopwatch\fP &)=delete"
+.br
+.ti -1c
+.RI "\fBStopwatch\fP (const \fBStopwatch\fP &&)=delete"
+.br
+.ti -1c
+.RI "\fBStopwatch\fP & \fBoperator=\fP (const \fBStopwatch\fP &)=delete"
+.br
+.ti -1c
+.RI "\fBStopwatch\fP & \fBoperator=\fP (const \fBStopwatch\fP &&)=delete"
+.br
+.ti -1c
+.RI "void \fBReset\fP ()"
+.br
+.ti -1c
+.RI "float \fBgetDeltaTime\fP ()"
+.br
+.ti -1c
+.RI "void \fBtick\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBStopwatch\fP & \fBInstance\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 15 of file Stopwatch\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "float logic::utility::Stopwatch::getDeltaTime ()"
+@function : getDeltaTime Returns the mDeltaTime data member\&. 
+.PP
+\fBReturns\fP
+.RS 4
+(float) : mDeltaTime, which is the elapsed time, set by the last \fBtick()\fP called\&. 
+.RE
+.PP
+
+.PP
+Definition at line 24 of file Stopwatch\&.cpp\&.
+.SS "void logic::utility::Stopwatch::Reset ()"
+@function : Reset Resets the mStartTime data member, setting it equal to std::chrono::system_clock::now()\&. 
+.PP
+Definition at line 22 of file Stopwatch\&.cpp\&.
+.SS "void logic::utility::Stopwatch::tick ()"
+@function : tick Sets the mDeltaTime equal to (std::chrono::system_clock::now()-mStartTime)\&. 
+.PP
+Definition at line 26 of file Stopwatch\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Doxygen Test from the source code\&.

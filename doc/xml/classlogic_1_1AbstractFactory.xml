@@ -1,0 +1,578 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classlogic_1_1AbstractFactory" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>logic::AbstractFactory</compoundname>
+    <derivedcompoundref refid="classrepresentation_1_1ConcreteFactory" prot="public" virt="non-virtual">representation::ConcreteFactory</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classlogic_1_1AbstractFactory_1abf6c6fe130a97426c9682800fa0d6dd9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::AbstractFactory::AbstractFactory</definition>
+        <argsstring>()</argsstring>
+        <name>AbstractFactory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1AbstractFactory" kindref="compound">AbstractFactory</ref> Constructor for a <ref refid="classlogic_1_1AbstractFactory" kindref="compound">AbstractFactory</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/AbstractFactory.h" line="27" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1AbstractFactory_1a391dc2c32c339bb7841b7e41aef2fba5" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual logic::AbstractFactory::~AbstractFactory</definition>
+        <argsstring>()=default</argsstring>
+        <name>~AbstractFactory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1AbstractFactory" kindref="compound">AbstractFactory</ref> Destructor for an <ref refid="classlogic_1_1AbstractFactory" kindref="compound">AbstractFactory</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/AbstractFactory.h" line="33" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1AbstractFactory_1a9f4ebed2900945df1e3d584715c68955" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classlogic_1_1Player" kindref="compound">logic::Player</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt;logic::Player&gt; logic::AbstractFactory::createPlayer</definition>
+        <argsstring>(float posX, float posY, float width, float height)=0</argsstring>
+        <name>createPlayer</name>
+        <reimplementedby refid="classrepresentation_1_1ConcreteFactory_1a8157c2ea33f3aed279650ace88fc7627">createPlayer</reimplementedby>
+        <param>
+          <type>float</type>
+          <declname>posX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>posY</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : createPlayer This function is responsible for creating the doodle. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>posX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : x-coordinate of our entity, between the range [0,1-entity.width]. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>posY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : y-coordinate of our entity, between the range [0+entity.height, inf[. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : width of our entity (in logic units). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : height of our entity (in logic units). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/AbstractFactory.h" line="43" column="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1AbstractFactory_1a4450d2814b928702e932cfc21b7c69b1" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classlogic_1_1Platform" kindref="compound">logic::Platform</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt;logic::Platform&gt; logic::AbstractFactory::createStaticPlatform</definition>
+        <argsstring>(float posX, float posY, float width, float height)=0</argsstring>
+        <name>createStaticPlatform</name>
+        <reimplementedby refid="classrepresentation_1_1ConcreteFactory_1a85b7082f2ae47a924481cf1921dd39f1">createStaticPlatform</reimplementedby>
+        <param>
+          <type>float</type>
+          <declname>posX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>posY</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : createStaticPlatform This function is responsible for creating the static platform. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>posX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : x-coordinate of our entity, between the range [0,1-entity.width]. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>posY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : y-coordinate of our entity, between the range [0+entity.height, inf[. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : width of our entity (in logic units). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : height of our entity (in logic units). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/AbstractFactory.h" line="53" column="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1AbstractFactory_1a1b991e2b6bcd7545065ea967bf2f0342" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classlogic_1_1Platform" kindref="compound">logic::Platform</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt;logic::Platform&gt; logic::AbstractFactory::createTemporaryPlatform</definition>
+        <argsstring>(float posX, float posY, float width, float height)=0</argsstring>
+        <name>createTemporaryPlatform</name>
+        <reimplementedby refid="classrepresentation_1_1ConcreteFactory_1a06856fd92ae6355880390d81f61fc723">createTemporaryPlatform</reimplementedby>
+        <param>
+          <type>float</type>
+          <declname>posX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>posY</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : createTemporaryPlatform This function is responsible for creating the temporary platform. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>posX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : x-coordinate of our entity, between the range [0,1-entity.width]. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>posY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : y-coordinate of our entity, between the range [0+entity.height, inf[. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : width of our entity (in logic units). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : height of our entity (in logic units). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/AbstractFactory.h" line="64" column="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1AbstractFactory_1a5f2b10dec4090b4a7f893096c8986488" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classlogic_1_1Platform" kindref="compound">logic::Platform</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt;logic::Platform&gt; logic::AbstractFactory::createHorizontalPlatform</definition>
+        <argsstring>(float posX, float posY, float width, float height)=0</argsstring>
+        <name>createHorizontalPlatform</name>
+        <reimplementedby refid="classrepresentation_1_1ConcreteFactory_1a8e50c892bd9d46e12bdf9949a32a2bb1">createHorizontalPlatform</reimplementedby>
+        <param>
+          <type>float</type>
+          <declname>posX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>posY</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : createHorizontalPlatform This function is responsible for creating the horizontal platform. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>posX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : x-coordinate of our entity, between the range [0,1-entity.width]. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>posY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : y-coordinate of our entity, between the range [0+entity.height, inf[. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : width of our entity (in logic units). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : height of our entity (in logic units). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/AbstractFactory.h" line="75" column="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1AbstractFactory_1addd3c9d4d9f5e9e3f9c53bbd90ee6e82" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classlogic_1_1Platform" kindref="compound">logic::Platform</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt;logic::Platform&gt; logic::AbstractFactory::createVerticalPlatform</definition>
+        <argsstring>(float posX, float posY, float width, float height)=0</argsstring>
+        <name>createVerticalPlatform</name>
+        <reimplementedby refid="classrepresentation_1_1ConcreteFactory_1ac2e6fe32f9fabcb7572848e1a14f77f4">createVerticalPlatform</reimplementedby>
+        <param>
+          <type>float</type>
+          <declname>posX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>posY</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : createVerticalPlatform This function is responsible for creating the vertical platform. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>posX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : x-coordinate of our entity, between the range [0,1-entity.width]. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>posY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : y-coordinate of our entity, between the range [0+entity.height, inf[. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : width of our entity (in logic units). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : height of our entity (in logic units). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/AbstractFactory.h" line="86" column="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1AbstractFactory_1a363088d16ef335f8961634c05bfef604" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classlogic_1_1Bonus" kindref="compound">logic::Bonus</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt;logic::Bonus&gt; logic::AbstractFactory::createSpring</definition>
+        <argsstring>(float posX, float posY, float width, float height)=0</argsstring>
+        <name>createSpring</name>
+        <reimplementedby refid="classrepresentation_1_1ConcreteFactory_1aba785c0e6855e1d9f1de859df6f9d2ca">createSpring</reimplementedby>
+        <param>
+          <type>float</type>
+          <declname>posX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>posY</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : createSpring This function is responsible for creating the spring bonus. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>posX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : x-coordinate of our entity, between the range [0,1-entity.width]. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>posY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : y-coordinate of our entity, between the range [0+entity.height, inf[. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : width of our entity (in logic units). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : height of our entity (in logic units). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/AbstractFactory.h" line="97" column="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1AbstractFactory_1a5797bb1e8d2bcc19da10ca5fd39d70ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classlogic_1_1Bonus" kindref="compound">logic::Bonus</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt;logic::Bonus&gt; logic::AbstractFactory::createJetpack</definition>
+        <argsstring>(float posX, float posY, float width, float height)=0</argsstring>
+        <name>createJetpack</name>
+        <reimplementedby refid="classrepresentation_1_1ConcreteFactory_1adb2a655b4b00c97ef92912c6003fd871">createJetpack</reimplementedby>
+        <param>
+          <type>float</type>
+          <declname>posX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>posY</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : createJetpack This function is responsible for creating the jetpack bonus. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>posX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : x-coordinate of our entity, between the range [0,1-entity.width]. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>posY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : y-coordinate of our entity, between the range [0+entity.height, inf[. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : width of our entity (in logic units). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : height of our entity (in logic units). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/AbstractFactory.h" line="107" column="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1AbstractFactory_1ac8eed90b3c4adaad363526d1bb01f98d" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>std::shared_ptr&lt; <ref refid="classlogic_1_1BGTile" kindref="compound">logic::BGTile</ref> &gt;</type>
+        <definition>virtual std::shared_ptr&lt;logic::BGTile&gt; logic::AbstractFactory::createBGTile</definition>
+        <argsstring>(float posX, float posY, float width, float height)=0</argsstring>
+        <name>createBGTile</name>
+        <reimplementedby refid="classrepresentation_1_1ConcreteFactory_1a9da814a5fe1269a478df8d5dd57db664">createBGTile</reimplementedby>
+        <param>
+          <type>float</type>
+          <declname>posX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>posY</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : createBGTile This function is responsible for creating the background tile (little square). <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>posX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : x-coordinate of our entity, between the range [0,1-entity.width]. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>posY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : y-coordinate of our entity, between the range [0+entity.height, inf[. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : width of our entity (in logic units). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : height of our entity (in logic units). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/AbstractFactory.h" line="117" column="33"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>representation::ConcreteFactory</label>
+        <link refid="classrepresentation_1_1ConcreteFactory"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>logic::AbstractFactory</label>
+        <link refid="classlogic_1_1AbstractFactory"/>
+      </node>
+    </inheritancegraph>
+    <location file="src/logic_library/AbstractFactory.h" line="20" column="1" bodyfile="src/logic_library/AbstractFactory.h" bodystart="19" bodyend="118"/>
+    <listofallmembers>
+      <member refid="classlogic_1_1AbstractFactory_1abf6c6fe130a97426c9682800fa0d6dd9" prot="public" virt="non-virtual"><scope>logic::AbstractFactory</scope><name>AbstractFactory</name></member>
+      <member refid="classlogic_1_1AbstractFactory_1ac8eed90b3c4adaad363526d1bb01f98d" prot="public" virt="pure-virtual"><scope>logic::AbstractFactory</scope><name>createBGTile</name></member>
+      <member refid="classlogic_1_1AbstractFactory_1a5f2b10dec4090b4a7f893096c8986488" prot="public" virt="pure-virtual"><scope>logic::AbstractFactory</scope><name>createHorizontalPlatform</name></member>
+      <member refid="classlogic_1_1AbstractFactory_1a5797bb1e8d2bcc19da10ca5fd39d70ba" prot="public" virt="pure-virtual"><scope>logic::AbstractFactory</scope><name>createJetpack</name></member>
+      <member refid="classlogic_1_1AbstractFactory_1a9f4ebed2900945df1e3d584715c68955" prot="public" virt="pure-virtual"><scope>logic::AbstractFactory</scope><name>createPlayer</name></member>
+      <member refid="classlogic_1_1AbstractFactory_1a363088d16ef335f8961634c05bfef604" prot="public" virt="pure-virtual"><scope>logic::AbstractFactory</scope><name>createSpring</name></member>
+      <member refid="classlogic_1_1AbstractFactory_1a4450d2814b928702e932cfc21b7c69b1" prot="public" virt="pure-virtual"><scope>logic::AbstractFactory</scope><name>createStaticPlatform</name></member>
+      <member refid="classlogic_1_1AbstractFactory_1a1b991e2b6bcd7545065ea967bf2f0342" prot="public" virt="pure-virtual"><scope>logic::AbstractFactory</scope><name>createTemporaryPlatform</name></member>
+      <member refid="classlogic_1_1AbstractFactory_1addd3c9d4d9f5e9e3f9c53bbd90ee6e82" prot="public" virt="pure-virtual"><scope>logic::AbstractFactory</scope><name>createVerticalPlatform</name></member>
+      <member refid="classlogic_1_1AbstractFactory_1a391dc2c32c339bb7841b7e41aef2fba5" prot="public" virt="virtual"><scope>logic::AbstractFactory</scope><name>~AbstractFactory</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

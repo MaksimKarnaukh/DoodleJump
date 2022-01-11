@@ -1,0 +1,78 @@
+\hypertarget{classlogic_1_1utility_1_1Stopwatch}{}\doxysubsection{logic\+::utility\+::Stopwatch Class Reference}
+\label{classlogic_1_1utility_1_1Stopwatch}\index{logic::utility::Stopwatch@{logic::utility::Stopwatch}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlogic_1_1utility_1_1Stopwatch_a4b12cc484acced949f3a0174451e08a9}\label{classlogic_1_1utility_1_1Stopwatch_a4b12cc484acced949f3a0174451e08a9}} 
+{\bfseries Stopwatch} (const \mbox{\hyperlink{classlogic_1_1utility_1_1Stopwatch}{Stopwatch}} \&)=delete
+\item 
+\mbox{\Hypertarget{classlogic_1_1utility_1_1Stopwatch_abbbf9a6e92baf4551bd64203c240aa1c}\label{classlogic_1_1utility_1_1Stopwatch_abbbf9a6e92baf4551bd64203c240aa1c}} 
+{\bfseries Stopwatch} (const \mbox{\hyperlink{classlogic_1_1utility_1_1Stopwatch}{Stopwatch}} \&\&)=delete
+\item 
+\mbox{\Hypertarget{classlogic_1_1utility_1_1Stopwatch_aea255a4d1e02fed712afbb2a97161db7}\label{classlogic_1_1utility_1_1Stopwatch_aea255a4d1e02fed712afbb2a97161db7}} 
+\mbox{\hyperlink{classlogic_1_1utility_1_1Stopwatch}{Stopwatch}} \& {\bfseries operator=} (const \mbox{\hyperlink{classlogic_1_1utility_1_1Stopwatch}{Stopwatch}} \&)=delete
+\item 
+\mbox{\Hypertarget{classlogic_1_1utility_1_1Stopwatch_a3acb9b8099dfc9eb6b0612834258ed1f}\label{classlogic_1_1utility_1_1Stopwatch_a3acb9b8099dfc9eb6b0612834258ed1f}} 
+\mbox{\hyperlink{classlogic_1_1utility_1_1Stopwatch}{Stopwatch}} \& {\bfseries operator=} (const \mbox{\hyperlink{classlogic_1_1utility_1_1Stopwatch}{Stopwatch}} \&\&)=delete
+\item 
+void \mbox{\hyperlink{classlogic_1_1utility_1_1Stopwatch_ac297718829acfbd89ab809952708111e}{Reset}} ()
+\item 
+float \mbox{\hyperlink{classlogic_1_1utility_1_1Stopwatch_a07974f366fb33668a10a24d12d3beb67}{get\+Delta\+Time}} ()
+\item 
+void \mbox{\hyperlink{classlogic_1_1utility_1_1Stopwatch_a5a119ec7cac51cccf73a2d0b3c1a0808}{tick}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlogic_1_1utility_1_1Stopwatch_a2c9371353a6e638cbc80011d50437638}\label{classlogic_1_1utility_1_1Stopwatch_a2c9371353a6e638cbc80011d50437638}} 
+static \mbox{\hyperlink{classlogic_1_1utility_1_1Stopwatch}{Stopwatch}} \& {\bfseries Instance} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+Definition at line 15 of file Stopwatch.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classlogic_1_1utility_1_1Stopwatch_a07974f366fb33668a10a24d12d3beb67}\label{classlogic_1_1utility_1_1Stopwatch_a07974f366fb33668a10a24d12d3beb67}} 
+\index{logic::utility::Stopwatch@{logic::utility::Stopwatch}!getDeltaTime@{getDeltaTime}}
+\index{getDeltaTime@{getDeltaTime}!logic::utility::Stopwatch@{logic::utility::Stopwatch}}
+\doxyparagraph{\texorpdfstring{getDeltaTime()}{getDeltaTime()}}
+{\footnotesize\ttfamily float logic\+::utility\+::\+Stopwatch\+::get\+Delta\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: get\+Delta\+Time Returns the m\+Delta\+Time data member. \begin{DoxyReturn}{Returns}
+(float) \+: m\+Delta\+Time, which is the elapsed time, set by the last \mbox{\hyperlink{classlogic_1_1utility_1_1Stopwatch_a5a119ec7cac51cccf73a2d0b3c1a0808}{tick()}} called. 
+\end{DoxyReturn}
+
+
+Definition at line 24 of file Stopwatch.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1utility_1_1Stopwatch_ac297718829acfbd89ab809952708111e}\label{classlogic_1_1utility_1_1Stopwatch_ac297718829acfbd89ab809952708111e}} 
+\index{logic::utility::Stopwatch@{logic::utility::Stopwatch}!Reset@{Reset}}
+\index{Reset@{Reset}!logic::utility::Stopwatch@{logic::utility::Stopwatch}}
+\doxyparagraph{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily void logic\+::utility\+::\+Stopwatch\+::\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: Reset Resets the m\+Start\+Time data member, setting it equal to std\+::chrono\+::system\+\_\+clock\+::now(). 
+
+Definition at line 22 of file Stopwatch.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1utility_1_1Stopwatch_a5a119ec7cac51cccf73a2d0b3c1a0808}\label{classlogic_1_1utility_1_1Stopwatch_a5a119ec7cac51cccf73a2d0b3c1a0808}} 
+\index{logic::utility::Stopwatch@{logic::utility::Stopwatch}!tick@{tick}}
+\index{tick@{tick}!logic::utility::Stopwatch@{logic::utility::Stopwatch}}
+\doxyparagraph{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily void logic\+::utility\+::\+Stopwatch\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: tick Sets the m\+Delta\+Time equal to (std\+::chrono\+::system\+\_\+clock\+::now()-\/m\+Start\+Time). 
+
+Definition at line 26 of file Stopwatch.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/logic\+\_\+library/Stopwatch.\+h\item 
+src/logic\+\_\+library/Stopwatch.\+cpp\end{DoxyCompactItemize}

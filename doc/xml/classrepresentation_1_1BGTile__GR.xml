@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classrepresentation_1_1BGTile__GR" kind="class" language="C++" prot="public">
+    <compoundname>representation::BGTile_GR</compoundname>
+    <basecompoundref refid="classrepresentation_1_1EntityView" prot="public" virt="non-virtual">representation::EntityView</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrepresentation_1_1BGTile__GR_1ad6822076b8abb83267f113eaf5b1b533" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>representation::BGTile_GR::BGTile_GR</definition>
+        <argsstring>(const std::shared_ptr&lt; logic::EntityModel &gt; &amp;entityModel)</argsstring>
+        <name>BGTile_GR</name>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classlogic_1_1EntityModel" kindref="compound">logic::EntityModel</ref> &gt; &amp;</type>
+          <declname>entityModel</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classrepresentation_1_1BGTile__GR" kindref="compound">BGTile_GR</ref> Constructor for a <ref refid="classrepresentation_1_1BGTile__GR" kindref="compound">BGTile_GR</ref>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>entityModel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(std::shared_ptr&lt;logic::EntityModel&gt;) : entityModel </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/game_representation/BGTile_GR.h" line="19" column="9" bodyfile="src/game_representation/BGTile_GR.cpp" bodystart="7" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classrepresentation_1_1BGTile__GR_1ad65cb36d8825bd812562eb0513806e12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>representation::BGTile_GR::~BGTile_GR</definition>
+        <argsstring>() override=default</argsstring>
+        <name>~BGTile_GR</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classrepresentation_1_1BGTile__GR" kindref="compound">BGTile_GR</ref> Destructor for a <ref refid="classrepresentation_1_1BGTile__GR" kindref="compound">BGTile_GR</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/game_representation/BGTile_GR.h" line="25" column="9"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>logic::Observer</label>
+        <link refid="classlogic_1_1Observer"/>
+      </node>
+      <node id="2">
+        <label>representation::EntityView</label>
+        <link refid="classrepresentation_1_1EntityView"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>representation::BGTile_GR</label>
+        <link refid="classrepresentation_1_1BGTile__GR"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>logic::Observer</label>
+        <link refid="classlogic_1_1Observer"/>
+      </node>
+      <node id="2">
+        <label>representation::EntityView</label>
+        <link refid="classrepresentation_1_1EntityView"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>representation::BGTile_GR</label>
+        <link refid="classrepresentation_1_1BGTile__GR"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/game_representation/BGTile_GR.h" line="11" column="1" bodyfile="src/game_representation/BGTile_GR.h" bodystart="10" bodyend="26"/>
+    <listofallmembers>
+      <member refid="classrepresentation_1_1BGTile__GR_1ad6822076b8abb83267f113eaf5b1b533" prot="public" virt="non-virtual"><scope>representation::BGTile_GR</scope><name>BGTile_GR</name></member>
+      <member refid="classrepresentation_1_1EntityView_1aa7ee9ae264ef678092634a4974bd5f8c" prot="public" virt="non-virtual"><scope>representation::BGTile_GR</scope><name>EntityView</name></member>
+      <member refid="classrepresentation_1_1EntityView_1a315a7da48bf17c559405ae38a70258c9" prot="public" virt="non-virtual"><scope>representation::BGTile_GR</scope><name>EntityView</name></member>
+      <member refid="classrepresentation_1_1EntityView_1a036973e73e1c5f97caff7afcfb331774" prot="public" virt="non-virtual"><scope>representation::BGTile_GR</scope><name>getSprite</name></member>
+      <member refid="classrepresentation_1_1EntityView_1a6faf90849bc4fc35bc5fe3d80a8df652" prot="public" virt="non-virtual"><scope>representation::BGTile_GR</scope><name>getTexture</name></member>
+      <member refid="classrepresentation_1_1EntityView_1ae59ed4678fa9a297bc466f6321d9f965" prot="protected" virt="non-virtual"><scope>representation::BGTile_GR</scope><name>mEntityModel</name></member>
+      <member refid="classlogic_1_1Observer_1a697de16e32151a82b415bc2a9aa132b4" prot="protected" virt="non-virtual"><scope>representation::BGTile_GR</scope><name>mSubject</name></member>
+      <member refid="classlogic_1_1Observer_1a6c8e55f7a0cc16af2994520cbf6739d7" prot="public" virt="non-virtual"><scope>representation::BGTile_GR</scope><name>Observer</name></member>
+      <member refid="classlogic_1_1Observer_1a91bdbdf67a9983d2dee5f46344131dc3" prot="public" virt="non-virtual"><scope>representation::BGTile_GR</scope><name>Observer</name></member>
+      <member refid="classlogic_1_1Observer_1ad986dcdc61ec66e5a44252280153daad" prot="public" virt="non-virtual"><scope>representation::BGTile_GR</scope><name>registerSubject</name></member>
+      <member refid="classrepresentation_1_1EntityView_1af952d66591aefd0a19d2d7b882fd8395" prot="public" virt="non-virtual"><scope>representation::BGTile_GR</scope><name>setSpriteScale</name></member>
+      <member refid="classrepresentation_1_1EntityView_1a1a28801738745333c1ed6079e60b7111" prot="public" virt="non-virtual"><scope>representation::BGTile_GR</scope><name>setSpriteTexture</name></member>
+      <member refid="classrepresentation_1_1EntityView_1a3b5f8a1369244fe8e08f74835054820c" prot="protected" virt="non-virtual"><scope>representation::BGTile_GR</scope><name>sprite</name></member>
+      <member refid="classrepresentation_1_1EntityView_1abaa963085d77cf39443a4e2c9952dd13" prot="protected" virt="non-virtual"><scope>representation::BGTile_GR</scope><name>texture</name></member>
+      <member refid="classrepresentation_1_1EntityView_1a609e08de8dbeec013659ab4a12df6601" prot="public" virt="virtual"><scope>representation::BGTile_GR</scope><name>update</name></member>
+      <member refid="classrepresentation_1_1BGTile__GR_1ad65cb36d8825bd812562eb0513806e12" prot="public" virt="non-virtual"><scope>representation::BGTile_GR</scope><name>~BGTile_GR</name></member>
+      <member refid="classrepresentation_1_1EntityView_1a3ae850ef8ded8fdaca88a590912b58b4" prot="public" virt="non-virtual"><scope>representation::BGTile_GR</scope><name>~EntityView</name></member>
+      <member refid="classlogic_1_1Observer_1a9ffb621699cd68a8e165297d145f593e" prot="public" virt="virtual"><scope>representation::BGTile_GR</scope><name>~Observer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

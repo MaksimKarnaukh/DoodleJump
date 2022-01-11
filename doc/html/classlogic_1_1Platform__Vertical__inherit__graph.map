@@ -1,0 +1,6 @@
+<map id="logic::Platform_Vertical" name="logic::Platform_Vertical">
+<area shape="rect" id="node1" title=" " alt="" coords="5,229,179,256"/>
+<area shape="rect" id="node2" href="$classlogic_1_1Platform.html" title=" " alt="" coords="33,155,151,181"/>
+<area shape="rect" id="node3" href="$classlogic_1_1EntityModel.html" title=" " alt="" coords="23,80,161,107"/>
+<area shape="rect" id="node4" href="$classlogic_1_1Subject.html" title=" " alt="" coords="37,5,147,32"/>
+</map>

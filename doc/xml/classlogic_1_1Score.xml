@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classlogic_1_1Score" kind="class" language="C++" prot="public">
+    <compoundname>logic::Score</compoundname>
+    <basecompoundref refid="classlogic_1_1Observer" prot="public" virt="non-virtual">logic::Observer</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classlogic_1_1Score_1a1133f5f939adb001148f47e86041cb39" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::Score::score</definition>
+        <argsstring></argsstring>
+        <name>score</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Score.h" line="15" column="15" bodyfile="src/logic_library/Score.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1Score_1aad30740e7fc824535a95b8e100ed177b" prot="private" static="no" mutable="no">
+        <type>std::weak_ptr&lt; <ref refid="classlogic_1_1EntityModel" kindref="compound">logic::EntityModel</ref> &gt;</type>
+        <definition>std::weak_ptr&lt;logic::EntityModel&gt; logic::Score::mEntityModel</definition>
+        <argsstring></argsstring>
+        <name>mEntityModel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Score.h" line="17" column="23" bodyfile="src/logic_library/Score.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classlogic_1_1Score_1a07b6ac91ebef7416e8544d80295d4b22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::Score::Score</definition>
+        <argsstring>()</argsstring>
+        <name>Score</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1Score" kindref="compound">Score</ref> Constructor for a <ref refid="classlogic_1_1Score" kindref="compound">Score</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Score.h" line="24" column="9" bodyfile="src/logic_library/Score.cpp" bodystart="5" bodyend="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1Score_1a5f4b6a1ca3971cdc0fb516c5ec957016" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::Score::~Score</definition>
+        <argsstring>() override=default</argsstring>
+        <name>~Score</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1Score" kindref="compound">Score</ref> Destructor for a <ref refid="classlogic_1_1Score" kindref="compound">Score</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Score.h" line="30" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1Score_1a4c970d6c1a2fbb330f877179bdf77e4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::Score::Score</definition>
+        <argsstring>(const std::shared_ptr&lt; logic::EntityModel &gt; &amp;entityModel)</argsstring>
+        <name>Score</name>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classlogic_1_1EntityModel" kindref="compound">logic::EntityModel</ref> &gt; &amp;</type>
+          <declname>entityModel</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1Score" kindref="compound">Score</ref> Constructor for a <ref refid="classlogic_1_1Score" kindref="compound">Score</ref>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>entityModel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(std::shared_ptr&lt;logic::EntityModel&gt;) : entityModel that we point to. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Score.h" line="37" column="9" bodyfile="src/logic_library/Score.cpp" bodystart="7" bodyend="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1Score_1a33f2bad5cc4c080f8e7c4382570609be" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void logic::Score::update</definition>
+        <argsstring>() override</argsstring>
+        <name>update</name>
+        <reimplements refid="classlogic_1_1Observer_1abde36ace3e49511c155687a32dd765e1">update</reimplements>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : update Updates the state of score. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Score.h" line="43" column="14" bodyfile="src/logic_library/Score.cpp" bodystart="14" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1Score_1a5f385cc6f45f9d1f65e89fc5e1351793" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::Score::setScore</definition>
+        <argsstring>(float _score)</argsstring>
+        <name>setScore</name>
+        <param>
+          <type>float</type>
+          <declname>_score</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : setScore Setter function for the score data member. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>_score</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : value that we want to give to score. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Score.h" line="51" column="14" bodyfile="src/logic_library/Score.h" bodystart="51" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1Score_1a8a102d1a10e853bff7e20620efa7c8bc" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float logic::Score::getScore</definition>
+        <argsstring>() const</argsstring>
+        <name>getScore</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : getScore Getter function for the score data member. <simplesect kind="return"><para>(float) : this-&gt;score </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Score.h" line="58" column="15" bodyfile="src/logic_library/Score.h" bodystart="58" bodyend="58"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>logic::Observer</label>
+        <link refid="classlogic_1_1Observer"/>
+      </node>
+      <node id="1">
+        <label>logic::Score</label>
+        <link refid="classlogic_1_1Score"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>logic::Observer</label>
+        <link refid="classlogic_1_1Observer"/>
+      </node>
+      <node id="1">
+        <label>logic::Score</label>
+        <link refid="classlogic_1_1Score"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/logic_library/Score.h" line="13" column="1" bodyfile="src/logic_library/Score.h" bodystart="12" bodyend="59"/>
+    <listofallmembers>
+      <member refid="classlogic_1_1Score_1a8a102d1a10e853bff7e20620efa7c8bc" prot="public" virt="non-virtual"><scope>logic::Score</scope><name>getScore</name></member>
+      <member refid="classlogic_1_1Score_1aad30740e7fc824535a95b8e100ed177b" prot="private" virt="non-virtual"><scope>logic::Score</scope><name>mEntityModel</name></member>
+      <member refid="classlogic_1_1Observer_1a697de16e32151a82b415bc2a9aa132b4" prot="protected" virt="non-virtual"><scope>logic::Score</scope><name>mSubject</name></member>
+      <member refid="classlogic_1_1Observer_1a6c8e55f7a0cc16af2994520cbf6739d7" prot="public" virt="non-virtual"><scope>logic::Score</scope><name>Observer</name></member>
+      <member refid="classlogic_1_1Observer_1a91bdbdf67a9983d2dee5f46344131dc3" prot="public" virt="non-virtual"><scope>logic::Score</scope><name>Observer</name></member>
+      <member refid="classlogic_1_1Observer_1ad986dcdc61ec66e5a44252280153daad" prot="public" virt="non-virtual"><scope>logic::Score</scope><name>registerSubject</name></member>
+      <member refid="classlogic_1_1Score_1a1133f5f939adb001148f47e86041cb39" prot="private" virt="non-virtual"><scope>logic::Score</scope><name>score</name></member>
+      <member refid="classlogic_1_1Score_1a07b6ac91ebef7416e8544d80295d4b22" prot="public" virt="non-virtual"><scope>logic::Score</scope><name>Score</name></member>
+      <member refid="classlogic_1_1Score_1a4c970d6c1a2fbb330f877179bdf77e4b" prot="public" virt="non-virtual"><scope>logic::Score</scope><name>Score</name></member>
+      <member refid="classlogic_1_1Score_1a5f385cc6f45f9d1f65e89fc5e1351793" prot="public" virt="non-virtual"><scope>logic::Score</scope><name>setScore</name></member>
+      <member refid="classlogic_1_1Score_1a33f2bad5cc4c080f8e7c4382570609be" prot="public" virt="virtual"><scope>logic::Score</scope><name>update</name></member>
+      <member refid="classlogic_1_1Observer_1a9ffb621699cd68a8e165297d145f593e" prot="public" virt="virtual"><scope>logic::Score</scope><name>~Observer</name></member>
+      <member refid="classlogic_1_1Score_1a5f4b6a1ca3971cdc0fb516c5ec957016" prot="public" virt="non-virtual"><scope>logic::Score</scope><name>~Score</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

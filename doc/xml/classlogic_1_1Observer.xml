@@ -1,0 +1,205 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classlogic_1_1Observer" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>logic::Observer</compoundname>
+    <derivedcompoundref refid="classlogic_1_1Score" prot="public" virt="non-virtual">logic::Score</derivedcompoundref>
+    <derivedcompoundref refid="classrepresentation_1_1EntityView" prot="public" virt="non-virtual">representation::EntityView</derivedcompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classlogic_1_1Observer_1a697de16e32151a82b415bc2a9aa132b4" prot="protected" static="no" mutable="no">
+        <type>std::weak_ptr&lt; <ref refid="classlogic_1_1Subject" kindref="compound">logic::Subject</ref> &gt;</type>
+        <definition>std::weak_ptr&lt;logic::Subject&gt; logic::Observer::mSubject</definition>
+        <argsstring></argsstring>
+        <name>mSubject</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Observer.h" line="16" column="23" bodyfile="src/logic_library/Observer.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classlogic_1_1Observer_1a6c8e55f7a0cc16af2994520cbf6739d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::Observer::Observer</definition>
+        <argsstring>()</argsstring>
+        <name>Observer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1Observer" kindref="compound">Observer</ref> Constructor for a <ref refid="classlogic_1_1Observer" kindref="compound">Observer</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Observer.h" line="23" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1Observer_1a9ffb621699cd68a8e165297d145f593e" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>virtual logic::Observer::~Observer</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Observer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1Observer" kindref="compound">Observer</ref> Destructor for a <ref refid="classlogic_1_1Observer" kindref="compound">Observer</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Observer.h" line="29" column="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1Observer_1a91bdbdf67a9983d2dee5f46344131dc3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::Observer::Observer</definition>
+        <argsstring>(const std::shared_ptr&lt; logic::Subject &gt; &amp;subject)</argsstring>
+        <name>Observer</name>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classlogic_1_1Subject" kindref="compound">logic::Subject</ref> &gt; &amp;</type>
+          <declname>subject</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1Observer" kindref="compound">Observer</ref> Constructor for a <ref refid="classlogic_1_1Observer" kindref="compound">Observer</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Observer.h" line="35" column="9" bodyfile="src/logic_library/Observer.cpp" bodystart="9" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1Observer_1abde36ace3e49511c155687a32dd765e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void logic::Observer::update</definition>
+        <argsstring>()=0</argsstring>
+        <name>update</name>
+        <reimplementedby refid="classlogic_1_1Score_1a33f2bad5cc4c080f8e7c4382570609be">update</reimplementedby>
+        <reimplementedby refid="classrepresentation_1_1EntityView_1a609e08de8dbeec013659ab4a12df6601">update</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : update Updates the state of the observer. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Observer.h" line="41" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1Observer_1ad986dcdc61ec66e5a44252280153daad" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::Observer::registerSubject</definition>
+        <argsstring>(const std::shared_ptr&lt; logic::Subject &gt; &amp;subject)</argsstring>
+        <name>registerSubject</name>
+        <param>
+          <type>const std::shared_ptr&lt; <ref refid="classlogic_1_1Subject" kindref="compound">logic::Subject</ref> &gt; &amp;</type>
+          <declname>subject</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : registerSubject Sets the subject for this observer. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>subject</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(std::shared_ptr&lt;logic::Subject&gt;) : subject that we register. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Observer.h" line="48" column="14" bodyfile="src/logic_library/Observer.h" bodystart="48" bodyend="48"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>logic::Observer</label>
+        <link refid="classlogic_1_1Observer"/>
+      </node>
+      <node id="3">
+        <label>representation::EntityView</label>
+        <link refid="classrepresentation_1_1EntityView"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>representation::BGTile_GR</label>
+        <link refid="classrepresentation_1_1BGTile__GR"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>representation::Platform_Static_GR</label>
+        <link refid="classrepresentation_1_1Platform__Static__GR"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>representation::Spring_GR</label>
+        <link refid="classrepresentation_1_1Spring__GR"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>logic::Score</label>
+        <link refid="classlogic_1_1Score"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>representation::Platform_GR</label>
+        <link refid="classrepresentation_1_1Platform__GR"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>representation::Platform_Temporary_GR</label>
+        <link refid="classrepresentation_1_1Platform__Temporary__GR"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>representation::Bonus_GR</label>
+        <link refid="classrepresentation_1_1Bonus__GR"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>representation::Player_GR</label>
+        <link refid="classrepresentation_1_1Player__GR"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>representation::Platform_Vertical_GR</label>
+        <link refid="classrepresentation_1_1Platform__Vertical__GR"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>representation::Platform_Horizontal_GR</label>
+        <link refid="classrepresentation_1_1Platform__Horizontal__GR"/>
+        <childnode refid="8" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>representation::Jetpack_GR</label>
+        <link refid="classrepresentation_1_1Jetpack__GR"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="src/logic_library/Observer.h" line="13" column="1" bodyfile="src/logic_library/Observer.h" bodystart="12" bodyend="49"/>
+    <listofallmembers>
+      <member refid="classlogic_1_1Observer_1a697de16e32151a82b415bc2a9aa132b4" prot="protected" virt="non-virtual"><scope>logic::Observer</scope><name>mSubject</name></member>
+      <member refid="classlogic_1_1Observer_1a6c8e55f7a0cc16af2994520cbf6739d7" prot="public" virt="non-virtual"><scope>logic::Observer</scope><name>Observer</name></member>
+      <member refid="classlogic_1_1Observer_1a91bdbdf67a9983d2dee5f46344131dc3" prot="public" virt="non-virtual"><scope>logic::Observer</scope><name>Observer</name></member>
+      <member refid="classlogic_1_1Observer_1ad986dcdc61ec66e5a44252280153daad" prot="public" virt="non-virtual"><scope>logic::Observer</scope><name>registerSubject</name></member>
+      <member refid="classlogic_1_1Observer_1abde36ace3e49511c155687a32dd765e1" prot="public" virt="pure-virtual"><scope>logic::Observer</scope><name>update</name></member>
+      <member refid="classlogic_1_1Observer_1a9ffb621699cd68a8e165297d145f593e" prot="public" virt="virtual"><scope>logic::Observer</scope><name>~Observer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

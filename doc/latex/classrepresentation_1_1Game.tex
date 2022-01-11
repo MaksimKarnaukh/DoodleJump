@@ -1,0 +1,322 @@
+\hypertarget{classrepresentation_1_1Game}{}\doxysubsection{representation\+::Game Class Reference}
+\label{classrepresentation_1_1Game}\index{representation::Game@{representation::Game}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrepresentation_1_1Game_a7889375f7112234007bb9ba75be750d8}{Game}} ()
+\item 
+\mbox{\hyperlink{classrepresentation_1_1Game_aec0583c96de8be0b5b5c59eb66a434d0}{$\sim$\+Game}} ()
+\item 
+void \mbox{\hyperlink{classrepresentation_1_1Game_adccf8d0e3a0b2257eaeda34cc934ff53}{Handle\+Input}} ()
+\item 
+void \mbox{\hyperlink{classrepresentation_1_1Game_a71a55fe103e2fdc3cec220d24bf95343}{Update}} ()
+\item 
+void \mbox{\hyperlink{classrepresentation_1_1Game_aee4b5192fbdfea96b67872533080fac5}{Render}} ()
+\item 
+\mbox{\hyperlink{classrepresentation_1_1Window}{Window}} \& \mbox{\hyperlink{classrepresentation_1_1Game_a065d151fc9f30b6c732d4ebf10e19b7e}{Get\+Window}} ()
+\item 
+void \mbox{\hyperlink{classrepresentation_1_1Game_ab2257f0707b7c49d7c48ecf8c8fd1580}{run\+Game\+Loop}} ()
+\item 
+void \mbox{\hyperlink{classrepresentation_1_1Game_abb2e64d484ca4e81e8f74505b5dfd2b9}{play\+Menu}} ()
+\item 
+void \mbox{\hyperlink{classrepresentation_1_1Game_a99a4bb7b3e86e94fd35193ead50b9b15}{play\+Game}} ()
+\item 
+void \mbox{\hyperlink{classrepresentation_1_1Game_ad8f5d32a839f06eaf5e6532a7b939415}{load\+Fonts}} ()
+\item 
+void \mbox{\hyperlink{classrepresentation_1_1Game_ac8d745da320414774a6d06a6da05299e}{create\+Texts}} ()
+\item 
+void \mbox{\hyperlink{classrepresentation_1_1Game_afdd28c211aa02574bb5ed16384f56c1b}{calculate\+High\+Score}} ()
+\item 
+void \mbox{\hyperlink{classrepresentation_1_1Game_aa34f2390947b803ad5e29c95cb69e791}{draw\+B\+G\+Tiles}} ()
+\item 
+void \mbox{\hyperlink{classrepresentation_1_1Game_aa5f23176af501fce8b510fbffc6fca9c}{draw\+Platforms}} ()
+\item 
+void \mbox{\hyperlink{classrepresentation_1_1Game_a0ded73c02cb88f6d0591050fc8cf487b}{draw\+Bonusses}} ()
+\item 
+void \mbox{\hyperlink{classrepresentation_1_1Game_ae754be8869dc1dd1336f81e256e67992}{draw\+Score}} ()
+\item 
+void \mbox{\hyperlink{classrepresentation_1_1Game_a12fad4e83aee259670813a7673f51065}{draw\+Player}} ()
+\item 
+void \mbox{\hyperlink{classrepresentation_1_1Game_aed0b085f771b532ae1dfa17289a6a523}{set\+Frame\+Rate}} (float fps)
+\item 
+float \mbox{\hyperlink{classrepresentation_1_1Game_a46c53a159c1075e06f72efacfaa7da10}{get\+Frame\+Rate}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classrepresentation_1_1Game_adfc3b43a87a2ebb78d39daed0360606d}{create\+Single\+Text}} (sf\+::\+Text \&\+\_\+text, const sf\+::\+Font \&\+\_\+font, int char\+Size, sf\+::\+Color fill\+Color, sf\+::\+Color outline\+Color, float outline\+Thickness, std\+::pair$<$ float, float $>$ pos, const std\+::string \&str)
+\item 
+static void \mbox{\hyperlink{classrepresentation_1_1Game_a6fcf39bf44601ac3bff978ea29428243}{create\+Single\+Text}} (sf\+::\+Text \&\+\_\+text, const sf\+::\+Font \&\+\_\+font, int char\+Size, std\+::pair$<$ float, float $>$ pos, const std\+::string \&str)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+Definition at line 15 of file Game.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrepresentation_1_1Game_a7889375f7112234007bb9ba75be750d8}\label{classrepresentation_1_1Game_a7889375f7112234007bb9ba75be750d8}} 
+\index{representation::Game@{representation::Game}!Game@{Game}}
+\index{Game@{Game}!representation::Game@{representation::Game}}
+\doxyparagraph{\texorpdfstring{Game()}{Game()}}
+{\footnotesize\ttfamily representation\+::\+Game\+::\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: \mbox{\hyperlink{classrepresentation_1_1Game}{Game}} Constructor for a \mbox{\hyperlink{classrepresentation_1_1Game}{Game}} (the window is made here). 
+
+Definition at line 8 of file Game.\+cpp.
+
+\mbox{\Hypertarget{classrepresentation_1_1Game_aec0583c96de8be0b5b5c59eb66a434d0}\label{classrepresentation_1_1Game_aec0583c96de8be0b5b5c59eb66a434d0}} 
+\index{representation::Game@{representation::Game}!````~Game@{$\sim$Game}}
+\index{````~Game@{$\sim$Game}!representation::Game@{representation::Game}}
+\doxyparagraph{\texorpdfstring{$\sim$Game()}{~Game()}}
+{\footnotesize\ttfamily representation\+::\+Game\+::$\sim$\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: \mbox{\hyperlink{classrepresentation_1_1Game}{Game}} Destructor for a \mbox{\hyperlink{classrepresentation_1_1Game}{Game}}. 
+
+Definition at line 21 of file Game.\+cpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrepresentation_1_1Game_afdd28c211aa02574bb5ed16384f56c1b}\label{classrepresentation_1_1Game_afdd28c211aa02574bb5ed16384f56c1b}} 
+\index{representation::Game@{representation::Game}!calculateHighScore@{calculateHighScore}}
+\index{calculateHighScore@{calculateHighScore}!representation::Game@{representation::Game}}
+\doxyparagraph{\texorpdfstring{calculateHighScore()}{calculateHighScore()}}
+{\footnotesize\ttfamily void representation\+::\+Game\+::calculate\+High\+Score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: calculate\+High\+Score Calculates the previous and all-\/time high-\/score. 
+
+Definition at line 197 of file Game.\+cpp.
+
+\mbox{\Hypertarget{classrepresentation_1_1Game_adfc3b43a87a2ebb78d39daed0360606d}\label{classrepresentation_1_1Game_adfc3b43a87a2ebb78d39daed0360606d}} 
+\index{representation::Game@{representation::Game}!createSingleText@{createSingleText}}
+\index{createSingleText@{createSingleText}!representation::Game@{representation::Game}}
+\doxyparagraph{\texorpdfstring{createSingleText()}{createSingleText()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void representation\+::\+Game\+::create\+Single\+Text (\begin{DoxyParamCaption}\item[{sf\+::\+Text \&}]{\+\_\+text,  }\item[{const sf\+::\+Font \&}]{\+\_\+font,  }\item[{int}]{char\+Size,  }\item[{sf\+::\+Color}]{fill\+Color,  }\item[{sf\+::\+Color}]{outline\+Color,  }\item[{float}]{outline\+Thickness,  }\item[{std\+::pair$<$ float, float $>$}]{pos,  }\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+@function \+: create\+Single\+Text Assigns the esthetics to a single text item. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+text} & (sf\+::\+Text) \+: text item. \\
+\hline
+{\em \+\_\+font} & (sf\+::\+Font) \+: font that is applied to the text. \\
+\hline
+{\em char\+Size} & (int) \+: character size of our text. \\
+\hline
+{\em fill\+Color} & (sf\+::\+Color) \+: text color. \\
+\hline
+{\em outline\+Color} & (sf\+::\+Color) \+: outline color of our text. \\
+\hline
+{\em outline\+Thickness} & (float) \+: outline thickness. \\
+\hline
+{\em pos} & (std\+::pair$<$float,float$>$) \+: position of the text. \\
+\hline
+{\em str} & (std\+::string) \+: the string that the text represents. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 169 of file Game.\+cpp.
+
+\mbox{\Hypertarget{classrepresentation_1_1Game_a6fcf39bf44601ac3bff978ea29428243}\label{classrepresentation_1_1Game_a6fcf39bf44601ac3bff978ea29428243}} 
+\index{representation::Game@{representation::Game}!createSingleText@{createSingleText}}
+\index{createSingleText@{createSingleText}!representation::Game@{representation::Game}}
+\doxyparagraph{\texorpdfstring{createSingleText()}{createSingleText()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void representation\+::\+Game\+::create\+Single\+Text (\begin{DoxyParamCaption}\item[{sf\+::\+Text \&}]{\+\_\+text,  }\item[{const sf\+::\+Font \&}]{\+\_\+font,  }\item[{int}]{char\+Size,  }\item[{std\+::pair$<$ float, float $>$}]{pos,  }\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+@function \+: create\+Single\+Text Assigns the esthetics to a single text item. 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+text} & (sf\+::\+Text) \+: text item. \\
+\hline
+{\em \+\_\+font} & (sf\+::\+Font) \+: font that is applied to the text. \\
+\hline
+{\em char\+Size} & (int) \+: character size of our text. \\
+\hline
+{\em pos} & (std\+::pair$<$float,float$>$) \+: position of the text. \\
+\hline
+{\em str} & (std\+::string) \+: the string that the text represents. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 185 of file Game.\+cpp.
+
+\mbox{\Hypertarget{classrepresentation_1_1Game_ac8d745da320414774a6d06a6da05299e}\label{classrepresentation_1_1Game_ac8d745da320414774a6d06a6da05299e}} 
+\index{representation::Game@{representation::Game}!createTexts@{createTexts}}
+\index{createTexts@{createTexts}!representation::Game@{representation::Game}}
+\doxyparagraph{\texorpdfstring{createTexts()}{createTexts()}}
+{\footnotesize\ttfamily void representation\+::\+Game\+::create\+Texts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: create\+Texts All necessary text items are created here. 
+
+Definition at line 153 of file Game.\+cpp.
+
+\mbox{\Hypertarget{classrepresentation_1_1Game_aa34f2390947b803ad5e29c95cb69e791}\label{classrepresentation_1_1Game_aa34f2390947b803ad5e29c95cb69e791}} 
+\index{representation::Game@{representation::Game}!drawBGTiles@{drawBGTiles}}
+\index{drawBGTiles@{drawBGTiles}!representation::Game@{representation::Game}}
+\doxyparagraph{\texorpdfstring{drawBGTiles()}{drawBGTiles()}}
+{\footnotesize\ttfamily void representation\+::\+Game\+::draw\+B\+G\+Tiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: draw\+B\+G\+Tiles Draws the background tiles. 
+
+Definition at line 205 of file Game.\+cpp.
+
+\mbox{\Hypertarget{classrepresentation_1_1Game_a0ded73c02cb88f6d0591050fc8cf487b}\label{classrepresentation_1_1Game_a0ded73c02cb88f6d0591050fc8cf487b}} 
+\index{representation::Game@{representation::Game}!drawBonusses@{drawBonusses}}
+\index{drawBonusses@{drawBonusses}!representation::Game@{representation::Game}}
+\doxyparagraph{\texorpdfstring{drawBonusses()}{drawBonusses()}}
+{\footnotesize\ttfamily void representation\+::\+Game\+::draw\+Bonusses (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: draw\+Bonusses Draws the bonusses. 
+
+Definition at line 224 of file Game.\+cpp.
+
+\mbox{\Hypertarget{classrepresentation_1_1Game_aa5f23176af501fce8b510fbffc6fca9c}\label{classrepresentation_1_1Game_aa5f23176af501fce8b510fbffc6fca9c}} 
+\index{representation::Game@{representation::Game}!drawPlatforms@{drawPlatforms}}
+\index{drawPlatforms@{drawPlatforms}!representation::Game@{representation::Game}}
+\doxyparagraph{\texorpdfstring{drawPlatforms()}{drawPlatforms()}}
+{\footnotesize\ttfamily void representation\+::\+Game\+::draw\+Platforms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: draw\+Platforms Draws the platforms. 
+
+Definition at line 212 of file Game.\+cpp.
+
+\mbox{\Hypertarget{classrepresentation_1_1Game_a12fad4e83aee259670813a7673f51065}\label{classrepresentation_1_1Game_a12fad4e83aee259670813a7673f51065}} 
+\index{representation::Game@{representation::Game}!drawPlayer@{drawPlayer}}
+\index{drawPlayer@{drawPlayer}!representation::Game@{representation::Game}}
+\doxyparagraph{\texorpdfstring{drawPlayer()}{drawPlayer()}}
+{\footnotesize\ttfamily void representation\+::\+Game\+::draw\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: draw\+Player Draws the player. 
+
+Definition at line 242 of file Game.\+cpp.
+
+\mbox{\Hypertarget{classrepresentation_1_1Game_ae754be8869dc1dd1336f81e256e67992}\label{classrepresentation_1_1Game_ae754be8869dc1dd1336f81e256e67992}} 
+\index{representation::Game@{representation::Game}!drawScore@{drawScore}}
+\index{drawScore@{drawScore}!representation::Game@{representation::Game}}
+\doxyparagraph{\texorpdfstring{drawScore()}{drawScore()}}
+{\footnotesize\ttfamily void representation\+::\+Game\+::draw\+Score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: draw\+Score Draws the score. 
+
+Definition at line 236 of file Game.\+cpp.
+
+\mbox{\Hypertarget{classrepresentation_1_1Game_a46c53a159c1075e06f72efacfaa7da10}\label{classrepresentation_1_1Game_a46c53a159c1075e06f72efacfaa7da10}} 
+\index{representation::Game@{representation::Game}!getFrameRate@{getFrameRate}}
+\index{getFrameRate@{getFrameRate}!representation::Game@{representation::Game}}
+\doxyparagraph{\texorpdfstring{getFrameRate()}{getFrameRate()}}
+{\footnotesize\ttfamily float representation\+::\+Game\+::get\+Frame\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+@function \+: get\+Frame\+Rate Getter for the framerate data member. \begin{DoxyReturn}{Returns}
+(float) \+: framerate data member (frames per second). 
+\end{DoxyReturn}
+
+
+Definition at line 184 of file Game.\+h.
+
+\mbox{\Hypertarget{classrepresentation_1_1Game_a065d151fc9f30b6c732d4ebf10e19b7e}\label{classrepresentation_1_1Game_a065d151fc9f30b6c732d4ebf10e19b7e}} 
+\index{representation::Game@{representation::Game}!GetWindow@{GetWindow}}
+\index{GetWindow@{GetWindow}!representation::Game@{representation::Game}}
+\doxyparagraph{\texorpdfstring{GetWindow()}{GetWindow()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classrepresentation_1_1Window}{Window}} \& representation\+::\+Game\+::\+Get\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: Get\+Window Returns the window instance. \begin{DoxyReturn}{Returns}
+(\mbox{\hyperlink{classrepresentation_1_1Window}{Window}}) \+: window instance. 
+\end{DoxyReturn}
+
+
+Definition at line 58 of file Game.\+cpp.
+
+\mbox{\Hypertarget{classrepresentation_1_1Game_adccf8d0e3a0b2257eaeda34cc934ff53}\label{classrepresentation_1_1Game_adccf8d0e3a0b2257eaeda34cc934ff53}} 
+\index{representation::Game@{representation::Game}!HandleInput@{HandleInput}}
+\index{HandleInput@{HandleInput}!representation::Game@{representation::Game}}
+\doxyparagraph{\texorpdfstring{HandleInput()}{HandleInput()}}
+{\footnotesize\ttfamily void representation\+::\+Game\+::\+Handle\+Input (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: Handle\+Input Checks for user input on the keyboard and passes this to the world. 
+
+Definition at line 42 of file Game.\+cpp.
+
+\mbox{\Hypertarget{classrepresentation_1_1Game_ad8f5d32a839f06eaf5e6532a7b939415}\label{classrepresentation_1_1Game_ad8f5d32a839f06eaf5e6532a7b939415}} 
+\index{representation::Game@{representation::Game}!loadFonts@{loadFonts}}
+\index{loadFonts@{loadFonts}!representation::Game@{representation::Game}}
+\doxyparagraph{\texorpdfstring{loadFonts()}{loadFonts()}}
+{\footnotesize\ttfamily void representation\+::\+Game\+::load\+Fonts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: load\+Fonts All necessary fonts are loaded in here. 
+
+Definition at line 141 of file Game.\+cpp.
+
+\mbox{\Hypertarget{classrepresentation_1_1Game_a99a4bb7b3e86e94fd35193ead50b9b15}\label{classrepresentation_1_1Game_a99a4bb7b3e86e94fd35193ead50b9b15}} 
+\index{representation::Game@{representation::Game}!playGame@{playGame}}
+\index{playGame@{playGame}!representation::Game@{representation::Game}}
+\doxyparagraph{\texorpdfstring{playGame()}{playGame()}}
+{\footnotesize\ttfamily void representation\+::\+Game\+::play\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: play\+Game Runs the actual Doodle Jump game. 
+
+Definition at line 107 of file Game.\+cpp.
+
+\mbox{\Hypertarget{classrepresentation_1_1Game_abb2e64d484ca4e81e8f74505b5dfd2b9}\label{classrepresentation_1_1Game_abb2e64d484ca4e81e8f74505b5dfd2b9}} 
+\index{representation::Game@{representation::Game}!playMenu@{playMenu}}
+\index{playMenu@{playMenu}!representation::Game@{representation::Game}}
+\doxyparagraph{\texorpdfstring{playMenu()}{playMenu()}}
+{\footnotesize\ttfamily void representation\+::\+Game\+::play\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: play\+Menu Responsible for showing the menu screen. 
+
+Definition at line 78 of file Game.\+cpp.
+
+\mbox{\Hypertarget{classrepresentation_1_1Game_aee4b5192fbdfea96b67872533080fac5}\label{classrepresentation_1_1Game_aee4b5192fbdfea96b67872533080fac5}} 
+\index{representation::Game@{representation::Game}!Render@{Render}}
+\index{Render@{Render}!representation::Game@{representation::Game}}
+\doxyparagraph{\texorpdfstring{Render()}{Render()}}
+{\footnotesize\ttfamily void representation\+::\+Game\+::\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: Render Takes care of drawing all our entities on the window. 
+
+Definition at line 29 of file Game.\+cpp.
+
+\mbox{\Hypertarget{classrepresentation_1_1Game_ab2257f0707b7c49d7c48ecf8c8fd1580}\label{classrepresentation_1_1Game_ab2257f0707b7c49d7c48ecf8c8fd1580}} 
+\index{representation::Game@{representation::Game}!runGameLoop@{runGameLoop}}
+\index{runGameLoop@{runGameLoop}!representation::Game@{representation::Game}}
+\doxyparagraph{\texorpdfstring{runGameLoop()}{runGameLoop()}}
+{\footnotesize\ttfamily void representation\+::\+Game\+::run\+Game\+Loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: run\+Game\+Loop Runs the top-\/level program loop, which alternates between the different states of our game. 
+
+Definition at line 60 of file Game.\+cpp.
+
+\mbox{\Hypertarget{classrepresentation_1_1Game_aed0b085f771b532ae1dfa17289a6a523}\label{classrepresentation_1_1Game_aed0b085f771b532ae1dfa17289a6a523}} 
+\index{representation::Game@{representation::Game}!setFrameRate@{setFrameRate}}
+\index{setFrameRate@{setFrameRate}!representation::Game@{representation::Game}}
+\doxyparagraph{\texorpdfstring{setFrameRate()}{setFrameRate()}}
+{\footnotesize\ttfamily void representation\+::\+Game\+::set\+Frame\+Rate (\begin{DoxyParamCaption}\item[{float}]{fps }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+@function \+: set\+Frame\+Rate Setter for the framerate data member. 
+\begin{DoxyParams}{Parameters}
+{\em fps} & (float) \+: frames per second. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 177 of file Game.\+h.
+
+\mbox{\Hypertarget{classrepresentation_1_1Game_a71a55fe103e2fdc3cec220d24bf95343}\label{classrepresentation_1_1Game_a71a55fe103e2fdc3cec220d24bf95343}} 
+\index{representation::Game@{representation::Game}!Update@{Update}}
+\index{Update@{Update}!representation::Game@{representation::Game}}
+\doxyparagraph{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void representation\+::\+Game\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: Update Updates the window events. 
+
+Definition at line 23 of file Game.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/game\+\_\+representation/Game.\+h\item 
+src/game\+\_\+representation/Game.\+cpp\end{DoxyCompactItemize}

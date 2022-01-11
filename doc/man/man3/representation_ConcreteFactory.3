@@ -1,0 +1,267 @@
+.TH "representation::ConcreteFactory" 3 "Tue Jan 11 2022" "Doxygen Test" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+representation::ConcreteFactory
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBlogic::AbstractFactory\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBConcreteFactory\fP ()"
+.br
+.ti -1c
+.RI "\fB~ConcreteFactory\fP () override=default"
+.br
+.ti -1c
+.RI "std::shared_ptr< \fBlogic::Player\fP > \fBcreatePlayer\fP (float posX, float posY, float width, float height) override"
+.br
+.ti -1c
+.RI "std::shared_ptr< \fBlogic::Platform\fP > \fBcreateStaticPlatform\fP (float posX, float posY, float width, float height) override"
+.br
+.ti -1c
+.RI "std::shared_ptr< \fBlogic::Platform\fP > \fBcreateTemporaryPlatform\fP (float posX, float posY, float width, float height) override"
+.br
+.ti -1c
+.RI "std::shared_ptr< \fBlogic::Platform\fP > \fBcreateHorizontalPlatform\fP (float posX, float posY, float width, float height) override"
+.br
+.ti -1c
+.RI "std::shared_ptr< \fBlogic::Platform\fP > \fBcreateVerticalPlatform\fP (float posX, float posY, float width, float height) override"
+.br
+.ti -1c
+.RI "std::shared_ptr< \fBlogic::Bonus\fP > \fBcreateSpring\fP (float posX, float posY, float width, float height) override"
+.br
+.ti -1c
+.RI "std::shared_ptr< \fBlogic::Bonus\fP > \fBcreateJetpack\fP (float posX, float posY, float width, float height) override"
+.br
+.ti -1c
+.RI "std::shared_ptr< \fBlogic::BGTile\fP > \fBcreateBGTile\fP (float posX, float posY, float width, float height) override"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< std::shared_ptr< \fBrepresentation::Platform_GR\fP > > \fBplatformViews\fP"
+.br
+.ti -1c
+.RI "std::vector< std::shared_ptr< \fBrepresentation::Player_GR\fP > > \fBplayerViews\fP"
+.br
+.ti -1c
+.RI "std::vector< std::shared_ptr< \fBrepresentation::Bonus_GR\fP > > \fBbonusViews\fP"
+.br
+.ti -1c
+.RI "std::vector< std::shared_ptr< \fBrepresentation::BGTile_GR\fP > > \fBbgTilesViews\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 19 of file ConcreteFactory\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "representation::ConcreteFactory::ConcreteFactory ()\fC [default]\fP"
+@function : \fBConcreteFactory\fP Constructor for a \fBConcreteFactory\fP\&. 
+.SS "representation::ConcreteFactory::~ConcreteFactory ()\fC [override]\fP, \fC [default]\fP"
+@function : \fBConcreteFactory\fP Destructor for a \fBConcreteFactory\fP\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "std::shared_ptr< \fBlogic::BGTile\fP > representation::ConcreteFactory::createBGTile (float posX, float posY, float width, float height)\fC [override]\fP, \fC [virtual]\fP"
+@function : createBGTile Creates and returns a background tile model\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposX\fP (float) : x-position of the entity\&. 
+.br
+\fIposY\fP (float) : y-position of the entity\&. 
+.br
+\fIwidth\fP (float) : width of the entity\&. 
+.br
+\fIheight\fP (float) : height of the entity\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+(std::shared_ptr<logic::BGTile>) : background tile model\&. 
+.RE
+.PP
+
+.PP
+Implements \fBlogic::AbstractFactory\fP\&.
+.PP
+Definition at line 113 of file ConcreteFactory\&.cpp\&.
+.SS "std::shared_ptr< \fBlogic::Platform\fP > representation::ConcreteFactory::createHorizontalPlatform (float posX, float posY, float width, float height)\fC [override]\fP, \fC [virtual]\fP"
+@function : createHorizontalPlatform Creates and returns a (horizontal) platform model\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposX\fP (float) : x-position of the entity\&. 
+.br
+\fIposY\fP (float) : y-position of the entity\&. 
+.br
+\fIwidth\fP (float) : width of the entity\&. 
+.br
+\fIheight\fP (float) : height of the entity\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+(std::shared_ptr<logic::Platform>) : platform model\&. 
+.RE
+.PP
+
+.PP
+Implements \fBlogic::AbstractFactory\fP\&.
+.PP
+Definition at line 56 of file ConcreteFactory\&.cpp\&.
+.SS "std::shared_ptr< \fBlogic::Bonus\fP > representation::ConcreteFactory::createJetpack (float posX, float posY, float width, float height)\fC [override]\fP, \fC [virtual]\fP"
+@function : createJetpack Creates and returns a jetpack model\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposX\fP (float) : x-position of the entity\&. 
+.br
+\fIposY\fP (float) : y-position of the entity\&. 
+.br
+\fIwidth\fP (float) : width of the entity\&. 
+.br
+\fIheight\fP (float) : height of the entity\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+(std::shared_ptr<logic::Bonus>) : bonus model\&. 
+.RE
+.PP
+
+.PP
+Implements \fBlogic::AbstractFactory\fP\&.
+.PP
+Definition at line 100 of file ConcreteFactory\&.cpp\&.
+.SS "std::shared_ptr< \fBlogic::Player\fP > representation::ConcreteFactory::createPlayer (float posX, float posY, float width, float height)\fC [override]\fP, \fC [virtual]\fP"
+@function : createPlayer Creates and returns a player model\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposX\fP (float) : x-position of the entity\&. 
+.br
+\fIposY\fP (float) : y-position of the entity\&. 
+.br
+\fIwidth\fP (float) : width of the entity\&. 
+.br
+\fIheight\fP (float) : height of the entity\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+(std::shared_ptr<logic::Player>) : player model\&. 
+.RE
+.PP
+
+.PP
+Implements \fBlogic::AbstractFactory\fP\&.
+.PP
+Definition at line 7 of file ConcreteFactory\&.cpp\&.
+.SS "std::shared_ptr< \fBlogic::Bonus\fP > representation::ConcreteFactory::createSpring (float posX, float posY, float width, float height)\fC [override]\fP, \fC [virtual]\fP"
+@function : createSpring Creates and returns a spring model\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposX\fP (float) : x-position of the entity\&. 
+.br
+\fIposY\fP (float) : y-position of the entity\&. 
+.br
+\fIwidth\fP (float) : width of the entity\&. 
+.br
+\fIheight\fP (float) : height of the entity\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+(std::shared_ptr<logic::Bonus>) : bonus model\&. 
+.RE
+.PP
+
+.PP
+Implements \fBlogic::AbstractFactory\fP\&.
+.PP
+Definition at line 88 of file ConcreteFactory\&.cpp\&.
+.SS "std::shared_ptr< \fBlogic::Platform\fP > representation::ConcreteFactory::createStaticPlatform (float posX, float posY, float width, float height)\fC [override]\fP, \fC [virtual]\fP"
+@function : createStaticPlatform Creates and returns a (static) platform model\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposX\fP (float) : x-position of the entity\&. 
+.br
+\fIposY\fP (float) : y-position of the entity\&. 
+.br
+\fIwidth\fP (float) : width of the entity\&. 
+.br
+\fIheight\fP (float) : height of the entity\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+(std::shared_ptr<\fBlogic::Platform\fP) : platform model\&. 
+.RE
+.PP
+
+.PP
+Implements \fBlogic::AbstractFactory\fP\&.
+.PP
+Definition at line 24 of file ConcreteFactory\&.cpp\&.
+.SS "std::shared_ptr< \fBlogic::Platform\fP > representation::ConcreteFactory::createTemporaryPlatform (float posX, float posY, float width, float height)\fC [override]\fP, \fC [virtual]\fP"
+@function : createTemporaryPlatform Creates and returns a (temporary) platform model\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposX\fP (float) : x-position of the entity\&. 
+.br
+\fIposY\fP (float) : y-position of the entity\&. 
+.br
+\fIwidth\fP (float) : width of the entity\&. 
+.br
+\fIheight\fP (float) : height of the entity\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+(std::shared_ptr<logic::Platform>) : platform model\&. 
+.RE
+.PP
+
+.PP
+Implements \fBlogic::AbstractFactory\fP\&.
+.PP
+Definition at line 40 of file ConcreteFactory\&.cpp\&.
+.SS "std::shared_ptr< \fBlogic::Platform\fP > representation::ConcreteFactory::createVerticalPlatform (float posX, float posY, float width, float height)\fC [override]\fP, \fC [virtual]\fP"
+@function : createVerticalPlatform Creates and returns a (vertical) platform model\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposX\fP (float) : x-position of the entity\&. 
+.br
+\fIposY\fP (float) : y-position of the entity\&. 
+.br
+\fIwidth\fP (float) : width of the entity\&. 
+.br
+\fIheight\fP (float) : height of the entity\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+(std::shared_ptr<logic::Platform>) : platform model\&. 
+.RE
+.PP
+
+.PP
+Implements \fBlogic::AbstractFactory\fP\&.
+.PP
+Definition at line 72 of file ConcreteFactory\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Doxygen Test from the source code\&.

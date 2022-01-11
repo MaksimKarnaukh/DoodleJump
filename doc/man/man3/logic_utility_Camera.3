@@ -1,0 +1,257 @@
+.TH "logic::utility::Camera" 3 "Tue Jan 11 2022" "Doxygen Test" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+logic::utility::Camera
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetWindowWidth\fP (int width)"
+.br
+.ti -1c
+.RI "void \fBsetWindowHeight\fP (int height)"
+.br
+.ti -1c
+.RI "void \fBsetShiftValue\fP (float shift)"
+.br
+.ti -1c
+.RI "void \fBsetLeftBound\fP (const float LeftBound)"
+.br
+.ti -1c
+.RI "void \fBsetRightBound\fP (const float RightBound)"
+.br
+.ti -1c
+.RI "void \fBsetLowerBound\fP (const float LowerBound)"
+.br
+.ti -1c
+.RI "void \fBsetShiftBorder\fP (const float ShiftBorder)"
+.br
+.ti -1c
+.RI "int \fBgetWindowWidth\fP () const"
+.br
+.ti -1c
+.RI "int \fBgetWindowHeight\fP () const"
+.br
+.ti -1c
+.RI "float \fBgetShiftValue\fP () const"
+.br
+.ti -1c
+.RI "float \fBgetLeftBound\fP () const"
+.br
+.ti -1c
+.RI "float \fBgetRightBound\fP () const"
+.br
+.ti -1c
+.RI "float \fBgetLowerBound\fP () const"
+.br
+.ti -1c
+.RI "float \fBgetShiftBorder\fP () const"
+.br
+.ti -1c
+.RI "std::pair< int, int > \fBprojectCoordinates\fP (float x, float y) const"
+.br
+.ti -1c
+.RI "\fBCamera\fP (const \fBCamera\fP &)=delete"
+.br
+.ti -1c
+.RI "\fBCamera\fP (const \fBCamera\fP &&)=delete"
+.br
+.ti -1c
+.RI "\fBCamera\fP & \fBoperator=\fP (const \fBCamera\fP &)=delete"
+.br
+.ti -1c
+.RI "\fBCamera\fP & \fBoperator=\fP (const \fBCamera\fP &&)=delete"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBCamera\fP & \fBInstance\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 13 of file Camera\&.h\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "float logic::utility::Camera::getLeftBound () const\fC [inline]\fP"
+@function : getLeftBound Getter function for the leftBound data member\&. 
+.PP
+\fBReturns\fP
+.RS 4
+(float) : this->leftBound 
+.RE
+.PP
+
+.PP
+Definition at line 116 of file Camera\&.h\&.
+.SS "float logic::utility::Camera::getLowerBound () const\fC [inline]\fP"
+@function : getLowerBound Getter function for the lowerBound data member\&. 
+.PP
+\fBReturns\fP
+.RS 4
+(float) : this->lowerBound 
+.RE
+.PP
+
+.PP
+Definition at line 130 of file Camera\&.h\&.
+.SS "float logic::utility::Camera::getRightBound () const\fC [inline]\fP"
+@function : getRightBound Getter function for the rightBound data member\&. 
+.PP
+\fBReturns\fP
+.RS 4
+(float) : this->rightBound 
+.RE
+.PP
+
+.PP
+Definition at line 123 of file Camera\&.h\&.
+.SS "float logic::utility::Camera::getShiftBorder () const\fC [inline]\fP"
+@function : getShiftBorder Getter function for the shiftBorder data member\&. 
+.PP
+\fBReturns\fP
+.RS 4
+(float) : this->shiftBorder 
+.RE
+.PP
+
+.PP
+Definition at line 137 of file Camera\&.h\&.
+.SS "float logic::utility::Camera::getShiftValue () const\fC [inline]\fP"
+@function : getShiftValue Getter function for the shiftValue data member\&. 
+.PP
+\fBReturns\fP
+.RS 4
+(float) : this->shiftValue 
+.RE
+.PP
+
+.PP
+Definition at line 109 of file Camera\&.h\&.
+.SS "int logic::utility::Camera::getWindowHeight () const\fC [inline]\fP"
+@function : getWindowHeight Getter function for the windowHeight data member\&. 
+.PP
+\fBReturns\fP
+.RS 4
+(int) : this->windowHeight 
+.RE
+.PP
+
+.PP
+Definition at line 102 of file Camera\&.h\&.
+.SS "int logic::utility::Camera::getWindowWidth () const\fC [inline]\fP"
+@function : getWindowWidth Getter function for the windowWidth data member\&. 
+.PP
+\fBReturns\fP
+.RS 4
+(int) : this->windowWidth 
+.RE
+.PP
+
+.PP
+Definition at line 95 of file Camera\&.h\&.
+.SS "std::pair< int, int > logic::utility::Camera::projectCoordinates (float x, float y) const"
+@function : projectCoordinates Projects the logic coordinates (x and y) to pixel coordinates on the window\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP (float) : logic x-coordinate\&. 
+.br
+\fIy\fP (float) : logic y-coordinate\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+(std::pair<int,int>): pair (x,y) of pixel coordinates\&. 
+.RE
+.PP
+
+.PP
+Definition at line 10 of file Camera\&.cpp\&.
+.SS "void logic::utility::Camera::setLeftBound (const float LeftBound)\fC [inline]\fP"
+@function : setLeftBound Setter function for the leftBound data member\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fILeftBound\fP (float) : value that we want to give to leftBound\&. 
+.RE
+.PP
+
+.PP
+Definition at line 67 of file Camera\&.h\&.
+.SS "void logic::utility::Camera::setLowerBound (const float LowerBound)\fC [inline]\fP"
+@function : setLowerBound Setter function for the lowerBound data member\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fILowerBound\fP (float) : value that we want to give to lowerBound\&. 
+.RE
+.PP
+
+.PP
+Definition at line 81 of file Camera\&.h\&.
+.SS "void logic::utility::Camera::setRightBound (const float RightBound)\fC [inline]\fP"
+@function : setRightBound Setter function for the rightBound data member\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIRightBound\fP (float) : value that we want to give to rightBound\&. 
+.RE
+.PP
+
+.PP
+Definition at line 74 of file Camera\&.h\&.
+.SS "void logic::utility::Camera::setShiftBorder (const float ShiftBorder)\fC [inline]\fP"
+@function : setShiftBorder Setter function for the shiftBorder data member\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIShiftBorder\fP (float) : value that we want to give to shiftBorder\&. 
+.RE
+.PP
+
+.PP
+Definition at line 88 of file Camera\&.h\&.
+.SS "void logic::utility::Camera::setShiftValue (float shift)\fC [inline]\fP"
+@function : setShiftValue Setter function for the shiftValue data member\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIshift\fP (float) : value that we want to give to shiftValue\&. 
+.RE
+.PP
+
+.PP
+Definition at line 60 of file Camera\&.h\&.
+.SS "void logic::utility::Camera::setWindowHeight (int height)\fC [inline]\fP"
+@function : setWindowHeight Setter function for the windowHeight data member\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIheight\fP (int) : value that we want to give to windowHeight\&. 
+.RE
+.PP
+
+.PP
+Definition at line 53 of file Camera\&.h\&.
+.SS "void logic::utility::Camera::setWindowWidth (int width)\fC [inline]\fP"
+@function : setWindowWidth Setter function for the windowWidth data member\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIwidth\fP (int) : value that we want to give to windowWidth\&. 
+.RE
+.PP
+
+.PP
+Definition at line 46 of file Camera\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Doxygen Test from the source code\&.

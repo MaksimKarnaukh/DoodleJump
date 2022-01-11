@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="Player_8cpp" kind="file" language="C++">
+    <compoundname>Player.cpp</compoundname>
+    <includes refid="Player_8h" local="yes">Player.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>Player.h</label>
+        <link refid="Player_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>EntityModel.h</label>
+        <link refid="EntityModel_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>string</label>
+      </node>
+      <node id="6">
+        <label>Subject.h</label>
+        <link refid="Subject_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>vector</label>
+      </node>
+      <node id="1">
+        <label>src/logic_library/Player.cpp</label>
+        <link refid="Player_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>chrono</label>
+      </node>
+      <node id="4">
+        <label>Stopwatch.h</label>
+        <link refid="Stopwatch_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacelogic">logic</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Author:<sp/>Maksim<sp/>Karnaukh</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Player.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">logic<sp/>{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><ref refid="classlogic_1_1Player_1a54bdacf937a367629c3ca10acda369d9" kindref="member">Player::Player</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="classlogic_1_1Player_1a21d41f4dc79003bf020fc8d9d504a35b" refkind="member"><highlight class="normal"><ref refid="classlogic_1_1Player_1a54bdacf937a367629c3ca10acda369d9" kindref="member">Player::Player</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>posX,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>posY)<sp/>:<sp/><ref refid="classlogic_1_1EntityModel" kindref="compound">EntityModel</ref>(posX,<sp/>posY)<sp/>{}</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="classlogic_1_1Player_1accdcf9a039c5af47a96ebcee13ffbb66" refkind="member"><highlight class="normal"><ref refid="classlogic_1_1Player_1a54bdacf937a367629c3ca10acda369d9" kindref="member">Player::Player</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>posX,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>posY,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>height)<sp/>:<sp/><ref refid="classlogic_1_1EntityModel" kindref="compound">EntityModel</ref>(posX,<sp/>posY,<sp/>width,<sp/>height)<sp/>{}</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="classlogic_1_1Player_1abad88e5963199f783db752446965be47" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1Player_1abad88e5963199f783db752446965be47" kindref="member">Player::moveLeft</ref>()</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classlogic_1_1EntityModel_1a0d63f4dc9f2dcab997c5acb43a58b761" kindref="member">setPositionX</ref>(this-&gt;<ref refid="classlogic_1_1EntityModel_1aed96cfbc730f4fd9a0e59bebc6727ef9" kindref="member">getPositionX</ref>()<sp/>-<sp/>unit<sp/>*<sp/>logic::utility::Stopwatch::Instance().getDeltaTime());</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlogic_1_1Subject_1a33567537c69863eaff2279f398f80ab4" kindref="member">notifyObservers</ref>();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="classlogic_1_1Player_1a570ba657c77f615ed22ee8aea9819e72" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1Player_1a570ba657c77f615ed22ee8aea9819e72" kindref="member">Player::moveRight</ref>()</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classlogic_1_1EntityModel_1a0d63f4dc9f2dcab997c5acb43a58b761" kindref="member">setPositionX</ref>(this-&gt;<ref refid="classlogic_1_1EntityModel_1aed96cfbc730f4fd9a0e59bebc6727ef9" kindref="member">getPositionX</ref>()<sp/>+<sp/>unit<sp/>*<sp/>logic::utility::Stopwatch::Instance().getDeltaTime());</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlogic_1_1Subject_1a33567537c69863eaff2279f398f80ab4" kindref="member">notifyObservers</ref>();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="classlogic_1_1Player_1a204be6b9cc516367919e8f88b5606650" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1Player_1a204be6b9cc516367919e8f88b5606650" kindref="member">Player::jump</ref>()<sp/>{<sp/>this-&gt;<ref refid="classlogic_1_1EntityModel_1a0a61bc5dc0e6a2a3aed489a604625593" kindref="member">setSpeed</ref>(jumpVelocity);<sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="classlogic_1_1Player_1ae2452b58e44d6246fb24ca3cb128b61a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1Player_1ae2452b58e44d6246fb24ca3cb128b61a" kindref="member">Player::applyGravity</ref>()</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classlogic_1_1EntityModel_1a0a61bc5dc0e6a2a3aed489a604625593" kindref="member">setSpeed</ref>(this-&gt;<ref refid="classlogic_1_1EntityModel_1a0713ad1449d82b61f4e22bbdaa212b40" kindref="member">getSpeed</ref>()<sp/>+<sp/>gravity<sp/>*<sp/>logic::utility::Stopwatch::Instance().getDeltaTime());</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="classlogic_1_1Player_1a4a613cbbe8aa9a27c53c3481c6ae6411" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1Player_1a4a613cbbe8aa9a27c53c3481c6ae6411" kindref="member">Player::moveVertically</ref>()</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classlogic_1_1EntityModel_1a755cc5054fad5a67111f00a137666ab1" kindref="member">setPositionY</ref>(this-&gt;<ref refid="classlogic_1_1EntityModel_1afb9776a3e5b8ebff029914499fe55ce6" kindref="member">getPositionY</ref>()<sp/>+<sp/>e_speed<sp/>*<sp/>logic::utility::Stopwatch::Instance().getDeltaTime());</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlogic_1_1Subject_1a33567537c69863eaff2279f398f80ab4" kindref="member">notifyObservers</ref>();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>logic</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/logic_library/Player.cpp"/>
+  </compounddef>
+</doxygen>

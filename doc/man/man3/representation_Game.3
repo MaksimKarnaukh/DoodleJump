@@ -1,0 +1,231 @@
+.TH "representation::Game" 3 "Tue Jan 11 2022" "Doxygen Test" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+representation::Game
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGame\fP ()"
+.br
+.ti -1c
+.RI "\fB~Game\fP ()"
+.br
+.ti -1c
+.RI "void \fBHandleInput\fP ()"
+.br
+.ti -1c
+.RI "void \fBUpdate\fP ()"
+.br
+.ti -1c
+.RI "void \fBRender\fP ()"
+.br
+.ti -1c
+.RI "\fBWindow\fP & \fBGetWindow\fP ()"
+.br
+.ti -1c
+.RI "void \fBrunGameLoop\fP ()"
+.br
+.ti -1c
+.RI "void \fBplayMenu\fP ()"
+.br
+.ti -1c
+.RI "void \fBplayGame\fP ()"
+.br
+.ti -1c
+.RI "void \fBloadFonts\fP ()"
+.br
+.ti -1c
+.RI "void \fBcreateTexts\fP ()"
+.br
+.ti -1c
+.RI "void \fBcalculateHighScore\fP ()"
+.br
+.ti -1c
+.RI "void \fBdrawBGTiles\fP ()"
+.br
+.ti -1c
+.RI "void \fBdrawPlatforms\fP ()"
+.br
+.ti -1c
+.RI "void \fBdrawBonusses\fP ()"
+.br
+.ti -1c
+.RI "void \fBdrawScore\fP ()"
+.br
+.ti -1c
+.RI "void \fBdrawPlayer\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetFrameRate\fP (float fps)"
+.br
+.ti -1c
+.RI "float \fBgetFrameRate\fP () const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBcreateSingleText\fP (sf::Text &_text, const sf::Font &_font, int charSize, sf::Color fillColor, sf::Color outlineColor, float outlineThickness, std::pair< float, float > pos, const std::string &str)"
+.br
+.ti -1c
+.RI "static void \fBcreateSingleText\fP (sf::Text &_text, const sf::Font &_font, int charSize, std::pair< float, float > pos, const std::string &str)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 15 of file Game\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "representation::Game::Game ()"
+@function : \fBGame\fP Constructor for a \fBGame\fP (the window is made here)\&. 
+.PP
+Definition at line 8 of file Game\&.cpp\&.
+.SS "representation::Game::~Game ()"
+@function : \fBGame\fP Destructor for a \fBGame\fP\&. 
+.PP
+Definition at line 21 of file Game\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void representation::Game::calculateHighScore ()"
+@function : calculateHighScore Calculates the previous and all-time high-score\&. 
+.PP
+Definition at line 197 of file Game\&.cpp\&.
+.SS "void representation::Game::createSingleText (sf::Text & _text, const sf::Font & _font, int charSize, sf::Color fillColor, sf::Color outlineColor, float outlineThickness, std::pair< float, float > pos, const std::string & str)\fC [static]\fP"
+@function : createSingleText Assigns the esthetics to a single text item\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fI_text\fP (sf::Text) : text item\&. 
+.br
+\fI_font\fP (sf::Font) : font that is applied to the text\&. 
+.br
+\fIcharSize\fP (int) : character size of our text\&. 
+.br
+\fIfillColor\fP (sf::Color) : text color\&. 
+.br
+\fIoutlineColor\fP (sf::Color) : outline color of our text\&. 
+.br
+\fIoutlineThickness\fP (float) : outline thickness\&. 
+.br
+\fIpos\fP (std::pair<float,float>) : position of the text\&. 
+.br
+\fIstr\fP (std::string) : the string that the text represents\&. 
+.RE
+.PP
+
+.PP
+Definition at line 169 of file Game\&.cpp\&.
+.SS "void representation::Game::createSingleText (sf::Text & _text, const sf::Font & _font, int charSize, std::pair< float, float > pos, const std::string & str)\fC [static]\fP"
+@function : createSingleText Assigns the esthetics to a single text item\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fI_text\fP (sf::Text) : text item\&. 
+.br
+\fI_font\fP (sf::Font) : font that is applied to the text\&. 
+.br
+\fIcharSize\fP (int) : character size of our text\&. 
+.br
+\fIpos\fP (std::pair<float,float>) : position of the text\&. 
+.br
+\fIstr\fP (std::string) : the string that the text represents\&. 
+.RE
+.PP
+
+.PP
+Definition at line 185 of file Game\&.cpp\&.
+.SS "void representation::Game::createTexts ()"
+@function : createTexts All necessary text items are created here\&. 
+.PP
+Definition at line 153 of file Game\&.cpp\&.
+.SS "void representation::Game::drawBGTiles ()"
+@function : drawBGTiles Draws the background tiles\&. 
+.PP
+Definition at line 205 of file Game\&.cpp\&.
+.SS "void representation::Game::drawBonusses ()"
+@function : drawBonusses Draws the bonusses\&. 
+.PP
+Definition at line 224 of file Game\&.cpp\&.
+.SS "void representation::Game::drawPlatforms ()"
+@function : drawPlatforms Draws the platforms\&. 
+.PP
+Definition at line 212 of file Game\&.cpp\&.
+.SS "void representation::Game::drawPlayer ()"
+@function : drawPlayer Draws the player\&. 
+.PP
+Definition at line 242 of file Game\&.cpp\&.
+.SS "void representation::Game::drawScore ()"
+@function : drawScore Draws the score\&. 
+.PP
+Definition at line 236 of file Game\&.cpp\&.
+.SS "float representation::Game::getFrameRate () const\fC [inline]\fP"
+@function : getFrameRate Getter for the framerate data member\&. 
+.PP
+\fBReturns\fP
+.RS 4
+(float) : framerate data member (frames per second)\&. 
+.RE
+.PP
+
+.PP
+Definition at line 184 of file Game\&.h\&.
+.SS "\fBWindow\fP & representation::Game::GetWindow ()"
+@function : GetWindow Returns the window instance\&. 
+.PP
+\fBReturns\fP
+.RS 4
+(\fBWindow\fP) : window instance\&. 
+.RE
+.PP
+
+.PP
+Definition at line 58 of file Game\&.cpp\&.
+.SS "void representation::Game::HandleInput ()"
+@function : HandleInput Checks for user input on the keyboard and passes this to the world\&. 
+.PP
+Definition at line 42 of file Game\&.cpp\&.
+.SS "void representation::Game::loadFonts ()"
+@function : loadFonts All necessary fonts are loaded in here\&. 
+.PP
+Definition at line 141 of file Game\&.cpp\&.
+.SS "void representation::Game::playGame ()"
+@function : playGame Runs the actual Doodle Jump game\&. 
+.PP
+Definition at line 107 of file Game\&.cpp\&.
+.SS "void representation::Game::playMenu ()"
+@function : playMenu Responsible for showing the menu screen\&. 
+.PP
+Definition at line 78 of file Game\&.cpp\&.
+.SS "void representation::Game::Render ()"
+@function : Render Takes care of drawing all our entities on the window\&. 
+.PP
+Definition at line 29 of file Game\&.cpp\&.
+.SS "void representation::Game::runGameLoop ()"
+@function : runGameLoop Runs the top-level program loop, which alternates between the different states of our game\&. 
+.PP
+Definition at line 60 of file Game\&.cpp\&.
+.SS "void representation::Game::setFrameRate (float fps)\fC [inline]\fP"
+@function : setFrameRate Setter for the framerate data member\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfps\fP (float) : frames per second\&. 
+.RE
+.PP
+
+.PP
+Definition at line 177 of file Game\&.h\&.
+.SS "void representation::Game::Update ()"
+@function : Update Updates the window events\&. 
+.PP
+Definition at line 23 of file Game\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Doxygen Test from the source code\&.

@@ -1,0 +1,165 @@
+.TH "representation::Window" 3 "Tue Jan 11 2022" "Doxygen Test" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+representation::Window
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBWindow\fP (const \fBWindow\fP &)=delete"
+.br
+.ti -1c
+.RI "\fBWindow\fP (const \fBWindow\fP &&)=delete"
+.br
+.ti -1c
+.RI "\fBWindow\fP & \fBoperator=\fP (const \fBWindow\fP &)=delete"
+.br
+.ti -1c
+.RI "\fBWindow\fP & \fBoperator=\fP (const \fBWindow\fP &&)=delete"
+.br
+.ti -1c
+.RI "\fBWindow\fP ()"
+.br
+.ti -1c
+.RI "\fBWindow\fP (const std::string &l_title, const sf::Vector2u &l_size)"
+.br
+.ti -1c
+.RI "\fB~Window\fP ()"
+.br
+.ti -1c
+.RI "void \fBBeginDraw\fP ()"
+.br
+.ti -1c
+.RI "void \fBEndDraw\fP ()"
+.br
+.ti -1c
+.RI "void \fBUpdate\fP ()"
+.br
+.ti -1c
+.RI "bool \fBIsDone\fP ()"
+.br
+.ti -1c
+.RI "sf::Vector2u \fBGetWindowSize\fP ()"
+.br
+.ti -1c
+.RI "void \fBDraw\fP (sf::Drawable &l_drawable)"
+.br
+.ti -1c
+.RI "void \fBSetup\fP (const std::string &l_title, const sf::Vector2u &l_size)"
+.br
+.ti -1c
+.RI "void \fBDestroy\fP ()"
+.br
+.ti -1c
+.RI "void \fBCreate\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBWindow\fP & \fBInstance\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 18 of file Window\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "representation::Window::Window ()"
+@function : \fBWindow\fP Constructor for a background \fBWindow\fP\&. 
+.PP
+Definition at line 13 of file Window\&.cpp\&.
+.SS "representation::Window::Window (const std::string & l_title, const sf::Vector2u & l_size)"
+@function : \fBWindow\fP Constructor for a \fBWindow\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIl_title\fP (std::string) : window title 
+.br
+\fIl_size\fP (sf::Vector2u) : window size 
+.RE
+.PP
+
+.PP
+Definition at line 15 of file Window\&.cpp\&.
+.SS "representation::Window::~Window ()"
+@function : \fBWindow\fP Destructor for a background \fBWindow\fP\&. 
+.PP
+Definition at line 16 of file Window\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void representation::Window::BeginDraw ()"
+@function : BeginDraw Clears the window\&. 
+.PP
+Definition at line 53 of file Window\&.cpp\&.
+.SS "void representation::Window::Create ()"
+@function : Create Opens the window\&. 
+.PP
+Definition at line 26 of file Window\&.cpp\&.
+.SS "void representation::Window::Destroy ()"
+@function : Destroy Closes the window\&. 
+.PP
+Definition at line 28 of file Window\&.cpp\&.
+.SS "void representation::Window::Draw (sf::Drawable & l_drawable)"
+@function : Draw Draws the drawable on the window\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIl_drawable\fP (sf::Drawable) : object that we want to draw\&. 
+.RE
+.PP
+
+.PP
+Definition at line 61 of file Window\&.cpp\&.
+.SS "void representation::Window::EndDraw ()"
+@function : EndDraw Displays the changes to the window\&. 
+.PP
+Definition at line 55 of file Window\&.cpp\&.
+.SS "sf::Vector2u representation::Window::GetWindowSize ()"
+@function : GetWindowSize Returns the size of the window\&. 
+.PP
+\fBReturns\fP
+.RS 4
+(sf::Vector2u) : a list containing the width and height of the window\&. 
+.RE
+.PP
+
+.PP
+Definition at line 59 of file Window\&.cpp\&.
+.SS "bool representation::Window::IsDone ()"
+@function : IsDone Checks if the window is closed\&. 
+.PP
+\fBReturns\fP
+.RS 4
+(bool) : true if the window is closed, false otherwise\&. 
+.RE
+.PP
+
+.PP
+Definition at line 57 of file Window\&.cpp\&.
+.SS "void representation::Window::Setup (const std::string & l_title, const sf::Vector2u & l_size)"
+@function : Draw Setup for the window\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIl_title\fP (std::string) : window title 
+.br
+\fIl_size\fP (sf::Vector2u) : window size 
+.RE
+.PP
+
+.PP
+Definition at line 18 of file Window\&.cpp\&.
+.SS "void representation::Window::Update ()"
+@function : Update Update the window events\&. 
+.PP
+Definition at line 30 of file Window\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Doxygen Test from the source code\&.

@@ -1,0 +1,596 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classlogic_1_1utility_1_1Camera" kind="class" language="C++" prot="public">
+    <compoundname>logic::utility::Camera</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classlogic_1_1utility_1_1Camera_1ad03f5f84ad6acb19593d1c50dbdb0a0f" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int logic::utility::Camera::windowWidth</definition>
+        <argsstring></argsstring>
+        <name>windowWidth</name>
+        <initializer>= 640</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Camera.h" line="16" column="13" bodyfile="src/logic_library/Camera.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1utility_1_1Camera_1a69f37ef24efdb8eee964c74d94f3b126" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int logic::utility::Camera::windowHeight</definition>
+        <argsstring></argsstring>
+        <name>windowHeight</name>
+        <initializer>= 960</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Camera.h" line="17" column="13" bodyfile="src/logic_library/Camera.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1utility_1_1Camera_1a6c0c42c7b52b939fdd326f146264584e" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::utility::Camera::shiftValue</definition>
+        <argsstring></argsstring>
+        <name>shiftValue</name>
+        <initializer>=
+            0.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Camera.h" line="19" column="15" bodyfile="src/logic_library/Camera.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1utility_1_1Camera_1a9f02bfb0104cc6099dca739a018a7d42" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::utility::Camera::shiftBorder</definition>
+        <argsstring></argsstring>
+        <name>shiftBorder</name>
+        <initializer>= 0.6f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Camera.h" line="22" column="15" bodyfile="src/logic_library/Camera.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1utility_1_1Camera_1ad97c8d52baf03ed514f6c8ab145913cc" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::utility::Camera::leftBound</definition>
+        <argsstring></argsstring>
+        <name>leftBound</name>
+        <initializer>= 0.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Camera.h" line="24" column="15" bodyfile="src/logic_library/Camera.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1utility_1_1Camera_1aa57a766491ffa51f68f71f2247cfad8f" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::utility::Camera::rightBound</definition>
+        <argsstring></argsstring>
+        <name>rightBound</name>
+        <initializer>= 1.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Camera.h" line="25" column="15" bodyfile="src/logic_library/Camera.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1utility_1_1Camera_1a3b1cd948b4b2e4bd7792959402d42cbe" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::utility::Camera::lowerBound</definition>
+        <argsstring></argsstring>
+        <name>lowerBound</name>
+        <initializer>= 0.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Camera.h" line="26" column="15" bodyfile="src/logic_library/Camera.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Camera_1afd51dcc61a2fb6e6ecf9f5c904537300" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::utility::Camera::Camera</definition>
+        <argsstring>()</argsstring>
+        <name>Camera</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1utility_1_1Camera" kindref="compound">Camera</ref> Constructor for a <ref refid="classlogic_1_1utility_1_1Camera" kindref="compound">Camera</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Camera.h" line="32" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Camera_1ae84704a55694bec4c3a585e20950c669" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::utility::Camera::~Camera</definition>
+        <argsstring>()=default</argsstring>
+        <name>~Camera</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1utility_1_1Camera" kindref="compound">Camera</ref> Destructor for a <ref refid="classlogic_1_1utility_1_1Camera" kindref="compound">Camera</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Camera.h" line="38" column="9"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Camera_1a5fc1ec52e52b61d7bc6178798f62c78d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::utility::Camera::setWindowWidth</definition>
+        <argsstring>(int width)</argsstring>
+        <name>setWindowWidth</name>
+        <param>
+          <type>int</type>
+          <declname>width</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : setWindowWidth Setter function for the windowWidth data member. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(int) : value that we want to give to windowWidth. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Camera.h" line="46" column="14" bodyfile="src/logic_library/Camera.h" bodystart="46" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Camera_1a426b33c498fb7a0c1e886e984b096f81" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::utility::Camera::setWindowHeight</definition>
+        <argsstring>(int height)</argsstring>
+        <name>setWindowHeight</name>
+        <param>
+          <type>int</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : setWindowHeight Setter function for the windowHeight data member. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(int) : value that we want to give to windowHeight. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Camera.h" line="53" column="14" bodyfile="src/logic_library/Camera.h" bodystart="53" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Camera_1aec06c4dd87d40b369a5d19f38999e2ef" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::utility::Camera::setShiftValue</definition>
+        <argsstring>(float shift)</argsstring>
+        <name>setShiftValue</name>
+        <param>
+          <type>float</type>
+          <declname>shift</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : setShiftValue Setter function for the shiftValue data member. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>shift</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : value that we want to give to shiftValue. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Camera.h" line="60" column="14" bodyfile="src/logic_library/Camera.h" bodystart="60" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Camera_1a92d9970be047084f5dfb1c14fcb9f3df" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::utility::Camera::setLeftBound</definition>
+        <argsstring>(const float LeftBound)</argsstring>
+        <name>setLeftBound</name>
+        <param>
+          <type>const float</type>
+          <declname>LeftBound</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : setLeftBound Setter function for the leftBound data member. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>LeftBound</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : value that we want to give to leftBound. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Camera.h" line="67" column="14" bodyfile="src/logic_library/Camera.h" bodystart="67" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Camera_1a2335dd2e7687c77e8673f8d699a67018" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::utility::Camera::setRightBound</definition>
+        <argsstring>(const float RightBound)</argsstring>
+        <name>setRightBound</name>
+        <param>
+          <type>const float</type>
+          <declname>RightBound</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : setRightBound Setter function for the rightBound data member. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>RightBound</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : value that we want to give to rightBound. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Camera.h" line="74" column="14" bodyfile="src/logic_library/Camera.h" bodystart="74" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Camera_1a7f2dd527ad699121bb931760aae4ea8f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::utility::Camera::setLowerBound</definition>
+        <argsstring>(const float LowerBound)</argsstring>
+        <name>setLowerBound</name>
+        <param>
+          <type>const float</type>
+          <declname>LowerBound</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : setLowerBound Setter function for the lowerBound data member. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>LowerBound</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : value that we want to give to lowerBound. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Camera.h" line="81" column="14" bodyfile="src/logic_library/Camera.h" bodystart="81" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Camera_1a939325b373c675b0ee7b2e6f5255add1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::utility::Camera::setShiftBorder</definition>
+        <argsstring>(const float ShiftBorder)</argsstring>
+        <name>setShiftBorder</name>
+        <param>
+          <type>const float</type>
+          <declname>ShiftBorder</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : setShiftBorder Setter function for the shiftBorder data member. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>ShiftBorder</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : value that we want to give to shiftBorder. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Camera.h" line="88" column="14" bodyfile="src/logic_library/Camera.h" bodystart="88" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Camera_1a9c78fca6374884e68af2a107c465dc1d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int logic::utility::Camera::getWindowWidth</definition>
+        <argsstring>() const</argsstring>
+        <name>getWindowWidth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : getWindowWidth Getter function for the windowWidth data member. <simplesect kind="return"><para>(int) : this-&gt;windowWidth </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Camera.h" line="95" column="13" bodyfile="src/logic_library/Camera.h" bodystart="95" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Camera_1a3b2ed77db738ec3dd1d8dd5cf6b2a14f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int logic::utility::Camera::getWindowHeight</definition>
+        <argsstring>() const</argsstring>
+        <name>getWindowHeight</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : getWindowHeight Getter function for the windowHeight data member. <simplesect kind="return"><para>(int) : this-&gt;windowHeight </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Camera.h" line="102" column="13" bodyfile="src/logic_library/Camera.h" bodystart="102" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Camera_1ae3267818f50442dda850e8bb5e46bbae" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float logic::utility::Camera::getShiftValue</definition>
+        <argsstring>() const</argsstring>
+        <name>getShiftValue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : getShiftValue Getter function for the shiftValue data member. <simplesect kind="return"><para>(float) : this-&gt;shiftValue </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Camera.h" line="109" column="15" bodyfile="src/logic_library/Camera.h" bodystart="109" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Camera_1a9cb85248ebbcb7d1c10e4a9c3ac6d854" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float logic::utility::Camera::getLeftBound</definition>
+        <argsstring>() const</argsstring>
+        <name>getLeftBound</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : getLeftBound Getter function for the leftBound data member. <simplesect kind="return"><para>(float) : this-&gt;leftBound </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Camera.h" line="116" column="15" bodyfile="src/logic_library/Camera.h" bodystart="116" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Camera_1a8b6ce95902ef9432c3eebcf0efae9a3b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float logic::utility::Camera::getRightBound</definition>
+        <argsstring>() const</argsstring>
+        <name>getRightBound</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : getRightBound Getter function for the rightBound data member. <simplesect kind="return"><para>(float) : this-&gt;rightBound </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Camera.h" line="123" column="15" bodyfile="src/logic_library/Camera.h" bodystart="123" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Camera_1ad4e204bbd91130acbf96719edb5177e2" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float logic::utility::Camera::getLowerBound</definition>
+        <argsstring>() const</argsstring>
+        <name>getLowerBound</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : getLowerBound Getter function for the lowerBound data member. <simplesect kind="return"><para>(float) : this-&gt;lowerBound </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Camera.h" line="130" column="15" bodyfile="src/logic_library/Camera.h" bodystart="130" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Camera_1aff2c50b8a70b4323b3ccdcb56aed576d" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float logic::utility::Camera::getShiftBorder</definition>
+        <argsstring>() const</argsstring>
+        <name>getShiftBorder</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : getShiftBorder Getter function for the shiftBorder data member. <simplesect kind="return"><para>(float) : this-&gt;shiftBorder </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Camera.h" line="137" column="15" bodyfile="src/logic_library/Camera.h" bodystart="137" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Camera_1a8bfb5ca6b5ab20ea0a6986db74cd2b0a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>std::pair&lt; int, int &gt;</type>
+        <definition>std::pair&lt; int, int &gt; logic::utility::Camera::projectCoordinates</definition>
+        <argsstring>(float x, float y) const</argsstring>
+        <name>projectCoordinates</name>
+        <param>
+          <type>float</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : projectCoordinates Projects the logic coordinates (x and y) to pixel coordinates on the window. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : logic x-coordinate. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : logic y-coordinate. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>(std::pair&lt;int,int&gt;): pair (x,y) of pixel coordinates. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Camera.h" line="149" column="19" bodyfile="src/logic_library/Camera.cpp" bodystart="10" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Camera_1afa0d0f8bbe17919983faa4827d56f1a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::utility::Camera::Camera</definition>
+        <argsstring>(const Camera &amp;)=delete</argsstring>
+        <name>Camera</name>
+        <param>
+          <type>const <ref refid="classlogic_1_1utility_1_1Camera" kindref="compound">Camera</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Camera.h" line="152" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Camera_1a972ea27ac053c1d7913608f95bc7ef11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::utility::Camera::Camera</definition>
+        <argsstring>(const Camera &amp;&amp;)=delete</argsstring>
+        <name>Camera</name>
+        <param>
+          <type>const <ref refid="classlogic_1_1utility_1_1Camera" kindref="compound">Camera</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Camera.h" line="153" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Camera_1a8cdb3aee944bb894f3c1a88d842cc7d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classlogic_1_1utility_1_1Camera" kindref="compound">Camera</ref> &amp;</type>
+        <definition>Camera&amp; logic::utility::Camera::operator=</definition>
+        <argsstring>(const Camera &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classlogic_1_1utility_1_1Camera" kindref="compound">Camera</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Camera.h" line="155" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Camera_1a6e851077307b2f0a5f825ec15e4f7014" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classlogic_1_1utility_1_1Camera" kindref="compound">Camera</ref> &amp;</type>
+        <definition>Camera&amp; logic::utility::Camera::operator=</definition>
+        <argsstring>(const Camera &amp;&amp;)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classlogic_1_1utility_1_1Camera" kindref="compound">Camera</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Camera.h" line="156" column="16"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Camera_1a89ae1c3484b8a3f8fd54f2a766bf6b05" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classlogic_1_1utility_1_1Camera" kindref="compound">Camera</ref> &amp;</type>
+        <definition>Camera &amp; logic::utility::Camera::Instance</definition>
+        <argsstring>()</argsstring>
+        <name>Instance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Camera.h" line="140" column="23" bodyfile="src/logic_library/Camera.cpp" bodystart="19" bodyend="23"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/logic_library/Camera.h" line="14" column="1" bodyfile="src/logic_library/Camera.h" bodystart="13" bodyend="157"/>
+    <listofallmembers>
+      <member refid="classlogic_1_1utility_1_1Camera_1afd51dcc61a2fb6e6ecf9f5c904537300" prot="private" virt="non-virtual"><scope>logic::utility::Camera</scope><name>Camera</name></member>
+      <member refid="classlogic_1_1utility_1_1Camera_1afa0d0f8bbe17919983faa4827d56f1a4" prot="public" virt="non-virtual"><scope>logic::utility::Camera</scope><name>Camera</name></member>
+      <member refid="classlogic_1_1utility_1_1Camera_1a972ea27ac053c1d7913608f95bc7ef11" prot="public" virt="non-virtual"><scope>logic::utility::Camera</scope><name>Camera</name></member>
+      <member refid="classlogic_1_1utility_1_1Camera_1a9cb85248ebbcb7d1c10e4a9c3ac6d854" prot="public" virt="non-virtual"><scope>logic::utility::Camera</scope><name>getLeftBound</name></member>
+      <member refid="classlogic_1_1utility_1_1Camera_1ad4e204bbd91130acbf96719edb5177e2" prot="public" virt="non-virtual"><scope>logic::utility::Camera</scope><name>getLowerBound</name></member>
+      <member refid="classlogic_1_1utility_1_1Camera_1a8b6ce95902ef9432c3eebcf0efae9a3b" prot="public" virt="non-virtual"><scope>logic::utility::Camera</scope><name>getRightBound</name></member>
+      <member refid="classlogic_1_1utility_1_1Camera_1aff2c50b8a70b4323b3ccdcb56aed576d" prot="public" virt="non-virtual"><scope>logic::utility::Camera</scope><name>getShiftBorder</name></member>
+      <member refid="classlogic_1_1utility_1_1Camera_1ae3267818f50442dda850e8bb5e46bbae" prot="public" virt="non-virtual"><scope>logic::utility::Camera</scope><name>getShiftValue</name></member>
+      <member refid="classlogic_1_1utility_1_1Camera_1a3b2ed77db738ec3dd1d8dd5cf6b2a14f" prot="public" virt="non-virtual"><scope>logic::utility::Camera</scope><name>getWindowHeight</name></member>
+      <member refid="classlogic_1_1utility_1_1Camera_1a9c78fca6374884e68af2a107c465dc1d" prot="public" virt="non-virtual"><scope>logic::utility::Camera</scope><name>getWindowWidth</name></member>
+      <member refid="classlogic_1_1utility_1_1Camera_1a89ae1c3484b8a3f8fd54f2a766bf6b05" prot="public" virt="non-virtual"><scope>logic::utility::Camera</scope><name>Instance</name></member>
+      <member refid="classlogic_1_1utility_1_1Camera_1ad97c8d52baf03ed514f6c8ab145913cc" prot="private" virt="non-virtual"><scope>logic::utility::Camera</scope><name>leftBound</name></member>
+      <member refid="classlogic_1_1utility_1_1Camera_1a3b1cd948b4b2e4bd7792959402d42cbe" prot="private" virt="non-virtual"><scope>logic::utility::Camera</scope><name>lowerBound</name></member>
+      <member refid="classlogic_1_1utility_1_1Camera_1a8cdb3aee944bb894f3c1a88d842cc7d7" prot="public" virt="non-virtual"><scope>logic::utility::Camera</scope><name>operator=</name></member>
+      <member refid="classlogic_1_1utility_1_1Camera_1a6e851077307b2f0a5f825ec15e4f7014" prot="public" virt="non-virtual"><scope>logic::utility::Camera</scope><name>operator=</name></member>
+      <member refid="classlogic_1_1utility_1_1Camera_1a8bfb5ca6b5ab20ea0a6986db74cd2b0a" prot="public" virt="non-virtual"><scope>logic::utility::Camera</scope><name>projectCoordinates</name></member>
+      <member refid="classlogic_1_1utility_1_1Camera_1aa57a766491ffa51f68f71f2247cfad8f" prot="private" virt="non-virtual"><scope>logic::utility::Camera</scope><name>rightBound</name></member>
+      <member refid="classlogic_1_1utility_1_1Camera_1a92d9970be047084f5dfb1c14fcb9f3df" prot="public" virt="non-virtual"><scope>logic::utility::Camera</scope><name>setLeftBound</name></member>
+      <member refid="classlogic_1_1utility_1_1Camera_1a7f2dd527ad699121bb931760aae4ea8f" prot="public" virt="non-virtual"><scope>logic::utility::Camera</scope><name>setLowerBound</name></member>
+      <member refid="classlogic_1_1utility_1_1Camera_1a2335dd2e7687c77e8673f8d699a67018" prot="public" virt="non-virtual"><scope>logic::utility::Camera</scope><name>setRightBound</name></member>
+      <member refid="classlogic_1_1utility_1_1Camera_1a939325b373c675b0ee7b2e6f5255add1" prot="public" virt="non-virtual"><scope>logic::utility::Camera</scope><name>setShiftBorder</name></member>
+      <member refid="classlogic_1_1utility_1_1Camera_1aec06c4dd87d40b369a5d19f38999e2ef" prot="public" virt="non-virtual"><scope>logic::utility::Camera</scope><name>setShiftValue</name></member>
+      <member refid="classlogic_1_1utility_1_1Camera_1a426b33c498fb7a0c1e886e984b096f81" prot="public" virt="non-virtual"><scope>logic::utility::Camera</scope><name>setWindowHeight</name></member>
+      <member refid="classlogic_1_1utility_1_1Camera_1a5fc1ec52e52b61d7bc6178798f62c78d" prot="public" virt="non-virtual"><scope>logic::utility::Camera</scope><name>setWindowWidth</name></member>
+      <member refid="classlogic_1_1utility_1_1Camera_1a9f02bfb0104cc6099dca739a018a7d42" prot="private" virt="non-virtual"><scope>logic::utility::Camera</scope><name>shiftBorder</name></member>
+      <member refid="classlogic_1_1utility_1_1Camera_1a6c0c42c7b52b939fdd326f146264584e" prot="private" virt="non-virtual"><scope>logic::utility::Camera</scope><name>shiftValue</name></member>
+      <member refid="classlogic_1_1utility_1_1Camera_1a69f37ef24efdb8eee964c74d94f3b126" prot="private" virt="non-virtual"><scope>logic::utility::Camera</scope><name>windowHeight</name></member>
+      <member refid="classlogic_1_1utility_1_1Camera_1ad03f5f84ad6acb19593d1c50dbdb0a0f" prot="private" virt="non-virtual"><scope>logic::utility::Camera</scope><name>windowWidth</name></member>
+      <member refid="classlogic_1_1utility_1_1Camera_1ae84704a55694bec4c3a585e20950c669" prot="private" virt="non-virtual"><scope>logic::utility::Camera</scope><name>~Camera</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

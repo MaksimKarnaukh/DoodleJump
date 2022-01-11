@@ -1,0 +1,509 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="EntityModel_8h" kind="file" language="C++">
+    <compoundname>EntityModel.h</compoundname>
+    <includes refid="Stopwatch_8h" local="yes">Stopwatch.h</includes>
+    <includes refid="Subject_8h" local="yes">Subject.h</includes>
+    <includedby refid="EntityView_8h" local="yes">src/game_representation/EntityView.h</includedby>
+    <includedby refid="BGTile_8h" local="yes">src/logic_library/BGTile.h</includedby>
+    <includedby refid="Bonus_8h" local="yes">src/logic_library/Bonus.h</includedby>
+    <includedby refid="Player_8h" local="yes">src/logic_library/Player.h</includedby>
+    <includedby refid="Platform_8h" local="yes">src/logic_library/Platform.h</includedby>
+    <includedby refid="Score_8h" local="yes">src/logic_library/Score.h</includedby>
+    <includedby refid="EntityModel_8cpp" local="yes">src/logic_library/EntityModel.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>src/logic_library/EntityModel.h</label>
+        <link refid="EntityModel_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>string</label>
+      </node>
+      <node id="4">
+        <label>Subject.h</label>
+        <link refid="Subject_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>vector</label>
+      </node>
+      <node id="3">
+        <label>chrono</label>
+      </node>
+      <node id="2">
+        <label>Stopwatch.h</label>
+        <link refid="Stopwatch_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="30">
+        <label>src/logic_library/AbstractFactory.h</label>
+        <link refid="AbstractFactory_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>src/game_representation/Bonus_GR.cpp</label>
+        <link refid="Bonus__GR_8cpp_source"/>
+      </node>
+      <node id="41">
+        <label>src/logic_library/Player.h</label>
+        <link refid="Player_8h_source"/>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>src/logic_library/Platform_Horizontal.cpp</label>
+        <link refid="Platform__Horizontal_8cpp_source"/>
+      </node>
+      <node id="33">
+        <label>src/logic_library/AbstractFactory.cpp</label>
+        <link refid="AbstractFactory_8cpp_source"/>
+      </node>
+      <node id="8">
+        <label>src/game_representation/Game.cpp</label>
+        <link refid="Game_8cpp_source"/>
+      </node>
+      <node id="39">
+        <label>src/logic_library/Spring.cpp</label>
+        <link refid="Spring_8cpp_source"/>
+      </node>
+      <node id="40">
+        <label>src/logic_library/Bonus.cpp</label>
+        <link refid="Bonus_8cpp_source"/>
+      </node>
+      <node id="29">
+        <label>src/logic_library/BGTile.h</label>
+        <link refid="BGTile_8h_source"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/logic_library/EntityModel.h</label>
+        <link refid="EntityModel_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+      </node>
+      <node id="48">
+        <label>src/logic_library/Platform_Temporary.h</label>
+        <link refid="Platform__Temporary_8h_source"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="49" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>src/game_representation/Platform_Temporary_GR.cpp</label>
+        <link refid="Platform__Temporary__GR_8cpp_source"/>
+      </node>
+      <node id="12">
+        <label>src/game_representation/Jetpack_GR.h</label>
+        <link refid="Jetpack__GR_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>src/logic_library/Bonus.h</label>
+        <link refid="Bonus_8h_source"/>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>src/logic_library/Platform_Horizontal.h</label>
+        <link refid="Platform__Horizontal_8h_source"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>src/game_representation/Spring_GR.cpp</label>
+        <link refid="Spring__GR_8cpp_source"/>
+      </node>
+      <node id="16">
+        <label>src/game_representation/Platform_GR.h</label>
+        <link refid="Platform__GR_8h_source"/>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>src/logic_library/Jetpack.cpp</label>
+        <link refid="Jetpack_8cpp_source"/>
+      </node>
+      <node id="19">
+        <label>src/game_representation/Platform_Static_GR.h</label>
+        <link refid="Platform__Static__GR_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>src/logic_library/Score.cpp</label>
+        <link refid="Score_8cpp_source"/>
+      </node>
+      <node id="3">
+        <label>src/game_representation/BGTile_GR.h</label>
+        <link refid="BGTile__GR_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>src/game_representation/Bonus_GR.h</label>
+        <link refid="Bonus__GR_8h_source"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>src/logic_library/Score.h</label>
+        <link refid="Score_8h_source"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>src/logic_library/Platform_Static.h</label>
+        <link refid="Platform__Static_8h_source"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>src/game_representation/Platform_Vertical_GR.cpp</label>
+        <link refid="Platform__Vertical__GR_8cpp_source"/>
+      </node>
+      <node id="23">
+        <label>src/game_representation/Platform_Vertical_GR.h</label>
+        <link refid="Platform__Vertical__GR_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="50">
+        <label>src/logic_library/Platform_Vertical.h</label>
+        <link refid="Platform__Vertical_8h_source"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="51" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>src/logic_library/World.h</label>
+        <link refid="World_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>src/game_representation/Spring_GR.h</label>
+        <link refid="Spring__GR_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp_source"/>
+      </node>
+      <node id="43">
+        <label>src/logic_library/Platform.h</label>
+        <link refid="Platform_8h_source"/>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="48" relation="include">
+        </childnode>
+        <childnode refid="50" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+      </node>
+      <node id="55">
+        <label>src/logic_library/EntityModel.cpp</label>
+        <link refid="EntityModel_8cpp_source"/>
+      </node>
+      <node id="32">
+        <label>src/logic_library/World.cpp</label>
+        <link refid="World_8cpp_source"/>
+      </node>
+      <node id="26">
+        <label>src/game_representation/Player_GR.h</label>
+        <link refid="Player__GR_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>src/logic_library/Spring.h</label>
+        <link refid="Spring_8h_source"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>src/game_representation/Platform_Horizontal_GR.h</label>
+        <link refid="Platform__Horizontal__GR_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="36">
+        <label>src/logic_library/Jetpack.h</label>
+        <link refid="Jetpack_8h_source"/>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>src/logic_library/Platform_Temporary.cpp</label>
+        <link refid="Platform__Temporary_8cpp_source"/>
+      </node>
+      <node id="20">
+        <label>src/game_representation/Platform_Static_GR.cpp</label>
+        <link refid="Platform__Static__GR_8cpp_source"/>
+      </node>
+      <node id="6">
+        <label>src/game_representation/ConcreteFactory.cpp</label>
+        <link refid="ConcreteFactory_8cpp_source"/>
+      </node>
+      <node id="42">
+        <label>src/logic_library/Player.cpp</label>
+        <link refid="Player_8cpp_source"/>
+      </node>
+      <node id="47">
+        <label>src/logic_library/Platform_Static.cpp</label>
+        <link refid="Platform__Static_8cpp_source"/>
+      </node>
+      <node id="13">
+        <label>src/game_representation/Jetpack_GR.cpp</label>
+        <link refid="Jetpack__GR_8cpp_source"/>
+      </node>
+      <node id="34">
+        <label>src/logic_library/BGTile.cpp</label>
+        <link refid="BGTile_8cpp_source"/>
+      </node>
+      <node id="21">
+        <label>src/game_representation/Platform_Temporary_GR.h</label>
+        <link refid="Platform__Temporary__GR_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>src/game_representation/Player_GR.cpp</label>
+        <link refid="Player__GR_8cpp_source"/>
+      </node>
+      <node id="25">
+        <label>src/game_representation/Platform_GR.cpp</label>
+        <link refid="Platform__GR_8cpp_source"/>
+      </node>
+      <node id="18">
+        <label>src/game_representation/Platform_Horizontal_GR.cpp</label>
+        <link refid="Platform__Horizontal__GR_8cpp_source"/>
+      </node>
+      <node id="52">
+        <label>src/logic_library/Platform.cpp</label>
+        <link refid="Platform_8cpp_source"/>
+      </node>
+      <node id="7">
+        <label>src/game_representation/Game.h</label>
+        <link refid="Game_8h_source"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>src/game_representation/ConcreteFactory.h</label>
+        <link refid="ConcreteFactory_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>src/game_representation/EntityView.h</label>
+        <link refid="EntityView_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>src/logic_library/Platform_Vertical.cpp</label>
+        <link refid="Platform__Vertical_8cpp_source"/>
+      </node>
+      <node id="28">
+        <label>src/game_representation/EntityView.cpp</label>
+        <link refid="EntityView_8cpp_source"/>
+      </node>
+      <node id="4">
+        <label>src/game_representation/BGTile_GR.cpp</label>
+        <link refid="BGTile__GR_8cpp_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classlogic_1_1EntityModel" prot="public">logic::EntityModel</innerclass>
+    <innernamespace refid="namespacelogic">logic</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Author:<sp/>Maksim<sp/>Karnaukh</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DOODLEJUMP_ENTITYMODEL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DOODLEJUMP_ENTITYMODEL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Stopwatch.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Subject.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">logic<sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="classlogic_1_1EntityModel" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classlogic_1_1EntityModel" kindref="compound">EntityModel</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1Subject" kindref="compound">logic::Subject</ref></highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>e_width;<sp/><sp/></highlight><highlight class="comment">//<sp/>width<sp/>of<sp/>the<sp/>entity</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>e_height;<sp/></highlight><highlight class="comment">//<sp/>height<sp/>of<sp/>the<sp/>entity</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x_pos;<sp/></highlight><highlight class="comment">//<sp/>x<sp/>position<sp/>of<sp/>the<sp/>entity</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y_pos;<sp/></highlight><highlight class="comment">//<sp/>y<sp/>position<sp/>of<sp/>the<sp/>entity</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>e_speed<sp/>=<sp/>0;<sp/></highlight><highlight class="comment">//<sp/>velocity<sp/>(used<sp/>for<sp/>going<sp/>up<sp/>and<sp/>down,<sp/>not<sp/>right<sp/>and<sp/>left)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>unit<sp/>=<sp/>0.6f;<sp/></highlight><highlight class="comment">//<sp/>unit<sp/>of<sp/>distance<sp/>(used<sp/>for<sp/>going<sp/>right<sp/>and<sp/>left,<sp/>not<sp/>up<sp/>and<sp/>down)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>x_posPrevious;<sp/></highlight><highlight class="comment">//<sp/>x<sp/>position<sp/>of<sp/>entity<sp/>in<sp/>previous<sp/>frame</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>y_posPrevious;<sp/></highlight><highlight class="comment">//<sp/>y<sp/>position<sp/>of<sp/>entity<sp/>in<sp/>previous<sp/>frame</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:<sp/></highlight><highlight class="comment">//<sp/>getters<sp/>en<sp/>setters</highlight></codeline>
+<codeline lineno="33" refid="classlogic_1_1EntityModel_1a99c0c979c10a90eecf3620afc8ecbc12" refkind="member"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1EntityModel_1a99c0c979c10a90eecf3620afc8ecbc12" kindref="member">setWidth</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>width)<sp/>{<sp/>e_width<sp/>=<sp/>width;<sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="classlogic_1_1EntityModel_1ad703de4900c6b276f824804bebfba006" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1EntityModel_1ad703de4900c6b276f824804bebfba006" kindref="member">setHeight</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>height)<sp/>{<sp/>e_height<sp/>=<sp/>height;<sp/>}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="classlogic_1_1EntityModel_1a0d63f4dc9f2dcab997c5acb43a58b761" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1EntityModel_1a0d63f4dc9f2dcab997c5acb43a58b761" kindref="member">setPositionX</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>posX)<sp/>{<sp/>x_pos<sp/>=<sp/>posX;<sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="classlogic_1_1EntityModel_1a755cc5054fad5a67111f00a137666ab1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1EntityModel_1a755cc5054fad5a67111f00a137666ab1" kindref="member">setPositionY</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>posY)<sp/>{<sp/>y_pos<sp/>=<sp/>posY;<sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="classlogic_1_1EntityModel_1a78e9ab3fad35775a1780cd7bfff0622a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1EntityModel_1a78e9ab3fad35775a1780cd7bfff0622a" kindref="member">setPreviousPositionX</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>posX)<sp/>{<sp/>x_posPrevious<sp/>=<sp/>posX;<sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="classlogic_1_1EntityModel_1a579a9928acff3b4ba2bb0821e952d452" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1EntityModel_1a579a9928acff3b4ba2bb0821e952d452" kindref="member">setPreviousPositionY</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>posY)<sp/>{<sp/>y_posPrevious<sp/>=<sp/>posY;<sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="classlogic_1_1EntityModel_1a0a61bc5dc0e6a2a3aed489a604625593" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1EntityModel_1a0a61bc5dc0e6a2a3aed489a604625593" kindref="member">setSpeed</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>speed)<sp/>{<sp/>e_speed<sp/>=<sp/>speed;<sp/>}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="classlogic_1_1EntityModel_1a642a7a6075bf35bfe9e0c55d52f4982d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1EntityModel_1a642a7a6075bf35bfe9e0c55d52f4982d" kindref="member">setUnitOfDistance</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>unitOfDistance)<sp/>{<sp/>unit<sp/>=<sp/>unitOfDistance;<sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="classlogic_1_1EntityModel_1aa377acce5e474892230da31ee39bbbc9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1EntityModel_1aa377acce5e474892230da31ee39bbbc9" kindref="member">getWidth</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>e_width;<sp/>}</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="classlogic_1_1EntityModel_1a7cdaafc31f97ab0ba835593046138c57" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1EntityModel_1a7cdaafc31f97ab0ba835593046138c57" kindref="member">getHeight</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>e_height;<sp/>}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="classlogic_1_1EntityModel_1aed96cfbc730f4fd9a0e59bebc6727ef9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1EntityModel_1aed96cfbc730f4fd9a0e59bebc6727ef9" kindref="member">getPositionX</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x_pos;<sp/>}</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="classlogic_1_1EntityModel_1afb9776a3e5b8ebff029914499fe55ce6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1EntityModel_1afb9776a3e5b8ebff029914499fe55ce6" kindref="member">getPositionY</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>y_pos;<sp/>}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="classlogic_1_1EntityModel_1a89709427e4b0dd62de52d3d8c884ee76" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1EntityModel_1a89709427e4b0dd62de52d3d8c884ee76" kindref="member">getPreviousPositionX</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>x_posPrevious;<sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="classlogic_1_1EntityModel_1af1d0394edaf591860ebe06ef94a47276" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1EntityModel_1af1d0394edaf591860ebe06ef94a47276" kindref="member">getPreviousPositionY</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>y_posPrevious;<sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="classlogic_1_1EntityModel_1a0713ad1449d82b61f4e22bbdaa212b40" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1EntityModel_1a0713ad1449d82b61f4e22bbdaa212b40" kindref="member">getSpeed</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>e_speed;<sp/>}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="classlogic_1_1EntityModel_1ae85c34e45e8fec66993b870a937b2025" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1EntityModel_1ae85c34e45e8fec66993b870a937b2025" kindref="member">getUnit</ref>()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>unit;<sp/>}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlogic_1_1EntityModel_1af763d5b72c30f1d2f7f87f3f229ce362" kindref="member">EntityModel</ref>();</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlogic_1_1EntityModel_1af763d5b72c30f1d2f7f87f3f229ce362" kindref="member">EntityModel</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>posX,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>posY);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlogic_1_1EntityModel_1af763d5b72c30f1d2f7f87f3f229ce362" kindref="member">EntityModel</ref>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>posX,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>posY,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>width,<sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>height);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classlogic_1_1EntityModel_1a70a0041b77dbb40c88e83847ea3523b7" kindref="member">~EntityModel</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="171"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>logic</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>DOODLEJUMP_ENTITYMODEL_H</highlight></codeline>
+    </programlisting>
+    <location file="src/logic_library/EntityModel.h"/>
+  </compounddef>
+</doxygen>

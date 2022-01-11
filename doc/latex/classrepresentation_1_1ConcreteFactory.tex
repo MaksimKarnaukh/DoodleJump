@@ -1,0 +1,315 @@
+\hypertarget{classrepresentation_1_1ConcreteFactory}{}\doxysubsection{representation\+::Concrete\+Factory Class Reference}
+\label{classrepresentation_1_1ConcreteFactory}\index{representation::ConcreteFactory@{representation::ConcreteFactory}}
+
+
+Inheritance diagram for representation\+::Concrete\+Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{classrepresentation_1_1ConcreteFactory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for representation\+::Concrete\+Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{classrepresentation_1_1ConcreteFactory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classrepresentation_1_1ConcreteFactory_aaea91f080dfdd66b807ddb50b901d4dd}{Concrete\+Factory}} ()
+\item 
+\mbox{\hyperlink{classrepresentation_1_1ConcreteFactory_a3816317f86c6aaf402ad190940ba182d}{$\sim$\+Concrete\+Factory}} () override=default
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Player}{logic\+::\+Player}} $>$ \mbox{\hyperlink{classrepresentation_1_1ConcreteFactory_a8157c2ea33f3aed279650ace88fc7627}{create\+Player}} (float posX, float posY, float width, float height) override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Platform}{logic\+::\+Platform}} $>$ \mbox{\hyperlink{classrepresentation_1_1ConcreteFactory_a85b7082f2ae47a924481cf1921dd39f1}{create\+Static\+Platform}} (float posX, float posY, float width, float height) override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Platform}{logic\+::\+Platform}} $>$ \mbox{\hyperlink{classrepresentation_1_1ConcreteFactory_a06856fd92ae6355880390d81f61fc723}{create\+Temporary\+Platform}} (float posX, float posY, float width, float height) override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Platform}{logic\+::\+Platform}} $>$ \mbox{\hyperlink{classrepresentation_1_1ConcreteFactory_a8e50c892bd9d46e12bdf9949a32a2bb1}{create\+Horizontal\+Platform}} (float posX, float posY, float width, float height) override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Platform}{logic\+::\+Platform}} $>$ \mbox{\hyperlink{classrepresentation_1_1ConcreteFactory_ac2e6fe32f9fabcb7572848e1a14f77f4}{create\+Vertical\+Platform}} (float posX, float posY, float width, float height) override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Bonus}{logic\+::\+Bonus}} $>$ \mbox{\hyperlink{classrepresentation_1_1ConcreteFactory_aba785c0e6855e1d9f1de859df6f9d2ca}{create\+Spring}} (float posX, float posY, float width, float height) override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Bonus}{logic\+::\+Bonus}} $>$ \mbox{\hyperlink{classrepresentation_1_1ConcreteFactory_adb2a655b4b00c97ef92912c6003fd871}{create\+Jetpack}} (float posX, float posY, float width, float height) override
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1BGTile}{logic\+::\+B\+G\+Tile}} $>$ \mbox{\hyperlink{classrepresentation_1_1ConcreteFactory_a9da814a5fe1269a478df8d5dd57db664}{create\+B\+G\+Tile}} (float posX, float posY, float width, float height) override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classrepresentation_1_1ConcreteFactory_a3d6e21e4d98192e2ded8dd6ddfcfff79}\label{classrepresentation_1_1ConcreteFactory_a3d6e21e4d98192e2ded8dd6ddfcfff79}} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classrepresentation_1_1Platform__GR}{representation\+::\+Platform\+\_\+\+GR}} $>$ $>$ {\bfseries platform\+Views}
+\item 
+\mbox{\Hypertarget{classrepresentation_1_1ConcreteFactory_a0a1ad326a4ad11f44c7edcaea1cc7527}\label{classrepresentation_1_1ConcreteFactory_a0a1ad326a4ad11f44c7edcaea1cc7527}} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classrepresentation_1_1Player__GR}{representation\+::\+Player\+\_\+\+GR}} $>$ $>$ {\bfseries player\+Views}
+\item 
+\mbox{\Hypertarget{classrepresentation_1_1ConcreteFactory_af5fc4068605a901d4e5f48bc9470d07e}\label{classrepresentation_1_1ConcreteFactory_af5fc4068605a901d4e5f48bc9470d07e}} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classrepresentation_1_1Bonus__GR}{representation\+::\+Bonus\+\_\+\+GR}} $>$ $>$ {\bfseries bonus\+Views}
+\item 
+\mbox{\Hypertarget{classrepresentation_1_1ConcreteFactory_a6e53ecd6e076e7000f7f1d54cd90ea68}\label{classrepresentation_1_1ConcreteFactory_a6e53ecd6e076e7000f7f1d54cd90ea68}} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classrepresentation_1_1BGTile__GR}{representation\+::\+B\+G\+Tile\+\_\+\+GR}} $>$ $>$ {\bfseries bg\+Tiles\+Views}
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+Definition at line 19 of file Concrete\+Factory.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classrepresentation_1_1ConcreteFactory_aaea91f080dfdd66b807ddb50b901d4dd}\label{classrepresentation_1_1ConcreteFactory_aaea91f080dfdd66b807ddb50b901d4dd}} 
+\index{representation::ConcreteFactory@{representation::ConcreteFactory}!ConcreteFactory@{ConcreteFactory}}
+\index{ConcreteFactory@{ConcreteFactory}!representation::ConcreteFactory@{representation::ConcreteFactory}}
+\doxyparagraph{\texorpdfstring{ConcreteFactory()}{ConcreteFactory()}}
+{\footnotesize\ttfamily representation\+::\+Concrete\+Factory\+::\+Concrete\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+@function \+: \mbox{\hyperlink{classrepresentation_1_1ConcreteFactory}{Concrete\+Factory}} Constructor for a \mbox{\hyperlink{classrepresentation_1_1ConcreteFactory}{Concrete\+Factory}}. \mbox{\Hypertarget{classrepresentation_1_1ConcreteFactory_a3816317f86c6aaf402ad190940ba182d}\label{classrepresentation_1_1ConcreteFactory_a3816317f86c6aaf402ad190940ba182d}} 
+\index{representation::ConcreteFactory@{representation::ConcreteFactory}!````~ConcreteFactory@{$\sim$ConcreteFactory}}
+\index{````~ConcreteFactory@{$\sim$ConcreteFactory}!representation::ConcreteFactory@{representation::ConcreteFactory}}
+\doxyparagraph{\texorpdfstring{$\sim$ConcreteFactory()}{~ConcreteFactory()}}
+{\footnotesize\ttfamily representation\+::\+Concrete\+Factory\+::$\sim$\+Concrete\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+@function \+: \mbox{\hyperlink{classrepresentation_1_1ConcreteFactory}{Concrete\+Factory}} Destructor for a \mbox{\hyperlink{classrepresentation_1_1ConcreteFactory}{Concrete\+Factory}}. 
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classrepresentation_1_1ConcreteFactory_a9da814a5fe1269a478df8d5dd57db664}\label{classrepresentation_1_1ConcreteFactory_a9da814a5fe1269a478df8d5dd57db664}} 
+\index{representation::ConcreteFactory@{representation::ConcreteFactory}!createBGTile@{createBGTile}}
+\index{createBGTile@{createBGTile}!representation::ConcreteFactory@{representation::ConcreteFactory}}
+\doxyparagraph{\texorpdfstring{createBGTile()}{createBGTile()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1BGTile}{logic\+::\+B\+G\+Tile}} $>$ representation\+::\+Concrete\+Factory\+::create\+B\+G\+Tile (\begin{DoxyParamCaption}\item[{float}]{posX,  }\item[{float}]{posY,  }\item[{float}]{width,  }\item[{float}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+@function \+: create\+B\+G\+Tile Creates and returns a background tile model. 
+\begin{DoxyParams}{Parameters}
+{\em posX} & (float) \+: x-\/position of the entity. \\
+\hline
+{\em posY} & (float) \+: y-\/position of the entity. \\
+\hline
+{\em width} & (float) \+: width of the entity. \\
+\hline
+{\em height} & (float) \+: height of the entity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(std\+::shared\+\_\+ptr$<$logic\+::\+B\+G\+Tile$>$) \+: background tile model. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classlogic_1_1AbstractFactory_ac8eed90b3c4adaad363526d1bb01f98d}{logic\+::\+Abstract\+Factory}}.
+
+
+
+Definition at line 113 of file Concrete\+Factory.\+cpp.
+
+\mbox{\Hypertarget{classrepresentation_1_1ConcreteFactory_a8e50c892bd9d46e12bdf9949a32a2bb1}\label{classrepresentation_1_1ConcreteFactory_a8e50c892bd9d46e12bdf9949a32a2bb1}} 
+\index{representation::ConcreteFactory@{representation::ConcreteFactory}!createHorizontalPlatform@{createHorizontalPlatform}}
+\index{createHorizontalPlatform@{createHorizontalPlatform}!representation::ConcreteFactory@{representation::ConcreteFactory}}
+\doxyparagraph{\texorpdfstring{createHorizontalPlatform()}{createHorizontalPlatform()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Platform}{logic\+::\+Platform}} $>$ representation\+::\+Concrete\+Factory\+::create\+Horizontal\+Platform (\begin{DoxyParamCaption}\item[{float}]{posX,  }\item[{float}]{posY,  }\item[{float}]{width,  }\item[{float}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+@function \+: create\+Horizontal\+Platform Creates and returns a (horizontal) platform model. 
+\begin{DoxyParams}{Parameters}
+{\em posX} & (float) \+: x-\/position of the entity. \\
+\hline
+{\em posY} & (float) \+: y-\/position of the entity. \\
+\hline
+{\em width} & (float) \+: width of the entity. \\
+\hline
+{\em height} & (float) \+: height of the entity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(std\+::shared\+\_\+ptr$<$logic\+::\+Platform$>$) \+: platform model. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classlogic_1_1AbstractFactory_a5f2b10dec4090b4a7f893096c8986488}{logic\+::\+Abstract\+Factory}}.
+
+
+
+Definition at line 56 of file Concrete\+Factory.\+cpp.
+
+\mbox{\Hypertarget{classrepresentation_1_1ConcreteFactory_adb2a655b4b00c97ef92912c6003fd871}\label{classrepresentation_1_1ConcreteFactory_adb2a655b4b00c97ef92912c6003fd871}} 
+\index{representation::ConcreteFactory@{representation::ConcreteFactory}!createJetpack@{createJetpack}}
+\index{createJetpack@{createJetpack}!representation::ConcreteFactory@{representation::ConcreteFactory}}
+\doxyparagraph{\texorpdfstring{createJetpack()}{createJetpack()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Bonus}{logic\+::\+Bonus}} $>$ representation\+::\+Concrete\+Factory\+::create\+Jetpack (\begin{DoxyParamCaption}\item[{float}]{posX,  }\item[{float}]{posY,  }\item[{float}]{width,  }\item[{float}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+@function \+: create\+Jetpack Creates and returns a jetpack model. 
+\begin{DoxyParams}{Parameters}
+{\em posX} & (float) \+: x-\/position of the entity. \\
+\hline
+{\em posY} & (float) \+: y-\/position of the entity. \\
+\hline
+{\em width} & (float) \+: width of the entity. \\
+\hline
+{\em height} & (float) \+: height of the entity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(std\+::shared\+\_\+ptr$<$logic\+::\+Bonus$>$) \+: bonus model. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classlogic_1_1AbstractFactory_a5797bb1e8d2bcc19da10ca5fd39d70ba}{logic\+::\+Abstract\+Factory}}.
+
+
+
+Definition at line 100 of file Concrete\+Factory.\+cpp.
+
+\mbox{\Hypertarget{classrepresentation_1_1ConcreteFactory_a8157c2ea33f3aed279650ace88fc7627}\label{classrepresentation_1_1ConcreteFactory_a8157c2ea33f3aed279650ace88fc7627}} 
+\index{representation::ConcreteFactory@{representation::ConcreteFactory}!createPlayer@{createPlayer}}
+\index{createPlayer@{createPlayer}!representation::ConcreteFactory@{representation::ConcreteFactory}}
+\doxyparagraph{\texorpdfstring{createPlayer()}{createPlayer()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Player}{logic\+::\+Player}} $>$ representation\+::\+Concrete\+Factory\+::create\+Player (\begin{DoxyParamCaption}\item[{float}]{posX,  }\item[{float}]{posY,  }\item[{float}]{width,  }\item[{float}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+@function \+: create\+Player Creates and returns a player model. 
+\begin{DoxyParams}{Parameters}
+{\em posX} & (float) \+: x-\/position of the entity. \\
+\hline
+{\em posY} & (float) \+: y-\/position of the entity. \\
+\hline
+{\em width} & (float) \+: width of the entity. \\
+\hline
+{\em height} & (float) \+: height of the entity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(std\+::shared\+\_\+ptr$<$logic\+::\+Player$>$) \+: player model. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classlogic_1_1AbstractFactory_a9f4ebed2900945df1e3d584715c68955}{logic\+::\+Abstract\+Factory}}.
+
+
+
+Definition at line 7 of file Concrete\+Factory.\+cpp.
+
+\mbox{\Hypertarget{classrepresentation_1_1ConcreteFactory_aba785c0e6855e1d9f1de859df6f9d2ca}\label{classrepresentation_1_1ConcreteFactory_aba785c0e6855e1d9f1de859df6f9d2ca}} 
+\index{representation::ConcreteFactory@{representation::ConcreteFactory}!createSpring@{createSpring}}
+\index{createSpring@{createSpring}!representation::ConcreteFactory@{representation::ConcreteFactory}}
+\doxyparagraph{\texorpdfstring{createSpring()}{createSpring()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Bonus}{logic\+::\+Bonus}} $>$ representation\+::\+Concrete\+Factory\+::create\+Spring (\begin{DoxyParamCaption}\item[{float}]{posX,  }\item[{float}]{posY,  }\item[{float}]{width,  }\item[{float}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+@function \+: create\+Spring Creates and returns a spring model. 
+\begin{DoxyParams}{Parameters}
+{\em posX} & (float) \+: x-\/position of the entity. \\
+\hline
+{\em posY} & (float) \+: y-\/position of the entity. \\
+\hline
+{\em width} & (float) \+: width of the entity. \\
+\hline
+{\em height} & (float) \+: height of the entity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(std\+::shared\+\_\+ptr$<$logic\+::\+Bonus$>$) \+: bonus model. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classlogic_1_1AbstractFactory_a363088d16ef335f8961634c05bfef604}{logic\+::\+Abstract\+Factory}}.
+
+
+
+Definition at line 88 of file Concrete\+Factory.\+cpp.
+
+\mbox{\Hypertarget{classrepresentation_1_1ConcreteFactory_a85b7082f2ae47a924481cf1921dd39f1}\label{classrepresentation_1_1ConcreteFactory_a85b7082f2ae47a924481cf1921dd39f1}} 
+\index{representation::ConcreteFactory@{representation::ConcreteFactory}!createStaticPlatform@{createStaticPlatform}}
+\index{createStaticPlatform@{createStaticPlatform}!representation::ConcreteFactory@{representation::ConcreteFactory}}
+\doxyparagraph{\texorpdfstring{createStaticPlatform()}{createStaticPlatform()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Platform}{logic\+::\+Platform}} $>$ representation\+::\+Concrete\+Factory\+::create\+Static\+Platform (\begin{DoxyParamCaption}\item[{float}]{posX,  }\item[{float}]{posY,  }\item[{float}]{width,  }\item[{float}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+@function \+: create\+Static\+Platform Creates and returns a (static) platform model. 
+\begin{DoxyParams}{Parameters}
+{\em posX} & (float) \+: x-\/position of the entity. \\
+\hline
+{\em posY} & (float) \+: y-\/position of the entity. \\
+\hline
+{\em width} & (float) \+: width of the entity. \\
+\hline
+{\em height} & (float) \+: height of the entity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classlogic_1_1Platform}{logic\+::\+Platform}}) \+: platform model. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classlogic_1_1AbstractFactory_a4450d2814b928702e932cfc21b7c69b1}{logic\+::\+Abstract\+Factory}}.
+
+
+
+Definition at line 24 of file Concrete\+Factory.\+cpp.
+
+\mbox{\Hypertarget{classrepresentation_1_1ConcreteFactory_a06856fd92ae6355880390d81f61fc723}\label{classrepresentation_1_1ConcreteFactory_a06856fd92ae6355880390d81f61fc723}} 
+\index{representation::ConcreteFactory@{representation::ConcreteFactory}!createTemporaryPlatform@{createTemporaryPlatform}}
+\index{createTemporaryPlatform@{createTemporaryPlatform}!representation::ConcreteFactory@{representation::ConcreteFactory}}
+\doxyparagraph{\texorpdfstring{createTemporaryPlatform()}{createTemporaryPlatform()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Platform}{logic\+::\+Platform}} $>$ representation\+::\+Concrete\+Factory\+::create\+Temporary\+Platform (\begin{DoxyParamCaption}\item[{float}]{posX,  }\item[{float}]{posY,  }\item[{float}]{width,  }\item[{float}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+@function \+: create\+Temporary\+Platform Creates and returns a (temporary) platform model. 
+\begin{DoxyParams}{Parameters}
+{\em posX} & (float) \+: x-\/position of the entity. \\
+\hline
+{\em posY} & (float) \+: y-\/position of the entity. \\
+\hline
+{\em width} & (float) \+: width of the entity. \\
+\hline
+{\em height} & (float) \+: height of the entity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(std\+::shared\+\_\+ptr$<$logic\+::\+Platform$>$) \+: platform model. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classlogic_1_1AbstractFactory_a1b991e2b6bcd7545065ea967bf2f0342}{logic\+::\+Abstract\+Factory}}.
+
+
+
+Definition at line 40 of file Concrete\+Factory.\+cpp.
+
+\mbox{\Hypertarget{classrepresentation_1_1ConcreteFactory_ac2e6fe32f9fabcb7572848e1a14f77f4}\label{classrepresentation_1_1ConcreteFactory_ac2e6fe32f9fabcb7572848e1a14f77f4}} 
+\index{representation::ConcreteFactory@{representation::ConcreteFactory}!createVerticalPlatform@{createVerticalPlatform}}
+\index{createVerticalPlatform@{createVerticalPlatform}!representation::ConcreteFactory@{representation::ConcreteFactory}}
+\doxyparagraph{\texorpdfstring{createVerticalPlatform()}{createVerticalPlatform()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Platform}{logic\+::\+Platform}} $>$ representation\+::\+Concrete\+Factory\+::create\+Vertical\+Platform (\begin{DoxyParamCaption}\item[{float}]{posX,  }\item[{float}]{posY,  }\item[{float}]{width,  }\item[{float}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+@function \+: create\+Vertical\+Platform Creates and returns a (vertical) platform model. 
+\begin{DoxyParams}{Parameters}
+{\em posX} & (float) \+: x-\/position of the entity. \\
+\hline
+{\em posY} & (float) \+: y-\/position of the entity. \\
+\hline
+{\em width} & (float) \+: width of the entity. \\
+\hline
+{\em height} & (float) \+: height of the entity. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(std\+::shared\+\_\+ptr$<$logic\+::\+Platform$>$) \+: platform model. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classlogic_1_1AbstractFactory_addd3c9d4d9f5e9e3f9c53bbd90ee6e82}{logic\+::\+Abstract\+Factory}}.
+
+
+
+Definition at line 72 of file Concrete\+Factory.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/game\+\_\+representation/Concrete\+Factory.\+h\item 
+src/game\+\_\+representation/Concrete\+Factory.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_2fb4fe6e5858512e6c8ae1a89e960497" kind="dir">
+    <compoundname>src/game_representation</compoundname>
+    <innerfile refid="BGTile__GR_8cpp">BGTile_GR.cpp</innerfile>
+    <innerfile refid="BGTile__GR_8h">BGTile_GR.h</innerfile>
+    <innerfile refid="Bonus__GR_8cpp">Bonus_GR.cpp</innerfile>
+    <innerfile refid="Bonus__GR_8h">Bonus_GR.h</innerfile>
+    <innerfile refid="ConcreteFactory_8cpp">ConcreteFactory.cpp</innerfile>
+    <innerfile refid="ConcreteFactory_8h">ConcreteFactory.h</innerfile>
+    <innerfile refid="EntityView_8cpp">EntityView.cpp</innerfile>
+    <innerfile refid="EntityView_8h">EntityView.h</innerfile>
+    <innerfile refid="Game_8cpp">Game.cpp</innerfile>
+    <innerfile refid="Game_8h">Game.h</innerfile>
+    <innerfile refid="Jetpack__GR_8cpp">Jetpack_GR.cpp</innerfile>
+    <innerfile refid="Jetpack__GR_8h">Jetpack_GR.h</innerfile>
+    <innerfile refid="Platform__GR_8cpp">Platform_GR.cpp</innerfile>
+    <innerfile refid="Platform__GR_8h">Platform_GR.h</innerfile>
+    <innerfile refid="Platform__Horizontal__GR_8cpp">Platform_Horizontal_GR.cpp</innerfile>
+    <innerfile refid="Platform__Horizontal__GR_8h">Platform_Horizontal_GR.h</innerfile>
+    <innerfile refid="Platform__Static__GR_8cpp">Platform_Static_GR.cpp</innerfile>
+    <innerfile refid="Platform__Static__GR_8h">Platform_Static_GR.h</innerfile>
+    <innerfile refid="Platform__Temporary__GR_8cpp">Platform_Temporary_GR.cpp</innerfile>
+    <innerfile refid="Platform__Temporary__GR_8h">Platform_Temporary_GR.h</innerfile>
+    <innerfile refid="Platform__Vertical__GR_8cpp">Platform_Vertical_GR.cpp</innerfile>
+    <innerfile refid="Platform__Vertical__GR_8h">Platform_Vertical_GR.h</innerfile>
+    <innerfile refid="Player__GR_8cpp">Player_GR.cpp</innerfile>
+    <innerfile refid="Player__GR_8h">Player_GR.h</innerfile>
+    <innerfile refid="Spring__GR_8cpp">Spring_GR.cpp</innerfile>
+    <innerfile refid="Spring__GR_8h">Spring_GR.h</innerfile>
+    <innerfile refid="Window_8cpp">Window.cpp</innerfile>
+    <innerfile refid="Window_8h">Window.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/game_representation/"/>
+  </compounddef>
+</doxygen>

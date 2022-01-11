@@ -1,0 +1,88 @@
+.TH "logic::Platform_Temporary" 3 "Tue Jan 11 2022" "Doxygen Test" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+logic::Platform_Temporary
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBlogic::Platform\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPlatform_Temporary\fP ()"
+.br
+.ti -1c
+.RI "\fB~Platform_Temporary\fP () override=default"
+.br
+.ti -1c
+.RI "\fBPlatform_Temporary\fP (float posX, float posY)"
+.br
+.ti -1c
+.RI "\fBPlatform_Temporary\fP (float posX, float posY, float width, float height)"
+.br
+.ti -1c
+.RI "float \fBisTouched\fP () override"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 10 of file Platform_Temporary\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "logic::Platform_Temporary::Platform_Temporary ()\fC [default]\fP"
+@function : \fBPlatform_Temporary\fP Constructor for a \fBPlatform_Temporary\fP\&. 
+.SS "logic::Platform_Temporary::~Platform_Temporary ()\fC [override]\fP, \fC [default]\fP"
+@function : \fBPlatform_Temporary\fP Destructor for a \fBPlatform_Temporary\fP\&. 
+.SS "logic::Platform_Temporary::Platform_Temporary (float posX, float posY)"
+@function : \fBPlatform_Temporary\fP Constructor for a \fBPlatform_Temporary\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposX\fP (float) : x-coordinate of our entity, between the range [0,1-entity\&.width]\&. 
+.br
+\fIposY\fP (float) : y-coordinate of our entity, between the range [0+entity\&.height, inf[\&. 
+.RE
+.PP
+
+.PP
+Definition at line 9 of file Platform_Temporary\&.cpp\&.
+.SS "logic::Platform_Temporary::Platform_Temporary (float posX, float posY, float width, float height)"
+@function : \fBPlatform_Temporary\fP Constructor for a \fBPlatform_Temporary\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposX\fP (float) : x-coordinate of our entity, between the range [0,1-entity\&.width]\&. 
+.br
+\fIposY\fP (float) : y-coordinate of our entity, between the range [0+entity\&.height, inf[\&. 
+.br
+\fIwidth\fP (float) : width of our entity\&. 
+.br
+\fIheight\fP (float) : height of our entity\&. 
+.RE
+.PP
+
+.PP
+Definition at line 11 of file Platform_Temporary\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "float logic::Platform_Temporary::isTouched ()\fC [override]\fP, \fC [virtual]\fP"
+@function : isTouched Function that is used for the score decrease and temporary platform deletion\&. 
+.PP
+\fBReturns\fP
+.RS 4
+(float) : score decrease\&. 
+.RE
+.PP
+
+.PP
+Implements \fBlogic::Platform\fP\&.
+.PP
+Definition at line 16 of file Platform_Temporary\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Doxygen Test from the source code\&.

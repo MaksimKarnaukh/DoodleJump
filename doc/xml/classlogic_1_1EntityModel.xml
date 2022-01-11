@@ -1,0 +1,721 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classlogic_1_1EntityModel" kind="class" language="C++" prot="public">
+    <compoundname>logic::EntityModel</compoundname>
+    <basecompoundref refid="classlogic_1_1Subject" prot="public" virt="non-virtual">logic::Subject</basecompoundref>
+    <derivedcompoundref refid="classlogic_1_1BGTile" prot="public" virt="non-virtual">logic::BGTile</derivedcompoundref>
+    <derivedcompoundref refid="classlogic_1_1Bonus" prot="public" virt="non-virtual">logic::Bonus</derivedcompoundref>
+    <derivedcompoundref refid="classlogic_1_1Platform" prot="public" virt="non-virtual">logic::Platform</derivedcompoundref>
+    <derivedcompoundref refid="classlogic_1_1Player" prot="public" virt="non-virtual">logic::Player</derivedcompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classlogic_1_1EntityModel_1ac823e3f35ecfa439b2883d7601929ce5" prot="protected" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::EntityModel::e_width</definition>
+        <argsstring></argsstring>
+        <name>e_width</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/EntityModel.h" line="15" column="15" bodyfile="src/logic_library/EntityModel.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1EntityModel_1a9c913c80599c18622aa329759865aa6b" prot="protected" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::EntityModel::e_height</definition>
+        <argsstring></argsstring>
+        <name>e_height</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/EntityModel.h" line="16" column="15" bodyfile="src/logic_library/EntityModel.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1EntityModel_1a894fed55ddd23d3e0a9d442b2a17d62c" prot="protected" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::EntityModel::x_pos</definition>
+        <argsstring></argsstring>
+        <name>x_pos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/EntityModel.h" line="18" column="15" bodyfile="src/logic_library/EntityModel.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1EntityModel_1a351557932831e0db1ad5138ee4a92ec9" prot="protected" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::EntityModel::y_pos</definition>
+        <argsstring></argsstring>
+        <name>y_pos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/EntityModel.h" line="19" column="15" bodyfile="src/logic_library/EntityModel.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1EntityModel_1a14b0d640abc1de9f0d26857525fb8588" prot="protected" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::EntityModel::e_speed</definition>
+        <argsstring></argsstring>
+        <name>e_speed</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/EntityModel.h" line="21" column="15" bodyfile="src/logic_library/EntityModel.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1EntityModel_1a54b5161f038a4636baba4b17f7042425" prot="protected" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::EntityModel::unit</definition>
+        <argsstring></argsstring>
+        <name>unit</name>
+        <initializer>= 0.6f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/EntityModel.h" line="22" column="15" bodyfile="src/logic_library/EntityModel.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1EntityModel_1a515fb152a30fd35aa2825b78bb8fdc90" prot="protected" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::EntityModel::x_posPrevious</definition>
+        <argsstring></argsstring>
+        <name>x_posPrevious</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/EntityModel.h" line="24" column="15" bodyfile="src/logic_library/EntityModel.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1EntityModel_1acdcaa7615dfcec6b495ece5df8a3a40c" prot="protected" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::EntityModel::y_posPrevious</definition>
+        <argsstring></argsstring>
+        <name>y_posPrevious</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/EntityModel.h" line="25" column="15" bodyfile="src/logic_library/EntityModel.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classlogic_1_1EntityModel_1a99c0c979c10a90eecf3620afc8ecbc12" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::EntityModel::setWidth</definition>
+        <argsstring>(float width)</argsstring>
+        <name>setWidth</name>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : setWidth Setter function for the e_width data member. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : value that we want to give to e_width. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/EntityModel.h" line="33" column="14" bodyfile="src/logic_library/EntityModel.h" bodystart="33" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1EntityModel_1ad703de4900c6b276f824804bebfba006" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::EntityModel::setHeight</definition>
+        <argsstring>(float height)</argsstring>
+        <name>setHeight</name>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : setHeight Setter function for the e_height data member. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : value that we want to give to e_height. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/EntityModel.h" line="40" column="14" bodyfile="src/logic_library/EntityModel.h" bodystart="40" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1EntityModel_1a0d63f4dc9f2dcab997c5acb43a58b761" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::EntityModel::setPositionX</definition>
+        <argsstring>(float posX)</argsstring>
+        <name>setPositionX</name>
+        <param>
+          <type>float</type>
+          <declname>posX</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : setPositionX Setter function for the x_pos data member. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>posX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : value that we want to give to x_pos. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/EntityModel.h" line="47" column="14" bodyfile="src/logic_library/EntityModel.h" bodystart="47" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1EntityModel_1a755cc5054fad5a67111f00a137666ab1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::EntityModel::setPositionY</definition>
+        <argsstring>(float posY)</argsstring>
+        <name>setPositionY</name>
+        <param>
+          <type>float</type>
+          <declname>posY</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : setPositionY Setter function for the y_pos data member. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>posY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : value that we want to give to y_pos. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/EntityModel.h" line="54" column="14" bodyfile="src/logic_library/EntityModel.h" bodystart="54" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1EntityModel_1a78e9ab3fad35775a1780cd7bfff0622a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::EntityModel::setPreviousPositionX</definition>
+        <argsstring>(float posX)</argsstring>
+        <name>setPreviousPositionX</name>
+        <param>
+          <type>float</type>
+          <declname>posX</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : setPreviousPositionX Setter function for the x_posPrevious data member. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>posX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : value that we want to give to x_posPrevious. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/EntityModel.h" line="61" column="14" bodyfile="src/logic_library/EntityModel.h" bodystart="61" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1EntityModel_1a579a9928acff3b4ba2bb0821e952d452" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::EntityModel::setPreviousPositionY</definition>
+        <argsstring>(float posY)</argsstring>
+        <name>setPreviousPositionY</name>
+        <param>
+          <type>float</type>
+          <declname>posY</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : setPreviousPositionY Setter function for the y_posPrevious data member. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>posY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : value that we want to give to y_posPrevious. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/EntityModel.h" line="68" column="14" bodyfile="src/logic_library/EntityModel.h" bodystart="68" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1EntityModel_1a0a61bc5dc0e6a2a3aed489a604625593" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::EntityModel::setSpeed</definition>
+        <argsstring>(float speed)</argsstring>
+        <name>setSpeed</name>
+        <param>
+          <type>float</type>
+          <declname>speed</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : setSpeed Setter function for the e_speed data member. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>speed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : value that we want to give to e_speed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/EntityModel.h" line="75" column="14" bodyfile="src/logic_library/EntityModel.h" bodystart="75" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1EntityModel_1a642a7a6075bf35bfe9e0c55d52f4982d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::EntityModel::setUnitOfDistance</definition>
+        <argsstring>(float unitOfDistance)</argsstring>
+        <name>setUnitOfDistance</name>
+        <param>
+          <type>float</type>
+          <declname>unitOfDistance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : setUnitOfDistance Setter function for the unit data member. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>unitOfDistance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : value that we want to give to unit. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/EntityModel.h" line="82" column="14" bodyfile="src/logic_library/EntityModel.h" bodystart="82" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1EntityModel_1aa377acce5e474892230da31ee39bbbc9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float logic::EntityModel::getWidth</definition>
+        <argsstring>() const</argsstring>
+        <name>getWidth</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : getWidth Getter function for the e_width data member. <simplesect kind="return"><para>(float) : this-&gt;e_width </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/EntityModel.h" line="89" column="15" bodyfile="src/logic_library/EntityModel.h" bodystart="89" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1EntityModel_1a7cdaafc31f97ab0ba835593046138c57" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float logic::EntityModel::getHeight</definition>
+        <argsstring>() const</argsstring>
+        <name>getHeight</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : getHeight Getter function for the e_height data member. <simplesect kind="return"><para>(float) : this-&gt;e_height </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/EntityModel.h" line="96" column="15" bodyfile="src/logic_library/EntityModel.h" bodystart="96" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1EntityModel_1aed96cfbc730f4fd9a0e59bebc6727ef9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float logic::EntityModel::getPositionX</definition>
+        <argsstring>() const</argsstring>
+        <name>getPositionX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : getPositionX Getter function for the x_pos data member. <simplesect kind="return"><para>(float) : this-&gt;x_pos </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/EntityModel.h" line="103" column="15" bodyfile="src/logic_library/EntityModel.h" bodystart="103" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1EntityModel_1afb9776a3e5b8ebff029914499fe55ce6" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float logic::EntityModel::getPositionY</definition>
+        <argsstring>() const</argsstring>
+        <name>getPositionY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : getPositionY Getter function for the y_pos data member. <simplesect kind="return"><para>(float) : this-&gt;y_pos </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/EntityModel.h" line="110" column="15" bodyfile="src/logic_library/EntityModel.h" bodystart="110" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1EntityModel_1a89709427e4b0dd62de52d3d8c884ee76" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float logic::EntityModel::getPreviousPositionX</definition>
+        <argsstring>() const</argsstring>
+        <name>getPreviousPositionX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : getPreviousPositionX Getter function for the x_posPrevious data member. <simplesect kind="return"><para>(float) : this-&gt;x_posPrevious </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/EntityModel.h" line="117" column="15" bodyfile="src/logic_library/EntityModel.h" bodystart="117" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1EntityModel_1af1d0394edaf591860ebe06ef94a47276" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float logic::EntityModel::getPreviousPositionY</definition>
+        <argsstring>() const</argsstring>
+        <name>getPreviousPositionY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : getPreviousPositionY Getter function for the y_posPrevious data member. <simplesect kind="return"><para>(float) : this-&gt;y_posPrevious </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/EntityModel.h" line="124" column="15" bodyfile="src/logic_library/EntityModel.h" bodystart="124" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1EntityModel_1a0713ad1449d82b61f4e22bbdaa212b40" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float logic::EntityModel::getSpeed</definition>
+        <argsstring>() const</argsstring>
+        <name>getSpeed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : getSpeed Getter function for the e_speed data member. <simplesect kind="return"><para>(float) : this-&gt;e_speed </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/EntityModel.h" line="131" column="15" bodyfile="src/logic_library/EntityModel.h" bodystart="131" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1EntityModel_1ae85c34e45e8fec66993b870a937b2025" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float logic::EntityModel::getUnit</definition>
+        <argsstring>() const</argsstring>
+        <name>getUnit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : getUnit Getter function for the unit data member. <simplesect kind="return"><para>(float) : this-&gt;unit </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/EntityModel.h" line="138" column="15" bodyfile="src/logic_library/EntityModel.h" bodystart="138" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1EntityModel_1af763d5b72c30f1d2f7f87f3f229ce362" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::EntityModel::EntityModel</definition>
+        <argsstring>()</argsstring>
+        <name>EntityModel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1EntityModel" kindref="compound">EntityModel</ref> Constructor for a <ref refid="classlogic_1_1EntityModel" kindref="compound">EntityModel</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/EntityModel.h" line="145" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1EntityModel_1a55519f45ff78ff9dcb4b14fc1f868589" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::EntityModel::EntityModel</definition>
+        <argsstring>(float posX, float posY)</argsstring>
+        <name>EntityModel</name>
+        <param>
+          <type>float</type>
+          <declname>posX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>posY</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1EntityModel" kindref="compound">EntityModel</ref> Constructor for a <ref refid="classlogic_1_1EntityModel" kindref="compound">EntityModel</ref>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>posX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : x-coordinate of our entity, between the range [0,1-entity.width]. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>posY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : y-coordinate of our entity, between the range [0+entity.height, inf[. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/EntityModel.h" line="153" column="9" bodyfile="src/logic_library/EntityModel.cpp" bodystart="7" bodyend="7"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1EntityModel_1a0d8dd2e45002dd1177b74f27389e548e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::EntityModel::EntityModel</definition>
+        <argsstring>(float posX, float posY, float width, float height)</argsstring>
+        <name>EntityModel</name>
+        <param>
+          <type>float</type>
+          <declname>posX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>posY</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1EntityModel" kindref="compound">EntityModel</ref> Constructor for a <ref refid="classlogic_1_1EntityModel" kindref="compound">EntityModel</ref>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>posX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : x-coordinate of our entity, between the range [0,1-entity.width]. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>posY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : y-coordinate of our entity, between the range [0+entity.height, inf[. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : width of our entity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : height of our entity. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/EntityModel.h" line="163" column="9" bodyfile="src/logic_library/EntityModel.cpp" bodystart="9" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1EntityModel_1a70a0041b77dbb40c88e83847ea3523b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::EntityModel::~EntityModel</definition>
+        <argsstring>() override=default</argsstring>
+        <name>~EntityModel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1EntityModel" kindref="compound">EntityModel</ref> Destructor for a <ref refid="classlogic_1_1EntityModel" kindref="compound">EntityModel</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/EntityModel.h" line="169" column="9"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4">
+        <label>logic::Bonus</label>
+        <link refid="classlogic_1_1Bonus"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>logic::Subject</label>
+        <link refid="classlogic_1_1Subject"/>
+      </node>
+      <node id="1">
+        <label>logic::EntityModel</label>
+        <link refid="classlogic_1_1EntityModel"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>logic::Jetpack</label>
+        <link refid="classlogic_1_1Jetpack"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>logic::Platform_Vertical</label>
+        <link refid="classlogic_1_1Platform__Vertical"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>logic::Platform_Static</label>
+        <link refid="classlogic_1_1Platform__Static"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>logic::Platform_Horizontal</label>
+        <link refid="classlogic_1_1Platform__Horizontal"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>logic::Platform_Temporary</label>
+        <link refid="classlogic_1_1Platform__Temporary"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>logic::Platform</label>
+        <link refid="classlogic_1_1Platform"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>logic::Player</label>
+        <link refid="classlogic_1_1Player"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>logic::Spring</label>
+        <link refid="classlogic_1_1Spring"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>logic::BGTile</label>
+        <link refid="classlogic_1_1BGTile"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>logic::Subject</label>
+        <link refid="classlogic_1_1Subject"/>
+      </node>
+      <node id="1">
+        <label>logic::EntityModel</label>
+        <link refid="classlogic_1_1EntityModel"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/logic_library/EntityModel.h" line="12" column="1" bodyfile="src/logic_library/EntityModel.h" bodystart="11" bodyend="170"/>
+    <listofallmembers>
+      <member refid="classlogic_1_1EntityModel_1a9c913c80599c18622aa329759865aa6b" prot="protected" virt="non-virtual"><scope>logic::EntityModel</scope><name>e_height</name></member>
+      <member refid="classlogic_1_1EntityModel_1a14b0d640abc1de9f0d26857525fb8588" prot="protected" virt="non-virtual"><scope>logic::EntityModel</scope><name>e_speed</name></member>
+      <member refid="classlogic_1_1EntityModel_1ac823e3f35ecfa439b2883d7601929ce5" prot="protected" virt="non-virtual"><scope>logic::EntityModel</scope><name>e_width</name></member>
+      <member refid="classlogic_1_1EntityModel_1af763d5b72c30f1d2f7f87f3f229ce362" prot="public" virt="non-virtual"><scope>logic::EntityModel</scope><name>EntityModel</name></member>
+      <member refid="classlogic_1_1EntityModel_1a55519f45ff78ff9dcb4b14fc1f868589" prot="public" virt="non-virtual"><scope>logic::EntityModel</scope><name>EntityModel</name></member>
+      <member refid="classlogic_1_1EntityModel_1a0d8dd2e45002dd1177b74f27389e548e" prot="public" virt="non-virtual"><scope>logic::EntityModel</scope><name>EntityModel</name></member>
+      <member refid="classlogic_1_1EntityModel_1a7cdaafc31f97ab0ba835593046138c57" prot="public" virt="non-virtual"><scope>logic::EntityModel</scope><name>getHeight</name></member>
+      <member refid="classlogic_1_1Subject_1a202f1cd7a6af78750886d0b60d388450" prot="public" virt="non-virtual"><scope>logic::EntityModel</scope><name>getObservers</name></member>
+      <member refid="classlogic_1_1EntityModel_1aed96cfbc730f4fd9a0e59bebc6727ef9" prot="public" virt="non-virtual"><scope>logic::EntityModel</scope><name>getPositionX</name></member>
+      <member refid="classlogic_1_1EntityModel_1afb9776a3e5b8ebff029914499fe55ce6" prot="public" virt="non-virtual"><scope>logic::EntityModel</scope><name>getPositionY</name></member>
+      <member refid="classlogic_1_1EntityModel_1a89709427e4b0dd62de52d3d8c884ee76" prot="public" virt="non-virtual"><scope>logic::EntityModel</scope><name>getPreviousPositionX</name></member>
+      <member refid="classlogic_1_1EntityModel_1af1d0394edaf591860ebe06ef94a47276" prot="public" virt="non-virtual"><scope>logic::EntityModel</scope><name>getPreviousPositionY</name></member>
+      <member refid="classlogic_1_1EntityModel_1a0713ad1449d82b61f4e22bbdaa212b40" prot="public" virt="non-virtual"><scope>logic::EntityModel</scope><name>getSpeed</name></member>
+      <member refid="classlogic_1_1EntityModel_1ae85c34e45e8fec66993b870a937b2025" prot="public" virt="non-virtual"><scope>logic::EntityModel</scope><name>getUnit</name></member>
+      <member refid="classlogic_1_1EntityModel_1aa377acce5e474892230da31ee39bbbc9" prot="public" virt="non-virtual"><scope>logic::EntityModel</scope><name>getWidth</name></member>
+      <member refid="classlogic_1_1Subject_1a33567537c69863eaff2279f398f80ab4" prot="public" virt="non-virtual"><scope>logic::EntityModel</scope><name>notifyObservers</name></member>
+      <member refid="classlogic_1_1Subject_1a2c82c974d7838157824bdcecc4d0e59b" prot="protected" virt="non-virtual"><scope>logic::EntityModel</scope><name>observers</name></member>
+      <member refid="classlogic_1_1Subject_1a375e972ed74af83f46a8debd49f2e3e0" prot="public" virt="non-virtual"><scope>logic::EntityModel</scope><name>registerObserver</name></member>
+      <member refid="classlogic_1_1Subject_1a5a3db9e4c842eb2828c5586be9f4cf81" prot="public" virt="non-virtual"><scope>logic::EntityModel</scope><name>removeObserver</name></member>
+      <member refid="classlogic_1_1EntityModel_1ad703de4900c6b276f824804bebfba006" prot="public" virt="non-virtual"><scope>logic::EntityModel</scope><name>setHeight</name></member>
+      <member refid="classlogic_1_1EntityModel_1a0d63f4dc9f2dcab997c5acb43a58b761" prot="public" virt="non-virtual"><scope>logic::EntityModel</scope><name>setPositionX</name></member>
+      <member refid="classlogic_1_1EntityModel_1a755cc5054fad5a67111f00a137666ab1" prot="public" virt="non-virtual"><scope>logic::EntityModel</scope><name>setPositionY</name></member>
+      <member refid="classlogic_1_1EntityModel_1a78e9ab3fad35775a1780cd7bfff0622a" prot="public" virt="non-virtual"><scope>logic::EntityModel</scope><name>setPreviousPositionX</name></member>
+      <member refid="classlogic_1_1EntityModel_1a579a9928acff3b4ba2bb0821e952d452" prot="public" virt="non-virtual"><scope>logic::EntityModel</scope><name>setPreviousPositionY</name></member>
+      <member refid="classlogic_1_1EntityModel_1a0a61bc5dc0e6a2a3aed489a604625593" prot="public" virt="non-virtual"><scope>logic::EntityModel</scope><name>setSpeed</name></member>
+      <member refid="classlogic_1_1EntityModel_1a642a7a6075bf35bfe9e0c55d52f4982d" prot="public" virt="non-virtual"><scope>logic::EntityModel</scope><name>setUnitOfDistance</name></member>
+      <member refid="classlogic_1_1EntityModel_1a99c0c979c10a90eecf3620afc8ecbc12" prot="public" virt="non-virtual"><scope>logic::EntityModel</scope><name>setWidth</name></member>
+      <member refid="classlogic_1_1Subject_1ae1277f400422f50b425c204b11dd8995" prot="public" virt="non-virtual"><scope>logic::EntityModel</scope><name>Subject</name></member>
+      <member refid="classlogic_1_1EntityModel_1a54b5161f038a4636baba4b17f7042425" prot="protected" virt="non-virtual"><scope>logic::EntityModel</scope><name>unit</name></member>
+      <member refid="classlogic_1_1EntityModel_1a894fed55ddd23d3e0a9d442b2a17d62c" prot="protected" virt="non-virtual"><scope>logic::EntityModel</scope><name>x_pos</name></member>
+      <member refid="classlogic_1_1EntityModel_1a515fb152a30fd35aa2825b78bb8fdc90" prot="protected" virt="non-virtual"><scope>logic::EntityModel</scope><name>x_posPrevious</name></member>
+      <member refid="classlogic_1_1EntityModel_1a351557932831e0db1ad5138ee4a92ec9" prot="protected" virt="non-virtual"><scope>logic::EntityModel</scope><name>y_pos</name></member>
+      <member refid="classlogic_1_1EntityModel_1acdcaa7615dfcec6b495ece5df8a3a40c" prot="protected" virt="non-virtual"><scope>logic::EntityModel</scope><name>y_posPrevious</name></member>
+      <member refid="classlogic_1_1EntityModel_1a70a0041b77dbb40c88e83847ea3523b7" prot="public" virt="non-virtual"><scope>logic::EntityModel</scope><name>~EntityModel</name></member>
+      <member refid="classlogic_1_1Subject_1ae4238075ca667706bba792bfb96ee6c0" prot="public" virt="virtual"><scope>logic::EntityModel</scope><name>~Subject</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

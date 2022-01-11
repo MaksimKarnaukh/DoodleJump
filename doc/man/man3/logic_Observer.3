@@ -1,0 +1,70 @@
+.TH "logic::Observer" 3 "Tue Jan 11 2022" "Doxygen Test" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+logic::Observer
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBlogic::Score\fP, and \fBrepresentation::EntityView\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBObserver\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~Observer\fP ()=default"
+.br
+.ti -1c
+.RI "\fBObserver\fP (const std::shared_ptr< \fBlogic::Subject\fP > &subject)"
+.br
+.ti -1c
+.RI "virtual void \fBupdate\fP ()=0"
+.br
+.ti -1c
+.RI "void \fBregisterSubject\fP (const std::shared_ptr< \fBlogic::Subject\fP > &subject)"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::weak_ptr< \fBlogic::Subject\fP > \fBmSubject\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 12 of file Observer\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "logic::Observer::Observer ()\fC [default]\fP"
+@function : \fBObserver\fP Constructor for a \fBObserver\fP\&. 
+.SS "virtual logic::Observer::~Observer ()\fC [virtual]\fP, \fC [default]\fP"
+@function : \fBObserver\fP Destructor for a \fBObserver\fP\&. 
+.SS "logic::Observer::Observer (const std::shared_ptr< \fBlogic::Subject\fP > & subject)"
+@function : \fBObserver\fP Constructor for a \fBObserver\fP\&. 
+.PP
+Definition at line 9 of file Observer\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void logic::Observer::registerSubject (const std::shared_ptr< \fBlogic::Subject\fP > & subject)\fC [inline]\fP"
+@function : registerSubject Sets the subject for this observer\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIsubject\fP (std::shared_ptr<logic::Subject>) : subject that we register\&. 
+.RE
+.PP
+
+.PP
+Definition at line 48 of file Observer\&.h\&.
+.SS "virtual void logic::Observer::update ()\fC [pure virtual]\fP"
+@function : update Updates the state of the observer\&. 
+.PP
+Implemented in \fBrepresentation::EntityView\fP, and \fBlogic::Score\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Doxygen Test from the source code\&.

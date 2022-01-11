@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacelogic_1_1utility" kind="namespace" language="C++">
+    <compoundname>logic::utility</compoundname>
+    <innerclass refid="classlogic_1_1utility_1_1Camera" prot="public">logic::utility::Camera</innerclass>
+    <innerclass refid="classlogic_1_1utility_1_1Random" prot="public">logic::utility::Random</innerclass>
+    <innerclass refid="classlogic_1_1utility_1_1Stopwatch" prot="public">logic::utility::Stopwatch</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/logic_library/Random.h" line="14" column="17"/>
+  </compounddef>
+</doxygen>

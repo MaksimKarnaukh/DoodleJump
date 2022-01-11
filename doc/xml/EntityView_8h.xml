@@ -1,0 +1,365 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="EntityView_8h" kind="file" language="C++">
+    <compoundname>EntityView.h</compoundname>
+    <includes refid="LoadFileException_8h" local="yes">../LoadFileException.h</includes>
+    <includes refid="Camera_8h" local="yes">../logic_library/Camera.h</includes>
+    <includes refid="EntityModel_8h" local="yes">../logic_library/EntityModel.h</includes>
+    <includes refid="Observer_8h" local="yes">../logic_library/Observer.h</includes>
+    <includes local="yes">SFML/Graphics.hpp</includes>
+    <includes refid="Window_8h" local="yes">Window.h</includes>
+    <includedby refid="BGTile__GR_8h" local="yes">src/game_representation/BGTile_GR.h</includedby>
+    <includedby refid="Bonus__GR_8h" local="yes">src/game_representation/Bonus_GR.h</includedby>
+    <includedby refid="Platform__GR_8h" local="yes">src/game_representation/Platform_GR.h</includedby>
+    <includedby refid="Player__GR_8h" local="yes">src/game_representation/Player_GR.h</includedby>
+    <includedby refid="EntityView_8cpp" local="yes">src/game_representation/EntityView.cpp</includedby>
+    <incdepgraph>
+      <node id="16">
+        <label>SFML/Graphics.hpp</label>
+      </node>
+      <node id="9">
+        <label>../logic_library/EntityModel.h</label>
+        <link refid="EntityModel_8h_source"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>cmath</label>
+      </node>
+      <node id="5">
+        <label>string</label>
+      </node>
+      <node id="6">
+        <label>../logic_library/Camera.h</label>
+        <link refid="Camera_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>Window.h</label>
+        <link refid="Window_8h_source"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>exception</label>
+      </node>
+      <node id="12">
+        <label>Subject.h</label>
+        <link refid="Subject_8h_source"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>../logic_library/Observer.h</label>
+        <link refid="Observer_8h_source"/>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>SFML/Window.hpp</label>
+      </node>
+      <node id="2">
+        <label>../LoadFileException.h</label>
+        <link refid="LoadFileException_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>vector</label>
+      </node>
+      <node id="8">
+        <label>utility</label>
+      </node>
+      <node id="4">
+        <label>iostream</label>
+      </node>
+      <node id="11">
+        <label>chrono</label>
+      </node>
+      <node id="19">
+        <label>thread</label>
+      </node>
+      <node id="10">
+        <label>Stopwatch.h</label>
+        <link refid="Stopwatch_8h_source"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/game_representation/EntityView.h</label>
+        <link refid="EntityView_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>memory</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="10">
+        <label>src/game_representation/Bonus_GR.cpp</label>
+        <link refid="Bonus__GR_8cpp_source"/>
+      </node>
+      <node id="7">
+        <label>src/game_representation/Game.cpp</label>
+        <link refid="Game_8cpp_source"/>
+      </node>
+      <node id="21">
+        <label>src/game_representation/Platform_Temporary_GR.cpp</label>
+        <link refid="Platform__Temporary__GR_8cpp_source"/>
+      </node>
+      <node id="11">
+        <label>src/game_representation/Jetpack_GR.h</label>
+        <link refid="Jetpack__GR_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>src/game_representation/Spring_GR.cpp</label>
+        <link refid="Spring__GR_8cpp_source"/>
+      </node>
+      <node id="15">
+        <label>src/game_representation/Platform_GR.h</label>
+        <link refid="Platform__GR_8h_source"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>src/game_representation/Platform_Static_GR.h</label>
+        <link refid="Platform__Static__GR_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>src/game_representation/BGTile_GR.h</label>
+        <link refid="BGTile__GR_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>src/game_representation/Bonus_GR.h</label>
+        <link refid="Bonus__GR_8h_source"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>src/game_representation/Platform_Vertical_GR.cpp</label>
+        <link refid="Platform__Vertical__GR_8cpp_source"/>
+      </node>
+      <node id="22">
+        <label>src/game_representation/Platform_Vertical_GR.h</label>
+        <link refid="Platform__Vertical__GR_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>src/game_representation/Spring_GR.h</label>
+        <link refid="Spring__GR_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>src/main.cpp</label>
+        <link refid="main_8cpp_source"/>
+      </node>
+      <node id="25">
+        <label>src/game_representation/Player_GR.h</label>
+        <link refid="Player__GR_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>src/game_representation/Platform_Horizontal_GR.h</label>
+        <link refid="Platform__Horizontal__GR_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>src/game_representation/Platform_Static_GR.cpp</label>
+        <link refid="Platform__Static__GR_8cpp_source"/>
+      </node>
+      <node id="5">
+        <label>src/game_representation/ConcreteFactory.cpp</label>
+        <link refid="ConcreteFactory_8cpp_source"/>
+      </node>
+      <node id="12">
+        <label>src/game_representation/Jetpack_GR.cpp</label>
+        <link refid="Jetpack__GR_8cpp_source"/>
+      </node>
+      <node id="20">
+        <label>src/game_representation/Platform_Temporary_GR.h</label>
+        <link refid="Platform__Temporary__GR_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>src/game_representation/Player_GR.cpp</label>
+        <link refid="Player__GR_8cpp_source"/>
+      </node>
+      <node id="24">
+        <label>src/game_representation/Platform_GR.cpp</label>
+        <link refid="Platform__GR_8cpp_source"/>
+      </node>
+      <node id="17">
+        <label>src/game_representation/Platform_Horizontal_GR.cpp</label>
+        <link refid="Platform__Horizontal__GR_8cpp_source"/>
+      </node>
+      <node id="6">
+        <label>src/game_representation/Game.h</label>
+        <link refid="Game_8h_source"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>src/game_representation/ConcreteFactory.h</label>
+        <link refid="ConcreteFactory_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/game_representation/EntityView.h</label>
+        <link refid="EntityView_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>src/game_representation/EntityView.cpp</label>
+        <link refid="EntityView_8cpp_source"/>
+      </node>
+      <node id="3">
+        <label>src/game_representation/BGTile_GR.cpp</label>
+        <link refid="BGTile__GR_8cpp_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classrepresentation_1_1EntityView" prot="public">representation::EntityView</innerclass>
+    <innernamespace refid="namespacerepresentation">representation</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Author:<sp/>Maksim<sp/>Karnaukh</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DOODLEJUMP_ENTITYVIEW_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DOODLEJUMP_ENTITYVIEW_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../LoadFileException.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../logic_library/Camera.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../logic_library/EntityModel.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;../logic_library/Observer.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;SFML/Graphics.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Window.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">representation<sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="classrepresentation_1_1EntityView" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classrepresentation_1_1EntityView" kindref="compound">EntityView</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classlogic_1_1Observer" kindref="compound">logic::Observer</ref></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::weak_ptr&lt;logic::EntityModel&gt;<sp/>mEntityModel;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Sprite<sp/>sprite;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Texture<sp/>texture;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classrepresentation_1_1EntityView_1aa7ee9ae264ef678092634a4974bd5f8c" kindref="member">EntityView</ref>();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classrepresentation_1_1EntityView_1a3ae850ef8ded8fdaca88a590912b58b4" kindref="member">~EntityView</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classrepresentation_1_1EntityView_1aa7ee9ae264ef678092634a4974bd5f8c" kindref="member">EntityView</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;logic::EntityModel&gt;&amp;<sp/>entityModel);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrepresentation_1_1EntityView_1a1a28801738745333c1ed6079e60b7111" kindref="member">setSpriteTexture</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>filename);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="classrepresentation_1_1EntityView_1a036973e73e1c5f97caff7afcfb331774" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Sprite&amp;<sp/><ref refid="classrepresentation_1_1EntityView_1a036973e73e1c5f97caff7afcfb331774" kindref="member">getSprite</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sprite;<sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="classrepresentation_1_1EntityView_1a6faf90849bc4fc35bc5fe3d80a8df652" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Texture&amp;<sp/><ref refid="classrepresentation_1_1EntityView_1a6faf90849bc4fc35bc5fe3d80a8df652" kindref="member">getTexture</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>texture;<sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="classrepresentation_1_1EntityView_1af952d66591aefd0a19d2d7b882fd8395" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrepresentation_1_1EntityView_1af952d66591aefd0a19d2d7b882fd8395" kindref="member">setSpriteScale</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::shared_ptr&lt;logic::EntityModel&gt;&amp;<sp/>p)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sprite.setScale(1<sp/>*<sp/>((</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">)logic::utility::Camera::Instance().getWindowWidth()<sp/>*<sp/>p-&gt;getWidth())<sp/>/</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">)<ref refid="classrepresentation_1_1EntityView_1a6faf90849bc4fc35bc5fe3d80a8df652" kindref="member">getTexture</ref>().getSize().x,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1<sp/>*<sp/>((</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">)logic::utility::Camera::Instance().getWindowHeight()<sp/>*<sp/>p-&gt;getHeight())<sp/>/</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(</highlight><highlight class="keywordtype">float</highlight><highlight class="normal">)<ref refid="classrepresentation_1_1EntityView_1a6faf90849bc4fc35bc5fe3d80a8df652" kindref="member">getTexture</ref>().getSize().y);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrepresentation_1_1EntityView_1a609e08de8dbeec013659ab4a12df6601" kindref="member">update</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>representation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>DOODLEJUMP_ENTITYVIEW_H</highlight></codeline>
+    </programlisting>
+    <location file="src/game_representation/EntityView.h"/>
+  </compounddef>
+</doxygen>

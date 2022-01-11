@@ -1,0 +1,666 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classrepresentation_1_1ConcreteFactory" kind="class" language="C++" prot="public">
+    <compoundname>representation::ConcreteFactory</compoundname>
+    <basecompoundref refid="classlogic_1_1AbstractFactory" prot="public" virt="non-virtual">logic::AbstractFactory</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classrepresentation_1_1ConcreteFactory_1a3d6e21e4d98192e2ded8dd6ddfcfff79" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="classrepresentation_1_1Platform__GR" kindref="compound">representation::Platform_GR</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::shared_ptr&lt;representation::Platform_GR&gt; &gt; representation::ConcreteFactory::platformViews</definition>
+        <argsstring></argsstring>
+        <name>platformViews</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/game_representation/ConcreteFactory.h" line="22" column="21" bodyfile="src/game_representation/ConcreteFactory.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrepresentation_1_1ConcreteFactory_1a0a1ad326a4ad11f44c7edcaea1cc7527" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="classrepresentation_1_1Player__GR" kindref="compound">representation::Player_GR</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::shared_ptr&lt;representation::Player_GR&gt; &gt; representation::ConcreteFactory::playerViews</definition>
+        <argsstring></argsstring>
+        <name>playerViews</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/game_representation/ConcreteFactory.h" line="23" column="21" bodyfile="src/game_representation/ConcreteFactory.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrepresentation_1_1ConcreteFactory_1af5fc4068605a901d4e5f48bc9470d07e" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="classrepresentation_1_1Bonus__GR" kindref="compound">representation::Bonus_GR</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::shared_ptr&lt;representation::Bonus_GR&gt; &gt; representation::ConcreteFactory::bonusViews</definition>
+        <argsstring></argsstring>
+        <name>bonusViews</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/game_representation/ConcreteFactory.h" line="24" column="21" bodyfile="src/game_representation/ConcreteFactory.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classrepresentation_1_1ConcreteFactory_1a6e53ecd6e076e7000f7f1d54cd90ea68" prot="public" static="no" mutable="no">
+        <type>std::vector&lt; std::shared_ptr&lt; <ref refid="classrepresentation_1_1BGTile__GR" kindref="compound">representation::BGTile_GR</ref> &gt; &gt;</type>
+        <definition>std::vector&lt;std::shared_ptr&lt;representation::BGTile_GR&gt; &gt; representation::ConcreteFactory::bgTilesViews</definition>
+        <argsstring></argsstring>
+        <name>bgTilesViews</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/game_representation/ConcreteFactory.h" line="25" column="21" bodyfile="src/game_representation/ConcreteFactory.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classrepresentation_1_1ConcreteFactory_1aaea91f080dfdd66b807ddb50b901d4dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>representation::ConcreteFactory::ConcreteFactory</definition>
+        <argsstring>()</argsstring>
+        <name>ConcreteFactory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classrepresentation_1_1ConcreteFactory" kindref="compound">ConcreteFactory</ref> Constructor for a <ref refid="classrepresentation_1_1ConcreteFactory" kindref="compound">ConcreteFactory</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/game_representation/ConcreteFactory.h" line="32" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classrepresentation_1_1ConcreteFactory_1a3816317f86c6aaf402ad190940ba182d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>representation::ConcreteFactory::~ConcreteFactory</definition>
+        <argsstring>() override=default</argsstring>
+        <name>~ConcreteFactory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classrepresentation_1_1ConcreteFactory" kindref="compound">ConcreteFactory</ref> Destructor for a <ref refid="classrepresentation_1_1ConcreteFactory" kindref="compound">ConcreteFactory</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/game_representation/ConcreteFactory.h" line="38" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classrepresentation_1_1ConcreteFactory_1a8157c2ea33f3aed279650ace88fc7627" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::shared_ptr&lt; <ref refid="classlogic_1_1Player" kindref="compound">logic::Player</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; logic::Player &gt; representation::ConcreteFactory::createPlayer</definition>
+        <argsstring>(float posX, float posY, float width, float height) override</argsstring>
+        <name>createPlayer</name>
+        <reimplements refid="classlogic_1_1AbstractFactory_1a9f4ebed2900945df1e3d584715c68955">createPlayer</reimplements>
+        <param>
+          <type>float</type>
+          <declname>posX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>posY</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : createPlayer Creates and returns a player model. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>posX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : x-position of the entity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>posY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : y-position of the entity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : width of the entity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : height of the entity. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>(std::shared_ptr&lt;logic::Player&gt;) : player model. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/game_representation/ConcreteFactory.h" line="49" column="25" bodyfile="src/game_representation/ConcreteFactory.cpp" bodystart="7" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classrepresentation_1_1ConcreteFactory_1a85b7082f2ae47a924481cf1921dd39f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::shared_ptr&lt; <ref refid="classlogic_1_1Platform" kindref="compound">logic::Platform</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; logic::Platform &gt; representation::ConcreteFactory::createStaticPlatform</definition>
+        <argsstring>(float posX, float posY, float width, float height) override</argsstring>
+        <name>createStaticPlatform</name>
+        <reimplements refid="classlogic_1_1AbstractFactory_1a4450d2814b928702e932cfc21b7c69b1">createStaticPlatform</reimplements>
+        <param>
+          <type>float</type>
+          <declname>posX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>posY</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : createStaticPlatform Creates and returns a (static) platform model. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>posX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : x-position of the entity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>posY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : y-position of the entity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : width of the entity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : height of the entity. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>(std::shared_ptr&lt;<ref refid="classlogic_1_1Platform" kindref="compound">logic::Platform</ref>) : platform model. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/game_representation/ConcreteFactory.h" line="60" column="25" bodyfile="src/game_representation/ConcreteFactory.cpp" bodystart="24" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classrepresentation_1_1ConcreteFactory_1a06856fd92ae6355880390d81f61fc723" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::shared_ptr&lt; <ref refid="classlogic_1_1Platform" kindref="compound">logic::Platform</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; logic::Platform &gt; representation::ConcreteFactory::createTemporaryPlatform</definition>
+        <argsstring>(float posX, float posY, float width, float height) override</argsstring>
+        <name>createTemporaryPlatform</name>
+        <reimplements refid="classlogic_1_1AbstractFactory_1a1b991e2b6bcd7545065ea967bf2f0342">createTemporaryPlatform</reimplements>
+        <param>
+          <type>float</type>
+          <declname>posX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>posY</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : createTemporaryPlatform Creates and returns a (temporary) platform model. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>posX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : x-position of the entity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>posY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : y-position of the entity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : width of the entity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : height of the entity. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>(std::shared_ptr&lt;logic::Platform&gt;) : platform model. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/game_representation/ConcreteFactory.h" line="72" column="25" bodyfile="src/game_representation/ConcreteFactory.cpp" bodystart="40" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classrepresentation_1_1ConcreteFactory_1a8e50c892bd9d46e12bdf9949a32a2bb1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::shared_ptr&lt; <ref refid="classlogic_1_1Platform" kindref="compound">logic::Platform</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; logic::Platform &gt; representation::ConcreteFactory::createHorizontalPlatform</definition>
+        <argsstring>(float posX, float posY, float width, float height) override</argsstring>
+        <name>createHorizontalPlatform</name>
+        <reimplements refid="classlogic_1_1AbstractFactory_1a5f2b10dec4090b4a7f893096c8986488">createHorizontalPlatform</reimplements>
+        <param>
+          <type>float</type>
+          <declname>posX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>posY</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : createHorizontalPlatform Creates and returns a (horizontal) platform model. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>posX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : x-position of the entity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>posY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : y-position of the entity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : width of the entity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : height of the entity. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>(std::shared_ptr&lt;logic::Platform&gt;) : platform model. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/game_representation/ConcreteFactory.h" line="84" column="25" bodyfile="src/game_representation/ConcreteFactory.cpp" bodystart="56" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classrepresentation_1_1ConcreteFactory_1ac2e6fe32f9fabcb7572848e1a14f77f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::shared_ptr&lt; <ref refid="classlogic_1_1Platform" kindref="compound">logic::Platform</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; logic::Platform &gt; representation::ConcreteFactory::createVerticalPlatform</definition>
+        <argsstring>(float posX, float posY, float width, float height) override</argsstring>
+        <name>createVerticalPlatform</name>
+        <reimplements refid="classlogic_1_1AbstractFactory_1addd3c9d4d9f5e9e3f9c53bbd90ee6e82">createVerticalPlatform</reimplements>
+        <param>
+          <type>float</type>
+          <declname>posX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>posY</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : createVerticalPlatform Creates and returns a (vertical) platform model. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>posX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : x-position of the entity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>posY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : y-position of the entity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : width of the entity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : height of the entity. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>(std::shared_ptr&lt;logic::Platform&gt;) : platform model. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/game_representation/ConcreteFactory.h" line="96" column="25" bodyfile="src/game_representation/ConcreteFactory.cpp" bodystart="72" bodyend="86"/>
+      </memberdef>
+      <memberdef kind="function" id="classrepresentation_1_1ConcreteFactory_1aba785c0e6855e1d9f1de859df6f9d2ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::shared_ptr&lt; <ref refid="classlogic_1_1Bonus" kindref="compound">logic::Bonus</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; logic::Bonus &gt; representation::ConcreteFactory::createSpring</definition>
+        <argsstring>(float posX, float posY, float width, float height) override</argsstring>
+        <name>createSpring</name>
+        <reimplements refid="classlogic_1_1AbstractFactory_1a363088d16ef335f8961634c05bfef604">createSpring</reimplements>
+        <param>
+          <type>float</type>
+          <declname>posX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>posY</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : createSpring Creates and returns a spring model. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>posX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : x-position of the entity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>posY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : y-position of the entity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : width of the entity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : height of the entity. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>(std::shared_ptr&lt;logic::Bonus&gt;) : bonus model. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/game_representation/ConcreteFactory.h" line="108" column="25" bodyfile="src/game_representation/ConcreteFactory.cpp" bodystart="88" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="classrepresentation_1_1ConcreteFactory_1adb2a655b4b00c97ef92912c6003fd871" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::shared_ptr&lt; <ref refid="classlogic_1_1Bonus" kindref="compound">logic::Bonus</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; logic::Bonus &gt; representation::ConcreteFactory::createJetpack</definition>
+        <argsstring>(float posX, float posY, float width, float height) override</argsstring>
+        <name>createJetpack</name>
+        <reimplements refid="classlogic_1_1AbstractFactory_1a5797bb1e8d2bcc19da10ca5fd39d70ba">createJetpack</reimplements>
+        <param>
+          <type>float</type>
+          <declname>posX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>posY</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : createJetpack Creates and returns a jetpack model. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>posX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : x-position of the entity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>posY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : y-position of the entity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : width of the entity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : height of the entity. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>(std::shared_ptr&lt;logic::Bonus&gt;) : bonus model. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/game_representation/ConcreteFactory.h" line="119" column="25" bodyfile="src/game_representation/ConcreteFactory.cpp" bodystart="100" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="classrepresentation_1_1ConcreteFactory_1a9da814a5fe1269a478df8d5dd57db664" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>std::shared_ptr&lt; <ref refid="classlogic_1_1BGTile" kindref="compound">logic::BGTile</ref> &gt;</type>
+        <definition>std::shared_ptr&lt; logic::BGTile &gt; representation::ConcreteFactory::createBGTile</definition>
+        <argsstring>(float posX, float posY, float width, float height) override</argsstring>
+        <name>createBGTile</name>
+        <reimplements refid="classlogic_1_1AbstractFactory_1ac8eed90b3c4adaad363526d1bb01f98d">createBGTile</reimplements>
+        <param>
+          <type>float</type>
+          <declname>posX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>posY</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : createBGTile Creates and returns a background tile model. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>posX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : x-position of the entity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>posY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : y-position of the entity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : width of the entity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : height of the entity. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>(std::shared_ptr&lt;logic::BGTile&gt;) : background tile model. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/game_representation/ConcreteFactory.h" line="130" column="25" bodyfile="src/game_representation/ConcreteFactory.cpp" bodystart="113" bodyend="123"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>representation::ConcreteFactory</label>
+        <link refid="classrepresentation_1_1ConcreteFactory"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>logic::AbstractFactory</label>
+        <link refid="classlogic_1_1AbstractFactory"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>representation::ConcreteFactory</label>
+        <link refid="classrepresentation_1_1ConcreteFactory"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>logic::AbstractFactory</label>
+        <link refid="classlogic_1_1AbstractFactory"/>
+      </node>
+    </collaborationgraph>
+    <location file="src/game_representation/ConcreteFactory.h" line="20" column="1" bodyfile="src/game_representation/ConcreteFactory.h" bodystart="19" bodyend="131"/>
+    <listofallmembers>
+      <member refid="classlogic_1_1AbstractFactory_1abf6c6fe130a97426c9682800fa0d6dd9" prot="public" virt="non-virtual"><scope>representation::ConcreteFactory</scope><name>AbstractFactory</name></member>
+      <member refid="classrepresentation_1_1ConcreteFactory_1a6e53ecd6e076e7000f7f1d54cd90ea68" prot="public" virt="non-virtual"><scope>representation::ConcreteFactory</scope><name>bgTilesViews</name></member>
+      <member refid="classrepresentation_1_1ConcreteFactory_1af5fc4068605a901d4e5f48bc9470d07e" prot="public" virt="non-virtual"><scope>representation::ConcreteFactory</scope><name>bonusViews</name></member>
+      <member refid="classrepresentation_1_1ConcreteFactory_1aaea91f080dfdd66b807ddb50b901d4dd" prot="public" virt="non-virtual"><scope>representation::ConcreteFactory</scope><name>ConcreteFactory</name></member>
+      <member refid="classrepresentation_1_1ConcreteFactory_1a9da814a5fe1269a478df8d5dd57db664" prot="public" virt="virtual"><scope>representation::ConcreteFactory</scope><name>createBGTile</name></member>
+      <member refid="classrepresentation_1_1ConcreteFactory_1a8e50c892bd9d46e12bdf9949a32a2bb1" prot="public" virt="virtual"><scope>representation::ConcreteFactory</scope><name>createHorizontalPlatform</name></member>
+      <member refid="classrepresentation_1_1ConcreteFactory_1adb2a655b4b00c97ef92912c6003fd871" prot="public" virt="virtual"><scope>representation::ConcreteFactory</scope><name>createJetpack</name></member>
+      <member refid="classrepresentation_1_1ConcreteFactory_1a8157c2ea33f3aed279650ace88fc7627" prot="public" virt="virtual"><scope>representation::ConcreteFactory</scope><name>createPlayer</name></member>
+      <member refid="classrepresentation_1_1ConcreteFactory_1aba785c0e6855e1d9f1de859df6f9d2ca" prot="public" virt="virtual"><scope>representation::ConcreteFactory</scope><name>createSpring</name></member>
+      <member refid="classrepresentation_1_1ConcreteFactory_1a85b7082f2ae47a924481cf1921dd39f1" prot="public" virt="virtual"><scope>representation::ConcreteFactory</scope><name>createStaticPlatform</name></member>
+      <member refid="classrepresentation_1_1ConcreteFactory_1a06856fd92ae6355880390d81f61fc723" prot="public" virt="virtual"><scope>representation::ConcreteFactory</scope><name>createTemporaryPlatform</name></member>
+      <member refid="classrepresentation_1_1ConcreteFactory_1ac2e6fe32f9fabcb7572848e1a14f77f4" prot="public" virt="virtual"><scope>representation::ConcreteFactory</scope><name>createVerticalPlatform</name></member>
+      <member refid="classrepresentation_1_1ConcreteFactory_1a3d6e21e4d98192e2ded8dd6ddfcfff79" prot="public" virt="non-virtual"><scope>representation::ConcreteFactory</scope><name>platformViews</name></member>
+      <member refid="classrepresentation_1_1ConcreteFactory_1a0a1ad326a4ad11f44c7edcaea1cc7527" prot="public" virt="non-virtual"><scope>representation::ConcreteFactory</scope><name>playerViews</name></member>
+      <member refid="classlogic_1_1AbstractFactory_1a391dc2c32c339bb7841b7e41aef2fba5" prot="public" virt="virtual"><scope>representation::ConcreteFactory</scope><name>~AbstractFactory</name></member>
+      <member refid="classrepresentation_1_1ConcreteFactory_1a3816317f86c6aaf402ad190940ba182d" prot="public" virt="non-virtual"><scope>representation::ConcreteFactory</scope><name>~ConcreteFactory</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

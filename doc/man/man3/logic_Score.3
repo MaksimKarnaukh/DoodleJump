@@ -1,0 +1,89 @@
+.TH "logic::Score" 3 "Tue Jan 11 2022" "Doxygen Test" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+logic::Score
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBlogic::Observer\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBScore\fP ()"
+.br
+.ti -1c
+.RI "\fB~Score\fP () override=default"
+.br
+.ti -1c
+.RI "\fBScore\fP (const std::shared_ptr< \fBlogic::EntityModel\fP > &entityModel)"
+.br
+.ti -1c
+.RI "void \fBupdate\fP () override"
+.br
+.ti -1c
+.RI "void \fBsetScore\fP (float _score)"
+.br
+.ti -1c
+.RI "float \fBgetScore\fP () const"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Definition at line 12 of file Score\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "logic::Score::Score ()"
+@function : \fBScore\fP Constructor for a \fBScore\fP\&. 
+.PP
+Definition at line 5 of file Score\&.cpp\&.
+.SS "logic::Score::~Score ()\fC [override]\fP, \fC [default]\fP"
+@function : \fBScore\fP Destructor for a \fBScore\fP\&. 
+.SS "logic::Score::Score (const std::shared_ptr< \fBlogic::EntityModel\fP > & entityModel)"
+@function : \fBScore\fP Constructor for a \fBScore\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIentityModel\fP (std::shared_ptr<logic::EntityModel>) : entityModel that we point to\&. 
+.RE
+.PP
+
+.PP
+Definition at line 7 of file Score\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "float logic::Score::getScore () const\fC [inline]\fP"
+@function : getScore Getter function for the score data member\&. 
+.PP
+\fBReturns\fP
+.RS 4
+(float) : this->score 
+.RE
+.PP
+
+.PP
+Definition at line 58 of file Score\&.h\&.
+.SS "void logic::Score::setScore (float _score)\fC [inline]\fP"
+@function : setScore Setter function for the score data member\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fI_score\fP (float) : value that we want to give to score\&. 
+.RE
+.PP
+
+.PP
+Definition at line 51 of file Score\&.h\&.
+.SS "void logic::Score::update ()\fC [override]\fP, \fC [virtual]\fP"
+@function : update Updates the state of score\&. 
+.PP
+Implements \fBlogic::Observer\fP\&.
+.PP
+Definition at line 14 of file Score\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Doxygen Test from the source code\&.

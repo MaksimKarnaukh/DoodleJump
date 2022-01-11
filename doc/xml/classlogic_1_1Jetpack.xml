@@ -1,0 +1,244 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classlogic_1_1Jetpack" kind="class" language="C++" prot="public">
+    <compoundname>logic::Jetpack</compoundname>
+    <basecompoundref refid="classlogic_1_1Bonus" prot="public" virt="non-virtual">logic::Bonus</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classlogic_1_1Jetpack_1a103675805793a4d785852ae296cf5155" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::Jetpack::Jetpack</definition>
+        <argsstring>()</argsstring>
+        <name>Jetpack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1Jetpack" kindref="compound">Jetpack</ref> Constructor for a <ref refid="classlogic_1_1Jetpack" kindref="compound">Jetpack</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Jetpack.h" line="18" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1Jetpack_1aaa5d9c54a22813da7229bd99e0090f7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::Jetpack::~Jetpack</definition>
+        <argsstring>() override=default</argsstring>
+        <name>~Jetpack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1Jetpack" kindref="compound">Jetpack</ref> Destructor for a <ref refid="classlogic_1_1Jetpack" kindref="compound">Jetpack</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Jetpack.h" line="24" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1Jetpack_1a25b85c4916341ef364c5142c2b6e294c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::Jetpack::Jetpack</definition>
+        <argsstring>(float posX, float posY)</argsstring>
+        <name>Jetpack</name>
+        <param>
+          <type>float</type>
+          <declname>posX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>posY</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1Jetpack" kindref="compound">Jetpack</ref> Constructor for a <ref refid="classlogic_1_1Jetpack" kindref="compound">Jetpack</ref>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>posX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : x-coordinate of our entity, between the range [0,1-entity.width]. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>posY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : y-coordinate of our entity, between the range [0+entity.height, inf[. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Jetpack.h" line="32" column="9" bodyfile="src/logic_library/Jetpack.cpp" bodystart="9" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1Jetpack_1ab253288c94e02b18447eaf82ece63060" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::Jetpack::Jetpack</definition>
+        <argsstring>(float posX, float posY, float width, float height)</argsstring>
+        <name>Jetpack</name>
+        <param>
+          <type>float</type>
+          <declname>posX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>posY</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1Jetpack" kindref="compound">Jetpack</ref> Constructor for a <ref refid="classlogic_1_1Jetpack" kindref="compound">Jetpack</ref>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>posX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : x-coordinate of our entity, between the range [0,1-entity.width]. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>posY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : y-coordinate of our entity, between the range [0+entity.height, inf[. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : width of our entity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : height of our entity. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Jetpack.h" line="42" column="9" bodyfile="src/logic_library/Jetpack.cpp" bodystart="16" bodyend="22"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>logic::Bonus</label>
+        <link refid="classlogic_1_1Bonus"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>logic::Subject</label>
+        <link refid="classlogic_1_1Subject"/>
+      </node>
+      <node id="3">
+        <label>logic::EntityModel</label>
+        <link refid="classlogic_1_1EntityModel"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>logic::Jetpack</label>
+        <link refid="classlogic_1_1Jetpack"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>logic::Bonus</label>
+        <link refid="classlogic_1_1Bonus"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>logic::Subject</label>
+        <link refid="classlogic_1_1Subject"/>
+      </node>
+      <node id="3">
+        <label>logic::EntityModel</label>
+        <link refid="classlogic_1_1EntityModel"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>logic::Jetpack</label>
+        <link refid="classlogic_1_1Jetpack"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/logic_library/Jetpack.h" line="11" column="1" bodyfile="src/logic_library/Jetpack.h" bodystart="10" bodyend="43"/>
+    <listofallmembers>
+      <member refid="classlogic_1_1Bonus_1a4e53c7177ee1931b6b89a3a5ede2b232" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>Bonus</name></member>
+      <member refid="classlogic_1_1Bonus_1afeddff38f71dc5d0e120664e9ae55aa8" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>Bonus</name></member>
+      <member refid="classlogic_1_1Bonus_1a0a7f62e4191b2d78f30651cdb190f53c" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>Bonus</name></member>
+      <member refid="classlogic_1_1Bonus_1aaf79c9f2940ecb7fbf6f2f21ce1a1efd" prot="protected" virt="non-virtual"><scope>logic::Jetpack</scope><name>bonusForce</name></member>
+      <member refid="classlogic_1_1EntityModel_1a9c913c80599c18622aa329759865aa6b" prot="protected" virt="non-virtual"><scope>logic::Jetpack</scope><name>e_height</name></member>
+      <member refid="classlogic_1_1EntityModel_1a14b0d640abc1de9f0d26857525fb8588" prot="protected" virt="non-virtual"><scope>logic::Jetpack</scope><name>e_speed</name></member>
+      <member refid="classlogic_1_1EntityModel_1ac823e3f35ecfa439b2883d7601929ce5" prot="protected" virt="non-virtual"><scope>logic::Jetpack</scope><name>e_width</name></member>
+      <member refid="classlogic_1_1EntityModel_1af763d5b72c30f1d2f7f87f3f229ce362" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>EntityModel</name></member>
+      <member refid="classlogic_1_1EntityModel_1a55519f45ff78ff9dcb4b14fc1f868589" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>EntityModel</name></member>
+      <member refid="classlogic_1_1EntityModel_1a0d8dd2e45002dd1177b74f27389e548e" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>EntityModel</name></member>
+      <member refid="classlogic_1_1Bonus_1a682ba19d90d766eeadb906aa29ff6e71" prot="public" virt="virtual"><scope>logic::Jetpack</scope><name>getBonusForce</name></member>
+      <member refid="classlogic_1_1EntityModel_1a7cdaafc31f97ab0ba835593046138c57" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>getHeight</name></member>
+      <member refid="classlogic_1_1Subject_1a202f1cd7a6af78750886d0b60d388450" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>getObservers</name></member>
+      <member refid="classlogic_1_1EntityModel_1aed96cfbc730f4fd9a0e59bebc6727ef9" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>getPositionX</name></member>
+      <member refid="classlogic_1_1EntityModel_1afb9776a3e5b8ebff029914499fe55ce6" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>getPositionY</name></member>
+      <member refid="classlogic_1_1EntityModel_1a89709427e4b0dd62de52d3d8c884ee76" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>getPreviousPositionX</name></member>
+      <member refid="classlogic_1_1EntityModel_1af1d0394edaf591860ebe06ef94a47276" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>getPreviousPositionY</name></member>
+      <member refid="classlogic_1_1Bonus_1a5c95afdc93abe9ab626aba5682c0c1b1" prot="public" virt="virtual"><scope>logic::Jetpack</scope><name>getScoreIncrease</name></member>
+      <member refid="classlogic_1_1EntityModel_1a0713ad1449d82b61f4e22bbdaa212b40" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>getSpeed</name></member>
+      <member refid="classlogic_1_1EntityModel_1ae85c34e45e8fec66993b870a937b2025" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>getUnit</name></member>
+      <member refid="classlogic_1_1EntityModel_1aa377acce5e474892230da31ee39bbbc9" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>getWidth</name></member>
+      <member refid="classlogic_1_1Jetpack_1a103675805793a4d785852ae296cf5155" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>Jetpack</name></member>
+      <member refid="classlogic_1_1Jetpack_1a25b85c4916341ef364c5142c2b6e294c" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>Jetpack</name></member>
+      <member refid="classlogic_1_1Jetpack_1ab253288c94e02b18447eaf82ece63060" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>Jetpack</name></member>
+      <member refid="classlogic_1_1Subject_1a33567537c69863eaff2279f398f80ab4" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>notifyObservers</name></member>
+      <member refid="classlogic_1_1Subject_1a2c82c974d7838157824bdcecc4d0e59b" prot="protected" virt="non-virtual"><scope>logic::Jetpack</scope><name>observers</name></member>
+      <member refid="classlogic_1_1Subject_1a375e972ed74af83f46a8debd49f2e3e0" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>registerObserver</name></member>
+      <member refid="classlogic_1_1Subject_1a5a3db9e4c842eb2828c5586be9f4cf81" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>removeObserver</name></member>
+      <member refid="classlogic_1_1Bonus_1a2fc399304a2df67490b01b875e3076f9" prot="protected" virt="non-virtual"><scope>logic::Jetpack</scope><name>scoreIncrease</name></member>
+      <member refid="classlogic_1_1Bonus_1aaccacb779e0e99cac631cb060c628c63" prot="public" virt="virtual"><scope>logic::Jetpack</scope><name>setBonusForce</name></member>
+      <member refid="classlogic_1_1EntityModel_1ad703de4900c6b276f824804bebfba006" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>setHeight</name></member>
+      <member refid="classlogic_1_1EntityModel_1a0d63f4dc9f2dcab997c5acb43a58b761" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>setPositionX</name></member>
+      <member refid="classlogic_1_1EntityModel_1a755cc5054fad5a67111f00a137666ab1" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>setPositionY</name></member>
+      <member refid="classlogic_1_1EntityModel_1a78e9ab3fad35775a1780cd7bfff0622a" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>setPreviousPositionX</name></member>
+      <member refid="classlogic_1_1EntityModel_1a579a9928acff3b4ba2bb0821e952d452" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>setPreviousPositionY</name></member>
+      <member refid="classlogic_1_1Bonus_1ad735683bc5cb289c8599b70f968a2619" prot="public" virt="virtual"><scope>logic::Jetpack</scope><name>setScoreIncrease</name></member>
+      <member refid="classlogic_1_1EntityModel_1a0a61bc5dc0e6a2a3aed489a604625593" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>setSpeed</name></member>
+      <member refid="classlogic_1_1EntityModel_1a642a7a6075bf35bfe9e0c55d52f4982d" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>setUnitOfDistance</name></member>
+      <member refid="classlogic_1_1EntityModel_1a99c0c979c10a90eecf3620afc8ecbc12" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>setWidth</name></member>
+      <member refid="classlogic_1_1Subject_1ae1277f400422f50b425c204b11dd8995" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>Subject</name></member>
+      <member refid="classlogic_1_1Bonus_1ab480bdebc33ae05569c5c033a00983f0" prot="public" virt="virtual"><scope>logic::Jetpack</scope><name>touchedBonus</name></member>
+      <member refid="classlogic_1_1EntityModel_1a54b5161f038a4636baba4b17f7042425" prot="protected" virt="non-virtual"><scope>logic::Jetpack</scope><name>unit</name></member>
+      <member refid="classlogic_1_1EntityModel_1a894fed55ddd23d3e0a9d442b2a17d62c" prot="protected" virt="non-virtual"><scope>logic::Jetpack</scope><name>x_pos</name></member>
+      <member refid="classlogic_1_1EntityModel_1a515fb152a30fd35aa2825b78bb8fdc90" prot="protected" virt="non-virtual"><scope>logic::Jetpack</scope><name>x_posPrevious</name></member>
+      <member refid="classlogic_1_1EntityModel_1a351557932831e0db1ad5138ee4a92ec9" prot="protected" virt="non-virtual"><scope>logic::Jetpack</scope><name>y_pos</name></member>
+      <member refid="classlogic_1_1EntityModel_1acdcaa7615dfcec6b495ece5df8a3a40c" prot="protected" virt="non-virtual"><scope>logic::Jetpack</scope><name>y_posPrevious</name></member>
+      <member refid="classlogic_1_1Bonus_1acc16cb789e509beab0ebbcef6f933188" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>~Bonus</name></member>
+      <member refid="classlogic_1_1EntityModel_1a70a0041b77dbb40c88e83847ea3523b7" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>~EntityModel</name></member>
+      <member refid="classlogic_1_1Jetpack_1aaa5d9c54a22813da7229bd99e0090f7f" prot="public" virt="non-virtual"><scope>logic::Jetpack</scope><name>~Jetpack</name></member>
+      <member refid="classlogic_1_1Subject_1ae4238075ca667706bba792bfb96ee6c0" prot="public" virt="virtual"><scope>logic::Jetpack</scope><name>~Subject</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

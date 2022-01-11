@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacelogic" kind="namespace" language="C++">
+    <compoundname>logic</compoundname>
+    <innerclass refid="classlogic_1_1AbstractFactory" prot="public">logic::AbstractFactory</innerclass>
+    <innerclass refid="classlogic_1_1BGTile" prot="public">logic::BGTile</innerclass>
+    <innerclass refid="classlogic_1_1Bonus" prot="public">logic::Bonus</innerclass>
+    <innerclass refid="classlogic_1_1EntityModel" prot="public">logic::EntityModel</innerclass>
+    <innerclass refid="classlogic_1_1Jetpack" prot="public">logic::Jetpack</innerclass>
+    <innerclass refid="classlogic_1_1Observer" prot="public">logic::Observer</innerclass>
+    <innerclass refid="classlogic_1_1Platform" prot="public">logic::Platform</innerclass>
+    <innerclass refid="classlogic_1_1Platform__Horizontal" prot="public">logic::Platform_Horizontal</innerclass>
+    <innerclass refid="classlogic_1_1Platform__Static" prot="public">logic::Platform_Static</innerclass>
+    <innerclass refid="classlogic_1_1Platform__Temporary" prot="public">logic::Platform_Temporary</innerclass>
+    <innerclass refid="classlogic_1_1Platform__Vertical" prot="public">logic::Platform_Vertical</innerclass>
+    <innerclass refid="classlogic_1_1Player" prot="public">logic::Player</innerclass>
+    <innerclass refid="classlogic_1_1Score" prot="public">logic::Score</innerclass>
+    <innerclass refid="classlogic_1_1Spring" prot="public">logic::Spring</innerclass>
+    <innerclass refid="classlogic_1_1Subject" prot="public">logic::Subject</innerclass>
+    <innerclass refid="classlogic_1_1World" prot="public">logic::World</innerclass>
+    <innernamespace refid="namespacelogic_1_1utility">logic::utility</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/logic_library/Subject.h" line="12" column="15"/>
+  </compounddef>
+</doxygen>

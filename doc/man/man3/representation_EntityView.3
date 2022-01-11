@@ -1,0 +1,129 @@
+.TH "representation::EntityView" 3 "Tue Jan 11 2022" "Doxygen Test" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+representation::EntityView
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBlogic::Observer\fP\&.
+.PP
+Inherited by \fBrepresentation::BGTile_GR\fP, \fBrepresentation::Bonus_GR\fP, \fBrepresentation::Platform_GR\fP, and \fBrepresentation::Player_GR\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEntityView\fP ()"
+.br
+.ti -1c
+.RI "\fB~EntityView\fP () override=default"
+.br
+.ti -1c
+.RI "\fBEntityView\fP (const std::shared_ptr< \fBlogic::EntityModel\fP > &entityModel)"
+.br
+.ti -1c
+.RI "void \fBsetSpriteTexture\fP (const std::string &filename)"
+.br
+.ti -1c
+.RI "sf::Sprite & \fBgetSprite\fP ()"
+.br
+.ti -1c
+.RI "sf::Texture & \fBgetTexture\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetSpriteScale\fP (const std::shared_ptr< \fBlogic::EntityModel\fP > &p)"
+.br
+.ti -1c
+.RI "void \fBupdate\fP () override"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::weak_ptr< \fBlogic::EntityModel\fP > \fBmEntityModel\fP"
+.br
+.ti -1c
+.RI "sf::Sprite \fBsprite\fP"
+.br
+.ti -1c
+.RI "sf::Texture \fBtexture\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 15 of file EntityView\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "representation::EntityView::EntityView ()\fC [default]\fP"
+@function : \fBEntityView\fP Constructor for a \fBEntityView\fP\&. 
+.SS "representation::EntityView::~EntityView ()\fC [override]\fP, \fC [default]\fP"
+@function : \fBEntityView\fP Destructor for a \fBEntityView\fP\&. 
+.SS "representation::EntityView::EntityView (const std::shared_ptr< \fBlogic::EntityModel\fP > & entityModel)"
+@function : \fBEntityView\fP Constructor for a \fBEntityView\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIentityModel\fP (std::shared_ptr<logic::EntityModel>) : entityModel 
+.RE
+.PP
+
+.PP
+Definition at line 9 of file EntityView\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "sf::Sprite& representation::EntityView::getSprite ()\fC [inline]\fP"
+@function : getSprite Getter: returns the sprite data member\&. 
+.PP
+\fBReturns\fP
+.RS 4
+(sf::Sprite) : this->sprite 
+.RE
+.PP
+
+.PP
+Definition at line 56 of file EntityView\&.h\&.
+.SS "sf::Texture& representation::EntityView::getTexture ()\fC [inline]\fP"
+@function : getTexture Getter: returns the texture data member\&. 
+.PP
+\fBReturns\fP
+.RS 4
+(sf::Texture) : this->texture 
+.RE
+.PP
+
+.PP
+Definition at line 63 of file EntityView\&.h\&.
+.SS "void representation::EntityView::setSpriteScale (const std::shared_ptr< \fBlogic::EntityModel\fP > & p)\fC [inline]\fP"
+@function : setSpriteScale Sets the sprite scale\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIp\fP (std::shared_ptr<logic::EntityModel>) : entity model\&. 
+.RE
+.PP
+
+.PP
+Definition at line 70 of file EntityView\&.h\&.
+.SS "void representation::EntityView::setSpriteTexture (const std::string & filename)"
+@function : setSpriteTexture Setter: puts the texture on the sprite\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfilename\fP (std::string) : name of the texture file 
+.RE
+.PP
+
+.PP
+Definition at line 11 of file EntityView\&.cpp\&.
+.SS "void representation::EntityView::update ()\fC [override]\fP, \fC [virtual]\fP"
+@function : update Updates the sprite's position correctly according to the logic coordinates\&. 
+.PP
+Implements \fBlogic::Observer\fP\&.
+.PP
+Definition at line 25 of file EntityView\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Doxygen Test from the source code\&.

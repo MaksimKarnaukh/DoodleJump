@@ -1,0 +1,347 @@
+.TH "logic::World" 3 "Tue Jan 11 2022" "Doxygen Test" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+logic::World
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBWorld\fP ()"
+.br
+.ti -1c
+.RI "\fBWorld\fP (std::shared_ptr< \fBlogic::AbstractFactory\fP > &factory)"
+.br
+.ti -1c
+.RI "\fB~World\fP ()"
+.br
+.ti -1c
+.RI "void \fBreceiveInput\fP (std::string &key)"
+.br
+.ti -1c
+.RI "void \fBcheckForCollision\fP ()"
+.br
+.ti -1c
+.RI "void \fBcheckForCollisionBetweenPlatforms\fP ()"
+.br
+.ti -1c
+.RI "bool \fBcheckForUndetectedCollision\fP (const std::shared_ptr< \fBlogic::EntityModel\fP > &e1, std::vector< std::pair< float, float >> &middleLine, const std::shared_ptr< \fBlogic::EntityModel\fP > &e2) const"
+.br
+.ti -1c
+.RI "void \fBcreateStartEntities\fP ()"
+.br
+.ti -1c
+.RI "void \fBcreateEntities\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdate\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetupPercentages\fP ()"
+.br
+.ti -1c
+.RI "void \fBcreateStartingBGTiles\fP ()"
+.br
+.ti -1c
+.RI "void \fBdeleteOutOfViewPlatforms\fP ()"
+.br
+.ti -1c
+.RI "void \fBdeleteOutOfViewBonusses\fP ()"
+.br
+.ti -1c
+.RI "void \fBrecycleOutOfViewBGTiles\fP ()"
+.br
+.ti -1c
+.RI "int \fBchoosePlatformType\fP () const"
+.br
+.ti -1c
+.RI "void \fBchooseBonusType\fP (std::shared_ptr< \fBlogic::Bonus\fP > &bonus) const"
+.br
+.ti -1c
+.RI "float \fBcalculatePlatformXPos\fP (const std::shared_ptr< \fBlogic::Platform\fP > &platform) const"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static std::vector< std::pair< float, float > > \fBgetLineBetweenPoints\fP (float x0, float y0, float x1, float y1)"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::shared_ptr< \fBlogic::Score\fP > \fBscore\fP"
+.br
+.ti -1c
+.RI "std::shared_ptr< \fBlogic::Player\fP > \fBdoodle\fP"
+.br
+.ti -1c
+.RI "std::deque< std::vector< std::shared_ptr< \fBlogic::BGTile\fP > > > \fBbgTiles\fP"
+.br
+.ti -1c
+.RI "std::vector< std::shared_ptr< \fBlogic::Platform\fP > > \fBplatforms\fP"
+.br
+.ti -1c
+.RI "std::vector< std::shared_ptr< \fBlogic::Bonus\fP > > \fBbonuses\fP"
+.br
+.ti -1c
+.RI "std::shared_ptr< \fBlogic::AbstractFactory\fP > \fBFactory\fP = nullptr"
+.br
+.ti -1c
+.RI "float \fBleftBound\fP = logic::utility::Camera::Instance()\&.getLeftBound()"
+.br
+.ti -1c
+.RI "float \fBrightBound\fP = logic::utility::Camera::Instance()\&.getRightBound()"
+.br
+.ti -1c
+.RI "float \fBlowerBound\fP = logic::utility::Camera::Instance()\&.getLowerBound()"
+.br
+.ti -1c
+.RI "float \fBshiftBorder\fP = logic::utility::Camera::Instance()\&.getShiftBorder()"
+.br
+.ti -1c
+.RI "float \fBformerPlatformPosY\fP = 0"
+.br
+.ti -1c
+.RI "float \fBformerPlatformPosX\fP = 0"
+.br
+.ti -1c
+.RI "bool \fBwasBonusGenerated\fP"
+.br
+.ti -1c
+.RI "bool \fBgameOver\fP = false"
+.br
+.ti -1c
+.RI "std::map< int, std::map< int, float > > \fBpercentages\fP"
+.br
+.ti -1c
+.RI "float \fBplayerWidth\fP = 0\&.08"
+.br
+.ti -1c
+.RI "float \fBplayerHeight\fP = 0\&.15"
+.br
+.ti -1c
+.RI "float \fBplatformWidth\fP = 0\&.174004"
+.br
+.ti -1c
+.RI "float \fBplatformHeight\fP = 0\&.0411"
+.br
+.ti -1c
+.RI "float \fBspringWidth\fP = 0\&.058"
+.br
+.ti -1c
+.RI "float \fBspringHeight\fP = 0\&.0411"
+.br
+.ti -1c
+.RI "float \fBjetpackWidth\fP = 0\&.0696"
+.br
+.ti -1c
+.RI "float \fBjetpackHeight\fP = 0\&.06576"
+.br
+.ti -1c
+.RI "float \fBbgTileSideLength\fP = 0\&.05f"
+.br
+.ti -1c
+.RI "float \fBplatformGen_startingChance\fP = 0\&.90"
+.br
+.ti -1c
+.RI "float \fBplatformGen_interval\fP"
+.br
+.ti -1c
+.RI "float \fBbonusGen_startingChance\fP = 0\&.10"
+.br
+.ti -1c
+.RI "float \fBbonusGen_interval\fP"
+.br
+.ti -1c
+.RI "float \fBminDistanceBetweenPlatforms\fP = 0\&.30"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 23 of file World\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "logic::World::World ()\fC [default]\fP"
+@function : \fBWorld\fP Constructor for a \fBWorld\fP\&. 
+.SS "logic::World::World (std::shared_ptr< \fBlogic::AbstractFactory\fP > & factory)"
+@function : \fBWorld\fP Constructor for a \fBWorld\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIfactory\fP (std::shared_ptr<logic::AbstractFactory>) : abstract factory (actually concrete factory)\&. 
+.RE
+.PP
+
+.PP
+Definition at line 10 of file World\&.cpp\&.
+.SS "logic::World::~World ()"
+@function : ~World Destructor for a \fBWorld\fP\&. Resets everything in the world\&. 
+.PP
+Definition at line 308 of file World\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "float logic::World::calculatePlatformXPos (const std::shared_ptr< \fBlogic::Platform\fP > & platform) const"
+@function : calculatePlatformXPos Calculates the x-position for our platform\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIplatform\fP (std::shared_ptr<logic::Platform>) : reference to the platform that we instantiated previously\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+(float) : x-position\&. 
+.RE
+.PP
+
+.PP
+Definition at line 520 of file World\&.cpp\&.
+.SS "void logic::World::checkForCollision ()"
+@function : checkForCollision Function that checks for collision between the player and other entities\&. 
+.PP
+Definition at line 42 of file World\&.cpp\&.
+.SS "void logic::World::checkForCollisionBetweenPlatforms ()"
+@function : checkForCollisionBetweenPlatforms Function that checks for collision between platforms\&. 
+.PP
+Definition at line 549 of file World\&.cpp\&.
+.SS "bool logic::World::checkForUndetectedCollision (const std::shared_ptr< \fBlogic::EntityModel\fP > & e1, std::vector< std::pair< float, float >> & middleLine, const std::shared_ptr< \fBlogic::EntityModel\fP > & e2) const"
+@function : checkForUndetectedCollision Function that checks for intersection between entities (e1 and e2)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIe1\fP (std::shared_ptr<logic::EntityModel>) : first entity\&. 
+.br
+\fIe2\fP (std::shared_ptr<logic::EntityModel>) : second entity\&. 
+.br
+\fImiddleLine\fP (std::vector<std::pair<float,float>>) : 
+.RE
+.PP
+
+.PP
+Definition at line 246 of file World\&.cpp\&.
+.SS "void logic::World::chooseBonusType (std::shared_ptr< \fBlogic::Bonus\fP > & bonus) const"
+@function : chooseBonusType Chooses the bonus type by chance\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIbonus\fP (std::shared_ptr<logic::Bonus>) : reference to the bonus that we instantiated previously\&. 
+.RE
+.PP
+
+.PP
+Definition at line 508 of file World\&.cpp\&.
+.SS "int logic::World::choosePlatformType () const"
+@function : choosePlatformType Chooses the platform type by chance\&. 
+.PP
+\fBReturns\fP
+.RS 4
+(int) : integer representing the type of platform to be generated\&. 
+.RE
+.PP
+
+.PP
+Definition at line 479 of file World\&.cpp\&.
+.SS "void logic::World::createEntities ()"
+@function : createEntities Handles the spontaneous creation of entities throughout the game (i\&.e\&. platform and bonus generation)\&. 
+.PP
+Definition at line 114 of file World\&.cpp\&.
+.SS "void logic::World::createStartEntities ()"
+@function : createStartEntities Handles the creation of the entities at the start of the game (player, background tiles and some prebuilt platforms 
+.PP
+Definition at line 91 of file World\&.cpp\&.
+.SS "void logic::World::createStartingBGTiles ()"
+@function : createStartingBGTiles Creates the background tiles in the beginning\&. 
+.PP
+Definition at line 408 of file World\&.cpp\&.
+.SS "void logic::World::deleteOutOfViewBonusses ()"
+@function : deleteOutOfViewBonusses Deletes all bonusees that are out of view\&. 
+.PP
+Definition at line 438 of file World\&.cpp\&.
+.SS "void logic::World::deleteOutOfViewPlatforms ()"
+@function : deleteOutOfViewPlatforms Deletes all platforms that are out of view\&. 
+.PP
+Definition at line 423 of file World\&.cpp\&.
+.SS "std::vector< std::pair< float, float > > logic::World::getLineBetweenPoints (float x0, float y0, float x1, float y1)\fC [static]\fP"
+@function : getLineBetweenPoints Returns a line between the first and second point in the form of a list of pairs of floats\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIx0\fP (float) : x-coordinate of the first point\&. 
+.br
+\fIy0\fP (float) : y-coordinate of the first point\&. 
+.br
+\fIx1\fP (float) : x-coordinate of the second point\&. 
+.br
+\fIy1\fP (float) : y-coordinate of the second point\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+(std::vector<std::pair<float,float>>) : list of points which represents the line Source : algorithm from project Computer Graphics\&. 
+.RE
+.PP
+
+.PP
+Definition at line 267 of file World\&.cpp\&.
+.SS "void logic::World::receiveInput (std::string & key)"
+@function : receiveInput Function that handles the received input from the game class and moves the player accordingly\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP (std::string) : key that was pressed by the user\&. 
+.RE
+.PP
+
+.PP
+Definition at line 24 of file World\&.cpp\&.
+.SS "void logic::World::recycleOutOfViewBGTiles ()"
+@function : recycleOutOfViewBGTiles Recycles all background tiles that are out of view at the bottom (it stacks them on top)\&. 
+.PP
+Definition at line 453 of file World\&.cpp\&.
+.SS "void logic::World::setupPercentages ()"
+@function : setupPercentages Sets up the percentages map, that we use for our random platform generation\&. 
+.PP
+Definition at line 340 of file World\&.cpp\&.
+.SS "void logic::World::update ()"
+@function : update Updates everything in the world (movement of player, collision checking, creating entities,\&.\&.\&.)\&. 
+.PP
+Definition at line 203 of file World\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "float logic::World::bonusGen_interval"
+\fBInitial value:\fP
+.PP
+.nf
+=
+            500
+.fi
+.PP
+Definition at line 70 of file World\&.h\&.
+.SS "float logic::World::platformGen_interval"
+\fBInitial value:\fP
+.PP
+.nf
+=
+            3
+.fi
+.PP
+Definition at line 65 of file World\&.h\&.
+.SS "bool logic::World::wasBonusGenerated"
+\fBInitial value:\fP
+.PP
+.nf
+=
+            false
+.fi
+.PP
+Definition at line 44 of file World\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Doxygen Test from the source code\&.

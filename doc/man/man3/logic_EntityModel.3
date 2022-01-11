@@ -1,0 +1,325 @@
+.TH "logic::EntityModel" 3 "Tue Jan 11 2022" "Doxygen Test" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+logic::EntityModel
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBlogic::Subject\fP\&.
+.PP
+Inherited by \fBlogic::BGTile\fP, \fBlogic::Bonus\fP, \fBlogic::Platform\fP, and \fBlogic::Player\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetWidth\fP (float width)"
+.br
+.ti -1c
+.RI "void \fBsetHeight\fP (float height)"
+.br
+.ti -1c
+.RI "void \fBsetPositionX\fP (float posX)"
+.br
+.ti -1c
+.RI "void \fBsetPositionY\fP (float posY)"
+.br
+.ti -1c
+.RI "void \fBsetPreviousPositionX\fP (float posX)"
+.br
+.ti -1c
+.RI "void \fBsetPreviousPositionY\fP (float posY)"
+.br
+.ti -1c
+.RI "void \fBsetSpeed\fP (float speed)"
+.br
+.ti -1c
+.RI "void \fBsetUnitOfDistance\fP (float unitOfDistance)"
+.br
+.ti -1c
+.RI "float \fBgetWidth\fP () const"
+.br
+.ti -1c
+.RI "float \fBgetHeight\fP () const"
+.br
+.ti -1c
+.RI "float \fBgetPositionX\fP () const"
+.br
+.ti -1c
+.RI "float \fBgetPositionY\fP () const"
+.br
+.ti -1c
+.RI "float \fBgetPreviousPositionX\fP () const"
+.br
+.ti -1c
+.RI "float \fBgetPreviousPositionY\fP () const"
+.br
+.ti -1c
+.RI "float \fBgetSpeed\fP () const"
+.br
+.ti -1c
+.RI "float \fBgetUnit\fP () const"
+.br
+.ti -1c
+.RI "\fBEntityModel\fP ()"
+.br
+.ti -1c
+.RI "\fBEntityModel\fP (float posX, float posY)"
+.br
+.ti -1c
+.RI "\fBEntityModel\fP (float posX, float posY, float width, float height)"
+.br
+.ti -1c
+.RI "\fB~EntityModel\fP () override=default"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "float \fBe_width\fP"
+.br
+.ti -1c
+.RI "float \fBe_height\fP"
+.br
+.ti -1c
+.RI "float \fBx_pos\fP"
+.br
+.ti -1c
+.RI "float \fBy_pos\fP"
+.br
+.ti -1c
+.RI "float \fBe_speed\fP = 0"
+.br
+.ti -1c
+.RI "float \fBunit\fP = 0\&.6f"
+.br
+.ti -1c
+.RI "float \fBx_posPrevious\fP"
+.br
+.ti -1c
+.RI "float \fBy_posPrevious\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 11 of file EntityModel\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "logic::EntityModel::EntityModel ()\fC [default]\fP"
+@function : \fBEntityModel\fP Constructor for a \fBEntityModel\fP\&. 
+.SS "logic::EntityModel::EntityModel (float posX, float posY)"
+@function : \fBEntityModel\fP Constructor for a \fBEntityModel\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposX\fP (float) : x-coordinate of our entity, between the range [0,1-entity\&.width]\&. 
+.br
+\fIposY\fP (float) : y-coordinate of our entity, between the range [0+entity\&.height, inf[\&. 
+.RE
+.PP
+
+.PP
+Definition at line 7 of file EntityModel\&.cpp\&.
+.SS "logic::EntityModel::EntityModel (float posX, float posY, float width, float height)"
+@function : \fBEntityModel\fP Constructor for a \fBEntityModel\fP\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposX\fP (float) : x-coordinate of our entity, between the range [0,1-entity\&.width]\&. 
+.br
+\fIposY\fP (float) : y-coordinate of our entity, between the range [0+entity\&.height, inf[\&. 
+.br
+\fIwidth\fP (float) : width of our entity\&. 
+.br
+\fIheight\fP (float) : height of our entity\&. 
+.RE
+.PP
+
+.PP
+Definition at line 9 of file EntityModel\&.cpp\&.
+.SS "logic::EntityModel::~EntityModel ()\fC [override]\fP, \fC [default]\fP"
+@function : \fBEntityModel\fP Destructor for a \fBEntityModel\fP\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "float logic::EntityModel::getHeight () const\fC [inline]\fP"
+@function : getHeight Getter function for the e_height data member\&. 
+.PP
+\fBReturns\fP
+.RS 4
+(float) : this->e_height 
+.RE
+.PP
+
+.PP
+Definition at line 96 of file EntityModel\&.h\&.
+.SS "float logic::EntityModel::getPositionX () const\fC [inline]\fP"
+@function : getPositionX Getter function for the x_pos data member\&. 
+.PP
+\fBReturns\fP
+.RS 4
+(float) : this->x_pos 
+.RE
+.PP
+
+.PP
+Definition at line 103 of file EntityModel\&.h\&.
+.SS "float logic::EntityModel::getPositionY () const\fC [inline]\fP"
+@function : getPositionY Getter function for the y_pos data member\&. 
+.PP
+\fBReturns\fP
+.RS 4
+(float) : this->y_pos 
+.RE
+.PP
+
+.PP
+Definition at line 110 of file EntityModel\&.h\&.
+.SS "float logic::EntityModel::getPreviousPositionX () const\fC [inline]\fP"
+@function : getPreviousPositionX Getter function for the x_posPrevious data member\&. 
+.PP
+\fBReturns\fP
+.RS 4
+(float) : this->x_posPrevious 
+.RE
+.PP
+
+.PP
+Definition at line 117 of file EntityModel\&.h\&.
+.SS "float logic::EntityModel::getPreviousPositionY () const\fC [inline]\fP"
+@function : getPreviousPositionY Getter function for the y_posPrevious data member\&. 
+.PP
+\fBReturns\fP
+.RS 4
+(float) : this->y_posPrevious 
+.RE
+.PP
+
+.PP
+Definition at line 124 of file EntityModel\&.h\&.
+.SS "float logic::EntityModel::getSpeed () const\fC [inline]\fP"
+@function : getSpeed Getter function for the e_speed data member\&. 
+.PP
+\fBReturns\fP
+.RS 4
+(float) : this->e_speed 
+.RE
+.PP
+
+.PP
+Definition at line 131 of file EntityModel\&.h\&.
+.SS "float logic::EntityModel::getUnit () const\fC [inline]\fP"
+@function : getUnit Getter function for the unit data member\&. 
+.PP
+\fBReturns\fP
+.RS 4
+(float) : this->unit 
+.RE
+.PP
+
+.PP
+Definition at line 138 of file EntityModel\&.h\&.
+.SS "float logic::EntityModel::getWidth () const\fC [inline]\fP"
+@function : getWidth Getter function for the e_width data member\&. 
+.PP
+\fBReturns\fP
+.RS 4
+(float) : this->e_width 
+.RE
+.PP
+
+.PP
+Definition at line 89 of file EntityModel\&.h\&.
+.SS "void logic::EntityModel::setHeight (float height)\fC [inline]\fP"
+@function : setHeight Setter function for the e_height data member\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIheight\fP (float) : value that we want to give to e_height\&. 
+.RE
+.PP
+
+.PP
+Definition at line 40 of file EntityModel\&.h\&.
+.SS "void logic::EntityModel::setPositionX (float posX)\fC [inline]\fP"
+@function : setPositionX Setter function for the x_pos data member\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposX\fP (float) : value that we want to give to x_pos\&. 
+.RE
+.PP
+
+.PP
+Definition at line 47 of file EntityModel\&.h\&.
+.SS "void logic::EntityModel::setPositionY (float posY)\fC [inline]\fP"
+@function : setPositionY Setter function for the y_pos data member\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposY\fP (float) : value that we want to give to y_pos\&. 
+.RE
+.PP
+
+.PP
+Definition at line 54 of file EntityModel\&.h\&.
+.SS "void logic::EntityModel::setPreviousPositionX (float posX)\fC [inline]\fP"
+@function : setPreviousPositionX Setter function for the x_posPrevious data member\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposX\fP (float) : value that we want to give to x_posPrevious\&. 
+.RE
+.PP
+
+.PP
+Definition at line 61 of file EntityModel\&.h\&.
+.SS "void logic::EntityModel::setPreviousPositionY (float posY)\fC [inline]\fP"
+@function : setPreviousPositionY Setter function for the y_posPrevious data member\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposY\fP (float) : value that we want to give to y_posPrevious\&. 
+.RE
+.PP
+
+.PP
+Definition at line 68 of file EntityModel\&.h\&.
+.SS "void logic::EntityModel::setSpeed (float speed)\fC [inline]\fP"
+@function : setSpeed Setter function for the e_speed data member\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIspeed\fP (float) : value that we want to give to e_speed\&. 
+.RE
+.PP
+
+.PP
+Definition at line 75 of file EntityModel\&.h\&.
+.SS "void logic::EntityModel::setUnitOfDistance (float unitOfDistance)\fC [inline]\fP"
+@function : setUnitOfDistance Setter function for the unit data member\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIunitOfDistance\fP (float) : value that we want to give to unit\&. 
+.RE
+.PP
+
+.PP
+Definition at line 82 of file EntityModel\&.h\&.
+.SS "void logic::EntityModel::setWidth (float width)\fC [inline]\fP"
+@function : setWidth Setter function for the e_width data member\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIwidth\fP (float) : value that we want to give to e_width\&. 
+.RE
+.PP
+
+.PP
+Definition at line 33 of file EntityModel\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Doxygen Test from the source code\&.

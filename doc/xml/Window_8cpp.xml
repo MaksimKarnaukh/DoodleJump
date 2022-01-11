@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="Window_8cpp" kind="file" language="C++">
+    <compoundname>Window.cpp</compoundname>
+    <includes refid="Window_8h" local="yes">Window.h</includes>
+    <incdepgraph>
+      <node id="5">
+        <label>SFML/Graphics.hpp</label>
+      </node>
+      <node id="1">
+        <label>src/game_representation/Window.cpp</label>
+        <link refid="Window_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Window.h</label>
+        <link refid="Window_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>SFML/Window.hpp</label>
+      </node>
+      <node id="7">
+        <label>iostream</label>
+      </node>
+      <node id="4">
+        <label>chrono</label>
+      </node>
+      <node id="8">
+        <label>thread</label>
+      </node>
+      <node id="3">
+        <label>../logic_library/Stopwatch.h</label>
+        <link refid="Stopwatch_8h_source"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespacerepresentation">representation</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Author:<sp/>Maksim<sp/>Karnaukh</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;Window.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">representation<sp/>{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">Window&amp;<sp/>Window::Instance()</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classrepresentation_1_1Window_1ac7c17b23d548b02a0a179318107bb9d7" kindref="member">Window</ref><sp/>instance;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>instance;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="classrepresentation_1_1Window_1ac7c17b23d548b02a0a179318107bb9d7" refkind="member"><highlight class="normal"><ref refid="classrepresentation_1_1Window_1ac7c17b23d548b02a0a179318107bb9d7" kindref="member">Window::Window</ref>()<sp/>{<sp/><ref refid="classrepresentation_1_1Window_1a98906693a2a1428e03c2631ca1bdad2f" kindref="member">Setup</ref>(</highlight><highlight class="stringliteral">&quot;Doodle<sp/>Jump&quot;</highlight><highlight class="normal">,<sp/>sf::Vector2u(640,<sp/>960));<sp/>}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="classrepresentation_1_1Window_1a2ae147b1f6765e084d4477c55fdd256f" refkind="member"><highlight class="normal"><ref refid="classrepresentation_1_1Window_1ac7c17b23d548b02a0a179318107bb9d7" kindref="member">Window::Window</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>l_title,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>sf::Vector2u&amp;<sp/>l_size)<sp/>{<sp/><ref refid="classrepresentation_1_1Window_1a98906693a2a1428e03c2631ca1bdad2f" kindref="member">Setup</ref>(l_title,<sp/>l_size);<sp/>}</highlight></codeline>
+<codeline lineno="16" refid="classrepresentation_1_1Window_1a2f04ea949b929c1fe3a4a63ceab98349" refkind="member"><highlight class="normal"><ref refid="classrepresentation_1_1Window_1a2f04ea949b929c1fe3a4a63ceab98349" kindref="member">Window::~Window</ref>()<sp/>{<sp/><ref refid="classrepresentation_1_1Window_1ae3653aea57010440996e66f14e1e2ed5" kindref="member">Destroy</ref>();<sp/>}</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="classrepresentation_1_1Window_1a98906693a2a1428e03c2631ca1bdad2f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrepresentation_1_1Window_1a98906693a2a1428e03c2631ca1bdad2f" kindref="member">Window::Setup</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string&amp;<sp/>l_title,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>sf::Vector2u&amp;<sp/>l_size)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_windowTitle<sp/>=<sp/>l_title;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_windowSize<sp/>=<sp/>l_size;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_isDone<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classrepresentation_1_1Window_1a5ec030005835704e54b5e3ff1ca38127" kindref="member">Create</ref>();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classrepresentation_1_1Window_1a5ec030005835704e54b5e3ff1ca38127" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrepresentation_1_1Window_1a5ec030005835704e54b5e3ff1ca38127" kindref="member">Window::Create</ref>()<sp/>{<sp/>m_window.create({m_windowSize.x,<sp/>m_windowSize.y,<sp/>32},<sp/>m_windowTitle);<sp/>}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="classrepresentation_1_1Window_1ae3653aea57010440996e66f14e1e2ed5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrepresentation_1_1Window_1ae3653aea57010440996e66f14e1e2ed5" kindref="member">Window::Destroy</ref>()<sp/>{<sp/>m_window.close();<sp/>}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="classrepresentation_1_1Window_1a98480615aa29a151b1bf8c03bfd4cc0e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrepresentation_1_1Window_1a98480615aa29a151b1bf8c03bfd4cc0e" kindref="member">Window::Update</ref>()</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Event<sp/>event;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(m_window.pollEvent(event))<sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(event.type<sp/>==<sp/>sf::Event::Closed)<sp/>{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>m_isDone<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(event.type<sp/>==<sp/>sf::Event::LostFocus<sp/>||</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>event.type<sp/>==<sp/>sf::Event::KeyPressed<sp/>&amp;&amp;<sp/>event.key.code<sp/>==<sp/>sf::Keyboard::Escape)<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sf::Event<sp/>event1;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::this_thread::sleep_for(std::chrono::milliseconds(20));</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(m_window.pollEvent(event1)<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(event1.type<sp/>==<sp/>sf::Event::GainedFocus<sp/>||</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>event1.type<sp/>==<sp/>sf::Event::KeyPressed<sp/>&amp;&amp;<sp/>event1.key.code<sp/>==<sp/>sf::Keyboard::Escape))<sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>logic::utility::Stopwatch::Instance().<ref refid="classlogic_1_1utility_1_1Stopwatch_1ac297718829acfbd89ab809952708111e" kindref="member">Reset</ref>();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="classrepresentation_1_1Window_1afdb4b6b0be4742be7a4673ae106e6dc9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrepresentation_1_1Window_1afdb4b6b0be4742be7a4673ae106e6dc9" kindref="member">Window::BeginDraw</ref>()<sp/>{<sp/>m_window.clear(sf::Color::Black);<sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="classrepresentation_1_1Window_1a8aa7f03a4e8d51f856ada4b1e8afc0d2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrepresentation_1_1Window_1a8aa7f03a4e8d51f856ada4b1e8afc0d2" kindref="member">Window::EndDraw</ref>()<sp/>{<sp/>m_window.display();<sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="classrepresentation_1_1Window_1a8c5ae5a2c1c7370d6a6200cff5ebd32c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classrepresentation_1_1Window_1a8c5ae5a2c1c7370d6a6200cff5ebd32c" kindref="member">Window::IsDone</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_isDone;<sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="classrepresentation_1_1Window_1af425ee3f206d9ce21c9bb2d06910079a" refkind="member"><highlight class="normal">sf::Vector2u<sp/><ref refid="classrepresentation_1_1Window_1af425ee3f206d9ce21c9bb2d06910079a" kindref="member">Window::GetWindowSize</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>m_windowSize;<sp/>}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="classrepresentation_1_1Window_1a91cb009a727c54df87713ec7bda3ecb1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classrepresentation_1_1Window_1a91cb009a727c54df87713ec7bda3ecb1" kindref="member">Window::Draw</ref>(sf::Drawable&amp;<sp/>l_drawable)<sp/>{<sp/>m_window.draw(l_drawable);<sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>representation</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/game_representation/Window.cpp"/>
+  </compounddef>
+</doxygen>

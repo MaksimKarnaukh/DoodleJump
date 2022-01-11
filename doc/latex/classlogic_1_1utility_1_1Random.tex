@@ -1,0 +1,403 @@
+\hypertarget{classlogic_1_1utility_1_1Random}{}\doxysubsection{logic\+::utility\+::Random Class Reference}
+\label{classlogic_1_1utility_1_1Random}\index{logic::utility::Random@{logic::utility::Random}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlogic_1_1utility_1_1Random_a23a95f1aee034007ea7a0492d6784d32}\label{classlogic_1_1utility_1_1Random_a23a95f1aee034007ea7a0492d6784d32}} 
+{\bfseries Random} (const \mbox{\hyperlink{classlogic_1_1utility_1_1Random}{Random}} \&)=delete
+\item 
+\mbox{\Hypertarget{classlogic_1_1utility_1_1Random_abfd1b492d3308ba8722f311ef6ba0276}\label{classlogic_1_1utility_1_1Random_abfd1b492d3308ba8722f311ef6ba0276}} 
+{\bfseries Random} (const \mbox{\hyperlink{classlogic_1_1utility_1_1Random}{Random}} \&\&)=delete
+\item 
+\mbox{\Hypertarget{classlogic_1_1utility_1_1Random_aaf952742b5ac0e187e8c235ed93e040b}\label{classlogic_1_1utility_1_1Random_aaf952742b5ac0e187e8c235ed93e040b}} 
+\mbox{\hyperlink{classlogic_1_1utility_1_1Random}{Random}} \& {\bfseries operator=} (const \mbox{\hyperlink{classlogic_1_1utility_1_1Random}{Random}} \&)=delete
+\item 
+\mbox{\Hypertarget{classlogic_1_1utility_1_1Random_acaf7db45d3317166adaedb25bd17c0ad}\label{classlogic_1_1utility_1_1Random_acaf7db45d3317166adaedb25bd17c0ad}} 
+\mbox{\hyperlink{classlogic_1_1utility_1_1Random}{Random}} \& {\bfseries operator=} (const \mbox{\hyperlink{classlogic_1_1utility_1_1Random}{Random}} \&\&)=delete
+\item 
+int \mbox{\hyperlink{classlogic_1_1utility_1_1Random_aa216eb86e1317d2da2d595fd1828e60f}{uniform\+Int\+Distribution}} (int a, int b)
+\item 
+float \mbox{\hyperlink{classlogic_1_1utility_1_1Random_a5978e1a3732969120776209989a7c1b4}{uniform\+Real\+Distribution}} (float a, float b)
+\item 
+bool \mbox{\hyperlink{classlogic_1_1utility_1_1Random_a018512eae8e64d73ec0d4f619a8bf957}{bernoulli\+Distribution}} (float p)
+\item 
+int \mbox{\hyperlink{classlogic_1_1utility_1_1Random_a0bacc081b1f2e71f0acdab2588e55773}{binomial\+Distribution}} (float p, int t)
+\item 
+int \mbox{\hyperlink{classlogic_1_1utility_1_1Random_aa2895b8c51cde0aff1a7ff6d662a40e7}{negative\+Binomial\+Distribution}} (float p, int k)
+\item 
+int \mbox{\hyperlink{classlogic_1_1utility_1_1Random_a4f9fcb845132c7b6de7bfe3377fb1e50}{geometric\+Distribution}} (float p)
+\item 
+int \mbox{\hyperlink{classlogic_1_1utility_1_1Random_af7a10ae8bb5392a7829b15214be86bb3}{poisson\+Distribution}} (float mean)
+\item 
+float \mbox{\hyperlink{classlogic_1_1utility_1_1Random_ad11ebd7d28b38a0132a7f35cd98174ad}{exponential\+Distribution}} (float lambda)
+\item 
+float \mbox{\hyperlink{classlogic_1_1utility_1_1Random_af087cb4141a0a4b2d99b40cb86a01488}{gamma\+Distribution}} (float alpha, float beta)
+\item 
+float \mbox{\hyperlink{classlogic_1_1utility_1_1Random_ae1173912d52a94ce53d1fdd1138226e2}{weibull\+Distribution}} (float a, float b)
+\item 
+float \mbox{\hyperlink{classlogic_1_1utility_1_1Random_a87fdfbbb51c336292ba99bdd84e71119}{extreme\+Value\+Distribution}} (float a, float b)
+\item 
+float \mbox{\hyperlink{classlogic_1_1utility_1_1Random_a6113ffeeb55b8d1a7c6ec9525befc22a}{normal\+Distribution}} (float mean, float stddev)
+\item 
+float \mbox{\hyperlink{classlogic_1_1utility_1_1Random_ab7e0667dcd71e4478e15a8be43c4c25d}{lognormal\+Distribution}} (float m, float s)
+\item 
+float \mbox{\hyperlink{classlogic_1_1utility_1_1Random_aa5477e4c594073bc7300069083ad38dd}{cauchy\+Distribution}} (float a, float b)
+\item 
+int \mbox{\hyperlink{classlogic_1_1utility_1_1Random_a36104e28e05a70f17eded56c35d302ab}{discrete\+Distribution}} (const std\+::initializer\+\_\+list$<$ double $>$ \&probabilities)
+\item 
+float \mbox{\hyperlink{classlogic_1_1utility_1_1Random_a1d5a2a5064daa3c314265af830268bb9}{piecewise\+Constant\+Distribution}} (const std\+::vector$<$ float $>$ \&intervals, const std\+::vector$<$ float $>$ \&densities)
+\item 
+float \mbox{\hyperlink{classlogic_1_1utility_1_1Random_aaae5eff95d19ebb7b660c584ce9c3b54}{piecewise\+Lineair\+Distribution}} (const std\+::vector$<$ float $>$ \&intervals, const std\+::vector$<$ float $>$ \&densities)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlogic_1_1utility_1_1Random_a82b333aaf643e246aa4d4a2cfe290f9a}\label{classlogic_1_1utility_1_1Random_a82b333aaf643e246aa4d4a2cfe290f9a}} 
+static \mbox{\hyperlink{classlogic_1_1utility_1_1Random}{Random}} \& {\bfseries Instance} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+Definition at line 16 of file Random.\+h.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classlogic_1_1utility_1_1Random_a018512eae8e64d73ec0d4f619a8bf957}\label{classlogic_1_1utility_1_1Random_a018512eae8e64d73ec0d4f619a8bf957}} 
+\index{logic::utility::Random@{logic::utility::Random}!bernoulliDistribution@{bernoulliDistribution}}
+\index{bernoulliDistribution@{bernoulliDistribution}!logic::utility::Random@{logic::utility::Random}}
+\doxyparagraph{\texorpdfstring{bernoulliDistribution()}{bernoulliDistribution()}}
+{\footnotesize\ttfamily bool logic\+::utility\+::\+Random\+::bernoulli\+Distribution (\begin{DoxyParamCaption}\item[{float}]{p }\end{DoxyParamCaption})}
+
+@function \+: uniform\+Real\+Distribution Returns a value generated by a bernoulli distribution. 
+\begin{DoxyParams}{Parameters}
+{\em p} & (float) \+: . \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(bool) \+: true or false. 
+\end{DoxyReturn}
+
+
+Definition at line 30 of file Random.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1utility_1_1Random_a0bacc081b1f2e71f0acdab2588e55773}\label{classlogic_1_1utility_1_1Random_a0bacc081b1f2e71f0acdab2588e55773}} 
+\index{logic::utility::Random@{logic::utility::Random}!binomialDistribution@{binomialDistribution}}
+\index{binomialDistribution@{binomialDistribution}!logic::utility::Random@{logic::utility::Random}}
+\doxyparagraph{\texorpdfstring{binomialDistribution()}{binomialDistribution()}}
+{\footnotesize\ttfamily int logic\+::utility\+::\+Random\+::binomial\+Distribution (\begin{DoxyParamCaption}\item[{float}]{p,  }\item[{int}]{t }\end{DoxyParamCaption})}
+
+@function \+: binomial\+Distribution Returns a value generated by a binomial distribution. 
+\begin{DoxyParams}{Parameters}
+{\em p} & (float) \+: . \\
+\hline
+{\em t} & (int) \+: . \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(int) \+: 
+\end{DoxyReturn}
+
+
+Definition at line 36 of file Random.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1utility_1_1Random_aa5477e4c594073bc7300069083ad38dd}\label{classlogic_1_1utility_1_1Random_aa5477e4c594073bc7300069083ad38dd}} 
+\index{logic::utility::Random@{logic::utility::Random}!cauchyDistribution@{cauchyDistribution}}
+\index{cauchyDistribution@{cauchyDistribution}!logic::utility::Random@{logic::utility::Random}}
+\doxyparagraph{\texorpdfstring{cauchyDistribution()}{cauchyDistribution()}}
+{\footnotesize\ttfamily float logic\+::utility\+::\+Random\+::cauchy\+Distribution (\begin{DoxyParamCaption}\item[{float}]{a,  }\item[{float}]{b }\end{DoxyParamCaption})}
+
+@function \+: cauchy\+Distribution Returns a value generated by a cauchy distribution. 
+\begin{DoxyParams}{Parameters}
+{\em a} & (float) \+: . \\
+\hline
+{\em b} & (float) \+: . \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(float) \+: . 
+\end{DoxyReturn}
+
+
+Definition at line 96 of file Random.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1utility_1_1Random_a36104e28e05a70f17eded56c35d302ab}\label{classlogic_1_1utility_1_1Random_a36104e28e05a70f17eded56c35d302ab}} 
+\index{logic::utility::Random@{logic::utility::Random}!discreteDistribution@{discreteDistribution}}
+\index{discreteDistribution@{discreteDistribution}!logic::utility::Random@{logic::utility::Random}}
+\doxyparagraph{\texorpdfstring{discreteDistribution()}{discreteDistribution()}}
+{\footnotesize\ttfamily int logic\+::utility\+::\+Random\+::discrete\+Distribution (\begin{DoxyParamCaption}\item[{const std\+::initializer\+\_\+list$<$ double $>$ \&}]{probabilities }\end{DoxyParamCaption})}
+
+@function \+: discrete\+Distribution Returns a value generated by a discrete distribution. 
+\begin{DoxyParams}{Parameters}
+{\em probabilities} & (std\+::initializer\+\_\+list$<$double$>$) \+: list of probabilities. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(int) \+: . 
+\end{DoxyReturn}
+
+
+Definition at line 102 of file Random.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1utility_1_1Random_ad11ebd7d28b38a0132a7f35cd98174ad}\label{classlogic_1_1utility_1_1Random_ad11ebd7d28b38a0132a7f35cd98174ad}} 
+\index{logic::utility::Random@{logic::utility::Random}!exponentialDistribution@{exponentialDistribution}}
+\index{exponentialDistribution@{exponentialDistribution}!logic::utility::Random@{logic::utility::Random}}
+\doxyparagraph{\texorpdfstring{exponentialDistribution()}{exponentialDistribution()}}
+{\footnotesize\ttfamily float logic\+::utility\+::\+Random\+::exponential\+Distribution (\begin{DoxyParamCaption}\item[{float}]{lambda }\end{DoxyParamCaption})}
+
+@function \+: exponential\+Distribution Returns a value generated by an exponential distribution. 
+\begin{DoxyParams}{Parameters}
+{\em lambda} & (float) \+: . \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(float) \+: . 
+\end{DoxyReturn}
+
+
+Definition at line 60 of file Random.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1utility_1_1Random_a87fdfbbb51c336292ba99bdd84e71119}\label{classlogic_1_1utility_1_1Random_a87fdfbbb51c336292ba99bdd84e71119}} 
+\index{logic::utility::Random@{logic::utility::Random}!extremeValueDistribution@{extremeValueDistribution}}
+\index{extremeValueDistribution@{extremeValueDistribution}!logic::utility::Random@{logic::utility::Random}}
+\doxyparagraph{\texorpdfstring{extremeValueDistribution()}{extremeValueDistribution()}}
+{\footnotesize\ttfamily float logic\+::utility\+::\+Random\+::extreme\+Value\+Distribution (\begin{DoxyParamCaption}\item[{float}]{a,  }\item[{float}]{b }\end{DoxyParamCaption})}
+
+@function \+: extreme\+Value\+Distribution Returns a value generated by an extreme value distribution. 
+\begin{DoxyParams}{Parameters}
+{\em a} & (float) \+: . \\
+\hline
+{\em b} & (float) \+: . \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(float) \+: . 
+\end{DoxyReturn}
+
+
+Definition at line 78 of file Random.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1utility_1_1Random_af087cb4141a0a4b2d99b40cb86a01488}\label{classlogic_1_1utility_1_1Random_af087cb4141a0a4b2d99b40cb86a01488}} 
+\index{logic::utility::Random@{logic::utility::Random}!gammaDistribution@{gammaDistribution}}
+\index{gammaDistribution@{gammaDistribution}!logic::utility::Random@{logic::utility::Random}}
+\doxyparagraph{\texorpdfstring{gammaDistribution()}{gammaDistribution()}}
+{\footnotesize\ttfamily float logic\+::utility\+::\+Random\+::gamma\+Distribution (\begin{DoxyParamCaption}\item[{float}]{alpha,  }\item[{float}]{beta }\end{DoxyParamCaption})}
+
+@function \+: gamma\+Distribution Returns a value generated by a gamma distribution. 
+\begin{DoxyParams}{Parameters}
+{\em alpha} & (float) \+: . \\
+\hline
+{\em beta} & (float) \+: . \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(float) \+: . 
+\end{DoxyReturn}
+
+
+Definition at line 66 of file Random.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1utility_1_1Random_a4f9fcb845132c7b6de7bfe3377fb1e50}\label{classlogic_1_1utility_1_1Random_a4f9fcb845132c7b6de7bfe3377fb1e50}} 
+\index{logic::utility::Random@{logic::utility::Random}!geometricDistribution@{geometricDistribution}}
+\index{geometricDistribution@{geometricDistribution}!logic::utility::Random@{logic::utility::Random}}
+\doxyparagraph{\texorpdfstring{geometricDistribution()}{geometricDistribution()}}
+{\footnotesize\ttfamily int logic\+::utility\+::\+Random\+::geometric\+Distribution (\begin{DoxyParamCaption}\item[{float}]{p }\end{DoxyParamCaption})}
+
+@function \+: geometric\+Distribution Returns a value generated by a geometric distribution. 
+\begin{DoxyParams}{Parameters}
+{\em p} & (float) \+: . \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(int) \+: . 
+\end{DoxyReturn}
+
+
+Definition at line 48 of file Random.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1utility_1_1Random_ab7e0667dcd71e4478e15a8be43c4c25d}\label{classlogic_1_1utility_1_1Random_ab7e0667dcd71e4478e15a8be43c4c25d}} 
+\index{logic::utility::Random@{logic::utility::Random}!lognormalDistribution@{lognormalDistribution}}
+\index{lognormalDistribution@{lognormalDistribution}!logic::utility::Random@{logic::utility::Random}}
+\doxyparagraph{\texorpdfstring{lognormalDistribution()}{lognormalDistribution()}}
+{\footnotesize\ttfamily float logic\+::utility\+::\+Random\+::lognormal\+Distribution (\begin{DoxyParamCaption}\item[{float}]{m,  }\item[{float}]{s }\end{DoxyParamCaption})}
+
+@function \+: lognormal\+Distribution Returns a value generated by a lognormal distribution. 
+\begin{DoxyParams}{Parameters}
+{\em m} & (float) \+: . \\
+\hline
+{\em s} & (float) \+: . \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(float) \+: . 
+\end{DoxyReturn}
+
+
+Definition at line 90 of file Random.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1utility_1_1Random_aa2895b8c51cde0aff1a7ff6d662a40e7}\label{classlogic_1_1utility_1_1Random_aa2895b8c51cde0aff1a7ff6d662a40e7}} 
+\index{logic::utility::Random@{logic::utility::Random}!negativeBinomialDistribution@{negativeBinomialDistribution}}
+\index{negativeBinomialDistribution@{negativeBinomialDistribution}!logic::utility::Random@{logic::utility::Random}}
+\doxyparagraph{\texorpdfstring{negativeBinomialDistribution()}{negativeBinomialDistribution()}}
+{\footnotesize\ttfamily int logic\+::utility\+::\+Random\+::negative\+Binomial\+Distribution (\begin{DoxyParamCaption}\item[{float}]{p,  }\item[{int}]{k }\end{DoxyParamCaption})}
+
+@function \+: negative\+Binomial\+Distribution Returns a value generated by a negative binomial distribution. 
+\begin{DoxyParams}{Parameters}
+{\em p} & (float) \+: . \\
+\hline
+{\em t} & (int) \+: . \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(int) \+: . 
+\end{DoxyReturn}
+
+
+Definition at line 42 of file Random.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1utility_1_1Random_a6113ffeeb55b8d1a7c6ec9525befc22a}\label{classlogic_1_1utility_1_1Random_a6113ffeeb55b8d1a7c6ec9525befc22a}} 
+\index{logic::utility::Random@{logic::utility::Random}!normalDistribution@{normalDistribution}}
+\index{normalDistribution@{normalDistribution}!logic::utility::Random@{logic::utility::Random}}
+\doxyparagraph{\texorpdfstring{normalDistribution()}{normalDistribution()}}
+{\footnotesize\ttfamily float logic\+::utility\+::\+Random\+::normal\+Distribution (\begin{DoxyParamCaption}\item[{float}]{mean,  }\item[{float}]{stddev }\end{DoxyParamCaption})}
+
+@function \+: normal\+Distribution Returns a value generated by a normal distribution. 
+\begin{DoxyParams}{Parameters}
+{\em mean} & (float) \+: . \\
+\hline
+{\em stddev} & (float) \+: . \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(float) \+: . 
+\end{DoxyReturn}
+
+
+Definition at line 84 of file Random.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1utility_1_1Random_a1d5a2a5064daa3c314265af830268bb9}\label{classlogic_1_1utility_1_1Random_a1d5a2a5064daa3c314265af830268bb9}} 
+\index{logic::utility::Random@{logic::utility::Random}!piecewiseConstantDistribution@{piecewiseConstantDistribution}}
+\index{piecewiseConstantDistribution@{piecewiseConstantDistribution}!logic::utility::Random@{logic::utility::Random}}
+\doxyparagraph{\texorpdfstring{piecewiseConstantDistribution()}{piecewiseConstantDistribution()}}
+{\footnotesize\ttfamily float logic\+::utility\+::\+Random\+::piecewise\+Constant\+Distribution (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{intervals,  }\item[{const std\+::vector$<$ float $>$ \&}]{densities }\end{DoxyParamCaption})}
+
+@function \+: piecewise\+Constant\+Distribution Returns a value generated by a piecewise constant distribution. 
+\begin{DoxyParams}{Parameters}
+{\em intervals} & (std\+::vector$<$float$>$) \+: list of the intervals. \\
+\hline
+{\em densities} & (std\+::vector$<$float$>$) \+: list of the densities (for the intervals). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(float) \+: random float from between one of the ranges in the intervals. 
+\end{DoxyReturn}
+
+
+Definition at line 108 of file Random.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1utility_1_1Random_aaae5eff95d19ebb7b660c584ce9c3b54}\label{classlogic_1_1utility_1_1Random_aaae5eff95d19ebb7b660c584ce9c3b54}} 
+\index{logic::utility::Random@{logic::utility::Random}!piecewiseLineairDistribution@{piecewiseLineairDistribution}}
+\index{piecewiseLineairDistribution@{piecewiseLineairDistribution}!logic::utility::Random@{logic::utility::Random}}
+\doxyparagraph{\texorpdfstring{piecewiseLineairDistribution()}{piecewiseLineairDistribution()}}
+{\footnotesize\ttfamily float logic\+::utility\+::\+Random\+::piecewise\+Lineair\+Distribution (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{intervals,  }\item[{const std\+::vector$<$ float $>$ \&}]{densities }\end{DoxyParamCaption})}
+
+@function \+: piecewise\+Lineair\+Distribution Returns a value generated by a piecewise lineair distribution. 
+\begin{DoxyParams}{Parameters}
+{\em intervals} & (std\+::vector$<$float$>$) \+: list of the intervals. \\
+\hline
+{\em densities} & (std\+::vector$<$float$>$) \+: list of the densities (for the intervals). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(float) \+: random float from between one of the ranges in the intervals. 
+\end{DoxyReturn}
+
+
+Definition at line 115 of file Random.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1utility_1_1Random_af7a10ae8bb5392a7829b15214be86bb3}\label{classlogic_1_1utility_1_1Random_af7a10ae8bb5392a7829b15214be86bb3}} 
+\index{logic::utility::Random@{logic::utility::Random}!poissonDistribution@{poissonDistribution}}
+\index{poissonDistribution@{poissonDistribution}!logic::utility::Random@{logic::utility::Random}}
+\doxyparagraph{\texorpdfstring{poissonDistribution()}{poissonDistribution()}}
+{\footnotesize\ttfamily int logic\+::utility\+::\+Random\+::poisson\+Distribution (\begin{DoxyParamCaption}\item[{float}]{mean }\end{DoxyParamCaption})}
+
+@function \+: poisson\+Distribution Returns a value generated by a poisson distribution. 
+\begin{DoxyParams}{Parameters}
+{\em mean} & (float) \+: . \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(int) \+: . 
+\end{DoxyReturn}
+
+
+Definition at line 54 of file Random.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1utility_1_1Random_aa216eb86e1317d2da2d595fd1828e60f}\label{classlogic_1_1utility_1_1Random_aa216eb86e1317d2da2d595fd1828e60f}} 
+\index{logic::utility::Random@{logic::utility::Random}!uniformIntDistribution@{uniformIntDistribution}}
+\index{uniformIntDistribution@{uniformIntDistribution}!logic::utility::Random@{logic::utility::Random}}
+\doxyparagraph{\texorpdfstring{uniformIntDistribution()}{uniformIntDistribution()}}
+{\footnotesize\ttfamily int logic\+::utility\+::\+Random\+::uniform\+Int\+Distribution (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b }\end{DoxyParamCaption})}
+
+@function \+: uniform\+Int\+Distribution Returns a value generated by a uniform integer distribution. 
+\begin{DoxyParams}{Parameters}
+{\em a} & (int) \+: left range. \\
+\hline
+{\em b} & (int) \+: right range. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(int) \+: random integer in the range between a and b. 
+\end{DoxyReturn}
+
+
+Definition at line 18 of file Random.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1utility_1_1Random_a5978e1a3732969120776209989a7c1b4}\label{classlogic_1_1utility_1_1Random_a5978e1a3732969120776209989a7c1b4}} 
+\index{logic::utility::Random@{logic::utility::Random}!uniformRealDistribution@{uniformRealDistribution}}
+\index{uniformRealDistribution@{uniformRealDistribution}!logic::utility::Random@{logic::utility::Random}}
+\doxyparagraph{\texorpdfstring{uniformRealDistribution()}{uniformRealDistribution()}}
+{\footnotesize\ttfamily float logic\+::utility\+::\+Random\+::uniform\+Real\+Distribution (\begin{DoxyParamCaption}\item[{float}]{a,  }\item[{float}]{b }\end{DoxyParamCaption})}
+
+@function \+: uniform\+Real\+Distribution Returns a value generated by a uniform real distribution. 
+\begin{DoxyParams}{Parameters}
+{\em a} & (float) \+: left range. \\
+\hline
+{\em b} & (float) \+: right range. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(float) \+: random float in the range between a and b. 
+\end{DoxyReturn}
+
+
+Definition at line 24 of file Random.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1utility_1_1Random_ae1173912d52a94ce53d1fdd1138226e2}\label{classlogic_1_1utility_1_1Random_ae1173912d52a94ce53d1fdd1138226e2}} 
+\index{logic::utility::Random@{logic::utility::Random}!weibullDistribution@{weibullDistribution}}
+\index{weibullDistribution@{weibullDistribution}!logic::utility::Random@{logic::utility::Random}}
+\doxyparagraph{\texorpdfstring{weibullDistribution()}{weibullDistribution()}}
+{\footnotesize\ttfamily float logic\+::utility\+::\+Random\+::weibull\+Distribution (\begin{DoxyParamCaption}\item[{float}]{a,  }\item[{float}]{b }\end{DoxyParamCaption})}
+
+@function \+: weibull\+Distribution Returns a value generated by a weibull distribution. 
+\begin{DoxyParams}{Parameters}
+{\em a} & (float) \+: . \\
+\hline
+{\em b} & (float) \+: . \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(float) \+: . 
+\end{DoxyReturn}
+
+
+Definition at line 72 of file Random.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/logic\+\_\+library/Random.\+h\item 
+src/logic\+\_\+library/Random.\+cpp\end{DoxyCompactItemize}

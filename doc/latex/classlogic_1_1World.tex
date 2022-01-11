@@ -1,0 +1,438 @@
+\hypertarget{classlogic_1_1World}{}\doxysubsection{logic\+::World Class Reference}
+\label{classlogic_1_1World}\index{logic::World@{logic::World}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlogic_1_1World_a6584e6a004b71fa1c2a7177eb932d0c3}{World}} ()
+\item 
+\mbox{\hyperlink{classlogic_1_1World_a194fbdf6452d58fba672e87fbf074338}{World}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1AbstractFactory}{logic\+::\+Abstract\+Factory}} $>$ \&factory)
+\item 
+\mbox{\hyperlink{classlogic_1_1World_a4212a52dd94c62ee8ec3e4366d165687}{$\sim$\+World}} ()
+\item 
+void \mbox{\hyperlink{classlogic_1_1World_aa7e8c59517e769fa5babe35e15fc3bab}{receive\+Input}} (std\+::string \&key)
+\item 
+void \mbox{\hyperlink{classlogic_1_1World_a69b23e3a63b4a9c8a33df64c59eba7da}{check\+For\+Collision}} ()
+\item 
+void \mbox{\hyperlink{classlogic_1_1World_a00671bb872ea3d1f72e6a17edba9968a}{check\+For\+Collision\+Between\+Platforms}} ()
+\item 
+bool \mbox{\hyperlink{classlogic_1_1World_a68f41a7e6daa31354d4eb9b7f5b29b6c}{check\+For\+Undetected\+Collision}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1EntityModel}{logic\+::\+Entity\+Model}} $>$ \&e1, std\+::vector$<$ std\+::pair$<$ float, float $>$$>$ \&middle\+Line, const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1EntityModel}{logic\+::\+Entity\+Model}} $>$ \&e2) const
+\item 
+void \mbox{\hyperlink{classlogic_1_1World_a75ff1124f0ba857741a7663a1d37c6a1}{create\+Start\+Entities}} ()
+\item 
+void \mbox{\hyperlink{classlogic_1_1World_a616b3601d68abd56cd7c7d2bcb77c70a}{create\+Entities}} ()
+\item 
+void \mbox{\hyperlink{classlogic_1_1World_a8c069541cc88b46fd9849bf2d7f4008c}{update}} ()
+\item 
+void \mbox{\hyperlink{classlogic_1_1World_ae9ccbc8551ad41e2a80fab0fa4262fbc}{setup\+Percentages}} ()
+\item 
+void \mbox{\hyperlink{classlogic_1_1World_a30dda4da6312d08b8cd8828b69b9d17d}{create\+Starting\+B\+G\+Tiles}} ()
+\item 
+void \mbox{\hyperlink{classlogic_1_1World_ab42ba12c3860b44f232b3c47c7ce48f2}{delete\+Out\+Of\+View\+Platforms}} ()
+\item 
+void \mbox{\hyperlink{classlogic_1_1World_a45d253a6ac2e7ac2e4efee2b121948cd}{delete\+Out\+Of\+View\+Bonusses}} ()
+\item 
+void \mbox{\hyperlink{classlogic_1_1World_aa57efbce318e58249d86a715714531ee}{recycle\+Out\+Of\+View\+B\+G\+Tiles}} ()
+\item 
+int \mbox{\hyperlink{classlogic_1_1World_a9b6ab159eca0afc534d0d78d34d841d4}{choose\+Platform\+Type}} () const
+\item 
+void \mbox{\hyperlink{classlogic_1_1World_ac6101ff29a6ab76c6fe7cb38e39889c3}{choose\+Bonus\+Type}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Bonus}{logic\+::\+Bonus}} $>$ \&bonus) const
+\item 
+float \mbox{\hyperlink{classlogic_1_1World_afead1e149190b760d32ae7255fe043f6}{calculate\+Platform\+X\+Pos}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Platform}{logic\+::\+Platform}} $>$ \&platform) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ std\+::pair$<$ float, float $>$ $>$ \mbox{\hyperlink{classlogic_1_1World_ae80d95443f7aad388417027932303f69}{get\+Line\+Between\+Points}} (float x0, float y0, float x1, float y1)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classlogic_1_1World_a65e730a632d1fddfd28ec786c200f209}\label{classlogic_1_1World_a65e730a632d1fddfd28ec786c200f209}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Score}{logic\+::\+Score}} $>$ {\bfseries score}
+\item 
+\mbox{\Hypertarget{classlogic_1_1World_aacd05db007092a3553c3e81b26fbbf19}\label{classlogic_1_1World_aacd05db007092a3553c3e81b26fbbf19}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Player}{logic\+::\+Player}} $>$ {\bfseries doodle}
+\item 
+\mbox{\Hypertarget{classlogic_1_1World_add6aee875789135e50f193d4ee7ae6d6}\label{classlogic_1_1World_add6aee875789135e50f193d4ee7ae6d6}} 
+std\+::deque$<$ std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1BGTile}{logic\+::\+B\+G\+Tile}} $>$ $>$ $>$ {\bfseries bg\+Tiles}
+\item 
+\mbox{\Hypertarget{classlogic_1_1World_aec68a0d631018e42eb791752e72a90ae}\label{classlogic_1_1World_aec68a0d631018e42eb791752e72a90ae}} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Platform}{logic\+::\+Platform}} $>$ $>$ {\bfseries platforms}
+\item 
+\mbox{\Hypertarget{classlogic_1_1World_ae654a3ca9427466f96233668831fa0a7}\label{classlogic_1_1World_ae654a3ca9427466f96233668831fa0a7}} 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Bonus}{logic\+::\+Bonus}} $>$ $>$ {\bfseries bonuses}
+\item 
+\mbox{\Hypertarget{classlogic_1_1World_a6248604ea8514e30b66f55885fa2d404}\label{classlogic_1_1World_a6248604ea8514e30b66f55885fa2d404}} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1AbstractFactory}{logic\+::\+Abstract\+Factory}} $>$ {\bfseries Factory} = nullptr
+\item 
+\mbox{\Hypertarget{classlogic_1_1World_a41c1a9644abbc0a28cc98790a6488e06}\label{classlogic_1_1World_a41c1a9644abbc0a28cc98790a6488e06}} 
+float {\bfseries left\+Bound} = logic\+::utility\+::\+Camera\+::\+Instance().get\+Left\+Bound()
+\item 
+\mbox{\Hypertarget{classlogic_1_1World_af85bff3fd6b94b057466bb998d433a9e}\label{classlogic_1_1World_af85bff3fd6b94b057466bb998d433a9e}} 
+float {\bfseries right\+Bound} = logic\+::utility\+::\+Camera\+::\+Instance().get\+Right\+Bound()
+\item 
+\mbox{\Hypertarget{classlogic_1_1World_ae334607d9e1c6a2588c2dca740d94fcd}\label{classlogic_1_1World_ae334607d9e1c6a2588c2dca740d94fcd}} 
+float {\bfseries lower\+Bound} = logic\+::utility\+::\+Camera\+::\+Instance().get\+Lower\+Bound()
+\item 
+\mbox{\Hypertarget{classlogic_1_1World_a1d4b213e5bc1aae994ec01c291f8b8c2}\label{classlogic_1_1World_a1d4b213e5bc1aae994ec01c291f8b8c2}} 
+float {\bfseries shift\+Border} = logic\+::utility\+::\+Camera\+::\+Instance().get\+Shift\+Border()
+\item 
+\mbox{\Hypertarget{classlogic_1_1World_a57f6aa6e902c93df69633df518a6b538}\label{classlogic_1_1World_a57f6aa6e902c93df69633df518a6b538}} 
+float {\bfseries former\+Platform\+PosY} = 0
+\item 
+\mbox{\Hypertarget{classlogic_1_1World_a171aedd38effbc3927bb70c1426fd39d}\label{classlogic_1_1World_a171aedd38effbc3927bb70c1426fd39d}} 
+float {\bfseries former\+Platform\+PosX} = 0
+\item 
+bool {\bfseries was\+Bonus\+Generated}
+\item 
+\mbox{\Hypertarget{classlogic_1_1World_a27b5e0401504046b4557ae3f8be575e0}\label{classlogic_1_1World_a27b5e0401504046b4557ae3f8be575e0}} 
+bool {\bfseries game\+Over} = false
+\item 
+\mbox{\Hypertarget{classlogic_1_1World_abefc4e742ad8f0f762c72d4078fc67fa}\label{classlogic_1_1World_abefc4e742ad8f0f762c72d4078fc67fa}} 
+std\+::map$<$ int, std\+::map$<$ int, float $>$ $>$ {\bfseries percentages}
+\item 
+\mbox{\Hypertarget{classlogic_1_1World_a3b82cea504751ed57e2abd11d5b0c1a5}\label{classlogic_1_1World_a3b82cea504751ed57e2abd11d5b0c1a5}} 
+float {\bfseries player\+Width} = 0.\+08
+\item 
+\mbox{\Hypertarget{classlogic_1_1World_a1cabdc20a0351ec8ef5b7e493dedc9c9}\label{classlogic_1_1World_a1cabdc20a0351ec8ef5b7e493dedc9c9}} 
+float {\bfseries player\+Height} = 0.\+15
+\item 
+\mbox{\Hypertarget{classlogic_1_1World_a7d74daa829e2509446bebb55296575f3}\label{classlogic_1_1World_a7d74daa829e2509446bebb55296575f3}} 
+float {\bfseries platform\+Width} = 0.\+174004
+\item 
+\mbox{\Hypertarget{classlogic_1_1World_a00db8942e64fc6d7840de9a079ab3caa}\label{classlogic_1_1World_a00db8942e64fc6d7840de9a079ab3caa}} 
+float {\bfseries platform\+Height} = 0.\+0411
+\item 
+\mbox{\Hypertarget{classlogic_1_1World_a85436a90fd3acd2c6baa2991630a350e}\label{classlogic_1_1World_a85436a90fd3acd2c6baa2991630a350e}} 
+float {\bfseries spring\+Width} = 0.\+058
+\item 
+\mbox{\Hypertarget{classlogic_1_1World_a7ef5397cea8f6c428d78a5124f983944}\label{classlogic_1_1World_a7ef5397cea8f6c428d78a5124f983944}} 
+float {\bfseries spring\+Height} = 0.\+0411
+\item 
+\mbox{\Hypertarget{classlogic_1_1World_a212e04cfd5aaab1998dcd45948186655}\label{classlogic_1_1World_a212e04cfd5aaab1998dcd45948186655}} 
+float {\bfseries jetpack\+Width} = 0.\+0696
+\item 
+\mbox{\Hypertarget{classlogic_1_1World_ad3d5c0e97178e852910d29e5d4dcd263}\label{classlogic_1_1World_ad3d5c0e97178e852910d29e5d4dcd263}} 
+float {\bfseries jetpack\+Height} = 0.\+06576
+\item 
+\mbox{\Hypertarget{classlogic_1_1World_aef23435b7d20cb7b1f37252aaf138552}\label{classlogic_1_1World_aef23435b7d20cb7b1f37252aaf138552}} 
+float {\bfseries bg\+Tile\+Side\+Length} = 0.\+05f
+\item 
+\mbox{\Hypertarget{classlogic_1_1World_af073045a6e14a9cfe6831eda73f70058}\label{classlogic_1_1World_af073045a6e14a9cfe6831eda73f70058}} 
+float {\bfseries platform\+Gen\+\_\+starting\+Chance} = 0.\+90
+\item 
+float {\bfseries platform\+Gen\+\_\+interval}
+\item 
+\mbox{\Hypertarget{classlogic_1_1World_ad4d6b4741111b704ea3397872e07caf9}\label{classlogic_1_1World_ad4d6b4741111b704ea3397872e07caf9}} 
+float {\bfseries bonus\+Gen\+\_\+starting\+Chance} = 0.\+10
+\item 
+float {\bfseries bonus\+Gen\+\_\+interval}
+\item 
+\mbox{\Hypertarget{classlogic_1_1World_ab854d1dd1dfd1731561bc6f4aab59c3f}\label{classlogic_1_1World_ab854d1dd1dfd1731561bc6f4aab59c3f}} 
+float {\bfseries min\+Distance\+Between\+Platforms} = 0.\+30
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+Definition at line 23 of file World.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlogic_1_1World_a6584e6a004b71fa1c2a7177eb932d0c3}\label{classlogic_1_1World_a6584e6a004b71fa1c2a7177eb932d0c3}} 
+\index{logic::World@{logic::World}!World@{World}}
+\index{World@{World}!logic::World@{logic::World}}
+\doxyparagraph{\texorpdfstring{World()}{World()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily logic\+::\+World\+::\+World (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+@function \+: \mbox{\hyperlink{classlogic_1_1World}{World}} Constructor for a \mbox{\hyperlink{classlogic_1_1World}{World}}. \mbox{\Hypertarget{classlogic_1_1World_a194fbdf6452d58fba672e87fbf074338}\label{classlogic_1_1World_a194fbdf6452d58fba672e87fbf074338}} 
+\index{logic::World@{logic::World}!World@{World}}
+\index{World@{World}!logic::World@{logic::World}}
+\doxyparagraph{\texorpdfstring{World()}{World()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily logic\+::\+World\+::\+World (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1AbstractFactory}{logic\+::\+Abstract\+Factory}} $>$ \&}]{factory }\end{DoxyParamCaption})}
+
+@function \+: \mbox{\hyperlink{classlogic_1_1World}{World}} Constructor for a \mbox{\hyperlink{classlogic_1_1World}{World}}. 
+\begin{DoxyParams}{Parameters}
+{\em factory} & (std\+::shared\+\_\+ptr$<$logic\+::\+Abstract\+Factory$>$) \+: abstract factory (actually concrete factory). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 10 of file World.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1World_a4212a52dd94c62ee8ec3e4366d165687}\label{classlogic_1_1World_a4212a52dd94c62ee8ec3e4366d165687}} 
+\index{logic::World@{logic::World}!````~World@{$\sim$World}}
+\index{````~World@{$\sim$World}!logic::World@{logic::World}}
+\doxyparagraph{\texorpdfstring{$\sim$World()}{~World()}}
+{\footnotesize\ttfamily logic\+::\+World\+::$\sim$\+World (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: $\sim$\+World Destructor for a \mbox{\hyperlink{classlogic_1_1World}{World}}. Resets everything in the world. 
+
+Definition at line 308 of file World.\+cpp.
+
+
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classlogic_1_1World_afead1e149190b760d32ae7255fe043f6}\label{classlogic_1_1World_afead1e149190b760d32ae7255fe043f6}} 
+\index{logic::World@{logic::World}!calculatePlatformXPos@{calculatePlatformXPos}}
+\index{calculatePlatformXPos@{calculatePlatformXPos}!logic::World@{logic::World}}
+\doxyparagraph{\texorpdfstring{calculatePlatformXPos()}{calculatePlatformXPos()}}
+{\footnotesize\ttfamily float logic\+::\+World\+::calculate\+Platform\+X\+Pos (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Platform}{logic\+::\+Platform}} $>$ \&}]{platform }\end{DoxyParamCaption}) const}
+
+@function \+: calculate\+Platform\+X\+Pos Calculates the x-\/position for our platform. 
+\begin{DoxyParams}{Parameters}
+{\em platform} & (std\+::shared\+\_\+ptr$<$logic\+::\+Platform$>$) \+: reference to the platform that we instantiated previously. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(float) \+: x-\/position. 
+\end{DoxyReturn}
+
+
+Definition at line 520 of file World.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1World_a69b23e3a63b4a9c8a33df64c59eba7da}\label{classlogic_1_1World_a69b23e3a63b4a9c8a33df64c59eba7da}} 
+\index{logic::World@{logic::World}!checkForCollision@{checkForCollision}}
+\index{checkForCollision@{checkForCollision}!logic::World@{logic::World}}
+\doxyparagraph{\texorpdfstring{checkForCollision()}{checkForCollision()}}
+{\footnotesize\ttfamily void logic\+::\+World\+::check\+For\+Collision (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: check\+For\+Collision Function that checks for collision between the player and other entities. 
+
+Definition at line 42 of file World.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1World_a00671bb872ea3d1f72e6a17edba9968a}\label{classlogic_1_1World_a00671bb872ea3d1f72e6a17edba9968a}} 
+\index{logic::World@{logic::World}!checkForCollisionBetweenPlatforms@{checkForCollisionBetweenPlatforms}}
+\index{checkForCollisionBetweenPlatforms@{checkForCollisionBetweenPlatforms}!logic::World@{logic::World}}
+\doxyparagraph{\texorpdfstring{checkForCollisionBetweenPlatforms()}{checkForCollisionBetweenPlatforms()}}
+{\footnotesize\ttfamily void logic\+::\+World\+::check\+For\+Collision\+Between\+Platforms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: check\+For\+Collision\+Between\+Platforms Function that checks for collision between platforms. 
+
+Definition at line 549 of file World.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1World_a68f41a7e6daa31354d4eb9b7f5b29b6c}\label{classlogic_1_1World_a68f41a7e6daa31354d4eb9b7f5b29b6c}} 
+\index{logic::World@{logic::World}!checkForUndetectedCollision@{checkForUndetectedCollision}}
+\index{checkForUndetectedCollision@{checkForUndetectedCollision}!logic::World@{logic::World}}
+\doxyparagraph{\texorpdfstring{checkForUndetectedCollision()}{checkForUndetectedCollision()}}
+{\footnotesize\ttfamily bool logic\+::\+World\+::check\+For\+Undetected\+Collision (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1EntityModel}{logic\+::\+Entity\+Model}} $>$ \&}]{e1,  }\item[{std\+::vector$<$ std\+::pair$<$ float, float $>$$>$ \&}]{middle\+Line,  }\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1EntityModel}{logic\+::\+Entity\+Model}} $>$ \&}]{e2 }\end{DoxyParamCaption}) const}
+
+@function \+: check\+For\+Undetected\+Collision Function that checks for intersection between entities (e1 and e2). 
+\begin{DoxyParams}{Parameters}
+{\em e1} & (std\+::shared\+\_\+ptr$<$logic\+::\+Entity\+Model$>$) \+: first entity. \\
+\hline
+{\em e2} & (std\+::shared\+\_\+ptr$<$logic\+::\+Entity\+Model$>$) \+: second entity. \\
+\hline
+{\em middle\+Line} & (std\+::vector$<$std\+::pair$<$float,float$>$$>$) \+: \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 246 of file World.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1World_ac6101ff29a6ab76c6fe7cb38e39889c3}\label{classlogic_1_1World_ac6101ff29a6ab76c6fe7cb38e39889c3}} 
+\index{logic::World@{logic::World}!chooseBonusType@{chooseBonusType}}
+\index{chooseBonusType@{chooseBonusType}!logic::World@{logic::World}}
+\doxyparagraph{\texorpdfstring{chooseBonusType()}{chooseBonusType()}}
+{\footnotesize\ttfamily void logic\+::\+World\+::choose\+Bonus\+Type (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Bonus}{logic\+::\+Bonus}} $>$ \&}]{bonus }\end{DoxyParamCaption}) const}
+
+@function \+: choose\+Bonus\+Type Chooses the bonus type by chance. 
+\begin{DoxyParams}{Parameters}
+{\em bonus} & (std\+::shared\+\_\+ptr$<$logic\+::\+Bonus$>$) \+: reference to the bonus that we instantiated previously. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 508 of file World.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1World_a9b6ab159eca0afc534d0d78d34d841d4}\label{classlogic_1_1World_a9b6ab159eca0afc534d0d78d34d841d4}} 
+\index{logic::World@{logic::World}!choosePlatformType@{choosePlatformType}}
+\index{choosePlatformType@{choosePlatformType}!logic::World@{logic::World}}
+\doxyparagraph{\texorpdfstring{choosePlatformType()}{choosePlatformType()}}
+{\footnotesize\ttfamily int logic\+::\+World\+::choose\+Platform\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+@function \+: choose\+Platform\+Type Chooses the platform type by chance. \begin{DoxyReturn}{Returns}
+(int) \+: integer representing the type of platform to be generated. 
+\end{DoxyReturn}
+
+
+Definition at line 479 of file World.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1World_a616b3601d68abd56cd7c7d2bcb77c70a}\label{classlogic_1_1World_a616b3601d68abd56cd7c7d2bcb77c70a}} 
+\index{logic::World@{logic::World}!createEntities@{createEntities}}
+\index{createEntities@{createEntities}!logic::World@{logic::World}}
+\doxyparagraph{\texorpdfstring{createEntities()}{createEntities()}}
+{\footnotesize\ttfamily void logic\+::\+World\+::create\+Entities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: create\+Entities Handles the spontaneous creation of entities throughout the game (i.\+e. platform and bonus generation). 
+
+Definition at line 114 of file World.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1World_a75ff1124f0ba857741a7663a1d37c6a1}\label{classlogic_1_1World_a75ff1124f0ba857741a7663a1d37c6a1}} 
+\index{logic::World@{logic::World}!createStartEntities@{createStartEntities}}
+\index{createStartEntities@{createStartEntities}!logic::World@{logic::World}}
+\doxyparagraph{\texorpdfstring{createStartEntities()}{createStartEntities()}}
+{\footnotesize\ttfamily void logic\+::\+World\+::create\+Start\+Entities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: create\+Start\+Entities Handles the creation of the entities at the start of the game (player, background tiles and some prebuilt platforms 
+
+Definition at line 91 of file World.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1World_a30dda4da6312d08b8cd8828b69b9d17d}\label{classlogic_1_1World_a30dda4da6312d08b8cd8828b69b9d17d}} 
+\index{logic::World@{logic::World}!createStartingBGTiles@{createStartingBGTiles}}
+\index{createStartingBGTiles@{createStartingBGTiles}!logic::World@{logic::World}}
+\doxyparagraph{\texorpdfstring{createStartingBGTiles()}{createStartingBGTiles()}}
+{\footnotesize\ttfamily void logic\+::\+World\+::create\+Starting\+B\+G\+Tiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: create\+Starting\+B\+G\+Tiles Creates the background tiles in the beginning. 
+
+Definition at line 408 of file World.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1World_a45d253a6ac2e7ac2e4efee2b121948cd}\label{classlogic_1_1World_a45d253a6ac2e7ac2e4efee2b121948cd}} 
+\index{logic::World@{logic::World}!deleteOutOfViewBonusses@{deleteOutOfViewBonusses}}
+\index{deleteOutOfViewBonusses@{deleteOutOfViewBonusses}!logic::World@{logic::World}}
+\doxyparagraph{\texorpdfstring{deleteOutOfViewBonusses()}{deleteOutOfViewBonusses()}}
+{\footnotesize\ttfamily void logic\+::\+World\+::delete\+Out\+Of\+View\+Bonusses (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: delete\+Out\+Of\+View\+Bonusses Deletes all bonusees that are out of view. 
+
+Definition at line 438 of file World.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1World_ab42ba12c3860b44f232b3c47c7ce48f2}\label{classlogic_1_1World_ab42ba12c3860b44f232b3c47c7ce48f2}} 
+\index{logic::World@{logic::World}!deleteOutOfViewPlatforms@{deleteOutOfViewPlatforms}}
+\index{deleteOutOfViewPlatforms@{deleteOutOfViewPlatforms}!logic::World@{logic::World}}
+\doxyparagraph{\texorpdfstring{deleteOutOfViewPlatforms()}{deleteOutOfViewPlatforms()}}
+{\footnotesize\ttfamily void logic\+::\+World\+::delete\+Out\+Of\+View\+Platforms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: delete\+Out\+Of\+View\+Platforms Deletes all platforms that are out of view. 
+
+Definition at line 423 of file World.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1World_ae80d95443f7aad388417027932303f69}\label{classlogic_1_1World_ae80d95443f7aad388417027932303f69}} 
+\index{logic::World@{logic::World}!getLineBetweenPoints@{getLineBetweenPoints}}
+\index{getLineBetweenPoints@{getLineBetweenPoints}!logic::World@{logic::World}}
+\doxyparagraph{\texorpdfstring{getLineBetweenPoints()}{getLineBetweenPoints()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::pair$<$ float, float $>$ $>$ logic\+::\+World\+::get\+Line\+Between\+Points (\begin{DoxyParamCaption}\item[{float}]{x0,  }\item[{float}]{y0,  }\item[{float}]{x1,  }\item[{float}]{y1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+@function \+: get\+Line\+Between\+Points Returns a line between the first and second point in the form of a list of pairs of floats. 
+\begin{DoxyParams}{Parameters}
+{\em x0} & (float) \+: x-\/coordinate of the first point. \\
+\hline
+{\em y0} & (float) \+: y-\/coordinate of the first point. \\
+\hline
+{\em x1} & (float) \+: x-\/coordinate of the second point. \\
+\hline
+{\em y1} & (float) \+: y-\/coordinate of the second point. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(std\+::vector$<$std\+::pair$<$float,float$>$$>$) \+: list of points which represents the line Source \+: algorithm from project Computer Graphics. 
+\end{DoxyReturn}
+
+
+Definition at line 267 of file World.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1World_aa7e8c59517e769fa5babe35e15fc3bab}\label{classlogic_1_1World_aa7e8c59517e769fa5babe35e15fc3bab}} 
+\index{logic::World@{logic::World}!receiveInput@{receiveInput}}
+\index{receiveInput@{receiveInput}!logic::World@{logic::World}}
+\doxyparagraph{\texorpdfstring{receiveInput()}{receiveInput()}}
+{\footnotesize\ttfamily void logic\+::\+World\+::receive\+Input (\begin{DoxyParamCaption}\item[{std\+::string \&}]{key }\end{DoxyParamCaption})}
+
+@function \+: receive\+Input Function that handles the received input from the game class and moves the player accordingly. 
+\begin{DoxyParams}{Parameters}
+{\em key} & (std\+::string) \+: key that was pressed by the user. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 24 of file World.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1World_aa57efbce318e58249d86a715714531ee}\label{classlogic_1_1World_aa57efbce318e58249d86a715714531ee}} 
+\index{logic::World@{logic::World}!recycleOutOfViewBGTiles@{recycleOutOfViewBGTiles}}
+\index{recycleOutOfViewBGTiles@{recycleOutOfViewBGTiles}!logic::World@{logic::World}}
+\doxyparagraph{\texorpdfstring{recycleOutOfViewBGTiles()}{recycleOutOfViewBGTiles()}}
+{\footnotesize\ttfamily void logic\+::\+World\+::recycle\+Out\+Of\+View\+B\+G\+Tiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: recycle\+Out\+Of\+View\+B\+G\+Tiles Recycles all background tiles that are out of view at the bottom (it stacks them on top). 
+
+Definition at line 453 of file World.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1World_ae9ccbc8551ad41e2a80fab0fa4262fbc}\label{classlogic_1_1World_ae9ccbc8551ad41e2a80fab0fa4262fbc}} 
+\index{logic::World@{logic::World}!setupPercentages@{setupPercentages}}
+\index{setupPercentages@{setupPercentages}!logic::World@{logic::World}}
+\doxyparagraph{\texorpdfstring{setupPercentages()}{setupPercentages()}}
+{\footnotesize\ttfamily void logic\+::\+World\+::setup\+Percentages (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: setup\+Percentages Sets up the percentages map, that we use for our random platform generation. 
+
+Definition at line 340 of file World.\+cpp.
+
+\mbox{\Hypertarget{classlogic_1_1World_a8c069541cc88b46fd9849bf2d7f4008c}\label{classlogic_1_1World_a8c069541cc88b46fd9849bf2d7f4008c}} 
+\index{logic::World@{logic::World}!update@{update}}
+\index{update@{update}!logic::World@{logic::World}}
+\doxyparagraph{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void logic\+::\+World\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+@function \+: update Updates everything in the world (movement of player, collision checking, creating entities,...). 
+
+Definition at line 203 of file World.\+cpp.
+
+
+
+\doxysubsubsection{Member Data Documentation}
+\mbox{\Hypertarget{classlogic_1_1World_a2d7bac9a5d0a35fed3f6597f5cf08f46}\label{classlogic_1_1World_a2d7bac9a5d0a35fed3f6597f5cf08f46}} 
+\index{logic::World@{logic::World}!bonusGen\_interval@{bonusGen\_interval}}
+\index{bonusGen\_interval@{bonusGen\_interval}!logic::World@{logic::World}}
+\doxyparagraph{\texorpdfstring{bonusGen\_interval}{bonusGen\_interval}}
+{\footnotesize\ttfamily float logic\+::\+World\+::bonus\+Gen\+\_\+interval}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{            500}
+
+\end{DoxyCode}
+
+
+Definition at line 70 of file World.\+h.
+
+\mbox{\Hypertarget{classlogic_1_1World_aba977b9da782a09ccea8671df376d168}\label{classlogic_1_1World_aba977b9da782a09ccea8671df376d168}} 
+\index{logic::World@{logic::World}!platformGen\_interval@{platformGen\_interval}}
+\index{platformGen\_interval@{platformGen\_interval}!logic::World@{logic::World}}
+\doxyparagraph{\texorpdfstring{platformGen\_interval}{platformGen\_interval}}
+{\footnotesize\ttfamily float logic\+::\+World\+::platform\+Gen\+\_\+interval}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{            3}
+
+\end{DoxyCode}
+
+
+Definition at line 65 of file World.\+h.
+
+\mbox{\Hypertarget{classlogic_1_1World_a02fd267895299bc14e9a0e11ab158b87}\label{classlogic_1_1World_a02fd267895299bc14e9a0e11ab158b87}} 
+\index{logic::World@{logic::World}!wasBonusGenerated@{wasBonusGenerated}}
+\index{wasBonusGenerated@{wasBonusGenerated}!logic::World@{logic::World}}
+\doxyparagraph{\texorpdfstring{wasBonusGenerated}{wasBonusGenerated}}
+{\footnotesize\ttfamily bool logic\+::\+World\+::was\+Bonus\+Generated}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{            \textcolor{keyword}{false}}
+
+\end{DoxyCode}
+
+
+Definition at line 44 of file World.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/logic\+\_\+library/World.\+h\item 
+src/logic\+\_\+library/World.\+cpp\end{DoxyCompactItemize}

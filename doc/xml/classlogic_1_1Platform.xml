@@ -1,0 +1,363 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classlogic_1_1Platform" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>logic::Platform</compoundname>
+    <basecompoundref refid="classlogic_1_1EntityModel" prot="public" virt="non-virtual">logic::EntityModel</basecompoundref>
+    <derivedcompoundref refid="classlogic_1_1Platform__Horizontal" prot="public" virt="non-virtual">logic::Platform_Horizontal</derivedcompoundref>
+    <derivedcompoundref refid="classlogic_1_1Platform__Static" prot="public" virt="non-virtual">logic::Platform_Static</derivedcompoundref>
+    <derivedcompoundref refid="classlogic_1_1Platform__Temporary" prot="public" virt="non-virtual">logic::Platform_Temporary</derivedcompoundref>
+    <derivedcompoundref refid="classlogic_1_1Platform__Vertical" prot="public" virt="non-virtual">logic::Platform_Vertical</derivedcompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classlogic_1_1Platform_1aa1bf30b92f99cab81fe3b61868978dfe" prot="protected" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::Platform::startingX</definition>
+        <argsstring></argsstring>
+        <name>startingX</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Platform.h" line="14" column="15" bodyfile="src/logic_library/Platform.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1Platform_1a7cc503332440c6d91f5ded11ed84b8dc" prot="protected" static="no" mutable="no">
+        <type>float</type>
+        <definition>float logic::Platform::startingY</definition>
+        <argsstring></argsstring>
+        <name>startingY</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Platform.h" line="15" column="15" bodyfile="src/logic_library/Platform.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1Platform_1a1f81b942e5e3849f11580106725277c8" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int logic::Platform::timesTouched</definition>
+        <argsstring></argsstring>
+        <name>timesTouched</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Platform.h" line="17" column="13" bodyfile="src/logic_library/Platform.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classlogic_1_1Platform_1a5e24eed117cfbc29eca54dabfe4909da" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::Platform::Platform</definition>
+        <argsstring>()</argsstring>
+        <name>Platform</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1Platform" kindref="compound">Platform</ref> Constructor for a <ref refid="classlogic_1_1Platform" kindref="compound">Platform</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Platform.h" line="24" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1Platform_1a17681236a1e376cac1136ce7a5e5d167" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::Platform::~Platform</definition>
+        <argsstring>() override=default</argsstring>
+        <name>~Platform</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1Platform" kindref="compound">Platform</ref> Destructor for a <ref refid="classlogic_1_1Platform" kindref="compound">Platform</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Platform.h" line="30" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1Platform_1a298c1eaf3ef77b12747c3a8d9d87cea0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::Platform::Platform</definition>
+        <argsstring>(float posX, float posY)</argsstring>
+        <name>Platform</name>
+        <param>
+          <type>float</type>
+          <declname>posX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>posY</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1Platform" kindref="compound">Platform</ref> Constructor for a <ref refid="classlogic_1_1Platform" kindref="compound">Platform</ref>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>posX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : x-coordinate of our entity, between the range [0,1-entity.width]. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>posY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : y-coordinate of our entity, between the range [0+entity.height, inf[. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Platform.h" line="38" column="9" bodyfile="src/logic_library/Platform.cpp" bodystart="9" bodyend="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1Platform_1a8551b4454d623edb2f53ad1ae69b319c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::Platform::Platform</definition>
+        <argsstring>(float posX, float posY, float width, float height)</argsstring>
+        <name>Platform</name>
+        <param>
+          <type>float</type>
+          <declname>posX</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>posY</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1Platform" kindref="compound">Platform</ref> Constructor for a <ref refid="classlogic_1_1Platform" kindref="compound">Platform</ref>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>posX</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : x-coordinate of our entity, between the range [0,1-entity.width]. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>posY</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : y-coordinate of our entity, between the range [0+entity.height, inf[. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : width of our entity. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(float) : height of our entity. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Platform.h" line="48" column="9" bodyfile="src/logic_library/Platform.cpp" bodystart="11" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1Platform_1aa6cd1a0cccf86ab38472d0e788cc4ab3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void logic::Platform::move</definition>
+        <argsstring>()</argsstring>
+        <name>move</name>
+        <reimplementedby refid="classlogic_1_1Platform__Vertical_1a8bf2ee42c33d40562f174cd006c07eae">move</reimplementedby>
+        <reimplementedby refid="classlogic_1_1Platform__Horizontal_1ad15c0c05451f10b73aa84aca0b67fdae">move</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : move Function that is responsible for moving the platform correctly. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Platform.h" line="54" column="22" bodyfile="src/logic_library/Platform.h" bodystart="54" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1Platform_1a0b9c3064b4f6af098215a1be82ca870b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>virtual void logic::Platform::changeDirection</definition>
+        <argsstring>()</argsstring>
+        <name>changeDirection</name>
+        <reimplementedby refid="classlogic_1_1Platform__Vertical_1a2e6a71039e48e4df3f0e449c5bb3651e">changeDirection</reimplementedby>
+        <reimplementedby refid="classlogic_1_1Platform__Horizontal_1a869f8e9aa3fdc79639cdf6f343394a59">changeDirection</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : changeDirection Changes the direction our platform is moving to. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Platform.h" line="60" column="22" bodyfile="src/logic_library/Platform.h" bodystart="60" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1Platform_1a3068bfc983aa98b0b415f4ddad424b06" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>float</type>
+        <definition>virtual float logic::Platform::isTouched</definition>
+        <argsstring>()=0</argsstring>
+        <name>isTouched</name>
+        <reimplementedby refid="classlogic_1_1Platform__Temporary_1ab3d693cc06ce653658357652dc09d527">isTouched</reimplementedby>
+        <reimplementedby refid="classlogic_1_1Platform__Static_1a0f32530297c6df2c0d7a98d3dd75c53a">isTouched</reimplementedby>
+        <reimplementedby refid="classlogic_1_1Platform__Vertical_1a69bc246d80039977248e1b9dcf2cfc94">isTouched</reimplementedby>
+        <reimplementedby refid="classlogic_1_1Platform__Horizontal_1a4b83d74e3833141c2e8c22aaf0c03de0">isTouched</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : isTouched Function that is used for the score decrease and temporary platform deletion. <simplesect kind="return"><para>(float) : score decrease. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Platform.h" line="67" column="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1Platform_1a43271a1bd3cf21ef160d14d6886cb861" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int logic::Platform::getTimesTouched</definition>
+        <argsstring>() const</argsstring>
+        <name>getTimesTouched</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Platform.h" line="69" column="13" bodyfile="src/logic_library/Platform.h" bodystart="69" bodyend="69"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>logic::Subject</label>
+        <link refid="classlogic_1_1Subject"/>
+      </node>
+      <node id="2">
+        <label>logic::EntityModel</label>
+        <link refid="classlogic_1_1EntityModel"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>logic::Platform_Vertical</label>
+        <link refid="classlogic_1_1Platform__Vertical"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>logic::Platform_Static</label>
+        <link refid="classlogic_1_1Platform__Static"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>logic::Platform_Horizontal</label>
+        <link refid="classlogic_1_1Platform__Horizontal"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>logic::Platform_Temporary</label>
+        <link refid="classlogic_1_1Platform__Temporary"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>logic::Platform</label>
+        <link refid="classlogic_1_1Platform"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>logic::Subject</label>
+        <link refid="classlogic_1_1Subject"/>
+      </node>
+      <node id="2">
+        <label>logic::EntityModel</label>
+        <link refid="classlogic_1_1EntityModel"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>logic::Platform</label>
+        <link refid="classlogic_1_1Platform"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/logic_library/Platform.h" line="11" column="1" bodyfile="src/logic_library/Platform.h" bodystart="10" bodyend="70"/>
+    <listofallmembers>
+      <member refid="classlogic_1_1Platform_1a0b9c3064b4f6af098215a1be82ca870b" prot="public" virt="virtual"><scope>logic::Platform</scope><name>changeDirection</name></member>
+      <member refid="classlogic_1_1EntityModel_1a9c913c80599c18622aa329759865aa6b" prot="protected" virt="non-virtual"><scope>logic::Platform</scope><name>e_height</name></member>
+      <member refid="classlogic_1_1EntityModel_1a14b0d640abc1de9f0d26857525fb8588" prot="protected" virt="non-virtual"><scope>logic::Platform</scope><name>e_speed</name></member>
+      <member refid="classlogic_1_1EntityModel_1ac823e3f35ecfa439b2883d7601929ce5" prot="protected" virt="non-virtual"><scope>logic::Platform</scope><name>e_width</name></member>
+      <member refid="classlogic_1_1EntityModel_1af763d5b72c30f1d2f7f87f3f229ce362" prot="public" virt="non-virtual"><scope>logic::Platform</scope><name>EntityModel</name></member>
+      <member refid="classlogic_1_1EntityModel_1a55519f45ff78ff9dcb4b14fc1f868589" prot="public" virt="non-virtual"><scope>logic::Platform</scope><name>EntityModel</name></member>
+      <member refid="classlogic_1_1EntityModel_1a0d8dd2e45002dd1177b74f27389e548e" prot="public" virt="non-virtual"><scope>logic::Platform</scope><name>EntityModel</name></member>
+      <member refid="classlogic_1_1EntityModel_1a7cdaafc31f97ab0ba835593046138c57" prot="public" virt="non-virtual"><scope>logic::Platform</scope><name>getHeight</name></member>
+      <member refid="classlogic_1_1Subject_1a202f1cd7a6af78750886d0b60d388450" prot="public" virt="non-virtual"><scope>logic::Platform</scope><name>getObservers</name></member>
+      <member refid="classlogic_1_1EntityModel_1aed96cfbc730f4fd9a0e59bebc6727ef9" prot="public" virt="non-virtual"><scope>logic::Platform</scope><name>getPositionX</name></member>
+      <member refid="classlogic_1_1EntityModel_1afb9776a3e5b8ebff029914499fe55ce6" prot="public" virt="non-virtual"><scope>logic::Platform</scope><name>getPositionY</name></member>
+      <member refid="classlogic_1_1EntityModel_1a89709427e4b0dd62de52d3d8c884ee76" prot="public" virt="non-virtual"><scope>logic::Platform</scope><name>getPreviousPositionX</name></member>
+      <member refid="classlogic_1_1EntityModel_1af1d0394edaf591860ebe06ef94a47276" prot="public" virt="non-virtual"><scope>logic::Platform</scope><name>getPreviousPositionY</name></member>
+      <member refid="classlogic_1_1EntityModel_1a0713ad1449d82b61f4e22bbdaa212b40" prot="public" virt="non-virtual"><scope>logic::Platform</scope><name>getSpeed</name></member>
+      <member refid="classlogic_1_1Platform_1a43271a1bd3cf21ef160d14d6886cb861" prot="public" virt="non-virtual"><scope>logic::Platform</scope><name>getTimesTouched</name></member>
+      <member refid="classlogic_1_1EntityModel_1ae85c34e45e8fec66993b870a937b2025" prot="public" virt="non-virtual"><scope>logic::Platform</scope><name>getUnit</name></member>
+      <member refid="classlogic_1_1EntityModel_1aa377acce5e474892230da31ee39bbbc9" prot="public" virt="non-virtual"><scope>logic::Platform</scope><name>getWidth</name></member>
+      <member refid="classlogic_1_1Platform_1a3068bfc983aa98b0b415f4ddad424b06" prot="public" virt="pure-virtual"><scope>logic::Platform</scope><name>isTouched</name></member>
+      <member refid="classlogic_1_1Platform_1aa6cd1a0cccf86ab38472d0e788cc4ab3" prot="public" virt="virtual"><scope>logic::Platform</scope><name>move</name></member>
+      <member refid="classlogic_1_1Subject_1a33567537c69863eaff2279f398f80ab4" prot="public" virt="non-virtual"><scope>logic::Platform</scope><name>notifyObservers</name></member>
+      <member refid="classlogic_1_1Subject_1a2c82c974d7838157824bdcecc4d0e59b" prot="protected" virt="non-virtual"><scope>logic::Platform</scope><name>observers</name></member>
+      <member refid="classlogic_1_1Platform_1a5e24eed117cfbc29eca54dabfe4909da" prot="public" virt="non-virtual"><scope>logic::Platform</scope><name>Platform</name></member>
+      <member refid="classlogic_1_1Platform_1a298c1eaf3ef77b12747c3a8d9d87cea0" prot="public" virt="non-virtual"><scope>logic::Platform</scope><name>Platform</name></member>
+      <member refid="classlogic_1_1Platform_1a8551b4454d623edb2f53ad1ae69b319c" prot="public" virt="non-virtual"><scope>logic::Platform</scope><name>Platform</name></member>
+      <member refid="classlogic_1_1Subject_1a375e972ed74af83f46a8debd49f2e3e0" prot="public" virt="non-virtual"><scope>logic::Platform</scope><name>registerObserver</name></member>
+      <member refid="classlogic_1_1Subject_1a5a3db9e4c842eb2828c5586be9f4cf81" prot="public" virt="non-virtual"><scope>logic::Platform</scope><name>removeObserver</name></member>
+      <member refid="classlogic_1_1EntityModel_1ad703de4900c6b276f824804bebfba006" prot="public" virt="non-virtual"><scope>logic::Platform</scope><name>setHeight</name></member>
+      <member refid="classlogic_1_1EntityModel_1a0d63f4dc9f2dcab997c5acb43a58b761" prot="public" virt="non-virtual"><scope>logic::Platform</scope><name>setPositionX</name></member>
+      <member refid="classlogic_1_1EntityModel_1a755cc5054fad5a67111f00a137666ab1" prot="public" virt="non-virtual"><scope>logic::Platform</scope><name>setPositionY</name></member>
+      <member refid="classlogic_1_1EntityModel_1a78e9ab3fad35775a1780cd7bfff0622a" prot="public" virt="non-virtual"><scope>logic::Platform</scope><name>setPreviousPositionX</name></member>
+      <member refid="classlogic_1_1EntityModel_1a579a9928acff3b4ba2bb0821e952d452" prot="public" virt="non-virtual"><scope>logic::Platform</scope><name>setPreviousPositionY</name></member>
+      <member refid="classlogic_1_1EntityModel_1a0a61bc5dc0e6a2a3aed489a604625593" prot="public" virt="non-virtual"><scope>logic::Platform</scope><name>setSpeed</name></member>
+      <member refid="classlogic_1_1EntityModel_1a642a7a6075bf35bfe9e0c55d52f4982d" prot="public" virt="non-virtual"><scope>logic::Platform</scope><name>setUnitOfDistance</name></member>
+      <member refid="classlogic_1_1EntityModel_1a99c0c979c10a90eecf3620afc8ecbc12" prot="public" virt="non-virtual"><scope>logic::Platform</scope><name>setWidth</name></member>
+      <member refid="classlogic_1_1Platform_1aa1bf30b92f99cab81fe3b61868978dfe" prot="protected" virt="non-virtual"><scope>logic::Platform</scope><name>startingX</name></member>
+      <member refid="classlogic_1_1Platform_1a7cc503332440c6d91f5ded11ed84b8dc" prot="protected" virt="non-virtual"><scope>logic::Platform</scope><name>startingY</name></member>
+      <member refid="classlogic_1_1Subject_1ae1277f400422f50b425c204b11dd8995" prot="public" virt="non-virtual"><scope>logic::Platform</scope><name>Subject</name></member>
+      <member refid="classlogic_1_1Platform_1a1f81b942e5e3849f11580106725277c8" prot="protected" virt="non-virtual"><scope>logic::Platform</scope><name>timesTouched</name></member>
+      <member refid="classlogic_1_1EntityModel_1a54b5161f038a4636baba4b17f7042425" prot="protected" virt="non-virtual"><scope>logic::Platform</scope><name>unit</name></member>
+      <member refid="classlogic_1_1EntityModel_1a894fed55ddd23d3e0a9d442b2a17d62c" prot="protected" virt="non-virtual"><scope>logic::Platform</scope><name>x_pos</name></member>
+      <member refid="classlogic_1_1EntityModel_1a515fb152a30fd35aa2825b78bb8fdc90" prot="protected" virt="non-virtual"><scope>logic::Platform</scope><name>x_posPrevious</name></member>
+      <member refid="classlogic_1_1EntityModel_1a351557932831e0db1ad5138ee4a92ec9" prot="protected" virt="non-virtual"><scope>logic::Platform</scope><name>y_pos</name></member>
+      <member refid="classlogic_1_1EntityModel_1acdcaa7615dfcec6b495ece5df8a3a40c" prot="protected" virt="non-virtual"><scope>logic::Platform</scope><name>y_posPrevious</name></member>
+      <member refid="classlogic_1_1EntityModel_1a70a0041b77dbb40c88e83847ea3523b7" prot="public" virt="non-virtual"><scope>logic::Platform</scope><name>~EntityModel</name></member>
+      <member refid="classlogic_1_1Platform_1a17681236a1e376cac1136ce7a5e5d167" prot="public" virt="non-virtual"><scope>logic::Platform</scope><name>~Platform</name></member>
+      <member refid="classlogic_1_1Subject_1ae4238075ca667706bba792bfb96ee6c0" prot="public" virt="virtual"><scope>logic::Platform</scope><name>~Subject</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

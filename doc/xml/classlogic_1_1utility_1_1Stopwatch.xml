@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classlogic_1_1utility_1_1Stopwatch" kind="class" language="C++" prot="public">
+    <compoundname>logic::utility::Stopwatch</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classlogic_1_1utility_1_1Stopwatch_1aa30aa3bc596cc945e8761ce7387c0129" prot="private" static="no" mutable="no">
+        <type>std::chrono::system_clock::time_point</type>
+        <definition>std::chrono::system_clock::time_point logic::utility::Stopwatch::mStartTime</definition>
+        <argsstring></argsstring>
+        <name>mStartTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Stopwatch.h" line="18" column="47" bodyfile="src/logic_library/Stopwatch.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classlogic_1_1utility_1_1Stopwatch_1a80b9ed34ef8ab6b7f6c141ad3046b4ad" prot="private" static="no" mutable="no">
+        <type>std::chrono::duration&lt; float &gt;</type>
+        <definition>std::chrono::duration&lt;float&gt; logic::utility::Stopwatch::mDeltaTime</definition>
+        <argsstring></argsstring>
+        <name>mDeltaTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Stopwatch.h" line="19" column="31" bodyfile="src/logic_library/Stopwatch.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Stopwatch_1a483d20545d557f2cfaf1790a572ac231" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::utility::Stopwatch::Stopwatch</definition>
+        <argsstring>()</argsstring>
+        <name>Stopwatch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1utility_1_1Stopwatch" kindref="compound">Stopwatch</ref> Constructor for a <ref refid="classlogic_1_1utility_1_1Stopwatch" kindref="compound">Stopwatch</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Stopwatch.h" line="25" column="9" bodyfile="src/logic_library/Stopwatch.cpp" bodystart="14" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Stopwatch_1a0ec0819aeca476a8c6821c0629f29ec9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::utility::Stopwatch::~Stopwatch</definition>
+        <argsstring>()</argsstring>
+        <name>~Stopwatch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : <ref refid="classlogic_1_1utility_1_1Stopwatch" kindref="compound">Stopwatch</ref> Destructor for a <ref refid="classlogic_1_1utility_1_1Stopwatch" kindref="compound">Stopwatch</ref>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Stopwatch.h" line="31" column="9"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Stopwatch_1a4b12cc484acced949f3a0174451e08a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::utility::Stopwatch::Stopwatch</definition>
+        <argsstring>(const Stopwatch &amp;)=delete</argsstring>
+        <name>Stopwatch</name>
+        <param>
+          <type>const <ref refid="classlogic_1_1utility_1_1Stopwatch" kindref="compound">Stopwatch</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Stopwatch.h" line="34" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Stopwatch_1abbbf9a6e92baf4551bd64203c240aa1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>logic::utility::Stopwatch::Stopwatch</definition>
+        <argsstring>(const Stopwatch &amp;&amp;)=delete</argsstring>
+        <name>Stopwatch</name>
+        <param>
+          <type>const <ref refid="classlogic_1_1utility_1_1Stopwatch" kindref="compound">Stopwatch</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Stopwatch.h" line="35" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Stopwatch_1aea255a4d1e02fed712afbb2a97161db7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classlogic_1_1utility_1_1Stopwatch" kindref="compound">Stopwatch</ref> &amp;</type>
+        <definition>Stopwatch&amp; logic::utility::Stopwatch::operator=</definition>
+        <argsstring>(const Stopwatch &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classlogic_1_1utility_1_1Stopwatch" kindref="compound">Stopwatch</ref> &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Stopwatch.h" line="37" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Stopwatch_1a3acb9b8099dfc9eb6b0612834258ed1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classlogic_1_1utility_1_1Stopwatch" kindref="compound">Stopwatch</ref> &amp;</type>
+        <definition>Stopwatch&amp; logic::utility::Stopwatch::operator=</definition>
+        <argsstring>(const Stopwatch &amp;&amp;)=delete</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classlogic_1_1utility_1_1Stopwatch" kindref="compound">Stopwatch</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Stopwatch.h" line="38" column="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Stopwatch_1ac297718829acfbd89ab809952708111e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::utility::Stopwatch::Reset</definition>
+        <argsstring>()</argsstring>
+        <name>Reset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : Reset Resets the mStartTime data member, setting it equal to std::chrono::system_clock::now(). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Stopwatch.h" line="47" column="14" bodyfile="src/logic_library/Stopwatch.cpp" bodystart="22" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Stopwatch_1a07974f366fb33668a10a24d12d3beb67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>float</type>
+        <definition>float logic::utility::Stopwatch::getDeltaTime</definition>
+        <argsstring>()</argsstring>
+        <name>getDeltaTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : getDeltaTime Returns the mDeltaTime data member. <simplesect kind="return"><para>(float) : mDeltaTime, which is the elapsed time, set by the last <ref refid="classlogic_1_1utility_1_1Stopwatch_1a5a119ec7cac51cccf73a2d0b3c1a0808" kindref="member">tick()</ref> called. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Stopwatch.h" line="54" column="15" bodyfile="src/logic_library/Stopwatch.cpp" bodystart="24" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Stopwatch_1a5a119ec7cac51cccf73a2d0b3c1a0808" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void logic::utility::Stopwatch::tick</definition>
+        <argsstring>()</argsstring>
+        <name>tick</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@function : tick Sets the mDeltaTime equal to (std::chrono::system_clock::now()-mStartTime). </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Stopwatch.h" line="60" column="14" bodyfile="src/logic_library/Stopwatch.cpp" bodystart="26" bodyend="26"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classlogic_1_1utility_1_1Stopwatch_1a2c9371353a6e638cbc80011d50437638" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classlogic_1_1utility_1_1Stopwatch" kindref="compound">Stopwatch</ref> &amp;</type>
+        <definition>Stopwatch &amp; logic::utility::Stopwatch::Instance</definition>
+        <argsstring>()</argsstring>
+        <name>Instance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/logic_library/Stopwatch.h" line="41" column="26" bodyfile="src/logic_library/Stopwatch.cpp" bodystart="8" bodyend="12"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/logic_library/Stopwatch.h" line="16" column="1" bodyfile="src/logic_library/Stopwatch.h" bodystart="15" bodyend="61"/>
+    <listofallmembers>
+      <member refid="classlogic_1_1utility_1_1Stopwatch_1a07974f366fb33668a10a24d12d3beb67" prot="public" virt="non-virtual"><scope>logic::utility::Stopwatch</scope><name>getDeltaTime</name></member>
+      <member refid="classlogic_1_1utility_1_1Stopwatch_1a2c9371353a6e638cbc80011d50437638" prot="public" virt="non-virtual"><scope>logic::utility::Stopwatch</scope><name>Instance</name></member>
+      <member refid="classlogic_1_1utility_1_1Stopwatch_1a80b9ed34ef8ab6b7f6c141ad3046b4ad" prot="private" virt="non-virtual"><scope>logic::utility::Stopwatch</scope><name>mDeltaTime</name></member>
+      <member refid="classlogic_1_1utility_1_1Stopwatch_1aa30aa3bc596cc945e8761ce7387c0129" prot="private" virt="non-virtual"><scope>logic::utility::Stopwatch</scope><name>mStartTime</name></member>
+      <member refid="classlogic_1_1utility_1_1Stopwatch_1aea255a4d1e02fed712afbb2a97161db7" prot="public" virt="non-virtual"><scope>logic::utility::Stopwatch</scope><name>operator=</name></member>
+      <member refid="classlogic_1_1utility_1_1Stopwatch_1a3acb9b8099dfc9eb6b0612834258ed1f" prot="public" virt="non-virtual"><scope>logic::utility::Stopwatch</scope><name>operator=</name></member>
+      <member refid="classlogic_1_1utility_1_1Stopwatch_1ac297718829acfbd89ab809952708111e" prot="public" virt="non-virtual"><scope>logic::utility::Stopwatch</scope><name>Reset</name></member>
+      <member refid="classlogic_1_1utility_1_1Stopwatch_1a483d20545d557f2cfaf1790a572ac231" prot="private" virt="non-virtual"><scope>logic::utility::Stopwatch</scope><name>Stopwatch</name></member>
+      <member refid="classlogic_1_1utility_1_1Stopwatch_1a4b12cc484acced949f3a0174451e08a9" prot="public" virt="non-virtual"><scope>logic::utility::Stopwatch</scope><name>Stopwatch</name></member>
+      <member refid="classlogic_1_1utility_1_1Stopwatch_1abbbf9a6e92baf4551bd64203c240aa1c" prot="public" virt="non-virtual"><scope>logic::utility::Stopwatch</scope><name>Stopwatch</name></member>
+      <member refid="classlogic_1_1utility_1_1Stopwatch_1a5a119ec7cac51cccf73a2d0b3c1a0808" prot="public" virt="non-virtual"><scope>logic::utility::Stopwatch</scope><name>tick</name></member>
+      <member refid="classlogic_1_1utility_1_1Stopwatch_1a0ec0819aeca476a8c6821c0629f29ec9" prot="private" virt="non-virtual"><scope>logic::utility::Stopwatch</scope><name>~Stopwatch</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,195 @@
+.TH "logic::AbstractFactory" 3 "Tue Jan 11 2022" "Doxygen Test" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+logic::AbstractFactory
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBrepresentation::ConcreteFactory\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBAbstractFactory\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~AbstractFactory\fP ()=default"
+.br
+.ti -1c
+.RI "virtual std::shared_ptr< \fBlogic::Player\fP > \fBcreatePlayer\fP (float posX, float posY, float width, float height)=0"
+.br
+.ti -1c
+.RI "virtual std::shared_ptr< \fBlogic::Platform\fP > \fBcreateStaticPlatform\fP (float posX, float posY, float width, float height)=0"
+.br
+.ti -1c
+.RI "virtual std::shared_ptr< \fBlogic::Platform\fP > \fBcreateTemporaryPlatform\fP (float posX, float posY, float width, float height)=0"
+.br
+.ti -1c
+.RI "virtual std::shared_ptr< \fBlogic::Platform\fP > \fBcreateHorizontalPlatform\fP (float posX, float posY, float width, float height)=0"
+.br
+.ti -1c
+.RI "virtual std::shared_ptr< \fBlogic::Platform\fP > \fBcreateVerticalPlatform\fP (float posX, float posY, float width, float height)=0"
+.br
+.ti -1c
+.RI "virtual std::shared_ptr< \fBlogic::Bonus\fP > \fBcreateSpring\fP (float posX, float posY, float width, float height)=0"
+.br
+.ti -1c
+.RI "virtual std::shared_ptr< \fBlogic::Bonus\fP > \fBcreateJetpack\fP (float posX, float posY, float width, float height)=0"
+.br
+.ti -1c
+.RI "virtual std::shared_ptr< \fBlogic::BGTile\fP > \fBcreateBGTile\fP (float posX, float posY, float width, float height)=0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 19 of file AbstractFactory\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "logic::AbstractFactory::AbstractFactory ()\fC [default]\fP"
+@function : \fBAbstractFactory\fP Constructor for a \fBAbstractFactory\fP\&. 
+.SS "virtual logic::AbstractFactory::~AbstractFactory ()\fC [virtual]\fP, \fC [default]\fP"
+@function : \fBAbstractFactory\fP Destructor for an \fBAbstractFactory\fP\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual std::shared_ptr<\fBlogic::BGTile\fP> logic::AbstractFactory::createBGTile (float posX, float posY, float width, float height)\fC [pure virtual]\fP"
+@function : createBGTile This function is responsible for creating the background tile (little square)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposX\fP (float) : x-coordinate of our entity, between the range [0,1-entity\&.width]\&. 
+.br
+\fIposY\fP (float) : y-coordinate of our entity, between the range [0+entity\&.height, inf[\&. 
+.br
+\fIwidth\fP (float) : width of our entity (in logic units)\&. 
+.br
+\fIheight\fP (float) : height of our entity (in logic units)\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBrepresentation::ConcreteFactory\fP\&.
+.SS "virtual std::shared_ptr<\fBlogic::Platform\fP> logic::AbstractFactory::createHorizontalPlatform (float posX, float posY, float width, float height)\fC [pure virtual]\fP"
+@function : createHorizontalPlatform This function is responsible for creating the horizontal platform\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposX\fP (float) : x-coordinate of our entity, between the range [0,1-entity\&.width]\&. 
+.br
+\fIposY\fP (float) : y-coordinate of our entity, between the range [0+entity\&.height, inf[\&. 
+.br
+\fIwidth\fP (float) : width of our entity (in logic units)\&. 
+.br
+\fIheight\fP (float) : height of our entity (in logic units)\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBrepresentation::ConcreteFactory\fP\&.
+.SS "virtual std::shared_ptr<\fBlogic::Bonus\fP> logic::AbstractFactory::createJetpack (float posX, float posY, float width, float height)\fC [pure virtual]\fP"
+@function : createJetpack This function is responsible for creating the jetpack bonus\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposX\fP (float) : x-coordinate of our entity, between the range [0,1-entity\&.width]\&. 
+.br
+\fIposY\fP (float) : y-coordinate of our entity, between the range [0+entity\&.height, inf[\&. 
+.br
+\fIwidth\fP (float) : width of our entity (in logic units)\&. 
+.br
+\fIheight\fP (float) : height of our entity (in logic units)\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBrepresentation::ConcreteFactory\fP\&.
+.SS "virtual std::shared_ptr<\fBlogic::Player\fP> logic::AbstractFactory::createPlayer (float posX, float posY, float width, float height)\fC [pure virtual]\fP"
+@function : createPlayer This function is responsible for creating the doodle\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposX\fP (float) : x-coordinate of our entity, between the range [0,1-entity\&.width]\&. 
+.br
+\fIposY\fP (float) : y-coordinate of our entity, between the range [0+entity\&.height, inf[\&. 
+.br
+\fIwidth\fP (float) : width of our entity (in logic units)\&. 
+.br
+\fIheight\fP (float) : height of our entity (in logic units)\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBrepresentation::ConcreteFactory\fP\&.
+.SS "virtual std::shared_ptr<\fBlogic::Bonus\fP> logic::AbstractFactory::createSpring (float posX, float posY, float width, float height)\fC [pure virtual]\fP"
+@function : createSpring This function is responsible for creating the spring bonus\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposX\fP (float) : x-coordinate of our entity, between the range [0,1-entity\&.width]\&. 
+.br
+\fIposY\fP (float) : y-coordinate of our entity, between the range [0+entity\&.height, inf[\&. 
+.br
+\fIwidth\fP (float) : width of our entity (in logic units)\&. 
+.br
+\fIheight\fP (float) : height of our entity (in logic units)\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBrepresentation::ConcreteFactory\fP\&.
+.SS "virtual std::shared_ptr<\fBlogic::Platform\fP> logic::AbstractFactory::createStaticPlatform (float posX, float posY, float width, float height)\fC [pure virtual]\fP"
+@function : createStaticPlatform This function is responsible for creating the static platform\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposX\fP (float) : x-coordinate of our entity, between the range [0,1-entity\&.width]\&. 
+.br
+\fIposY\fP (float) : y-coordinate of our entity, between the range [0+entity\&.height, inf[\&. 
+.br
+\fIwidth\fP (float) : width of our entity (in logic units)\&. 
+.br
+\fIheight\fP (float) : height of our entity (in logic units)\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBrepresentation::ConcreteFactory\fP\&.
+.SS "virtual std::shared_ptr<\fBlogic::Platform\fP> logic::AbstractFactory::createTemporaryPlatform (float posX, float posY, float width, float height)\fC [pure virtual]\fP"
+@function : createTemporaryPlatform This function is responsible for creating the temporary platform\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposX\fP (float) : x-coordinate of our entity, between the range [0,1-entity\&.width]\&. 
+.br
+\fIposY\fP (float) : y-coordinate of our entity, between the range [0+entity\&.height, inf[\&. 
+.br
+\fIwidth\fP (float) : width of our entity (in logic units)\&. 
+.br
+\fIheight\fP (float) : height of our entity (in logic units)\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBrepresentation::ConcreteFactory\fP\&.
+.SS "virtual std::shared_ptr<\fBlogic::Platform\fP> logic::AbstractFactory::createVerticalPlatform (float posX, float posY, float width, float height)\fC [pure virtual]\fP"
+@function : createVerticalPlatform This function is responsible for creating the vertical platform\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIposX\fP (float) : x-coordinate of our entity, between the range [0,1-entity\&.width]\&. 
+.br
+\fIposY\fP (float) : y-coordinate of our entity, between the range [0+entity\&.height, inf[\&. 
+.br
+\fIwidth\fP (float) : width of our entity (in logic units)\&. 
+.br
+\fIheight\fP (float) : height of our entity (in logic units)\&. 
+.RE
+.PP
+
+.PP
+Implemented in \fBrepresentation::ConcreteFactory\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Doxygen Test from the source code\&.

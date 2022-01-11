@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="README_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>ProjectAP:<sp/>DoodleJump</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1<sp/>Introduction</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>year’s<sp/>project<sp/>consists<sp/>of<sp/>designing<sp/>and<sp/>implementing<sp/>an<sp/>interactive<sp/>game,<sp/>inspired<sp/>by<sp/>Doodle<sp/>Jump1</highlight></codeline>
+<codeline><highlight class="normal">,<sp/>in</highlight></codeline>
+<codeline><highlight class="normal">C++<sp/>and<sp/>using<sp/>the<sp/>SFML2<sp/>graphics<sp/>library.<sp/>The<sp/>main<sp/>goal<sp/>of<sp/>this<sp/>project<sp/>is<sp/>to<sp/>demonstrate<sp/>that<sp/>you<sp/>are<sp/>able</highlight></codeline>
+<codeline><highlight class="normal">to<sp/>create<sp/>a<sp/>well-designed<sp/>architecture,<sp/>fully<sp/>utilize<sp/>advanced<sp/>C++<sp/>features<sp/>and<sp/>provide<sp/>high-quality<sp/>code<sp/>that</highlight></codeline>
+<codeline><highlight class="normal">implements<sp/>the<sp/>requirements.<sp/>Of<sp/>course,<sp/>it’s<sp/>great<sp/>if<sp/>you<sp/>add<sp/>creative<sp/>extra<sp/>features<sp/>or<sp/>fancy<sp/>graphics<sp/>and</highlight></codeline>
+<codeline><highlight class="normal">animations,<sp/>but<sp/>make<sp/>sure<sp/>the<sp/>basics<sp/>work<sp/>well<sp/>first<sp/>and<sp/>you<sp/>have<sp/>a<sp/>good,<sp/>extendable<sp/>codebase<sp/>to<sp/>work<sp/>with.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">2<sp/>Gameplay</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>game<sp/>consists<sp/>of<sp/>three<sp/>main<sp/>entities:<sp/>a<sp/>player,<sp/>various<sp/>platforms<sp/>and<sp/>potential<sp/>bonuses.<sp/>The<sp/>player<sp/>is<sp/>always<sp/>jumping<sp/>up<sp/>and</highlight></codeline>
+<codeline><highlight class="normal">down<sp/>automatically,<sp/>without<sp/>any<sp/>user<sp/>interaction.<sp/>The<sp/>user<sp/>can</highlight></codeline>
+<codeline><highlight class="normal">however<sp/>move<sp/>the<sp/>player<sp/>character<sp/>to<sp/>the<sp/>left<sp/>or<sp/>to<sp/>the<sp/>right<sp/>by</highlight></codeline>
+<codeline><highlight class="normal">pressing<sp/>the<sp/>A<sp/>or<sp/>left<sp/>arrow<sp/>and<sp/>D<sp/>or<sp/>right<sp/>arrow<sp/>keys<sp/>respectively.</highlight></codeline>
+<codeline><highlight class="normal">If<sp/>this<sp/>movement<sp/>is<sp/>done<sp/>correctly,<sp/>the<sp/>player<sp/>will<sp/>jump<sp/>on<sp/>top<sp/>of<sp/>a</highlight></codeline>
+<codeline><highlight class="normal">higher<sp/>platform,<sp/>helping<sp/>it<sp/>move<sp/>further<sp/>up<sp/>in<sp/>the<sp/>world.<sp/>Hitting<sp/>a</highlight></codeline>
+<codeline><highlight class="normal">platform<sp/>from<sp/>below<sp/>allows<sp/>the<sp/>player<sp/>to<sp/>completely<sp/>pass<sp/>through</highlight></codeline>
+<codeline><highlight class="normal">it<sp/>unhindered.<sp/>But<sp/>when<sp/>landing<sp/>on<sp/>it<sp/>from<sp/>above,<sp/>the<sp/>player</highlight></codeline>
+<codeline><highlight class="normal">will<sp/>bounce<sp/>off<sp/>the<sp/>platform,<sp/>allowing<sp/>it<sp/>to<sp/>reach<sp/>a<sp/>new<sp/>maximum</highlight></codeline>
+<codeline><highlight class="normal">height.<sp/>The<sp/>goal<sp/>of<sp/>this<sp/>game<sp/>is<sp/>therefore<sp/>for<sp/>the<sp/>player<sp/>to<sp/>climb<sp/>as</highlight></codeline>
+<codeline><highlight class="normal">high<sp/>as<sp/>possible,<sp/>without<sp/>falling<sp/>off<sp/>the<sp/>world.<sp/>When<sp/>the<sp/>player<sp/>falls</highlight></codeline>
+<codeline><highlight class="normal">to<sp/>the<sp/>bottom<sp/>of<sp/>the<sp/>screen,<sp/>where<sp/>there<sp/>is<sp/>no<sp/>platform<sp/>to<sp/>stand<sp/>on,</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>game<sp/>ends.<sp/>A<sp/>current<sp/>score<sp/>is<sp/>shown<sp/>on<sp/>the<sp/>top<sp/>of<sp/>the<sp/>screen</highlight></codeline>
+<codeline><highlight class="normal">(or<sp/>anywhere<sp/>else)<sp/>during<sp/>gameplay<sp/>and<sp/>an<sp/>all-time<sp/>high-score<sp/>is</highlight></codeline>
+<codeline><highlight class="normal">shown<sp/>when<sp/>the<sp/>game<sp/>ends.<sp/>Each<sp/>time<sp/>the<sp/>player<sp/>reaches<sp/>a<sp/>new</highlight></codeline>
+<codeline><highlight class="normal">maximum<sp/>height,<sp/>the<sp/>current<sp/>view<sp/>of<sp/>the<sp/>world<sp/>is<sp/>moved<sp/>upwards</highlight></codeline>
+<codeline><highlight class="normal">such<sp/>that<sp/>this<sp/>newly<sp/>reached<sp/>height<sp/>is<sp/>in<sp/>the<sp/>middle<sp/>of<sp/>the<sp/>screen.</highlight></codeline>
+<codeline><highlight class="normal">All<sp/>platforms<sp/>that<sp/>are<sp/>no<sp/>longer<sp/>within<sp/>view<sp/>are<sp/>removed<sp/>from<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">world<sp/>and<sp/>new<sp/>platforms<sp/>are<sp/>generated<sp/>for<sp/>the<sp/>section<sp/>of<sp/>the<sp/>world</highlight></codeline>
+<codeline><highlight class="normal">that<sp/>has<sp/>recently<sp/>come<sp/>into<sp/>view.<sp/>In<sp/>theory,<sp/>this<sp/>world<sp/>generation</highlight></codeline>
+<codeline><highlight class="normal">extends<sp/>upwards<sp/>infinitely,<sp/>as<sp/>long<sp/>as<sp/>the<sp/>player<sp/>does<sp/>not<sp/>fall<sp/>off</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>platforms.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">There<sp/>are<sp/>4<sp/>different<sp/>platform<sp/>types<sp/>that<sp/>can<sp/>be<sp/>generated:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Static<sp/>platforms:<sp/>occur<sp/>the<sp/>most<sp/>often<sp/>and<sp/>simply<sp/>stay<sp/>in<sp/>a<sp/>fixed<sp/>position<sp/>within<sp/>the<sp/>world.<sp/>(Green)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Horizontal<sp/>platforms:<sp/>move<sp/>back<sp/>and<sp/>forth<sp/>horizontally<sp/>across<sp/>the<sp/>screen.<sp/>(Blue)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Vertical<sp/>platforms:<sp/>move<sp/>back<sp/>and<sp/>forth<sp/>vertically<sp/>between<sp/>a<sp/>fixed<sp/>minimum<sp/>and<sp/>maximum<sp/>height.<sp/>(Yellow)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Temporary<sp/>platforms:<sp/>disappear<sp/>after<sp/>they<sp/>have<sp/>been<sp/>jumped<sp/>on<sp/>once.<sp/>(White)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">On<sp/>top<sp/>of<sp/>some<sp/>of<sp/>these<sp/>platforms,<sp/>bonuses<sp/>can<sp/>also<sp/>be<sp/>present,<sp/>with<sp/>which<sp/>the<sp/>player<sp/>can<sp/>interact<sp/>to<sp/>gain<sp/>one</highlight></codeline>
+<codeline><highlight class="normal">of<sp/>two<sp/>benefits:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Springs:<sp/>When<sp/>jumping<sp/>on<sp/>one<sp/>of<sp/>these,<sp/>the<sp/>player<sp/>is<sp/>given<sp/>an<sp/>extra<sp/>boost,<sp/>making<sp/>the<sp/>jump<sp/>5x<sp/>as<sp/>high.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Jetpacks:<sp/>These<sp/>allow<sp/>the<sp/>player<sp/>to<sp/>shoot<sp/>up<sp/>by<sp/>a<sp/>much<sp/>more<sp/>considerable<sp/>distance<sp/>(up<sp/>to<sp/>you<sp/>to<sp/>decide).</highlight></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

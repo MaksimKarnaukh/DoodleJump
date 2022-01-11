@@ -1,0 +1,234 @@
+\hypertarget{classlogic_1_1AbstractFactory}{}\doxysubsection{logic\+::Abstract\+Factory Class Reference}
+\label{classlogic_1_1AbstractFactory}\index{logic::AbstractFactory@{logic::AbstractFactory}}
+
+
+Inheritance diagram for logic\+::Abstract\+Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{classlogic_1_1AbstractFactory__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classlogic_1_1AbstractFactory_abf6c6fe130a97426c9682800fa0d6dd9}{Abstract\+Factory}} ()
+\item 
+virtual \mbox{\hyperlink{classlogic_1_1AbstractFactory_a391dc2c32c339bb7841b7e41aef2fba5}{$\sim$\+Abstract\+Factory}} ()=default
+\item 
+virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Player}{logic\+::\+Player}} $>$ \mbox{\hyperlink{classlogic_1_1AbstractFactory_a9f4ebed2900945df1e3d584715c68955}{create\+Player}} (float posX, float posY, float width, float height)=0
+\item 
+virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Platform}{logic\+::\+Platform}} $>$ \mbox{\hyperlink{classlogic_1_1AbstractFactory_a4450d2814b928702e932cfc21b7c69b1}{create\+Static\+Platform}} (float posX, float posY, float width, float height)=0
+\item 
+virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Platform}{logic\+::\+Platform}} $>$ \mbox{\hyperlink{classlogic_1_1AbstractFactory_a1b991e2b6bcd7545065ea967bf2f0342}{create\+Temporary\+Platform}} (float posX, float posY, float width, float height)=0
+\item 
+virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Platform}{logic\+::\+Platform}} $>$ \mbox{\hyperlink{classlogic_1_1AbstractFactory_a5f2b10dec4090b4a7f893096c8986488}{create\+Horizontal\+Platform}} (float posX, float posY, float width, float height)=0
+\item 
+virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Platform}{logic\+::\+Platform}} $>$ \mbox{\hyperlink{classlogic_1_1AbstractFactory_addd3c9d4d9f5e9e3f9c53bbd90ee6e82}{create\+Vertical\+Platform}} (float posX, float posY, float width, float height)=0
+\item 
+virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Bonus}{logic\+::\+Bonus}} $>$ \mbox{\hyperlink{classlogic_1_1AbstractFactory_a363088d16ef335f8961634c05bfef604}{create\+Spring}} (float posX, float posY, float width, float height)=0
+\item 
+virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1Bonus}{logic\+::\+Bonus}} $>$ \mbox{\hyperlink{classlogic_1_1AbstractFactory_a5797bb1e8d2bcc19da10ca5fd39d70ba}{create\+Jetpack}} (float posX, float posY, float width, float height)=0
+\item 
+virtual std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classlogic_1_1BGTile}{logic\+::\+B\+G\+Tile}} $>$ \mbox{\hyperlink{classlogic_1_1AbstractFactory_ac8eed90b3c4adaad363526d1bb01f98d}{create\+B\+G\+Tile}} (float posX, float posY, float width, float height)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+
+
+Definition at line 19 of file Abstract\+Factory.\+h.
+
+
+
+\doxysubsubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlogic_1_1AbstractFactory_abf6c6fe130a97426c9682800fa0d6dd9}\label{classlogic_1_1AbstractFactory_abf6c6fe130a97426c9682800fa0d6dd9}} 
+\index{logic::AbstractFactory@{logic::AbstractFactory}!AbstractFactory@{AbstractFactory}}
+\index{AbstractFactory@{AbstractFactory}!logic::AbstractFactory@{logic::AbstractFactory}}
+\doxyparagraph{\texorpdfstring{AbstractFactory()}{AbstractFactory()}}
+{\footnotesize\ttfamily logic\+::\+Abstract\+Factory\+::\+Abstract\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+@function \+: \mbox{\hyperlink{classlogic_1_1AbstractFactory}{Abstract\+Factory}} Constructor for a \mbox{\hyperlink{classlogic_1_1AbstractFactory}{Abstract\+Factory}}. \mbox{\Hypertarget{classlogic_1_1AbstractFactory_a391dc2c32c339bb7841b7e41aef2fba5}\label{classlogic_1_1AbstractFactory_a391dc2c32c339bb7841b7e41aef2fba5}} 
+\index{logic::AbstractFactory@{logic::AbstractFactory}!````~AbstractFactory@{$\sim$AbstractFactory}}
+\index{````~AbstractFactory@{$\sim$AbstractFactory}!logic::AbstractFactory@{logic::AbstractFactory}}
+\doxyparagraph{\texorpdfstring{$\sim$AbstractFactory()}{~AbstractFactory()}}
+{\footnotesize\ttfamily virtual logic\+::\+Abstract\+Factory\+::$\sim$\+Abstract\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+@function \+: \mbox{\hyperlink{classlogic_1_1AbstractFactory}{Abstract\+Factory}} Destructor for an \mbox{\hyperlink{classlogic_1_1AbstractFactory}{Abstract\+Factory}}. 
+
+\doxysubsubsection{Member Function Documentation}
+\mbox{\Hypertarget{classlogic_1_1AbstractFactory_ac8eed90b3c4adaad363526d1bb01f98d}\label{classlogic_1_1AbstractFactory_ac8eed90b3c4adaad363526d1bb01f98d}} 
+\index{logic::AbstractFactory@{logic::AbstractFactory}!createBGTile@{createBGTile}}
+\index{createBGTile@{createBGTile}!logic::AbstractFactory@{logic::AbstractFactory}}
+\doxyparagraph{\texorpdfstring{createBGTile()}{createBGTile()}}
+{\footnotesize\ttfamily virtual std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classlogic_1_1BGTile}{logic\+::\+B\+G\+Tile}}$>$ logic\+::\+Abstract\+Factory\+::create\+B\+G\+Tile (\begin{DoxyParamCaption}\item[{float}]{posX,  }\item[{float}]{posY,  }\item[{float}]{width,  }\item[{float}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+@function \+: create\+B\+G\+Tile This function is responsible for creating the background tile (little square). 
+\begin{DoxyParams}{Parameters}
+{\em posX} & (float) \+: x-\/coordinate of our entity, between the range \mbox{[}0,1-\/entity.\+width\mbox{]}. \\
+\hline
+{\em posY} & (float) \+: y-\/coordinate of our entity, between the range \mbox{[}0+entity.\+height, inf\mbox{[}. \\
+\hline
+{\em width} & (float) \+: width of our entity (in logic units). \\
+\hline
+{\em height} & (float) \+: height of our entity (in logic units). \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classrepresentation_1_1ConcreteFactory_a9da814a5fe1269a478df8d5dd57db664}{representation\+::\+Concrete\+Factory}}.
+
+\mbox{\Hypertarget{classlogic_1_1AbstractFactory_a5f2b10dec4090b4a7f893096c8986488}\label{classlogic_1_1AbstractFactory_a5f2b10dec4090b4a7f893096c8986488}} 
+\index{logic::AbstractFactory@{logic::AbstractFactory}!createHorizontalPlatform@{createHorizontalPlatform}}
+\index{createHorizontalPlatform@{createHorizontalPlatform}!logic::AbstractFactory@{logic::AbstractFactory}}
+\doxyparagraph{\texorpdfstring{createHorizontalPlatform()}{createHorizontalPlatform()}}
+{\footnotesize\ttfamily virtual std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classlogic_1_1Platform}{logic\+::\+Platform}}$>$ logic\+::\+Abstract\+Factory\+::create\+Horizontal\+Platform (\begin{DoxyParamCaption}\item[{float}]{posX,  }\item[{float}]{posY,  }\item[{float}]{width,  }\item[{float}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+@function \+: create\+Horizontal\+Platform This function is responsible for creating the horizontal platform. 
+\begin{DoxyParams}{Parameters}
+{\em posX} & (float) \+: x-\/coordinate of our entity, between the range \mbox{[}0,1-\/entity.\+width\mbox{]}. \\
+\hline
+{\em posY} & (float) \+: y-\/coordinate of our entity, between the range \mbox{[}0+entity.\+height, inf\mbox{[}. \\
+\hline
+{\em width} & (float) \+: width of our entity (in logic units). \\
+\hline
+{\em height} & (float) \+: height of our entity (in logic units). \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classrepresentation_1_1ConcreteFactory_a8e50c892bd9d46e12bdf9949a32a2bb1}{representation\+::\+Concrete\+Factory}}.
+
+\mbox{\Hypertarget{classlogic_1_1AbstractFactory_a5797bb1e8d2bcc19da10ca5fd39d70ba}\label{classlogic_1_1AbstractFactory_a5797bb1e8d2bcc19da10ca5fd39d70ba}} 
+\index{logic::AbstractFactory@{logic::AbstractFactory}!createJetpack@{createJetpack}}
+\index{createJetpack@{createJetpack}!logic::AbstractFactory@{logic::AbstractFactory}}
+\doxyparagraph{\texorpdfstring{createJetpack()}{createJetpack()}}
+{\footnotesize\ttfamily virtual std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classlogic_1_1Bonus}{logic\+::\+Bonus}}$>$ logic\+::\+Abstract\+Factory\+::create\+Jetpack (\begin{DoxyParamCaption}\item[{float}]{posX,  }\item[{float}]{posY,  }\item[{float}]{width,  }\item[{float}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+@function \+: create\+Jetpack This function is responsible for creating the jetpack bonus. 
+\begin{DoxyParams}{Parameters}
+{\em posX} & (float) \+: x-\/coordinate of our entity, between the range \mbox{[}0,1-\/entity.\+width\mbox{]}. \\
+\hline
+{\em posY} & (float) \+: y-\/coordinate of our entity, between the range \mbox{[}0+entity.\+height, inf\mbox{[}. \\
+\hline
+{\em width} & (float) \+: width of our entity (in logic units). \\
+\hline
+{\em height} & (float) \+: height of our entity (in logic units). \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classrepresentation_1_1ConcreteFactory_adb2a655b4b00c97ef92912c6003fd871}{representation\+::\+Concrete\+Factory}}.
+
+\mbox{\Hypertarget{classlogic_1_1AbstractFactory_a9f4ebed2900945df1e3d584715c68955}\label{classlogic_1_1AbstractFactory_a9f4ebed2900945df1e3d584715c68955}} 
+\index{logic::AbstractFactory@{logic::AbstractFactory}!createPlayer@{createPlayer}}
+\index{createPlayer@{createPlayer}!logic::AbstractFactory@{logic::AbstractFactory}}
+\doxyparagraph{\texorpdfstring{createPlayer()}{createPlayer()}}
+{\footnotesize\ttfamily virtual std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classlogic_1_1Player}{logic\+::\+Player}}$>$ logic\+::\+Abstract\+Factory\+::create\+Player (\begin{DoxyParamCaption}\item[{float}]{posX,  }\item[{float}]{posY,  }\item[{float}]{width,  }\item[{float}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+@function \+: create\+Player This function is responsible for creating the doodle. 
+\begin{DoxyParams}{Parameters}
+{\em posX} & (float) \+: x-\/coordinate of our entity, between the range \mbox{[}0,1-\/entity.\+width\mbox{]}. \\
+\hline
+{\em posY} & (float) \+: y-\/coordinate of our entity, between the range \mbox{[}0+entity.\+height, inf\mbox{[}. \\
+\hline
+{\em width} & (float) \+: width of our entity (in logic units). \\
+\hline
+{\em height} & (float) \+: height of our entity (in logic units). \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classrepresentation_1_1ConcreteFactory_a8157c2ea33f3aed279650ace88fc7627}{representation\+::\+Concrete\+Factory}}.
+
+\mbox{\Hypertarget{classlogic_1_1AbstractFactory_a363088d16ef335f8961634c05bfef604}\label{classlogic_1_1AbstractFactory_a363088d16ef335f8961634c05bfef604}} 
+\index{logic::AbstractFactory@{logic::AbstractFactory}!createSpring@{createSpring}}
+\index{createSpring@{createSpring}!logic::AbstractFactory@{logic::AbstractFactory}}
+\doxyparagraph{\texorpdfstring{createSpring()}{createSpring()}}
+{\footnotesize\ttfamily virtual std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classlogic_1_1Bonus}{logic\+::\+Bonus}}$>$ logic\+::\+Abstract\+Factory\+::create\+Spring (\begin{DoxyParamCaption}\item[{float}]{posX,  }\item[{float}]{posY,  }\item[{float}]{width,  }\item[{float}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+@function \+: create\+Spring This function is responsible for creating the spring bonus. 
+\begin{DoxyParams}{Parameters}
+{\em posX} & (float) \+: x-\/coordinate of our entity, between the range \mbox{[}0,1-\/entity.\+width\mbox{]}. \\
+\hline
+{\em posY} & (float) \+: y-\/coordinate of our entity, between the range \mbox{[}0+entity.\+height, inf\mbox{[}. \\
+\hline
+{\em width} & (float) \+: width of our entity (in logic units). \\
+\hline
+{\em height} & (float) \+: height of our entity (in logic units). \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classrepresentation_1_1ConcreteFactory_aba785c0e6855e1d9f1de859df6f9d2ca}{representation\+::\+Concrete\+Factory}}.
+
+\mbox{\Hypertarget{classlogic_1_1AbstractFactory_a4450d2814b928702e932cfc21b7c69b1}\label{classlogic_1_1AbstractFactory_a4450d2814b928702e932cfc21b7c69b1}} 
+\index{logic::AbstractFactory@{logic::AbstractFactory}!createStaticPlatform@{createStaticPlatform}}
+\index{createStaticPlatform@{createStaticPlatform}!logic::AbstractFactory@{logic::AbstractFactory}}
+\doxyparagraph{\texorpdfstring{createStaticPlatform()}{createStaticPlatform()}}
+{\footnotesize\ttfamily virtual std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classlogic_1_1Platform}{logic\+::\+Platform}}$>$ logic\+::\+Abstract\+Factory\+::create\+Static\+Platform (\begin{DoxyParamCaption}\item[{float}]{posX,  }\item[{float}]{posY,  }\item[{float}]{width,  }\item[{float}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+@function \+: create\+Static\+Platform This function is responsible for creating the static platform. 
+\begin{DoxyParams}{Parameters}
+{\em posX} & (float) \+: x-\/coordinate of our entity, between the range \mbox{[}0,1-\/entity.\+width\mbox{]}. \\
+\hline
+{\em posY} & (float) \+: y-\/coordinate of our entity, between the range \mbox{[}0+entity.\+height, inf\mbox{[}. \\
+\hline
+{\em width} & (float) \+: width of our entity (in logic units). \\
+\hline
+{\em height} & (float) \+: height of our entity (in logic units). \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classrepresentation_1_1ConcreteFactory_a85b7082f2ae47a924481cf1921dd39f1}{representation\+::\+Concrete\+Factory}}.
+
+\mbox{\Hypertarget{classlogic_1_1AbstractFactory_a1b991e2b6bcd7545065ea967bf2f0342}\label{classlogic_1_1AbstractFactory_a1b991e2b6bcd7545065ea967bf2f0342}} 
+\index{logic::AbstractFactory@{logic::AbstractFactory}!createTemporaryPlatform@{createTemporaryPlatform}}
+\index{createTemporaryPlatform@{createTemporaryPlatform}!logic::AbstractFactory@{logic::AbstractFactory}}
+\doxyparagraph{\texorpdfstring{createTemporaryPlatform()}{createTemporaryPlatform()}}
+{\footnotesize\ttfamily virtual std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classlogic_1_1Platform}{logic\+::\+Platform}}$>$ logic\+::\+Abstract\+Factory\+::create\+Temporary\+Platform (\begin{DoxyParamCaption}\item[{float}]{posX,  }\item[{float}]{posY,  }\item[{float}]{width,  }\item[{float}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+@function \+: create\+Temporary\+Platform This function is responsible for creating the temporary platform. 
+\begin{DoxyParams}{Parameters}
+{\em posX} & (float) \+: x-\/coordinate of our entity, between the range \mbox{[}0,1-\/entity.\+width\mbox{]}. \\
+\hline
+{\em posY} & (float) \+: y-\/coordinate of our entity, between the range \mbox{[}0+entity.\+height, inf\mbox{[}. \\
+\hline
+{\em width} & (float) \+: width of our entity (in logic units). \\
+\hline
+{\em height} & (float) \+: height of our entity (in logic units). \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classrepresentation_1_1ConcreteFactory_a06856fd92ae6355880390d81f61fc723}{representation\+::\+Concrete\+Factory}}.
+
+\mbox{\Hypertarget{classlogic_1_1AbstractFactory_addd3c9d4d9f5e9e3f9c53bbd90ee6e82}\label{classlogic_1_1AbstractFactory_addd3c9d4d9f5e9e3f9c53bbd90ee6e82}} 
+\index{logic::AbstractFactory@{logic::AbstractFactory}!createVerticalPlatform@{createVerticalPlatform}}
+\index{createVerticalPlatform@{createVerticalPlatform}!logic::AbstractFactory@{logic::AbstractFactory}}
+\doxyparagraph{\texorpdfstring{createVerticalPlatform()}{createVerticalPlatform()}}
+{\footnotesize\ttfamily virtual std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classlogic_1_1Platform}{logic\+::\+Platform}}$>$ logic\+::\+Abstract\+Factory\+::create\+Vertical\+Platform (\begin{DoxyParamCaption}\item[{float}]{posX,  }\item[{float}]{posY,  }\item[{float}]{width,  }\item[{float}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+@function \+: create\+Vertical\+Platform This function is responsible for creating the vertical platform. 
+\begin{DoxyParams}{Parameters}
+{\em posX} & (float) \+: x-\/coordinate of our entity, between the range \mbox{[}0,1-\/entity.\+width\mbox{]}. \\
+\hline
+{\em posY} & (float) \+: y-\/coordinate of our entity, between the range \mbox{[}0+entity.\+height, inf\mbox{[}. \\
+\hline
+{\em width} & (float) \+: width of our entity (in logic units). \\
+\hline
+{\em height} & (float) \+: height of our entity (in logic units). \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classrepresentation_1_1ConcreteFactory_ac2e6fe32f9fabcb7572848e1a14f77f4}{representation\+::\+Concrete\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/logic\+\_\+library/Abstract\+Factory.\+h\item 
+src/logic\+\_\+library/Abstract\+Factory.\+cpp\end{DoxyCompactItemize}
