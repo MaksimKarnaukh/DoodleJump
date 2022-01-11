@@ -265,7 +265,7 @@ bool World::checkForUndetectedCollision(const std::shared_ptr<logic::EntityModel
 }
 
 std::vector<std::pair<float, float>> World::getLineBetweenPoints(float x0, float y0, float x1, float y1)
-{ // self-modified for this project
+{ // function self-modified for this project
 
         std::vector<std::pair<float, float>> line;
         float precisionOfIterator = 0.001f;
