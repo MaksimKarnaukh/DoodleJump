@@ -49,8 +49,8 @@ public:
         std::map<int, std::map<int, float>> percentages; // map for our random platform generation
 
         // entity data :
-        float playerWidth = 0.08;  // 0.077
-        float playerHeight = 0.15; // 0.18
+        float playerWidth = 0.08;  // 0.077 original value (to self)
+        float playerHeight = 0.15; // 0.18 original value (to self)
         float platformWidth = 0.174004;
         float platformHeight = 0.0411;
         float springWidth = 0.058;
@@ -70,6 +70,8 @@ public:
         float bonusGen_interval =
             500; // determines at which rate the chance gets decreased (lower digit means faster decrease). Per
                  // bonusGen_interval units of height, the chance for a bonus generated gets decreased by 0.01.
+
+        float minDistanceBetweenPlatforms = 0.30; // minimum distance between platforms
 
 public:
         /**

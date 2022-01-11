@@ -123,7 +123,7 @@ void World::createEntities()
 
         // y position of our platform
         float platformYPos = 1 + logic::utility::Camera::Instance().getShiftValue();
-        if (platformYPos > formerPlatformPosY + 0.35) { // min distance between platforms guaranteed
+        if (platformYPos > formerPlatformPosY + minDistanceBetweenPlatforms) { // min distance between platforms guaranteed
                 isCreate = true;
         }
 
